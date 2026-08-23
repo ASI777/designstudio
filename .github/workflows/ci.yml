@@ -76,8 +76,6 @@ jobs:
   supported-baseline-linux:
     name: Supported Qt application + C++ + Python
     runs-on: ubuntu-latest
-    env:
-      DS_WORK_ROOT: ${{ runner.temp }}/designstudio-baseline
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
@@ -98,6 +96,8 @@ jobs:
             qt6-base-dev-tools \
             qt6-qpa-plugins
       - name: Run the clean-checkout baseline gate
+        env:
+          DS_WORK_ROOT: ${{ runner.temp }}/designstudio-baseline
         run: ./build-linux.sh
 
   core-windows:
