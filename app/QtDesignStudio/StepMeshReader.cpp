@@ -34,7 +34,7 @@ std::shared_ptr<const GlbMesh> readCache(const QString& key,
     QFile file(cachePathFor(key));
     if (!file.open(QIODevice::ReadOnly)) return {};
     QDataStream stream(&file);
-    stream.setVersion(QDataStream::Qt_6_5);
+    stream.setVersion(QDataStream::Qt_6_0);
     QByteArray magic;
     quint32 version = 0;
     qint64 sourceBytes = -1;
@@ -88,7 +88,7 @@ void writeCache(const QString& key, const GlbMesh& mesh)
     QSaveFile file(cachePathFor(key));
     if (!file.open(QIODevice::WriteOnly)) return;
     QDataStream stream(&file);
-    stream.setVersion(QDataStream::Qt_6_5);
+    stream.setVersion(QDataStream::Qt_6_0);
     stream << QByteArrayLiteral("DS_STEP_MESH") << CacheVersion
            << mesh.sourceBytes() << mesh.sourceName() << mesh.sha256()
            << mesh.boundsMinMm() << mesh.boundsMaxMm()

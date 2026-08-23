@@ -249,7 +249,7 @@ QString SemanticAssemblyReader::tessellationDigest(
 {
     QByteArray bytes;
     QDataStream stream(&bytes, QIODevice::WriteOnly);
-    stream.setVersion(QDataStream::Qt_6_5);
+    stream.setVersion(QDataStream::Qt_6_0);
     stream.setByteOrder(QDataStream::LittleEndian);
     stream << quint64(verticesMm.size()) << quint64(triangleIndices.size());
     for (const QVector3D& point : verticesMm)

@@ -6100,7 +6100,7 @@ mod tests {
         let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
             .map(PathBuf::from)
             .unwrap_or_else(|_| std::env::current_dir().unwrap());
-        let repository = manifest_dir.join("../..");
+        let repository = manifest_dir.join("../../testdata/work-package-fixture");
         let repository = fs::canonicalize(repository).unwrap();
         let project_path = "acceptance/agent-workflow-controller/checkpoints/pre-v72-authoritative/agent-workflow-controller.dsproj";
         let report_path = "acceptance/agent-workflow-controller/checkpoints/pre-v72-authoritative/acceptance-report.json";
