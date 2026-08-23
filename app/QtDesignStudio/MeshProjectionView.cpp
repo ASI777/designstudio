@@ -637,7 +637,7 @@ void MeshProjectionView::rebuildComponentGroups()
 
 void MeshProjectionView::applyExplodeOffsets()
 {
-    groupOffsets_.assign(static_cast<int>(groupCount_), QVector3D());
+    groupOffsets_.fill(QVector3D(), static_cast<qsizetype>(groupCount_));
     if (groupCount_ <= 0 || vertexGroup_.isEmpty() || !mesh_) return;
     std::vector<QVector3D> accumulator(static_cast<std::size_t>(groupCount_));
     std::vector<quint32> samples(static_cast<std::size_t>(groupCount_), 0u);
