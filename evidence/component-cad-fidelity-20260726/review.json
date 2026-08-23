@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-07-26T05:25:52.273979+00:00",
+  "geometry_authority": false,
+  "inventory_sha256": "beb557403a5cefe4a2e2723959b1fca7e8aa9a0b013402304dfc9b09de34666e",
+  "model": "Qwen/Qwen3.5-35B-A3B",
+  "model_revision": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+  "publication_authorized": false,
+  "request_sha256": "eb1cb623b35dd6491f22346476e7805576983f60a838904205cc63b83f4b0b80",
+  "review": {
+    "demo_recommendation": "Proceed with 3D demo rendering using the provided STEP files. Prioritize visual validation of the top 5 hero components (MCU, Joystick, Keypresses, Encoder, RGB LEDs) as they define the demo's interactive and aesthetic narrative. Do not attempt to infer or correct dimensions for any component; rely solely on the provided verified mechanical dimensions.",
+    "hero_components": [
+      {
+        "evidence_needed": "Supplier STEP file hash match against datasheet SHA256",
+        "mpn": "ESP32-S3-WROOM-1-N8R8",
+        "rank": 1,
+        "reason": "Largest primitive count (42) and highest STEP file size (672KB); dominant visual mass for the PCB 3D demo.",
+        "required_feature_operations": [
+          "Verify terminal pinout alignment with board footprint",
+          "Confirm body envelope dimensions match datasheet"
+        ]
+      },
+      {
+        "evidence_needed": "Visual comparison of STEP primitives against manufacturer 3D model",
+        "mpn": "2765",
+        "rank": 2,
+        "reason": "Visually distinct joystick with complex geometry (cylinders/actuator); critical for user interaction visualization.",
+        "required_feature_operations": [
+          "Validate actuator range of motion constraints",
+          "Check terminal placement relative to mounting holes"
+        ]
+      },
+      {
+        "evidence_needed": "Cross-reference of primitive shapes with CHERRY mechanical drawing",
+        "mpn": "MX2A-H1NB",
+        "rank": 3,
+        "reason": "High occurrence count (13) with distinct mechanical structure (cylinders); defines the keyboard interface visual.",
+        "required_feature_operations": [
+          "Verify switch stem height and actuation point",
+          "Confirm body dimensions for keycap clearance"
+        ]
+      },
+      {
+        "evidence_needed": "Supplier STEP file hash match against datasheet SHA256",
+        "mpn": "PEC12R-4220F-S0024",
+        "rank": 4,
+        "reason": "Visually distinct encoder with complex cylinder primitives; key interactive element for the demo.",
+        "required_feature_operations": [
+          "Verify shaft diameter and mounting flange dimensions",
+          "Check terminal spacing for PCB clearance"
+        ]
+      },
+      {
+        "evidence_needed": "Visual inspection of primitive shapes against Inolux datasheet",
+        "mpn": "IN-PI20TBT5R5G5B",
+        "rank": 5,
+        "reason": "High occurrence count (13) with visible RGB elements; significant visual impact for lighting demonstration.",
+        "required_feature_operations": [
+          "Confirm LED die position within body envelope",
+          "Verify terminal pitch for soldering simulation"
+        ]
+      }
+    ],
+    "systemic_findings": [
+      "All 29 components report 'mechanical_dimensions_verified' fidelity; no envelope-only or supplier-verified discrepancies detected in metadata.",
+      "No geometry or release authority is available to validate the internal accuracy of the STEP files beyond hash matching.",
+      "Tiny passives (0603 resistors/capacitors) are excluded from hero ranking due to minimal visual impact on 3D demo despite high occurrence counts.",
+      "All STEP file hashes are present and distinct, indicating unique CAD assets per component instance.",
+      "No supplier assets or approval statuses are included in the provided inventory data."
+    ]
+  },
+  "review_sha256": "2b6313c62af67c170fcbd03ad4c214b190408bd27a1bdafa6685f2f7e45b5eff",
+  "schema": "design-studio.component-cad-fidelity-review/1"
+}

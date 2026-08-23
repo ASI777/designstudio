@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:agent-task:1",
+  "title": "Budgeted recoverable agent task",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "task_id", "branch_id", "agent_id", "kind", "status", "budget", "consumed_steps", "consumed_seconds", "consumed_cost_microunits", "recovery_count", "created_utc"],
+  "properties": {
+    "schema": {"const": "design-studio.agent-task/1"},
+    "task_id": {"type": "string", "format": "uuid"},
+    "branch_id": {"type": "string", "format": "uuid"},
+    "agent_id": {"type": "string", "minLength": 1},
+    "kind": {"type": "string", "minLength": 1},
+    "status": {"enum": ["queued", "running", "cancelled", "succeeded", "failed"]},
+    "budget": {
+      "type": "object", "additionalProperties": false,
+      "required": ["max_steps", "max_seconds", "max_cost_microunits"],
+      "properties": {"max_steps": {"type": "integer", "minimum": 1, "maximum": 100000}, "max_seconds": {"type": "integer", "minimum": 1, "maximum": 604800}, "max_cost_microunits": {"type": "integer", "minimum": 0, "maximum": 1000000000}}
+    },
+    "consumed_steps": {"type": "integer", "minimum": 0},
+    "consumed_seconds": {"type": "integer", "minimum": 0},
+    "consumed_cost_microunits": {"type": "integer", "minimum": 0},
+    "recovery_count": {"type": "integer", "minimum": 0, "maximum": 3},
+    "created_utc": {"type": "string", "format": "date-time"}
+  }
+}

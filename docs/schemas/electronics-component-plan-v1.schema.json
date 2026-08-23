@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/electronics-component-plan-v1.schema.json",
+  "title": "Evidence-bound electronics component plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "status",
+    "selection_status",
+    "bindings",
+    "capability_receipts",
+    "placement_estimates",
+    "scope_limitations",
+    "product_id",
+    "revision",
+    "joint_controller_module_count",
+    "joint_controller_board_topology"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.electronics-component-plan/1"},
+    "status": {"const": "capability_and_first_order_packaging_checks_pass"},
+    "selection_status": {"const": "datasheet_evidence_bound_candidate"},
+    "product_id": {"type": "string", "minLength": 1},
+    "revision": {"type": "integer", "minimum": 1},
+    "joint_controller_module_count": {"type": "integer", "minimum": 1},
+    "joint_controller_board_topology": {"const": "stacked_logic_and_power_boards"},
+    "bindings": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/binding"}
+    },
+    "capability_receipts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_can_fd_channels",
+        "mcu_total_fdcan_instances",
+        "mcu_package_accessible_fdcan_instances",
+        "can_fd_transceiver_count",
+        "gate_driver_current_shunt_amplifiers",
+        "bus_operating_max_v",
+        "bus_transient_ceiling_v",
+        "required_semiconductor_voltage_rating_v",
+        "gate_driver_abs_max_v",
+        "mosfet_vds_max_v",
+        "mosfet_voltage_margin_v",
+        "mosfet_voltage_margin_ratio",
+        "maximum_phase_current_a",
+        "one_mosfet_static_conduction_loss_at_maximum_phase_current_w",
+        "two_mosfet_static_path_loss_at_maximum_phase_current_w",
+        "assumed_gate_drive_voltage_v",
+        "six_mosfet_gate_charge_power_at_control_frequency_w",
+        "shunt_dissipation_at_maximum_phase_current_w",
+        "shunt_power_margin"
+      ],
+      "properties": {
+        "required_can_fd_channels": {"type": "integer", "minimum": 1},
+        "mcu_total_fdcan_instances": {"type": "integer", "minimum": 1},
+        "mcu_package_accessible_fdcan_instances": {"type": "integer", "minimum": 1},
+        "can_fd_transceiver_count": {"type": "integer", "minimum": 1},
+        "gate_driver_current_shunt_amplifiers": {"type": "integer", "minimum": 3},
+        "bus_operating_max_v": {"type": "number", "exclusiveMinimum": 0},
+        "bus_transient_ceiling_v": {"type": "number", "exclusiveMinimum": 0},
+        "required_semiconductor_voltage_rating_v": {"type": "number", "exclusiveMinimum": 0},
+        "gate_driver_abs_max_v": {"type": "number", "exclusiveMinimum": 0},
+        "mosfet_vds_max_v": {"type": "number", "exclusiveMinimum": 0},
+        "mosfet_voltage_margin_v": {"type": "number", "exclusiveMinimum": 0},
+        "mosfet_voltage_margin_ratio": {"type": "number", "exclusiveMinimum": 1},
+        "maximum_phase_current_a": {"type": "number", "minimum": 0},
+        "one_mosfet_static_conduction_loss_at_maximum_phase_current_w": {"type": "number", "minimum": 0},
+        "two_mosfet_static_path_loss_at_maximum_phase_current_w": {"type": "number", "minimum": 0},
+        "assumed_gate_drive_voltage_v": {"type": "number", "exclusiveMinimum": 0},
+        "six_mosfet_gate_charge_power_at_control_frequency_w": {"type": "number", "minimum": 0},
+        "shunt_dissipation_at_maximum_phase_current_w": {"type": "number", "minimum": 0},
+        "shunt_power_margin": {"type": "number", "minimum": 2}
+      }
+    },
+    "placement_estimates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["joint_logic", "joint_power"],
+      "properties": {
+        "joint_logic": {"$ref": "#/$defs/placement"},
+        "joint_power": {"$ref": "#/$defs/placement"}
+      }
+    },
+    "scope_limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "positiveNumber": {"type": "number", "exclusiveMinimum": 0},
+    "bodySize": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/positiveNumber"}
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "document", "revision", "observed_date", "fact_basis"],
+      "properties": {
+        "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "document": {"type": "string", "minLength": 1},
+        "revision": {"type": "string", "minLength": 1},
+        "observed_date": {"type": "string", "format": "date"},
+        "fact_basis": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "binding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "binding_id",
+        "manufacturer",
+        "mpn",
+        "role",
+        "applies_to_board",
+        "quantity_per_board",
+        "package",
+        "body_size_mm",
+        "capabilities",
+        "primary_evidence",
+        "selection_status"
+      ],
+      "properties": {
+        "binding_id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+        "manufacturer": {"type": "string", "minLength": 1},
+        "mpn": {"type": "string", "minLength": 1},
+        "role": {
+          "enum": [
+            "motor_control_mcu",
+            "can_fd_transceiver",
+            "three_phase_gate_driver",
+            "power_mosfet",
+            "phase_current_shunt",
+            "logic_ldo"
+          ]
+        },
+        "applies_to_board": {"enum": ["joint_logic", "joint_power"]},
+        "quantity_per_board": {"type": "integer", "minimum": 1},
+        "package": {"type": "string", "minLength": 1},
+        "body_size_mm": {"$ref": "#/$defs/bodySize"},
+        "capabilities": {"type": "object", "minProperties": 1},
+        "primary_evidence": {"$ref": "#/$defs/evidence"},
+        "selection_status": {"const": "datasheet_evidence_bound_candidate"}
+      }
+    },
+    "placement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "board_area_mm2",
+        "bound_package_body_area_mm2",
+        "estimated_courtyard_area_mm2",
+        "reserved_fraction",
+        "estimated_utilization",
+        "maximum_estimated_utilization"
+      ],
+      "properties": {
+        "board_area_mm2": {"$ref": "#/$defs/positiveNumber"},
+        "bound_package_body_area_mm2": {"$ref": "#/$defs/positiveNumber"},
+        "estimated_courtyard_area_mm2": {"$ref": "#/$defs/positiveNumber"},
+        "reserved_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+        "estimated_utilization": {"type": "number", "minimum": 0, "maximum": 1},
+        "maximum_estimated_utilization": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    }
+  }
+}

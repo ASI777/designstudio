@@ -1,0 +1,170 @@
+{
+  "cases": [
+    {
+      "name": "wrong-schema-major",
+      "operations": [
+        {"op": "set", "path": ["schema"], "value": "urn:design-studio:schema:cad-assist-session:2"}
+      ],
+      "expected_error": "unsupported schema"
+    },
+    {
+      "name": "unknown-member",
+      "operations": [
+        {"op": "set", "path": ["untrusted_extension"], "value": true}
+      ],
+      "expected_error": "unknown member"
+    },
+    {
+      "name": "duplicate-record-id",
+      "operations": [
+        {"op": "copy", "from": ["targets", 0, "id"], "path": ["elements", 0, "id"]}
+      ],
+      "expected_error": "duplicate record ID"
+    },
+    {
+      "name": "nonnumeric-coordinate",
+      "operations": [
+        {"op": "set", "path": ["targets", 0, "snap_point_pdf_pt", 1], "value": "NaN"}
+      ],
+      "expected_error": "must be a number"
+    },
+    {
+      "name": "out-of-range-record-page",
+      "operations": [
+        {"op": "set", "path": ["targets", 0, "page"], "value": 1}
+      ],
+      "expected_error": "outside source page range"
+    },
+    {
+      "name": "unknown-calibration-reference",
+      "operations": [
+        {"op": "set", "path": ["viewboxes", 0, "calibration_id"], "value": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb"}
+      ],
+      "expected_error": "unknown calibration ID"
+    },
+    {
+      "name": "unknown-viewbox-reference",
+      "operations": [
+        {"op": "set", "path": ["targets", 0, "viewbox_id"], "value": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb"}
+      ],
+      "expected_error": "unknown viewbox ID"
+    },
+    {
+      "name": "unknown-target-reference",
+      "operations": [
+        {"op": "set", "path": ["elements", 0, "tracker_ids", 0], "value": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb"}
+      ],
+      "expected_error": "unknown target ID"
+    },
+    {
+      "name": "unknown-element-reference",
+      "operations": [
+        {"op": "set", "path": ["deviations", 0, "element_id"], "value": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb"}
+      ],
+      "expected_error": "unknown element ID"
+    },
+    {
+      "name": "absolute-asset-uri",
+      "operations": [
+        {"op": "set", "path": ["viewboxes", 0, "crop_asset", "uri"], "value": "/tmp/stolen.png"}
+      ],
+      "expected_error": "normalized relative URI"
+    },
+    {
+      "name": "windows-absolute-asset-uri",
+      "operations": [
+        {"op": "set", "path": ["viewboxes", 0, "crop_asset", "uri"], "value": "C:\\temp\\stolen.png"}
+      ],
+      "expected_error": "normalized relative URI"
+    },
+    {
+      "name": "traversal-asset-uri",
+      "operations": [
+        {"op": "set", "path": ["viewboxes", 0, "crop_asset", "uri"], "value": "assets/../secret.png"}
+      ],
+      "expected_error": "normalized relative URI"
+    },
+    {
+      "name": "source-page-count-mismatch",
+      "operations": [
+        {"op": "set", "path": ["source", "page_count"], "value": 2}
+      ],
+      "expected_error": "does not match page_count"
+    },
+    {
+      "name": "source-page-index-mismatch",
+      "operations": [
+        {"op": "set", "path": ["source", "pages", 0, "index"], "value": 1}
+      ],
+      "expected_error": "page record index is outside page_count"
+    },
+    {
+      "name": "expected-document-mismatch",
+      "expected_document_id": "different-document",
+      "operations": [],
+      "expected_error": "document ID does not match"
+    },
+    {
+      "name": "expected-revision-mismatch",
+      "expected_base_revision": 43,
+      "operations": [],
+      "expected_error": "base revision does not match"
+    },
+    {
+      "name": "deviation-cad-object-mismatch",
+      "operations": [
+        {"op": "set", "path": ["deviations", 0, "cad_object_id"], "value": "enclosure.other"}
+      ],
+      "expected_error": "does not reference project.object_id"
+    },
+    {
+      "name": "missing-calibration-array-entry",
+      "operations": [
+        {"op": "set", "path": ["calibrations"], "value": []}
+      ],
+      "expected_error": "at least one calibration"
+    },
+    {
+      "name": "missing-required-viewbox-reference",
+      "operations": [
+        {"op": "set", "path": ["elements", 0, "viewbox_id"], "value": null}
+      ],
+      "expected_error": "must reference a viewbox ID"
+    },
+    {
+      "name": "non-unit-frame-axis",
+      "operations": [
+        {"op": "set", "path": ["viewboxes", 0, "frame", "u_axis", 0], "value": 2}
+      ],
+      "expected_error": "unit vector"
+    },
+    {
+      "name": "non-orthogonal-frame-axes",
+      "operations": [
+        {"op": "set", "path": ["viewboxes", 0, "frame", "v_axis"], "value": [1, 0, 0]}
+      ],
+      "expected_error": "mutually orthogonal"
+    },
+    {
+      "name": "frame-handedness-mismatch",
+      "operations": [
+        {"op": "set", "path": ["viewboxes", 0, "frame", "handedness"], "value": "left"}
+      ],
+      "expected_error": "does not match the frame axes"
+    },
+    {
+      "name": "frame-matrix-mismatch",
+      "operations": [
+        {"op": "set", "path": ["viewboxes", 0, "frame", "local_to_world_mm", 3], "value": 12}
+      ],
+      "expected_error": "matrix does not match"
+    },
+    {
+      "name": "zero-area-viewbox",
+      "operations": [
+        {"op": "set", "path": ["viewboxes", 0, "rect_pdf_pt", 2], "value": 80}
+      ],
+      "expected_error": "positive width and height"
+    }
+  ]
+}

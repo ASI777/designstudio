@@ -1,0 +1,555 @@
+{
+  "schema": "design-studio.component/2",
+  "component": {
+    "manufacturer": "Espressif Systems",
+    "mpn": "ESP32-C3-MINI-1U-H4",
+    "description": "Small-sized 2.4 GHz Wi-Fi (802.11b/g/n) and Bluetooth\u00ae 5 module, ESP32-C3 series SoC, 4 MB flash, external antenna connector.",
+    "category": "module",
+    "datasheet": {
+      "title": "ESP32-C3-MINI-1 & MINI-1U Datasheet v2.2",
+      "revision": "v2.2",
+      "date": "",
+      "url": "https://www.espressif.com/documentation/esp32-c3-mini-1_datasheet_en.pdf"
+    },
+    "distributors": []
+  },
+  "symbol": {
+    "ref_des_prefix": "U",
+    "pins": [
+      {
+        "number": "1",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "2",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "3",
+        "name": "3V3",
+        "electrical_type": "power_in",
+        "description": "Power supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "4",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "5",
+        "name": "IO2",
+        "electrical_type": "bidirectional",
+        "description": "GPIO2, ADC1_CH2, FSPIQ",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "6",
+        "name": "IO3",
+        "electrical_type": "bidirectional",
+        "description": "GPIO3, ADC1_CH3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "7",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "8",
+        "name": "EN",
+        "electrical_type": "input",
+        "description": "High: on, enables the chip. Low: off, the chip powers off.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "9",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "10",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "11",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "12",
+        "name": "IO0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO0, ADC1_CH0, XTAL_32K_P",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "13",
+        "name": "IO1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO1, ADC1_CH1, XTAL_32K_N",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "14",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "15",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "16",
+        "name": "IO10",
+        "electrical_type": "bidirectional",
+        "description": "GPIO10, FSPICS0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "17",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "18",
+        "name": "IO4",
+        "electrical_type": "bidirectional",
+        "description": "GPIO4, ADC1_CH4, FSPIHD, MTMS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "19",
+        "name": "IO5",
+        "electrical_type": "bidirectional",
+        "description": "GPIO5, ADC2_CH0, FSPIWP, MTDI",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "20",
+        "name": "IO6",
+        "electrical_type": "bidirectional",
+        "description": "GPIO6, FSPICLK, MTCK",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "21",
+        "name": "IO7",
+        "electrical_type": "bidirectional",
+        "description": "GPIO7, FSPID, MTDO",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "22",
+        "name": "IO8",
+        "electrical_type": "bidirectional",
+        "description": "GPIO8",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "23",
+        "name": "IO9",
+        "electrical_type": "bidirectional",
+        "description": "GPIO9",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "24",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "25",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "26",
+        "name": "IO18",
+        "electrical_type": "bidirectional",
+        "description": "GPIO18, USB_D-",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "27",
+        "name": "IO19",
+        "electrical_type": "bidirectional",
+        "description": "GPIO19, USB_D+",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "28",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "29",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "30",
+        "name": "RXD0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO20, U0RXD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "31",
+        "name": "TXD0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO21, U0TXD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "32",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "33",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "34",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "35",
+        "name": "NC",
+        "electrical_type": "passive",
+        "description": "No connect",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "36",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "37",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "38",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "39",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "40",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "41",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "42",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "43",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "44",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "45",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "46",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "47",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "48",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "49",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "50",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "51",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "52",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "53",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      }
+    ]
+  },
+  "electrical": {
+    "high_speed": {
+      "diff_pairs": [
+        {
+          "positive": "IO19",
+          "negative": "IO18",
+          "impedance_ohm": 90,
+          "max_skew_mm": null
+        }
+      ],
+      "single_ended": []
+    },
+    "power_domains": [
+      {
+        "name": "3V3",
+        "vnom_v": 3.3,
+        "vmin_v": 3.0,
+        "vmax_v": 3.6,
+        "max_current_a": 0.5,
+        "pins": [
+          "3"
+        ]
+      },
+      {
+        "name": "GND",
+        "vnom_v": 0.0,
+        "vmin_v": 0.0,
+        "vmax_v": 0.0,
+        "max_current_a": null,
+        "pins": [
+          "1",
+          "2",
+          "11",
+          "14",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47",
+          "48",
+          "49",
+          "50",
+          "51",
+          "52",
+          "53"
+        ]
+      }
+    ],
+    "required_externals": [
+      {
+        "purpose": "Decoupling",
+        "value": "10uF + 0.1uF",
+        "constraints": "Place near power pin"
+      }
+    ]
+  },
+  "footprint": {
+    "name": "ESP32-C3-MINI-1U",
+    "ipc_name": "MODULE-ESP32-C3-MINI-1U",
+    "mount": "smd",
+    "body": {
+      "length_mm": 13.2,
+      "width_mm": 12.5,
+      "height_mm": 2.4
+    },
+    "pitch_mm": null,
+    "bga": null,
+    "pads": [],
+    "courtyard_margin_mm": 0.5,
+    "derived_from_outline": false,
+    "source": {
+      "pages": [
+        36
+      ],
+      "drawing": "ESP32-C3-MINI-1U Recommended PCB Land Pattern"
+    }
+  },
+  "orientation": {
+    "pin1_marker": "dot",
+    "pin1_position": "top-left",
+    "polarity": {
+      "has_polarity": false,
+      "cathode_pin": null
+    }
+  },
+  "package_3d": {
+    "height_mm": 2.4,
+    "standoff_mm": 0.0,
+    "shape": "box"
+  },
+  "extraction": {
+    "confidence": {
+      "symbol": 1.0,
+      "electrical": 0.9,
+      "footprint": 0.5
+    },
+    "pages_used": [
+      11
+    ],
+    "warnings": [
+      "Footprint pad coordinates not fully populated. Refer to datasheet."
+    ]
+  }
+}

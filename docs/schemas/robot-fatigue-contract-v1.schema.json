@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/robot-fatigue-contract-v1.schema.json",
+  "title": "DesignStudio robot fatigue-duty and evidence contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product_id", "requirements_sha256", "target_service_life_h",
+    "target_motion_cycles", "cycle_counting_method", "damage_accumulation_method",
+    "spectrum_definition_status", "joints", "life_prediction_result",
+    "prohibited_substitutions", "required_evidence"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.robot-fatigue-contract/1"},
+    "product_id": {"type": "string", "minLength": 1},
+    "requirements_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "target_service_life_h": {"type": "number", "exclusiveMinimum": 0},
+    "target_motion_cycles": {"type": "number", "exclusiveMinimum": 0},
+    "cycle_counting_method": {"const": "ASTM_E1049_rainflow"},
+    "damage_accumulation_method": {"const": "Palmgren_Miner_with_design_damage_limit"},
+    "spectrum_definition_status": {"const": "complete_design_duty_envelope"},
+    "joints": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/joint"}
+    },
+    "life_prediction_result": {"const": "incomplete_required_evidence_missing"},
+    "prohibited_substitutions": {"$ref": "#/$defs/stringArray"},
+    "required_evidence": {"$ref": "#/$defs/stringArray"}
+  },
+  "$defs": {
+    "nullablePositive": {"type": ["number", "null"], "exclusiveMinimum": 0},
+    "stringArray": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "joint": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "joint_id", "structural_material", "selected_output_torque_nm",
+        "spectrum_bins", "cumulative_miner_damage",
+        "maximum_allowed_miner_damage", "life_result"
+      ],
+      "properties": {
+        "joint_id": {"type": "string", "pattern": "^J[1-7]$"},
+        "structural_material": {"enum": ["Al_6061_T6", "Al_7075_T6"]},
+        "selected_output_torque_nm": {"type": "number", "exclusiveMinimum": 0},
+        "spectrum_bins": {
+          "type": "array", "minItems": 1,
+          "items": {"$ref": "#/$defs/bin"}
+        },
+        "cumulative_miner_damage": {"type": "null"},
+        "maximum_allowed_miner_damage": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "life_result": {"const": "incomplete_no_qualified_sn_curve_or_notch_stress"}
+      }
+    },
+    "bin": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "bin_id", "allocated_cycles", "cycle_fraction", "output_torque_amplitude_nm",
+        "stress_ratio", "local_stress_amplitude_mpa",
+        "allowable_cycles_from_qualified_curve", "miner_damage", "damage_status"
+      ],
+      "properties": {
+        "bin_id": {"type": "string", "minLength": 1},
+        "allocated_cycles": {"type": "number", "exclusiveMinimum": 0},
+        "cycle_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "output_torque_amplitude_nm": {"type": "number", "exclusiveMinimum": 0},
+        "stress_ratio": {"type": "number", "minimum": -1, "maximum": 1},
+        "local_stress_amplitude_mpa": {"$ref": "#/$defs/nullablePositive"},
+        "allowable_cycles_from_qualified_curve": {"$ref": "#/$defs/nullablePositive"},
+        "miner_damage": {"$ref": "#/$defs/nullablePositive"},
+        "damage_status": {"const": "blocked_by_local_stress_and_material_curve"}
+      }
+    }
+  }
+}

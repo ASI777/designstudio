@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/harness-motion-contract-v1.schema.json",
+  "title": "DesignStudio articulated harness motion contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product_id", "requirements_sha256", "overall_status",
+    "cad_route_representation", "selected_cable", "screening_assumptions",
+    "joint_interfaces", "provisionally_incompatible_radial_loop_joints",
+    "blocking_findings", "required_next_actions"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.robot-harness-motion-contract/1"},
+    "product_id": {"type": "string", "minLength": 1},
+    "requirements_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "overall_status": {"const": "incomplete"},
+    "cad_route_representation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["geometry", "purpose", "motion_geometry_status", "finite_corner_radius_status"],
+      "properties": {
+        "geometry": {"const": "straight_centerline_cylinders"},
+        "purpose": {"const": "static_packaging_and_visibility_only"},
+        "motion_geometry_status": {"const": "not_materialized"},
+        "finite_corner_radius_status": {"const": "not_materialized"}
+      }
+    },
+    "selected_cable": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "part_number", "supplier_dynamic_bend_radius_mm",
+        "supplier_torsion_limit_deg_per_m", "supplier_qualified_cycle_count", "status"
+      ],
+      "properties": {
+        "part_number": {"type": "null"},
+        "supplier_dynamic_bend_radius_mm": {"type": "null"},
+        "supplier_torsion_limit_deg_per_m": {"type": "null"},
+        "supplier_qualified_cycle_count": {"type": "null"},
+        "status": {"const": "missing"}
+      }
+    },
+    "screening_assumptions": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "worst_case_bundle_diameter_mm", "electrical_service_length_allowance_mm",
+        "provisional_dynamic_bend_radius_multiplier", "provisional_dynamic_bend_radius_mm",
+        "authority", "envelope_scope"
+      ],
+      "properties": {
+        "worst_case_bundle_diameter_mm": {"$ref": "#/$defs/positive"},
+        "electrical_service_length_allowance_mm": {"$ref": "#/$defs/positive"},
+        "provisional_dynamic_bend_radius_multiplier": {"const": 8.0},
+        "provisional_dynamic_bend_radius_mm": {"$ref": "#/$defs/positive"},
+        "authority": {"const": "engineering_screen_only_not_a_supplier_cable_rating"},
+        "envelope_scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "joint_interfaces": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/joint"}
+    },
+    "provisionally_incompatible_radial_loop_joints": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^J[1-7]$"}
+    },
+    "blocking_findings": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {"$ref": "#/$defs/finding"}
+    },
+    "required_next_actions": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "positive": {"type": "number", "exclusiveMinimum": 0},
+    "joint": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "joint_id", "minimum_outer_envelope_radius_mm", "maximum_shell_wall_mm",
+        "maximum_service_clearance_mm", "optimistic_available_radial_envelope_mm",
+        "provisional_dynamic_bend_radius_mm", "provisional_radial_margin_mm",
+        "radial_packaging_screen", "joint_travel_definition_status",
+        "motion_strategy_status", "cad_motion_path_status", "qualification_status"
+      ],
+      "properties": {
+        "joint_id": {"type": "string", "pattern": "^J[1-7]$"},
+        "minimum_outer_envelope_radius_mm": {"$ref": "#/$defs/positive"},
+        "maximum_shell_wall_mm": {"$ref": "#/$defs/positive"},
+        "maximum_service_clearance_mm": {"$ref": "#/$defs/positive"},
+        "optimistic_available_radial_envelope_mm": {"$ref": "#/$defs/positive"},
+        "provisional_dynamic_bend_radius_mm": {"$ref": "#/$defs/positive"},
+        "provisional_radial_margin_mm": {"type": "number"},
+        "radial_packaging_screen": {
+          "enum": [
+            "optimistic_envelope_can_contain_provisional_radius",
+            "optimistic_envelope_cannot_contain_provisional_radius"
+          ]
+        },
+        "joint_travel_definition_status": {"const": "missing"},
+        "motion_strategy_status": {"const": "unselected"},
+        "cad_motion_path_status": {"const": "straight_centerline_envelope_only"},
+        "qualification_status": {"const": "incomplete"}
+      }
+    },
+    "finding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["finding_id", "owner_domains", "missing_inputs", "blocked_outputs"],
+      "properties": {
+        "finding_id": {"type": "string", "pattern": "^HARNESS-[A-Z]+-[0-9]{3}$"},
+        "owner_domains": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "missing_inputs": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "blocked_outputs": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "provisionally_incompatible_joints": {
+          "type": "array", "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^J[1-7]$"}
+        }
+      }
+    }
+  }
+}

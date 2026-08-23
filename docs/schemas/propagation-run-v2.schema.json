@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:propagation-run:2",
+  "title": "Coupled physical-intelligence propagation run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "run_id", "configuration_id", "graph_revision", "changed_node_ids",
+    "affected_node_ids", "causal_paths", "affected_objects", "edit_reason",
+    "executed_analyses", "reused_analyses", "unaffected_analyses", "score_changes",
+    "solver_summary", "status", "evidence", "created_utc"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.propagation-run/2"},
+    "run_id": {"$ref": "#/$defs/uuid"},
+    "configuration_id": {"$ref": "#/$defs/uuid"},
+    "graph_revision": {"type": "integer", "minimum": 1},
+    "changed_node_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/uuid"}},
+    "affected_node_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/uuid"}},
+    "causal_paths": {
+      "type": "object",
+      "additionalProperties": {"type": "array", "items": {"$ref": "#/$defs/uuid"}}
+    },
+    "affected_objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["node_id", "name", "assembly_path", "domain", "authority", "source_ref"],
+        "properties": {
+          "node_id": {"$ref": "#/$defs/uuid"},
+          "name": {"type": "string", "minLength": 1},
+          "assembly_path": {"type": "string", "minLength": 1},
+          "domain": {"type": "string", "minLength": 1},
+          "authority": {"type": "string", "minLength": 1},
+          "source_ref": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "edit_reason": {"type": "string", "minLength": 1},
+    "executed_analyses": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "reused_analyses": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "unaffected_analyses": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "score_changes": {"type": "object", "additionalProperties": {"$ref": "#/$defs/score"}},
+    "solver_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total", "pass", "fail", "incomplete", "not_applicable"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 0},
+        "pass": {"type": "integer", "minimum": 0},
+        "fail": {"type": "integer", "minimum": 0},
+        "incomplete": {"type": "integer", "minimum": 0},
+        "not_applicable": {"type": "integer", "minimum": 0}
+      }
+    },
+    "status": {"enum": ["pass", "fail", "incomplete", "not_applicable"]},
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["evidence_id", "gate", "domain", "status", "method", "input_digest", "dependencies", "causal_paths", "rerun_reason", "assumptions", "created_utc"],
+        "properties": {
+          "evidence_id": {"$ref": "#/$defs/uuid"},
+          "gate": {"type": "string", "minLength": 1},
+          "domain": {"type": "string", "minLength": 1},
+          "status": {"enum": ["pass", "fail", "incomplete", "not_applicable"]},
+          "method": {"type": "string", "minLength": 1},
+          "input_digest": {"$ref": "#/$defs/digest"},
+          "dependencies": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/uuid"}},
+          "causal_paths": {"type": "object", "additionalProperties": {"type": "array", "items": {"$ref": "#/$defs/uuid"}}},
+          "rerun_reason": {"type": "string", "minLength": 1},
+          "assumptions": {"type": "array", "items": {"type": "string"}},
+          "created_utc": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "created_utc": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "uuid": {"type": "string", "format": "uuid"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["before", "after", "delta", "unit"],
+      "properties": {
+        "before": {"type": "number"},
+        "after": {"type": "number"},
+        "delta": {"type": "number"},
+        "unit": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

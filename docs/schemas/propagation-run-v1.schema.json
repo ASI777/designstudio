@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:propagation-run:1",
+  "title": "Affected product-subgraph analysis run",
+  "type": "object",
+  "required": ["schema", "run_id", "configuration_id", "graph_revision", "changed_nodes", "affected_nodes", "causal_paths", "executed_analyses", "reused_analyses", "unaffected_analyses", "status", "evidence", "created_utc"],
+  "properties": {
+    "schema": {"const": "design-studio.propagation-run/1"},
+    "run_id": {"type": "string", "format": "uuid"},
+    "configuration_id": {"type": "string", "format": "uuid"},
+    "graph_revision": {"type": "integer", "minimum": 1},
+    "changed_nodes": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "affected_nodes": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "causal_paths": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "string"}}},
+    "executed_analyses": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "reused_analyses": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "unaffected_analyses": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "status": {"enum": ["pass", "fail", "incomplete", "not_applicable"]},
+    "evidence": {"type": "array", "items": {"type": "object"}},
+    "created_utc": {"type": "string", "format": "date-time"}
+  }
+}

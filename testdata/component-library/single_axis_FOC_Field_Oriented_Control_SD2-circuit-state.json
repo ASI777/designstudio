@@ -1,0 +1,7028 @@
+{
+  "schema": "design-studio.circuit-state/1",
+  "generated_utc": "2026-06-16 15:38:20Z",
+  "design_goal": "single axis FOC Field Oriented Control Serial Driver",
+  "board": {
+    "width_mm": 100,
+    "height_mm": 80,
+    "copper_layers": 8,
+    "dielectric_er": 4.4,
+    "dielectric_h_mm": 0.2,
+    "loss_tangent": 0.02,
+    "copper_t_mm": 0.035,
+    "stackup": [
+      {
+        "index": 0,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 1,
+        "role": "plane",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 2,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 3,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 4,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 5,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 6,
+        "role": "plane",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 7,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      }
+    ]
+  },
+  "net_classes": [
+    {
+      "name": "Default",
+      "clearance_mm": 0.08166666666666667,
+      "trace_width_mm": 0.2,
+      "via_dia_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "max_skew_mm": 0,
+      "microvia": false
+    },
+    {
+      "name": "MSS_REFCLK_IN_P/MSS_REFCLK_IN_N",
+      "clearance_mm": 0.1,
+      "trace_width_mm": 0.2,
+      "via_dia_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "max_skew_mm": 0,
+      "microvia": false
+    },
+    {
+      "name": "XCVR_0B_REFCLK_P/XCVR_0B_REFCLK_N",
+      "clearance_mm": 0.1,
+      "trace_width_mm": 0.2,
+      "via_dia_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "max_skew_mm": 0,
+      "microvia": false
+    },
+    {
+      "name": "XCVR_0_RX2_P/XCVR_0_RX2_N",
+      "clearance_mm": 0.1,
+      "trace_width_mm": 0.2,
+      "via_dia_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "max_skew_mm": 0,
+      "microvia": false
+    },
+    {
+      "name": "XCVR_0_TX2_P/XCVR_0_TX2_N",
+      "clearance_mm": 0.1,
+      "trace_width_mm": 0.2,
+      "via_dia_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "max_skew_mm": 0,
+      "microvia": false
+    },
+    {
+      "name": "XCVR_0A_REFCLK_P/XCVR_0A_REFCLK_N",
+      "clearance_mm": 0.1,
+      "trace_width_mm": 0.2,
+      "via_dia_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "max_skew_mm": 0,
+      "microvia": false
+    },
+    {
+      "name": "XCVR_0_RX0_P/XCVR_0_RX0_N",
+      "clearance_mm": 0.1,
+      "trace_width_mm": 0.2,
+      "via_dia_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "max_skew_mm": 0,
+      "microvia": false
+    },
+    {
+      "name": "XCVR_0_TX0_P/XCVR_0_TX0_N",
+      "clearance_mm": 0.1,
+      "trace_width_mm": 0.2,
+      "via_dia_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "max_skew_mm": 0,
+      "microvia": false
+    }
+  ],
+  "components": [
+    {
+      "ref": "U1",
+      "footprint": "FCSG325-11x11-P0.5",
+      "manufacturer": "Microchip (Microsemi)",
+      "mpn": "MPFS025TC-FCSG325",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 49.53,
+      "y_mm": 33.02,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 1.05,
+      "pins": [
+        {
+          "pin": "A1",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A3",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A6",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A8",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A9",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A10",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A11",
+          "net": "VDDI1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A12",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A13",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A14",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A15",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A16",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A19",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "A21",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B3",
+          "net": "VDDI2",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B6",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B8",
+          "net": "VDDI1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B9",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B10",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B11",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B12",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B13",
+          "net": "VDDI1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B14",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B15",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B16",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B18",
+          "net": "VDDI1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B19",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "B21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "C1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "C2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "C6",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "C11",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "C16",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "C20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "C21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D2",
+          "net": "VDDI2",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D4",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D6",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D7",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D8",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D9",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D10",
+          "net": "VDDI1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D11",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D12",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D13",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D14",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D15",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D16",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D20",
+          "net": "VDDI1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "D21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E6",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E7",
+          "net": "VDDI3",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E8",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E9",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E10",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E11",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E12",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E13",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E14",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E15",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E16",
+          "net": "VDDI1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "E21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F1",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F3",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F5",
+          "net": "VDDAUX2",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F17",
+          "net": "VDDAUX1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F19",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "F21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G4",
+          "net": "VDDAUX2",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G7",
+          "net": "VDD25",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G8",
+          "net": "VDDI3",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G9",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G10",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G11",
+          "net": "VDDAUX1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G12",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G13",
+          "net": "VDDAUX1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G14",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G15",
+          "net": "VDDI1",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G21",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H5",
+          "net": "VDDI2",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H7",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H15",
+          "net": "VDD25",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H17",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J2",
+          "net": "VDDI4",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J4",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J5",
+          "net": "VDDAUX4",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J7",
+          "net": "VDDAUX4",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J9",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J10",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J11",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J12",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J13",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J15",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J20",
+          "net": "VDDA",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "J21",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K9",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K10",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K11",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K12",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K13",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K15",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K17",
+          "net": "VDD_XCVR_CLK",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K18",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "K21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L1",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L3",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L4",
+          "net": "VDDI4",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L9",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L10",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L11",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L12",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L13",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L15",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L17",
+          "net": "VDDA25",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L18",
+          "net": "VDDA",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L19",
+          "net": "VDDA25",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L20",
+          "net": "VDDA",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "L21",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M7",
+          "net": "VDDI5",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M9",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M10",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M11",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M12",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M13",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M15",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M17",
+          "net": "VDD_XCVR_CLK",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M18",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "M21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N2",
+          "net": "VDDI5",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N4",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N9",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N10",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N11",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N12",
+          "net": "VDD",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N13",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N15",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N20",
+          "net": "VDDA",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N21",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P7",
+          "net": "VDD18",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P15",
+          "net": "VDD18",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P17",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P18",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "P21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R5",
+          "net": "VDDI6",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R7",
+          "net": "VDD25",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R8",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R9",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R10",
+          "net": "VDD18",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R11",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R12",
+          "net": "VDD18",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R13",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R14",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R15",
+          "net": "VDD25",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R20",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R21",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T1",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T3",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T19",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "T21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U6",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U8",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U9",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U10",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U11",
+          "net": "VDDI6",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U12",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U13",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U14",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U15",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U16",
+          "net": "VDDI0",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "U21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V2",
+          "net": "VDDI6",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V4",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V6",
+          "net": "VDDI6",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V8",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V9",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V10",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V11",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V12",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V13",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V14",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V15",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V16",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V20",
+          "net": "VDDI0",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "V21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "W1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "W2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "W6",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "W11",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "W16",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "W20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "W21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y1",
+          "net": "VDDI6",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y3",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y4",
+          "net": "VDDI6",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y6",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y8",
+          "net": "VDDI6",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y9",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y10",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y11",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y12",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y13",
+          "net": "VDDI0",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y14",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y15",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y16",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y18",
+          "net": "VDDI0",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y19",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "Y21",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA1",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA3",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA4",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA6",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA8",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA9",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA10",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA11",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA12",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA13",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA14",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA15",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA16",
+          "net": "GND",
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA17",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA19",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "AA21",
+          "net": "GND",
+          "electrical_type": "passive"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "Unused GPIO/HSIO tie-off",
+            "value": "10k to VSS",
+            "constraints": "per PPAT notes"
+          },
+          {
+            "purpose": "Per-power-ball decoupling",
+            "value": "100nF X7R each \u002B bulk per rail",
+            "constraints": "BGA practice"
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [
+            {
+              "positive": "MSS_REFCLK_IN_P",
+              "negative": "MSS_REFCLK_IN_N",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0B_REFCLK_P",
+              "negative": "XCVR_0B_REFCLK_N",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0_RX2_P",
+              "negative": "XCVR_0_RX2_N",
+              "impedance_ohm": 85,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0_TX2_P",
+              "negative": "XCVR_0_TX2_N",
+              "impedance_ohm": 85,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0A_REFCLK_P",
+              "negative": "XCVR_0A_REFCLK_N",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0_RX0_P",
+              "negative": "XCVR_0_RX0_N",
+              "impedance_ohm": 85,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0_TX0_P",
+              "negative": "XCVR_0_TX0_N",
+              "impedance_ohm": 85,
+              "max_skew_mm": null
+            }
+          ],
+          "single_ended": []
+        },
+        "parameters": null,
+        "thermal": null,
+        "power_domains": [
+          {
+            "name": "VDD",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "K9",
+              "M9",
+              "J10",
+              "J12",
+              "K11",
+              "K13",
+              "K15",
+              "L10",
+              "L12",
+              "M11",
+              "M13",
+              "M15",
+              "N10",
+              "N12"
+            ]
+          },
+          {
+            "name": "VDD18",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "P7",
+              "P15",
+              "R10",
+              "R12"
+            ]
+          },
+          {
+            "name": "VDD25",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "G7",
+              "R7",
+              "H15",
+              "R15"
+            ]
+          },
+          {
+            "name": "VDDA",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "J20",
+              "L18",
+              "L20",
+              "N20"
+            ]
+          },
+          {
+            "name": "VDDA25",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "L17",
+              "L19"
+            ]
+          },
+          {
+            "name": "VDDAUX1",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "F17",
+              "G11",
+              "G13"
+            ]
+          },
+          {
+            "name": "VDDAUX2",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "F5",
+              "G4"
+            ]
+          },
+          {
+            "name": "VDDAUX4",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "J5",
+              "J7"
+            ]
+          },
+          {
+            "name": "VDDI0",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "U16",
+              "V20",
+              "Y13",
+              "Y18"
+            ]
+          },
+          {
+            "name": "VDDI1",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "B8",
+              "A11",
+              "B13",
+              "B18",
+              "D10",
+              "D20",
+              "E16",
+              "G15"
+            ]
+          },
+          {
+            "name": "VDDI2",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "B3",
+              "D2",
+              "H5"
+            ]
+          },
+          {
+            "name": "VDDI3",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "E7",
+              "G8"
+            ]
+          },
+          {
+            "name": "VDDI4",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "J2",
+              "L4"
+            ]
+          },
+          {
+            "name": "VDDI5",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "M7",
+              "N2"
+            ]
+          },
+          {
+            "name": "VDDI6",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "R5",
+              "V2",
+              "V6",
+              "Y1",
+              "Y4",
+              "Y8",
+              "U11"
+            ]
+          },
+          {
+            "name": "VDD_XCVR_CLK",
+            "vmin_v": null,
+            "vnom_v": null,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "K17",
+              "M17"
+            ]
+          },
+          {
+            "name": "VSS",
+            "vmin_v": null,
+            "vnom_v": 0,
+            "vmax_v": null,
+            "max_current_a": null,
+            "pins": [
+              "A1",
+              "A6",
+              "D4",
+              "D7",
+              "D9",
+              "F1",
+              "H7",
+              "J4",
+              "J9",
+              "L1",
+              "L9",
+              "N4",
+              "N9",
+              "R8",
+              "T1",
+              "V4",
+              "V9",
+              "A16",
+              "A21",
+              "AA1",
+              "AA6",
+              "D14",
+              "G14",
+              "G21",
+              "H17",
+              "J11",
+              "J13",
+              "J15",
+              "J21",
+              "K10",
+              "K12",
+              "K18",
+              "L11",
+              "L13",
+              "L15",
+              "L21",
+              "M10",
+              "M12",
+              "M18",
+              "N11",
+              "N13",
+              "N15",
+              "N21",
+              "P17",
+              "P18",
+              "R20",
+              "R21",
+              "V14",
+              "AA11",
+              "AA16",
+              "AA21"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "U2",
+      "footprint": "QFN50P250X350X160-18N",
+      "manufacturer": "Monolithic Power Systems",
+      "mpn": "MPM3833C",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 68.58,
+      "y_mm": 30.48,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 1.6,
+      "pins": [
+        {
+          "pin": "1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "2",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "4",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "5",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "6",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "7",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "8",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "9",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "10",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "11",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "12",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "14",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "15",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "16",
+          "net": null,
+          "electrical_type": "power_in"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "Input capacitor",
+            "value": "22uF",
+            "constraints": "Ceramic capacitors with X5R or X7R dielectrics are highly recommended because of their low ESR. Place as close to the IC pins as possible."
+          },
+          {
+            "purpose": "Output capacitor",
+            "value": "22uF",
+            "constraints": "Low ESR ceramic capacitors can be used to keep the output ripple low. In higher output voltage conditions, a 47uF capacitor may be required."
+          },
+          {
+            "purpose": "Feedback upper resistor (R1)",
+            "value": "200k",
+            "constraints": "Required to set VOUT. 200k\u03A9 recommended for typical voltages."
+          },
+          {
+            "purpose": "Feedback lower resistor (R2)",
+            "value": "200k",
+            "constraints": "Value depends on VOUT. e.g., 200k\u03A9 for 1.2V."
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [],
+          "single_ended": []
+        },
+        "parameters": [
+          {
+            "name": "Feedback voltage",
+            "min": 591,
+            "typ": 600,
+            "max": 609,
+            "unit": "mV",
+            "condition": "2.75V \u003C= VIN \u003C= 6V"
+          },
+          {
+            "name": "P-FET peak current limit",
+            "min": 3.6,
+            "typ": null,
+            "max": 6,
+            "unit": "A",
+            "condition": ""
+          },
+          {
+            "name": "Switching frequency",
+            "min": null,
+            "typ": 1150,
+            "max": null,
+            "unit": "kHz",
+            "condition": "VOUT = 1.2V, ILOAD = 1A"
+          },
+          {
+            "name": "Under-voltage lockout threshold rising",
+            "min": 2.3,
+            "typ": 2.5,
+            "max": 2.75,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "Supply current (shutdown)",
+            "min": null,
+            "typ": 0,
+            "max": 1,
+            "unit": "uA",
+            "condition": "VEN = 0V, TJ = 25\u00B0C"
+          },
+          {
+            "name": "Supply current (quiescent)",
+            "min": null,
+            "typ": 500,
+            "max": null,
+            "unit": "uA",
+            "condition": "VEN = 2V, VFB = 0.63V, VIN = 3.6V"
+          }
+        ],
+        "thermal": {
+          "theta_ja_c_w": 42,
+          "theta_jc_c_w": 13,
+          "max_power_w": 3,
+          "tj_max_c": 150
+        },
+        "power_domains": [
+          {
+            "name": "VIN",
+            "vmin_v": 2.75,
+            "vnom_v": 3.6,
+            "vmax_v": 6,
+            "max_current_a": 3,
+            "pins": [
+              "13",
+              "14"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "U3",
+      "footprint": "QFN-20",
+      "manufacturer": "Monolithic Power Systems",
+      "mpn": "MPM3610GQV",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 60.96,
+      "y_mm": 36.83,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 1.6,
+      "pins": [
+        {
+          "pin": "1",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "2",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "3",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "4",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "5",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "6",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "9",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "8",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "7",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "10",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "11",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "12",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "14",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "15",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "16",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "17",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "18",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "19",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "20",
+          "net": null,
+          "electrical_type": "nc"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "Input decoupling capacitor",
+            "value": "10uF",
+            "constraints": "Ceramic with X5R or X7R dielectrics recommended, low ESR, place very close to IN and PGND."
+          },
+          {
+            "purpose": "Output capacitor",
+            "value": "22uF",
+            "constraints": "Ceramic, tantalum, or low ESR electrolytic. See datasheet Table 1 for exact count based on VOUT."
+          },
+          {
+            "purpose": "Feedback upper resistor",
+            "value": "100k",
+            "constraints": "See Table 1 for exact value based on target VOUT."
+          },
+          {
+            "purpose": "Feedback lower resistor",
+            "value": "19.1k",
+            "constraints": "See Table 1 for exact value based on target VOUT."
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [],
+          "single_ended": []
+        },
+        "parameters": [
+          {
+            "name": "Supply Current (Shutdown)",
+            "min": null,
+            "typ": null,
+            "max": 1,
+            "unit": "uA",
+            "condition": "VEN = 0V"
+          },
+          {
+            "name": "Supply Current (Quiescent)",
+            "min": null,
+            "typ": 0.7,
+            "max": null,
+            "unit": "mA",
+            "condition": "VFB = 1V, VAAM = 5V"
+          },
+          {
+            "name": "Oscillator Frequency",
+            "min": 1500,
+            "typ": 2000,
+            "max": 2500,
+            "unit": "kHz",
+            "condition": "VFB = 0.75V, TJ = -40\u00B0C to \u002B125\u00B0C"
+          },
+          {
+            "name": "Feedback Voltage",
+            "min": 782,
+            "typ": 798,
+            "max": 814,
+            "unit": "mV",
+            "condition": "TJ = -40\u00B0C to \u002B125\u00B0C"
+          },
+          {
+            "name": "Current Limit",
+            "min": 2.4,
+            "typ": 3,
+            "max": null,
+            "unit": "A",
+            "condition": "Under 40% Duty Cycle"
+          },
+          {
+            "name": "EN Rising Threshold",
+            "min": 1.15,
+            "typ": 1.4,
+            "max": 1.65,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "EN Falling Threshold",
+            "min": 1.05,
+            "typ": 1.25,
+            "max": 1.45,
+            "unit": "V",
+            "condition": ""
+          }
+        ],
+        "thermal": {
+          "theta_ja_c_w": 46,
+          "theta_jc_c_w": 10,
+          "max_power_w": 2.7,
+          "tj_max_c": 150
+        },
+        "power_domains": [
+          {
+            "name": "IN",
+            "vmin_v": 4.5,
+            "vnom_v": 12,
+            "vmax_v": 21,
+            "max_current_a": 1.2,
+            "pins": [
+              "16"
+            ]
+          },
+          {
+            "name": "VCC",
+            "vmin_v": 4.9,
+            "vnom_v": 4.9,
+            "vmax_v": 4.9,
+            "max_current_a": null,
+            "pins": [
+              "2"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "U4",
+      "footprint": "X2SON",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS7A20",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 35.56,
+      "y_mm": 30.48,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 0.4,
+      "pins": [
+        {
+          "pin": "1",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "2",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "5",
+          "net": null,
+          "electrical_type": "power_in"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "Input capacitor",
+            "value": "1uF",
+            "constraints": "Minimum effective value 0.47 \u00B5F. Place close to IN and GND pins."
+          },
+          {
+            "purpose": "Output capacitor",
+            "value": "1uF",
+            "constraints": "Effective capacitance 0.47 \u00B5F min, 200 \u00B5F max. ESR max 100 m\u03A9. Place close to OUT and GND pins."
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [],
+          "single_ended": []
+        },
+        "parameters": [
+          {
+            "name": "Output voltage tolerance",
+            "min": -1.5,
+            "typ": null,
+            "max": 1.5,
+            "unit": "%",
+            "condition": "VIN = (VOUT(NOM) \u002B 0.3V) to 6.0V, IOUT = 0.001A to 0.3A"
+          },
+          {
+            "name": "Line regulation",
+            "min": null,
+            "typ": 0.03,
+            "max": null,
+            "unit": "%/V",
+            "condition": "VIN = (VOUT(NOM) \u002B 0.3V) to 6.0V, IOUT = 0.001A"
+          },
+          {
+            "name": "Dropout voltage",
+            "min": null,
+            "typ": 0.14,
+            "max": 0.2,
+            "unit": "V",
+            "condition": "IOUT = 0.3A, VOUT = 95% of VOUT(NOM), 1.5V \u003C= VOUT \u003C 2.5V (DQN)"
+          },
+          {
+            "name": "Dropout voltage",
+            "min": null,
+            "typ": 0.1,
+            "max": 0.14,
+            "unit": "V",
+            "condition": "IOUT = 0.3A, VOUT = 95% of VOUT(NOM), 2.5V \u003C= VOUT \u003C 5.5V (DQN)"
+          },
+          {
+            "name": "Quiescent ground current",
+            "min": null,
+            "typ": 6.5E-06,
+            "max": 8.5E-06,
+            "unit": "A",
+            "condition": "IOUT = 0A, VEN = VIN = 6V"
+          },
+          {
+            "name": "Output current limit",
+            "min": 0.36,
+            "typ": 0.52,
+            "max": 0.73,
+            "unit": "A",
+            "condition": "VOUT = VOUT(NOM) - 0.15V"
+          },
+          {
+            "name": "Power-supply rejection ratio (PSRR)",
+            "min": null,
+            "typ": 95,
+            "max": null,
+            "unit": "dB",
+            "condition": "f = 1kHz, IOUT = 0.02A"
+          },
+          {
+            "name": "Output noise voltage",
+            "min": null,
+            "typ": 7E-06,
+            "max": 1E-05,
+            "unit": "V",
+            "condition": "IOUT = 0.3A, BW = 10Hz to 100kHz, VOUT = 2.8V"
+          }
+        ],
+        "thermal": {
+          "theta_ja_c_w": 199.6,
+          "theta_jc_c_w": 103.6,
+          "max_power_w": null,
+          "tj_max_c": 125
+        },
+        "power_domains": [
+          {
+            "name": "VIN",
+            "vmin_v": 1.6,
+            "vnom_v": 3.3,
+            "vmax_v": 6,
+            "max_current_a": 0.31,
+            "pins": [
+              "4"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "U5",
+      "footprint": "BGA78C80P9X13",
+      "manufacturer": "Micron",
+      "mpn": "MT40A512M8",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 25.4,
+      "y_mm": 33.02,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 1.2,
+      "pins": [
+        {
+          "pin": "A1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "A2",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "A3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A8",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "A9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "B1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "B2",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "B3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B8",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "B9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "C1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "C2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C8",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "D1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "D2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D8",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "E1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "E2",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "E3",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "E7",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "E8",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "E9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "F1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "F2",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "F3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "F7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "F8",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "F9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "G1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "G2",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "G3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "G7",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "G8",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "G9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "H1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "H2",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "H3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "H7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "H8",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "H9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J1",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "J2",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "J3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "J7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "J8",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "J9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K2",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "K3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "K7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "K8",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "K9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L1",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "L2",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "L3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "L7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "L8",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "L9",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "M1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M2",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "M3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "M7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "M8",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "M9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "N2",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "N3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "N7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "N8",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "N9",
+          "net": null,
+          "electrical_type": "power_in"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "ZQ Calibration",
+            "value": "240\u03A9",
+            "constraints": "\u00B11% tolerance"
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [
+            {
+              "positive": "CK_t",
+              "negative": "CK_c",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "DQS_t",
+              "negative": "DQS_c",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "TDQS_t",
+              "negative": "TDQS_c",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            }
+          ],
+          "single_ended": [
+            {
+              "signal": "DQ0",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ1",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ2",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ3",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ4",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ5",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ6",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ7",
+              "impedance_ohm": 50
+            }
+          ]
+        },
+        "parameters": [],
+        "thermal": {
+          "theta_ja_c_w": null,
+          "theta_jc_c_w": null,
+          "max_power_w": null,
+          "tj_max_c": 95
+        },
+        "power_domains": [
+          {
+            "name": "VDD",
+            "vmin_v": 1.14,
+            "vnom_v": 1.2,
+            "vmax_v": 1.26,
+            "max_current_a": null,
+            "pins": [
+              "A1",
+              "B9",
+              "F1",
+              "F9",
+              "H1",
+              "H9",
+              "K9",
+              "M1"
+            ]
+          },
+          {
+            "name": "VDDQ",
+            "vmin_v": 1.14,
+            "vnom_v": 1.2,
+            "vmax_v": 1.26,
+            "max_current_a": null,
+            "pins": [
+              "B2",
+              "B8",
+              "C1",
+              "C9",
+              "E2",
+              "E8"
+            ]
+          },
+          {
+            "name": "VPP",
+            "vmin_v": 2.375,
+            "vnom_v": 2.5,
+            "vmax_v": 2.75,
+            "max_current_a": null,
+            "pins": [
+              "B1",
+              "M9"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "U6",
+      "footprint": "SOIC127P790X216-8N",
+      "manufacturer": "Micron",
+      "mpn": "MT25QL128ABA",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 36.83,
+      "y_mm": 43.18,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 2.16,
+      "pins": [
+        {
+          "pin": "1",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "6",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "8",
+          "net": null,
+          "electrical_type": "power_in"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "Decoupling capacitor",
+            "value": "0.1uF",
+            "constraints": "Ceramic, place close to VCC and VSS pins"
+          },
+          {
+            "purpose": "Pull-up resistor on Chip Select",
+            "value": "10k",
+            "constraints": "Recommended to ensure inactive state during power-up"
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [],
+          "single_ended": [
+            {
+              "signal": "C",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ0",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ1",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ2",
+              "impedance_ohm": 50
+            },
+            {
+              "signal": "DQ3",
+              "impedance_ohm": 50
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Clock Frequency (fC)",
+            "min": null,
+            "typ": null,
+            "max": 133000000,
+            "unit": "Hz",
+            "condition": "VCC \u003E= 2.7V"
+          },
+          {
+            "name": "Input High Voltage (VIH)",
+            "min": 0.7,
+            "typ": null,
+            "max": null,
+            "unit": "x VCC",
+            "condition": ""
+          },
+          {
+            "name": "Input Low Voltage (VIL)",
+            "min": null,
+            "typ": null,
+            "max": 0.3,
+            "unit": "x VCC",
+            "condition": ""
+          },
+          {
+            "name": "Standby Current (ICC1)",
+            "min": null,
+            "typ": 1.5E-05,
+            "max": 5E-05,
+            "unit": "A",
+            "condition": "S# = VCC"
+          }
+        ],
+        "thermal": {
+          "theta_ja_c_w": null,
+          "theta_jc_c_w": null,
+          "max_power_w": null,
+          "tj_max_c": 125
+        },
+        "power_domains": [
+          {
+            "name": "VCC",
+            "vmin_v": 2.7,
+            "vnom_v": 3.3,
+            "vmax_v": 3.6,
+            "max_current_a": 0.02,
+            "pins": [
+              "8"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "U7",
+      "footprint": "OSC-SMD-6-500x320",
+      "manufacturer": "SiTime",
+      "mpn": "SiT9120",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 73.66,
+      "y_mm": 36.83,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 0.8,
+      "pins": [
+        {
+          "pin": "1",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "2",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "3",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "4",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "5",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "6",
+          "net": null,
+          "electrical_type": "power_in"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "VDD Bypass Capacitor",
+            "value": "0.1uF",
+            "constraints": "Place close to the device between VDD and GND"
+          },
+          {
+            "purpose": "Pin 1 Pull-up Resistor",
+            "value": "10k\u03A9",
+            "constraints": "10 k\u03A9 or less recommended if Pin 1 (OE/ST) is not externally driven"
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [
+            {
+              "positive": "OUT",
+              "negative": "OUT-",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            }
+          ],
+          "single_ended": []
+        },
+        "parameters": [
+          {
+            "name": "Output Frequency Range",
+            "min": 25,
+            "typ": null,
+            "max": 212.5,
+            "unit": "MHz",
+            "condition": "Selected standard frequencies"
+          },
+          {
+            "name": "Current Consumption (LVPECL)",
+            "min": null,
+            "typ": 61,
+            "max": 69,
+            "unit": "mA",
+            "condition": "Excludes Load"
+          },
+          {
+            "name": "Current Consumption (LVDS)",
+            "min": null,
+            "typ": 47,
+            "max": 55,
+            "unit": "mA",
+            "condition": "Excludes Load"
+          },
+          {
+            "name": "Standby Current",
+            "min": null,
+            "typ": 0.15,
+            "max": 0.25,
+            "unit": "mA",
+            "condition": "ST = Low"
+          },
+          {
+            "name": "Input High Voltage (VIH)",
+            "min": 0.7,
+            "typ": null,
+            "max": null,
+            "unit": "x VDD",
+            "condition": "Pin 1"
+          },
+          {
+            "name": "Input Low Voltage (VIL)",
+            "min": null,
+            "typ": null,
+            "max": 0.3,
+            "unit": "x VDD",
+            "condition": "Pin 1"
+          },
+          {
+            "name": "LVDS Differential Output Voltage (VOD)",
+            "min": 250,
+            "typ": 350,
+            "max": 450,
+            "unit": "mV",
+            "condition": ""
+          }
+        ],
+        "thermal": {
+          "theta_ja_c_w": 67,
+          "theta_jc_c_w": 20,
+          "max_power_w": null,
+          "tj_max_c": 150
+        },
+        "power_domains": [
+          {
+            "name": "VDD",
+            "vmin_v": 2.375,
+            "vnom_v": 3.3,
+            "vmax_v": 3.63,
+            "max_current_a": 0.069,
+            "pins": [
+              "6"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "U8",
+      "footprint": "QFN50P600X600X80-41N",
+      "manufacturer": "Texas Instruments",
+      "mpn": "DRV8353MRTA",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 52.07,
+      "y_mm": 17.78,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 0.8,
+      "pins": [
+        {
+          "pin": "1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "3",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "5",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "6",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "7",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "8",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "9",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "10",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "11",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "12",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "14",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "15",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "16",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "17",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "18",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "19",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "20",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "21",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "22",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "23",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "24",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "25",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "26",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "27",
+          "net": null,
+          "electrical_type": "power_out"
+        },
+        {
+          "pin": "28",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "29",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "30",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "31",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "32",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "33",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "34",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "35",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "36",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "37",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "38",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "39",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "40",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "41",
+          "net": null,
+          "electrical_type": "power_in"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "VM bypass capacitor",
+            "value": "4.7uF",
+            "constraints": "Ceramic, place close to device pins, rated \u003E= 100V"
+          },
+          {
+            "purpose": "Charge pump flying capacitor",
+            "value": "47nF",
+            "constraints": "Ceramic, X7R, rated \u003E= 100V"
+          },
+          {
+            "purpose": "Charge pump output capacitor",
+            "value": "1uF",
+            "constraints": "Ceramic, X7R, rated 16V"
+          },
+          {
+            "purpose": "DVDD bypass capacitor",
+            "value": "1uF",
+            "constraints": "Ceramic, X7R, rated 6.3V"
+          },
+          {
+            "purpose": "VDRAIN bypass capacitor",
+            "value": "100nF",
+            "constraints": "Ceramic, rated \u003E= 100V"
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [],
+          "single_ended": []
+        },
+        "parameters": [
+          {
+            "name": "High-side gate drive peak source current",
+            "min": 0.05,
+            "typ": null,
+            "max": 1,
+            "unit": "A",
+            "condition": ""
+          },
+          {
+            "name": "Low-side gate drive peak sink current",
+            "min": 0.1,
+            "typ": null,
+            "max": 2,
+            "unit": "A",
+            "condition": ""
+          },
+          {
+            "name": "Sleep mode quiescent current",
+            "min": null,
+            "typ": 2E-05,
+            "max": null,
+            "unit": "A",
+            "condition": "VM = 48V, nSLEEP = 0"
+          },
+          {
+            "name": "Input logic high threshold (VIH)",
+            "min": 1.5,
+            "typ": null,
+            "max": null,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "Input logic low threshold (VIL)",
+            "min": null,
+            "typ": null,
+            "max": 0.6,
+            "unit": "V",
+            "condition": ""
+          }
+        ],
+        "thermal": {
+          "theta_ja_c_w": 38.5,
+          "theta_jc_c_w": 25.1,
+          "max_power_w": null,
+          "tj_max_c": 125
+        },
+        "power_domains": [
+          {
+            "name": "VM",
+            "vmin_v": 9,
+            "vnom_v": 48,
+            "vmax_v": 100,
+            "max_current_a": 0.02,
+            "pins": [
+              "VM"
+            ]
+          },
+          {
+            "name": "DVDD",
+            "vmin_v": 3,
+            "vnom_v": 3.3,
+            "vmax_v": 3.6,
+            "max_current_a": 0.03,
+            "pins": [
+              "DVDD"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "U9",
+      "footprint": "TSSOP16",
+      "manufacturer": "Texas Instruments",
+      "mpn": "AM26LV32EIPWR",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 68.58,
+      "y_mm": 16.51,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 1.2,
+      "pins": [
+        {
+          "pin": "1",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "2",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "3",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "4",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "5",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "6",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "8",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "9",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "10",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "11",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "12",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "13",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "14",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "15",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "16",
+          "net": null,
+          "electrical_type": "power_in"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "Bypass capacitor to reduce noise",
+            "value": "0.1uF",
+            "constraints": "low-ESR, ceramic, placed as close to the device as possible"
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [
+            {
+              "positive": "1A",
+              "negative": "1B",
+              "impedance_ohm": 120,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "2A",
+              "negative": "2B",
+              "impedance_ohm": 120,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "3A",
+              "negative": "3B",
+              "impedance_ohm": 120,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "4A",
+              "negative": "4B",
+              "impedance_ohm": 120,
+              "max_skew_mm": null
+            }
+          ],
+          "single_ended": []
+        },
+        "parameters": [
+          {
+            "name": "Positive-going input threshold voltage",
+            "min": null,
+            "typ": null,
+            "max": 0.2,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "Negative-going input threshold voltage",
+            "min": -0.2,
+            "typ": null,
+            "max": null,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "Input hysteresis",
+            "min": null,
+            "typ": 35,
+            "max": null,
+            "unit": "mV",
+            "condition": ""
+          },
+          {
+            "name": "High-level output voltage",
+            "min": 2.4,
+            "typ": 3.2,
+            "max": null,
+            "unit": "V",
+            "condition": "VID = 200 mV, IOH = -5 mA"
+          },
+          {
+            "name": "Low-level output voltage",
+            "min": null,
+            "typ": null,
+            "max": 0.5,
+            "unit": "V",
+            "condition": "VID = -200 mV, IOL = 5 mA"
+          },
+          {
+            "name": "Propagation delay time tPLH",
+            "min": 8,
+            "typ": 16,
+            "max": 26,
+            "unit": "ns",
+            "condition": ""
+          },
+          {
+            "name": "Maximum operating frequency",
+            "min": 32,
+            "typ": null,
+            "max": null,
+            "unit": "MHz",
+            "condition": ""
+          }
+        ],
+        "thermal": {
+          "theta_ja_c_w": 109,
+          "theta_jc_c_w": 34,
+          "max_power_w": null,
+          "tj_max_c": 150
+        },
+        "power_domains": [
+          {
+            "name": "VCC",
+            "vmin_v": 3,
+            "vnom_v": 3.3,
+            "vmax_v": 3.6,
+            "max_current_a": 0.017,
+            "pins": [
+              "16"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ref": "U10",
+      "footprint": "DP83822IF_RHB0032B",
+      "manufacturer": "Texas Instruments",
+      "mpn": "DP83822IF",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 36.83,
+      "y_mm": 17.78,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 1,
+      "pins": [
+        {
+          "pin": "1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "3",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "4",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "5",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "6",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "8",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "9",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "10",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "11",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "12",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "13",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "14",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "15",
+          "net": null,
+          "electrical_type": "nc"
+        },
+        {
+          "pin": "16",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "17",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "18",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "19",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "20",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "21",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "22",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "23",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "24",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "25",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "26",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "27",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "28",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "29",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "30",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "31",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "32",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "EP",
+          "net": null,
+          "electrical_type": "power_in"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "Bias Resistor Connection",
+            "value": "4.87kOhm",
+            "constraints": "4.87-kOhm \u002B/- 1%"
+          },
+          {
+            "purpose": "Management Data I/O Pullup",
+            "value": "2.2kOhm",
+            "constraints": "pullup resistor"
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [
+            {
+              "positive": "TD_P",
+              "negative": "TD_M",
+              "impedance_ohm": 0,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "RD_P",
+              "negative": "RD_M",
+              "impedance_ohm": 0,
+              "max_skew_mm": null
+            }
+          ],
+          "single_ended": null
+        },
+        "parameters": [
+          {
+            "name": "VIH (3.3-V VDDIO)",
+            "min": 2,
+            "typ": null,
+            "max": null,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "VIL (3.3-V VDDIO)",
+            "min": null,
+            "typ": null,
+            "max": 0.8,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "VOH (3.3-V VDDIO, IOH=-4mA)",
+            "min": 2.4,
+            "typ": null,
+            "max": null,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "VOL (3.3-V VDDIO, IOL=4mA)",
+            "min": null,
+            "typ": null,
+            "max": 0.4,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "VIH (1.8-V VDDIO)",
+            "min": 1.3,
+            "typ": null,
+            "max": null,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "VIL (1.8-V VDDIO)",
+            "min": null,
+            "typ": null,
+            "max": 0.5,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "VOH (1.8-V VDDIO, IOH=-2mA)",
+            "min": null,
+            "typ": null,
+            "max": null,
+            "unit": "V",
+            "condition": "min VDDIO-0.4"
+          },
+          {
+            "name": "VOL (1.8-V VDDIO, IOL=2mA)",
+            "min": null,
+            "typ": null,
+            "max": 0.4,
+            "unit": "V",
+            "condition": ""
+          },
+          {
+            "name": "XO and XI capacitance",
+            "min": null,
+            "typ": 0.8,
+            "max": null,
+            "unit": "pF",
+            "condition": ""
+          },
+          {
+            "name": "Input capacitance",
+            "min": null,
+            "typ": 5,
+            "max": null,
+            "unit": "pF",
+            "condition": ""
+          },
+          {
+            "name": "Output capacitance",
+            "min": null,
+            "typ": 5,
+            "max": null,
+            "unit": "pF",
+            "condition": ""
+          }
+        ],
+        "thermal": {
+          "theta_ja_c_w": 41,
+          "theta_jc_c_w": 35.5,
+          "max_power_w": null,
+          "tj_max_c": 135
+        },
+        "power_domains": null
+      }
+    },
+    {
+      "ref": "Q1",
+      "footprint": "BSC0902NSI_PG-TDSON-8",
+      "manufacturer": "Infineon",
+      "mpn": "BSC0902NSI",
+      "function": "",
+      "interfaces": [],
+      "x_mm": 49.53,
+      "y_mm": 43.18,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 1.2,
+      "pins": [
+        {
+          "pin": "1",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "2",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "3",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "4",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "5",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "6",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "7",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "8",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "EP",
+          "net": null,
+          "electrical_type": "passive"
+        }
+      ],
+      "electrical": {
+        "required_externals": [],
+        "high_speed": {
+          "diff_pairs": [],
+          "single_ended": []
+        },
+        "parameters": [
+          {
+            "name": "Input capacitance (Ciss)",
+            "min": null,
+            "typ": 1500,
+            "max": 2000,
+            "unit": "pF",
+            "condition": "VGS=0 V, VDS=15 V, f=1 MHz"
+          },
+          {
+            "name": "Output capacitance (Coss)",
+            "min": null,
+            "typ": 630,
+            "max": 840,
+            "unit": "pF",
+            "condition": "VGS=0 V, VDS=15 V, f=1 MHz"
+          },
+          {
+            "name": "Gate charge total (Qg)",
+            "min": null,
+            "typ": 24,
+            "max": 32,
+            "unit": "nC",
+            "condition": "VDD=15 V, ID=30 A, VGS=0 to 10 V"
+          },
+          {
+            "name": "Diode forward voltage (VSD)",
+            "min": null,
+            "typ": 0.54,
+            "max": 0.7,
+            "unit": "V",
+            "condition": "VGS=0 V, IF=4 A, Tj=25\u00B0C"
+          }
+        ],
+        "thermal": {
+          "theta_ja_c_w": 50,
+          "theta_jc_c_w": 2.6,
+          "max_power_w": 48,
+          "tj_max_c": 150
+        },
+        "power_domains": []
+      }
+    }
+  ],
+  "nets": [
+    {
+      "name": "BOOT_SCK",
+      "class": "Default",
+      "members": [],
+      "routed_length_mm": 0,
+      "islands": 0,
+      "fully_routed": false
+    },
+    {
+      "name": "BOOT_SS",
+      "class": "Default",
+      "members": [],
+      "routed_length_mm": 0,
+      "islands": 0,
+      "fully_routed": false
+    },
+    {
+      "name": "GND",
+      "class": "Default",
+      "members": [
+        "U1.A1",
+        "U1.A6",
+        "U1.A16",
+        "U1.A21",
+        "U1.D4",
+        "U1.D7",
+        "U1.D9",
+        "U1.D14",
+        "U1.F1",
+        "U1.G14",
+        "U1.G21",
+        "U1.H7",
+        "U1.H17",
+        "U1.J4",
+        "U1.J9",
+        "U1.J11",
+        "U1.J13",
+        "U1.J15",
+        "U1.J21",
+        "U1.K10",
+        "U1.K12",
+        "U1.K18",
+        "U1.L1",
+        "U1.L9",
+        "U1.L11",
+        "U1.L13",
+        "U1.L15",
+        "U1.L21",
+        "U1.M10",
+        "U1.M12",
+        "U1.M18",
+        "U1.N4",
+        "U1.N9",
+        "U1.N11",
+        "U1.N13",
+        "U1.N15",
+        "U1.N21",
+        "U1.P17",
+        "U1.P18",
+        "U1.R8",
+        "U1.R20",
+        "U1.R21",
+        "U1.T1",
+        "U1.V4",
+        "U1.V9",
+        "U1.V14",
+        "U1.AA1",
+        "U1.AA6",
+        "U1.AA11",
+        "U1.AA16",
+        "U1.AA21"
+      ],
+      "routed_length_mm": 0,
+      "islands": 6,
+      "fully_routed": false
+    },
+    {
+      "name": "JTAG_TCK",
+      "class": "Default",
+      "members": [],
+      "routed_length_mm": 0,
+      "islands": 0,
+      "fully_routed": false
+    },
+    {
+      "name": "JTAG_TMS",
+      "class": "Default",
+      "members": [],
+      "routed_length_mm": 0,
+      "islands": 0,
+      "fully_routed": false
+    },
+    {
+      "name": "PWM_AH",
+      "class": "Default",
+      "members": [],
+      "routed_length_mm": 0,
+      "islands": 0,
+      "fully_routed": false
+    },
+    {
+      "name": "PWM_AL",
+      "class": "Default",
+      "members": [],
+      "routed_length_mm": 0,
+      "islands": 0,
+      "fully_routed": false
+    },
+    {
+      "name": "V1P8",
+      "class": "Default",
+      "members": [],
+      "routed_length_mm": 0,
+      "islands": 0,
+      "fully_routed": false
+    },
+    {
+      "name": "VDD",
+      "class": "Default",
+      "members": [
+        "U1.J10",
+        "U1.J12",
+        "U1.K9",
+        "U1.K11",
+        "U1.K13",
+        "U1.K15",
+        "U1.L10",
+        "U1.L12",
+        "U1.M9",
+        "U1.M11",
+        "U1.M13",
+        "U1.M15",
+        "U1.N10",
+        "U1.N12"
+      ],
+      "routed_length_mm": 0,
+      "islands": 7,
+      "fully_routed": false
+    },
+    {
+      "name": "VDD18",
+      "class": "Default",
+      "members": [
+        "U1.P7",
+        "U1.P15",
+        "U1.R10",
+        "U1.R12"
+      ],
+      "routed_length_mm": 0,
+      "islands": 4,
+      "fully_routed": false
+    },
+    {
+      "name": "VDD25",
+      "class": "Default",
+      "members": [
+        "U1.G7",
+        "U1.H15",
+        "U1.R7",
+        "U1.R15"
+      ],
+      "routed_length_mm": 0,
+      "islands": 4,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDA",
+      "class": "Default",
+      "members": [
+        "U1.J20",
+        "U1.L18",
+        "U1.L20",
+        "U1.N20"
+      ],
+      "routed_length_mm": 0,
+      "islands": 4,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDA25",
+      "class": "Default",
+      "members": [
+        "U1.L17",
+        "U1.L19"
+      ],
+      "routed_length_mm": 0,
+      "islands": 2,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDAUX1",
+      "class": "Default",
+      "members": [
+        "U1.F17",
+        "U1.G11",
+        "U1.G13"
+      ],
+      "routed_length_mm": 0,
+      "islands": 3,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDAUX2",
+      "class": "Default",
+      "members": [
+        "U1.F5",
+        "U1.G4"
+      ],
+      "routed_length_mm": 0,
+      "islands": 2,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDAUX4",
+      "class": "Default",
+      "members": [
+        "U1.J5",
+        "U1.J7"
+      ],
+      "routed_length_mm": 0,
+      "islands": 2,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDA_1V0",
+      "class": "Default",
+      "members": [],
+      "routed_length_mm": 0,
+      "islands": 0,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDI0",
+      "class": "Default",
+      "members": [
+        "U1.U16",
+        "U1.V20",
+        "U1.Y13",
+        "U1.Y18"
+      ],
+      "routed_length_mm": 0,
+      "islands": 4,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDI1",
+      "class": "Default",
+      "members": [
+        "U1.A11",
+        "U1.B8",
+        "U1.B13",
+        "U1.B18",
+        "U1.D10",
+        "U1.D20",
+        "U1.E16",
+        "U1.G15"
+      ],
+      "routed_length_mm": 0,
+      "islands": 8,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDI2",
+      "class": "Default",
+      "members": [
+        "U1.B3",
+        "U1.D2",
+        "U1.H5"
+      ],
+      "routed_length_mm": 0,
+      "islands": 3,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDI3",
+      "class": "Default",
+      "members": [
+        "U1.E7",
+        "U1.G8"
+      ],
+      "routed_length_mm": 0,
+      "islands": 2,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDI4",
+      "class": "Default",
+      "members": [
+        "U1.J2",
+        "U1.L4"
+      ],
+      "routed_length_mm": 0,
+      "islands": 2,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDI5",
+      "class": "Default",
+      "members": [
+        "U1.M7",
+        "U1.N2"
+      ],
+      "routed_length_mm": 0,
+      "islands": 2,
+      "fully_routed": false
+    },
+    {
+      "name": "VDDI6",
+      "class": "Default",
+      "members": [
+        "U1.R5",
+        "U1.U11",
+        "U1.V2",
+        "U1.V6",
+        "U1.Y1",
+        "U1.Y4",
+        "U1.Y8"
+      ],
+      "routed_length_mm": 0,
+      "islands": 7,
+      "fully_routed": false
+    },
+    {
+      "name": "VDD_CORE",
+      "class": "Default",
+      "members": [],
+      "routed_length_mm": 0,
+      "islands": 0,
+      "fully_routed": false
+    },
+    {
+      "name": "VDD_XCVR_CLK",
+      "class": "Default",
+      "members": [
+        "U1.K17",
+        "U1.M17"
+      ],
+      "routed_length_mm": 0,
+      "islands": 2,
+      "fully_routed": false
+    }
+  ],
+  "unconnected_pins": [
+    {
+      "ref": "U1",
+      "pin": "A2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A3",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A8",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A9",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A10",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A12",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A13",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A14",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A15",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A19",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "A20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B6",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B9",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B10",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B11",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B12",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B14",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B15",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B16",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B19",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "B21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "C1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "C2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "C6",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "C11",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "C16",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "C20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "C21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D6",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D8",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D11",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D12",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D13",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D15",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D16",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "D21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E6",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E8",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E9",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E10",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E11",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E12",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E13",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E14",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E15",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "E21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "F2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "F3",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "F4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "F18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "F19",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "F20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "F21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G9",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G10",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G12",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "H1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "H2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "H4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "H18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "H20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "H21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "J1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "J17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "J18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "K1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "K2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "K4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "K5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "K7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "K20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "K21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "L2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "L3",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "L5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "L7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "M1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "M2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "M4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "M5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "M20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "M21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "N1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "N5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "N7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "N17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "N18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "P1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "P2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "P4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "P5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "P20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "P21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R9",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R11",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R13",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R14",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "T2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "T3",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "T4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "T5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "T17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "T18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "T19",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "T20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "T21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U6",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U8",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U9",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U10",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U12",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U13",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U14",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U15",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "U21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V8",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V10",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V11",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V12",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V13",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V15",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V16",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "V21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "W1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "W2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "W6",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "W11",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "W16",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "W20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "W21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y3",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y6",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y9",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y10",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y11",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y12",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y14",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y15",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y16",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y19",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y21",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA3",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA4",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA8",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA9",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA10",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA12",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA13",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA14",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA15",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA17",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA19",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U2",
+      "pin": "1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U2",
+      "pin": "2",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U2",
+      "pin": "3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U2",
+      "pin": "4",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U2",
+      "pin": "5",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U2",
+      "pin": "6",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U2",
+      "pin": "7",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U2",
+      "pin": "8",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U2",
+      "pin": "9",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U2",
+      "pin": "10",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U2",
+      "pin": "12",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U2",
+      "pin": "13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U2",
+      "pin": "14",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U2",
+      "pin": "15",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U2",
+      "pin": "16",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U3",
+      "pin": "1",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U3",
+      "pin": "2",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U3",
+      "pin": "3",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U3",
+      "pin": "4",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U3",
+      "pin": "5",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U3",
+      "pin": "6",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U3",
+      "pin": "9",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U3",
+      "pin": "8",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U3",
+      "pin": "7",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U3",
+      "pin": "11",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U3",
+      "pin": "12",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U3",
+      "pin": "13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U3",
+      "pin": "14",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U3",
+      "pin": "16",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U3",
+      "pin": "17",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U3",
+      "pin": "18",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U4",
+      "pin": "1",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U4",
+      "pin": "2",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U4",
+      "pin": "3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U4",
+      "pin": "4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U4",
+      "pin": "5",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "A1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "A2",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "A3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "A7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "A8",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "A9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "B1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "B2",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "B3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "B7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "B8",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "B9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "C1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "C2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "C3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "C7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "C8",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "C9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "D1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "D2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "D3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "D7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "D8",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U5",
+      "pin": "D9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "E1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "E2",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "E8",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "E9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "F1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "F3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "F7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "F8",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "F9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "G1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "G2",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "G3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "G9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "H1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "H2",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "H3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "H7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "H9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "J1",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "J2",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "J3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "J7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "J8",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "J9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "K1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "K2",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "K3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "K7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "K8",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "K9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "L1",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "L2",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "L3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "L7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "L8",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "L9",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U5",
+      "pin": "M1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "M2",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "M3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "M7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "M8",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "M9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U5",
+      "pin": "N1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U5",
+      "pin": "N2",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "N3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "N7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "N8",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U5",
+      "pin": "N9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U6",
+      "pin": "1",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U6",
+      "pin": "2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U6",
+      "pin": "3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U6",
+      "pin": "4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U6",
+      "pin": "5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U6",
+      "pin": "6",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U6",
+      "pin": "7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U6",
+      "pin": "8",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U7",
+      "pin": "1",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U7",
+      "pin": "3",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U7",
+      "pin": "4",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U7",
+      "pin": "5",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U7",
+      "pin": "6",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U8",
+      "pin": "1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U8",
+      "pin": "2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U8",
+      "pin": "3",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U8",
+      "pin": "4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U8",
+      "pin": "5",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U8",
+      "pin": "6",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "7",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U8",
+      "pin": "8",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "9",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "10",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "11",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "12",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U8",
+      "pin": "14",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "15",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "16",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "17",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "18",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "19",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U8",
+      "pin": "20",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "21",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "22",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "23",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "24",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U8",
+      "pin": "25",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "26",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "27",
+      "electrical_type": "power_out"
+    },
+    {
+      "ref": "U8",
+      "pin": "28",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "29",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U8",
+      "pin": "30",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "31",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "32",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "33",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "34",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "35",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "36",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "37",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "38",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U8",
+      "pin": "40",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U8",
+      "pin": "41",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U9",
+      "pin": "1",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "2",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "3",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U9",
+      "pin": "4",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "5",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U9",
+      "pin": "6",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "8",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U9",
+      "pin": "9",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "10",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "11",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U9",
+      "pin": "12",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "13",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U9",
+      "pin": "14",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "15",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U9",
+      "pin": "16",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U10",
+      "pin": "1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U10",
+      "pin": "2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U10",
+      "pin": "3",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "4",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "5",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "6",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "8",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U10",
+      "pin": "9",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "10",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "11",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "12",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "14",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U10",
+      "pin": "16",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U10",
+      "pin": "17",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "18",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "19",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U10",
+      "pin": "20",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "21",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U10",
+      "pin": "22",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "23",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U10",
+      "pin": "24",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U10",
+      "pin": "25",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "26",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "27",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "28",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "29",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U10",
+      "pin": "30",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "31",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "32",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U10",
+      "pin": "EP",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "Q1",
+      "pin": "1",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "Q1",
+      "pin": "2",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "Q1",
+      "pin": "3",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "Q1",
+      "pin": "4",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "Q1",
+      "pin": "5",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "Q1",
+      "pin": "6",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "Q1",
+      "pin": "7",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "Q1",
+      "pin": "8",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "Q1",
+      "pin": "EP",
+      "electrical_type": "passive"
+    }
+  ],
+  "drc": {
+    "violations": 123,
+    "by_rule": {
+      "Via-trace clearance": 106,
+      "Unconnected net": 17
+    },
+    "top_messages": [
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.13, 31.79)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.13, 31.79)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.22, 31.86)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.22, 31.86)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.26, 31.92)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.26, 31.92)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.28, 31.99)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.28, 31.99)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.28, 32.05)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.28, 32.05)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.26, 32.12)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.26, 32.12)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.21, 32.18)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.21, 32.18)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.12, 32.25)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.12, 32.25)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (48.67, 32.32)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.67, 32.32)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.67, 32.32)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (51.67, 32.32)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (48.73, 32.38)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (49.73, 32.38)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (50.73, 32.38)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (51.73, 32.38)",
+      "[Via-trace clearance] trace to via gap 0.082 mm \u003C required 0.082 mm  @ (48.77, 32.45)"
+    ]
+  },
+  "erc": [],
+  "physics": [
+    {
+      "class": "Default",
+      "z0_ohm_at_width": 68.4,
+      "ipc2221_current_a_dt10": 0.74
+    },
+    {
+      "class": "MSS_REFCLK_IN_P/MSS_REFCLK_IN_N",
+      "z0_ohm_at_width": 68.4,
+      "ipc2221_current_a_dt10": 0.74
+    },
+    {
+      "class": "XCVR_0B_REFCLK_P/XCVR_0B_REFCLK_N",
+      "z0_ohm_at_width": 68.4,
+      "ipc2221_current_a_dt10": 0.74
+    },
+    {
+      "class": "XCVR_0_RX2_P/XCVR_0_RX2_N",
+      "z0_ohm_at_width": 68.4,
+      "ipc2221_current_a_dt10": 0.74
+    },
+    {
+      "class": "XCVR_0_TX2_P/XCVR_0_TX2_N",
+      "z0_ohm_at_width": 68.4,
+      "ipc2221_current_a_dt10": 0.74
+    },
+    {
+      "class": "XCVR_0A_REFCLK_P/XCVR_0A_REFCLK_N",
+      "z0_ohm_at_width": 68.4,
+      "ipc2221_current_a_dt10": 0.74
+    },
+    {
+      "class": "XCVR_0_RX0_P/XCVR_0_RX0_N",
+      "z0_ohm_at_width": 68.4,
+      "ipc2221_current_a_dt10": 0.74
+    },
+    {
+      "class": "XCVR_0_TX0_P/XCVR_0_TX0_N",
+      "z0_ohm_at_width": 68.4,
+      "ipc2221_current_a_dt10": 0.74
+    }
+  ],
+  "signal_integrity": [],
+  "power_integrity": [],
+  "ddr_lanes": [],
+  "assistant_instructions": "You are an electronics design advisor. Study this circuit state against the design_goal. Check (1) component/netlist completeness: power budgets (every power_in pin needs a source able to supply it), required external components from each part\u0027s electrical.required_externals, interface completeness, unconnected_pins; and (2) signal/power integrity sign-off when present: signal_integrity (eye height/width, mask_pass, has_via_stub \u2014 a closed eye or failed mask needs a fix: back-drill a via stub (backdrill) when has_via_stub, else add equalisation (set_eq)), power_integrity (worst_z_mohm vs target_mohm, resonances, decap_ranking, placement_hint \u2014 a rail over target needs decaps added/moved; a negative decap_ranking entry is a decap making an anti-resonance worse), ddr_lanes (worst_setup_ps/worst_hold_ps \u2014 a negative margin fails, see worst_bit \u2014 a negative hold margin wants length_tune, a negative setup margin wants set_eq), and the board.stackup (reference planes, layer count \u2014 if board.copper_layers is too few for the parts, recommend set_layers with the count). Respond with ONLY a JSON object: {\u0022schema\u0022:\u0022design-studio.advice/1\u0022,\u0022summary\u0022:\u0022...\u0022,\u0022actions\u0022:[{\u0022op\u0022:\u0022add|remove|replace|backdrill|move_decap|add_decap|set_eq|stackup|length_tune|reference|set_layers\u0022,\u0022mpn\u0022:\u0022...\u0022,\u0022manufacturer\u0022:\u0022...\u0022,\u0022for_ref\u0022:\u0022\u003Cexisting ref\u003E\u0022,\u0022net\u0022:\u0022\u003Cnet for SI/PI ops\u003E\u0022,\u0022reason\u0022:\u0022...\u0022,\u0022connections\u0022:[{\u0022pin\u0022:\u0022...\u0022,\u0022to_net\u0022:\u0022...\u0022}]}],\u0022risks\u0022:[\u0022...\u0022]} . For every \u0060add\u0060, also attach (or offer to generate) a design-studio.component/2 JSON extracted from that part\u0027s datasheet so it can be imported directly.",
+  "context_note": null
+}

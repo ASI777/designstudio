@@ -1,0 +1,59 @@
+services:
+  shape:
+    profiles: ["shape"]
+    build:
+      context: ../..
+      dockerfile: services/hunyuan3d-shape/Dockerfile.rocm
+    environment:
+      DS_AI_MOCK: "0"
+      DS_3D_MODEL: tencent/Hunyuan3D-2.1
+      DS_3D_MODEL_REVISION: 0b94677654c57bb9a6b6845cd7b704ccf551d327
+      HF_TOKEN: ${HF_TOKEN:-}
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+      - ${ROCM_RENDER_GID:-992}
+    ipc: host
+    shm_size: 32gb
+    security_opt: [seccomp=unconfined]
+    ports:
+      - 127.0.0.1:18001:8000
+    volumes:
+      - huggingface-cache:/root/.cache/huggingface
+      - ../../references/porsche-911-turbo-s:/workspace/study:ro
+      - ./artifacts:/workspace/artifacts
+
+  omni:
+    profiles: ["omni"]
+    build:
+      context: ../..
+      dockerfile: cloud/hunyuan-omni-amd/Dockerfile.rocm
+    environment:
+      DS_HUNYUAN_MOCK: "0"
+      DS_HUNYUAN_API_TOKEN: ${DS_HUNYUAN_API_TOKEN:?set a non-default token}
+      DS_HUNYUAN_SIGNING_KEY: ${DS_HUNYUAN_SIGNING_KEY:?set a non-default signing key}
+      DS_HUNYUAN_MODEL_DIGEST: ${DS_HUNYUAN_MODEL_DIGEST:?set the pinned model binding digest}
+      DS_HUNYUAN_CONTAINER_DIGEST: ${DS_HUNYUAN_CONTAINER_DIGEST:?set the built image digest}
+      DS_HUNYUAN_CANDIDATE_TIMEOUT_SECONDS: "1800"
+      HF_TOKEN: ${HF_TOKEN:-}
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+      - ${ROCM_RENDER_GID:-992}
+    ipc: host
+    shm_size: 64gb
+    security_opt: [seccomp=unconfined]
+    ports:
+      - 127.0.0.1:18002:8000
+    volumes:
+      - omni-model-cache:/home/designstudio/.cache
+      - ../../references/porsche-911-turbo-s:/workspace/study:ro
+      - ./artifacts:/var/lib/designstudio/jobs
+
+volumes:
+  huggingface-cache:
+  omni-model-cache:

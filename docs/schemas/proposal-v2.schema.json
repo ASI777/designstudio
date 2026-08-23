@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:proposal:2",
+  "title": "Design Studio revision-bound CAD geometry proposal",
+  "description": "A proposal is untrusted data. It describes exactly one typed CAD correction against an immutable document/sketch/geometry revision. It never carries its own approval gates: the trusted host derives mandatory gates from the operation policy and supplies their results during authorization.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "proposal_id",
+    "idempotency_key",
+    "kind",
+    "document",
+    "operation",
+    "evidence",
+    "provenance"
+  ],
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "stable_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "int64": {
+      "type": "integer",
+      "minimum": -9223372036854775808,
+      "maximum": 9223372036854775807
+    },
+    "point2_nm": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {"$ref": "#/$defs/int64"},
+        {"$ref": "#/$defs/int64"}
+      ],
+      "items": false
+    }
+  },
+  "properties": {
+    "schema": {"const": "design-studio.proposal/2"},
+    "proposal_id": {"$ref": "#/$defs/uuid"},
+    "idempotency_key": {
+      "$ref": "#/$defs/sha256",
+      "description": "SHA-256 of the canonical mutation material. A second proposal for the same base state, operation, and evidence has the same key even when proposal_id differs."
+    },
+    "kind": {"const": "geometry_correction"},
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "base_revision", "base_sha256"],
+      "properties": {
+        "id": {"$ref": "#/$defs/stable_id"},
+        "base_revision": {"type": "integer", "minimum": 0},
+        "base_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "operation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "op",
+        "object_id",
+        "sketch_id",
+        "host_geometry_id",
+        "geometry_index",
+        "host_geometry_revision",
+        "sketch_revision",
+        "coordinate_space",
+        "units",
+        "target_start_nm",
+        "target_end_nm"
+      ],
+      "properties": {
+        "op": {"const": "replace_line_constraints"},
+        "object_id": {"$ref": "#/$defs/stable_id"},
+        "sketch_id": {"$ref": "#/$defs/stable_id"},
+        "host_geometry_id": {"$ref": "#/$defs/stable_id"},
+        "geometry_index": {"type": "integer", "minimum": 0},
+        "host_geometry_revision": {"type": "integer", "minimum": 0},
+        "sketch_revision": {"type": "integer", "minimum": 0},
+        "coordinate_space": {"const": "host_sketch_local"},
+        "units": {"const": "nm"},
+        "target_start_nm": {"$ref": "#/$defs/point2_nm"},
+        "target_end_nm": {"$ref": "#/$defs/point2_nm"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_id",
+        "session_revision",
+        "source_sha256",
+        "viewbox_id",
+        "element_id",
+        "deviation_id",
+        "target_ids"
+      ],
+      "properties": {
+        "session_id": {"$ref": "#/$defs/uuid"},
+        "session_revision": {"type": "integer", "minimum": 1},
+        "source_sha256": {"$ref": "#/$defs/sha256"},
+        "viewbox_id": {"$ref": "#/$defs/uuid"},
+        "element_id": {"$ref": "#/$defs/uuid"},
+        "deviation_id": {"$ref": "#/$defs/uuid"},
+        "target_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/uuid"}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "confidence"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1, "maxLength": 256},
+        "prompt_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    }
+  }
+}

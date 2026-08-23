@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:rib-network:1",
+  "title": "DesignStudio neutral manufacturable rib network",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "profile_id", "profile_digest", "design_volume_mm", "manufacturing", "nodes", "ribs", "findings", "status", "generator", "result_sha256"],
+  "properties": {
+    "schema": {"const": "design-studio.rib-network/1"},
+    "profile_id": {"type": "string", "minLength": 1},
+    "profile_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "design_volume_mm": {"$ref": "#/$defs/bounds3"},
+    "manufacturing": {
+      "type": "object", "additionalProperties": false,
+      "required": ["wall_mm", "clearance_mm", "pull_direction"],
+      "properties": {
+        "wall_mm": {"type": "number", "exclusiveMinimum": 0},
+        "clearance_mm": {"type": "number", "minimum": 0},
+        "pull_direction": {"$ref": "#/$defs/point3"}
+      }
+    },
+    "nodes": {"type": "array", "maxItems": 16384, "items": {"type": "object"}},
+    "ribs": {"type": "array", "maxItems": 16384, "items": {"type": "object"}},
+    "findings": {"type": "array", "maxItems": 16384, "items": {"type": "object"}},
+    "status": {"enum": ["pass", "fail"]},
+    "generator": {"type": "object"},
+    "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "point3": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}], "minItems": 3, "maxItems": 3},
+    "bounds3": {"type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {"min": {"$ref": "#/$defs/point3"}, "max": {"$ref": "#/$defs/point3"}}}
+  }
+}

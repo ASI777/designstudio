@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/interaction-surface-map-v1.schema.json",
+  "title": "Desktop AI control console interaction surface map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "application_family", "backend", "surfaces", "map_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.interaction-surface-map/1"},
+    "application_family": {"const": "desktop_ai_control_console"},
+    "backend": {"const": "local_non_gpu"},
+    "surfaces": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "prefixItems": [
+        {"$ref": "#/$defs/intent"},
+        {"$ref": "#/$defs/approval"},
+        {"$ref": "#/$defs/control"},
+        {"$ref": "#/$defs/observation"}
+      ],
+      "items": false
+    },
+    "map_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "surface": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "rpc_methods", "capabilities"],
+        "properties": {
+          "id": {"type": "string"},
+          "rpc_methods": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"enum": ["product/compile", "workflow/approve", "workflow/start", "workflow/read", "workflow/cancel", "workflow/resume"]}
+          },
+          "capabilities": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+        }
+    },
+    "intent": {"allOf": [{"$ref": "#/$defs/surface"}, {"properties": {"id": {"const": "intent"}, "rpc_methods": {"const": ["product/compile"]}}}]},
+    "approval": {"allOf": [{"$ref": "#/$defs/surface"}, {"properties": {"id": {"const": "architecture_approval"}, "rpc_methods": {"const": ["workflow/approve"]}}}]},
+    "control": {"allOf": [{"$ref": "#/$defs/surface"}, {"properties": {"id": {"const": "workflow_control"}, "rpc_methods": {"const": ["workflow/start", "workflow/cancel", "workflow/resume"]}}}]},
+    "observation": {"allOf": [{"$ref": "#/$defs/surface"}, {"properties": {"id": {"const": "workflow_observation"}, "rpc_methods": {"const": ["workflow/read"]}}}]}
+  }
+}

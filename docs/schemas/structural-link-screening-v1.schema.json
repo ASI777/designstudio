@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/structural-link-screening-v1.schema.json",
+  "title": "DesignStudio first-order structural link screening",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product_id", "requirements_sha256", "load_basis", "dimension_basis",
+    "material_contract", "method", "links", "minimum_yield_margin",
+    "maximum_single_link_tip_deflection_mm", "maximum_single_link_torsional_twist_deg",
+    "yield_screen_result", "system_screening_reference", "stiffness_acceptance_result",
+    "qualification_status",
+    "excluded_physics"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.structural-link-screening/2"},
+    "product_id": {"type": "string", "minLength": 1},
+    "requirements_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "load_basis": {"type": "string", "minLength": 1},
+    "dimension_basis": {"type": "string", "minLength": 1},
+    "material_contract": {"const": "mechanical/material-screening-contract.json"},
+    "method": {
+      "type": "object", "additionalProperties": false,
+      "required": ["section", "stress", "deformation", "moment_decomposition"],
+      "properties": {
+        "section": {"const": "closed_form_annular_section"},
+        "stress": {"const": "linear_bending_plus_torsion_von_mises"},
+        "deformation": {"const": "uniform_cantilever_under_end_moment"},
+        "moment_decomposition": {"const": "joint_axis_projected_onto_neutral_link_centerline"}
+      }
+    },
+    "links": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/link"}
+    },
+    "minimum_yield_margin": {"type": "number", "minimum": 1},
+    "maximum_single_link_tip_deflection_mm": {"type": "number", "minimum": 0},
+    "maximum_single_link_torsional_twist_deg": {"type": "number", "minimum": 0},
+    "yield_screen_result": {"const": "pass"},
+    "system_screening_reference": {
+      "const": "mechanical/robot-system-structural-screening.json"
+    },
+    "stiffness_acceptance_result": {"const": "pass_via_system_screening"},
+    "qualification_status": {"const": "screening_only"},
+    "excluded_physics": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "nonnegative": {"type": "number", "minimum": 0},
+    "positive": {"type": "number", "exclusiveMinimum": 0},
+    "link": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "joint_id", "material_id", "model", "scope", "worst_case_outer_diameter_mm",
+        "worst_case_inner_diameter_mm", "worst_case_length_mm", "area_m2",
+        "second_moment_m4", "polar_moment_m4", "load_factored_root_moment_nm",
+        "bending_moment_nm", "torsional_moment_nm", "bending_stress_mpa",
+        "torsional_shear_stress_mpa", "von_mises_stress_mpa",
+        "screening_yield_strength_mpa", "yield_margin", "yield_screen_status",
+        "end_rotation_deg", "tip_deflection_mm", "torsional_twist_deg",
+        "estimated_tube_mass_kg", "stiffness_acceptance_status"
+      ],
+      "properties": {
+        "joint_id": {"type": "string", "pattern": "^J[1-7]$"},
+        "material_id": {"enum": ["Al_6061_T6", "Al_7075_T6"]},
+        "model": {"const": "annular_uniform_beam_with_joint_axis_end_moment_decomposition"},
+        "scope": {"const": "first_order_linear_elastic_link_tube_only"},
+        "worst_case_outer_diameter_mm": {"$ref": "#/$defs/positive"},
+        "worst_case_inner_diameter_mm": {"$ref": "#/$defs/positive"},
+        "worst_case_length_mm": {"$ref": "#/$defs/positive"},
+        "area_m2": {"$ref": "#/$defs/positive"},
+        "second_moment_m4": {"$ref": "#/$defs/positive"},
+        "polar_moment_m4": {"$ref": "#/$defs/positive"},
+        "load_factored_root_moment_nm": {"$ref": "#/$defs/nonnegative"},
+        "bending_moment_nm": {"$ref": "#/$defs/nonnegative"},
+        "torsional_moment_nm": {"$ref": "#/$defs/nonnegative"},
+        "bending_stress_mpa": {"$ref": "#/$defs/nonnegative"},
+        "torsional_shear_stress_mpa": {"$ref": "#/$defs/nonnegative"},
+        "von_mises_stress_mpa": {"$ref": "#/$defs/nonnegative"},
+        "screening_yield_strength_mpa": {"$ref": "#/$defs/positive"},
+        "yield_margin": {"type": "number", "minimum": 1},
+        "yield_screen_status": {"const": "pass"},
+        "end_rotation_deg": {"$ref": "#/$defs/nonnegative"},
+        "tip_deflection_mm": {"$ref": "#/$defs/nonnegative"},
+        "torsional_twist_deg": {"$ref": "#/$defs/nonnegative"},
+        "estimated_tube_mass_kg": {"$ref": "#/$defs/positive"},
+        "stiffness_acceptance_status": {"const": "covered_by_system_model"}
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+================================================================================
+  EXAMPLE BUILD PROMPTS — by engineering branch
+  Natural-language design requests real engineers type into the app's harness.
+  ("build …", "design a …", "controller for …" → routed to the design pipeline)
+================================================================================
+
+HOW TO READ THIS FILE
+  • DENSE prompts already specify most decisions → the harness asks few questions.
+  • SPARSE prompts leave decisions open → the harness asks more (adaptive budget).
+  • Each group lists the rough archetype + key parts the intent agent should reach.
+  Use these to exercise the pipeline, seed the design memory, and demo the app.
+
+
+================================================================================
+  1. ELECTRONICS & COMMUNICATION ENGINEERING (ECE)
+================================================================================
+
+-- RF / Wireless ---------------------------------------------------------------
+[dense]  Build a 2.4 GHz Wi-Fi + BLE IoT module around the ESP32-S3, USB-C power
+         and programming, PCB trace antenna, u.FL option, 4-layer board with a
+         solid ground plane and 50-ohm RF feed line.
+[medium] Design a LoRa node for 868 MHz with an SX1276, an STM32L0 MCU, and an
+         SMA connector, battery powered.
+[sparse] I want to build a sub-GHz wireless sensor transmitter.
+
+-- High-speed digital / SerDes -------------------------------------------------
+[dense]  Design a USB 3.0 to Gigabit Ethernet bridge board: RTL8153 controller,
+         USB-C connector with ESD protection, RJ45 with integrated magnetics,
+         4-layer impedance-controlled stackup (90-ohm USB diff pair, 100-ohm
+         Ethernet pairs).
+[medium] Build an HDMI to MIPI-CSI converter board with a Lattice FPGA and DDR3.
+[sparse] Make me a board that captures HDMI video.
+
+-- Signal processing / Audio ---------------------------------------------------
+[dense]  Build a USB audio interface: PCM2902 codec, USB-C, 3.5 mm TRS line in/out,
+         low-noise LDO for the analog rail, separate AGND pour.
+[medium] Design a class-D audio amplifier board, 2x20 W, 24 V supply, with the
+         TPA3116.
+[sparse] I want to build a small audio DAC for headphones.
+
+-- Communication interfaces ----------------------------------------------------
+[dense]  Design an isolated RS-485 to USB converter: FT232 + isolated SN65HVD72
+         transceiver, ADuM digital isolator, isolated DC-DC, screw terminals.
+[medium] Build a CAN-FD to USB adapter with the TCAN4550 and an STM32G0.
+[sparse] Controller for a CAN bus diagnostics dongle.
+
+-- Test & measurement ----------------------------------------------------------
+[dense]  Build a 4-channel 16-bit DAQ front end: ADS8688 SAR ADC, precision 4.096 V
+         reference, input protection and anti-alias filters, SPI to an STM32H7.
+[sparse] Design a board to log analog sensor voltages.
+
+
+================================================================================
+  2. INTERNET OF THINGS (IoT)
+================================================================================
+
+-- Connected sensor nodes ------------------------------------------------------
+[dense]  Build a battery-powered environmental sensor node: ESP32-C3, BME688
+         (temp/humidity/gas), SHT40, USB-C charging with a MCP73831, 18650 holder,
+         deep-sleep optimised, on-board PCB antenna.
+[medium] Design a soil-moisture IoT node with an nRF52840, capacitive moisture
+         sensor, and a solar-charge LiPo front end.
+[sparse] I want to build a temperature sensor that sends data over Wi-Fi.
+
+-- Edge / gateway --------------------------------------------------------------
+[dense]  Design an IoT gateway: Raspberry Pi CM4 carrier, Ethernet + Wi-Fi,
+         dual CAN-FD, RS-485, 9-36 V industrial input with reverse-polarity and
+         TVS protection, 4-layer board.
+[medium] Build a BLE-to-Wi-Fi bridge with an ESP32 and a wide-input buck converter.
+[sparse] Make me a board that bridges Bluetooth sensors to the cloud.
+
+-- Wearable / low-power ---------------------------------------------------------
+[dense]  Build a wearable heart-rate band: MAX30102 optical sensor, nRF52832 BLE,
+         100 mAh LiPo with charging, vibration motor driver, flexible-friendly
+         compact layout.
+[medium] Design a fitness tracker mainboard with an accelerometer, OLED, and BLE.
+[sparse] I want to build a small wearable step counter.
+
+-- Smart home / actuation ------------------------------------------------------
+[dense]  Design a smart relay board: ESP32, 4x mains relays with opto-isolated
+         drive, snubbers, AC-DC module input, creepage clearance for 230 V.
+[medium] Build a Zigbee smart light controller with PWM dimming for LED strips.
+[sparse] Controller for a Wi-Fi smart plug.
+
+-- Asset tracking --------------------------------------------------------------
+[dense]  Build a GPS asset tracker: u-blox MAX-M10 GNSS, LTE-M modem (SIM7080),
+         nano-SIM, accelerometer wake, LiPo with solar trickle charge, active
+         GPS antenna feed.
+[sparse] Design a GPS tracker that runs on battery.
+
+
+================================================================================
+  3. ELECTRICAL ENGINEERING
+================================================================================
+
+-- Motor drive / power electronics ---------------------------------------------
+[dense]  Build a BLDC robotic arm controller: 6 axes, FOC, 24 V bus, 15 A peak per
+         axis, DRV8353 gate drivers, STM32H7, ABZ incremental encoders, CAN +
+         EtherCAT, 2 oz copper, reflow assembly.
+[medium] Design a 3-phase BLDC motor driver, 48 V, 20 A, with current sensing and
+         hall feedback.
+[sparse] I want to build a brushless motor controller.
+
+-- Power supplies / conversion -------------------------------------------------
+[dense]  Design a 100 W USB-C PD power supply: flyback with the UCC28780, GaN
+         switch, synchronous rectification, PD controller, 5-20 V output, EMI
+         filtering, isolated feedback.
+[medium] Build a 12 V to 5 V / 3 A buck converter board with the LMR33630 and good
+         thermal vias.
+[sparse] Make me a board that turns 24 V into 5 V.
+
+-- Battery management ----------------------------------------------------------
+[dense]  Build a 4S Li-ion BMS: BQ76940 analog front end, cell balancing, NTC
+         temperature monitoring, MOSFET protection (over-current, over/under
+         voltage), I2C to a host MCU, XT60 connector.
+[medium] Design a single-cell LiPo charger and fuel gauge board with USB-C input.
+[sparse] I want to build a battery charger for an 18650 pack.
+
+-- Energy monitoring / metering ------------------------------------------------
+[dense]  Design a 3-phase energy meter: ADE7758 metering IC, current-transformer
+         inputs, voltage dividers with isolation, RS-485 Modbus, isolated AC-DC
+         supply, IEC creepage spacing.
+[sparse] Build a board to measure household power usage.
+
+-- Industrial control / PLC ----------------------------------------------------
+[dense]  Build a compact PLC I/O module: 8 isolated digital inputs (24 V), 8 relay
+         outputs, RS-485 Modbus RTU, STM32F4, DIN-rail friendly, 9-36 V input with
+         protection.
+[medium] Design an industrial 4-20 mA sensor transmitter board with HART support.
+[sparse] Controller for reading industrial 24 V sensors.
+
+-- Lighting / LED drivers ------------------------------------------------------
+[dense]  Design a 60 W constant-current LED driver: buck topology with the LM3414,
+         dimming via 0-10 V and PWM, wide AC input, thermal management for the
+         power stage.
+[sparse] I want to build a high-power LED driver.
+
+
+================================================================================
+  4. CROSS-DOMAIN / TEACHING PROMPTS (good first runs)
+================================================================================
+[starter] Build a simple Arduino-compatible board with an ATmega328P, USB-C,
+          and a CH340 USB-to-serial bridge.
+[starter] Design an STM32 "blue pill" style dev board with USB and an SWD header.
+[starter] Make me a breakout board for the MPU-6050 IMU with I2C and 3.3 V regulator.
+[starter] Build a USB-C trigger board that negotiates 20 V PD output.
+[starter] Design a 0.96" OLED display module with I2C and a level shifter.
+
+
+================================================================================
+  NOTES FOR DESIGNERS / TESTERS
+================================================================================
+  • Dense prompts are the fastest path to a clean first-pass design and the best
+    seeds for the design memory (they verify in few refines → high quality).
+  • Re-running a SIMILAR prompt after a successful one demonstrates the closed
+    retrieve→reuse loop (fewer refines, fewer LLM calls — "designs better with use").
+  • Safety-critical mains / high-voltage prompts (relays, meters, AC-DC) should
+    always be reviewed for creepage/clearance after auto-layout — the verifier
+    checks connectivity, not isolation distances.
+  • After a build completes, run  /subsystem  then  /route  to place and route.
+================================================================================

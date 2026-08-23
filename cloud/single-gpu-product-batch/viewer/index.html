@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DesignStudio · Live 3D/CAD Review</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="importmap">
+    {"imports":{"three":"/vendor/three.module.js"}}
+  </script>
+</head>
+<body>
+  <header>
+    <div><strong>DesignStudio</strong><span>Single MI300X live review</span></div>
+    <div id="connection">Connecting…</div>
+  </header>
+  <main>
+    <aside>
+      <div class="section-title">Product studies</div>
+      <div id="products"></div>
+    </aside>
+    <section class="workspace">
+      <div class="toolbar">
+        <div>
+          <h1 id="title">Select a product</h1>
+          <p id="meta">Generation and CAD fitting progress updates every five seconds.</p>
+        </div>
+        <div class="switch">
+          <button data-mode="generated" class="active">Omni GLB</button>
+          <button data-mode="cad">Editable B-spline</button>
+          <button id="wireframe">Wireframe</button>
+        </div>
+      </div>
+      <div id="viewport"></div>
+      <div class="details">
+        <div><span>Status</span><strong id="status">—</strong></div>
+        <div><span>Vertices</span><strong id="vertices">—</strong></div>
+        <div><span>Faces</span><strong id="faces">—</strong></div>
+        <div><span>Median deviation</span><strong id="median">—</strong></div>
+        <div><span>P95 deviation</span><strong id="p95">—</strong></div>
+        <div><span>Maximum deviation</span><strong id="maximum">—</strong></div>
+        <div><span>AP242 round-trip</span><strong id="ap242">—</strong></div>
+        <div><span>Closed shell</span><strong id="shell">—</strong></div>
+        <div><span>Release authority</span><strong id="release">—</strong></div>
+      </div>
+      <div class="references">
+        <div class="section-title">All conditioning images</div>
+        <div id="images"></div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

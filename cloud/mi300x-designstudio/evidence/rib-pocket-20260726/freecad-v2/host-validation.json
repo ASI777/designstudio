@@ -1,0 +1,36 @@
+{
+  "cavity_count": 4,
+  "checks": {
+    "ap242_roundtrip": "pass",
+    "assembly_order_pass": "not_run",
+    "brep_valid": "pass",
+    "digest_bound": "pass",
+    "exact_collision_free": "pass",
+    "manufacturing_rules_pass": "pass",
+    "structural_screening_pass": "not_run"
+  },
+  "cloud_result_sha256": "f1c230587cb2a77ef02ac305ed7d0d6041accdb236ef7a85b961e066489c34b5",
+  "collisions": [],
+  "fcstd": "RibPocketExperiment.FCStd",
+  "fcstd_sha256": "37b285c2d33ec8570df74be4cb9fe1b7765c90fc558b9b7d26dd10f0f897070f",
+  "freecad_object_count": 20,
+  "generator": {
+    "authoritative_geometry": false,
+    "device": "AMD Instinct MI300X VF",
+    "name": "designstudio-rocm-support",
+    "rocm": "6.4.43484-123eb5128",
+    "seed": 20260726,
+    "version": 1
+  },
+  "invalid_objects": [],
+  "manufacturing_failures": [],
+  "release_eligible": false,
+  "request_sha256": "9a016a72e9ba0152f59f44d3bee912d3af4762f98a3ba5b9f26c101cdf8e843c",
+  "result_digest": "0b812faf739cbe463a87886091819edafba5112f23c70473f8234cd14fd2c3e7",
+  "rib_count": 16,
+  "schema": "design-studio.rib-pocket-host-validation/1",
+  "status": "review_required",
+  "step": "RibPocketExperiment.step",
+  "step_schema": "AP242",
+  "step_sha256": "62f97491327981e0be68147fb32597bf52b88139821b63cba3d4b3780fa65be0"
+}

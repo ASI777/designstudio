@@ -1,0 +1,196 @@
+# Material catalog for enclosure + PCB design
+# Referenced by design_loop.py and blender_bridge.py
+
+pcb:
+  substrates:
+    - id: fr4
+      name: "FR-4"
+      description: "Standard glass-epoxy laminate. 0.8–3.2 mm. Universal."
+      cost_tier: 1
+      flexibility: rigid
+    - id: rogers4003
+      name: "Rogers 4003C"
+      description: "Low-loss RF laminate. High-frequency designs (>1 GHz)."
+      cost_tier: 4
+      flexibility: rigid
+    - id: flex_pi
+      name: "Polyimide Flex"
+      description: "Flexible PCB. Kapton base. Wearables, tight enclosures."
+      cost_tier: 3
+      flexibility: flex
+    - id: aluminum_core
+      name: "Aluminum-core (MCPCB)"
+      description: "Metal core for high-power LED drivers, motor drivers."
+      cost_tier: 2
+      flexibility: rigid
+
+  solder_mask_colors:
+    - id: black
+      name: "Black"
+      hex: "#1a1a1a"
+      aesthetic_note: "Premium, hides traces. TE signature look."
+    - id: green
+      name: "Green"
+      hex: "#2d7a2d"
+      aesthetic_note: "Standard. Cheapest. Least interesting."
+    - id: white
+      name: "White"
+      hex: "#f5f5f0"
+      aesthetic_note: "Clean, clinical. Good contrast for silkscreen."
+    - id: orange
+      name: "Orange"
+      hex: "#e05500"
+      aesthetic_note: "Highly distinctive. Teenage Engineering signature."
+    - id: blue
+      name: "Blue"
+      hex: "#0055aa"
+      aesthetic_note: "Popular for Arduino-style maker boards."
+    - id: red
+      name: "Red"
+      hex: "#cc2200"
+    - id: purple
+      name: "Purple"
+      hex: "#6600cc"
+    - id: none_exposed
+      name: "Bare copper / exposed"
+      hex: "#b87333"
+      aesthetic_note: "Raw oxidized copper. Brutalist, industrial."
+
+  surface_finish:
+    - id: enig
+      name: "ENIG (Electroless Nickel Immersion Gold)"
+      description: "Flat, gold-tone pads. Shelf life 12 months. Best for fine-pitch SMD."
+      cost_tier: 3
+    - id: hasl
+      name: "HASL"
+      description: "Hot air solder leveled. Lowest cost. Not flat."
+      cost_tier: 1
+    - id: hasl_leadfree
+      name: "HASL Lead-Free"
+      cost_tier: 1
+    - id: osp
+      name: "OSP (Organic Solderability Preservative)"
+      description: "Flat copper-tone. Single reflow only. Low cost."
+      cost_tier: 1
+    - id: immersion_silver
+      name: "Immersion Silver"
+      description: "Flat, bright silver. Good for RF. 6-month shelf life."
+      cost_tier: 2
+    - id: hard_gold
+      name: "Hard Gold"
+      description: "Connector fingers, edge connectors. Extremely durable."
+      cost_tier: 5
+
+enclosure:
+  materials:
+    - id: aluminum_6061
+      name: "Aluminum 6061-T6"
+      description: "Machinable, anodizable. Dyson / TE standard. CNC mill."
+      density_g_cm3: 2.7
+      cost_tier: 3
+      processes: [cnc_mill, anodize, bead_blast, brush]
+      blender_material: metal_aluminum
+    - id: aluminum_7075
+      name: "Aluminum 7075-T6"
+      description: "Higher strength than 6061. Aerospace. CNC only."
+      density_g_cm3: 2.81
+      cost_tier: 4
+      processes: [cnc_mill, anodize, bead_blast]
+      blender_material: metal_aluminum_7075
+    - id: acrylic_clear
+      name: "Clear Acrylic (PMMA)"
+      description: "Laser-cut or CNC. Shows PCB internals — TE aesthetic."
+      density_g_cm3: 1.19
+      cost_tier: 1
+      processes: [laser_cut, cnc_mill, polish]
+      blender_material: acrylic_clear
+    - id: acrylic_black
+      name: "Black Acrylic"
+      description: "Sleek, opaque. Laser etchable for markings."
+      density_g_cm3: 1.19
+      cost_tier: 1
+      processes: [laser_cut, cnc_mill, laser_engrave]
+      blender_material: acrylic_black
+    - id: abs
+      name: "ABS Plastic"
+      description: "Injection mold or FDM print. Low cost at volume."
+      density_g_cm3: 1.05
+      cost_tier: 1
+      processes: [injection_mold, fdm_print, paint]
+      blender_material: plastic_abs
+    - id: polycarbonate
+      name: "Polycarbonate (PC)"
+      description: "Impact resistant, slight transparency. EV charging housings."
+      density_g_cm3: 1.2
+      cost_tier: 2
+      processes: [injection_mold, cnc_mill]
+      blender_material: plastic_pc
+    - id: stainless_304
+      name: "Stainless Steel 304"
+      description: "Laser cut panels, premium knobs. High mass. Very Dyson."
+      density_g_cm3: 8.0
+      cost_tier: 4
+      processes: [laser_cut, cnc_mill, brush, electropolish]
+      blender_material: metal_stainless
+    - id: carbon_fiber
+      name: "Carbon Fiber (CF Prepreg)"
+      description: "Ultra-premium. CNC routed. DJI / racing drone aesthetic."
+      density_g_cm3: 1.6
+      cost_tier: 5
+      processes: [cnc_mill]
+      blender_material: carbon_fiber
+
+  finishes:
+    - id: anodize_natural
+      name: "Anodized Natural (Silver)"
+      hex: "#c0c0b8"
+      applies_to: [aluminum_6061, aluminum_7075]
+    - id: anodize_black
+      name: "Anodized Black"
+      hex: "#1a1a1a"
+      applies_to: [aluminum_6061, aluminum_7075]
+    - id: anodize_space_grey
+      name: "Anodized Space Grey"
+      hex: "#4a4a4a"
+      applies_to: [aluminum_6061, aluminum_7075]
+    - id: anodize_orange
+      name: "Anodized Orange"
+      hex: "#e05500"
+      applies_to: [aluminum_6061, aluminum_7075]
+    - id: anodize_gold
+      name: "Anodized Gold"
+      hex: "#c8a000"
+      applies_to: [aluminum_6061, aluminum_7075]
+    - id: bead_blast
+      name: "Bead Blasted (matte)"
+      applies_to: [aluminum_6061, aluminum_7075, stainless_304]
+    - id: brushed
+      name: "Brushed"
+      applies_to: [aluminum_6061, stainless_304]
+    - id: powder_coat_black
+      name: "Powder Coat Black"
+      hex: "#111111"
+      applies_to: [aluminum_6061, stainless_304]
+    - id: raw
+      name: "Raw / unfinished"
+      applies_to: [acrylic_clear, acrylic_black, abs, polycarbonate, carbon_fiber]
+
+  design_styles:
+    - id: exposed_pcb
+      name: "Exposed PCB"
+      description: "Clear top panel shows PCB artwork. TE OP-1 inspired."
+      requires: [acrylic_clear]
+    - id: brutalist_cutout
+      name: "Brutalist cutout"
+      description: "Large functional cutouts as visual motif. Raw edges."
+    - id: inside_out
+      name: "Inside-out / transparent"
+      description: "Dyson-style: mechanism is the aesthetic. Show everything."
+      requires: [acrylic_clear, polycarbonate]
+    - id: monolithic_block
+      name: "Monolithic block"
+      description: "Single machined billet. No visible seams."
+      requires: [aluminum_6061, aluminum_7075]
+    - id: minimal_slab
+      name: "Minimal slab"
+      description: "Flat, thin. Minimal features. Apple-inspired restraint."

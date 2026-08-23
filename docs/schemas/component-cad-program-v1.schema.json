@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design-studio.local/schemas/component-cad-program-v1.schema.json",
+  "title": "Typed component CAD program",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "units", "author", "component", "source", "symbol_commands", "footprint_commands", "model_commands", "validation"],
+  "properties": {
+    "schema": {"const": "design-studio.component-cad-program/1"},
+    "units": {"const": "mm"},
+    "author": {"const": "gpt-5.6-luna-xhigh"},
+    "component": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mpn", "package_variant"],
+      "properties": {"mpn": {"type": "string", "minLength": 1}, "package_variant": {"type": "string", "minLength": 1}}
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["datasheet_sha256", "inspection_digest", "pages"],
+      "properties": {
+        "datasheet_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "inspection_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "pages": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 1}}
+      }
+    },
+    "symbol_commands": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/command"}},
+    "footprint_commands": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/command"}},
+    "model_commands": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/command"}},
+    "validation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["require_valid_brep", "require_step_roundtrip", "require_pin_pad_map", "max_dimension_error_mm"],
+      "properties": {
+        "require_valid_brep": {"const": true},
+        "require_step_roundtrip": {"const": true},
+        "require_pin_pad_map": {"const": true},
+        "max_dimension_error_mm": {"type": "number", "minimum": 0, "maximum": 0.25}
+      }
+    }
+  },
+  "$defs": {
+    "command": {
+      "type": "object", "additionalProperties": false,
+      "required": ["op", "id", "params", "provenance"],
+      "properties": {
+        "op": {"type": "string", "pattern": "^[a-z][a-z0-9_.]*$"},
+        "id": {"type": "string", "minLength": 1},
+        "params": {"type": "object"},
+        "provenance": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

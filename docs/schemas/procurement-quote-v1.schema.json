@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:procurement-quote:1",
+  "type": "object",
+  "required": ["schema", "mpn", "quantity", "retrieved_utc", "offers", "vendor_errors", "complete"],
+  "properties": {
+    "schema": {"const": "design-studio.procurement-quote/1"},
+    "mpn": {"type": "string", "minLength": 1},
+    "quantity": {"type": "integer", "minimum": 1},
+    "retrieved_utc": {"type": "string", "format": "date-time"},
+    "complete": {"type": "boolean"},
+    "vendor_errors": {"type": "object", "additionalProperties": {"type": "string"}},
+    "offers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["vendor", "mpn", "sku", "stock", "price", "retrieved_utc", "exact_mpn_match"],
+        "properties": {
+          "vendor": {"type": "string"}, "mpn": {"type": "string"},
+          "sku": {"type": "string"}, "stock": {"type": ["integer", "null"]},
+          "price": {"type": ["object", "null"]}, "retrieved_utc": {"type": "string"},
+          "exact_mpn_match": {"const": true}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

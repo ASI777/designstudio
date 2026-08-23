@@ -1,0 +1,483 @@
+{
+    "categories": {
+        "connectivity": {
+            "findings": [
+                {
+                    "code": "NET_ISLAND",
+                    "message": "GND has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 0,
+                        "terminals": 85
+                    },
+                    "severity": "error"
+                }
+            ],
+            "metrics": {
+                "checked_nets": 64,
+                "disconnected_nets": 1
+            },
+            "required": true,
+            "status": "fail"
+        },
+        "drc": {
+            "findings": [
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "C2 to C3 courtyard/body gap 0.000 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 83.45,
+                        "y_mm": 98.4
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "C4 to C31 courtyard/body gap 0.000 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 102.45,
+                        "y_mm": 97.4
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "C13 to C16 courtyard/body gap 0.000 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 124.9,
+                        "y_mm": 105.7
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "C15 to C16 courtyard/body gap 0.000 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 115.45,
+                        "y_mm": 108.4
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 121,
+                        "y_mm": 103.2
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 117.5,
+                        "y_mm": 47.875
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 97.8,
+                        "y_mm": 103.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 19.6,
+                        "y_mm": 63.2
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 75.2,
+                        "y_mm": 63.2
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 19.6,
+                        "y_mm": 82.4
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 123.8,
+                        "y_mm": 58.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 91,
+                        "y_mm": 103
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 124,
+                        "y_mm": 100
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 79.8,
+                        "y_mm": 67
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 79.8,
+                        "y_mm": 86.2
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 78,
+                        "y_mm": 92.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 78.8,
+                        "y_mm": 92.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 109,
+                        "y_mm": 92.2
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 106.4,
+                        "y_mm": 37
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 104,
+                        "y_mm": 27.2
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 104,
+                        "y_mm": 25.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 105,
+                        "y_mm": 37
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 120,
+                        "y_mm": 22.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 114.6,
+                        "y_mm": 106.6
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net GND: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 18.45,
+                        "y_mm": 43.85
+                    },
+                    "severity": "error"
+                }
+            ],
+            "metrics": {
+                "engine": "designcore-native",
+                "errors": 1,
+                "warnings": 24
+            },
+            "required": true,
+            "status": "fail"
+        },
+        "mechanical": {
+            "findings": [
+            ],
+            "metrics": {
+                "components_missing_envelope": 0,
+                "enclosure_evidence_required": false,
+                "enclosure_evidence_valid": false,
+                "mechanical_drc_failures": 0
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "power_integrity": {
+            "findings": [
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "GND limiting branch capacity 0.604 A vs allocated 0.350 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 0.6044325489591941,
+                        "limiting_branch_required_current_a": 0.35,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.7269501398834117,
+                        "net_id": 0,
+                        "required_current_a": 2,
+                        "trace_count": 336
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+3V3 limiting branch capacity 1.447 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.4468880626650513,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.4468880626650513,
+                        "net_id": 1,
+                        "required_current_a": 1,
+                        "trace_count": 97
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VBAT limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 2,
+                        "required_current_a": 1.5,
+                        "trace_count": 17
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VSYS limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 3,
+                        "required_current_a": 1.5,
+                        "trace_count": 55
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+5V_LED_RAW limiting branch capacity 1.651 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.6513583887418626,
+                        "net_id": 4,
+                        "required_current_a": 1,
+                        "trace_count": 29
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+5V_LED limiting branch capacity 1.447 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.4468880626650513,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.4468880626650513,
+                        "net_id": 5,
+                        "required_current_a": 1,
+                        "trace_count": 202
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VBUS limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 6,
+                        "required_current_a": 1.5,
+                        "trace_count": 63
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "LED_BOOST_SW limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 7,
+                        "required_current_a": 1.5,
+                        "trace_count": 2
+                    },
+                    "severity": "info"
+                }
+            ],
+            "metrics": {
+                "failed_power_nets": 0,
+                "specified_power_nets": 8,
+                "temperature_rise_c": 10
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "signal_integrity": {
+            "findings": [
+                {
+                    "code": "SINGLE_ENDED_IMPEDANCE",
+                    "message": "USB_90R predicted 45.10 ohm vs target 45.00 ohm (0.2% error)",
+                    "metrics": {
+                        "class_id": 1,
+                        "method": "closed-form-microstrip-screening",
+                        "predicted_ohm": 45.10107656177557,
+                        "target_ohm": 45,
+                        "tolerance_pct": 10
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DIFFERENTIAL_IMPEDANCE",
+                    "message": "USB_90R predicted 89.27 ohm vs target 90.00 ohm (0.8% error)",
+                    "metrics": {
+                        "class_id": 1,
+                        "method": "closed-form-microstrip-screening",
+                        "predicted_ohm": 89.27154394609208,
+                        "target_ohm": 90,
+                        "tolerance_pct": 10
+                    },
+                    "severity": "info"
+                }
+            ],
+            "metrics": {
+                "failed_targets": 0,
+                "method": "actual-route-screening-plus-closed-form-impedance",
+                "target_classes": 1
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "thermal": {
+            "findings": [
+            ],
+            "metrics": {
+                "missing_constraints": 0,
+                "powered_components": 4,
+                "spacing_failures": 0
+            },
+            "required": true,
+            "status": "pass"
+        }
+    },
+    "constraint_profile": {
+        "assembler": "unassigned",
+        "fabricator": "unassigned",
+        "id": "agent-controller-4layer-v1",
+        "ipc_performance_class": 2,
+        "producibility_level": "B",
+        "source": "project:agent-workflow-controller",
+        "source_revision": "1.0.0"
+    },
+    "generated_utc": "2026-07-19T11:09:36.462Z",
+    "overall_status": "fail",
+    "project": {
+        "document_id": "project:agent-workflow-controller-v1",
+        "file_sha256": "bea4d6ada5fe8dd855b4a9da744adad2eef9f71a0ea180c1cf57d4d9c2ca5950",
+        "revision": 1
+    },
+    "schema": "design-studio.verification/1"
+}

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=DesignStudio
+GenericName=Industrial Product Design Studio
+Comment=Unified mechanical, schematic, PCB and verification workspace
+Exec=@DESIGNSTUDIO_EXECUTABLE@ %f
+Icon=@DESIGNSTUDIO_ICON@
+Terminal=false
+Categories=Development;Engineering;Electronics;
+Keywords=CAD;PCB;Schematic;Mechanical;Verification;Industrial Design;
+StartupNotify=true
+StartupWMClass=DesignStudio
+MimeType=application/x-dsproj;

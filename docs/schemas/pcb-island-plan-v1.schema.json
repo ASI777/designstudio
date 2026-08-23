@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:pcb-island-plan:1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "plan_id", "study_id", "study_digest", "selected_candidate_id", "islands", "interconnects", "approval", "created_utc", "plan_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.pcb-island-plan/1"}, "plan_id": {"$ref": "#/$defs/id"},
+    "study_id": {"$ref": "#/$defs/id"}, "study_digest": {"$ref": "#/$defs/digest"},
+    "selected_candidate_id": {"$ref": "#/$defs/id"},
+    "islands": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/island"}},
+    "interconnects": {"type": "array", "items": {"$ref": "#/$defs/interconnect"}},
+    "approval": {"type": "object", "additionalProperties": false, "required": ["approved_by", "approved_utc", "rationale"], "properties": {
+      "approved_by": {"type": "string", "minLength": 1}, "approved_utc": {"type": "string", "format": "date-time"}, "rationale": {"type": "string", "minLength": 1}}},
+    "created_utc": {"type": "string", "format": "date-time"}, "plan_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "point3": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}], "minItems": 3, "maxItems": 3},
+    "island": {"type": "object", "additionalProperties": false, "required": ["island_id", "kind", "component_ids", "stackup", "transform_mm", "bounds_mm", "mount_points_mm", "connectors", "geometry_digest"], "properties": {
+      "island_id": {"$ref": "#/$defs/id"}, "kind": {"enum": ["rigid", "flex"]},
+      "component_ids": {"type": "array", "items": {"$ref": "#/$defs/id"}, "uniqueItems": true}, "stackup": {"type": "object"},
+      "transform_mm": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "number"}},
+      "bounds_mm": {"type": "object"}, "mount_points_mm": {"type": "array", "items": {"$ref": "#/$defs/point3"}},
+      "connectors": {"type": "array", "items": {"type": "object"}}, "geometry_digest": {"$ref": "#/$defs/digest"}
+    }},
+    "interconnect": {"type": "object", "additionalProperties": false,
+      "required": ["interconnect_id", "kind", "net_id", "island_ids", "endpoint_component_ids", "connector_pin_map", "route_length_mm", "minimum_bend_radius_mm", "estimated_voltage_drop_v", "signal_integrity_status", "route_geometry_digest", "evidence_digest"],
+      "properties": {
+        "interconnect_id": {"$ref": "#/$defs/id"}, "kind": {"enum": ["flex", "harness"]}, "net_id": {"type": "string", "minLength": 1},
+        "island_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "endpoint_component_ids": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/id"}},
+        "connector_pin_map": {"type": "array", "minItems": 2, "items": {"type": "object", "required": ["island_id", "connector_id", "pin"], "properties": {"island_id": {"$ref": "#/$defs/id"}, "connector_id": {"$ref": "#/$defs/id"}, "pin": {"type": "string", "minLength": 1}}}},
+        "route_length_mm": {"type": "number", "minimum": 0}, "minimum_bend_radius_mm": {"type": "number", "minimum": 0},
+        "estimated_voltage_drop_v": {"type": "number", "minimum": 0}, "signal_integrity_status": {"enum": ["pass", "not_applicable"]},
+        "route_geometry_digest": {"$ref": "#/$defs/digest"}, "evidence_digest": {"$ref": "#/$defs/digest"}
+      }
+    }
+  }
+}

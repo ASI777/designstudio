@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:physical-test-plan:1",
+  "title": "DesignStudio physical candidate test plan v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "plan_id", "session_id", "session", "created_utc", "observer", "synthetic_fixture", "candidates", "participant_requirements", "metrics", "provenance", "plan_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.physical-test-plan/1"},
+    "plan_id": {"$ref": "#/$defs/id"},
+    "session_id": {"$ref": "#/$defs/id"},
+    "session": {"$ref": "#/$defs/artifact"},
+    "created_utc": {"type": "string", "format": "date-time"},
+    "observer": {"type": "string", "minLength": 1},
+    "synthetic_fixture": {"type": "boolean"},
+    "candidates": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/candidate"}},
+    "participant_requirements": {"type": "object", "additionalProperties": false, "required": ["required_size_groups", "minimum_per_group", "adult_participants", "each_tests_all_candidates", "counterbalanced_order"], "properties": {"required_size_groups": {"const": ["small", "medium", "large"]}, "minimum_per_group": {"type": "integer", "minimum": 1}, "adult_participants": {"const": true}, "each_tests_all_candidates": {"const": true}, "counterbalanced_order": {"const": true}}},
+    "metrics": {"const": ["comfort", "finger_reach", "pressure_points", "wrist_angle", "slip_resistance", "preference"]},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "plan_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "bytes"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/digest"}, "bytes": {"type": "integer", "minimum": 1}}},
+    "candidate": {"type": "object", "additionalProperties": false, "required": ["candidate_id", "label", "semantic_id", "candidate_fcstd", "candidate_brep_digest", "grip_region", "grip_buck", "material", "print_settings"], "properties": {"candidate_id": {"$ref": "#/$defs/id"}, "label": {"enum": ["compact", "balanced", "comfort"]}, "semantic_id": {"$ref": "#/$defs/id"}, "candidate_fcstd": {"$ref": "#/$defs/artifact"}, "candidate_brep_digest": {"$ref": "#/$defs/digest"}, "grip_region": {"type": "object", "additionalProperties": false, "required": ["method", "semantic_ids", "section_boxes_mm", "confirmed_by_user"], "properties": {"method": {"enum": ["semantic_region", "user_confirmed_section_planes"]}, "semantic_ids": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/id"}}, "section_boxes_mm": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["min_mm", "max_mm"], "properties": {"min_mm": {"$ref": "#/$defs/point"}, "max_mm": {"$ref": "#/$defs/point"}}}}, "confirmed_by_user": {"const": true}}}, "grip_buck": {"type": "object", "additionalProperties": false, "required": ["fcstd", "step", "stl", "brep_digest"], "properties": {"fcstd": {"$ref": "#/$defs/artifact"}, "step": {"$ref": "#/$defs/artifact"}, "stl": {"$ref": "#/$defs/artifact"}, "brep_digest": {"$ref": "#/$defs/digest"}}}, "material": {"type": "string", "minLength": 1}, "print_settings": {"type": "object", "additionalProperties": false, "required": ["process", "material", "nozzle_mm", "layer_height_mm", "wall_mm", "infill_percent", "orientation"], "properties": {"process": {"const": "FDM"}, "material": {"type": "string", "minLength": 1}, "nozzle_mm": {"type": "number", "exclusiveMinimum": 0}, "layer_height_mm": {"type": "number", "exclusiveMinimum": 0}, "wall_mm": {"type": "number", "minimum": 2}, "infill_percent": {"type": "number", "minimum": 0, "maximum": 100}, "orientation": {"type": "string", "minLength": 1}}}}},
+    "point": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["created_by", "created_utc", "source", "synthetic_fixture"], "properties": {"created_by": {"type": "string", "minLength": 1}, "created_utc": {"type": "string", "format": "date-time"}, "source": {"type": "string", "minLength": 1}, "synthetic_fixture": {"type": "boolean"}}}
+  }
+}

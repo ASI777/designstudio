@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:pcb-placement:1",
+  "title": "DesignStudio footprint placement constraints",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "locked": {"type": "boolean", "default": false},
+    "functional_group": {"type": "string", "maxLength": 128},
+    "edge_anchor": {"enum": ["", "none", "left", "right", "top", "bottom"]},
+    "thermal_power_w": {"type": "number", "minimum": 0},
+    "thermal_clearance_mm": {"type": "number", "minimum": 0},
+    "test_access_required": {"type": "boolean", "default": false},
+    "test_access_halo_mm": {"type": "number", "minimum": 0}
+  }
+}

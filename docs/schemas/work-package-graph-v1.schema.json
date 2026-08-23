@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/work-package-graph-v1.schema.json",
+  "title": "DesignStudio controller work-package dependency graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "graph_id", "product_id", "product_digest", "runnable", "approval_gate", "packages", "graph_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.work-package-graph/1"},
+    "graph_id": {"type": "string", "pattern": "^wpg-[0-9a-f]{16}$"},
+    "product_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"},
+    "product_digest": {"$ref": "#/$defs/digest"},
+    "runnable": {"const": false},
+    "approval_gate": {"const": "architecture"},
+    "packages": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        {"$ref": "#/$defs/component"},
+        {"$ref": "#/$defs/schematic"},
+        {"$ref": "#/$defs/pcb"},
+        {"$ref": "#/$defs/freecad"},
+        {"$ref": "#/$defs/integration"},
+        {"$ref": "#/$defs/verification"}
+      ],
+      "items": false
+    },
+    "graph_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "base": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "engine_id", "depends_on", "input_refs", "budget_units"],
+      "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string", "minLength": 1, "maxLength": 120},
+        "engine_id": {"type": "string"},
+        "depends_on": {"type": "array"},
+        "input_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "budget_units": {"type": "integer", "minimum": 1, "maximum": 100000}
+      }
+    },
+    "component": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"id": {"const": "component-evidence-cad"}, "engine_id": {"const": "design-studio.component-workflow/1"}, "depends_on": {"const": []}}}]},
+    "schematic": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"id": {"const": "schematic"}, "engine_id": {"const": "design-studio.incremental-analysis/1"}, "depends_on": {"const": ["component-evidence-cad"]}}}]},
+    "pcb": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"id": {"const": "pcb"}, "engine_id": {"const": "designcore-native"}, "depends_on": {"const": ["schematic"]}}}]},
+    "freecad": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"id": {"const": "freecad"}, "engine_id": {"const": "freecad"}, "depends_on": {"const": ["component-evidence-cad", "pcb"]}}}]},
+    "integration": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"id": {"const": "integration"}, "engine_id": {"const": "design-studio.integration-sandbox/1"}, "depends_on": {"const": ["schematic", "pcb", "freecad"]}}}]},
+    "verification": {"allOf": [{"$ref": "#/$defs/base"}, {"properties": {"id": {"const": "verification"}, "engine_id": {"const": "design-studio.verification/1"}, "depends_on": {"const": ["integration"]}}}]}
+  }
+}

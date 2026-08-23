@@ -1,0 +1,81 @@
+services:
+  vllm:
+    image: vllm/vllm-openai-rocm:v0.23.0@sha256:3813e31cc3ab56f71ba83a72da77a84f3c75030e54c9c316951a99317b818ce4
+    command:
+      - --model
+      - ${DS_AI_MODEL:-Qwen/Qwen3.5-35B-A3B}
+      - --revision
+      - ${DS_AI_MODEL_REVISION:?Set DS_AI_MODEL_REVISION to an immutable commit}
+      - --served-model-name
+      - ${DS_AI_MODEL:-Qwen/Qwen3.5-35B-A3B}
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8001"
+      - --tensor-parallel-size
+      - "1"
+      - --gpu-memory-utilization
+      - ${DS_VLLM_GPU_MEMORY_UTILIZATION:-0.92}
+      - --max-model-len
+      - "65536"
+      - --enable-prefix-caching
+      - --prefix-caching-hash-algo
+      - sha256_cbor
+    environment:
+      HF_TOKEN: ${HF_TOKEN:-}
+    ports:
+      - 127.0.0.1:${DS_VLLM_HOST_PORT:-18001}:8001
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+      - "992"
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+    ipc: host
+    volumes:
+      - huggingface-cache:/root/.cache/huggingface
+    restart: unless-stopped
+
+  support-optimizer:
+    build:
+      context: ../..
+      dockerfile: cloud/support-optimizer-amd/Dockerfile.rocm
+    environment:
+      DS_SUPPORT_MOCK: "0"
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+    ipc: host
+    restart: unless-stopped
+
+  gateway:
+    build:
+      context: ../../services/ai-gateway
+      dockerfile: Dockerfile.rocm
+    environment:
+      DS_AI_MOCK: "0"
+      DS_AI_MODEL: ${DS_AI_MODEL:-Qwen/Qwen3.5-35B-A3B}
+      DS_VLLM_URL: http://vllm:8001
+      DS_VLLM_ALLOW_REMOTE: "1"
+      DS_SUPPORT_WORKER_URL: http://support-optimizer:8002
+      DS_SUPPORT_ALLOW_REMOTE: "1"
+      DS_CACHE_SALT_KEY: ${DS_CACHE_SALT_KEY:?Set a random secret of at least 32 bytes}
+    ports:
+      - 127.0.0.1:${DS_GATEWAY_HOST_PORT:-18000}:8000
+    depends_on:
+      - vllm
+      - support-optimizer
+    restart: unless-stopped
+
+volumes:
+  huggingface-cache:

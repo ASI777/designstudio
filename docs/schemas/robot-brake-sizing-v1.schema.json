@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/robot-brake-sizing-v1.schema.json",
+  "title": "DesignStudio robot static-holding brake sizing",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product_id", "requirements_sha256", "architecture",
+    "dynamic_stopping_policy", "maximum_engagement_time_ms", "holding_load_factor",
+    "minimum_hot_torque_retention", "gravity_uncertainty_budget",
+    "gravity_uncertainty_factor", "minimum_non_gravity_holding_fraction", "joints",
+    "maximum_required_motor_side_brake_rating_nm", "sizing_result",
+    "component_selection_result", "dynamic_engagement_result",
+    "required_component_evidence", "verification_tests"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.robot-brake-sizing/1"},
+    "product_id": {"type": "string", "minLength": 1},
+    "requirements_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "architecture": {"const": "spring_applied_power_released_motor_side_brake_per_joint"},
+    "dynamic_stopping_policy": {"const": "controlled_drive_stop_before_static_brake_engagement"},
+    "maximum_engagement_time_ms": {"type": "number", "exclusiveMinimum": 0},
+    "holding_load_factor": {"type": "number", "minimum": 1},
+    "minimum_hot_torque_retention": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+    "gravity_uncertainty_budget": {
+      "type": "object", "additionalProperties": false,
+      "required": ["load_uncertainty_factor", "model_uncertainty_factor", "consequence_factor"],
+      "properties": {
+        "load_uncertainty_factor": {"type": "number", "minimum": 1},
+        "model_uncertainty_factor": {"type": "number", "minimum": 1},
+        "consequence_factor": {"type": "number", "minimum": 1}
+      }
+    },
+    "gravity_uncertainty_factor": {"type": "number", "minimum": 1},
+    "minimum_non_gravity_holding_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+    "joints": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/joint"}
+    },
+    "maximum_required_motor_side_brake_rating_nm": {"$ref": "#/$defs/nonnegative"},
+    "sizing_result": {"const": "requirements_computed"},
+    "component_selection_result": {"const": "incomplete_component_bindings_missing"},
+    "dynamic_engagement_result": {"const": "incomplete_residual_speed_and_inertia_missing"},
+    "required_component_evidence": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "verification_tests": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "nonnegative": {"type": "number", "minimum": 0},
+    "positive": {"type": "number", "exclusiveMinimum": 0},
+    "nullableString": {"type": ["string", "null"]},
+    "nullablePositive": {"type": ["number", "null"], "exclusiveMinimum": 0},
+    "joint": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "joint_id", "gravity_coupling_basis", "maximum_downstream_mass_moment_kg_m",
+        "unfactored_gravity_torque_nm", "factored_gravity_torque_nm",
+        "non_gravity_disturbance_floor_nm", "governing_case",
+        "required_hot_output_holding_torque_nm", "minimum_cold_rated_output_equivalent_nm",
+        "gear_ratio", "minimum_brake_path_efficiency",
+        "minimum_motor_side_brake_rating_nm", "selected_brake_manufacturer",
+        "selected_brake_part_number", "selected_brake_cold_rating_nm", "selection_status"
+      ],
+      "properties": {
+        "joint_id": {"type": "string", "pattern": "^J[1-7]$"},
+        "gravity_coupling_basis": {
+          "enum": ["fixed_vertical_base_axis_zero", "all_horizontal_serial_chain_upper_bound"]
+        },
+        "maximum_downstream_mass_moment_kg_m": {"$ref": "#/$defs/nonnegative"},
+        "unfactored_gravity_torque_nm": {"$ref": "#/$defs/nonnegative"},
+        "factored_gravity_torque_nm": {"$ref": "#/$defs/nonnegative"},
+        "non_gravity_disturbance_floor_nm": {"$ref": "#/$defs/nonnegative"},
+        "governing_case": {
+          "enum": ["all_horizontal_gravity_upper_bound", "non_gravity_disturbance_floor"]
+        },
+        "required_hot_output_holding_torque_nm": {"$ref": "#/$defs/nonnegative"},
+        "minimum_cold_rated_output_equivalent_nm": {"$ref": "#/$defs/nonnegative"},
+        "gear_ratio": {"$ref": "#/$defs/positive"},
+        "minimum_brake_path_efficiency": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "minimum_motor_side_brake_rating_nm": {"$ref": "#/$defs/nonnegative"},
+        "selected_brake_manufacturer": {"$ref": "#/$defs/nullableString"},
+        "selected_brake_part_number": {"$ref": "#/$defs/nullableString"},
+        "selected_brake_cold_rating_nm": {"$ref": "#/$defs/nullablePositive"},
+        "selection_status": {"const": "component_binding_required"}
+      }
+    }
+  }
+}

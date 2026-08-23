@@ -1,0 +1,101 @@
+{
+  "component_models": [
+    {
+      "mpn": "ESP32-S3-WROOM-1-N8R8",
+      "status": "pass",
+      "step_sha256": "83392ae8cd6072cd9cfa8acb2454dd3486ab447245a16d4be18766a7cbfc69e7"
+    },
+    {
+      "mpn": "MX2A-H1NB",
+      "status": "pass",
+      "step_sha256": "3473d43133900c2e247ba9c694d323c3383bf86641055441333271da6aa44528"
+    },
+    {
+      "mpn": "PEC12R-4220F-S0024",
+      "status": "pass",
+      "step_sha256": "8621fd57fb9c702b423d124b61fc0c7172ce43f2944ba9d816210e6dd8dd8bde"
+    },
+    {
+      "mpn": "34-00015",
+      "status": "pass",
+      "step_sha256": "ef2c36681f3a6d3bfde664613aa47aab8c6d845e65e1edac909e347f042619a4"
+    },
+    {
+      "mpn": "2765",
+      "status": "pass",
+      "step_sha256": "15adb0a046832c299ad00e504153490977de878c028b5781c6db2ee1dfdf0e99"
+    },
+    {
+      "mpn": "USB4085-GF-A",
+      "status": "pass",
+      "step_sha256": "412688634d318e5ac6c017d0ba46f640ae56a1bd4b902506414044a21ea94000"
+    },
+    {
+      "mpn": "TPD4E02B04DQAR",
+      "status": "pass",
+      "step_sha256": "d7a327db79bfce339aa04cd6b502c328a28c82f485220ec877e34ccc05cfe1d9"
+    },
+    {
+      "mpn": "BQ24074RGTR",
+      "status": "pass",
+      "step_sha256": "c52cf16b7beb2131129ab023c62eee5d3ccf4659c0b4b2f8376a34ef68692d01"
+    },
+    {
+      "mpn": "TPS63031DSKR",
+      "status": "pass",
+      "step_sha256": "9adb7a86fde659bea5a88991203a0882f5a908d1af299ba07e1df67a52b96543"
+    },
+    {
+      "mpn": "TPS22918DBVR",
+      "status": "pass",
+      "step_sha256": "1fa0dae57939889ec6c7229e335fcbd8defc77fe496945b9f632d81c4b0162d9"
+    },
+    {
+      "mpn": "1N4148W-7-F",
+      "status": "pass",
+      "step_sha256": "0bbb86245eb2d84b57987d0c9a45a8b655950883a6eabbbfbfaaaa5d194de8d5"
+    },
+    {
+      "mpn": "IN-PI20TBT5R5G5B",
+      "status": "pass",
+      "step_sha256": "0a07305f71f033d80953ae6990a213c134e68e53bf984d5cb25d3f65a517fccd"
+    },
+    {
+      "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+      "status": "pass",
+      "step_sha256": "3b4e2542192ce3fefe41c175a1e53b28c329b47270c22040be47d16554415ddd"
+    },
+    {
+      "mpn": "RC0603FR-0710KL",
+      "status": "pass",
+      "step_sha256": "4c49d6c32401cd81ddfe21eaa0ff81f76a04ff35a6e7136f6f44019552639cd9"
+    },
+    {
+      "mpn": "GRM32ER61E226ME15L",
+      "status": "pass",
+      "step_sha256": "e515a35cd15adbaf0c330b688072d671aab43bd43821eb399890a921d7c69af7"
+    },
+    {
+      "mpn": "XFL4020-152MEC",
+      "status": "pass",
+      "step_sha256": "223157b5de0f90158e67aabfa8590f1af5eafce71be7e539a675418497e4685f"
+    }
+  ],
+  "erc_sha256": "2b0602dfc13fbbc6511946b2c65ce3f276c705273f44f89d8aa1f02448f8b8c8",
+  "metrics": {
+    "drc_errors": 0,
+    "drc_warnings": 3,
+    "erc_errors": 0,
+    "footprints": 74,
+    "nets": 60,
+    "symbols": 74,
+    "test_access_points": 14,
+    "traces": 2461,
+    "vias": 216
+  },
+  "project_sha256": "dbf282c99f89d84fb4a865ec1f6fd8dd9bb8e1fdbcb3b1b758db0edffdd9a973",
+  "schema": "design-studio.agent-controller-acceptance/1",
+  "status": "pass",
+  "v3_sha256": "68462662e8bff023c089be80f98d7d7a9a9ff99771755412585778dc29279c28",
+  "verification_sha256": "fb4bcdedc0e35dc8faa22376611d2a2ef966cc57ecba216604475bdaadbc72bc"
+}

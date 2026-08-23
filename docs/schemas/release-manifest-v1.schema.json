@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:release-manifest:1",
+  "type": "object",
+  "required": ["schema", "project", "verification", "electrical_analysis", "components", "artifacts", "approvals", "compliance_reviews", "signature"],
+  "allOf": [{
+    "if": {"required": ["distributed_analysis"]},
+    "then": {"required": ["board_projects", "distributed_approvals"]}
+  }],
+  "properties": {
+    "schema": {"const": "design-studio.release-manifest/1"},
+    "project": {"type": "object", "required": ["document_id", "revision", "sha256"]},
+    "verification": {"type": "object", "required": ["path", "sha256"]},
+    "electrical_analysis": {"type": "object", "required": ["path", "sha256"]},
+    "distributed_analysis": {"type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"], "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }},
+    "board_projects": {"type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"type": "object", "additionalProperties": false,
+        "required": ["board_id", "path", "sha256"], "properties": {
+          "board_id": {"type": "string", "pattern": "^(coordinator|joint-[1-6])$"},
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }}},
+    "distributed_approvals": {"type": "array", "minItems": 32,
+      "items": {"type": "object", "additionalProperties": false,
+        "required": ["scope", "role", "approved", "reviewer", "utc", "project_sha256", "analysis_sha256"],
+        "properties": {
+          "scope": {"type": "string", "pattern": "^(system|coordinator|joint-[1-6])$"},
+          "role": {"enum": ["engineering_review", "electrical_review", "mechanical_review", "manufacturing_review"]},
+          "approved": {"const": true}, "reviewer": {"type": "string", "minLength": 1},
+          "utc": {"type": "string", "format": "date-time"},
+          "project_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "analysis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }}},
+    "incomplete_acknowledgements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["domain", "category", "acknowledged", "reviewer", "rationale", "utc"],
+        "properties": {
+          "domain": {"enum": ["verification", "electrical"]},
+          "category": {"type": "string", "minLength": 1},
+          "acknowledged": {"const": true},
+          "reviewer": {"type": "string", "minLength": 1},
+          "rationale": {"type": "string", "minLength": 8},
+          "utc": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "components": {"type": "array", "items": {"type": "object", "required": ["ref", "mpn", "datasheet_path", "quote_path", "quote_sha256"]}},
+    "artifacts": {"type": "array", "items": {"type": "object", "required": ["role", "path", "sha256", "generator", "generator_version"]}},
+    "approvals": {"type": "array", "items": {"type": "object", "required": ["role", "approved", "reviewer", "utc", "project_sha256", "verification_sha256"]}},
+    "compliance_reviews": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["subject", "status", "reviewer", "distribution_authorized", "evidence_path", "evidence_sha256", "utc"],
+        "properties": {
+          "subject": {"enum": ["freecad-distribution", "hunyuan3d-omni-model"]},
+          "status": {"const": "approved"},
+          "reviewer": {"type": "string", "minLength": 1},
+          "distribution_authorized": {"const": true},
+          "evidence_path": {"type": "string", "minLength": 1},
+          "evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "utc": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "signature": {
+      "type": "object", "additionalProperties": false,
+      "required": ["algorithm", "key_id", "public_key_base64", "signed_digest", "signature_base64"],
+      "properties": {
+        "algorithm": {"const": "ed25519"},
+        "key_id": {"type": "string", "pattern": "^ed25519:[0-9a-f]{24}$"},
+        "public_key_base64": {"type": "string"},
+        "signed_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "signature_base64": {"type": "string"}
+      }
+    }
+  },
+  "additionalProperties": false
+}

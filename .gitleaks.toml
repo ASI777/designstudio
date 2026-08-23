@@ -1,0 +1,12 @@
+title = "DesignStudio secret scanning"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "The support smoke request uses a replay-safe idempotency identifier, not a credential."
+targetRules = ["generic-api-key"]
+condition = "AND"
+regexTarget = "line"
+paths = ['''(?:^|/)cloud/mi300x-designstudio/support-smoke-request\.json$''']
+regexes = ['''"idempotency_key"\s*:''']

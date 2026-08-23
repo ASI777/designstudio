@@ -1,0 +1,364 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# ARCHETYPE: Robotic Arm Controller
+# Research artifact — the tagged, weighted dependency graph (spec tree).
+# Not wired into the app. Conforms to SPEC_TREE_SCHEMA.md.
+#
+# Reading the slots:
+#   variance_weight  → ask-order key (1.0 asked first, 0.0 never asked / auto)
+#   depends_on       → slot is dormant until condition met (cascade gate)
+#   unlocks / locks  → what answering this slot opens / prunes downstream
+#   fill_hints       → phrases intent_agent matches to pre-fill (the density lever)
+#   default          → applied on skip; default_silent=true → never even shown as Q
+# ─────────────────────────────────────────────────────────────────────────────
+
+archetype:
+  id: robotic_arm
+  name: Robotic Arm Controller
+  summary: >
+    Multi-axis motor controller for articulated robotic arms: motor drive,
+    feedback, motion processor, industrial comms, and protection.
+  match_keywords: [robotic arm, robot arm, manipulator, articulated, joint controller,
+                   servo arm, 6-axis, cobot, actuator controller]
+  base_complexity: 0.85         # high — many independent design-critical decisions
+
+slots:
+
+  # ── TIER 1 — the highest-variance forks (asked first, prune the most) ────────
+
+  - id: motor_type
+    header: Motor type
+    question: What kind of motors drive the joints?
+    type: single
+    variance_weight: 1.00        # changes the ENTIRE power topology — always first
+    options:
+      - {id: brushed,  label: Brushed DC,  detail: "H-bridge per axis, simplest",
+         cost_delta: 3.10,  layer_impact: 0, locks: [control_method, current_sensing, commutation]}
+      - {id: bldc,     label: BLDC,        detail: "3-phase, needs gate driver + feedback", recommended: true,
+         cost_delta: 6.40,  layer_impact: 0, unlocks: [control_method, current_sensing, feedback_type]}
+      - {id: stepper,  label: Stepper,     detail: "open-loop position, no feedback needed",
+         cost_delta: 4.20,  layer_impact: 0, locks: [control_method, current_sensing, feedback_type]}
+      - {id: servo_rc, label: Servo (PWM), detail: "hobby servos, integrated driver",
+         cost_delta: 1.80,  layer_impact: 0, locks: [control_method, current_sensing, gate_driver_class, feedback_type]}
+    default: bldc
+    fill_hints:
+      bldc:    [bldc, brushless, foc, field oriented]
+      stepper: [stepper, nema, step motor]
+      brushed: [brushed dc, brushed motor, dc motor]
+      servo_rc:[hobby servo, rc servo, pwm servo]
+    adds_components:
+      bldc:    [{role: gate_driver, search_query: "DRV8353 3-phase smart gate driver", per_axis: true}]
+      brushed: [{role: hbridge, search_query: "DRV8701 H-bridge gate driver", per_axis: true}]
+      stepper: [{role: stepper_driver, search_query: "TMC2209 stepper driver", per_axis: true}]
+      servo_rc:[]
+
+  - id: axis_count
+    header: Axes
+    question: How many joints/axes does the arm have?
+    type: scalar
+    variance_weight: 0.95        # multiplies every per-axis component
+    options:
+      - {id: three, label: "3", cost_mult: 3}
+      - {id: four,  label: "4", cost_mult: 4}
+      - {id: six,   label: "6", cost_mult: 6, recommended: true}
+      - {id: seven, label: "7+", cost_mult: 7}
+    default: six
+    fill_hints:
+      three: ["3-axis", "3 axis", "three axis", "3 joint"]
+      four:  ["4-axis", "4 axis", "four axis", "scara"]
+      six:   ["6-axis", "6 axis", "six axis", "6 joint", "6 dof"]
+      seven: ["7-axis", "7 axis", "redundant", "7 dof"]
+    note: "cost_mult scales every slot tagged per_axis"
+
+  - id: current_per_axis
+    header: Current/axis
+    question: Peak current per motor channel?
+    type: single
+    variance_weight: 0.90        # drives FET, copper weight, thermal, gate driver
+    options:
+      - {id: low,   label: "< 2 A",    detail: "integrated FETs, no externals",
+         cost_delta: 0,    layer_impact: 0, copper_oz: 1, implies: {copper_weight: oz1}}
+      - {id: mid,   label: "2–10 A",   detail: "external 40 V MOSFETs", recommended: true,
+         cost_delta: 4.80, layer_impact: 0, copper_oz: 1, unlocks: [mosfet_class]}
+      - {id: high,  label: "10–30 A",  detail: "2 oz copper + thermal vias",
+         cost_delta: 11.20, layer_impact: 2, copper_oz: 2, unlocks: [mosfet_class, thermal_strategy], implies: {copper_weight: oz2}}
+      - {id: vhigh, label: "> 30 A",   detail: "3 oz copper, heavy thermal, busbars",
+         cost_delta: 22.0,  layer_impact: 2, copper_oz: 3, unlocks: [mosfet_class, thermal_strategy], implies: {copper_weight: oz3}}
+    default: mid
+    fill_hints:
+      low:   ["<2a", "1a", "low current", "small motor"]
+      mid:   ["5a", "10a", "2-10a", "moderate"]
+      high:  ["15a", "20a", "10-30a", "high current"]
+      vhigh: ["40a", "50a", ">30a", "high power"]
+
+  - id: control_processor
+    header: Processor
+    question: What runs the motion control?
+    type: single
+    variance_weight: 0.85
+    options:
+      - {id: mcu_stm32, label: "MCU (STM32)", detail: "single-chip, up to ~6 FOC loops", recommended: true,
+         cost_delta: 9.50, layer_impact: 0, locks: [ddr_config, boot_flash]}
+      - {id: soc_fpga,  label: "SoC + FPGA",  detail: "many axes, hard real-time, needs DDR",
+         cost_delta: 48.0, layer_impact: 2, unlocks: [ddr_config, boot_flash]}
+      - {id: dsp,       label: "DSP (C2000)", detail: "dedicated motor-control DSP",
+         cost_delta: 14.0, layer_impact: 0, locks: [ddr_config, boot_flash]}
+    default: mcu_stm32
+    fill_hints:
+      mcu_stm32: [stm32, mcu, microcontroller, single chip]
+      soc_fpga:  [fpga, soc, polarfire, zynq, real-time, ethercat master]
+      dsp:       [dsp, c2000, tms320]
+    adds_components:
+      mcu_stm32: [{role: mcu, search_query: "STM32H743 LQFP-100"}]
+      soc_fpga:  [{role: soc, search_query: "PolarFire SoC FPGA"},
+                  {role: ddr, search_query: "DDR4 SDRAM x8"}]
+      dsp:       [{role: dsp, search_query: "TMS320F28379 motor control DSP"}]
+
+  - id: feedback_type
+    header: Feedback
+    question: What position/velocity feedback do the motors use?
+    type: single
+    variance_weight: 0.80
+    depends_on: [{slot: motor_type, in: [bldc, brushed]}]   # steppers/servos skip this
+    options:
+      - {id: none,      label: None,           detail: "open-loop", cost_delta: 0,
+         locks: [encoder_interface]}
+      - {id: hall,      label: Hall sensors,   detail: "6-step commutation", cost_delta: 1.20,
+         locks: [encoder_interface]}
+      - {id: encoder_inc, label: Incremental encoder, detail: "ABZ quadrature", recommended: true,
+         cost_delta: 3.40, unlocks: [encoder_interface]}
+      - {id: encoder_abs, label: Absolute encoder, detail: "SSI/BiSS, no homing", cost_delta: 6.80,
+         unlocks: [encoder_interface]}
+      - {id: resolver,  label: Resolver,       detail: "harsh-environment, needs RDC", cost_delta: 9.0,
+         unlocks: [encoder_interface]}
+    default: encoder_inc
+    fill_hints:
+      encoder_inc: [incremental, abz, quadrature, encoder]
+      encoder_abs: [absolute encoder, ssi, biss, multiturn]
+      resolver:    [resolver, rdc]
+      hall:        [hall sensor, hall effect, 6-step]
+      none:        [open loop, no feedback, sensorless]
+    adds_components:
+      encoder_inc: [{role: line_receiver, search_query: "AM26LV32 quad differential receiver", per_axis_group: true}]
+      resolver:    [{role: rdc, search_query: "AD2S1210 resolver-to-digital"}]
+
+  # ── TIER 2 — opened by Tier-1 answers (cascade slots) ────────────────────────
+
+  - id: control_method
+    header: Commutation
+    question: FOC or trapezoidal commutation?
+    type: single
+    variance_weight: 0.70
+    depends_on: [{slot: motor_type, in: [bldc]}]
+    options:
+      - {id: foc,    label: FOC,         detail: "smooth, efficient, needs current sense", recommended: true,
+         unlocks: [current_sensing]}
+      - {id: trap,   label: Trapezoidal, detail: "simple 6-step, Hall-based",
+         locks: [current_sensing]}
+    default: foc
+    fill_hints:
+      foc:  [foc, field oriented, vector control]
+      trap: [trapezoidal, 6-step, six step, block commutation]
+
+  - id: current_sensing
+    header: Current sense
+    question: How is phase current measured (required for FOC)?
+    type: single
+    variance_weight: 0.55
+    depends_on: [{slot: control_method, in: [foc]}]
+    options:
+      - {id: shunt_low,  label: Low-side shunt, detail: "cheapest, 3 shunts", recommended: true, cost_delta: 0.90}
+      - {id: shunt_inline, label: Inline shunt, detail: "best accuracy, needs hi-CMRR amp", cost_delta: 3.20}
+      - {id: hall_cs,    label: Hall current sensor, detail: "isolated, no shunt loss", cost_delta: 4.50}
+    default: shunt_low
+    fill_hints:
+      shunt_inline: [inline shunt, in-line current]
+      hall_cs:      [hall current, isolated current sense]
+
+  - id: mosfet_class
+    header: MOSFETs
+    question: External MOSFET voltage/package class?
+    type: single
+    variance_weight: 0.50
+    depends_on: [{slot: current_per_axis, in: [mid, high, vhigh]}]
+    options:
+      - {id: fet40,  label: "40 V logic-level", detail: "for 24 V bus", recommended: true, cost_delta: 2.40}
+      - {id: fet80,  label: "80 V",            detail: "for 48 V bus", cost_delta: 3.60}
+      - {id: fet100, label: "100 V+",          detail: "for >48 V bus", cost_delta: 5.20}
+    default: fet40
+    fill_hints:
+      fet80:  [48v bus, 80v fet]
+      fet100: [high voltage bus, 100v]
+
+  - id: ddr_config
+    header: Memory
+    question: DDR memory configuration for the SoC?
+    type: single
+    variance_weight: 0.45
+    depends_on: [{slot: control_processor, in: [soc_fpga]}]
+    options:
+      - {id: ddr4_x8_2g, label: "DDR4 2 GB x8", detail: "single device", recommended: true, cost_delta: 8.0, layer_impact: 2}
+      - {id: ddr4_x16_4g, label: "DDR4 4 GB x16", detail: "dual device", cost_delta: 16.0, layer_impact: 2}
+      - {id: none, label: "On-chip only", detail: "no external DRAM", cost_delta: 0, layer_impact: 0}
+    default: ddr4_x8_2g
+
+  - id: encoder_interface
+    header: Encoder I/O
+    question: Encoder connector / interface standard?
+    type: single
+    variance_weight: 0.35
+    depends_on: [{slot: feedback_type, in: [encoder_inc, encoder_abs, resolver]}]
+    options:
+      - {id: rs422, label: "RS-422 differential", detail: "industry standard", recommended: true, cost_delta: 1.10}
+      - {id: ttl,   label: "TTL single-ended",    detail: "short cable only", cost_delta: 0.30}
+    default: rs422
+
+  # ── TIER 3 — medium-variance, often defaulted ────────────────────────────────
+
+  - id: bus_voltage
+    header: Bus voltage
+    question: Motor bus voltage?
+    type: single
+    variance_weight: 0.60
+    options:
+      - {id: v12, label: "12 V", cost_delta: 0}
+      - {id: v24, label: "24 V", recommended: true, cost_delta: 0}
+      - {id: v48, label: "48 V", cost_delta: 1.5, implies: {mosfet_class: fet80}}
+    default: v24
+    fill_hints:
+      v12: ["12v", "12 volt"]
+      v24: ["24v", "24 volt"]
+      v48: ["48v", "48 volt"]
+
+  - id: comms
+    header: Comms
+    question: Which communication interfaces? (select all)
+    type: multi
+    variance_weight: 0.55
+    options:
+      - {id: can,     label: "CAN / CAN-FD", detail: "common in robotics", recommended: true, cost_delta: 1.8, unlocks: [comms_isolation]}
+      - {id: ethercat,label: "EtherCAT",     detail: "hard real-time fieldbus", cost_delta: 4.2, layer_impact: 0}
+      - {id: ethernet,label: "Ethernet",     detail: "TCP/IP", cost_delta: 3.5}
+      - {id: rs485,   label: "RS-485 / Modbus", detail: "legacy industrial", cost_delta: 1.2, unlocks: [comms_isolation]}
+      - {id: usb,     label: "USB",          detail: "config/debug", cost_delta: 0.8}
+    default: [can]
+    fill_hints:
+      can:      [can, can-fd, canbus, canopen]
+      ethercat: [ethercat, beckhoff, fieldbus]
+      ethernet: [ethernet, tcp, profinet]
+      rs485:    [rs485, rs-485, modbus]
+      usb:      [usb, usb-c]
+    adds_components:
+      can:      [{role: can_transceiver, search_query: "TCAN1042 CAN-FD transceiver"}]
+      ethercat: [{role: ethercat_phy, search_query: "LAN9252 EtherCAT slave"}]
+      ethernet: [{role: eth_phy, search_query: "DP83822 Ethernet PHY"}]
+
+  - id: comms_isolation
+    header: Isolation
+    question: Galvanic isolation on the fieldbus?
+    type: single
+    variance_weight: 0.40
+    depends_on: [{slot: comms, contains_any: [can, rs485]}]
+    options:
+      - {id: isolated,     label: Isolated,     detail: "industrial-grade, +digital isolator", recommended: true, cost_delta: 2.6}
+      - {id: non_isolated, label: Non-isolated, detail: "lower cost, bench use", cost_delta: 0}
+    default: isolated
+
+  - id: brake
+    header: Braking
+    question: Motor braking strategy?
+    type: single
+    variance_weight: 0.45
+    depends_on: [{slot: motor_type, in: [bldc, brushed]}]
+    options:
+      - {id: none,    label: None,          detail: "coast to stop", cost_delta: 0}
+      - {id: dynamic, label: Brake resistor, detail: "dissipate regen energy", recommended: true, cost_delta: 2.2}
+      - {id: regen,   label: Regenerative,  detail: "return energy to bus", cost_delta: 5.0}
+    default: dynamic
+
+  - id: safety
+    header: Safety
+    question: Functional safety provisions?
+    type: single
+    variance_weight: 0.50
+    options:
+      - {id: none, label: None,             detail: "non-safety-rated", recommended: true, cost_delta: 0}
+      - {id: sto,  label: "STO (Safe Torque Off)", detail: "IEC 61800-5-2, dual-channel gate disable", cost_delta: 3.8}
+    default: none
+    fill_hints:
+      sto: [safe torque off, sto, functional safety, sil2, sil3]
+
+  - id: thermal_strategy
+    header: Thermal
+    question: Thermal management for high current?
+    type: single
+    variance_weight: 0.30
+    depends_on: [{slot: current_per_axis, in: [high, vhigh]}]
+    options:
+      - {id: vias,     label: Thermal vias only, detail: "copper pour + via array", recommended: true, cost_delta: 0}
+      - {id: heatsink, label: Heatsink pads,      detail: "mounting for external sink", cost_delta: 1.5}
+      - {id: imS,      label: IMS substrate,      detail: "metal-core PCB", cost_delta: 30.0}
+    default: vias
+
+  - id: assembly
+    header: Assembly
+    question: How will the board be assembled?
+    type: single
+    variance_weight: 0.40
+    options:
+      - {id: reflow, label: Reflow / SMT, detail: "0402 OK, fine-pitch OK", recommended: true}
+      - {id: hand,   label: Hand-solder,  detail: "no <0603, no fine-pitch BGA", locks_packages: [bga, qfn_fine, "0402"]}
+      - {id: mixed,  label: Mixed,        detail: "SMT + selective hand"}
+    default: reflow
+    fill_hints:
+      hand:  [hand solder, hand-solder, prototype, breadboard friendly]
+      reflow:[reflow, smt, pick and place, assembly house]
+
+  # ── TIER 0 — auto slots: never asked, defaulted silently, shown in summary ────
+
+  - id: copper_weight
+    header: Copper
+    type: auto
+    variance_weight: 0.0
+    default_silent: true
+    default: oz1            # overridden by current_per_axis 'implies'
+    note: "set by current_per_axis; surfaced in summary only"
+
+  - id: boot_flash
+    header: Boot flash
+    type: auto
+    variance_weight: 0.0
+    default_silent: true
+    depends_on: [{slot: control_processor, in: [soc_fpga]}]
+    default: spi_nor
+    adds_components:
+      spi_nor: [{role: boot_flash, search_query: "MT25QL128 SPI NOR flash"}]
+
+  - id: decoupling
+    header: Decoupling
+    type: auto
+    variance_weight: 0.0
+    default_silent: true
+    default: standard
+    note: "100nF per IC power pin + bulk — always added by design_loop gap pass"
+
+  - id: protection
+    header: Protection
+    type: auto
+    variance_weight: 0.0
+    default_silent: true
+    default: full
+    adds_components:
+      full: [{role: reverse_polarity, search_query: "P-MOSFET reverse polarity protection"},
+             {role: tvs, search_query: "TVS diode 24V bus"},
+             {role: esd, search_query: "ESD array comms lines"}]
+
+  - id: power_input
+    header: Power in
+    type: auto
+    variance_weight: 0.0
+    default_silent: true
+    default: terminal_block
+    fill_hints:
+      barrel:         [barrel jack, dc jack]
+      terminal_block: [terminal block, screw terminal]
+      xt60:           [xt60, xt-60]

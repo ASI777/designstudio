@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/application-configuration-v1.schema.json",
+  "title": "DesignStudio application configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "family", "family_name", "confidence", "custom_concept", "prompt", "captured_requirements", "assumptions", "next_questions", "options"],
+  "allOf": [{
+    "if": {"properties": {"family": {"const": "robotic_joint_capstone"}}},
+    "then": {"required": ["axis_requirements", "system_architecture"]}
+  }],
+  "properties": {
+    "schema": {"const": "design-studio.application-configuration/1"},
+    "family": {"type": "string", "minLength": 1},
+    "family_name": {"type": "string", "minLength": 1},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "custom_concept": {"type": "boolean"},
+    "prompt": {"type": "string", "minLength": 1, "maxLength": 5000},
+    "captured_requirements": {"type": "object"},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "next_questions": {"type": "array", "maxItems": 3, "items": {"$ref": "#/$defs/question"}},
+    "options": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/option"}},
+    "axis_requirements": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {"$ref": "#/$defs/axisRequirement"}
+    },
+    "system_architecture": {"$ref": "#/$defs/systemArchitecture"}
+  },
+  "$defs": {
+    "question": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "prompt", "why_it_matters", "choices"],
+      "properties": {
+        "id": {"type": "string"}, "prompt": {"type": "string"},
+        "why_it_matters": {"type": "string"},
+        "choices": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "axisRequirement": {
+      "type": "object",
+      "required": ["axis_id", "board_role", "motor", "encoder", "brake", "thermal", "safety", "evidence_state", "assumptions", "requirements_digest", "template_reuse_key"],
+      "properties": {
+        "axis_id": {"type": "string", "pattern": "^axis-[1-6]$"},
+        "board_role": {"const": "isolated_joint_controller"},
+        "motor": {"type": ["object", "null"]},
+        "encoder": {"type": ["object", "null"]},
+        "brake": {"type": ["object", "null"]},
+        "current_sense": {"type": ["object", "null"]},
+        "thermal": {"type": ["object", "null"]},
+        "safety": {"type": ["object", "null"]},
+        "cable": {"type": ["object", "null"]},
+        "evidence_state": {"enum": ["user_specified", "incomplete"]},
+        "assumptions": {"type": "array", "items": {"type": "string"}},
+        "requirements_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "template_reuse_key": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "systemArchitecture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "coordinator", "joint_boards", "supply_bus", "can", "estop", "braking", "analysis_dependencies", "manufacturing_profile", "input_digest", "output_digest"],
+      "properties": {
+        "kind": {"const": "distributed_six_axis_robot"},
+        "coordinator": {"type": "object"},
+        "joint_boards": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object"}},
+        "supply_bus": {}, "can": {"type": "object"}, "estop": {"type": "object"},
+        "braking": {"type": "object"},
+        "manufacturing_profile": {"const": "Eurocircuits"},
+        "analysis_dependencies": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "input_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "output_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "option": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "best_for", "benefits", "drawbacks", "estimates", "assumptions", "what_remains_to_be_proven", "applicable_checks", "evidence_state", "unresolved_gates", "failed_gates", "technical_details"],
+      "properties": {
+        "id": {"type": "string"}, "name": {"type": "string"}, "best_for": {"type": "string"},
+        "benefits": {"type": "array", "items": {"type": "string"}},
+        "drawbacks": {"type": "array", "items": {"type": "string"}},
+        "estimates": {"type": "object"}, "assumptions": {"type": "array", "items": {"type": "string"}},
+        "what_remains_to_be_proven": {"type": "array", "items": {"type": "string"}},
+        "applicable_checks": {"type": "array", "items": {"type": "object"}},
+        "evidence_state": {"type": "string"}, "unresolved_gates": {"type": "array", "items": {"type": "string"}},
+        "failed_gates": {"type": "array", "items": {"type": "string"}}, "technical_details": {"type": "object"}
+      }
+    }
+  }
+}

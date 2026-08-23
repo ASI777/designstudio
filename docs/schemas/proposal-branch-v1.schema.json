@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:proposal-branch:1",
+  "title": "Immutable parallel proposal branch",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "branch_id", "name", "domain", "baseline_configuration_id", "head_configuration_id", "source_workspace_revision", "source_graph_revision", "consumes_contracts", "proposes_contract_changes", "artifacts", "evidence_ids", "assumptions", "requested_approvals", "created_by", "created_utc"],
+  "properties": {
+    "schema": {"const": "design-studio.proposal-branch/1"},
+    "branch_id": {"$ref": "#/$defs/uuid"},
+    "name": {"type": "string", "minLength": 1},
+    "domain": {"enum": ["industrial_design", "mechanical", "electrical", "pcb", "firmware", "manufacturing", "verification"]},
+    "baseline_configuration_id": {"$ref": "#/$defs/uuid"},
+    "head_configuration_id": {"$ref": "#/$defs/uuid"},
+    "source_workspace_revision": {"type": "integer", "minimum": 1},
+    "source_graph_revision": {"type": "integer", "minimum": 1},
+    "consumes_contracts": {"type": "array", "items": {"$ref": "#/$defs/contractRevision"}},
+    "proposes_contract_changes": {"type": "array", "items": {"$ref": "#/$defs/contractChange"}},
+    "artifacts": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "evidence_ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/uuid"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "requested_approvals": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "created_by": {"type": "string", "minLength": 1},
+    "created_utc": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "uuid": {"type": "string", "format": "uuid"},
+    "sha": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "contractRevision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract_id", "version", "digest"],
+      "properties": {"contract_id": {"type": "string", "minLength": 1}, "version": {"type": "integer", "minimum": 1}, "digest": {"$ref": "#/$defs/sha"}}
+    },
+    "contractChange": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract_id", "base_version", "proposed_version", "digest"],
+      "properties": {"contract_id": {"type": "string", "minLength": 1}, "base_version": {"type": "integer", "minimum": 1}, "proposed_version": {"type": "integer", "minimum": 2}, "digest": {"$ref": "#/$defs/sha"}}
+    }
+  }
+}

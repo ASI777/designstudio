@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:bound-component:1",
+  "title": "Cross-domain bound electronic component",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "binding_id", "status", "component", "source_component", "symbol", "pin_pad_map", "footprint", "model_3d", "electrical", "simulation_models", "datasheet_evidence", "orientation", "binding_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.bound-component/1"},
+    "binding_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["complete", "incomplete"]},
+    "component": {"type": "object"},
+    "source_component": {
+      "type": "object",
+      "required": ["schema", "uri", "sha256"],
+      "properties": {
+        "schema": {"const": "design-studio.component/2"},
+        "uri": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "symbol": {"type": "object"},
+    "pin_pad_map": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["pin_number", "pin_name", "pad_ids"],
+        "properties": {
+          "pin_number": {"type": "string", "minLength": 1},
+          "pin_name": {"type": "string"},
+          "pad_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        }
+      }
+    },
+    "footprint": {
+      "type": "object",
+      "required": ["name", "mount", "pads", "courtyard_pts"],
+      "properties": {
+        "pads": {"type": "array", "minItems": 1},
+        "courtyard_pts": {"$ref": "#/$defs/polygon"}
+      }
+    },
+    "model_3d": {
+      "type": "object",
+      "required": ["format", "asset_uri", "sha256", "byte_size", "model_to_footprint", "alignment_status", "claimed_mpn"],
+      "properties": {
+        "format": {"const": "step"},
+        "asset_uri": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "byte_size": {"type": "integer", "minimum": 12},
+        "model_to_footprint": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "number"}},
+        "alignment_status": {"enum": ["verified", "unverified"]}
+        ,"claimed_mpn": {"type": "string", "minLength": 1}
+      }
+    },
+    "electrical": {"type": "object", "minProperties": 1},
+    "simulation_models": {
+      "type": "object",
+      "properties": {
+        "behavioral_power": {"$ref": "#/$defs/behavioralPower"},
+        "control_loop": {"type": "object"},
+        "spice": {"type": "object"}
+      }
+    },
+    "datasheet_evidence": {"type": "object"},
+    "orientation": {"type": "object"},
+    "binding_digest": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "point2": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "items": false, "minItems": 2, "maxItems": 2},
+    "polygon": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/point2"}},
+    "behavioralPower": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema", "kind", "input_pin", "output_pin", "dropout_v", "max_output_current_a", "quiescent_current_a", "ambient_c", "theta_ja_c_per_w", "max_junction_c"],
+      "properties": {
+        "schema": {"const": "design-studio.behavioral-power/1"},
+        "kind": {"enum": ["linear_regulator", "dc_converter"]},
+        "input_pin": {"type": "string", "minLength": 1},
+        "output_pin": {"type": "string", "minLength": 1},
+        "input_voltage_v": {"type": "number"},
+        "dropout_v": {"type": "number", "minimum": 0},
+        "max_output_current_a": {"type": "number", "exclusiveMinimum": 0},
+        "quiescent_current_a": {"type": "number", "minimum": 0},
+        "efficiency": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "ambient_c": {"type": "number"},
+        "theta_ja_c_per_w": {"type": "number", "exclusiveMinimum": 0},
+        "max_junction_c": {"type": "number"}
+      }
+    }
+  }
+}

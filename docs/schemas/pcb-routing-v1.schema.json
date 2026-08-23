@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:pcb-routing:1",
+  "title": "DesignStudio PCB routing policy fragments",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "layer_policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["layer", "role", "preferred_direction", "allow_routing", "copper_thickness_mm", "source", "source_revision"],
+        "properties": {
+          "layer": {"type": "integer", "minimum": 0, "maximum": 31},
+          "name": {"type": "string"},
+          "role": {"enum": ["signal", "plane", "mixed"]},
+          "preferred_direction": {"enum": ["any", "horizontal", "vertical"]},
+          "allow_routing": {"type": "boolean"},
+          "copper_thickness_mm": {"type": "number", "exclusiveMinimum": 0},
+          "source": {"type": "string", "minLength": 1},
+          "source_revision": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "copper_zones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "pts", "net", "layer", "clearance_mm", "min_island_area_mm2", "require_connection", "source", "source_revision"],
+        "properties": {
+          "id": {"type": "integer", "minimum": 0},
+          "name": {"type": "string"},
+          "pts": {"type": "array", "minItems": 3, "items": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "minItems": 2, "maxItems": 2}},
+          "net": {"type": "integer", "minimum": 0},
+          "layer": {"type": "integer", "minimum": 0, "maximum": 31},
+          "clearance_mm": {"type": "number", "minimum": 0},
+          "min_island_area_mm2": {"type": "number", "minimum": 0},
+          "require_connection": {"type": "boolean"},
+          "source": {"type": "string", "minLength": 1},
+          "source_revision": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

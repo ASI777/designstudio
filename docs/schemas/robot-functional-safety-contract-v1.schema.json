@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/robot-functional-safety-contract-v1.schema.json",
+  "title": "DesignStudio robot functional-safety allocation contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product_id", "requirements_sha256", "standards_context",
+    "compliance_claimed", "target_performance_level", "target_architecture_category",
+    "minimum_diagnostic_coverage", "maximum_safe_state_response_time_s", "safe_state",
+    "reset_and_restart_policy", "function_allocations", "brake_sizing_reference",
+    "brake_component_selection_status", "joint_net_contract_status",
+    "risk_assessment_status", "hardware_architecture_result", "probabilistic_result",
+    "validation_result", "required_evidence"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.robot-functional-safety-contract/1"},
+    "product_id": {"type": "string", "minLength": 1},
+    "requirements_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "standards_context": {"$ref": "#/$defs/stringArray"},
+    "compliance_claimed": {"const": false},
+    "target_performance_level": {"const": "PL_d"},
+    "target_architecture_category": {"const": "Category_3"},
+    "minimum_diagnostic_coverage": {"type": "number", "minimum": 0.9, "maximum": 1},
+    "maximum_safe_state_response_time_s": {"type": "number", "exclusiveMinimum": 0},
+    "safe_state": {"const": "controlled_stop_then_torque_off_and_spring_brakes_engaged"},
+    "reset_and_restart_policy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["manual_reset_required", "restart_interlock_required", "single_fault_tolerance_required"],
+      "properties": {
+        "manual_reset_required": {"const": true},
+        "restart_interlock_required": {"const": true},
+        "single_fault_tolerance_required": {"const": true}
+      }
+    },
+    "function_allocations": {
+      "type": "array", "minItems": 5, "uniqueItems": true,
+      "items": {"$ref": "#/$defs/allocation"}
+    },
+    "brake_sizing_reference": {"const": "mechanical/robot-brake-sizing.json"},
+    "brake_component_selection_status": {"const": "incomplete_component_bindings_missing"},
+    "joint_net_contract_status": {"type": "string", "minLength": 1},
+    "risk_assessment_status": {"const": "incomplete_hazard_analysis_and_risk_reduction_trace_missing"},
+    "hardware_architecture_result": {"const": "incomplete_exact_safety_components_and_independent_paths_missing"},
+    "probabilistic_result": {"const": "incomplete_mttfd_dcavg_ccf_andmission_profile_missing"},
+    "validation_result": {"const": "incomplete_fault_injection_and_system_tests_missing"},
+    "required_evidence": {"$ref": "#/$defs/stringArray"}
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "allocation": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "function_id", "target_performance_level", "target_architecture_category",
+        "input_subsystem", "logic_subsystem", "final_elements", "diagnostics",
+        "implementation_status", "achieved_performance_level"
+      ],
+      "properties": {
+        "function_id": {
+          "enum": ["emergency_stop", "dual_channel_sto", "brake_control", "joint_limit_monitoring", "safe_speed_monitoring"]
+        },
+        "target_performance_level": {"const": "PL_d"},
+        "target_architecture_category": {"const": "Category_3"},
+        "input_subsystem": {"type": "string", "minLength": 1},
+        "logic_subsystem": {"type": "string", "minLength": 1},
+        "final_elements": {"$ref": "#/$defs/stringArray"},
+        "diagnostics": {"$ref": "#/$defs/stringArray"},
+        "implementation_status": {"type": "string", "pattern": "^incomplete_"},
+        "achieved_performance_level": {"type": "null"}
+      }
+    }
+  }
+}

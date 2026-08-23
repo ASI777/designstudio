@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -eu
+prefix=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+if [ -n "${PYTHONPATH:-}" ]; then
+    export PYTHONPATH="$prefix/share/DesignStudio/python:$PYTHONPATH"
+else
+    export PYTHONPATH="$prefix/share/DesignStudio/python"
+fi
+exec python3 -m swarm.release.release_gate "$@"

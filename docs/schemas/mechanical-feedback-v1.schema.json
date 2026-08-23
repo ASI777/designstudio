@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:mechanical-feedback:1",
+  "title": "Advisory AI mechanical feedback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "study_id", "decision_status", "recommendation", "rankings", "proposals", "approval_policy", "feedback_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.mechanical-feedback/1"},
+    "study_id": {"type": "string", "minLength": 1},
+    "decision_status": {"enum": ["advisory_ranked", "needs_exact_analysis_or_approval"]},
+    "recommendation": {"type": ["string", "null"]},
+    "rankings": {"type": "array", "items": {"type": "object"}},
+    "proposals": {"type": "array", "items": {"type": "object"}},
+    "approval_policy": {
+      "type": "object",
+      "required": ["ai_role", "ai_can_approve_geometry", "human_approval_required", "exact_worker_required", "release_eligible"],
+      "properties": {
+        "ai_role": {"const": "advisory_rank_and_explain_only"},
+        "ai_can_approve_geometry": {"const": false},
+        "human_approval_required": {"const": true},
+        "exact_worker_required": {"const": true},
+        "release_eligible": {"const": false}
+      }
+    },
+    "feedback_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
+

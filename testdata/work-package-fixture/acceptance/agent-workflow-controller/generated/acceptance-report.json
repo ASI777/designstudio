@@ -1,0 +1,166 @@
+{
+  "component_models": [
+    {
+      "mpn": "ESP32-S3-WROOM-1-N8R8",
+      "status": "pass",
+      "step_sha256": "bcf58adf9ef5ba34560367894cb937560aec0725226661c6b317205baa497c81"
+    },
+    {
+      "mpn": "MX2A-H1NB",
+      "status": "pass",
+      "step_sha256": "19ab3746c5c0deeac51b75ed9651f360497c3cefce2f1ec229c690557c0d252e"
+    },
+    {
+      "mpn": "PEC12R-4220F-S0024",
+      "status": "pass",
+      "step_sha256": "23f46556c81d36eab83c66095240f0c1893a6a7385c07eee8941e431790c98c2"
+    },
+    {
+      "mpn": "34-00015",
+      "status": "pass",
+      "step_sha256": "1169caba8ccfd4db6daf3d1688358318734b9deabfefe27d85bbf948bd36817c"
+    },
+    {
+      "mpn": "2765",
+      "status": "pass",
+      "step_sha256": "f62d2841adc0b999703001b3f3726c3af8241d7ea8a44c475230486cfc8786b1"
+    },
+    {
+      "mpn": "USB4085-GF-A",
+      "status": "pass",
+      "step_sha256": "ce78cecca61ec6fb4147b4b7875640a92a0e349ee59df7306ff58608720babb1"
+    },
+    {
+      "mpn": "TPD4E02B04DQAR",
+      "status": "pass",
+      "step_sha256": "efcd91b60dd6c2dc22cdb4a8a75906a92ffbbf39cb62d9bb3acdb7eb10e1e11a"
+    },
+    {
+      "mpn": "BQ24074RGTR",
+      "status": "pass",
+      "step_sha256": "b63532cc7d7b724ca5bed1ea683cea95e06092b86a9a11b6bf625e918d9dfa09"
+    },
+    {
+      "mpn": "TPS63031DSKR",
+      "status": "pass",
+      "step_sha256": "3558e9e788f2228a0650f0383b0ea8b48c0d8288e436e0251d1bfd5aaf5aedb1"
+    },
+    {
+      "mpn": "TPS22918DBVR",
+      "status": "pass",
+      "step_sha256": "c1417ac700bcd2343db087fe9c56ab36496e1d7e1c36561b4af82005977faf23"
+    },
+    {
+      "mpn": "TPS61023DRLR",
+      "status": "pass",
+      "step_sha256": "bdf3ba7e7d77bbf89f9a25842c2f6d2b62353542bb54513b9749d26318d3b7e6"
+    },
+    {
+      "mpn": "SN74AHCT1G125DBVR",
+      "status": "pass",
+      "step_sha256": "343602469402ac4baee938786e960ba11eefcafa93c206afe79406f0e0db749c"
+    },
+    {
+      "mpn": "1N4148W-7-F",
+      "status": "pass",
+      "step_sha256": "c5fc0bfb4f1959a953524b4c842d9780889555c002f27c031980be8bbe3cf944"
+    },
+    {
+      "mpn": "IN-PI20TBT5R5G5B",
+      "status": "pass",
+      "step_sha256": "9ee2e7888563acc607bc9a6e1d6d752dc32ec3479a8865ce8ff64664a8ffd3f8"
+    },
+    {
+      "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+      "status": "pass",
+      "step_sha256": "ff5f608d436421e6294aa897fef40e4393f890cc96213c0db3ea3ca3e1bc5791"
+    },
+    {
+      "mpn": "B3B-PH-SM4-TB(LF)(SN)",
+      "status": "pass",
+      "step_sha256": "c10f022c2a8ea39ec1022433d2a6aec12343e461c8539ba8e729aed114c9a50e"
+    },
+    {
+      "mpn": "RC0603FR-0710KL",
+      "status": "pass",
+      "step_sha256": "94d7fe1e78fe752882948a5ffbe5350b838eb69443c82f244d5b18c4bb95212a"
+    },
+    {
+      "mpn": "GRM32ER61E226ME15L",
+      "status": "pass",
+      "step_sha256": "e8aef0af6f88427c32d6f6d73158619fd94c216375233d2c40ad9cd99c93e229"
+    },
+    {
+      "mpn": "XFL4020-152MEC",
+      "status": "pass",
+      "step_sha256": "9e301be0d7334107d8d66ef0d8f1960a08b9a952e1b090112c1575b3e27c544f"
+    },
+    {
+      "mpn": "RC0603FR-075K1L",
+      "status": "pass",
+      "step_sha256": "94d7fe1e78fe752882948a5ffbe5350b838eb69443c82f244d5b18c4bb95212a"
+    },
+    {
+      "mpn": "RC0603FR-071K1L",
+      "status": "pass",
+      "step_sha256": "94d7fe1e78fe752882948a5ffbe5350b838eb69443c82f244d5b18c4bb95212a"
+    },
+    {
+      "mpn": "RC0603FR-07590RL",
+      "status": "pass",
+      "step_sha256": "94d7fe1e78fe752882948a5ffbe5350b838eb69443c82f244d5b18c4bb95212a"
+    },
+    {
+      "mpn": "RC0603FR-07500RL",
+      "status": "pass",
+      "step_sha256": "94d7fe1e78fe752882948a5ffbe5350b838eb69443c82f244d5b18c4bb95212a"
+    },
+    {
+      "mpn": "RC0603FR-07100KL",
+      "status": "pass",
+      "step_sha256": "94d7fe1e78fe752882948a5ffbe5350b838eb69443c82f244d5b18c4bb95212a"
+    },
+    {
+      "mpn": "RC0603FR-07732KL",
+      "status": "pass",
+      "step_sha256": "94d7fe1e78fe752882948a5ffbe5350b838eb69443c82f244d5b18c4bb95212a"
+    },
+    {
+      "mpn": "XFL4020-102MEC",
+      "status": "pass",
+      "step_sha256": "9e301be0d7334107d8d66ef0d8f1960a08b9a952e1b090112c1575b3e27c544f"
+    },
+    {
+      "mpn": "GRM21BR61A106KE19L",
+      "status": "pass",
+      "step_sha256": "2d5dd99e35f2057bf0ab2e39377077c84b3a66cc92de2bab1391ab316912e823"
+    },
+    {
+      "mpn": "GRM188R71H104KA93D",
+      "status": "pass",
+      "step_sha256": "4b69b2cd0f696e174b4ee39e7279120239b73be51e96368213ee0bf6e57df752"
+    },
+    {
+      "mpn": "GRM1885C1H102JA01D",
+      "status": "pass",
+      "step_sha256": "4b69b2cd0f696e174b4ee39e7279120239b73be51e96368213ee0bf6e57df752"
+    }
+  ],
+  "erc_sha256": "188f7247fdbfbd9c36425c2fd7b7333c4732b837f7c158cbea4bb3c46f06e8bc",
+  "metrics": {
+    "drc_errors": 0,
+    "drc_warnings": 0,
+    "erc_errors": 0,
+    "footprints": 106,
+    "nets": 65,
+    "symbols": 106,
+    "test_access_points": 14,
+    "traces": 2369,
+    "vias": 249
+  },
+  "project_sha256": "0cbd3244611fa64fb3ec828f12398a82ce21781b56aaad1fd0b2e588c26da7c8",
+  "schema": "design-studio.agent-controller-acceptance/1",
+  "status": "pass",
+  "v3_sha256": "85e513dcfda3059d0593f534886c1484018a7a18a391de8127d0c74105d33833",
+  "verification_sha256": "50c21820112c5e5926038645b9f7891916c9184e7f66967d45c85c728b6b39af"
+}

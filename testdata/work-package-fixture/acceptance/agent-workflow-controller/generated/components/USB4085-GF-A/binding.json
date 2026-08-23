@@ -1,0 +1,587 @@
+{
+  "assumptions": [],
+  "binding_digest": "048e36fd2c258caee037b24712f33fedf8123a940552b38bc4234f47d2f3c119",
+  "binding_id": "component:USB4085-GF-A",
+  "component": {
+    "category": "connector",
+    "manufacturer": "GCT",
+    "mpn": "USB4085-GF-A",
+    "value": "connector"
+  },
+  "datasheet_evidence": {
+    "bytes": 159657,
+    "expected_mpn": "USB4085-GF-A",
+    "mpn_match": "exact",
+    "package_pin_count": 16,
+    "package_variant": "USB4085-GF-A",
+    "retrieved_utc": "2026-07-16T00:00:00Z",
+    "schema": "design-studio.datasheet-evidence/1",
+    "sha256": "1f4f79d22728c13a5d0dbe9a2a957df51429ab8d1c122e7e9f3f98773d27ec01",
+    "source": "https://gct.co/Files/Drawings/USB4085.pdf",
+    "source_kind": "reference"
+  },
+  "electrical": {
+    "kind": "connector",
+    "parameters": [
+      {
+        "name": "datasheet_bound",
+        "typ": 1,
+        "unit": "bool"
+      }
+    ],
+    "pin_functions": [
+      {
+        "electrical_type": "passive",
+        "name": "GND",
+        "pin": "1"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "VBUS",
+        "pin": "2"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "CC1",
+        "pin": "3"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "D+",
+        "pin": "4"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "D-",
+        "pin": "5"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "SBU1",
+        "pin": "6"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "VBUS",
+        "pin": "7"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "GND",
+        "pin": "8"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "GND",
+        "pin": "9"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "VBUS",
+        "pin": "10"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "SBU2",
+        "pin": "11"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "D-",
+        "pin": "12"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "D+",
+        "pin": "13"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "CC2",
+        "pin": "14"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "VBUS",
+        "pin": "15"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "GND",
+        "pin": "16"
+      }
+    ]
+  },
+  "footprint": {
+    "body": {
+      "height_mm": 3.46,
+      "length_mm": 9.17,
+      "width_mm": 8.95
+    },
+    "courtyard_margin_mm": 0.25,
+    "courtyard_pts": [
+      [
+        -5.025,
+        -4.835
+      ],
+      [
+        5.025,
+        -4.835
+      ],
+      [
+        5.025,
+        5.83
+      ],
+      [
+        -5.025,
+        5.83
+      ]
+    ],
+    "generated": "vector-trace",
+    "mount": "through_hole",
+    "name": "USB4085-GF-A",
+    "pads": [
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "1",
+        "pad_id": "pad:1",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": -2.975,
+        "y_mm": -0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "2",
+        "pad_id": "pad:2",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": -2.125,
+        "y_mm": -0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "3",
+        "pad_id": "pad:3",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": -1.2750000000000001,
+        "y_mm": -0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "4",
+        "pad_id": "pad:4",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": -0.42500000000000027,
+        "y_mm": -0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "5",
+        "pad_id": "pad:5",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": 0.4249999999999998,
+        "y_mm": -0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "6",
+        "pad_id": "pad:6",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": 1.275,
+        "y_mm": -0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "7",
+        "pad_id": "pad:7",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": 2.1249999999999996,
+        "y_mm": -0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "8",
+        "pad_id": "pad:8",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": 2.975,
+        "y_mm": -0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "9",
+        "pad_id": "pad:9",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": 2.975,
+        "y_mm": 0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "10",
+        "pad_id": "pad:10",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": 2.1249999999999996,
+        "y_mm": 0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "11",
+        "pad_id": "pad:11",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": 1.275,
+        "y_mm": 0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "12",
+        "pad_id": "pad:12",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": 0.4249999999999998,
+        "y_mm": 0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "13",
+        "pad_id": "pad:13",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": -0.42500000000000027,
+        "y_mm": 0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "14",
+        "pad_id": "pad:14",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": -1.2750000000000001,
+        "y_mm": 0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "15",
+        "pad_id": "pad:15",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": -2.125,
+        "y_mm": 0.675
+      },
+      {
+        "drill_mm": 0.4,
+        "height_mm": 0.65,
+        "number": "16",
+        "pad_id": "pad:16",
+        "shape": "circle",
+        "width_mm": 0.65,
+        "x_mm": -2.975,
+        "y_mm": 0.675
+      },
+      {
+        "drill_mm": 0.6,
+        "height_mm": 2.4,
+        "mechanical": true,
+        "number": "M1",
+        "pad_id": "pad:17",
+        "shape": "oval",
+        "width_mm": 0.9,
+        "x_mm": -4.325,
+        "y_mm": 0
+      },
+      {
+        "drill_mm": 0.6,
+        "height_mm": 2.4,
+        "mechanical": true,
+        "number": "M2",
+        "pad_id": "pad:18",
+        "shape": "oval",
+        "width_mm": 0.9,
+        "x_mm": 4.325,
+        "y_mm": 0
+      },
+      {
+        "drill_mm": 0.6,
+        "height_mm": 1.7,
+        "mechanical": true,
+        "number": "M3",
+        "pad_id": "pad:19",
+        "shape": "oval",
+        "width_mm": 0.9,
+        "x_mm": -4.325,
+        "y_mm": 4.73
+      },
+      {
+        "drill_mm": 0.6,
+        "height_mm": 1.7,
+        "mechanical": true,
+        "number": "M4",
+        "pad_id": "pad:20",
+        "shape": "oval",
+        "width_mm": 0.9,
+        "x_mm": 4.325,
+        "y_mm": 4.73
+      }
+    ]
+  },
+  "model_3d": {
+    "alignment_status": "verified",
+    "asset_uri": "acceptance/agent-workflow-controller/generated/components/USB4085-GF-A/package.step",
+    "byte_size": 101982,
+    "claimed_mpn": "USB4085-GF-A",
+    "format": "step",
+    "model_to_footprint": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "sha256": "7d95fbea12447fb3ffb062e788a5b9681f1179f0859d3da1a8e5f16e2f03c133"
+  },
+  "orientation": {
+    "origin": "footprint",
+    "pin1_mark": "datasheet",
+    "z_axis": "board_normal"
+  },
+  "pin_pad_map": [
+    {
+      "pad_ids": [
+        "pad:1"
+      ],
+      "pin_name": "GND",
+      "pin_number": "1"
+    },
+    {
+      "pad_ids": [
+        "pad:2"
+      ],
+      "pin_name": "VBUS",
+      "pin_number": "2"
+    },
+    {
+      "pad_ids": [
+        "pad:3"
+      ],
+      "pin_name": "CC1",
+      "pin_number": "3"
+    },
+    {
+      "pad_ids": [
+        "pad:4"
+      ],
+      "pin_name": "D+",
+      "pin_number": "4"
+    },
+    {
+      "pad_ids": [
+        "pad:5"
+      ],
+      "pin_name": "D-",
+      "pin_number": "5"
+    },
+    {
+      "pad_ids": [
+        "pad:6"
+      ],
+      "pin_name": "SBU1",
+      "pin_number": "6"
+    },
+    {
+      "pad_ids": [
+        "pad:7"
+      ],
+      "pin_name": "VBUS",
+      "pin_number": "7"
+    },
+    {
+      "pad_ids": [
+        "pad:8"
+      ],
+      "pin_name": "GND",
+      "pin_number": "8"
+    },
+    {
+      "pad_ids": [
+        "pad:9"
+      ],
+      "pin_name": "GND",
+      "pin_number": "9"
+    },
+    {
+      "pad_ids": [
+        "pad:10"
+      ],
+      "pin_name": "VBUS",
+      "pin_number": "10"
+    },
+    {
+      "pad_ids": [
+        "pad:11"
+      ],
+      "pin_name": "SBU2",
+      "pin_number": "11"
+    },
+    {
+      "pad_ids": [
+        "pad:12"
+      ],
+      "pin_name": "D-",
+      "pin_number": "12"
+    },
+    {
+      "pad_ids": [
+        "pad:13"
+      ],
+      "pin_name": "D+",
+      "pin_number": "13"
+    },
+    {
+      "pad_ids": [
+        "pad:14"
+      ],
+      "pin_name": "CC2",
+      "pin_number": "14"
+    },
+    {
+      "pad_ids": [
+        "pad:15"
+      ],
+      "pin_name": "VBUS",
+      "pin_number": "15"
+    },
+    {
+      "pad_ids": [
+        "pad:16"
+      ],
+      "pin_name": "GND",
+      "pin_number": "16"
+    }
+  ],
+  "schema": "design-studio.bound-component/1",
+  "simulation_models": {},
+  "source_component": {
+    "schema": "design-studio.component/2",
+    "sha256": "03f92427bb8b9941babb453c89b3f089d4adcd6161514ae314a5908e5a5e1894",
+    "uri": "acceptance/agent-workflow-controller/generated/components/USB4085-GF-A/component.json"
+  },
+  "status": "complete",
+  "symbol": {
+    "pins": [
+      {
+        "electrical_type": "passive",
+        "name": "GND",
+        "number": "1"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "VBUS",
+        "number": "2"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "CC1",
+        "number": "3"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "D+",
+        "number": "4"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "D-",
+        "number": "5"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "SBU1",
+        "number": "6"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "VBUS",
+        "number": "7"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "GND",
+        "number": "8"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "GND",
+        "number": "9"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "VBUS",
+        "number": "10"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "SBU2",
+        "number": "11"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "D-",
+        "number": "12"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "D+",
+        "number": "13"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "CC2",
+        "number": "14"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "VBUS",
+        "number": "15"
+      },
+      {
+        "electrical_type": "passive",
+        "name": "GND",
+        "number": "16"
+      }
+    ]
+  }
+}

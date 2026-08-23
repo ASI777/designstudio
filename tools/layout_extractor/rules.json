@@ -1,0 +1,27 @@
+{
+  "_doc": "Constrained-primitive grammar. Each detected copper object is tested against these rules top-to-bottom; the FIRST match decides which CAD tool builds it and how its parameters are snapped/adjusted. This externalises the shape->tool->adjustment mapping that used to be hard-coded.",
+  "grid_mm": 0.05,
+  "nominal": { "pad_w": 0.30, "pad_h": 0.85, "drill": 0.55, "corner_r": 0.45 },
+  "rules": [
+    {
+      "name": "signal_pad",
+      "when": { "in_grid": true },
+      "emit": { "tool": "pad", "shape": "rect" },
+      "snap": { "grid": true, "size_to_nominal": ["pad_w", "pad_h"] }
+    },
+    {
+      "name": "mount_hole",
+      "when": { "is_ring": true, "circularity": [0.45, 1.5], "area_mm2": [0.03, 1.2] },
+      "emit": { "tool": "hole", "plated": false },
+      "snap": { "grid": true, "drill_to_nominal": "drill" },
+      "reject_if_overlaps": true
+    },
+    {
+      "name": "shield_ring",
+      "when": { "in_grid": false, "area_mm2": [0.5, 8.0] },
+      "emit": { "tool": "region" },
+      "comment": "mounting pads are HOLLOW rings (copper in the hatched band only); the region carries an inner hole",
+      "snap": { "grid": true }
+    }
+  ]
+}

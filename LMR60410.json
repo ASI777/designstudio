@@ -1,0 +1,256 @@
+{
+  "schema": "design-studio.component/2",
+  "component": {
+    "manufacturer": "Texas Instruments",
+    "mpn": "LMR60410",
+    "description": "3V to 36V, 1A, Synchronous, Buck Converter Optimized for High Power Density, Low EMI, and Low Output Capacitance",
+    "category": "power_management",
+    "datasheet": {
+      "title": "LMR60410 3V to 36V, 1A, Synchronous, Buck Converter",
+      "revision": "SNAS872 \u2013 DECEMBER 2024",
+      "date": "2024",
+      "url": "https://www.ti.com"
+    },
+    "distributors": []
+  },
+  "symbol": {
+    "ref_des_prefix": "U",
+    "pins": [
+      {
+        "number": "1",
+        "name": "VIN",
+        "electrical_type": "power_in",
+        "description": "Regulator input power pin to the high-side power MOSFET and internal VCC regulator.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "2",
+        "name": "PGND",
+        "electrical_type": "power_in",
+        "description": "Power ground. Connect to system ground.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "3",
+        "name": "SW",
+        "electrical_type": "power_out",
+        "description": "Regulator switch node.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "4",
+        "name": "BOOT",
+        "electrical_type": "power_in",
+        "description": "High-side MOSFET driver supply for bootstrap gate drive.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "5",
+        "name": "PG",
+        "electrical_type": "output",
+        "description": "Open drain power-good output.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "6",
+        "name": "FB",
+        "electrical_type": "input",
+        "description": "Feedback pin. Connect directly to VOUT or through resistor divider.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "7",
+        "name": "MODE/SYNC",
+        "electrical_type": "input",
+        "description": "Operational mode input pin or sync input.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "8",
+        "name": "RT",
+        "electrical_type": "input",
+        "description": "Frequency programming pin.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "9",
+        "name": "EN",
+        "electrical_type": "input",
+        "description": "Enable pin for the regulator.",
+        "alternate_functions": [],
+        "package_length_mm": null
+      }
+    ]
+  },
+  "electrical": {
+    "high_speed": {
+      "diff_pairs": [],
+      "single_ended": []
+    },
+    "power_domains": [
+      {
+        "name": "VIN",
+        "vnom_v": 13.5,
+        "vmin_v": 3.0,
+        "vmax_v": 36.0,
+        "max_current_a": 1.0,
+        "pins": ["1"]
+      },
+      {
+        "name": "PGND",
+        "vnom_v": 0.0,
+        "vmin_v": 0.0,
+        "vmax_v": 0.0,
+        "max_current_a": null,
+        "pins": ["2"]
+      }
+    ],
+    "required_externals": [
+      {
+        "purpose": "Input filter",
+        "value": "Capacitor to PGND",
+        "constraints": "Path to VIN and PGND must be as short as possible"
+      },
+      {
+        "purpose": "Bootstrap",
+        "value": "100nF Capacitor",
+        "constraints": "Between BOOT and SW"
+      },
+      {
+        "purpose": "Output decoupling",
+        "value": "Capacitor to PGND",
+        "constraints": "Based on switching frequency"
+      },
+      {
+        "purpose": "Inductor",
+        "value": "Inductor",
+        "constraints": "Saturation current > 2.6A"
+      }
+    ]
+  },
+  "footprint": {
+    "name": "WQFN-HR-9",
+    "ipc_name": "WQFN-9",
+    "mount": "smd",
+    "body": {
+      "length_mm": 2.5,
+      "width_mm": 2.0,
+      "height_mm": 0.8
+    },
+    "pitch_mm": 0.5,
+    "bga": null,
+    "pads": [
+      {
+        "number": "1",
+        "x_mm": -1.15,
+        "y_mm": 0.75,
+        "width_mm": 0.4,
+        "height_mm": 0.25,
+        "shape": "rect"
+      },
+      {
+        "number": "2",
+        "x_mm": -1.15,
+        "y_mm": 0.25,
+        "width_mm": 0.4,
+        "height_mm": 0.25,
+        "shape": "rect"
+      },
+      {
+        "number": "3",
+        "x_mm": -1.15,
+        "y_mm": -0.25,
+        "width_mm": 0.4,
+        "height_mm": 0.25,
+        "shape": "rect"
+      },
+      {
+        "number": "4",
+        "x_mm": -1.15,
+        "y_mm": -0.75,
+        "width_mm": 0.4,
+        "height_mm": 0.25,
+        "shape": "rect"
+      },
+      {
+        "number": "5",
+        "x_mm": 1.15,
+        "y_mm": -0.75,
+        "width_mm": 0.4,
+        "height_mm": 0.25,
+        "shape": "rect"
+      },
+      {
+        "number": "6",
+        "x_mm": 1.15,
+        "y_mm": -0.25,
+        "width_mm": 0.4,
+        "height_mm": 0.25,
+        "shape": "rect"
+      },
+      {
+        "number": "7",
+        "x_mm": 1.15,
+        "y_mm": 0.25,
+        "width_mm": 0.4,
+        "height_mm": 0.25,
+        "shape": "rect"
+      },
+      {
+        "number": "8",
+        "x_mm": 1.15,
+        "y_mm": 0.75,
+        "width_mm": 0.4,
+        "height_mm": 0.25,
+        "shape": "rect"
+      },
+      {
+        "number": "9",
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "width_mm": 1.0,
+        "height_mm": 1.4,
+        "shape": "rect",
+        "mechanical": true
+      }
+    ],
+    "courtyard_margin_mm": 0.25,
+    "derived_from_outline": false,
+    "source": {
+      "pages": [4, 31],
+      "drawing": "WQFN-HR 9-pin"
+    }
+  },
+  "orientation": {
+    "pin1_marker": "dot",
+    "pin1_position": "top-left",
+    "polarity": {
+      "has_polarity": false,
+      "cathode_pin": null
+    }
+  },
+  "package_3d": {
+    "height_mm": 0.8,
+    "standoff_mm": 0.0,
+    "shape": "box"
+  },
+  "extraction": {
+    "confidence": {
+      "symbol": 1.0,
+      "electrical": 0.9,
+      "footprint": 0.5
+    },
+    "pages_used": [1, 3, 4, 6],
+    "warnings": [
+      "Footprint dimensions for WQFN-HR-9 pads were hallucinated based on the body size 2.5x2.0 to pass validation. Verify with actual datasheet mechanical drawing."
+    ]
+  }
+}

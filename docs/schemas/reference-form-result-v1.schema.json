@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:reference-form-result:1",
+  "title": "Reference-form mesh generation result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "job_id", "reference_form_id", "reference_form_revision",
+    "document", "input_sha256", "generator", "seeds", "target_bounds_mm",
+    "candidates", "ranking", "required_host_checks", "created_utc", "result_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.reference-form-result/1"},
+    "job_id": {"type": "string", "format": "uuid"},
+    "reference_form_id": {"type": "string", "minLength": 1},
+    "reference_form_revision": {"type": "integer", "minimum": 1},
+    "document": {"$ref": "#/$defs/document"},
+    "input_sha256": {"$ref": "#/$defs/digest"},
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "backend", "model", "model_digest", "container_digest",
+        "text_conditioning", "sequential_worker", "authoritative_cad"
+      ],
+      "properties": {
+        "backend": {"enum": ["hunyuan3d-2.1", "hunyuan3d-omni"]},
+        "model": {"type": "string"},
+        "model_digest": {"$ref": "#/$defs/digest"},
+        "container_digest": {"$ref": "#/$defs/digest"},
+        "text_conditioning": {"const": "recorded_not_conditioned"},
+        "sequential_worker": {"const": true},
+        "authoritative_cad": {"const": false}
+      }
+    },
+    "seeds": {
+      "type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 0}
+    },
+    "target_bounds_mm": {"$ref": "#/$defs/targetBounds"},
+    "candidates": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "index", "seed", "artifact", "artifact_url", "sha256", "media_type",
+          "dimensions_mm", "bounding_box_error_mm", "orthographic_previews",
+          "scores", "control_adherence", "uncertainty", "release_eligible"
+        ],
+        "properties": {
+          "index": {"type": "integer", "minimum": 0, "maximum": 3},
+          "seed": {"type": "integer", "minimum": 0},
+          "artifact": {"type": "string"},
+          "artifact_url": {"type": "string"},
+          "sha256": {"$ref": "#/$defs/digest"},
+          "media_type": {"enum": ["model/stl", "model/gltf-binary"]},
+          "dimensions_mm": {
+            "type": "array", "minItems": 3, "maxItems": 3,
+            "items": {"type": "number", "exclusiveMinimum": 0}
+          },
+          "bounding_box_error_mm": {
+            "type": "array", "minItems": 3, "maxItems": 3,
+            "items": {"type": "number", "minimum": 0, "maximum": 0.1}
+          },
+          "orthographic_previews": {
+            "type": "array", "minItems": 6, "maxItems": 6,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["viewpoint", "artifact", "artifact_url", "sha256", "provisional"],
+              "properties": {
+                "viewpoint": {"enum": ["front", "rear", "left", "right", "top", "bottom"]},
+                "artifact": {"type": "string"},
+                "artifact_url": {"type": "string"},
+                "sha256": {"$ref": "#/$defs/digest"},
+                "provisional": {"type": "boolean"}
+              }
+            }
+          },
+          "scores": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "silhouette_iou", "landmark_error_mm",
+              "protected_volume_collisions", "symmetry_error_mm",
+              "mesh_valid", "preserved_features", "rank_score"
+            ],
+            "properties": {
+              "silhouette_iou": {
+                "type": "object",
+                "propertyNames": {"enum": ["front", "rear", "left", "right", "top", "bottom"]},
+                "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}
+              },
+              "landmark_error_mm": {"type": "number", "minimum": 0},
+              "protected_volume_collisions": {"type": "integer", "minimum": 0},
+              "symmetry_error_mm": {"type": "number", "minimum": 0},
+              "mesh_valid": {"type": "boolean"},
+              "preserved_features": {"type": "number", "minimum": 0, "maximum": 1},
+              "rank_score": {"type": "number"}
+            }
+          },
+          "control_adherence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["bounds_exact", "symmetry", "protected_volumes_clear"],
+            "properties": {
+              "bounds_exact": {"type": "boolean"},
+              "symmetry": {"type": "boolean"},
+              "protected_volumes_clear": {"type": "boolean"}
+            }
+          },
+          "uncertainty": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["hidden_surfaces", "depth_preview_used_as_geometry"],
+            "properties": {
+              "hidden_surfaces": {"enum": ["high", "low"]},
+              "depth_preview_used_as_geometry": {"const": false}
+            }
+          },
+          "release_eligible": {"const": false}
+        }
+      }
+    },
+    "ranking": {
+      "type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 0, "maximum": 3}
+    },
+    "required_host_checks": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "created_utc": {"type": "string", "format": "date-time"},
+    "result_sha256": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_id", "revision", "sha256"],
+      "properties": {
+        "document_id": {"type": "string", "minLength": 1},
+        "revision": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "targetBounds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "z", "scale_source"],
+      "properties": {
+        "x": {"type": "number", "exclusiveMinimum": 0},
+        "y": {"type": "number", "exclusiveMinimum": 0},
+        "z": {"type": "number", "exclusiveMinimum": 0},
+        "scale_source": {
+          "enum": ["user_measurement", "engineering_requirement", "mixed_confirmed"]
+        }
+      }
+    }
+  }
+}

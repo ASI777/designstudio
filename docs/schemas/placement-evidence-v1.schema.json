@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:placement-evidence:1",
+  "title": "DesignStudio portable placement with local source evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "placement", "source", "created_at"],
+  "properties": {
+    "schema": {"const": "design-studio.placement-evidence/1"},
+    "placement": {"$ref": "component-placement-v1.schema.json"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["original_name", "path"],
+      "properties": {
+        "original_name": {"type": "string", "minLength": 1, "maxLength": 1024},
+        "path": {"type": "string", "minLength": 1, "maxLength": 4096}
+      }
+    },
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}

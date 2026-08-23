@@ -1,0 +1,222 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+bin_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+install_root="$(cd "$bin_dir/.." && pwd)"
+dependency_prefix="${DESIGNSTUDIO_DEPENDENCY_PREFIX:-$HOME/.local/opt/designstudio-deps}"
+export PYTHONNOUSERSITE=1
+export PYTHONUSERBASE="${PYTHONUSERBASE:-${XDG_CACHE_HOME:-$HOME/.cache}/designstudio/python-userbase}"
+
+# A desktop entry has no terminal attached.  Keep a bounded, credential-free
+# startup journal so a native crash or an early profile/dependency failure is
+# actionable instead of looking like a missing application.
+state_root="${XDG_STATE_HOME:-$HOME/.local/state}/DesignStudio"
+startup_log="$state_root/startup.log"
+if ! mkdir -p "$state_root" || ! touch "$startup_log" || [[ ! -w "$startup_log" ]]; then
+  echo "DesignStudio startup diagnostics are not writable: $startup_log" >&2
+  exit 78
+fi
+if [[ "$(stat -c '%s' "$startup_log" 2>/dev/null || echo 0)" -gt 1048576 ]]; then
+  mv -f "$startup_log" "$startup_log.1"
+  : >"$startup_log"
+fi
+startup_log() {
+  # Do not include command-line arguments: project paths can contain secrets.
+  printf '%s phase=%s %s\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" "$1" "${2:-}" \
+    >>"$startup_log" || true
+}
+
+# Load only the credential keys managed by CredentialsDialog.  Do not source
+# this file: even an owner-writable configuration file must never become an
+# arbitrary shell program during a desktop launch.
+credential_file="${XDG_CONFIG_HOME:-$HOME/.config}/designstudio/env"
+load_designstudio_credentials() {
+  [[ -f "$credential_file" ]] || return 0
+  if ! chmod 600 "$credential_file"; then
+    startup_log credential_error "path=$credential_file reason=permissions"
+    echo "DesignStudio credential file cannot be secured: $credential_file" >&2
+    exit 78
+  fi
+  local line key value
+  while IFS= read -r line || [[ -n "$line" ]]; do
+    [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+    [[ "$line" == *=* ]] || {
+      startup_log credential_error "path=$credential_file reason=malformed-line"
+      echo "DesignStudio credential file contains a malformed line." >&2
+      exit 78
+    }
+    key="${line%%=*}"
+    value="${line#*=}"
+    key="${key//[[:space:]]/}"
+    if [[ "$value" == \"*\" || "$value" == \'*\' ]]; then
+      [[ ${#value} -ge 2 && "${value:0:1}" == "${value: -1}" ]] || {
+        startup_log credential_error "path=$credential_file reason=unbalanced-quotes"
+        exit 78
+      }
+      value="${value:1:${#value}-2}"
+    fi
+    [[ "$value" =~ ^[A-Za-z0-9_./:+~=,@%-]*$ ]] || {
+      startup_log credential_error "path=$credential_file reason=unsafe-value key=$key"
+      echo "DesignStudio credential file contains an unsafe value for $key." >&2
+      exit 78
+    }
+    case "$key" in
+      DIGIKEY_CLIENT_ID|DIGIKEY_CLIENT_SECRET|DIGIKEY_SANDBOX|DIGIKEY_TOKEN_FILE|MOUSER_API_KEY|NEXAR_CLIENT_ID|NEXAR_CLIENT_SECRET)
+        export "$key=$value" ;;
+      ANTHROPIC_API_KEY|DS_FORCE_API|ADVISOR_MODEL)
+        export "$key=$value" ;;
+      *)
+        startup_log credential_ignored "key=$key reason=not-allowlisted" ;;
+    esac
+  done < "$credential_file"
+  local token_file="${DIGIKEY_TOKEN_FILE:-$HOME/.config/product_design/dk_tokens.json}"
+  if [[ -f "$token_file" ]] && ! chmod 600 "$token_file"; then
+    startup_log credential_error "path=$token_file reason=token-permissions"
+    echo "DesignStudio DigiKey token cache cannot be secured: $token_file" >&2
+    exit 78
+  fi
+  startup_log credentials_ready "digikey=$([[ -n ${DIGIKEY_CLIENT_ID:-} && -n ${DIGIKEY_CLIENT_SECRET:-} ]] && echo configured || echo unavailable) mouser=$([[ -n ${MOUSER_API_KEY:-} ]] && echo configured || echo unavailable)"
+}
+load_designstudio_credentials
+build_id="unknown"
+if command -v readelf >/dev/null 2>&1; then
+  build_id="$(readelf -n "$bin_dir/DesignStudio" 2>/dev/null \
+    | sed -n 's/.*Build ID: //p' | head -n 1)"
+  [[ -n "$build_id" ]] || build_id="unknown"
+fi
+startup_log launcher_start \
+  "executable=$bin_dir/DesignStudio build_id=$build_id platform=$(uname -s)-$(uname -m) session=${XDG_SESSION_TYPE:-unknown} dependency_prefix=$dependency_prefix"
+
+# Keep profile locations version-scoped and fail closed before Qt creates a
+# window.  Tests can point XDG_CONFIG_HOME/XDG_CACHE_HOME at clean temporary
+# roots; an unwritable root receives a deterministic diagnostic and status 78.
+config_root="${XDG_CONFIG_HOME:-$HOME/.config}/DesignStudio/v1-1"
+cache_root="${XDG_CACHE_HOME:-$HOME/.cache}/DesignStudio/v1-1"
+for profile_root in "$config_root" "$cache_root"; do
+  if ! mkdir -p "$profile_root" || [[ ! -w "$profile_root" ]]; then
+    startup_log profile_error "path=$profile_root reason=not-writable"
+    echo "DesignStudio profile location is not writable: $profile_root" >&2
+    exit 78
+  fi
+done
+startup_log profile_ready "config=$config_root cache=$cache_root"
+profile_metadata="$config_root/profile.json"
+if [[ -f "$profile_metadata" ]]; then
+  if ! command -v python3.14 >/dev/null 2>&1 \
+      || ! python3.14 -c 'import json,sys; value=json.load(open(sys.argv[1])); assert isinstance(value, dict)' \
+          "$profile_metadata" >/dev/null 2>&1; then
+    startup_log profile_error "path=$profile_metadata reason=corrupt-json"
+    echo "DesignStudio profile metadata is corrupt: $profile_metadata" >&2
+    exit 78
+  fi
+fi
+
+# The rootless developer distribution keeps Debian dependency packages in a
+# separate prefix. Production installers can omit this directory or set an
+# explicit DESIGNSTUDIO_DEPENDENCY_PREFIX.
+library_paths=("$install_root/lib")
+for path in "$dependency_prefix/usr/lib/x86_64-linux-gnu" "$dependency_prefix/usr/lib"; do
+  [[ -d "$path" ]] && library_paths+=("$path")
+done
+old_ifs="$IFS"
+IFS=:
+library_joined="${library_paths[*]}"
+IFS="$old_ifs"
+export LD_LIBRARY_PATH="$library_joined${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+if [[ -z "${QT_PLUGIN_PATH:-}" ]]; then
+  for qt_plugin_root in \
+      "$dependency_prefix/usr/lib/x86_64-linux-gnu/qt6/plugins" \
+      "/usr/lib/x86_64-linux-gnu/qt6/plugins"; do
+    if [[ -d "$qt_plugin_root" ]]; then
+      export QT_PLUGIN_PATH="$qt_plugin_root"
+      break
+    fi
+  done
+fi
+
+if [[ -z "${SWIG_LIB:-}" ]]; then
+  for path in "$dependency_prefix"/usr/share/swig/*; do
+    if [[ -d "$path" ]]; then
+      export SWIG_LIB="$path"
+      break
+    fi
+  done
+fi
+
+# Check the Python side before FreeCAD activates the workbench.  This uses the
+# same interpreter ABI shipped by the host and reports a missing dependency in
+# the startup journal instead of partially constructing the GUI.
+default_python_path="$dependency_prefix/usr/lib/python3/dist-packages"
+workbench_python_path="$install_root/Mod/DesignStudio"
+if [[ -d "$default_python_path" ]] && command -v python3.14 >/dev/null 2>&1; then
+  if ! PYTHONPATH="$default_python_path:$workbench_python_path${PYTHONPATH:+:$PYTHONPATH}" \
+      python3.14 -c 'import PySide6, shiboken6, DesignStudio' >/dev/null 2>&1; then
+    startup_log dependency_error \
+      "required=PySide6,shiboken6,DesignStudio python_path=$default_python_path"
+    echo "DesignStudio Python dependencies are unavailable (PySide6/shiboken6/workbench)." >&2
+    exit 78
+  fi
+else
+  startup_log dependency_error "reason=python3.14-or-dependency-prefix-missing"
+  echo "DesignStudio dependency Python path is unavailable: $default_python_path" >&2
+  exit 78
+fi
+
+python_args=()
+combined_python_path="${DESIGNSTUDIO_PYTHON_PATH:-${PYTHONPATH:-}}"
+[[ -d "$default_python_path" ]] && combined_python_path="$default_python_path${combined_python_path:+:$combined_python_path}"
+IFS=: read -r -a python_paths <<<"$combined_python_path"
+for path in "${python_paths[@]}"; do
+  [[ -n "$path" ]] && python_args+=(--python-path "$path")
+done
+if [[ ! -x "$bin_dir/DesignStudio" ]]; then
+  startup_log launcher_error "reason=missing-executable"
+  echo "DesignStudio executable is missing or not executable: $bin_dir/DesignStudio" >&2
+  exit 127
+fi
+startup_log dependencies_ready "python_path=${default_python_path}"
+if [[ "${DESIGNSTUDIO_STARTUP_PROBE:-0}" == "1" ]]; then
+  startup_log startup_probe_ready "gui_launch=deferred"
+  exit 0
+fi
+startup_log activation_start "workbench=DesignStudioWorkbench"
+
+# FreeCAD treats an arbitrary directory passed on its command line as an
+# unsupported document before the DesignStudio workbench can see it.  Accept a
+# workspace directory (or its manifest) here, remove it from the arguments
+# forwarded to FreeCAD, and let InitGui.py hand it to the embedded native
+# workspace controller after activation.  This makes the desktop launcher and
+# the in-app File/Open workflow agree on the same workspace format.
+workspace_path=""
+forward_args=()
+for arg in "$@"; do
+  if [[ -z "$workspace_path" && -d "$arg" && -f "$arg/manifest.json" ]]; then
+    workspace_path="$(realpath "$arg")"
+    continue
+  fi
+  if [[ -z "$workspace_path" && -f "$arg" && "$(basename "$arg")" == "manifest.json" ]]; then
+    workspace_path="$(dirname "$(realpath "$arg")")"
+    continue
+  fi
+  forward_args+=("$arg")
+done
+if [[ -n "$workspace_path" ]]; then
+  export DESIGNSTUDIO_WORKSPACE_PATH="$workspace_path"
+  startup_log workspace_argument "directory_accepted"
+fi
+
+# Do not exec: retaining this small parent lets us record a native SIGSEGV or
+# other abnormal child exit after a desktop launch.  The visible application
+# remains the single FreeCAD-hosted DesignStudio process.
+set +e
+"$bin_dir/DesignStudio" "${python_args[@]}" "${forward_args[@]}"
+status=$?
+set -e
+if (( status >= 128 )); then
+  startup_log fatal_signal "signal=$((status - 128)) exit_status=$status"
+elif (( status != 0 )); then
+  startup_log fatal_signal "signal=handled-or-unknown exit_status=$status"
+else
+  startup_log launcher_exit "exit_status=$status"
+fi
+exit "$status"

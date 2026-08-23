@@ -1,0 +1,159 @@
+{
+  "schema": "design-studio.component/2",
+  "component": {
+    "manufacturer": "Winbond",
+    "mpn": "W25Q128JVSIM TR",
+    "description": "128M-bit Serial Flash Memory with Dual/Quad SPI & QPI & DTR",
+    "category": "memory",
+    "datasheet": {
+      "title": "W25Q128JV-DTR Datasheet",
+      "revision": "Revision C",
+      "date": "March 27, 2018",
+      "url": ""
+    },
+    "distributors": []
+  },
+  "symbol": {
+    "ref_des_prefix": "U",
+    "pins": [
+      {
+        "number": "1",
+        "name": "/CS",
+        "electrical_type": "input",
+        "description": "Chip Select Input",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "2",
+        "name": "DO (IO1)",
+        "electrical_type": "bidirectional",
+        "description": "Data Output (Data Input Output 1)",
+        "alternate_functions": ["DO", "IO1"],
+        "package_length_mm": null
+      },
+      {
+        "number": "3",
+        "name": "/WP (IO2)",
+        "electrical_type": "bidirectional",
+        "description": "Write Protect Input (Data Input Output 2)",
+        "alternate_functions": ["/WP", "IO2"],
+        "package_length_mm": null
+      },
+      {
+        "number": "4",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "5",
+        "name": "DI (IO0)",
+        "electrical_type": "bidirectional",
+        "description": "Data Input (Data Input Output 0)",
+        "alternate_functions": ["DI", "IO0"],
+        "package_length_mm": null
+      },
+      {
+        "number": "6",
+        "name": "CLK",
+        "electrical_type": "input",
+        "description": "Serial Clock Input",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "7",
+        "name": "/HOLD_or_/RESET (IO3)",
+        "electrical_type": "bidirectional",
+        "description": "Hold or Reset Input (Data Input Output 3)",
+        "alternate_functions": ["/HOLD", "/RESET", "IO3"],
+        "package_length_mm": null
+      },
+      {
+        "number": "8",
+        "name": "VCC",
+        "electrical_type": "power_in",
+        "description": "Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      }
+    ]
+  },
+  "electrical": {
+    "high_speed": {
+      "diff_pairs": [],
+      "single_ended": []
+    },
+    "power_domains": [
+      {
+        "name": "VCC",
+        "vnom_v": 3.3,
+        "vmin_v": 2.7,
+        "vmax_v": 3.6,
+        "max_current_a": null,
+        "pins": ["8"]
+      },
+      {
+        "name": "GND",
+        "vnom_v": 0.0,
+        "vmin_v": 0.0,
+        "vmax_v": 0.0,
+        "max_current_a": null,
+        "pins": ["4"]
+      }
+    ],
+    "required_externals": [
+      {
+        "purpose": "Power supply decoupling",
+        "value": "0.1uF Ceramic",
+        "constraints": "Place close to VCC pin"
+      }
+    ]
+  },
+  "footprint": {
+    "name": "SOIC-8_208mil",
+    "ipc_name": "SOIC127P790X216-8N",
+    "mount": "smd",
+    "body": {
+      "length_mm": null,
+      "width_mm": null,
+      "height_mm": null
+    },
+    "pitch_mm": 1.27,
+    "bga": null,
+    "pads": [],
+    "courtyard_margin_mm": 0.25,
+    "derived_from_outline": false,
+    "source": {
+      "pages": [6],
+      "drawing": "SOIC 208-mil package"
+    }
+  },
+  "orientation": {
+    "pin1_marker": "dot",
+    "pin1_position": "top-left",
+    "polarity": {
+      "has_polarity": false,
+      "cathode_pin": null
+    }
+  },
+  "package_3d": {
+    "height_mm": null,
+    "standoff_mm": 0.0,
+    "shape": "box"
+  },
+  "extraction": {
+    "confidence": {
+      "symbol": 1.0,
+      "electrical": 0.9,
+      "footprint": 0.5
+    },
+    "pages_used": [5, 6],
+    "warnings": [
+      "Footprint dimensions not provided in text snippet."
+    ]
+  }
+}

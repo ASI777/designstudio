@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:physical-design-session:1",
+  "title": "DesignStudio physical design session",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "session_id", "revision", "workflow_mode", "document",
+    "intent", "input_assets", "occupied_volumes", "desire_capture",
+    "material_constraints", "manufacturing_constraints",
+    "geometry_authority", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.physical-design-session/1"},
+    "session_id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+    "revision": {"type": "integer", "minimum": 1},
+    "workflow_mode": {"enum": ["inside_out", "outside_in", "co_design"]},
+    "document": {"$ref": "#/$defs/document"},
+    "intent": {"type": "string", "minLength": 1, "maxLength": 32000},
+    "input_assets": {
+      "type": "array", "maxItems": 256,
+      "items": {"$ref": "#/$defs/inputAsset"}
+    },
+    "occupied_volumes": {
+      "type": "array", "maxItems": 4096,
+      "items": {"$ref": "#/$defs/occupiedVolume"}
+    },
+    "desire_capture": {
+      "type": "array", "maxItems": 128,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["desire_id", "statement", "priority", "status"],
+        "properties": {
+          "desire_id": {"type": "string", "minLength": 1, "maxLength": 160},
+          "statement": {"type": "string", "minLength": 1, "maxLength": 4000},
+          "priority": {"enum": ["required", "preferred", "exploratory"]},
+          "status": {"enum": ["unverified", "user_confirmed", "measured"]}
+        }
+      }
+    },
+    "material_constraints": {
+      "type": "array", "maxItems": 128,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["region_id", "candidate_materials", "requirements", "evidence_status"],
+        "properties": {
+          "region_id": {"type": "string", "minLength": 1},
+          "candidate_materials": {
+            "type": "array", "minItems": 1, "uniqueItems": true,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "requirements": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "evidence_status": {"enum": ["unverified", "datasheet_backed", "test_backed"]}
+        }
+      }
+    },
+    "manufacturing_constraints": {
+      "type": "object", "additionalProperties": false,
+      "required": ["processes", "units", "minimum_wall_mm", "minimum_feature_mm", "status"],
+      "properties": {
+        "processes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "units": {"const": "mm"},
+        "minimum_wall_mm": {"type": "number", "exclusiveMinimum": 0, "maximum": 1000},
+        "minimum_feature_mm": {"type": "number", "exclusiveMinimum": 0, "maximum": 1000},
+        "status": {"enum": ["provisional", "process_reviewed", "supplier_confirmed"]}
+      }
+    },
+    "geometry_authority": {
+      "type": "object", "additionalProperties": false,
+      "required": ["authoritative_sources", "raster_and_sketch_are_geometry_authority", "unknown_dimensions_policy"],
+      "properties": {
+        "authoritative_sources": {
+          "const": ["freecad_brep", "typed_mechanical_cad_program", "verified_measurements"]
+        },
+        "raster_and_sketch_are_geometry_authority": {"const": false},
+        "unknown_dimensions_policy": {"const": "blocked_until_measured_or_explicitly_constrained"}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["created_by", "created_utc", "user_prompt"],
+      "properties": {
+        "created_by": {"type": "string", "minLength": 1},
+        "created_utc": {"type": "string", "format": "date-time"},
+        "user_prompt": {"type": "string", "minLength": 1, "maxLength": 32000}
+      }
+    }
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "relativePath": {"type": "string", "minLength": 1, "maxLength": 2048, "pattern": "^(?!/)(?![A-Za-z]:[\\\\/])(?!.*(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)).+$"},
+    "point3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "minimum": -1000000, "maximum": 1000000}},
+    "document": {
+      "type": "object", "additionalProperties": false,
+      "required": ["document_id", "path", "sha256"],
+      "properties": {
+        "document_id": {"type": "string", "minLength": 1},
+        "path": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "inputAsset": {
+      "type": "object", "additionalProperties": false,
+      "required": ["asset_id", "path", "sha256", "media_type", "input_kind", "role", "geometry_authority", "measurement_status"],
+      "properties": {
+        "asset_id": {"type": "string", "minLength": 1},
+        "path": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "media_type": {"enum": ["image/png", "image/jpeg", "image/webp", "image/svg+xml", "application/pdf"]},
+        "input_kind": {"enum": ["object_photo", "render", "hand_sketch", "vector_sketch", "engineering_drawing", "scan"]},
+        "role": {"enum": ["inspiration", "silhouette", "layout", "measurement_reference", "material_reference"]},
+        "geometry_authority": {"const": false},
+        "measurement_status": {"enum": ["none", "uncalibrated", "user_calibrated", "drawing_dimensions_verified"]}
+      }
+    },
+    "occupiedVolume": {
+      "type": "object", "additionalProperties": false,
+      "required": ["volume_id", "semantic_id", "kind", "min_mm", "max_mm", "clearance_mm", "locked", "source"],
+      "properties": {
+        "volume_id": {"type": "string", "minLength": 1},
+        "semantic_id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["hardware", "mechanism", "pcb", "battery", "display", "connector", "cable", "human_clearance", "service_clearance", "thermal_keepout", "custom"]},
+        "min_mm": {"$ref": "#/$defs/point3"},
+        "max_mm": {"$ref": "#/$defs/point3"},
+        "clearance_mm": {"type": "number", "minimum": 0, "maximum": 10000},
+        "locked": {"type": "boolean"},
+        "source": {"enum": ["freecad_brep", "verified_component", "user_measurement", "engineering_requirement"]}
+      }
+    }
+  }
+}

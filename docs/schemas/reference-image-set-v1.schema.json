@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:reference-image-set:1",
+  "title": "DesignStudio immutable visual-reference image set v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "set_id", "revision", "authority", "measurement_status", "millimetre_inference_allowed", "source_count", "representative_asset_ids", "sources", "provenance"],
+  "properties": {
+    "schema": {"const": "design-studio.reference-image-set/1"},
+    "set_id": {"$ref": "#/$defs/id"},
+    "revision": {"type": "integer", "minimum": 1},
+    "authority": {"const": "inspiration-and-visual-evidence-only"},
+    "measurement_status": {"const": "uncalibrated"},
+    "millimetre_inference_allowed": {"const": false},
+    "source_count": {"type": "integer", "minimum": 1, "maximum": 256},
+    "representative_asset_ids": {"type": "array", "maxItems": 8, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+    "sources": {"type": "array", "minItems": 1, "maxItems": 256, "items": {"$ref": "#/$defs/source"}},
+    "provenance": {"$ref": "#/$defs/provenance"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "path": {"type": "string", "minLength": 1, "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"},
+    "size": {
+      "type": "object", "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {"width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}}
+    },
+    "bbox": {
+      "type": "object", "additionalProperties": false,
+      "required": ["x", "y", "width", "height", "detected", "method", "confidence"],
+      "properties": {
+        "x": {"type": "integer", "minimum": 0}, "y": {"type": "integer", "minimum": 0},
+        "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1},
+        "detected": {"type": "boolean"}, "method": {"type": "string", "minLength": 1},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["view", "confidence", "source"],
+      "properties": {
+        "view": {"enum": ["front", "rear", "top", "bottom", "left", "right", "oblique", "interior", "rib_detail", "control_detail", "feature_detail", "ui_reference", "unknown"]},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "source": {"type": "string", "minLength": 1}
+      }
+    },
+    "relationship": {
+      "type": "object", "additionalProperties": false,
+      "required": ["asset_id", "relationship", "perceptual_distance", "confidence"],
+      "properties": {
+        "asset_id": {"$ref": "#/$defs/id"},
+        "relationship": {"enum": ["near_duplicate", "related_or_cropped_view"]},
+        "perceptual_distance": {"type": "integer", "minimum": 0, "maximum": 256},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["asset_id", "source_path", "stored_original_path", "cropped_path", "source_sha256", "crop_sha256", "media_type", "pixel_size", "crop_bbox_px", "browser_chrome_detected", "view_classification", "perceptual_hash", "duplicate_relationships", "geometry_authority", "measurement_status", "input_detail", "selection_reason"],
+      "properties": {
+        "asset_id": {"$ref": "#/$defs/id"}, "source_path": {"type": "string", "minLength": 1},
+        "stored_original_path": {"$ref": "#/$defs/path"}, "cropped_path": {"$ref": "#/$defs/path"},
+        "source_sha256": {"$ref": "#/$defs/digest"}, "crop_sha256": {"$ref": "#/$defs/digest"},
+        "media_type": {"enum": ["image/png", "image/jpeg", "image/webp"]},
+        "pixel_size": {"$ref": "#/$defs/size"}, "crop_bbox_px": {"$ref": "#/$defs/bbox"},
+        "browser_chrome_detected": {"type": "boolean"}, "view_classification": {"$ref": "#/$defs/classification"},
+        "perceptual_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "duplicate_relationships": {"type": "array", "items": {"$ref": "#/$defs/relationship"}},
+        "geometry_authority": {"const": false}, "measurement_status": {"const": "uncalibrated"},
+        "input_detail": {"enum": ["low", "original"]}, "selection_reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["created_at_utc", "created_by", "importer_version", "sources_preserved", "crop_policy"],
+      "properties": {
+        "created_at_utc": {"type": "string", "minLength": 1}, "created_by": {"type": "string", "minLength": 1},
+        "importer_version": {"type": "string", "minLength": 1}, "sources_preserved": {"const": true},
+        "crop_policy": {"const": "non-authoritative-derived-copy"}
+      }
+    }
+  }
+}

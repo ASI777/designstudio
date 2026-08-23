@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns:ds="https://designstudio/footprint"
+     ds:format="designstudio.footprint/1" ds:component="USBC_USB4910_RA_SMT.props.json"
+     width="12.64mm" height="10.2mm" viewBox="-6.32 -5.1 12.64 10.2">
+  <g inkscape:groupmode="layer" inkscape:label="copper-top" ds:layer="copper-top">
+    <rect x="-2.9000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B1" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-2.4000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B2" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-1.9000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B3" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-1.4000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B4" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-0.9000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B5" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-0.4000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B6" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="0.1000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B7" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="0.6000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B8" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="1.1000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B9" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="1.6000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B10" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="2.1000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B11" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="2.6000" y="-2.8050" width="0.300" height="0.850" ds:type="pad" ds:pad="B12" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-2.9000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A1" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-2.4000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A2" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-1.9000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A3" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-1.4000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A4" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-0.9000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A5" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-0.4000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A6" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="0.1000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A7" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="0.6000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A8" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="1.1000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A9" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="1.6000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A10" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="2.1000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A11" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="2.6000" y="-4.2800" width="0.300" height="1.100" ds:type="pad" ds:pad="A12" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-4.8200" y="-3.9000" width="1.000" height="1.600" ds:type="pad" ds:pad="S1" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="3.8200" y="-3.9000" width="1.000" height="1.600" ds:type="pad" ds:pad="S2" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="-4.8200" y="1.1200" width="1.000" height="2.300" ds:type="pad" ds:pad="S3" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+    <rect x="3.8200" y="1.1200" width="1.000" height="2.300" ds:type="pad" ds:pad="S4" ds:net="" ds:shape="rect" ds:layer="copper-top" style="fill:#c89632;stroke:none"/>
+  </g>
+  <g inkscape:groupmode="layer" inkscape:label="silk-top" ds:layer="silk-top">
+    <path d="M -4.320,3.100 L 4.320,3.100 L 4.320,-3.100 L -4.320,-3.100 Z" ds:type="outline" ds:layer="silk-top" style="fill:none;stroke:#4b4b4b;stroke-width:0.1"/>
+  </g>
+</svg>

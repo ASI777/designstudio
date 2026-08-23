@@ -1,0 +1,1137 @@
+{
+  "assumptions": [],
+  "binding_digest": "df98c6b1f4f37f7cff6dc22426a941256dacd2c340a0040263828ca1503d4b7a",
+  "binding_id": "component:ESP32-S3-WROOM-1-N8R8",
+  "component": {
+    "category": "mcu_module",
+    "manufacturer": "Espressif Systems",
+    "mpn": "ESP32-S3-WROOM-1-N8R8",
+    "value": "mcu_module"
+  },
+  "datasheet_evidence": {
+    "bytes": 1280501,
+    "expected_mpn": "ESP32-S3-WROOM-1-N8R8",
+    "mpn_match": "exact",
+    "package_pin_count": 41,
+    "package_variant": "ESP32-S3-WROOM-1-N8R8",
+    "retrieved_utc": "2026-07-16T00:00:00Z",
+    "schema": "design-studio.datasheet-evidence/1",
+    "sha256": "27d71971da07c280c6068d08c74720d1a25b8f20cf8494dc1765bdd28d40d435",
+    "source": "https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+    "source_kind": "reference"
+  },
+  "electrical": {
+    "kind": "mcu_module",
+    "parameters": [
+      {
+        "name": "datasheet_bound",
+        "typ": 1,
+        "unit": "bool"
+      }
+    ],
+    "pin_functions": [
+      {
+        "electrical_type": "power_in",
+        "name": "GND",
+        "pin": "1"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "3V3",
+        "pin": "2"
+      },
+      {
+        "electrical_type": "input",
+        "name": "EN",
+        "pin": "3"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO4",
+        "pin": "4"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO5",
+        "pin": "5"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO6",
+        "pin": "6"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO7",
+        "pin": "7"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO15",
+        "pin": "8"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO16",
+        "pin": "9"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO17",
+        "pin": "10"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO18",
+        "pin": "11"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO8",
+        "pin": "12"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "USB_D-",
+        "pin": "13"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "USB_D+",
+        "pin": "14"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO3",
+        "pin": "15"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO46",
+        "pin": "16"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO9",
+        "pin": "17"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO10",
+        "pin": "18"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO11",
+        "pin": "19"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO12",
+        "pin": "20"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO13",
+        "pin": "21"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO14",
+        "pin": "22"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO21",
+        "pin": "23"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO47",
+        "pin": "24"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO48",
+        "pin": "25"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO45",
+        "pin": "26"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO0",
+        "pin": "27"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO35",
+        "pin": "28"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO36",
+        "pin": "29"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO37",
+        "pin": "30"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO38",
+        "pin": "31"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO39",
+        "pin": "32"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO40",
+        "pin": "33"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO41",
+        "pin": "34"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO42",
+        "pin": "35"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "RXD0",
+        "pin": "36"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "TXD0",
+        "pin": "37"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO2",
+        "pin": "38"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO1",
+        "pin": "39"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "GND",
+        "pin": "40"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "GND",
+        "pin": "41"
+      }
+    ]
+  },
+  "footprint": {
+    "body": {
+      "height_mm": 3.1,
+      "length_mm": 25.5,
+      "width_mm": 18.0
+    },
+    "courtyard_margin_mm": 0.25,
+    "courtyard_pts": [
+      [
+        -10.05,
+        -14.05
+      ],
+      [
+        10.05,
+        -14.05
+      ],
+      [
+        10.05,
+        13.0
+      ],
+      [
+        -10.05,
+        13.0
+      ]
+    ],
+    "generated": "vector-trace",
+    "mount": "smd",
+    "name": "ESP32-S3-WROOM-1-N8R8",
+    "pads": [
+      {
+        "height_mm": 0.9,
+        "number": "1",
+        "pad_id": "pad:1",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": 10.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "2",
+        "pad_id": "pad:2",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": 9.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "3",
+        "pad_id": "pad:3",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": 7.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "4",
+        "pad_id": "pad:4",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": 6.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "5",
+        "pad_id": "pad:5",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": 4.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "6",
+        "pad_id": "pad:6",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": 3.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "7",
+        "pad_id": "pad:7",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": 1.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "8",
+        "pad_id": "pad:8",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": 0.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "9",
+        "pad_id": "pad:9",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": -1.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "10",
+        "pad_id": "pad:10",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": -3.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "11",
+        "pad_id": "pad:11",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": -4.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "12",
+        "pad_id": "pad:12",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": -6.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "13",
+        "pad_id": "pad:13",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": -7.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "14",
+        "pad_id": "pad:14",
+        "width_mm": 1.5,
+        "x_mm": -9.05,
+        "y_mm": -9.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "15",
+        "pad_id": "pad:15",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": -9.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "16",
+        "pad_id": "pad:16",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": -7.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "17",
+        "pad_id": "pad:17",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": -6.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "18",
+        "pad_id": "pad:18",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": -4.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "19",
+        "pad_id": "pad:19",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": -3.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "20",
+        "pad_id": "pad:20",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": -1.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "21",
+        "pad_id": "pad:21",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": 0.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "22",
+        "pad_id": "pad:22",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": 1.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "23",
+        "pad_id": "pad:23",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": 3.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "24",
+        "pad_id": "pad:24",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": 4.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "25",
+        "pad_id": "pad:25",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": 6.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "26",
+        "pad_id": "pad:26",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": 7.5
+      },
+      {
+        "height_mm": 0.9,
+        "number": "27",
+        "pad_id": "pad:27",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": 9.0
+      },
+      {
+        "height_mm": 0.9,
+        "number": "28",
+        "pad_id": "pad:28",
+        "width_mm": 1.5,
+        "x_mm": 9.05,
+        "y_mm": 10.5
+      },
+      {
+        "height_mm": 1.5,
+        "number": "29",
+        "pad_id": "pad:29",
+        "width_mm": 0.9,
+        "x_mm": 7.7,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "30",
+        "pad_id": "pad:30",
+        "width_mm": 0.9,
+        "x_mm": 6.300000000000001,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "31",
+        "pad_id": "pad:31",
+        "width_mm": 0.9,
+        "x_mm": 4.9,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "32",
+        "pad_id": "pad:32",
+        "width_mm": 0.9,
+        "x_mm": 3.500000000000001,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "33",
+        "pad_id": "pad:33",
+        "width_mm": 0.9,
+        "x_mm": 2.1000000000000005,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "34",
+        "pad_id": "pad:34",
+        "width_mm": 0.9,
+        "x_mm": 0.7000000000000002,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "35",
+        "pad_id": "pad:35",
+        "width_mm": 0.9,
+        "x_mm": -0.6999999999999984,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "36",
+        "pad_id": "pad:36",
+        "width_mm": 0.9,
+        "x_mm": -2.0999999999999988,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "37",
+        "pad_id": "pad:37",
+        "width_mm": 0.9,
+        "x_mm": -3.499999999999999,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "38",
+        "pad_id": "pad:38",
+        "width_mm": 0.9,
+        "x_mm": -4.8999999999999995,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "39",
+        "pad_id": "pad:39",
+        "width_mm": 0.9,
+        "x_mm": -6.3,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 1.5,
+        "number": "40",
+        "pad_id": "pad:40",
+        "width_mm": 0.9,
+        "x_mm": -7.699999999999998,
+        "y_mm": -13.05
+      },
+      {
+        "height_mm": 6.0,
+        "number": "41",
+        "pad_id": "pad:41",
+        "shape": "roundrect",
+        "width_mm": 6.0,
+        "x_mm": 0,
+        "y_mm": 0
+      }
+    ]
+  },
+  "model_3d": {
+    "alignment_status": "verified",
+    "asset_uri": "acceptance/agent-workflow-controller/generated/components/ESP32-S3-WROOM-1-N8R8/package.step",
+    "byte_size": 672307,
+    "claimed_mpn": "ESP32-S3-WROOM-1-N8R8",
+    "format": "step",
+    "model_to_footprint": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "sha256": "b043f9ddf25a4430aa81bd88c83ca0335ba571c54cd7955a1ad56b891e849aff"
+  },
+  "orientation": {
+    "origin": "footprint",
+    "pin1_mark": "datasheet",
+    "z_axis": "board_normal"
+  },
+  "pin_pad_map": [
+    {
+      "pad_ids": [
+        "pad:1"
+      ],
+      "pin_name": "GND",
+      "pin_number": "1"
+    },
+    {
+      "pad_ids": [
+        "pad:2"
+      ],
+      "pin_name": "3V3",
+      "pin_number": "2"
+    },
+    {
+      "pad_ids": [
+        "pad:3"
+      ],
+      "pin_name": "EN",
+      "pin_number": "3"
+    },
+    {
+      "pad_ids": [
+        "pad:4"
+      ],
+      "pin_name": "IO4",
+      "pin_number": "4"
+    },
+    {
+      "pad_ids": [
+        "pad:5"
+      ],
+      "pin_name": "IO5",
+      "pin_number": "5"
+    },
+    {
+      "pad_ids": [
+        "pad:6"
+      ],
+      "pin_name": "IO6",
+      "pin_number": "6"
+    },
+    {
+      "pad_ids": [
+        "pad:7"
+      ],
+      "pin_name": "IO7",
+      "pin_number": "7"
+    },
+    {
+      "pad_ids": [
+        "pad:8"
+      ],
+      "pin_name": "IO15",
+      "pin_number": "8"
+    },
+    {
+      "pad_ids": [
+        "pad:9"
+      ],
+      "pin_name": "IO16",
+      "pin_number": "9"
+    },
+    {
+      "pad_ids": [
+        "pad:10"
+      ],
+      "pin_name": "IO17",
+      "pin_number": "10"
+    },
+    {
+      "pad_ids": [
+        "pad:11"
+      ],
+      "pin_name": "IO18",
+      "pin_number": "11"
+    },
+    {
+      "pad_ids": [
+        "pad:12"
+      ],
+      "pin_name": "IO8",
+      "pin_number": "12"
+    },
+    {
+      "pad_ids": [
+        "pad:13"
+      ],
+      "pin_name": "USB_D-",
+      "pin_number": "13"
+    },
+    {
+      "pad_ids": [
+        "pad:14"
+      ],
+      "pin_name": "USB_D+",
+      "pin_number": "14"
+    },
+    {
+      "pad_ids": [
+        "pad:15"
+      ],
+      "pin_name": "IO3",
+      "pin_number": "15"
+    },
+    {
+      "pad_ids": [
+        "pad:16"
+      ],
+      "pin_name": "IO46",
+      "pin_number": "16"
+    },
+    {
+      "pad_ids": [
+        "pad:17"
+      ],
+      "pin_name": "IO9",
+      "pin_number": "17"
+    },
+    {
+      "pad_ids": [
+        "pad:18"
+      ],
+      "pin_name": "IO10",
+      "pin_number": "18"
+    },
+    {
+      "pad_ids": [
+        "pad:19"
+      ],
+      "pin_name": "IO11",
+      "pin_number": "19"
+    },
+    {
+      "pad_ids": [
+        "pad:20"
+      ],
+      "pin_name": "IO12",
+      "pin_number": "20"
+    },
+    {
+      "pad_ids": [
+        "pad:21"
+      ],
+      "pin_name": "IO13",
+      "pin_number": "21"
+    },
+    {
+      "pad_ids": [
+        "pad:22"
+      ],
+      "pin_name": "IO14",
+      "pin_number": "22"
+    },
+    {
+      "pad_ids": [
+        "pad:23"
+      ],
+      "pin_name": "IO21",
+      "pin_number": "23"
+    },
+    {
+      "pad_ids": [
+        "pad:24"
+      ],
+      "pin_name": "IO47",
+      "pin_number": "24"
+    },
+    {
+      "pad_ids": [
+        "pad:25"
+      ],
+      "pin_name": "IO48",
+      "pin_number": "25"
+    },
+    {
+      "pad_ids": [
+        "pad:26"
+      ],
+      "pin_name": "IO45",
+      "pin_number": "26"
+    },
+    {
+      "pad_ids": [
+        "pad:27"
+      ],
+      "pin_name": "IO0",
+      "pin_number": "27"
+    },
+    {
+      "pad_ids": [
+        "pad:28"
+      ],
+      "pin_name": "IO35",
+      "pin_number": "28"
+    },
+    {
+      "pad_ids": [
+        "pad:29"
+      ],
+      "pin_name": "IO36",
+      "pin_number": "29"
+    },
+    {
+      "pad_ids": [
+        "pad:30"
+      ],
+      "pin_name": "IO37",
+      "pin_number": "30"
+    },
+    {
+      "pad_ids": [
+        "pad:31"
+      ],
+      "pin_name": "IO38",
+      "pin_number": "31"
+    },
+    {
+      "pad_ids": [
+        "pad:32"
+      ],
+      "pin_name": "IO39",
+      "pin_number": "32"
+    },
+    {
+      "pad_ids": [
+        "pad:33"
+      ],
+      "pin_name": "IO40",
+      "pin_number": "33"
+    },
+    {
+      "pad_ids": [
+        "pad:34"
+      ],
+      "pin_name": "IO41",
+      "pin_number": "34"
+    },
+    {
+      "pad_ids": [
+        "pad:35"
+      ],
+      "pin_name": "IO42",
+      "pin_number": "35"
+    },
+    {
+      "pad_ids": [
+        "pad:36"
+      ],
+      "pin_name": "RXD0",
+      "pin_number": "36"
+    },
+    {
+      "pad_ids": [
+        "pad:37"
+      ],
+      "pin_name": "TXD0",
+      "pin_number": "37"
+    },
+    {
+      "pad_ids": [
+        "pad:38"
+      ],
+      "pin_name": "IO2",
+      "pin_number": "38"
+    },
+    {
+      "pad_ids": [
+        "pad:39"
+      ],
+      "pin_name": "IO1",
+      "pin_number": "39"
+    },
+    {
+      "pad_ids": [
+        "pad:40"
+      ],
+      "pin_name": "GND",
+      "pin_number": "40"
+    },
+    {
+      "pad_ids": [
+        "pad:41"
+      ],
+      "pin_name": "GND",
+      "pin_number": "41"
+    }
+  ],
+  "schema": "design-studio.bound-component/1",
+  "simulation_models": {},
+  "source_component": {
+    "schema": "design-studio.component/2",
+    "sha256": "edeef0b70ca4a48fdaddca224ac5d480e0008ec07f63e52c66a98edf5f640239",
+    "uri": "acceptance/agent-workflow-controller/generated/components/ESP32-S3-WROOM-1-N8R8/component.json"
+  },
+  "status": "complete",
+  "symbol": {
+    "pins": [
+      {
+        "electrical_type": "power_in",
+        "name": "GND",
+        "number": "1"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "3V3",
+        "number": "2"
+      },
+      {
+        "electrical_type": "input",
+        "name": "EN",
+        "number": "3"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO4",
+        "number": "4"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO5",
+        "number": "5"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO6",
+        "number": "6"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO7",
+        "number": "7"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO15",
+        "number": "8"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO16",
+        "number": "9"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO17",
+        "number": "10"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO18",
+        "number": "11"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO8",
+        "number": "12"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "USB_D-",
+        "number": "13"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "USB_D+",
+        "number": "14"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO3",
+        "number": "15"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO46",
+        "number": "16"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO9",
+        "number": "17"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO10",
+        "number": "18"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO11",
+        "number": "19"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO12",
+        "number": "20"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO13",
+        "number": "21"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO14",
+        "number": "22"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO21",
+        "number": "23"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO47",
+        "number": "24"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO48",
+        "number": "25"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO45",
+        "number": "26"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO0",
+        "number": "27"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO35",
+        "number": "28"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO36",
+        "number": "29"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO37",
+        "number": "30"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO38",
+        "number": "31"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO39",
+        "number": "32"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO40",
+        "number": "33"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO41",
+        "number": "34"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO42",
+        "number": "35"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "RXD0",
+        "number": "36"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "TXD0",
+        "number": "37"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO2",
+        "number": "38"
+      },
+      {
+        "electrical_type": "bidir",
+        "name": "IO1",
+        "number": "39"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "GND",
+        "number": "40"
+      },
+      {
+        "electrical_type": "power_in",
+        "name": "GND",
+        "number": "41"
+      }
+    ]
+  }
+}

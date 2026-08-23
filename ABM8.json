@@ -1,0 +1,362 @@
+{
+  "schema": "design-studio.component/2",
+  "component": {
+    "manufacturer": "Abracon LLC",
+    "mpn": "ABM8",
+    "description": "3.2 x 2.5 x 0.8 mm 4-pad ceramic SMD quartz crystal, 8.000\u2013125.000 MHz, fundamental/3rd overtone, 18 pF load capacitance",
+    "category": "other",
+    "datasheet": {
+      "title": "ABM8 Ceramic SMD Crystal",
+      "revision": "07-29-20",
+      "date": "2020-07-29",
+      "url": "www.abracon.com"
+    },
+    "distributors": []
+  },
+  "symbol": {
+    "ref_des_prefix": "Y",
+    "pins": [
+      {
+        "number": "1",
+        "name": "XTAL1",
+        "electrical_type": "passive",
+        "description": "Crystal terminal 1 (chamfered pin per outline note)",
+        "alternate_functions": []
+      },
+      {
+        "number": "2",
+        "name": "GND",
+        "electrical_type": "passive",
+        "description": "Case / ground pad",
+        "alternate_functions": []
+      },
+      {
+        "number": "3",
+        "name": "XTAL2",
+        "electrical_type": "passive",
+        "description": "Crystal terminal 2",
+        "alternate_functions": []
+      },
+      {
+        "number": "4",
+        "name": "GND",
+        "electrical_type": "passive",
+        "description": "Case / ground pad",
+        "alternate_functions": []
+      }
+    ]
+  },
+  "electrical": {
+    "supply": {
+      "vmin_v": 0,
+      "vmax_v": 0,
+      "typ_v": null,
+      "max_current_a": null
+    },
+    "absolute_max": [
+      {
+        "parameter": "Storage temperature (min)",
+        "value": -55,
+        "unit": "degC"
+      },
+      {
+        "parameter": "Storage temperature (max)",
+        "value": 125,
+        "unit": "degC"
+      },
+      {
+        "parameter": "Drive level (max)",
+        "value": 100,
+        "unit": "uW"
+      }
+    ],
+    "operating_conditions": [
+      {
+        "parameter": "Frequency range",
+        "min": 8.0,
+        "typ": null,
+        "max": 125.0,
+        "unit": "MHz"
+      },
+      {
+        "parameter": "Operating temperature (standard)",
+        "min": -10,
+        "typ": null,
+        "max": 60,
+        "unit": "degC"
+      },
+      {
+        "parameter": "Frequency tolerance @ +25\u00b0C (standard)",
+        "min": -50,
+        "typ": null,
+        "max": 50,
+        "unit": "ppm"
+      },
+      {
+        "parameter": "Frequency stability over operating temp (ref +25\u00b0C, standard)",
+        "min": -50,
+        "typ": null,
+        "max": 50,
+        "unit": "ppm"
+      },
+      {
+        "parameter": "Shunt capacitance (C0)",
+        "min": null,
+        "typ": null,
+        "max": 3.0,
+        "unit": "pF"
+      },
+      {
+        "parameter": "Load capacitance (CL, standard)",
+        "min": null,
+        "typ": 18.0,
+        "max": null,
+        "unit": "pF"
+      },
+      {
+        "parameter": "Drive level",
+        "min": null,
+        "typ": 10,
+        "max": 100,
+        "unit": "uW"
+      },
+      {
+        "parameter": "Aging (first year, @25\u00b0C\u00b13\u00b0C)",
+        "min": -2,
+        "typ": null,
+        "max": 2,
+        "unit": "ppm"
+      },
+      {
+        "parameter": "Insulation resistance @100Vdc\u00b115V",
+        "min": 500,
+        "typ": null,
+        "max": null,
+        "unit": "Mohm"
+      }
+    ],
+    "required_externals": [
+      {
+        "purpose": "load capacitor (oscillator load, XTAL1 side)",
+        "value": "18pF",
+        "constraints": "Total load capacitance CL = 18 pF standard; minimum specifiable CL = 6 pF; choose two equal caps accounting for stray capacitance",
+        "connect_between": [
+          "XTAL1",
+          "GND"
+        ],
+        "mandatory": true
+      },
+      {
+        "purpose": "load capacitor (oscillator load, XTAL2 side)",
+        "value": "18pF",
+        "constraints": "Total load capacitance CL = 18 pF standard; minimum specifiable CL = 6 pF; choose two equal caps accounting for stray capacitance",
+        "connect_between": [
+          "XTAL2",
+          "GND"
+        ],
+        "mandatory": true
+      }
+    ],
+    "application_circuits": [
+      {
+        "mode": "parallel-resonant Pierce oscillator",
+        "summary": "Connect XTAL1 and XTAL2 across the MCU/oscillator crystal pins with two load capacitors to ground sized for CL = 18 pF; bond the two case/ground pads to GND.",
+        "connections": [
+          {
+            "from_pin": "1",
+            "to": "Oscillator XIN"
+          },
+          {
+            "from_pin": "3",
+            "to": "Oscillator XOUT"
+          },
+          {
+            "from_pin": "2",
+            "to": "GND"
+          },
+          {
+            "from_pin": "4",
+            "to": "GND"
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ESR (R1) 8.000-9.999 MHz Fundamental",
+        "min": null,
+        "typ": null,
+        "max": 400,
+        "unit": "ohm",
+        "condition": "Table 1"
+      },
+      {
+        "name": "ESR (R1) 10.000-11.999 MHz Fundamental",
+        "min": null,
+        "typ": null,
+        "max": 200,
+        "unit": "ohm",
+        "condition": "Table 1"
+      },
+      {
+        "name": "ESR (R1) 12.000-15.999 MHz Fundamental",
+        "min": null,
+        "typ": null,
+        "max": 120,
+        "unit": "ohm",
+        "condition": "Table 1"
+      },
+      {
+        "name": "ESR (R1) 16.000-19.999 MHz Fundamental",
+        "min": null,
+        "typ": null,
+        "max": 70,
+        "unit": "ohm",
+        "condition": "Table 1"
+      },
+      {
+        "name": "ESR (R1) 20.000-29.999 MHz Fundamental",
+        "min": null,
+        "typ": null,
+        "max": 50,
+        "unit": "ohm",
+        "condition": "Table 1"
+      },
+      {
+        "name": "ESR (R1) 30.000-39.999 MHz Fundamental",
+        "min": null,
+        "typ": null,
+        "max": 40,
+        "unit": "ohm",
+        "condition": "Table 1"
+      },
+      {
+        "name": "ESR (R1) 40.000-54.000 MHz Fundamental",
+        "min": null,
+        "typ": null,
+        "max": 35,
+        "unit": "ohm",
+        "condition": "Table 1"
+      },
+      {
+        "name": "ESR (R1) 64.000-80.000 MHz 3rd Overtone",
+        "min": null,
+        "typ": null,
+        "max": 120,
+        "unit": "ohm",
+        "condition": "Table 1"
+      },
+      {
+        "name": "ESR (R1) 98.304-125.000 MHz 3rd Overtone",
+        "min": null,
+        "typ": null,
+        "max": 80,
+        "unit": "ohm",
+        "condition": "Table 1"
+      }
+    ],
+    "thermal": {
+      "theta_ja_c_w": null,
+      "theta_jc_c_w": null,
+      "max_power_w": null,
+      "tj_max_c": null
+    },
+    "power_domains": [],
+    "high_speed": {
+      "diff_pairs": [],
+      "single_ended": []
+    }
+  },
+  "footprint": {
+    "name": "ABM8 (3225 4-pad crystal)",
+    "ipc_name": "XTAL_ABM8_3225-4",
+    "mount": "smd",
+    "body": {
+      "length_mm": 3.2,
+      "width_mm": 2.5,
+      "height_mm": 0.8
+    },
+    "pitch_mm": 2.2,
+    "pads": [
+      {
+        "number": "1",
+        "x_mm": -1.1,
+        "y_mm": -0.95,
+        "width_mm": 1.2,
+        "height_mm": 1.4,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "2",
+        "x_mm": -1.1,
+        "y_mm": 0.95,
+        "width_mm": 1.2,
+        "height_mm": 1.4,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "3",
+        "x_mm": 1.1,
+        "y_mm": 0.95,
+        "width_mm": 1.2,
+        "height_mm": 1.4,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "4",
+        "x_mm": 1.1,
+        "y_mm": -0.95,
+        "width_mm": 1.2,
+        "height_mm": 1.4,
+        "shape": "rect",
+        "mechanical": false
+      }
+    ],
+    "courtyard_margin_mm": null,
+    "derived_from_outline": true,
+    "source": {
+      "pages": [
+        2
+      ],
+      "drawing": "Outline Drawing / Dimensions (page 2) \u2014 numeric land-pattern dimensions not present in provided text"
+    }
+  },
+  "orientation": {
+    "pin1_marker": "chamfer",
+    "pin1_position": "Chamfered corner indicates pin 1; per outline note the chamfer may be located on pin #1, 3, or 4 with no impact on electrical performance",
+    "polarity": {
+      "has_polarity": false,
+      "cathode_pin": null
+    }
+  },
+  "package_3d": {
+    "height_mm": 0.8,
+    "standoff_mm": 0.0,
+    "shape": "box"
+  },
+  "board_hints": {},
+  "extraction": {
+    "confidence": {
+      "symbol": 0.85,
+      "electrical": 0.9,
+      "footprint": 0.4
+    },
+    "pages_used": [
+      1,
+      2
+    ],
+    "warnings": [
+      "Recommended land-pattern / outline drawing numeric dimensions on page 2 were not present in the provided text; footprint pad geometry derived from the 3.2 x 2.5 mm body using IPC-7351 density level B (nominal) \u2014 verify against the page 2 Outline Drawing before production",
+      "derived_from_outline = true: pad sizes, pitch, and courtyard are estimates, not datasheet values",
+      "Height variants: ABM8 = 0.80 max, ABM81 = 0.65\u00b10.05, ABM82 = 0.60\u00b10.10 (Table 2); extracted the base ABM8 0.80 max variant",
+      "Pin assignment (XTAL on pins 1/3, case-ground on pins 2/4) assumed from standard 4-pad ceramic crystal convention; explicit pin/electrode table not provided in the supplied text",
+      "Frequency tolerance and stability options (U/G/X/W/Y/H/Q and tolerance codes 1/7/2/3/4) and operating-temperature options (E/B/C/N/D/J/K) available per ordering table; standard values extracted",
+      "ESR values are per Table 1 max-only; min/typ not specified",
+      "Custom CL (min 6 pF) and custom ESR (R-code) options available per ordering information",
+      "Tape & reel dimensions and reflow numeric profile referenced on page 2 but pad/courtyard values not transcribable from provided text"
+    ]
+  }
+}

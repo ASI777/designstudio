@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:component-placement:2",
+  "title": "DesignStudio stable-surface revision-bound component placement",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "placement_id", "component_id", "component_sha256", "document",
+    "transform", "coordinate_system", "surface_anchor", "snap", "locks",
+    "clearance_mm"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.component-placement/2"},
+    "placement_id": {"type": "string", "format": "uuid"},
+    "component_id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"},
+    "component_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_id", "revision", "sha256"],
+      "properties": {
+        "document_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "revision": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "transform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["translation_mm", "rotation_xyzw"],
+      "properties": {
+        "translation_mm": {"$ref": "#/$defs/point3"},
+        "rotation_xyzw": {
+          "type": "array",
+          "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}, {"type": "number"}],
+          "minItems": 4,
+          "maxItems": 4
+        }
+      }
+    },
+    "coordinate_system": {"const": "surface_local"},
+    "surface_anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "object_id", "patch_id", "patch_sha256", "baseline_sha256", "uv",
+        "tangent_u_world", "tangent_v_world", "normal_world", "offset_mm"
+      ],
+      "properties": {
+        "object_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "patch_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "patch_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "baseline_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "uv": {
+          "type": "array",
+          "prefixItems": [{"type": "number", "minimum": 0, "maximum": 1}, {"type": "number", "minimum": 0, "maximum": 1}],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "tangent_u_world": {"$ref": "#/$defs/point3"},
+        "tangent_v_world": {"$ref": "#/$defs/point3"},
+        "normal_world": {"$ref": "#/$defs/point3"},
+        "offset_mm": {"type": "number", "minimum": -1000, "maximum": 1000}
+      }
+    },
+    "snap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["grid", "surface", "axis", "symmetry", "clearance"],
+      "properties": {
+        "grid": {"type": "boolean"}, "surface": {"type": "boolean"},
+        "axis": {"type": "boolean"}, "symmetry": {"type": "boolean"},
+        "clearance": {"type": "boolean"}
+      }
+    },
+    "locks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["position", "orientation", "surface_anchor"],
+      "properties": {
+        "position": {"const": true}, "orientation": {"const": true},
+        "surface_anchor": {"const": true}
+      }
+    },
+    "clearance_mm": {"type": "number", "minimum": 0, "maximum": 1000}
+  },
+  "$defs": {
+    "point3": {
+      "type": "array",
+      "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}],
+      "minItems": 3,
+      "maxItems": 3
+    }
+  }
+}

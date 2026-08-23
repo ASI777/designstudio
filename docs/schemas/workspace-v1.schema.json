@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:workspace:1",
+  "title": "DesignStudio workspace manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "workspace_id", "revision", "product", "documents", "product_graph", "baseline_configuration"],
+  "properties": {
+    "schema": {"const": "design-studio.workspace/1"},
+    "workspace_id": {"$ref": "#/$defs/uuid"},
+    "revision": {"type": "integer", "minimum": 1},
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1, "maxLength": 200},
+        "description": {"type": "string", "maxLength": 2000}
+      }
+    },
+    "documents": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mechanical", "electronics"],
+      "properties": {
+        "mechanical": {"$ref": "#/$defs/relativePath"},
+        "electronics": {"$ref": "#/$defs/relativePath"}
+      }
+    },
+    "product_graph": {"$ref": "#/$defs/relativePath"},
+    "baseline_configuration": {"$ref": "#/$defs/relativePath"},
+    "contracts": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/relativePath"}},
+    "evidence_directories": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/relativePath"}}
+  },
+  "$defs": {
+    "uuid": {"type": "string", "format": "uuid"},
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024,
+      "pattern": "^(?!/)(?![A-Za-z]:[\\\\/])(?!.*(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)).+$"
+    }
+  }
+}

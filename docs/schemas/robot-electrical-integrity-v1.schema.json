@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/robot-electrical-integrity-v1.schema.json",
+  "title": "DesignStudio robot signal, power and EMC integrity contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product_id", "requirements_sha256", "signal_integrity",
+    "power_integrity", "emc", "net_contract_status", "required_models_and_evidence"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.robot-electrical-integrity/1"},
+    "product_id": {"type": "string", "minLength": 1},
+    "requirements_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "signal_integrity": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "channels", "exact_cable_part_number", "termination_population_plan",
+        "transceiver_package_and_connector_models_bound", "result"
+      ],
+      "properties": {
+        "channels": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"$ref": "#/$defs/channel"}
+        },
+        "exact_cable_part_number": {"type": "null"},
+        "termination_population_plan": {"type": "null"},
+        "transceiver_package_and_connector_models_bound": {"const": false},
+        "result": {"const": "geometric_pass_full_channel_incomplete"}
+      }
+    },
+    "power_integrity": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "worst_case_tolerance_aware_dc_drop_percent", "maximum_allowed_dc_drop_percent",
+        "maximum_joint_peak_bus_current_a", "maximum_allowed_joint_bus_ripple_v",
+        "calculated_dynamic_bus_ripple_v", "local_bulk_capacitance_and_esr_esl_bound",
+        "regeneration_and_hot_plug_source_impedance_bound", "dc_result", "dynamic_result"
+      ],
+      "properties": {
+        "worst_case_tolerance_aware_dc_drop_percent": {"type": "number", "minimum": 0},
+        "maximum_allowed_dc_drop_percent": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_joint_peak_bus_current_a": {"type": "number", "minimum": 0},
+        "maximum_allowed_joint_bus_ripple_v": {"type": "number", "exclusiveMinimum": 0},
+        "calculated_dynamic_bus_ripple_v": {"type": "null"},
+        "local_bulk_capacitance_and_esr_esl_bound": {"const": false},
+        "regeneration_and_hot_plug_source_impedance_bound": {"const": false},
+        "dc_result": {"const": "pass"},
+        "dynamic_result": {"const": "incomplete_network_and_transient_models_missing"}
+      }
+    },
+    "emc": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "shield_bonding_topology", "maximum_can_ground_offset_v", "target_test_families",
+        "can_protection_network_bound", "motor_phase_common_mode_model_bound",
+        "test_levels_and_operating_modes_bound", "result"
+      ],
+      "properties": {
+        "shield_bonding_topology": {"const": "continuous_chassis_reference_with_360_degree_base_entry_bond"},
+        "maximum_can_ground_offset_v": {"type": "number", "minimum": 0},
+        "target_test_families": {"$ref": "#/$defs/stringArray"},
+        "can_protection_network_bound": {"const": false},
+        "motor_phase_common_mode_model_bound": {"const": false},
+        "test_levels_and_operating_modes_bound": {"const": false},
+        "result": {"const": "test_families_defined_levels_and_evidence_incomplete"}
+      }
+    },
+    "net_contract_status": {"type": "string", "minLength": 1},
+    "required_models_and_evidence": {"$ref": "#/$defs/stringArray"}
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "channel": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "channel_id", "data_rate_bit_per_s", "bit_time_ns", "maximum_path_length_m",
+        "minimum_propagation_velocity_m_per_s", "path_round_trip_delay_ns",
+        "sample_point_fraction", "available_before_sample_ns",
+        "geometric_timing_margin_fraction",
+        "minimum_required_geometric_timing_margin_fraction", "maximum_stub_length_mm",
+        "maximum_stub_round_trip_delay_ns", "nominal_differential_impedance_ohm",
+        "allowed_differential_impedance_range_ohm", "geometric_screen_result",
+        "full_link_result"
+      ],
+      "properties": {
+        "channel_id": {"enum": ["CAN_FD_A", "CAN_FD_B"]},
+        "data_rate_bit_per_s": {"type": "number", "exclusiveMinimum": 0},
+        "bit_time_ns": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_path_length_m": {"type": "number", "exclusiveMinimum": 0},
+        "minimum_propagation_velocity_m_per_s": {"type": "number", "exclusiveMinimum": 0},
+        "path_round_trip_delay_ns": {"type": "number", "minimum": 0},
+        "sample_point_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "available_before_sample_ns": {"type": "number", "exclusiveMinimum": 0},
+        "geometric_timing_margin_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+        "minimum_required_geometric_timing_margin_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+        "maximum_stub_length_mm": {"type": "number", "minimum": 0},
+        "maximum_stub_round_trip_delay_ns": {"type": "number", "minimum": 0},
+        "nominal_differential_impedance_ohm": {"type": "number", "exclusiveMinimum": 0},
+        "allowed_differential_impedance_range_ohm": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"type": "number", "exclusiveMinimum": 0}
+        },
+        "geometric_screen_result": {"const": "pass"},
+        "full_link_result": {"const": "incomplete_device_connector_and_cable_models_missing"}
+      }
+    }
+  }
+}

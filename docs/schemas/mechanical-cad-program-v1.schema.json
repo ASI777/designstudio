@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:mechanical-cad-program:1",
+  "title": "DesignStudio typed mechanical CAD program",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "program_id", "units", "author", "commands", "checks"],
+  "properties": {
+    "schema": {"const": "design-studio.mechanical-cad-program/1"},
+    "program_id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+    "units": {"const": "mm"},
+    "author": {"type": "string", "minLength": 1},
+    "commands": {
+      "type": "array", "minItems": 1, "maxItems": 512,
+      "items": {"$ref": "#/$defs/command"}
+    },
+    "checks": {
+      "type": "array", "maxItems": 512,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["kind", "target"],
+        "properties": {
+          "kind": {"enum": ["valid_shape", "bbox", "volume", "rebuild", "solid_count", "sketch_constraints", "tolerance_stack"]},
+          "target": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "command": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "op", "params", "provenance"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+        "op": {"enum": [
+          "part.box", "part.cylinder", "part.sphere", "part.ellipsoid", "part.cone", "sketch.create", "sketch.line", "sketch.circle", "sketch.rectangle", "sketch.constraint.add",
+          "feature.extrude", "feature.revolve", "feature.cut", "feature.fuse",
+          "feature.hole", "feature.fillet", "feature.chamfer",
+          "pattern.linear", "pattern.circular",
+          "assembly.create", "assembly.component", "assembly.mate",
+          "assembly.check_clearance", "assembly.check_interference",
+          "tolerance.stack.create", "tolerance.stack.item", "tolerance.stack.check"
+        ]},
+        "params": {"type": "object"},
+        "provenance": {"type": "array", "minItems": 1, "maxItems": 32,
+          "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

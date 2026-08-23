@@ -1,0 +1,212 @@
+{
+  "schema": "urn:design-studio:schema:cad-assist-session:1",
+  "producer": {
+    "name": "cad-visual-helper",
+    "version": "1.0.0",
+    "runtime": "fixture"
+  },
+  "created_at": "2026-07-10T12:00:00Z",
+  "session_id": "11111111-1111-4111-8111-111111111111",
+  "revision": 3,
+  "idempotency_key": "22222222-2222-4222-8222-222222222222",
+  "status": "ready",
+  "geometry_units": "mm",
+  "canonical_scale_nm_per_mm": 1000000,
+  "project": {
+    "document_id": "motor-controller-r1",
+    "base_revision": 42,
+    "base_sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "object_id": "enclosure.main"
+  },
+  "source": {
+    "sha256": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+    "original_name": "engineering-drawing.pdf",
+    "page_count": 1,
+    "coordinate_system": {
+      "frame": "pdf_viewed_page",
+      "units": "pt",
+      "origin": "top_left",
+      "x_axis": "right",
+      "y_axis": "down",
+      "rotation_applied": true
+    },
+    "pages": [
+      {
+        "index": 0,
+        "record_status": "recorded",
+        "rotation_deg": 0,
+        "media_box_pdf_pt": [0, 0, 612, 792],
+        "crop_box_pdf_pt": [0, 0, 612, 792]
+      }
+    ]
+  },
+  "calibrations": [
+    {
+      "id": "33333333-3333-4333-8333-333333333333",
+      "page": 0,
+      "scale_mm_per_pt": 0.25,
+      "rotation_deg": 0,
+      "tx_mm": 0,
+      "ty_mm": 0,
+      "flip_y": false,
+      "measured_distance_mm": 25,
+      "anchors": [
+        {
+          "pdf_point_pt": [100, 100],
+          "view_point_mm": [0, 0],
+          "role": "origin"
+        },
+        {
+          "pdf_point_pt": [200, 100],
+          "view_point_mm": [25, 0],
+          "role": "distance_endpoint"
+        }
+      ],
+      "residual_mm": 0.01,
+      "uncertainty_mm": 0.02,
+      "review_status": "confirmed"
+    }
+  ],
+  "viewboxes": [
+    {
+      "id": "44444444-4444-4444-8444-444444444444",
+      "legacy_id": 1,
+      "page": 0,
+      "rect_pdf_pt": [80, 80, 300, 220],
+      "label": "front",
+      "classification": {
+        "source": "user",
+        "confidence": 1.0,
+        "caption": "FRONT VIEW"
+      },
+      "calibration_id": "33333333-3333-4333-8333-333333333333",
+      "frame": {
+        "origin_mm": [0, 0, 0],
+        "u_axis": [1, 0, 0],
+        "v_axis": [0, 1, 0],
+        "normal": [0, 0, 1],
+        "local_to_world_mm": [
+          1, 0, 0, 0,
+          0, 1, 0, 0,
+          0, 0, 1, 0,
+          0, 0, 0, 1
+        ],
+        "handedness": "right",
+        "binding_status": "confirmed",
+        "plane_hint": "XY",
+        "datum_ids": ["datum.origin"]
+      },
+      "crop_asset": {
+        "uri": "assets/front-view.png",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+        "media_type": "image/png",
+        "byte_size": 4096
+      }
+    }
+  ],
+  "targets": [
+    {
+      "id": "55555555-5555-4555-8555-555555555555",
+      "legacy_id": 1,
+      "label": "edge start",
+      "page": 0,
+      "viewbox_id": "44444444-4444-4444-8444-444444444444",
+      "snap_point_pdf_pt": [100, 100],
+      "snap_point_view_mm": [0, 0],
+      "snap_kind": "endpoint",
+      "entity_kind": "line",
+      "closed": false,
+      "points_view_mm": [[0, 0], [25, 0]],
+      "evidence": {
+        "entity_signature": "2222222222222222222222222222222222222222222222222222222222222222",
+        "extractor": {"name": "pymupdf-vector", "version": "1.0"},
+        "nearby_text": ["25.0 +/- 0.1"]
+      }
+    },
+    {
+      "id": "66666666-6666-4666-8666-666666666666",
+      "legacy_id": 2,
+      "label": "edge end",
+      "page": 0,
+      "viewbox_id": "44444444-4444-4444-8444-444444444444",
+      "snap_point_pdf_pt": [200, 100],
+      "snap_point_view_mm": [25, 0],
+      "snap_kind": "endpoint",
+      "entity_kind": "line",
+      "closed": false,
+      "points_view_mm": [[0, 0], [25, 0]],
+      "evidence": {
+        "entity_signature": "3333333333333333333333333333333333333333333333333333333333333333",
+        "extractor": {"name": "pymupdf-vector", "version": "1.0"},
+        "nearby_text": ["FRONT VIEW"]
+      }
+    }
+  ],
+  "elements": [
+    {
+      "id": "77777777-7777-4777-8777-777777777777",
+      "legacy_id": 1,
+      "label": "lower edge",
+      "page": 0,
+      "viewbox_id": "44444444-4444-4444-8444-444444444444",
+      "tracker_ids": [
+        "55555555-5555-4555-8555-555555555555",
+        "66666666-6666-4666-8666-666666666666"
+      ],
+      "start_point_view_mm": [0, 0],
+      "polylines": [
+        {"points_view_mm": [[0, 0], [25, 0]], "closed": false}
+      ],
+      "references": [
+        {
+          "id": "88888888-8888-4888-8888-888888888888",
+          "pick_pdf_pt": [150, 75],
+          "raw_text": "25.0 +/- 0.1",
+          "nominal_mm": 25.0,
+          "lower_tolerance_mm": 0.1,
+          "upper_tolerance_mm": 0.1,
+          "kind": "linear",
+          "multiplicity": 1,
+          "units": "mm",
+          "authority": "callout"
+        }
+      ]
+    }
+  ],
+  "deviations": [
+    {
+      "id": "99999999-9999-4999-8999-999999999999",
+      "element_id": "77777777-7777-4777-8777-777777777777",
+      "cad_object_id": "enclosure.main",
+      "host_geometry_id": "sketch.front.edge-12",
+      "sketch_revision": 42,
+      "geometry_index": 12,
+      "status": "within_tolerance",
+      "tolerance_mm": 0.1,
+      "metrics": {
+        "start_error_mm": 0.01,
+        "end_error_mm": 0.02,
+        "length_error_mm": 0.01,
+        "angle_error_deg": 0.0,
+        "max_error_mm": 0.02
+      },
+      "suggested_target": {
+        "kind": "replace_line_constraints",
+        "target_start_view_mm": [0, 0],
+        "target_end_view_mm": [25, 0]
+      },
+      "proposal_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa"
+    }
+  ],
+  "dataset_policy": {
+    "training_consent": false,
+    "content_classification": "customer_confidential",
+    "source_rights": "customer_provided"
+  },
+  "producer_validation": {
+    "valid": false,
+    "validator": "fixture-producer-advisory-only",
+    "errors": ["This producer claim is deliberately false and must be ignored."],
+    "warnings": []
+  }
+}

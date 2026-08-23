@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "document_id": "motor-controller-r1",
+  "revision": 42,
+  "board_width_mm": 100.0,
+  "board_height_mm": 80.0,
+  "grid_mm": 1.0,
+  "copper_layers": 2,
+  "nets": null,
+  "net_table": [],
+  "net_classes": [],
+  "footprints": [],
+  "traces": [],
+  "vias": []
+}

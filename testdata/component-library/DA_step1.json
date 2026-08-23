@@ -1,0 +1,135 @@
+{
+"schema": "design-studio.advice/1",
+"summary": "The design state is critically incomplete for a 48V Field Oriented Control (FOC) system. The circuit places a 30V MOSFET (Q1) on a nominal 48V motor rail, guaranteeing overvoltage failure. It lacks the remaining 5 MOSFETs needed for a 3-phase inverter, omits all phase current sensing shunts required by the FOC algorithm, and has severe BGA breakout DRC violations because the default via diameter (0.6mm) physically collides within the 0.5mm pitch of the U1 PolarFire FPGA. Additionally, it lacks power regulators for the 3.3V and 2.5V domains, completely omits mandatory external passives (e.g., DDR4 ZQ resistor, Ethernet PHY bias), and lacks all external connectors (motor, power, ethernet, encoder).",
+"actions": [
+{
+"op": "replace",
+"mpn": "BSC040N08NS5",
+"manufacturer": "Infineon",
+"for_ref": "Q1",
+"net": null,
+"value": null,
+"reason": "Q1 (BSC0902NSI) is rated for 30V, which will catastrophically fail on the nominal 48V VM rail. Replaced with an 80V FET to provide a safe margin for inductive motor spikes.",
+"connections": [],
+"priority": 1
+},
+{
+"op": "add",
+"mpn": "BSC040N08NS5",
+"manufacturer": "Infineon",
+"for_ref": null,
+"net": null,
+"value": null,
+"reason": "A complete 3-phase FOC inverter requires 6 MOSFETs (3 half-bridges). Added complementary switches for phases A, B, and C.",
+"connections": [
+{
+"pin": "Gate",
+"to_net": "PWM_AL"
+}
+],
+"priority": 1
+},
+{
+"op": "add",
+"mpn": "MPM3833C",
+"manufacturer": "Monolithic Power Systems",
+"for_ref": null,
+"net": null,
+"value": null,
+"reason": "Multiple domains (VCC, DVDD, VDDI3, VDDAUX1) require 3.3V, but no 3.3V regulator is present in the circuit. Added a dedicated step-down converter.",
+"connections": [
+{
+"pin": "13",
+"to_net": "IN_12V"
+},
+{
+"pin": "5",
+"to_net": "3V3"
+}
+],
+"priority": 2
+},
+{
+"op": "add_decap",
+"mpn": "GRM188R61H475KE11D",
+"manufacturer": "Murata",
+"for_ref": null,
+"net": "VM",
+"value": "4.7uF",
+"reason": "U8 (DRV8353MRTA) requires a 4.7uF >=100V bypass capacitor close to the VM pin to stabilize the charge pump during high-side gate switching transients.",
+"connections": [
+{
+"pin": "1",
+"to_net": "VM"
+},
+{
+"pin": "2",
+"to_net": "GND"
+}
+],
+"priority": 2
+},
+{
+"op": "add",
+"mpn": "RC0402FR-07240RL",
+"manufacturer": "Yageo",
+"for_ref": null,
+"net": null,
+"value": "240 ohm",
+"reason": "U5 (MT40A512M8) strictly requires a 240-ohm 1% ZQ calibration resistor for proper DDR4 internal driver and termination calibration.",
+"connections": [
+{
+"pin": "1",
+"to_net": "GND"
+}
+],
+"priority": 3
+},
+{
+"op": "add",
+"mpn": "RC0402FR-074K87L",
+"manufacturer": "Yageo",
+"for_ref": null,
+"net": null,
+"value": "4.87k",
+"reason": "U10 (DP83822IF) dictates a 4.87 kOhm 1% bias resistor for correct analog biasing of the Ethernet PHY.",
+"connections": [
+{
+"pin": "1",
+"to_net": "GND"
+}
+],
+"priority": 3
+},
+{
+"op": "add",
+"mpn": "7499010121A",
+"manufacturer": "Wurth Elektronik",
+"for_ref": null,
+"net": null,
+"value": null,
+"reason": "Required RJ45 connector with integrated magnetics to interface the Ethernet PHY (U10) differential pairs to the physical network.",
+"connections": [
+{
+"pin": "1",
+"to_net": "TD_P"
+},
+{
+"pin": "2",
+"to_net": "TD_M"
+}
+],
+"priority": 4
+}
+],
+"risks": [
+"Severe DRC Violation: The default net class assigns a 0.6mm via diameter. The U1 PolarFire FPGA has a 0.5mm BGA pitch, causing unavoidable physical collisions. Recommend creating an HDI class with 0.25mm pads and 0.1mm microvia drills for BGA escape.",
+"FOC Implementation: The design lacks inline or low-side current shunt resistors. Current sensing is mandatory for Field Oriented Control to function.",
+"Thermal/Spike Transients: VM is nominally 48V but regenerative braking can create massive inductive voltage spikes. Ensure bulk aluminum electrolytic capacitance and a TVS diode array are placed on the 48V rail.",
+"Unconnected Power: Connect the generated regulators to the numerous unconnected 'power_in' pins on the FPGA and DDR4 (e.g., VDDQ, VPP, VDD18, VDDA25)."
+],
+"next_datasheets_needed": [
+"BSC040N08NS5",
+"7499010121A"
+]
+}

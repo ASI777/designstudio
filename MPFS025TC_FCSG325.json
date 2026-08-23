@@ -1,0 +1,3125 @@
+{
+  "schema": "design-studio.component/2",
+  "component": {
+    "manufacturer": "Microchip (Microsemi)",
+    "mpn": "MPFS025TC-FCSG325",
+    "description": "PolarFire(-SoC) device, FCSG325 11.0x11.0mm 0.5mm-pitch BGA",
+    "category": "other",
+    "datasheet": {
+      "title": "MPFS025TC-FCSG325 Package Pin Assignment Table (Public)",
+      "revision": "",
+      "date": "",
+      "url": ""
+    }
+  },
+  "symbol": {
+    "ref_des_prefix": "U",
+    "pins": [
+      {
+        "number": "B7",
+        "name": "TMS",
+        "electrical_type": "input",
+        "description": "JTAG, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A9",
+        "name": "TDI",
+        "electrical_type": "input",
+        "description": "JTAG, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A7",
+        "name": "TDO",
+        "electrical_type": "output",
+        "description": "JTAG, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A8",
+        "name": "TCK",
+        "electrical_type": "input",
+        "description": "JTAG, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B9",
+        "name": "TRSTB",
+        "electrical_type": "input",
+        "description": "JTAG, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E8",
+        "name": "DEVRST_N",
+        "electrical_type": "input",
+        "description": "DEDIO, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "C6",
+        "name": "SCK",
+        "electrical_type": "bidirectional",
+        "description": "DEDIO, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B6",
+        "name": "SS",
+        "electrical_type": "bidirectional",
+        "description": "DEDIO, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A5",
+        "name": "SDO",
+        "electrical_type": "output",
+        "description": "DEDIO, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D8",
+        "name": "SDI",
+        "electrical_type": "input",
+        "description": "DEDIO, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E9",
+        "name": "IO_CFG_INTF",
+        "electrical_type": "input",
+        "description": "DEDIO, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G9",
+        "name": "RESERVED",
+        "electrical_type": "input",
+        "description": "DEDIO, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G10",
+        "name": "SPI_EN",
+        "electrical_type": "input",
+        "description": "DEDIO, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B19",
+        "name": "GPIO48PB1/CLKIN_S_4",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B20",
+        "name": "GPIO48NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A17",
+        "name": "GPIO49PB1/CLKIN_S_5",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B17",
+        "name": "GPIO49NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D18",
+        "name": "GPIO50PB1/DQS",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D17",
+        "name": "GPIO50NB1/DQS",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A19",
+        "name": "GPIO51PB1/CLKIN_S_6",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A18",
+        "name": "GPIO51NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "C21",
+        "name": "GPIO52PB1/LPRB_A",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "C20",
+        "name": "GPIO52NB1/LPRB_B",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A20",
+        "name": "GPIO53PB1/CLKIN_S_7",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B21",
+        "name": "GPIO53NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E17",
+        "name": "GPIO0PB1/CLKIN_S_8/CCC_SE_CLKIN_S_8/CCC_SE_PLL0_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D16",
+        "name": "GPIO0NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D21",
+        "name": "GPIO1PB1/CLKIN_S_9/CCC_SE_CLKIN_S_9",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E21",
+        "name": "GPIO1NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G17",
+        "name": "GPIO2PB1/DQS/CCC_SE_PLL1_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G18",
+        "name": "GPIO2NB1/DQS",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F19",
+        "name": "GPIO3PB1/CCC_SE_CLKIN_S_10/CCC_SE_PLL1_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E20",
+        "name": "GPIO3NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F18",
+        "name": "GPIO4PB1/CCC_SE_PLL1_OUT1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E18",
+        "name": "GPIO4NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F20",
+        "name": "GPIO5PB1/CCC_SE_CLKIN_S_11",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F21",
+        "name": "GPIO5NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U20",
+        "name": "HSIO6NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U21",
+        "name": "HSIO6PB0/CCC_NE_CLKIN_N_11",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T20",
+        "name": "HSIO8NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T21",
+        "name": "HSIO8PB0/CCC_NE_CLKIN_N_10/CCC_NE_PLL0_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T19",
+        "name": "HSIO12NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T18",
+        "name": "HSIO12PB0/CLKIN_N_9/CCC_NE_CLKIN_N_9",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U17",
+        "name": "HSIO13NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T17",
+        "name": "HSIO13PB0/CCC_NE_PLL1_OUT1",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R17",
+        "name": "HSIO14NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R18",
+        "name": "HSIO14PB0/CLKIN_N_8/CCC_NE_CLKIN_N_8/CCC_NE_PLL1_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U18",
+        "name": "HSIO15NB0/DQS",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V18",
+        "name": "HSIO15PB0/DQS/CCC_NE_PLL1_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA20",
+        "name": "HSIO24NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y20",
+        "name": "HSIO24PB0/CLKIN_N_5",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA19",
+        "name": "HSIO25NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y19",
+        "name": "HSIO25PB0/CCC_NW_PLL0_OUT1",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V21",
+        "name": "HSIO26NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "W20",
+        "name": "HSIO26PB0/CLKIN_N_4/CCC_NW_PLL0_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA18",
+        "name": "HSIO27NB0/DQS",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA17",
+        "name": "HSIO27PB0/DQS/CCC_NW_PLL0_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "W21",
+        "name": "HSIO29NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y21",
+        "name": "HSIO29PB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y17",
+        "name": "HSIO31NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "W16",
+        "name": "HSIO31PB0/CCC_NW_PLL1_OUT1",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y16",
+        "name": "HSIO32NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y15",
+        "name": "HSIO32PB0/CLKIN_N_2/CCC_NW_CLKIN_N_2/CCC_NW_PLL1_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U15",
+        "name": "HSIO33NB0/DQS",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V15",
+        "name": "HSIO33PB0/DQS/CCC_NW_PLL1_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA15",
+        "name": "HSIO34NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y14",
+        "name": "HSIO34PB0/CCC_NW_CLKIN_N_1",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V17",
+        "name": "HSIO35NB0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V16",
+        "name": "HSIO35PB0/CCC_NW_CLKIN_N_0",
+        "electrical_type": "bidirectional",
+        "description": "HSIO, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V13",
+        "name": "MSS_DDR_DM1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R14",
+        "name": "MSS_DDR_DQ15",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U14",
+        "name": "MSS_DDR_DQ14",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA14",
+        "name": "MSS_DDR_DQ13",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA13",
+        "name": "MSS_DDR_DQ12",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U12",
+        "name": "MSS_DDR_DQS_N1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V12",
+        "name": "MSS_DDR_DQS_P1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y12",
+        "name": "MSS_DDR_DQ11",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA12",
+        "name": "MSS_DDR_DQ10",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R13",
+        "name": "MSS_DDR_DQ9",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U13",
+        "name": "MSS_DDR_DQ8",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V11",
+        "name": "MSS_DDR_DM0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "W11",
+        "name": "MSS_DDR_DQ7",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y11",
+        "name": "MSS_DDR_DQ6",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R11",
+        "name": "MSS_DDR_DQ5",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U9",
+        "name": "MSS_DDR_DQ4",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y10",
+        "name": "MSS_DDR_DQS_N0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA10",
+        "name": "MSS_DDR_DQS_P0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y9",
+        "name": "MSS_DDR_DQ3",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA9",
+        "name": "MSS_DDR_DQ2",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U10",
+        "name": "MSS_DDR_DQ1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V10",
+        "name": "MSS_DDR_DQ0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R9",
+        "name": "MSS_DDR_VREF_IN",
+        "electrical_type": "passive",
+        "description": "MSS_DDR_VREF, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U8",
+        "name": "MSS_DDR_A9",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U6",
+        "name": "MSS_DDR_A8",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V7",
+        "name": "MSS_DDR_A7",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U7",
+        "name": "MSS_DDR_A6",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y5",
+        "name": "MSS_DDR_A5",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA5",
+        "name": "MSS_DDR_A4",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA8",
+        "name": "MSS_DDR_A3",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V8",
+        "name": "MSS_DDR_A2",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y6",
+        "name": "MSS_DDR_A1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "W6",
+        "name": "MSS_DDR_A0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA7",
+        "name": "MSS_DDR_CK_N0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y7",
+        "name": "MSS_DDR_CK0/DDR_PLL0_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U5",
+        "name": "MSS_DDR_BA1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA3",
+        "name": "MSS_DDR_BA0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V5",
+        "name": "MSS_DDR3_WE_N",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA4",
+        "name": "MSS_DDR_A16",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "W2",
+        "name": "MSS_DDR_A15",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y3",
+        "name": "MSS_DDR_A14",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "W1",
+        "name": "MSS_DDR_A13",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V1",
+        "name": "MSS_DDR_A12",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA2",
+        "name": "MSS_DDR_A11",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y2",
+        "name": "MSS_DDR_A10",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R4",
+        "name": "MSS_DDR_ALERT_N",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T4",
+        "name": "MSS_DDR_PARITY",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T5",
+        "name": "MSS_DDR_ACT_N",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T2",
+        "name": "MSS_DDR_ODT0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R1",
+        "name": "MSS_DDR_CKE0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U4",
+        "name": "MSS_DDR_CS0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U2",
+        "name": "MSS_DDR_BG1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U1",
+        "name": "MSS_DDR_BG0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T3",
+        "name": "MSS_DDR_RAM_RST_N/DDR_PLL0_OUT1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_DDR, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R2",
+        "name": "MSS_SGMII_RXN1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_SGMII, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P2",
+        "name": "MSS_SGMII_RXP1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_SGMII, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P1",
+        "name": "MSS_SGMII_TXN1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_SGMII, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N1",
+        "name": "MSS_SGMII_TXP1",
+        "electrical_type": "bidirectional",
+        "description": "MSS_SGMII, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M1",
+        "name": "MSS_SGMII_RXN0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_SGMII, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M2",
+        "name": "MSS_SGMII_RXP0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_SGMII, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N5",
+        "name": "MSS_SGMII_TXN0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_SGMII, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N7",
+        "name": "MSS_SGMII_TXP0",
+        "electrical_type": "bidirectional",
+        "description": "MSS_SGMII, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P4",
+        "name": "MSS_REFCLK_IN_N",
+        "electrical_type": "bidirectional",
+        "description": "MSS_REFCLK, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P5",
+        "name": "MSS_REFCLK_IN_P",
+        "electrical_type": "bidirectional",
+        "description": "MSS_REFCLK, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L2",
+        "name": "MSSIO0B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M4",
+        "name": "MSSIO1B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L3",
+        "name": "MSSIO2B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K1",
+        "name": "MSSIO3B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M5",
+        "name": "MSSIO4B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L5",
+        "name": "MSSIO5B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K2",
+        "name": "MSSIO6B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H2",
+        "name": "MSSIO7B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L7",
+        "name": "MSSIO8B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K7",
+        "name": "MSSIO9B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H1",
+        "name": "MSSIO10B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K4",
+        "name": "MSSIO11B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K5",
+        "name": "MSSIO12B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J1",
+        "name": "MSSIO13B4",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F3",
+        "name": "MSSIO14B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G2",
+        "name": "MSSIO15B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H4",
+        "name": "MSSIO16B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G5",
+        "name": "MSSIO17B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G1",
+        "name": "MSSIO18B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F2",
+        "name": "MSSIO19B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F4",
+        "name": "MSSIO20B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E5",
+        "name": "MSSIO21B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E2",
+        "name": "MSSIO22B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E1",
+        "name": "MSSIO23B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E4",
+        "name": "MSSIO24B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E6",
+        "name": "MSSIO25B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A2",
+        "name": "MSSIO26B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B1",
+        "name": "MSSIO27B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A3",
+        "name": "MSSIO28B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B5",
+        "name": "MSSIO29B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D6",
+        "name": "MSSIO30B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D5",
+        "name": "MSSIO31B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A4",
+        "name": "MSSIO32B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B4",
+        "name": "MSSIO33B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B2",
+        "name": "MSSIO34B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "C2",
+        "name": "MSSIO35B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D1",
+        "name": "MSSIO36B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "C1",
+        "name": "MSSIO37B2",
+        "electrical_type": "bidirectional",
+        "description": "MSSIO, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E10",
+        "name": "GPIO36PB1/CCC_SW_CLKIN_S_0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E11",
+        "name": "GPIO36NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B10",
+        "name": "GPIO37PB1/CCC_SW_CLKIN_S_1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A10",
+        "name": "GPIO37NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "C11",
+        "name": "GPIO38PB1/DQS/CCC_SW_PLL1_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B11",
+        "name": "GPIO38NB1/DQS",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E12",
+        "name": "GPIO39PB1/CLKIN_S_2/CCC_SW_CLKIN_S_2/CCC_SW_PLL1_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G12",
+        "name": "GPIO39NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D11",
+        "name": "GPIO40PB1/CCC_SW_PLL1_OUT1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D12",
+        "name": "GPIO40NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A12",
+        "name": "GPIO41PB1/CLKIN_S_3/CCC_SW_CLKIN_S_3",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B12",
+        "name": "GPIO41NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E15",
+        "name": "GPIO42PB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E14",
+        "name": "GPIO42NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A13",
+        "name": "GPIO43PB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A14",
+        "name": "GPIO43NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D13",
+        "name": "GPIO44PB1/DQS/CCC_SW_PLL0_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E13",
+        "name": "GPIO44NB1/DQS",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B14",
+        "name": "GPIO45PB1/CCC_SW_PLL0_OUT0",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B15",
+        "name": "GPIO45NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D15",
+        "name": "GPIO46PB1/CCC_SW_PLL0_OUT1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "C16",
+        "name": "GPIO46NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A15",
+        "name": "GPIO47PB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B16",
+        "name": "GPIO47NB1",
+        "electrical_type": "bidirectional",
+        "description": "GPIO, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N18",
+        "name": "XCVR_0B_REFCLK_P",
+        "electrical_type": "input",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N17",
+        "name": "XCVR_0B_REFCLK_N",
+        "electrical_type": "input",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P21",
+        "name": "XCVR_0_RX2_P",
+        "electrical_type": "input",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P20",
+        "name": "XCVR_0_RX2_N",
+        "electrical_type": "input",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M21",
+        "name": "XCVR_0_TX2_P",
+        "electrical_type": "output",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M20",
+        "name": "XCVR_0_TX2_N",
+        "electrical_type": "output",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J18",
+        "name": "XCVR_0A_REFCLK_P",
+        "electrical_type": "input",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J17",
+        "name": "XCVR_0A_REFCLK_N",
+        "electrical_type": "input",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K21",
+        "name": "XCVR_0_RX0_P",
+        "electrical_type": "input",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K20",
+        "name": "XCVR_0_RX0_N",
+        "electrical_type": "input",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H21",
+        "name": "XCVR_0_TX0_P",
+        "electrical_type": "output",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H20",
+        "name": "XCVR_0_TX0_N",
+        "electrical_type": "output",
+        "description": "XCVR",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G20",
+        "name": "XCVR_VREF",
+        "electrical_type": "passive",
+        "description": "XCVR_VREF",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H18",
+        "name": "XCVR_VREF",
+        "electrical_type": "passive",
+        "description": "XCVR_VREF",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K17",
+        "name": "VDD_XCVR_CLK",
+        "electrical_type": "power_in",
+        "description": "VDD_XCVR_CLK",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M17",
+        "name": "VDD_XCVR_CLK",
+        "electrical_type": "power_in",
+        "description": "VDD_XCVR_CLK",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L17",
+        "name": "VDDA25",
+        "electrical_type": "power_in",
+        "description": "VDDA25",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L19",
+        "name": "VDDA25",
+        "electrical_type": "power_in",
+        "description": "VDDA25",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J20",
+        "name": "VDDA",
+        "electrical_type": "power_in",
+        "description": "VDDA",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L18",
+        "name": "VDDA",
+        "electrical_type": "power_in",
+        "description": "VDDA",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L20",
+        "name": "VDDA",
+        "electrical_type": "power_in",
+        "description": "VDDA",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N20",
+        "name": "VDDA",
+        "electrical_type": "power_in",
+        "description": "VDDA",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P15",
+        "name": "VDD18",
+        "electrical_type": "power_in",
+        "description": "VDD18",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P7",
+        "name": "VDD18",
+        "electrical_type": "power_in",
+        "description": "VDD18",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R10",
+        "name": "VDD18",
+        "electrical_type": "power_in",
+        "description": "VDD18",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R12",
+        "name": "VDD18",
+        "electrical_type": "power_in",
+        "description": "VDD18",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F17",
+        "name": "VDDAUX1",
+        "electrical_type": "power_in",
+        "description": "VDDAUX1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G11",
+        "name": "VDDAUX1",
+        "electrical_type": "power_in",
+        "description": "VDDAUX1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G13",
+        "name": "VDDAUX1",
+        "electrical_type": "power_in",
+        "description": "VDDAUX1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F5",
+        "name": "VDDAUX2",
+        "electrical_type": "power_in",
+        "description": "VDDAUX2, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G4",
+        "name": "VDDAUX2",
+        "electrical_type": "power_in",
+        "description": "VDDAUX2, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J5",
+        "name": "VDDAUX4",
+        "electrical_type": "power_in",
+        "description": "VDDAUX4, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J7",
+        "name": "VDDAUX4",
+        "electrical_type": "power_in",
+        "description": "VDDAUX4, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U16",
+        "name": "VDDI0",
+        "electrical_type": "power_in",
+        "description": "VDDI0, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V20",
+        "name": "VDDI0",
+        "electrical_type": "power_in",
+        "description": "VDDI0, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y13",
+        "name": "VDDI0",
+        "electrical_type": "power_in",
+        "description": "VDDI0, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y18",
+        "name": "VDDI0",
+        "electrical_type": "power_in",
+        "description": "VDDI0, Bank 0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A11",
+        "name": "VDDI1",
+        "electrical_type": "power_in",
+        "description": "VDDI1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B13",
+        "name": "VDDI1",
+        "electrical_type": "power_in",
+        "description": "VDDI1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B18",
+        "name": "VDDI1",
+        "electrical_type": "power_in",
+        "description": "VDDI1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B8",
+        "name": "VDDI1",
+        "electrical_type": "power_in",
+        "description": "VDDI1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D10",
+        "name": "VDDI1",
+        "electrical_type": "power_in",
+        "description": "VDDI1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D20",
+        "name": "VDDI1",
+        "electrical_type": "power_in",
+        "description": "VDDI1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E16",
+        "name": "VDDI1",
+        "electrical_type": "power_in",
+        "description": "VDDI1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G15",
+        "name": "VDDI1",
+        "electrical_type": "power_in",
+        "description": "VDDI1, Bank 1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "B3",
+        "name": "VDDI2",
+        "electrical_type": "power_in",
+        "description": "VDDI2, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D2",
+        "name": "VDDI2",
+        "electrical_type": "power_in",
+        "description": "VDDI2, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H5",
+        "name": "VDDI2",
+        "electrical_type": "power_in",
+        "description": "VDDI2, Bank 2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "E7",
+        "name": "VDDI3",
+        "electrical_type": "power_in",
+        "description": "VDDI3, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G8",
+        "name": "VDDI3",
+        "electrical_type": "power_in",
+        "description": "VDDI3, Bank 3",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J2",
+        "name": "VDDI4",
+        "electrical_type": "power_in",
+        "description": "VDDI4, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L4",
+        "name": "VDDI4",
+        "electrical_type": "power_in",
+        "description": "VDDI4, Bank 4",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M7",
+        "name": "VDDI5",
+        "electrical_type": "power_in",
+        "description": "VDDI5, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N2",
+        "name": "VDDI5",
+        "electrical_type": "power_in",
+        "description": "VDDI5, Bank 5",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R5",
+        "name": "VDDI6",
+        "electrical_type": "power_in",
+        "description": "VDDI6, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "U11",
+        "name": "VDDI6",
+        "electrical_type": "power_in",
+        "description": "VDDI6, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V2",
+        "name": "VDDI6",
+        "electrical_type": "power_in",
+        "description": "VDDI6, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V6",
+        "name": "VDDI6",
+        "electrical_type": "power_in",
+        "description": "VDDI6, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y1",
+        "name": "VDDI6",
+        "electrical_type": "power_in",
+        "description": "VDDI6, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y4",
+        "name": "VDDI6",
+        "electrical_type": "power_in",
+        "description": "VDDI6, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "Y8",
+        "name": "VDDI6",
+        "electrical_type": "power_in",
+        "description": "VDDI6, Bank 6",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A1",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G7",
+        "name": "VDD25",
+        "electrical_type": "power_in",
+        "description": "VDD25",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H15",
+        "name": "VDD25",
+        "electrical_type": "power_in",
+        "description": "VDD25",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R15",
+        "name": "VDD25",
+        "electrical_type": "power_in",
+        "description": "VDD25",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R7",
+        "name": "VDD25",
+        "electrical_type": "power_in",
+        "description": "VDD25",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J10",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J12",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K11",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K13",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K15",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K9",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L10",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L12",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M11",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M13",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M15",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M9",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N10",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N12",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "VDD",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G21",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H17",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J21",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K18",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L21",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M18",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N21",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P17",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "P18",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R20",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R21",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A16",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A21",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "A6",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA1",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA11",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA16",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA21",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "AA6",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D14",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D4",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D7",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "D9",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "F1",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "G14",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "H7",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J11",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J13",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J15",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J4",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "J9",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K10",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "K12",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L1",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L11",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L13",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L15",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "L9",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M10",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "M12",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N11",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N13",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N15",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N4",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "N9",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "R8",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "T1",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V14",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V4",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "V9",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "VSS",
+        "alternate_functions": [],
+        "package_length_mm": null
+      }
+    ]
+  },
+  "electrical": {
+    "high_speed": {
+      "diff_pairs": [
+        {
+          "positive": "MSS_REFCLK_IN_P",
+          "negative": "MSS_REFCLK_IN_N",
+          "impedance_ohm": 100,
+          "max_skew_mm": null
+        },
+        {
+          "positive": "XCVR_0B_REFCLK_P",
+          "negative": "XCVR_0B_REFCLK_N",
+          "impedance_ohm": 100,
+          "max_skew_mm": null
+        },
+        {
+          "positive": "XCVR_0_RX2_P",
+          "negative": "XCVR_0_RX2_N",
+          "impedance_ohm": 85,
+          "max_skew_mm": null
+        },
+        {
+          "positive": "XCVR_0_TX2_P",
+          "negative": "XCVR_0_TX2_N",
+          "impedance_ohm": 85,
+          "max_skew_mm": null
+        },
+        {
+          "positive": "XCVR_0A_REFCLK_P",
+          "negative": "XCVR_0A_REFCLK_N",
+          "impedance_ohm": 100,
+          "max_skew_mm": null
+        },
+        {
+          "positive": "XCVR_0_RX0_P",
+          "negative": "XCVR_0_RX0_N",
+          "impedance_ohm": 85,
+          "max_skew_mm": null
+        },
+        {
+          "positive": "XCVR_0_TX0_P",
+          "negative": "XCVR_0_TX0_N",
+          "impedance_ohm": 85,
+          "max_skew_mm": null
+        }
+      ],
+      "single_ended": []
+    },
+    "power_domains": [
+      {
+        "name": "VDD",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "K9",
+          "M9",
+          "J10",
+          "J12",
+          "K11",
+          "K13",
+          "K15",
+          "L10",
+          "L12",
+          "M11",
+          "M13",
+          "M15",
+          "N10",
+          "N12"
+        ]
+      },
+      {
+        "name": "VDD18",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "P7",
+          "P15",
+          "R10",
+          "R12"
+        ]
+      },
+      {
+        "name": "VDD25",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "G7",
+          "R7",
+          "H15",
+          "R15"
+        ]
+      },
+      {
+        "name": "VDDA",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "J20",
+          "L18",
+          "L20",
+          "N20"
+        ]
+      },
+      {
+        "name": "VDDA25",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "L17",
+          "L19"
+        ]
+      },
+      {
+        "name": "VDDAUX1",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "F17",
+          "G11",
+          "G13"
+        ]
+      },
+      {
+        "name": "VDDAUX2",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "F5",
+          "G4"
+        ]
+      },
+      {
+        "name": "VDDAUX4",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "J5",
+          "J7"
+        ]
+      },
+      {
+        "name": "VDDI0",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "U16",
+          "V20",
+          "Y13",
+          "Y18"
+        ]
+      },
+      {
+        "name": "VDDI1",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "B8",
+          "A11",
+          "B13",
+          "B18",
+          "D10",
+          "D20",
+          "E16",
+          "G15"
+        ]
+      },
+      {
+        "name": "VDDI2",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "B3",
+          "D2",
+          "H5"
+        ]
+      },
+      {
+        "name": "VDDI3",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "E7",
+          "G8"
+        ]
+      },
+      {
+        "name": "VDDI4",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "J2",
+          "L4"
+        ]
+      },
+      {
+        "name": "VDDI5",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "M7",
+          "N2"
+        ]
+      },
+      {
+        "name": "VDDI6",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "R5",
+          "V2",
+          "V6",
+          "Y1",
+          "Y4",
+          "Y8",
+          "U11"
+        ]
+      },
+      {
+        "name": "VDD_XCVR_CLK",
+        "vnom_v": null,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "K17",
+          "M17"
+        ]
+      },
+      {
+        "name": "VSS",
+        "vnom_v": 0.0,
+        "vmin_v": null,
+        "vmax_v": null,
+        "max_current_a": null,
+        "pins": [
+          "A1",
+          "A6",
+          "D4",
+          "D7",
+          "D9",
+          "F1",
+          "H7",
+          "J4",
+          "J9",
+          "L1",
+          "L9",
+          "N4",
+          "N9",
+          "R8",
+          "T1",
+          "V4",
+          "V9",
+          "A16",
+          "A21",
+          "AA1",
+          "AA6",
+          "D14",
+          "G14",
+          "G21",
+          "H17",
+          "J11",
+          "J13",
+          "J15",
+          "J21",
+          "K10",
+          "K12",
+          "K18",
+          "L11",
+          "L13",
+          "L15",
+          "L21",
+          "M10",
+          "M12",
+          "M18",
+          "N11",
+          "N13",
+          "N15",
+          "N21",
+          "P17",
+          "P18",
+          "R20",
+          "R21",
+          "V14",
+          "AA11",
+          "AA16",
+          "AA21"
+        ]
+      }
+    ],
+    "required_externals": [
+      {
+        "purpose": "Unused GPIO/HSIO tie-off",
+        "value": "10k to VSS",
+        "constraints": "per PPAT notes"
+      },
+      {
+        "purpose": "Per-power-ball decoupling",
+        "value": "100nF X7R each + bulk per rail",
+        "constraints": "BGA practice"
+      }
+    ]
+  },
+  "footprint": {
+    "name": "FCSG325",
+    "ipc_name": "FCSG325-11x11-P0.5",
+    "mount": "smd",
+    "body": {
+      "length_mm": 11.0,
+      "width_mm": 11.0,
+      "height_mm": 1.05
+    },
+    "pitch_mm": 0.5,
+    "bga": {
+      "rows": 21,
+      "cols": 21,
+      "pitch_mm": 0.5,
+      "ball_diameter_mm": 0.3,
+      "land_diameter_mm": 0.275,
+      "depopulated": [
+        "C3",
+        "C4",
+        "C5",
+        "C7",
+        "C8",
+        "C9",
+        "D3",
+        "E3",
+        "F6",
+        "F7",
+        "F8",
+        "F9",
+        "G3",
+        "G6",
+        "H3",
+        "H6",
+        "H8",
+        "H9",
+        "J3",
+        "J6",
+        "J8",
+        "K3",
+        "K6",
+        "K8",
+        "L6",
+        "L8",
+        "M3",
+        "M6",
+        "M8",
+        "N3",
+        "N6",
+        "N8",
+        "P3",
+        "P6",
+        "P8",
+        "P9",
+        "R3",
+        "R6",
+        "T6",
+        "T7",
+        "T8",
+        "T9",
+        "U3",
+        "V3",
+        "W3",
+        "W4",
+        "W5",
+        "W7",
+        "W8",
+        "W9",
+        "C10",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C17",
+        "C18",
+        "C19",
+        "D19",
+        "E19",
+        "F10",
+        "F11",
+        "F12",
+        "F13",
+        "F14",
+        "F15",
+        "F16",
+        "G16",
+        "G19",
+        "H10",
+        "H11",
+        "H12",
+        "H13",
+        "H14",
+        "H16",
+        "H19",
+        "J14",
+        "J16",
+        "J19",
+        "K14",
+        "K16",
+        "K19",
+        "L14",
+        "L16",
+        "M14",
+        "M16",
+        "M19",
+        "N14",
+        "N16",
+        "N19",
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P16",
+        "P19",
+        "R16",
+        "R19",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "U19",
+        "V19",
+        "W10",
+        "W12",
+        "W13",
+        "W14",
+        "W15",
+        "W17",
+        "W18",
+        "W19"
+      ]
+    },
+    "pads": [],
+    "courtyard_margin_mm": 0.5,
+    "derived_from_outline": false,
+    "source": {
+      "pages": [
+        1
+      ],
+      "drawing": "PPAT MPFS025T-FCSG325 + Packaging UG Table 7-1"
+    }
+  },
+  "orientation": {
+    "pin1_marker": "dot",
+    "pin1_position": "A1 corner (top-left)",
+    "polarity": {
+      "has_polarity": false,
+      "cathode_pin": null
+    }
+  },
+  "package_3d": {
+    "height_mm": 1.05,
+    "standoff_mm": 0.25,
+    "shape": "box"
+  },
+  "extraction": {
+    "confidence": {
+      "symbol": 1.0,
+      "electrical": 0.8,
+      "footprint": 1.0
+    },
+    "pages_used": [
+      1
+    ],
+    "warnings": [
+      "Geometry: 21x21 grid, 116 depopulated, 325 populated balls.",
+      "power_domains: 17 rails bundled from the PPAT I/O-Type column (116 supply balls). Rail VOLTAGES are null - fill vnom from the device DC-characteristics datasheet (not present in the PPAT).",
+      "Land/mask per Packaging UG Table 7-1 (NSMD). 3D height may be approximate."
+    ]
+  }
+}

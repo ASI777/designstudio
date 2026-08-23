@@ -1,0 +1,40 @@
+# Swarm configuration — schematic_designer agentic workflow
+# Hardware: RTX 4050 Laptop 6 GB VRAM, i5-13420H, 14 GB RAM
+
+local_model:
+  provider: ollama
+  host: http://127.0.0.1:11434
+  model: qwen2.5-coder:7b-instruct-q4_K_M
+  context_length: 8192        # keep well under 128k to stay fast on 6 GB
+  temperature: 0.2            # low for deterministic code generation
+  timeout_seconds: 120
+
+claude:
+  opus_model: claude-opus-4-8
+  sonnet_model: claude-sonnet-4-6
+  haiku_model: claude-haiku-4-5-20251001
+  max_tokens: 8192
+
+antigravity:
+  host: http://127.0.0.1:8765
+  db_path: swarm/antigravity/queue.db
+  context_path: swarm/antigravity/context.json
+
+budget:
+  max_claude_usd_per_hour: 2.00   # pause claude calls above this; local model continues
+
+# Task routing rules — first match wins
+routing:
+  - match: [cpp_boilerplate, test_scaffold, json_schema, docs, build_triage, review_simple]
+    model: local
+  - match: [cpp_algorithm, csharp_complex, physics, drc_design, architecture]
+    model: claude_sonnet
+  - match: [physics_validation, novel_algorithm, cross_file_refactor]
+    model: claude_opus
+
+repo:
+  root: .
+  build_core: cmake --build core/build --config Release -j12
+  test_core: ctest --test-dir core/build --output-on-failure
+  build_managed: dotnet build DesignStudio.sln -c Debug
+  test_managed: dotnet test tests/DesignStudio.Tests/DesignStudio.Tests.csproj

@@ -1,0 +1,580 @@
+{
+  "schema": "design-studio.cross-domain-product-requirements/2",
+  "product_id": "ds-cobot-r7",
+  "revision": 1,
+  "title": "DesignStudio distinct seven-axis collaborative robot benchmark",
+  "use_case": "Three-kilogram payload manipulation in compact industrial work cells with internal distributed servo electronics and no externally visible screw heads.",
+  "visual_evidence": [
+    {
+      "id": "tcr-seven-axis-walkthrough",
+      "media_kind": "local_video",
+      "locator": "external-file://tcr-seven-axis-walkthrough.webm",
+      "creator": "TCR project authors on Behance; user-supplied screen recording",
+      "rights_basis": "attributed_noncommercial_no_derivatives_inspiration_only",
+      "use": "form_language_and_packaging_relationships_only",
+      "geometry_copy_allowed": false,
+      "dimensional_measurement_allowed": false,
+      "observations": [
+        "Seven articulated axes provide redundancy in a compact work cell.",
+        "Continuous light link shells and dark joint collars make the kinematic chain legible.",
+        "Structural joints can be internal while removable collars conceal service interfaces.",
+        "The generated robot must use independent dimensions and distinct surface geometry."
+      ],
+      "observed_date": "2026-08-24",
+      "source_fingerprint_sha256": "47abc5f0b68f90caf70373d1e4d5583035c539845478a9d7f0aadddee2c67b96"
+    },
+    {
+      "id": "automotive-lamp-packaging-lesson",
+      "media_kind": "external_page",
+      "locator": "https://www.instagram.com/reel/DcXn-dAxECT/",
+      "creator": "sarang.tech",
+      "rights_basis": "publicly_viewable_inspiration_only_no_copying",
+      "use": "thermal_packaging_and_section_access_principles_only",
+      "geometry_copy_allowed": false,
+      "dimensional_measurement_allowed": false,
+      "observations": [
+        "A styled exterior depends on a segmented internal housing that retains functional modules.",
+        "Dense light or power modules create local high-temperature zones.",
+        "Section views are required to prove packaging and heat paths instead of trusting an exterior render.",
+        "Housing segmentation should follow assembly thermal and service boundaries."
+      ],
+      "observed_date": "2026-08-24",
+      "source_fingerprint_sha256": "d7369536814280f004585834ccc53796b69e266cdff2843ed4e37c5cdc27ff79"
+    },
+    {
+      "id": "factor-of-safety-uncertainty-lesson",
+      "media_kind": "external_page",
+      "locator": "https://www.instagram.com/reel/DcTj4PEzaiq/",
+      "creator": "sarang.tech",
+      "rights_basis": "publicly_viewable_inspiration_only_no_copying",
+      "use": "engineering_uncertainty_budget_method_only",
+      "geometry_copy_allowed": false,
+      "dimensional_measurement_allowed": false,
+      "observations": [
+        "A safety factor is an explicit budget for imperfect knowledge, not an unexplained constant.",
+        "Material scatter, manufacturing variation, uncertain loads, model error and consequence must be separated.",
+        "Better evidence can reduce an individual uncertainty contribution but may not silently erase the others."
+      ],
+      "observed_date": "2026-08-24",
+      "source_fingerprint_sha256": "393d0f29b39d17c3f8c5a04871bf80a1ee3fd950ea44c2e2470c605e307d3979"
+    },
+    {
+      "id": "stateful-graph-engineering-lesson",
+      "media_kind": "external_page",
+      "locator": "https://www.instagram.com/reel/Db9_oRNucnQ/",
+      "creator": "techwithnt",
+      "rights_basis": "publicly_viewable_inspiration_only_no_copying",
+      "use": "stateful_engineering_workflow_method_only",
+      "geometry_copy_allowed": false,
+      "dimensional_measurement_allowed": false,
+      "observations": [
+        "A graph defines nodes that perform work, edges that control transitions and typed state shared between steps.",
+        "Engineering paths need to branch by domain, merge for interface review and loop back for targeted repair.",
+        "AI variability must be bounded by deterministic state transitions and software-owned validation conditions."
+      ],
+      "observed_date": "2026-08-24",
+      "source_fingerprint_sha256": "a337981d901d91eedf9ee8647980461eeb37c055a2f0b53fd3e3b03432c050a8"
+    }
+  ],
+  "system": {
+    "payload": {"value": 3.0, "unit": "kg", "tolerance": {"minus": 0.0, "plus": 0.1}, "criticality": "functional"},
+    "end_effector_mass": {"value": 0.7, "unit": "kg", "tolerance": {"minus": 0.0, "plus": 0.1}, "criticality": "functional"},
+    "gravity": {"value": 9.80665, "unit": "m_per_s2", "tolerance": {"minus": 0.00001, "plus": 0.00001}, "criticality": "functional"},
+    "load_uncertainty_factor": {"value": 1.15, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "material_variability_factor": {"value": 1.08, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "manufacturing_variability_factor": {"value": 1.07, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "model_uncertainty_factor": {"value": 1.12, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "consequence_factor": {"value": 1.15, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "target_reach": {"value": 850.0, "unit": "mm", "tolerance": {"minus": 0.0, "plus": 5.0}, "criticality": "functional"},
+    "target_repeatability": {"value": 0.1, "unit": "mm", "tolerance": {"minus": 0.0, "plus": 0.02}, "criticality": "functional"},
+    "maximum_design_load_tool_deflection": {"value": 1.0, "unit": "mm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "minimum_screening_first_mode": {"value": 12.0, "unit": "Hz", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"}
+  },
+  "kinematics": {
+    "axis_count": 7,
+    "segments": [
+      {
+        "joint_id": "J1", "axis": [0, 0, 1], "gravity_sensitive": false, "neutral_direction": [0, 0, 1],
+        "length": {"value": 160.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "interface"},
+        "assembly_mass": {"value": 5.0, "unit": "kg", "tolerance": {"minus": 0.0, "plus": 0.25}, "criticality": "functional"},
+        "outer_diameter": {"value": 145.0, "unit": "mm", "tolerance": {"minus": 0.3, "plus": 0.3}, "criticality": "cosmetic"},
+        "hub_structural_diameter": {"value": 120.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "link_structural_diameter": {"value": 42.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "gear_ratio": {"value": 120.0, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "gear_efficiency": {"value": 0.72, "unit": "1", "tolerance": {"minus": 0.04, "plus": 0.02}, "criticality": "functional"},
+        "motor_torque_constant": {"value": 0.16, "unit": "Nm_per_A", "tolerance": {"minus": 0.012, "plus": 0.012}, "criticality": "functional"},
+        "peak_angular_acceleration": {"value": 3.0, "unit": "rad_per_s2", "tolerance": {"minus": 0.0, "plus": 0.2}, "criticality": "functional"},
+        "max_speed": {"value": 2.0, "unit": "rad_per_s", "tolerance": {"minus": 0.0, "plus": 0.1}, "criticality": "functional"},
+        "selected_output_torque": {"value": 180.0, "unit": "Nm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+        "selected_thermal_resistance": {"value": 4.0, "unit": "degC_per_W", "tolerance": {"minus": 0.0, "plus": 0.5}, "criticality": "functional"},
+        "structural_material": "Al_7075_T6"
+      },
+      {
+        "joint_id": "J2", "axis": [0, 1, 0], "gravity_sensitive": true, "neutral_direction": [0.55, 0, 0.835],
+        "length": {"value": 310.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "interface"},
+        "assembly_mass": {"value": 3.2, "unit": "kg", "tolerance": {"minus": 0.0, "plus": 0.2}, "criticality": "functional"},
+        "outer_diameter": {"value": 130.0, "unit": "mm", "tolerance": {"minus": 0.3, "plus": 0.3}, "criticality": "cosmetic"},
+        "hub_structural_diameter": {"value": 105.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "link_structural_diameter": {"value": 38.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "gear_ratio": {"value": 140.0, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "gear_efficiency": {"value": 0.72, "unit": "1", "tolerance": {"minus": 0.04, "plus": 0.02}, "criticality": "functional"},
+        "motor_torque_constant": {"value": 0.16, "unit": "Nm_per_A", "tolerance": {"minus": 0.012, "plus": 0.012}, "criticality": "functional"},
+        "peak_angular_acceleration": {"value": 3.5, "unit": "rad_per_s2", "tolerance": {"minus": 0.0, "plus": 0.2}, "criticality": "functional"},
+        "max_speed": {"value": 2.2, "unit": "rad_per_s", "tolerance": {"minus": 0.0, "plus": 0.1}, "criticality": "functional"},
+        "selected_output_torque": {"value": 240.0, "unit": "Nm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+        "selected_thermal_resistance": {"value": 3.5, "unit": "degC_per_W", "tolerance": {"minus": 0.0, "plus": 0.5}, "criticality": "functional"},
+        "structural_material": "Al_7075_T6"
+      },
+      {
+        "joint_id": "J3", "axis": [0, 1, 0], "gravity_sensitive": true, "neutral_direction": [0.88, 0.12, 0.46],
+        "length": {"value": 280.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "interface"},
+        "assembly_mass": {"value": 2.3, "unit": "kg", "tolerance": {"minus": 0.0, "plus": 0.15}, "criticality": "functional"},
+        "outer_diameter": {"value": 115.0, "unit": "mm", "tolerance": {"minus": 0.3, "plus": 0.3}, "criticality": "cosmetic"},
+        "hub_structural_diameter": {"value": 90.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "link_structural_diameter": {"value": 30.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "gear_ratio": {"value": 120.0, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "gear_efficiency": {"value": 0.74, "unit": "1", "tolerance": {"minus": 0.04, "plus": 0.02}, "criticality": "functional"},
+        "motor_torque_constant": {"value": 0.14, "unit": "Nm_per_A", "tolerance": {"minus": 0.01, "plus": 0.01}, "criticality": "functional"},
+        "peak_angular_acceleration": {"value": 4.0, "unit": "rad_per_s2", "tolerance": {"minus": 0.0, "plus": 0.3}, "criticality": "functional"},
+        "max_speed": {"value": 2.6, "unit": "rad_per_s", "tolerance": {"minus": 0.0, "plus": 0.1}, "criticality": "functional"},
+        "selected_output_torque": {"value": 170.0, "unit": "Nm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+        "selected_thermal_resistance": {"value": 4.0, "unit": "degC_per_W", "tolerance": {"minus": 0.0, "plus": 0.5}, "criticality": "functional"},
+        "structural_material": "Al_7075_T6"
+      },
+      {
+        "joint_id": "J4", "axis": [1, 0, 0], "gravity_sensitive": true, "neutral_direction": [0.75, -0.2, -0.63],
+        "length": {"value": 65.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "interface"},
+        "assembly_mass": {"value": 1.2, "unit": "kg", "tolerance": {"minus": 0.0, "plus": 0.1}, "criticality": "functional"},
+        "outer_diameter": {"value": 90.0, "unit": "mm", "tolerance": {"minus": 0.25, "plus": 0.25}, "criticality": "cosmetic"},
+        "hub_structural_diameter": {"value": 65.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "link_structural_diameter": {"value": 24.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "gear_ratio": {"value": 100.0, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "gear_efficiency": {"value": 0.75, "unit": "1", "tolerance": {"minus": 0.04, "plus": 0.02}, "criticality": "functional"},
+        "motor_torque_constant": {"value": 0.12, "unit": "Nm_per_A", "tolerance": {"minus": 0.01, "plus": 0.01}, "criticality": "functional"},
+        "peak_angular_acceleration": {"value": 6.0, "unit": "rad_per_s2", "tolerance": {"minus": 0.0, "plus": 0.4}, "criticality": "functional"},
+        "max_speed": {"value": 3.5, "unit": "rad_per_s", "tolerance": {"minus": 0.0, "plus": 0.2}, "criticality": "functional"},
+        "selected_output_torque": {"value": 85.0, "unit": "Nm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+        "selected_thermal_resistance": {"value": 5.0, "unit": "degC_per_W", "tolerance": {"minus": 0.0, "plus": 0.5}, "criticality": "functional"},
+        "structural_material": "Al_6061_T6"
+      },
+      {
+        "joint_id": "J5", "axis": [0, 1, 0], "gravity_sensitive": false, "neutral_direction": [0.72, 0.45, -0.53],
+        "length": {"value": 55.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "interface"},
+        "assembly_mass": {"value": 0.9, "unit": "kg", "tolerance": {"minus": 0.0, "plus": 0.08}, "criticality": "functional"},
+        "outer_diameter": {"value": 75.0, "unit": "mm", "tolerance": {"minus": 0.25, "plus": 0.25}, "criticality": "cosmetic"},
+        "hub_structural_diameter": {"value": 50.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "link_structural_diameter": {"value": 19.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "gear_ratio": {"value": 80.0, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "gear_efficiency": {"value": 0.78, "unit": "1", "tolerance": {"minus": 0.04, "plus": 0.02}, "criticality": "functional"},
+        "motor_torque_constant": {"value": 0.09, "unit": "Nm_per_A", "tolerance": {"minus": 0.008, "plus": 0.008}, "criticality": "functional"},
+        "peak_angular_acceleration": {"value": 8.0, "unit": "rad_per_s2", "tolerance": {"minus": 0.0, "plus": 0.5}, "criticality": "functional"},
+        "max_speed": {"value": 4.0, "unit": "rad_per_s", "tolerance": {"minus": 0.0, "plus": 0.2}, "criticality": "functional"},
+        "selected_output_torque": {"value": 48.0, "unit": "Nm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+        "selected_thermal_resistance": {"value": 6.0, "unit": "degC_per_W", "tolerance": {"minus": 0.0, "plus": 0.6}, "criticality": "functional"},
+        "structural_material": "Al_6061_T6"
+      },
+      {
+        "joint_id": "J6", "axis": [1, 0, 0], "gravity_sensitive": true, "neutral_direction": [0.86, -0.2, -0.47],
+        "length": {"value": 45.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "interface"},
+        "assembly_mass": {"value": 0.65, "unit": "kg", "tolerance": {"minus": 0.0, "plus": 0.06}, "criticality": "functional"},
+        "outer_diameter": {"value": 62.0, "unit": "mm", "tolerance": {"minus": 0.2, "plus": 0.2}, "criticality": "cosmetic"},
+        "hub_structural_diameter": {"value": 40.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "link_structural_diameter": {"value": 15.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "gear_ratio": {"value": 80.0, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "gear_efficiency": {"value": 0.78, "unit": "1", "tolerance": {"minus": 0.04, "plus": 0.02}, "criticality": "functional"},
+        "motor_torque_constant": {"value": 0.08, "unit": "Nm_per_A", "tolerance": {"minus": 0.007, "plus": 0.007}, "criticality": "functional"},
+        "peak_angular_acceleration": {"value": 10.0, "unit": "rad_per_s2", "tolerance": {"minus": 0.0, "plus": 0.6}, "criticality": "functional"},
+        "max_speed": {"value": 5.0, "unit": "rad_per_s", "tolerance": {"minus": 0.0, "plus": 0.25}, "criticality": "functional"},
+        "selected_output_torque": {"value": 32.0, "unit": "Nm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+        "selected_thermal_resistance": {"value": 7.0, "unit": "degC_per_W", "tolerance": {"minus": 0.0, "plus": 0.7}, "criticality": "functional"},
+        "structural_material": "Al_6061_T6"
+      },
+      {
+        "joint_id": "J7", "axis": [0, 0, 1], "gravity_sensitive": false, "neutral_direction": [0.96, 0.15, -0.24],
+        "length": {"value": 35.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "interface"},
+        "assembly_mass": {"value": 0.45, "unit": "kg", "tolerance": {"minus": 0.0, "plus": 0.05}, "criticality": "functional"},
+        "outer_diameter": {"value": 52.0, "unit": "mm", "tolerance": {"minus": 0.2, "plus": 0.2}, "criticality": "cosmetic"},
+        "hub_structural_diameter": {"value": 32.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "link_structural_diameter": {"value": 12.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"},
+        "gear_ratio": {"value": 50.0, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "gear_efficiency": {"value": 0.8, "unit": "1", "tolerance": {"minus": 0.04, "plus": 0.02}, "criticality": "functional"},
+        "motor_torque_constant": {"value": 0.06, "unit": "Nm_per_A", "tolerance": {"minus": 0.006, "plus": 0.006}, "criticality": "functional"},
+        "peak_angular_acceleration": {"value": 12.0, "unit": "rad_per_s2", "tolerance": {"minus": 0.0, "plus": 0.8}, "criticality": "functional"},
+        "max_speed": {"value": 6.0, "unit": "rad_per_s", "tolerance": {"minus": 0.0, "plus": 0.3}, "criticality": "functional"},
+        "selected_output_torque": {"value": 20.0, "unit": "Nm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+        "selected_thermal_resistance": {"value": 8.0, "unit": "degC_per_W", "tolerance": {"minus": 0.0, "plus": 0.8}, "criticality": "functional"},
+        "structural_material": "Al_6061_T6"
+      }
+    ]
+  },
+  "materials": {
+    "Al_7075_T6": {
+      "material_id": "Al_7075_T6",
+      "temper": "T6",
+      "product_form": "machined_or_drawn_stock_candidate",
+      "screening_properties": {
+        "density": {"value": 2800.0, "unit": "kg_per_m3", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "elastic_modulus": {"value": 71.0, "unit": "GPa", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "poisson_ratio": {"value": 0.33, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "minimum_yield_strength": {"value": 503.0, "unit": "MPa", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+        "minimum_ultimate_strength": {"value": 572.0, "unit": "MPa", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"}
+      },
+      "sources": [
+        {
+          "source_id": "kaiser-7075-sheet-coil-plate-rev-2006",
+          "publisher": "Kaiser Aluminum",
+          "title": "Sheet Coil & Plate Alloy 7075 Technical Data",
+          "url": "https://online.kaiseraluminum.com/depot/PublicProductInformation/Document/1017/Kaiser_Aluminum_7075_Sheet_Coil_and_Plate.pdf",
+          "revision": "05/06",
+          "locator": "pages 1-2 typical T651 mechanical and physical properties",
+          "document_sha256": null,
+          "digest_status": "remote_source_not_pinned",
+          "property_coverage": ["density", "elastic_modulus", "minimum_yield_strength", "minimum_ultimate_strength"]
+        },
+        {
+          "source_id": "nasa-larc-7075-t6-balance-properties-2020",
+          "publisher": "NASA Langley Research Center",
+          "title": "Wind-Tunnel Balance Characterization Supporting Material Table",
+          "url": "https://ntrs.nasa.gov/api/citations/20200002944/downloads/20200002944.pdf",
+          "revision": "2020",
+          "locator": "Table 1, 7075-T6 aluminum",
+          "document_sha256": null,
+          "digest_status": "remote_source_not_pinned",
+          "property_coverage": ["elastic_modulus", "poisson_ratio", "minimum_yield_strength", "minimum_ultimate_strength"]
+        }
+      ],
+      "qualification": {
+        "status": "screening_only_not_a_certified_design_allowable",
+        "supplier_certificate_required": true,
+        "required_product_form_match": true,
+        "prohibited_uses": ["production_acceptance", "fatigue_life", "fracture_mechanics", "nonlinear_plasticity"]
+      }
+    },
+    "Al_6061_T6": {
+      "material_id": "Al_6061_T6",
+      "temper": "T6",
+      "product_form": "extruded_structural_tube_candidate",
+      "screening_properties": {
+        "density": {"value": 2712.6, "unit": "kg_per_m3", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "elastic_modulus": {"value": 67.0, "unit": "GPa", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "poisson_ratio": {"value": 0.33, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+        "minimum_yield_strength": {"value": 240.0, "unit": "MPa", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+        "minimum_ultimate_strength": {"value": 260.0, "unit": "MPa", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"}
+      },
+      "sources": [
+        {
+          "source_id": "hydro-alloy-6061-data-sheet-2019",
+          "publisher": "Hydro Extrusion North America",
+          "title": "Alloy 6061 Data Sheet",
+          "url": "https://www.hydro.com/globalassets/01-products--services/extruded-profiles/americas/ena-resources/alloy-data-sheets/hydro_2019_data_sheet_6061.pdf",
+          "revision": "2019/01",
+          "locator": "page 2, density and T6/T6511 extrusion minimum strengths",
+          "document_sha256": "cc3cc79ef34d7ccd2a69fe5216f726be23d23d0b07e12c2ea1091adbba7fd009",
+          "digest_status": "sha256_verified_2026-08-24",
+          "property_coverage": ["density", "minimum_yield_strength", "minimum_ultimate_strength"]
+        },
+        {
+          "source_id": "nasa-lunar-scout-6061-t6-tube-1993",
+          "publisher": "NASA",
+          "title": "Lunar Scout Appendix C Structure",
+          "url": "https://ntrs.nasa.gov/api/citations/19930008978/downloads/19930008978.pdf",
+          "revision": "1993",
+          "locator": "Appendix C, 6061-T6 structural tubing properties",
+          "document_sha256": "4dd67cce70198b61e7e74c10413fc95de54a90fce0b732f25f981e14acde2c87",
+          "digest_status": "sha256_verified_2026-08-24",
+          "property_coverage": ["density", "elastic_modulus", "poisson_ratio"]
+        }
+      ],
+      "qualification": {
+        "status": "screening_only_not_a_certified_design_allowable",
+        "supplier_certificate_required": true,
+        "required_product_form_match": true,
+        "prohibited_uses": ["production_acceptance", "fatigue_life", "fracture_mechanics", "nonlinear_plasticity"]
+      }
+    }
+  },
+  "electrical": {
+    "bus_voltage": {"value": 48.0, "unit": "V", "tolerance": {"minus": 2.0, "plus": 4.0}, "criticality": "functional"},
+    "bus_transient_ceiling": {"value": 60.0, "unit": "V", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "semiconductor_voltage_derating_factor": {"value": 1.25, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "drive_efficiency": {"value": 0.9, "unit": "1", "tolerance": {"minus": 0.04, "plus": 0.02}, "criticality": "functional"},
+    "peak_power_factor": {"value": 0.35, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.05}, "criticality": "functional"},
+    "simultaneous_motion_factor": {"value": 0.65, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.05}, "criticality": "functional"},
+    "max_voltage_drop_percent": {"value": 5.0, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "trunk_resistance": {"value": 0.0033, "unit": "ohm_per_m", "tolerance": {"minus": 0.0, "plus": 0.0004}, "criticality": "manufacturing"},
+    "trunk_ampacity": {"value": 50.0, "unit": "A", "tolerance": {"minus": 5.0, "plus": 0.0}, "criticality": "safety"},
+    "branch_resistance": {"value": 0.0083, "unit": "ohm_per_m", "tolerance": {"minus": 0.0, "plus": 0.0008}, "criticality": "manufacturing"},
+    "branch_ampacity": {"value": 30.0, "unit": "A", "tolerance": {"minus": 3.0, "plus": 0.0}, "criticality": "safety"},
+    "harness_bundle_diameter": {"value": 6.5, "unit": "mm", "tolerance": {"minus": 0.0, "plus": 0.3}, "criticality": "interface"},
+    "service_loop_length": {"value": 100.0, "unit": "mm", "tolerance": {"minus": 0.0, "plus": 10.0}, "criticality": "manufacturing"}
+  },
+  "electronics": {
+    "joint_board_width": {"value": 34.0, "unit": "mm", "tolerance": {"minus": 0.2, "plus": 0.2}, "criticality": "interface"},
+    "joint_board_height": {"value": 24.0, "unit": "mm", "tolerance": {"minus": 0.2, "plus": 0.2}, "criticality": "interface"},
+    "joint_board_thickness": {"value": 1.6, "unit": "mm", "tolerance": {"minus": 0.12, "plus": 0.12}, "criticality": "manufacturing"},
+    "joint_board_stack_gap": {"value": 3.0, "unit": "mm", "tolerance": {"minus": 0.2, "plus": 0.2}, "criticality": "interface"},
+    "joint_board_count_per_module": 2,
+    "coordinator_board_width": {"value": 120.0, "unit": "mm", "tolerance": {"minus": 0.2, "plus": 0.2}, "criticality": "interface"},
+    "coordinator_board_height": {"value": 90.0, "unit": "mm", "tolerance": {"minus": 0.2, "plus": 0.2}, "criticality": "interface"},
+    "control_frequency": {"value": 20000.0, "unit": "Hz", "tolerance": {"minus": 0.0, "plus": 1000.0}, "criticality": "functional"},
+    "system_boundary_isolation_voltage": {"value": 1000.0, "unit": "V", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "can_fd_channels": 2,
+    "safety_channels": 2,
+    "package_to_courtyard_area_factor": {"value": 1.35, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "manufacturing"},
+    "logic_board_reserved_fraction": {"value": 0.35, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "manufacturing"},
+    "power_board_reserved_fraction": {"value": 0.28, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "manufacturing"},
+    "maximum_estimated_board_utilization": {"value": 0.8, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "manufacturing"},
+    "component_bindings": [
+      {
+        "binding_id": "joint-motor-control-mcu",
+        "manufacturer": "STMicroelectronics",
+        "mpn": "STM32G474CEU6",
+        "role": "motor_control_mcu",
+        "applies_to_board": "joint_logic",
+        "quantity_per_board": 1,
+        "package": "UFQFPN48_7x7_mm",
+        "body_size_mm": [7.0, 7.0, 0.6],
+        "capabilities": {
+          "fdcan_instances": 3,
+          "package_accessible_fdcan_instances": 2,
+          "max_clock_mhz": 170.0,
+          "motor_control_pwm_timers": 3,
+          "operating_temperature_max_degc": 85.0
+        },
+        "primary_evidence": {
+          "url": "https://www.st.com/resource/en/datasheet/stm32g474ce.pdf",
+          "document": "STM32G474xB/xC/xE datasheet",
+          "revision": "DS12288 Rev 6",
+          "observed_date": "2026-08-24",
+          "fact_basis": ["three FDCAN modules", "UFQFPN48 7x7 mm package", "FDCAN1 and FDCAN2 pins exposed by the 48-pin package"]
+        },
+        "selection_status": "datasheet_evidence_bound_candidate"
+      },
+      {
+        "binding_id": "joint-can-fd-transceiver",
+        "manufacturer": "Texas Instruments",
+        "mpn": "TCAN1044VDRBRQ1",
+        "role": "can_fd_transceiver",
+        "applies_to_board": "joint_logic",
+        "quantity_per_board": 2,
+        "package": "VSON_DRB_3x3_mm",
+        "body_size_mm": [3.0, 3.0, 1.0],
+        "capabilities": {
+          "can_fd_max_mbps": 8.0,
+          "bus_fault_abs_v": 58.0,
+          "io_voltage_min_v": 1.7,
+          "io_voltage_max_v": 5.5,
+          "operating_temperature_max_degc": 125.0
+        },
+        "primary_evidence": {
+          "url": "https://www.ti.com/lit/ds/symlink/tcan1044-q1.pdf",
+          "document": "TCAN1044-Q1 datasheet",
+          "revision": "SLLSF17D",
+          "observed_date": "2026-08-24",
+          "fact_basis": ["CAN FD up to 8 Mbps", "plus or minus 58 V bus fault protection", "active VSON orderable part"]
+        },
+        "selection_status": "datasheet_evidence_bound_candidate"
+      },
+      {
+        "binding_id": "joint-three-phase-gate-driver",
+        "manufacturer": "Texas Instruments",
+        "mpn": "DRV8353RSRGZR",
+        "role": "three_phase_gate_driver",
+        "applies_to_board": "joint_power",
+        "quantity_per_board": 1,
+        "package": "VQFN_RGZ_7x7_mm",
+        "body_size_mm": [7.0, 7.0, 1.0],
+        "capabilities": {
+          "supply_abs_max_v": 102.0,
+          "current_shunt_amplifiers": 3,
+          "integrated_buck": true,
+          "gate_drive_source_peak_a": 1.0,
+          "operating_temperature_max_degc": 125.0
+        },
+        "primary_evidence": {
+          "url": "https://www.ti.com/lit/ds/symlink/drv8353r.pdf",
+          "document": "DRV835x 100-V three-phase smart gate driver datasheet",
+          "revision": "SLVSDY6A",
+          "observed_date": "2026-08-24",
+          "fact_basis": ["102 V absolute maximum", "three integrated current-shunt amplifiers", "integrated buck regulator", "active 48-pin RGZ orderable part"]
+        },
+        "selection_status": "datasheet_evidence_bound_candidate"
+      },
+      {
+        "binding_id": "joint-power-mosfet",
+        "manufacturer": "Infineon Technologies",
+        "mpn": "BSC050N10NS5ATMA1",
+        "role": "power_mosfet",
+        "applies_to_board": "joint_power",
+        "quantity_per_board": 6,
+        "package": "PG-TDSON-8_SuperSO8_5x6_mm",
+        "body_size_mm": [6.0, 5.0, 1.1],
+        "capabilities": {
+          "vds_max_v": 100.0,
+          "rds_on_max_ohm": 0.005,
+          "qg_typ_nc": 49.0,
+          "id_max_a": 114.0,
+          "rth_jc_degc_per_w": 1.1,
+          "operating_temperature_max_degc": 175.0
+        },
+        "primary_evidence": {
+          "url": "https://www.infineon.com/part/BSC050N10NS5",
+          "document": "BSC050N10NS5 product data and datasheet",
+          "revision": "manufacturer current product record",
+          "observed_date": "2026-08-24",
+          "fact_basis": ["100 V VDS", "5 milliohm maximum RDS(on) at 10 V", "49 nC typical total gate charge at 10 V", "114 A maximum drain current at 25 degC", "1.1 K/W maximum junction-to-case thermal resistance", "SuperSO8 5x6 mm package", "active OPN"]
+        },
+        "selection_status": "datasheet_evidence_bound_candidate"
+      },
+      {
+        "binding_id": "joint-phase-current-shunt",
+        "manufacturer": "Vishay Dale",
+        "mpn": "WSLP25122L000FEA",
+        "role": "phase_current_shunt",
+        "applies_to_board": "joint_power",
+        "quantity_per_board": 3,
+        "package": "2512_power_metal_strip",
+        "body_size_mm": [6.35, 3.18, 0.7],
+        "capabilities": {
+          "resistance_ohm": 0.002,
+          "power_rating_w": 3.0,
+          "tolerance_percent": 1.0,
+          "operating_temperature_max_degc": 170.0
+        },
+        "primary_evidence": {
+          "url": "https://www.vishay.com/docs/30122/wslp.pdf",
+          "document": "WSLP Power Metal Strip resistor datasheet",
+          "revision": "manufacturer current datasheet",
+          "observed_date": "2026-08-24",
+          "fact_basis": ["2 milliohm global part-number encoding", "3 W 2512 rating", "1 percent tolerance"]
+        },
+        "selection_status": "datasheet_evidence_bound_candidate"
+      },
+      {
+        "binding_id": "joint-logic-ldo",
+        "manufacturer": "Texas Instruments",
+        "mpn": "TPS7A2033PDBVR",
+        "role": "logic_ldo",
+        "applies_to_board": "joint_logic",
+        "quantity_per_board": 1,
+        "package": "SOT-23_DBV_5",
+        "body_size_mm": [2.9, 2.8, 1.45],
+        "capabilities": {
+          "input_max_v": 6.0,
+          "output_v": 3.3,
+          "output_current_a": 0.3,
+          "operating_temperature_max_degc": 125.0
+        },
+        "primary_evidence": {
+          "url": "https://www.ti.com/product/TPS7A20/part-details/TPS7A2033PDBVR",
+          "document": "TPS7A20 datasheet and exact-part record",
+          "revision": "SBVS338H",
+          "observed_date": "2026-08-24",
+          "fact_basis": ["fixed 3.3 V output", "300 mA output current", "active SOT-23 orderable part"]
+        },
+        "selection_status": "datasheet_evidence_bound_candidate"
+      }
+    ]
+  },
+  "thermal": {
+    "maximum_ambient": {"value": 40.0, "unit": "degC", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "maximum_motor_winding": {"value": 120.0, "unit": "degC", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "maximum_driver_junction": {"value": 125.0, "unit": "degC", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "continuous_duty_factor": {"value": 0.5, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.05}, "criticality": "functional"}
+  },
+  "industrial_design": {
+    "form_language": ["continuous_muscle_like_link_shells", "compact_joint_collars", "clear_kinematic_hierarchy", "distinct_non_derivative_proportions"],
+    "exterior_colors": ["warm_white_low_gloss", "graphite_joint_collars", "single_safety_status_accent"],
+    "visible_fastener_count": 0,
+    "service_seam_zones": ["underside_of_link", "rear_of_joint_collar", "base_underside"],
+    "default_view": "exterior",
+    "copy_reference_geometry": false,
+    "cosmetic_retention": "bayonet_with_internal_latch",
+    "structural_retention": "internal_preloaded_fasteners"
+  },
+  "manufacturing": {
+    "structural_process": "machined_aluminum",
+    "shell_process": "injection_molding",
+    "shell_wall": {"value": 2.5, "unit": "mm", "tolerance": {"minus": 0.15, "plus": 0.15}, "criticality": "manufacturing"},
+    "rib_to_wall_ratio": {"value": 0.55, "unit": "1", "tolerance": {"minus": 0.03, "plus": 0.03}, "criticality": "manufacturing"},
+    "minimum_draft": {"value": 1.5, "unit": "deg", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "manufacturing"},
+    "minimum_root_fillet": {"value": 0.8, "unit": "mm", "tolerance": {"minus": 0.0, "plus": 0.1}, "criticality": "manufacturing"},
+    "minimum_structural_wall": {"value": 1.5, "unit": "mm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "manufacturing"},
+    "service_clearance": {"value": 0.8, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "interface"},
+    "link_endpoint_radius_ratio": {"value": 0.24, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "link_body_radius_ratio": {"value": 0.35, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "link_transition_length": {"value": 40.0, "unit": "mm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "structural_shell_clearance": {"value": 0.30, "unit": "mm", "tolerance": {"minus": 0.05, "plus": 0.05}, "criticality": "manufacturing"},
+    "target_structural_shell_wall": {"value": 3.0, "unit": "mm", "tolerance": {"minus": 0.1, "plus": 0.1}, "criticality": "manufacturing"}
+  },
+  "braking": {
+    "holding_load_factor": {"value": 1.5, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "minimum_hot_torque_retention": {"value": 0.70, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "minimum_brake_path_efficiency": {"value": 0.60, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "minimum_non_gravity_holding_fraction": {"value": 0.20, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "maximum_engagement_time": {"value": 0.15, "unit": "s", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "architecture": "spring_applied_power_released_motor_side_brake_per_joint",
+    "dynamic_stopping_policy": "controlled_drive_stop_before_static_brake_engagement"
+  },
+  "durability": {
+    "target_service_life": {"value": 20000.0, "unit": "h", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "target_motion_cycles": {"value": 10000000.0, "unit": "cycle", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "maximum_miner_damage": {"value": 0.5, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "load_spectrum": [
+      {"bin_id": "D1", "cycle_fraction": 0.50, "output_torque_fraction": 0.25, "stress_ratio": -1.0},
+      {"bin_id": "D2", "cycle_fraction": 0.30, "output_torque_fraction": 0.45, "stress_ratio": -1.0},
+      {"bin_id": "D3", "cycle_fraction": 0.15, "output_torque_fraction": 0.65, "stress_ratio": -1.0},
+      {"bin_id": "D4", "cycle_fraction": 0.045, "output_torque_fraction": 0.80, "stress_ratio": -1.0},
+      {"bin_id": "D5", "cycle_fraction": 0.005, "output_torque_fraction": 1.00, "stress_ratio": -1.0}
+    ],
+    "cycle_counting_method": "ASTM_E1049_rainflow",
+    "damage_accumulation_method": "Palmgren_Miner_with_design_damage_limit"
+  },
+  "electrical_integrity": {
+    "can_fd_data_rate": {"value": 5000000.0, "unit": "bit_per_s", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "nominal_differential_impedance": {"value": 120.0, "unit": "ohm", "tolerance": {"minus": 12.0, "plus": 12.0}, "criticality": "interface"},
+    "minimum_propagation_velocity": {"value": 180000000.0, "unit": "m_per_s", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "maximum_stub_length": {"value": 100.0, "unit": "mm", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "interface"},
+    "sample_point_fraction": {"value": 0.80, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "minimum_geometric_timing_margin": {"value": 0.75, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "maximum_joint_bus_ripple": {"value": 2.4, "unit": "V", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "maximum_can_ground_offset": {"value": 1.0, "unit": "V", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "shield_bonding_topology": "continuous_chassis_reference_with_360_degree_base_entry_bond",
+    "emc_test_targets": ["conducted_emissions", "radiated_emissions", "conducted_rf_immunity", "radiated_rf_immunity", "esd", "eft_burst", "surge"]
+  },
+  "functional_safety": {
+    "target_performance_level": "PL_d",
+    "target_architecture_category": "Category_3",
+    "minimum_diagnostic_coverage": {"value": 0.90, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "maximum_safe_state_response_time": {"value": 0.20, "unit": "s", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "safety"},
+    "safe_state": "controlled_stop_then_torque_off_and_spring_brakes_engaged",
+    "manual_reset_required": true,
+    "restart_interlock_required": true,
+    "single_fault_tolerance_required": true
+  },
+  "accuracy_and_controls": {
+    "maximum_joint_position_bandwidth": {"value": 3.0, "unit": "Hz", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "minimum_structural_mode_separation": {"value": 4.0, "unit": "1", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "maximum_command_to_pwm_latency": {"value": 0.0001, "unit": "s", "tolerance": {"minus": 0.0, "plus": 0.0}, "criticality": "functional"},
+    "tool_variance_allocation": {
+      "joint_sensing_and_transmission": 0.50,
+      "structural_hysteresis": 0.20,
+      "thermal_drift": 0.15,
+      "calibration_residual": 0.15
+    },
+    "joint_variance_allocation": {
+      "encoder": 0.35,
+      "reducer_lost_motion": 0.45,
+      "bearing_and_joint_deflection": 0.10,
+      "servo_tracking_and_quantization": 0.10
+    },
+    "allocation_method": "root_sum_square_small_angle_worst_reach"
+  },
+  "safety": {
+    "standards": ["ISO 10218-1:2025", "ISO 10218-2:2025", "ISO 13849-1:2023", "ISO/TS 15066:2016"],
+    "functions": ["emergency_stop", "dual_channel_sto", "brake_control", "joint_limit_monitoring", "safe_speed_monitoring"],
+    "compliance_claimed": false,
+    "risk_assessment_required": true
+  },
+  "ai_usage_records": []
+}

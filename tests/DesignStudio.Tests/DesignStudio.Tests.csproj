@@ -1,0 +1,99 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <RootNamespace>DesignStudio.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <!--
+    The WPF app project only builds on Windows, so the test project compiles the
+    UI-independent sources directly: model, project IO, ratsnest, undo, exporter
+    and the P/Invoke interop layer. This keeps model/export tests runnable on
+    Linux CI too (with libdesigncore.so built by CMake).
+  -->
+  <ItemGroup>
+    <Compile Include="..\..\app\DesignStudio\Interop\NativeCore.cs" Link="src\NativeCore.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\BoardDocument.cs" Link="src\BoardDocument.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\UndoStack.cs" Link="src\UndoStack.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Ratsnest.cs" Link="src\Ratsnest.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\ProjectIO.cs" Link="src\ProjectIO.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\FootprintLibrary.cs" Link="src\FootprintLibrary.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\ParametricFootprints.cs" Link="src\ParametricFootprints.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\AutoPlacer.cs" Link="src\AutoPlacer.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\PowerFanout.cs" Link="src\PowerFanout.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\PowerOptimizer.cs" Link="src\PowerOptimizer.cs" />
+    <Compile Include="..\..\app\DesignStudio\Export\FabExporter.cs" Link="src\FabExporter.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\DatasheetImport.cs" Link="src\DatasheetImport.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\ElectricalRules.cs" Link="src\ElectricalRules.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\CircuitStateExport.cs" Link="src\CircuitStateExport.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Advisor\SiPiAdvisor.cs" Link="src\SiPiAdvisor.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Advisor\AdviceContract.cs" Link="src\AdviceContract.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Advisor\AdviceApplier.cs" Link="src\AdviceApplier.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Advisor\ContextScope.cs" Link="src\ContextScope.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Advisor\LayerPlanner.cs" Link="src\LayerPlanner.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\BoardOutline.cs" Link="src\BoardOutline.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Stackup.cs" Link="src\Stackup.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\HighSpeed.cs" Link="src\HighSpeed.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\SpatialIndex.cs" Link="src\SpatialIndex.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Materials.cs" Link="src\Materials.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\PlaneShape.cs" Link="src\PlaneShape.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Ampacity.cs" Link="src\Ampacity.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Rules.cs" Link="src\Rules.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\PowerIntegrity.cs" Link="src\PowerIntegrity.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\FieldSolver.cs" Link="src\FieldSolver.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\ChannelExtractor.cs" Link="src\ChannelExtractor.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Shove.cs" Link="src\Shove.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\EscapePlanner.cs" Link="src\EscapePlanner.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\PdnAnalyzer.cs" Link="src\PdnAnalyzer.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Crosstalk.cs" Link="src\Crosstalk.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Thermal.cs" Link="src\Thermal.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\BatchRouter.cs" Link="src\BatchRouter.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Schematic.cs" Link="src\Schematic.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Touchstone.cs" Link="src\Touchstone.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Solve\DenseSolver.cs" Link="src\DenseSolver.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Solve\SweepScheduler.cs" Link="src\SweepScheduler.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\Solve\ExtractionCache.cs" Link="src\ExtractionCache.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\MoM2D.cs" Link="src\MoM2D.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\ViaModel.cs" Link="src\ViaModel.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\Fft.cs" Link="src\Fft.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\IbisModel.cs" Link="src\IbisModel.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\StatisticalEye.cs" Link="src\StatisticalEye.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\LinkSimulator.cs" Link="src\LinkSimulator.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\VectorFit.cs" Link="src\VectorFit.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\ChannelAssembly.cs" Link="src\ChannelAssembly.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\AmiModel.cs" Link="src\AmiModel.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\ComplianceMask.cs" Link="src\ComplianceMask.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\JitterDecomposition.cs" Link="src\JitterDecomposition.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\PlaneCavity.cs" Link="src\PlaneCavity.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\LinkSim\Equalization.cs" Link="src\Equalization.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\DdrTimingEngine.cs" Link="src\DdrTimingEngine.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\ReferenceIntegrity.cs" Link="src\ReferenceIntegrity.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\PlanePdnFdm.cs" Link="src\PlanePdnFdm.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\DdrSubsystem.cs" Link="src\DdrSubsystem.cs" />
+    <Compile Include="..\..\app\DesignStudio\Model\HdiVias.cs" Link="src\HdiVias.cs" />
+    <Compile Include="..\..\app\DesignStudio\Export\OpenEmsExporter.cs" Link="src\OpenEmsExporter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Clipper2" Version="1.3.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageReference Include="xunit" Version="2.7.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.7" />
+  </ItemGroup>
+
+  <!-- Native core next to the test binaries when it has been built -->
+  <ItemGroup>
+    <None Include="..\..\core\build\libdesigncore.so" Condition="Exists('..\..\core\build\libdesigncore.so')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>libdesigncore.so</Link>
+    </None>
+    <None Include="..\..\core\build\Release\designcore.dll" Condition="Exists('..\..\core\build\Release\designcore.dll')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>designcore.dll</Link>
+    </None>
+  </ItemGroup>
+
+</Project>

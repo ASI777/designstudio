@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:generation-artifacts:1",
+  "title": "Hunyuan3D-Omni candidate artifact manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "job_id", "input_digest", "model", "model_digest", "container_digest", "runtime", "parameters", "candidates", "created_utc"],
+  "properties": {
+    "schema": {"const": "design-studio.generation-artifacts/1"},
+    "job_id": {"type": "string", "format": "uuid"},
+    "input_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "model": {"const": "Tencent-Hunyuan/Hunyuan3D-Omni"},
+    "model_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "container_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "runtime": {"type": "object"},
+    "parameters": {
+      "type": "object",
+      "required": ["candidate_count", "seeds", "dimension_order", "conditioning"],
+      "properties": {
+        "candidate_count": {"type": "integer", "minimum": 1, "maximum": 8},
+        "seeds": {"type": "array", "uniqueItems": true, "items": {"type": "integer", "minimum": 0}},
+        "dimension_order": {"const": "width_depth_height"},
+        "conditioning": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["geometry", "appearance_view", "prompt"],
+          "properties": {
+            "geometry": {"const": "six-view-visual-hull-v1"},
+            "appearance_view": {"const": "front"},
+            "prompt": {"const": "recorded_not_conditioned"}
+          }
+        }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["index", "seed", "artifact", "artifact_url", "sha256", "media_type", "dimensions_mm", "bounding_box_mm", "bounding_box_error_mm", "control_adherence", "mesh_diagnostics", "release_eligible", "blocking_findings"],
+        "properties": {
+          "index": {"type": "integer", "minimum": 0},
+          "seed": {"type": "integer", "minimum": 0},
+          "artifact": {"type": "string", "pattern": "^candidate-[0-9]{2}\\.glb$"},
+          "artifact_url": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "media_type": {"const": "model/gltf-binary"},
+          "dimensions_mm": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["width", "depth", "height"],
+            "properties": {
+              "width": {"type": "number", "exclusiveMinimum": 0},
+              "depth": {"type": "number", "exclusiveMinimum": 0},
+              "height": {"type": "number", "exclusiveMinimum": 0}
+            }
+          },
+          "bounding_box_mm": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "exclusiveMinimum": 0}},
+          "bounding_box_error_mm": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "minimum": 0}},
+          "control_adherence": {"type": "object"},
+          "mesh_diagnostics": {"type": "object"},
+          "release_eligible": {"const": false},
+          "blocking_findings": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "created_utc": {"type": "string", "format": "date-time"}
+  }
+}

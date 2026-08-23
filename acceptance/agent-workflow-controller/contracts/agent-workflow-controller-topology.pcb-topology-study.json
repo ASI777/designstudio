@@ -1,0 +1,3000 @@
+{
+  "approval_required": true,
+  "candidates": [
+    {
+      "candidate_id": "single-rigid",
+      "hard_failures": [
+        "segment 9 is not horizontal, vertical or 45-degree",
+        "segment 10 is not horizontal, vertical or 45-degree",
+        "segment 126 is not horizontal, vertical or 45-degree",
+        "segment 127 is not horizontal, vertical or 45-degree",
+        "segment 133 is not horizontal, vertical or 45-degree",
+        "segment 137 is not horizontal, vertical or 45-degree",
+        "segment 201 is not horizontal, vertical or 45-degree",
+        "segment 218 is not horizontal, vertical or 45-degree",
+        "segment 237 is not horizontal, vertical or 45-degree",
+        "segment 581 is not horizontal, vertical or 45-degree",
+        "segment 585 is not horizontal, vertical or 45-degree",
+        "segment 590 is not horizontal, vertical or 45-degree",
+        "segment 599 is not horizontal, vertical or 45-degree",
+        "segment 603 is not horizontal, vertical or 45-degree",
+        "segment 608 is not horizontal, vertical or 45-degree",
+        "segment 617 is not horizontal, vertical or 45-degree",
+        "segment 621 is not horizontal, vertical or 45-degree",
+        "segment 626 is not horizontal, vertical or 45-degree",
+        "segment 666 is not horizontal, vertical or 45-degree",
+        "segment 794 is not horizontal, vertical or 45-degree",
+        "high-speed net 10 contains 1 right-angle corner(s)"
+      ],
+      "incomplete_analyses": [
+        "thermal",
+        "structural",
+        "signal_integrity",
+        "manufacturing_cost"
+      ],
+      "interconnects": [],
+      "islands": [
+        {
+          "component_ids": [
+            "C1",
+            "C10",
+            "C11",
+            "C12",
+            "C13",
+            "C14",
+            "C15",
+            "C16",
+            "C17",
+            "C18",
+            "C19",
+            "C2",
+            "C20",
+            "C21",
+            "C22",
+            "C23",
+            "C24",
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C29",
+            "C3",
+            "C30",
+            "C31",
+            "C32",
+            "C33",
+            "C34",
+            "C35",
+            "C36",
+            "C37",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "D1",
+            "D10",
+            "D11",
+            "D12",
+            "D13",
+            "D2",
+            "D3",
+            "D4",
+            "D5",
+            "D6",
+            "D7",
+            "D8",
+            "D9",
+            "ENC1",
+            "J1",
+            "J2",
+            "J3",
+            "JS1",
+            "L1",
+            "L2",
+            "LED1",
+            "LED10",
+            "LED11",
+            "LED12",
+            "LED13",
+            "LED2",
+            "LED3",
+            "LED4",
+            "LED5",
+            "LED6",
+            "LED7",
+            "LED8",
+            "LED9",
+            "R1",
+            "R10",
+            "R11",
+            "R12",
+            "R13",
+            "R14",
+            "R15",
+            "R16",
+            "R17",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "SW1",
+            "SW10",
+            "SW11",
+            "SW12",
+            "SW13",
+            "SW2",
+            "SW3",
+            "SW4",
+            "SW5",
+            "SW6",
+            "SW7",
+            "SW8",
+            "SW9",
+            "U1",
+            "U2",
+            "U3",
+            "U4",
+            "U5",
+            "U6",
+            "U7"
+          ],
+          "island_id": "single-rigid-island-1",
+          "kind": "rigid"
+        }
+      ],
+      "metrics": {
+        "interconnect_count": {
+          "method": "cross-island net count",
+          "status": "pass",
+          "unit": "count",
+          "value": 0.0,
+          "weight": 3.0
+        },
+        "interconnect_evidence": {
+          "method": "single-board candidate has no cross-island interconnect",
+          "status": "not_applicable",
+          "unit": "status",
+          "value": null,
+          "weight": 4.0
+        },
+        "island_count": {
+          "method": "deterministic functional partition",
+          "status": "pass",
+          "unit": "count",
+          "value": 1.0,
+          "weight": 1.0
+        },
+        "manufacturing_cost": {
+          "method": "manufacturer quote required",
+          "status": "incomplete",
+          "unit": "currency",
+          "value": null,
+          "weight": 2.0
+        },
+        "octilinear_route_compliance": {
+          "method": "measured 0/45/90-degree copper segments",
+          "status": "fail",
+          "unit": "ratio",
+          "value": null,
+          "weight": 4.0
+        },
+        "signal_integrity": {
+          "method": "routed stackup simulation required",
+          "status": "incomplete",
+          "unit": "score",
+          "value": null,
+          "weight": 4.0
+        },
+        "structural": {
+          "method": "exact structural solver required",
+          "status": "incomplete",
+          "unit": "score",
+          "value": null,
+          "weight": 3.0
+        },
+        "thermal": {
+          "method": "exact thermal solver required",
+          "status": "incomplete",
+          "unit": "score",
+          "value": null,
+          "weight": 3.0
+        },
+        "weighted_connection_length_mm": {
+          "method": "measured routed copper",
+          "status": "pass",
+          "unit": "mm",
+          "value": 5138.849373379865,
+          "weight": 4.0
+        }
+      },
+      "rank": null,
+      "rationale": [
+        "one rigid board avoids unnecessary interconnect reliability penalties"
+      ],
+      "score": null,
+      "status": "rejected",
+      "topology": "single_rigid"
+    },
+    {
+      "candidate_id": "rigid-flex",
+      "hard_failures": [],
+      "incomplete_analyses": [
+        "weighted_connection_length_mm",
+        "octilinear_route_compliance",
+        "thermal",
+        "structural",
+        "signal_integrity",
+        "manufacturing_cost",
+        "interconnect_evidence"
+      ],
+      "interconnects": [
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C1",
+            "C10",
+            "C11",
+            "C12",
+            "C13",
+            "C14",
+            "C15",
+            "C16",
+            "C17",
+            "C18",
+            "C19",
+            "C2",
+            "C20",
+            "C21",
+            "C22",
+            "C23",
+            "C24",
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C29",
+            "C3",
+            "C30",
+            "C31",
+            "C32",
+            "C33",
+            "C34",
+            "C35",
+            "C36",
+            "C37",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "ENC1",
+            "J1",
+            "J2",
+            "JS1",
+            "LED1",
+            "LED10",
+            "LED11",
+            "LED12",
+            "LED13",
+            "LED2",
+            "LED3",
+            "LED4",
+            "LED5",
+            "LED6",
+            "LED7",
+            "LED8",
+            "LED9",
+            "R1",
+            "R12",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "U1",
+            "U2",
+            "U3",
+            "U4",
+            "U5",
+            "U6",
+            "U7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-0",
+          "island_ids": [
+            "rigid-flex-island-1",
+            "rigid-flex-island-3",
+            "rigid-flex-island-4",
+            "rigid-flex-island-5",
+            "rigid-flex-island-6",
+            "rigid-flex-island-7",
+            "rigid-flex-island-8"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "0"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C32",
+            "C4",
+            "C5",
+            "J3",
+            "JS1",
+            "R10",
+            "R14",
+            "R15",
+            "R16",
+            "R17",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "U1",
+            "U3",
+            "U4"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-1",
+          "island_ids": [
+            "rigid-flex-island-1",
+            "rigid-flex-island-5",
+            "rigid-flex-island-6",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "1"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "J1",
+            "U1",
+            "U2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-10",
+          "island_ids": [
+            "rigid-flex-island-7",
+            "rigid-flex-island-8"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "10"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "J1",
+            "U1",
+            "U2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-11",
+          "island_ids": [
+            "rigid-flex-island-7",
+            "rigid-flex-island-8"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "11"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "SW1",
+            "SW2",
+            "SW3",
+            "SW4",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-12",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "12"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D1",
+            "SW1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-13",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "13"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C33",
+            "D1",
+            "D13",
+            "D5",
+            "D9",
+            "R14",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-14",
+          "island_ids": [
+            "rigid-flex-island-4",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "14"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "LED1",
+            "R13"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-16",
+          "island_ids": [
+            "rigid-flex-island-3",
+            "rigid-flex-island-5"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "16"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D2",
+            "SW2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-17",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "17"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C34",
+            "D10",
+            "D2",
+            "D6",
+            "R15",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-18",
+          "island_ids": [
+            "rigid-flex-island-4",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "18"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C3",
+            "J2",
+            "U3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-2",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-6"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "2"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D3",
+            "SW3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-20",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "20"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C35",
+            "D11",
+            "D3",
+            "D7",
+            "R16",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-21",
+          "island_ids": [
+            "rigid-flex-island-4",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "21"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D4",
+            "SW4"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-23",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "23"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C36",
+            "D12",
+            "D4",
+            "D8",
+            "R17",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-24",
+          "island_ids": [
+            "rigid-flex-island-4",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "24"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "SW5",
+            "SW6",
+            "SW7",
+            "SW8",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-26",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "26"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D5",
+            "SW5"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-27",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "27"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D6",
+            "SW6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-29",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "29"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C14",
+            "C2",
+            "C31",
+            "L2",
+            "U3",
+            "U4",
+            "U6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-3",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-6"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "3"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D7",
+            "SW7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-31",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "31"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D8",
+            "SW8"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-33",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "33"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "SW10",
+            "SW11",
+            "SW12",
+            "SW9",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-35",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "35"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D9",
+            "SW9"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-36",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "36"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D10",
+            "SW10"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-38",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "38"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C15",
+            "C16",
+            "R11",
+            "U5",
+            "U6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-4",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-6"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "4"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D11",
+            "SW11"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-40",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "40"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D12",
+            "SW12"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-42",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "42"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "SW13",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-44",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "44"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D13",
+            "SW13"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-45",
+          "island_ids": [
+            "rigid-flex-island-2",
+            "rigid-flex-island-4"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "45"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C10",
+            "ENC1",
+            "R6",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-47",
+          "island_ids": [
+            "rigid-flex-island-1",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "47"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C11",
+            "ENC1",
+            "R7",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-48",
+          "island_ids": [
+            "rigid-flex-island-1",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "48"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C12",
+            "ENC1",
+            "R8",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-49",
+          "island_ids": [
+            "rigid-flex-island-1",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "49"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C17",
+            "C18",
+            "C19",
+            "C20",
+            "C21",
+            "C22",
+            "C23",
+            "C24",
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C29",
+            "C30",
+            "C6",
+            "LED1",
+            "LED10",
+            "LED11",
+            "LED12",
+            "LED13",
+            "LED2",
+            "LED3",
+            "LED4",
+            "LED5",
+            "LED6",
+            "LED7",
+            "LED8",
+            "LED9",
+            "U5",
+            "U7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-5",
+          "island_ids": [
+            "rigid-flex-island-3",
+            "rigid-flex-island-5",
+            "rigid-flex-island-6"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "5"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C7",
+            "JS1",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-50",
+          "island_ids": [
+            "rigid-flex-island-1",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "50"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C8",
+            "JS1",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-51",
+          "island_ids": [
+            "rigid-flex-island-1",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "51"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C9",
+            "J3",
+            "R3",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-52",
+          "island_ids": [
+            "rigid-flex-island-1",
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "52"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C37",
+            "R9",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-53",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "53"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "U1",
+            "U7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-54",
+          "island_ids": [
+            "rigid-flex-island-3",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "54"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "U1",
+            "U5",
+            "U6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-55",
+          "island_ids": [
+            "rigid-flex-island-6",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "55"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R10",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-56",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-7"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "56"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "J1",
+            "R1",
+            "U2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-57",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-8"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "57"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "J1",
+            "R2",
+            "U2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-58",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-8"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "58"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C1",
+            "J1",
+            "U3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-6",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-6",
+            "rigid-flex-island-8"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "6"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R4",
+            "U3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-60",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-6"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "60"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R5",
+            "U3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-61",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-6"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "61"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C13",
+            "U5"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-62",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-6"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "62"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R11",
+            "R12",
+            "U6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-63",
+          "island_ids": [
+            "rigid-flex-island-5",
+            "rigid-flex-island-6"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "63"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R13",
+            "U7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-64",
+          "island_ids": [
+            "rigid-flex-island-3",
+            "rigid-flex-island-5"
+          ],
+          "kind": "flex",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "64"
+        }
+      ],
+      "islands": [
+        {
+          "component_ids": [
+            "ENC1",
+            "J3",
+            "JS1"
+          ],
+          "island_id": "rigid-flex-island-1",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "SW1",
+            "SW10",
+            "SW11",
+            "SW12",
+            "SW13",
+            "SW2",
+            "SW3",
+            "SW4",
+            "SW5",
+            "SW6",
+            "SW7",
+            "SW8",
+            "SW9"
+          ],
+          "island_id": "rigid-flex-island-2",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "C17",
+            "C18",
+            "C19",
+            "C20",
+            "C21",
+            "C22",
+            "C23",
+            "C24",
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C29",
+            "LED1",
+            "LED10",
+            "LED11",
+            "LED12",
+            "LED13",
+            "LED2",
+            "LED3",
+            "LED4",
+            "LED5",
+            "LED6",
+            "LED7",
+            "LED8",
+            "LED9",
+            "U7"
+          ],
+          "island_id": "rigid-flex-island-3",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "C33",
+            "C34",
+            "C35",
+            "C36",
+            "D1",
+            "D10",
+            "D11",
+            "D12",
+            "D13",
+            "D2",
+            "D3",
+            "D4",
+            "D5",
+            "D6",
+            "D7",
+            "D8",
+            "D9"
+          ],
+          "island_id": "rigid-flex-island-4",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "C1",
+            "C10",
+            "C11",
+            "C12",
+            "C13",
+            "C14",
+            "C15",
+            "C16",
+            "C2",
+            "C3",
+            "C30",
+            "C31",
+            "C32",
+            "C37",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "R1",
+            "R10",
+            "R11",
+            "R12",
+            "R13",
+            "R14",
+            "R15",
+            "R16",
+            "R17",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9"
+          ],
+          "island_id": "rigid-flex-island-5",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "J2",
+            "L1",
+            "L2",
+            "U3",
+            "U4",
+            "U5",
+            "U6"
+          ],
+          "island_id": "rigid-flex-island-6",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "U1"
+          ],
+          "island_id": "rigid-flex-island-7",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "J1",
+            "U2"
+          ],
+          "island_id": "rigid-flex-island-8",
+          "kind": "rigid"
+        }
+      ],
+      "metrics": {
+        "interconnect_count": {
+          "method": "cross-island net count",
+          "status": "pass",
+          "unit": "count",
+          "value": 48.0,
+          "weight": 3.0
+        },
+        "interconnect_evidence": {
+          "method": "connector pins, route length, voltage drop and bend radius require verified topology geometry",
+          "status": "incomplete",
+          "unit": "status",
+          "value": null,
+          "weight": 4.0
+        },
+        "island_count": {
+          "method": "deterministic functional partition",
+          "status": "pass",
+          "unit": "count",
+          "value": 8.0,
+          "weight": 1.0
+        },
+        "manufacturing_cost": {
+          "method": "manufacturer quote required",
+          "status": "incomplete",
+          "unit": "currency",
+          "value": null,
+          "weight": 2.0
+        },
+        "octilinear_route_compliance": {
+          "method": "actual routed copper is unavailable",
+          "status": "incomplete",
+          "unit": "ratio",
+          "value": null,
+          "weight": 4.0
+        },
+        "signal_integrity": {
+          "method": "routed stackup simulation required",
+          "status": "incomplete",
+          "unit": "score",
+          "value": null,
+          "weight": 4.0
+        },
+        "structural": {
+          "method": "exact structural solver required",
+          "status": "incomplete",
+          "unit": "score",
+          "value": null,
+          "weight": 3.0
+        },
+        "thermal": {
+          "method": "exact thermal solver required",
+          "status": "incomplete",
+          "unit": "score",
+          "value": null,
+          "weight": 3.0
+        },
+        "weighted_connection_length_mm": {
+          "method": "pin-position Euclidean lower-bound; exact routed length pending",
+          "status": "incomplete",
+          "unit": "mm",
+          "value": null,
+          "weight": 4.0
+        }
+      },
+      "rank": 2,
+      "rationale": [
+        "functional groups produce 8 physical region(s)"
+      ],
+      "score": 1030.0,
+      "status": "incomplete",
+      "topology": "rigid_flex"
+    },
+    {
+      "candidate_id": "multi-rigid-harness",
+      "hard_failures": [],
+      "incomplete_analyses": [
+        "weighted_connection_length_mm",
+        "octilinear_route_compliance",
+        "thermal",
+        "structural",
+        "signal_integrity",
+        "manufacturing_cost",
+        "interconnect_evidence"
+      ],
+      "interconnects": [
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C1",
+            "C10",
+            "C11",
+            "C12",
+            "C13",
+            "C14",
+            "C15",
+            "C16",
+            "C17",
+            "C18",
+            "C19",
+            "C2",
+            "C20",
+            "C21",
+            "C22",
+            "C23",
+            "C24",
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C29",
+            "C3",
+            "C30",
+            "C31",
+            "C32",
+            "C33",
+            "C34",
+            "C35",
+            "C36",
+            "C37",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "ENC1",
+            "J1",
+            "J2",
+            "JS1",
+            "LED1",
+            "LED10",
+            "LED11",
+            "LED12",
+            "LED13",
+            "LED2",
+            "LED3",
+            "LED4",
+            "LED5",
+            "LED6",
+            "LED7",
+            "LED8",
+            "LED9",
+            "R1",
+            "R12",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "U1",
+            "U2",
+            "U3",
+            "U4",
+            "U5",
+            "U6",
+            "U7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-0",
+          "island_ids": [
+            "multi-rigid-harness-island-1",
+            "multi-rigid-harness-island-3",
+            "multi-rigid-harness-island-4",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6",
+            "multi-rigid-harness-island-7",
+            "multi-rigid-harness-island-8"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "0"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C32",
+            "C4",
+            "C5",
+            "J3",
+            "JS1",
+            "R10",
+            "R14",
+            "R15",
+            "R16",
+            "R17",
+            "R6",
+            "R7",
+            "R8",
+            "R9",
+            "U1",
+            "U3",
+            "U4"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-1",
+          "island_ids": [
+            "multi-rigid-harness-island-1",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "1"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "J1",
+            "U1",
+            "U2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-10",
+          "island_ids": [
+            "multi-rigid-harness-island-7",
+            "multi-rigid-harness-island-8"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "10"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "J1",
+            "U1",
+            "U2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-11",
+          "island_ids": [
+            "multi-rigid-harness-island-7",
+            "multi-rigid-harness-island-8"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "11"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "SW1",
+            "SW2",
+            "SW3",
+            "SW4",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-12",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "12"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D1",
+            "SW1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-13",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "13"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C33",
+            "D1",
+            "D13",
+            "D5",
+            "D9",
+            "R14",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-14",
+          "island_ids": [
+            "multi-rigid-harness-island-4",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "14"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "LED1",
+            "R13"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-16",
+          "island_ids": [
+            "multi-rigid-harness-island-3",
+            "multi-rigid-harness-island-5"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "16"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D2",
+            "SW2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-17",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "17"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C34",
+            "D10",
+            "D2",
+            "D6",
+            "R15",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-18",
+          "island_ids": [
+            "multi-rigid-harness-island-4",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "18"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C3",
+            "J2",
+            "U3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-2",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "2"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D3",
+            "SW3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-20",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "20"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C35",
+            "D11",
+            "D3",
+            "D7",
+            "R16",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-21",
+          "island_ids": [
+            "multi-rigid-harness-island-4",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "21"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D4",
+            "SW4"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-23",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "23"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C36",
+            "D12",
+            "D4",
+            "D8",
+            "R17",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-24",
+          "island_ids": [
+            "multi-rigid-harness-island-4",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "24"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "SW5",
+            "SW6",
+            "SW7",
+            "SW8",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-26",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "26"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D5",
+            "SW5"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-27",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "27"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D6",
+            "SW6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-29",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "29"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C14",
+            "C2",
+            "C31",
+            "L2",
+            "U3",
+            "U4",
+            "U6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-3",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "3"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D7",
+            "SW7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-31",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "31"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D8",
+            "SW8"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-33",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "33"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "SW10",
+            "SW11",
+            "SW12",
+            "SW9",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-35",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "35"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D9",
+            "SW9"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-36",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "36"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D10",
+            "SW10"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-38",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "38"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C15",
+            "C16",
+            "R11",
+            "U5",
+            "U6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-4",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "4"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D11",
+            "SW11"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-40",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "40"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D12",
+            "SW12"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-42",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "42"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "SW13",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-44",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "44"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "D13",
+            "SW13"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-45",
+          "island_ids": [
+            "multi-rigid-harness-island-2",
+            "multi-rigid-harness-island-4"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "45"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C10",
+            "ENC1",
+            "R6",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-47",
+          "island_ids": [
+            "multi-rigid-harness-island-1",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "47"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C11",
+            "ENC1",
+            "R7",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-48",
+          "island_ids": [
+            "multi-rigid-harness-island-1",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "48"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C12",
+            "ENC1",
+            "R8",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-49",
+          "island_ids": [
+            "multi-rigid-harness-island-1",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "49"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C17",
+            "C18",
+            "C19",
+            "C20",
+            "C21",
+            "C22",
+            "C23",
+            "C24",
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C29",
+            "C30",
+            "C6",
+            "LED1",
+            "LED10",
+            "LED11",
+            "LED12",
+            "LED13",
+            "LED2",
+            "LED3",
+            "LED4",
+            "LED5",
+            "LED6",
+            "LED7",
+            "LED8",
+            "LED9",
+            "U5",
+            "U7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-5",
+          "island_ids": [
+            "multi-rigid-harness-island-3",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "5"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C7",
+            "JS1",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-50",
+          "island_ids": [
+            "multi-rigid-harness-island-1",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "50"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C8",
+            "JS1",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-51",
+          "island_ids": [
+            "multi-rigid-harness-island-1",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "51"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C9",
+            "J3",
+            "R3",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-52",
+          "island_ids": [
+            "multi-rigid-harness-island-1",
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "52"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C37",
+            "R9",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-53",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "53"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "U1",
+            "U7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-54",
+          "island_ids": [
+            "multi-rigid-harness-island-3",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "54"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "U1",
+            "U5",
+            "U6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-55",
+          "island_ids": [
+            "multi-rigid-harness-island-6",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "55"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R10",
+            "U1"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-56",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-7"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "56"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "J1",
+            "R1",
+            "U2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-57",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-8"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "57"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "J1",
+            "R2",
+            "U2"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-58",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-8"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "58"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C1",
+            "J1",
+            "U3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-6",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6",
+            "multi-rigid-harness-island-8"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "6"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R4",
+            "U3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-60",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "60"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R5",
+            "U3"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-61",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "61"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "C13",
+            "U5"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-62",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "62"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R11",
+            "R12",
+            "U6"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-63",
+          "island_ids": [
+            "multi-rigid-harness-island-5",
+            "multi-rigid-harness-island-6"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "63"
+        },
+        {
+          "connector_pin_map": [],
+          "endpoint_component_ids": [
+            "R13",
+            "U7"
+          ],
+          "estimated_length_mm": null,
+          "estimated_voltage_drop_v": null,
+          "evidence_digest": null,
+          "evidence_status": "incomplete",
+          "interconnect_id": "link-64",
+          "island_ids": [
+            "multi-rigid-harness-island-3",
+            "multi-rigid-harness-island-5"
+          ],
+          "kind": "harness",
+          "maximum_length_mm": null,
+          "minimum_bend_radius_mm": null,
+          "net_id": "64"
+        }
+      ],
+      "islands": [
+        {
+          "component_ids": [
+            "ENC1",
+            "J3",
+            "JS1"
+          ],
+          "island_id": "multi-rigid-harness-island-1",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "SW1",
+            "SW10",
+            "SW11",
+            "SW12",
+            "SW13",
+            "SW2",
+            "SW3",
+            "SW4",
+            "SW5",
+            "SW6",
+            "SW7",
+            "SW8",
+            "SW9"
+          ],
+          "island_id": "multi-rigid-harness-island-2",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "C17",
+            "C18",
+            "C19",
+            "C20",
+            "C21",
+            "C22",
+            "C23",
+            "C24",
+            "C25",
+            "C26",
+            "C27",
+            "C28",
+            "C29",
+            "LED1",
+            "LED10",
+            "LED11",
+            "LED12",
+            "LED13",
+            "LED2",
+            "LED3",
+            "LED4",
+            "LED5",
+            "LED6",
+            "LED7",
+            "LED8",
+            "LED9",
+            "U7"
+          ],
+          "island_id": "multi-rigid-harness-island-3",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "C33",
+            "C34",
+            "C35",
+            "C36",
+            "D1",
+            "D10",
+            "D11",
+            "D12",
+            "D13",
+            "D2",
+            "D3",
+            "D4",
+            "D5",
+            "D6",
+            "D7",
+            "D8",
+            "D9"
+          ],
+          "island_id": "multi-rigid-harness-island-4",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "C1",
+            "C10",
+            "C11",
+            "C12",
+            "C13",
+            "C14",
+            "C15",
+            "C16",
+            "C2",
+            "C3",
+            "C30",
+            "C31",
+            "C32",
+            "C37",
+            "C4",
+            "C5",
+            "C6",
+            "C7",
+            "C8",
+            "C9",
+            "R1",
+            "R10",
+            "R11",
+            "R12",
+            "R13",
+            "R14",
+            "R15",
+            "R16",
+            "R17",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6",
+            "R7",
+            "R8",
+            "R9"
+          ],
+          "island_id": "multi-rigid-harness-island-5",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "J2",
+            "L1",
+            "L2",
+            "U3",
+            "U4",
+            "U5",
+            "U6"
+          ],
+          "island_id": "multi-rigid-harness-island-6",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "U1"
+          ],
+          "island_id": "multi-rigid-harness-island-7",
+          "kind": "rigid"
+        },
+        {
+          "component_ids": [
+            "J1",
+            "U2"
+          ],
+          "island_id": "multi-rigid-harness-island-8",
+          "kind": "rigid"
+        }
+      ],
+      "metrics": {
+        "interconnect_count": {
+          "method": "cross-island net count",
+          "status": "pass",
+          "unit": "count",
+          "value": 48.0,
+          "weight": 3.0
+        },
+        "interconnect_evidence": {
+          "method": "connector pins, route length, voltage drop and bend radius require verified topology geometry",
+          "status": "incomplete",
+          "unit": "status",
+          "value": null,
+          "weight": 4.0
+        },
+        "island_count": {
+          "method": "deterministic functional partition",
+          "status": "pass",
+          "unit": "count",
+          "value": 8.0,
+          "weight": 1.0
+        },
+        "manufacturing_cost": {
+          "method": "manufacturer quote required",
+          "status": "incomplete",
+          "unit": "currency",
+          "value": null,
+          "weight": 2.0
+        },
+        "octilinear_route_compliance": {
+          "method": "actual routed copper is unavailable",
+          "status": "incomplete",
+          "unit": "ratio",
+          "value": null,
+          "weight": 4.0
+        },
+        "signal_integrity": {
+          "method": "routed stackup simulation required",
+          "status": "incomplete",
+          "unit": "score",
+          "value": null,
+          "weight": 4.0
+        },
+        "structural": {
+          "method": "exact structural solver required",
+          "status": "incomplete",
+          "unit": "score",
+          "value": null,
+          "weight": 3.0
+        },
+        "thermal": {
+          "method": "exact thermal solver required",
+          "status": "incomplete",
+          "unit": "score",
+          "value": null,
+          "weight": 3.0
+        },
+        "weighted_connection_length_mm": {
+          "method": "pin-position Euclidean lower-bound; exact routed length pending",
+          "status": "incomplete",
+          "unit": "mm",
+          "value": null,
+          "weight": 4.0
+        }
+      },
+      "rank": 1,
+      "rationale": [
+        "functional groups produce 8 physical region(s)"
+      ],
+      "score": 1030.0,
+      "status": "incomplete",
+      "topology": "multi_rigid_harness"
+    }
+  ],
+  "created_utc": "2026-08-14T09:13:13.665550+00:00",
+  "product_id": "project:agent-workflow-controller-v1",
+  "ranking_status": "provisional",
+  "schema": "design-studio.pcb-topology-study/1",
+  "source_digest": "847df8b141a7b33dab03e9e2fe0375829cb12eb785dc9cfd543e46ecdd3811ac",
+  "study_digest": "ffc482629214240fba28e362d87f158f044ee236e1a0379d48be440af7bd7ddf",
+  "study_id": "agent-workflow-controller-topology"
+}

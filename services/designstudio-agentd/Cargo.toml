@@ -1,0 +1,23 @@
+[package]
+name = "designstudio-agentd"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Local product-graph, configuration, evidence, and release control plane for DesignStudio"
+
+[dependencies]
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+uuid = { version = "1", features = ["v4", "serde"] }
+jsonschema = { version = "0.18", default-features = false, features = ["draft202012"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"

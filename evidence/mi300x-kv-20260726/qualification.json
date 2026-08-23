@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-07-26T05:21:00.794445+00:00",
+  "image_digest": "sha256:3813e31cc3ab56f71ba83a72da77a84f3c75030e54c9c316951a99317b818ce4",
+  "model": "Qwen/Qwen3.5-35B-A3B",
+  "model_revision": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+  "overall_status": "passed",
+  "qualification_sha256": "24c520abc95a9fd22f7bfcef2f54fcc973afb5f02474bc06d2057b2aebd22291",
+  "qualified_apc_off_sha256": "e0c0a157b7121e7aeae9cc662940a459b15f58a5d5680d8670465c1cdf12e5a2",
+  "qualified_apc_on_sha256": "a04c3ab7636a9e14ff6632782f7999a2472a0ce4376d9644ad91e761e1c5cc47",
+  "results": {
+    "deterministic_output_gate_passed": true,
+    "identity_gate_passed": true,
+    "no_oom_gate_passed": true,
+    "output_sha256": "12bf4fff306a90ad6b8caa088de3fbda8225fcf22b2ec0f028e47123ddf9903b",
+    "p95_ttft_gate_passed": true,
+    "p95_ttft_improvements_percent": {
+      "c1": 83.37926789328135,
+      "c4": 89.89516666078168,
+      "c8": 94.37978985324588
+    },
+    "rolling_gpu_utilization_gate_passed": true,
+    "sustained_gpu_utilization_mean_percent": 97.08571428571429
+  },
+  "schema": "design-studio.kv-benchmark-qualification/1",
+  "steady_comparison_sha256": "ad8c94a44dadd2b6f82794c467cfaa599cef7b6ee21ad7df45b21557c14352ad",
+  "sustained_apc_on_sha256": "ff8224e346b2985d3a0bd4a65e7cbff64ae23821ac453cbba9ee7c7ed3534f1e",
+  "target_concurrency": 8,
+  "target_context_tokens_observed": [
+    15222
+  ]
+}

@@ -1,0 +1,409 @@
+{
+"schema": "design-studio.component/2",
+"component": {
+"manufacturer": "Infineon",
+"mpn": "BSC040N08NS5",
+"description": "OptiMOS™ 5 Power-Transistor, 80 V, 121 A, 4.0 mOhm, N-channel",
+"category": "transistor",
+"datasheet": {
+"title": "OptiMOS™ 5 Power-Transistor, 80 V BSC040N08NS5",
+"revision": "2.2",
+"date": "2020-05-15",
+"url": ""
+},
+"distributors": []
+},
+"symbol": {
+"ref_des_prefix": "Q",
+"pins": [
+{
+"number": "1",
+"name": "S1",
+"electrical_type": "passive",
+"description": "Source",
+"alternate_functions": []
+},
+{
+"number": "2",
+"name": "S2",
+"electrical_type": "passive",
+"description": "Source",
+"alternate_functions": []
+},
+{
+"number": "3",
+"name": "S3",
+"electrical_type": "passive",
+"description": "Source",
+"alternate_functions": []
+},
+{
+"number": "4",
+"name": "G4",
+"electrical_type": "input",
+"description": "Gate",
+"alternate_functions": []
+},
+{
+"number": "5",
+"name": "5D",
+"electrical_type": "passive",
+"description": "Drain",
+"alternate_functions": []
+},
+{
+"number": "6",
+"name": "6D",
+"electrical_type": "passive",
+"description": "Drain",
+"alternate_functions": []
+},
+{
+"number": "7",
+"name": "7D",
+"electrical_type": "passive",
+"description": "Drain",
+"alternate_functions": []
+},
+{
+"number": "8",
+"name": "8D",
+"electrical_type": "passive",
+"description": "Drain",
+"alternate_functions": []
+},
+{
+"number": "EP",
+"name": "EP",
+"electrical_type": "passive",
+"description": "Exposed Thermal Pad (Drain)",
+"alternate_functions": []
+}
+]
+},
+"electrical": {
+"supply": {
+"vmin_v": null,
+"vmax_v": 80,
+"typ_v": null,
+"max_current_a": 121
+},
+"absolute_max": [
+{
+"parameter": "Continuous drain current (Tc=25°C, VGS=10V)",
+"value": 121,
+"unit": "A"
+},
+{
+"parameter": "Continuous drain current (Tc=100°C, VGS=10V)",
+"value": 76,
+"unit": "A"
+},
+{
+"parameter": "Continuous drain current (Ta=25°C, VGS=10V, RthJA=50K/W)",
+"value": 19,
+"unit": "A"
+},
+{
+"parameter": "Pulsed drain current (Tc=25°C)",
+"value": 484,
+"unit": "A"
+},
+{
+"parameter": "Avalanche energy, single pulse (ID=50A, RGS=25ohm)",
+"value": 120,
+"unit": "mJ"
+},
+{
+"parameter": "Gate source voltage",
+"value": 20,
+"unit": "V"
+},
+{
+"parameter": "Power dissipation (Tc=25°C)",
+"value": 104,
+"unit": "W"
+},
+{
+"parameter": "Power dissipation (Ta=25°C, RthJA=50K/W)",
+"value": 2.5,
+"unit": "W"
+}
+],
+"operating_conditions": [
+{
+"parameter": "Drain-source breakdown voltage",
+"min": 80,
+"typ": null,
+"max": null,
+"unit": "V"
+},
+{
+"parameter": "Gate threshold voltage",
+"min": 2.2,
+"typ": 3.0,
+"max": 3.8,
+"unit": "V"
+},
+{
+"parameter": "Drain-source on-state resistance (VGS=10V, ID=50A)",
+"min": null,
+"typ": 3.4,
+"max": 4.0,
+"unit": "mΩ"
+},
+{
+"parameter": "Drain-source on-state resistance (VGS=6V, ID=25A)",
+"min": null,
+"typ": 4.8,
+"max": 5.7,
+"unit": "mΩ"
+},
+{
+"parameter": "Gate resistance",
+"min": null,
+"typ": 1.1,
+"max": 1.7,
+"unit": "Ω"
+}
+],
+"required_externals": [],
+"application_circuits": [],
+"parameters": [
+{
+"name": "Zero gate voltage drain current (VDS=80V, VGS=0V, Tj=25°C)",
+"min": null,
+"typ": 0.1,
+"max": 1.0,
+"unit": "µA",
+"condition": "VDS=80 V, VGS=0 V, Tj=25°C"
+},
+{
+"name": "Gate-source leakage current",
+"min": null,
+"typ": 10,
+"max": 100,
+"unit": "nA",
+"condition": "VGS=20 V, VDS=0 V"
+},
+{
+"name": "Input capacitance (Ciss)",
+"min": null,
+"typ": 3000,
+"max": 3900,
+"unit": "pF",
+"condition": "VGS=0 V, VDS=40 V, f=1 MHz"
+},
+{
+"name": "Output capacitance (Coss)",
+"min": null,
+"typ": 500,
+"max": 650,
+"unit": "pF",
+"condition": "VGS=0 V, VDS=40 V, f=1 MHz"
+},
+{
+"name": "Reverse transfer capacitance (Crss)",
+"min": null,
+"typ": 24,
+"max": 42,
+"unit": "pF",
+"condition": "VGS=0 V, VDS=40 V, f=1 MHz"
+},
+{
+"name": "Gate charge total (Qg)",
+"min": null,
+"typ": 43,
+"max": 54,
+"unit": "nC",
+"condition": "VDD=40 V, ID=50 A, VGS=0 to 10 V"
+},
+{
+"name": "Gate plateau voltage",
+"min": null,
+"typ": 4.8,
+"max": null,
+"unit": "V",
+"condition": "VDD=40 V, ID=50 A, VGS=0 to 10 V"
+},
+{
+"name": "Output charge (Qoss)",
+"min": null,
+"typ": 52,
+"max": 69,
+"unit": "nC",
+"condition": "VDD=40 V, VGS=0 V"
+},
+{
+"name": "Diode forward voltage (VSD)",
+"min": null,
+"typ": 0.88,
+"max": 1.1,
+"unit": "V",
+"condition": "VGS=0 V, IF=50 A, Tj=25°C"
+},
+{
+"name": "Reverse recovery charge (Qrr)",
+"min": null,
+"typ": 43,
+"max": 86,
+"unit": "nC",
+"condition": "VR=40 V, IF=50 A, diF/dt=100 A/µs"
+}
+],
+"thermal": {
+"theta_ja_c_w": 50,
+"theta_jc_c_w": 1.2,
+"max_power_w": 104,
+"tj_max_c": 150
+},
+"power_domains": [],
+"high_speed": {
+"diff_pairs": [],
+"single_ended": []
+}
+},
+"footprint": {
+"name": "PG-TDSON-8",
+"ipc_name": "",
+"mount": "smd",
+"body": {
+"length_mm": 6.1,
+"width_mm": 5.35,
+"height_mm": 1.2
+},
+"pitch_mm": 1.27,
+"pads": [
+{
+"number": "1",
+"x_mm": -1.905,
+"y_mm": 2.431,
+"width_mm": 0.5,
+"height_mm": 0.925,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "2",
+"x_mm": -0.635,
+"y_mm": 2.431,
+"width_mm": 0.5,
+"height_mm": 0.925,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "3",
+"x_mm": 0.635,
+"y_mm": 2.431,
+"width_mm": 0.5,
+"height_mm": 0.925,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "4",
+"x_mm": 1.905,
+"y_mm": 2.431,
+"width_mm": 0.5,
+"height_mm": 0.925,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "5",
+"x_mm": 1.905,
+"y_mm": -2.494,
+"width_mm": 0.6,
+"height_mm": 0.8,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "6",
+"x_mm": 0.635,
+"y_mm": -2.494,
+"width_mm": 0.6,
+"height_mm": 0.8,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "7",
+"x_mm": -0.635,
+"y_mm": -2.494,
+"width_mm": 0.6,
+"height_mm": 0.8,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "8",
+"x_mm": -1.905,
+"y_mm": -2.494,
+"width_mm": 0.6,
+"height_mm": 0.8,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "EP",
+"x_mm": 0,
+"y_mm": -0.431,
+"width_mm": 4.455,
+"height_mm": 3.325,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+}
+],
+"courtyard_margin_mm": null,
+"derived_from_outline": false,
+"source": {
+"pages": [
+10,
+11
+],
+"drawing": "PG-TDSON-8: Recommended Boardpads & Apertures"
+}
+},
+"orientation": {
+"pin1_marker": "dot",
+"pin1_position": "bottom-left",
+"polarity": {
+"has_polarity": false,
+"cathode_pin": null
+}
+},
+"package_3d": {
+"height_mm": 1.2,
+"standoff_mm": 0.15,
+"shape": "box"
+},
+"extraction": {
+"confidence": {
+"symbol": 1.0,
+"electrical": 1.0,
+"footprint": 0.95
+},
+"pages_used": [
+1,
+3,
+4,
+5,
+10,
+11
+],
+"warnings": [
+"Large thermal pad assigned to unique pin number 'EP' to avoid duplicate footprint pad validation errors."
+]
+}
+}

@@ -1,0 +1,77 @@
+{
+  "created_at": "2026-07-26T05:34:09.959723+00:00",
+  "geometry_authority": false,
+  "inventory_sha256": "d077cf6148d767863399cb9dbaebfe098ab4a2a4873c4d2f77d148385035ab53",
+  "model": "Qwen/Qwen3.5-35B-A3B",
+  "model_revision": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+  "publication_authorized": false,
+  "request_sha256": "a7140432d48f654d019949219e92b9cc42954174a867e1052b5d10d0bed0dfc5",
+  "review": {
+    "demo_recommendation": "Prioritize upgrading the fidelity of the ESP32-S3-WROOM-1-N8R8, MX2A-H1NB, and B2B-PH-SM4-TB(LF)(SN) components from 'envelope_only' to 'mechanical_dimensions_verified' using official supplier STEP files. This will resolve the most significant visual gaps in the 3D demo, particularly regarding pin alignment, switch actuation, and connector mating. The joystick and encoder should be reviewed for actuator geometry accuracy to ensure the user interaction elements are visually convincing. Do not attempt to modify or invent dimensions for any component; rely solely on verified supplier data.",
+    "hero_components": [
+      {
+        "evidence_needed": "Supplier STEP file with verified mechanical dimensions and pin 1 marking.",
+        "mpn": "ESP32-S3-WROOM-1-N8R8",
+        "rank": 1,
+        "reason": "Primary MCU module with high terminal count (41) and large footprint; currently only 'envelope_only' fidelity which obscures pin alignment and thermal pad details critical for 3D assembly visualization.",
+        "required_feature_operations": [
+          "Verify mechanical_dimensions_verified",
+          "Validate pin 1 orientation",
+          "Confirm thermal pad geometry"
+        ]
+      },
+      {
+        "evidence_needed": "Supplier STEP file with detailed actuator geometry and mounting features.",
+        "mpn": "2765",
+        "rank": 2,
+        "reason": "Visually distinct joystick with complex actuator geometry (cylinders); essential for demonstrating user interaction in the demo but currently lacks visual distinctness in the model.",
+        "required_feature_operations": [
+          "Enhance actuator primitive shapes",
+          "Verify actuator travel range",
+          "Confirm mounting hole alignment"
+        ]
+      },
+      {
+        "evidence_needed": "Supplier STEP file with detailed switch stem and housing geometry.",
+        "mpn": "MX2A-H1NB",
+        "rank": 3,
+        "reason": "Keyswitch component with 'envelope_only' fidelity; critical for keyboard demo aesthetics and mechanical switch actuation visualization.",
+        "required_feature_operations": [
+          "Upgrade to mechanical_dimensions_verified",
+          "Add switch stem geometry",
+          "Verify actuator travel"
+        ]
+      },
+      {
+        "evidence_needed": "Supplier STEP file with verified mechanical dimensions for shaft and mounting.",
+        "mpn": "PEC12R-4220F-S0024",
+        "rank": 4,
+        "reason": "Encoder with distinct actuator and body primitives; high visual impact for demo but requires verification of shaft and mounting details.",
+        "required_feature_operations": [
+          "Verify shaft diameter and length",
+          "Confirm mounting hole positions",
+          "Validate actuator rotation range"
+        ]
+      },
+      {
+        "evidence_needed": "Supplier STEP file with verified mechanical dimensions and terminal details.",
+        "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+        "rank": 5,
+        "reason": "Sensor connector with 'envelope_only' fidelity; visible geometry affects cable routing visualization and connector mating appearance in the 3D demo.",
+        "required_feature_operations": [
+          "Upgrade to mechanical_dimensions_verified",
+          "Verify terminal pitch and housing height",
+          "Confirm latch mechanism geometry"
+        ]
+      }
+    ],
+    "systemic_findings": [
+      "Three critical components (ESP32-S3-WROOM-1-N8R8, MX2A-H1NB, B2B-PH-SM4-TB(LF)(SN)) currently possess 'envelope_only' fidelity, which is insufficient for a high-fidelity hardware demo requiring visible pin alignment and mechanical interaction.",
+      "The majority of passive components (capacitors, resistors) have 'mechanical_dimensions_verified' fidelity, which is appropriate for their small size and low visual impact on the overall assembly.",
+      "No components show 'supplier_step_verified' status; all verified components rely on internal 'mechanical_dimensions_verified' status, suggesting a need to cross-reference with official supplier STEP files for the highest fidelity.",
+      "Components with 'visually_distinct' flags (Joystick, Encoder) are correctly identified as high-priority for visual demonstration but require geometry verification to match their distinct status."
+    ]
+  },
+  "review_sha256": "18be2213d836124bc729e24c5a21e14690fb60b47ec27ff5a1261ee1581f38b8",
+  "schema": "design-studio.component-cad-fidelity-review/1"
+}

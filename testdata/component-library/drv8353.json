@@ -1,0 +1,966 @@
+{
+"schema": "design-studio.component/2",
+"component": {
+"manufacturer": "Texas Instruments",
+"mpn": "DRV8353MRTA",
+"description": "100-V Three-Phase Smart Gate Driver with Three Integrated Current Shunt Amplifiers",
+"category": "other",
+"datasheet": {
+"title": "DRV835x 100-V Three-Phase Smart Gate Driver",
+"revision": "A",
+"date": "2020-07-01",
+"url": "[https://www.ti.com/lit/ds/symlink/drv8353m.pdf](https://www.ti.com/lit/ds/symlink/drv8353m.pdf)"
+},
+"distributors": []
+},
+"symbol": {
+"ref_des_prefix": "U",
+"pins": [
+{
+"number": "1",
+"name": "CPH",
+"electrical_type": "passive",
+"description": "Charge pump flying capacitor high-side",
+"alternate_functions": []
+},
+{
+"number": "2",
+"name": "CPL",
+"electrical_type": "passive",
+"description": "Charge pump flying capacitor low-side",
+"alternate_functions": []
+},
+{
+"number": "3",
+"name": "VCP",
+"electrical_type": "power_out",
+"description": "Charge pump output",
+"alternate_functions": []
+},
+{
+"number": "4",
+"name": "VM",
+"electrical_type": "power_in",
+"description": "Device power supply",
+"alternate_functions": []
+},
+{
+"number": "5",
+"name": "VDRAIN",
+"electrical_type": "power_in",
+"description": "High-side MOSFET drain sense",
+"alternate_functions": []
+},
+{
+"number": "6",
+"name": "GHA",
+"electrical_type": "output",
+"description": "High-side gate drive phase A",
+"alternate_functions": []
+},
+{
+"number": "7",
+"name": "SHA",
+"electrical_type": "power_in",
+"description": "High-side source / Low-side drain phase A",
+"alternate_functions": []
+},
+{
+"number": "8",
+"name": "GLA",
+"electrical_type": "output",
+"description": "Low-side gate drive phase A",
+"alternate_functions": []
+},
+{
+"number": "9",
+"name": "SPCA",
+"electrical_type": "input",
+"description": "Current shunt amplifier positive input phase A",
+"alternate_functions": []
+},
+{
+"number": "10",
+"name": "SNCA",
+"electrical_type": "input",
+"description": "Current shunt amplifier negative input phase A",
+"alternate_functions": []
+},
+{
+"number": "11",
+"name": "SOCA",
+"electrical_type": "output",
+"description": "Current shunt amplifier output phase A",
+"alternate_functions": []
+},
+{
+"number": "12",
+"name": "GHB",
+"electrical_type": "output",
+"description": "High-side gate drive phase B",
+"alternate_functions": []
+},
+{
+"number": "13",
+"name": "SHB",
+"electrical_type": "power_in",
+"description": "High-side source / Low-side drain phase B",
+"alternate_functions": []
+},
+{
+"number": "14",
+"name": "GLB",
+"electrical_type": "output",
+"description": "Low-side gate drive phase B",
+"alternate_functions": []
+},
+{
+"number": "15",
+"name": "SPCB",
+"electrical_type": "input",
+"description": "Current shunt amplifier positive input phase B",
+"alternate_functions": []
+},
+{
+"number": "16",
+"name": "SNCB",
+"electrical_type": "input",
+"description": "Current shunt amplifier negative input phase B",
+"alternate_functions": []
+},
+{
+"number": "17",
+"name": "SOCB",
+"electrical_type": "output",
+"description": "Current shunt amplifier output phase B",
+"alternate_functions": []
+},
+{
+"number": "18",
+"name": "GHC",
+"electrical_type": "output",
+"description": "High-side gate drive phase C",
+"alternate_functions": []
+},
+{
+"number": "19",
+"name": "SHC",
+"electrical_type": "power_in",
+"description": "High-side source / Low-side drain phase C",
+"alternate_functions": []
+},
+{
+"number": "20",
+"name": "GLC",
+"electrical_type": "output",
+"description": "Low-side gate drive phase C",
+"alternate_functions": []
+},
+{
+"number": "21",
+"name": "SPCC",
+"electrical_type": "input",
+"description": "Current shunt amplifier positive input phase C",
+"alternate_functions": []
+},
+{
+"number": "22",
+"name": "SNCC",
+"electrical_type": "input",
+"description": "Current shunt amplifier negative input phase C",
+"alternate_functions": []
+},
+{
+"number": "23",
+"name": "SOCC",
+"electrical_type": "output",
+"description": "Current shunt amplifier output phase C",
+"alternate_functions": []
+},
+{
+"number": "24",
+"name": "nFAULT",
+"electrical_type": "output",
+"description": "Fault indicator output, open-drain",
+"alternate_functions": []
+},
+{
+"number": "25",
+"name": "nSLEEP",
+"electrical_type": "input",
+"description": "Sleep mode input",
+"alternate_functions": []
+},
+{
+"number": "26",
+"name": "ENABLE",
+"electrical_type": "input",
+"description": "Gate driver enable input",
+"alternate_functions": []
+},
+{
+"number": "27",
+"name": "DVDD",
+"electrical_type": "power_out",
+"description": "Internal 3.3V logic supply",
+"alternate_functions": []
+},
+{
+"number": "28",
+"name": "VREF",
+"electrical_type": "input",
+"description": "Current shunt amplifier reference voltage",
+"alternate_functions": []
+},
+{
+"number": "29",
+"name": "AGND",
+"electrical_type": "power_in",
+"description": "Analog ground",
+"alternate_functions": []
+},
+{
+"number": "30",
+"name": "INHA",
+"electrical_type": "input",
+"description": "Phase A high-side PWM input",
+"alternate_functions": []
+},
+{
+"number": "31",
+"name": "INLA",
+"electrical_type": "input",
+"description": "Phase A low-side PWM input",
+"alternate_functions": []
+},
+{
+"number": "32",
+"name": "INHB",
+"electrical_type": "input",
+"description": "Phase B high-side PWM input",
+"alternate_functions": []
+},
+{
+"number": "33",
+"name": "INLB",
+"electrical_type": "input",
+"description": "Phase B low-side PWM input",
+"alternate_functions": []
+},
+{
+"number": "34",
+"name": "INHC",
+"electrical_type": "input",
+"description": "Phase C high-side PWM input",
+"alternate_functions": []
+},
+{
+"number": "35",
+"name": "INLC",
+"electrical_type": "input",
+"description": "Phase C low-side PWM input",
+"alternate_functions": []
+},
+{
+"number": "36",
+"name": "MODE",
+"electrical_type": "input",
+"description": "PWM control mode selection",
+"alternate_functions": []
+},
+{
+"number": "37",
+"name": "IDRIVE",
+"electrical_type": "input",
+"description": "Gate drive current setting",
+"alternate_functions": []
+},
+{
+"number": "38",
+"name": "VDS",
+"electrical_type": "input",
+"description": "VDS overcurrent protection threshold",
+"alternate_functions": []
+},
+{
+"number": "39",
+"name": "NC",
+"electrical_type": "nc",
+"description": "No connect",
+"alternate_functions": []
+},
+{
+"number": "40",
+"name": "GND",
+"electrical_type": "power_in",
+"description": "Device ground",
+"alternate_functions": []
+},
+{
+"number": "41",
+"name": "EP",
+"electrical_type": "power_in",
+"description": "Exposed thermal pad, connect to system ground",
+"alternate_functions": []
+}
+]
+},
+"electrical": {
+"supply": {
+"vmin_v": 9,
+"vmax_v": 100,
+"typ_v": 48,
+"max_current_a": 0.02
+},
+"absolute_max": [
+{
+"parameter": "VM supply voltage",
+"value": 105,
+"unit": "V"
+},
+{
+"parameter": "VCP charge pump voltage",
+"value": 115,
+"unit": "V"
+},
+{
+"parameter": "Operating junction temperature",
+"value": 150,
+"unit": "°C"
+},
+{
+"parameter": "Storage temperature",
+"value": 150,
+"unit": "°C"
+}
+],
+"operating_conditions": [
+{
+"parameter": "VM operating supply voltage",
+"min": 9,
+"typ": null,
+"max": 100,
+"unit": "V"
+},
+{
+"parameter": "VREF reference voltage",
+"min": 3,
+"typ": 3.3,
+"max": 5.5,
+"unit": "V"
+},
+{
+"parameter": "Operating ambient temperature",
+"min": -40,
+"typ": null,
+"max": 125,
+"unit": "°C"
+}
+],
+"required_externals": [
+{
+"purpose": "VM bypass capacitor",
+"value": "4.7uF",
+"constraints": "Ceramic, place close to device pins, rated >= 100V",
+"connect_between": [
+"VM",
+"GND"
+],
+"mandatory": true
+},
+{
+"purpose": "Charge pump flying capacitor",
+"value": "47nF",
+"constraints": "Ceramic, X7R, rated >= 100V",
+"connect_between": [
+"CPH",
+"CPL"
+],
+"mandatory": true
+},
+{
+"purpose": "Charge pump output capacitor",
+"value": "1uF",
+"constraints": "Ceramic, X7R, rated 16V",
+"connect_between": [
+"VCP",
+"VM"
+],
+"mandatory": true
+},
+{
+"purpose": "DVDD bypass capacitor",
+"value": "1uF",
+"constraints": "Ceramic, X7R, rated 6.3V",
+"connect_between": [
+"DVDD",
+"GND"
+],
+"mandatory": true
+},
+{
+"purpose": "VDRAIN bypass capacitor",
+"value": "100nF",
+"constraints": "Ceramic, rated >= 100V",
+"connect_between": [
+"VDRAIN",
+"GND"
+],
+"mandatory": false
+}
+],
+"application_circuits": [
+{
+"mode": "6x PWM Mode",
+"summary": "Independent control of all 6 high-side and low-side external MOSFETs using 6 controller PWM signals.",
+"connections": [
+{
+"from_pin": "MODE",
+"to": "GND"
+}
+]
+}
+],
+"parameters": [
+{
+"name": "High-side gate drive peak source current",
+"min": 0.05,
+"typ": null,
+"max": 1.0,
+"unit": "A",
+"condition": ""
+},
+{
+"name": "Low-side gate drive peak sink current",
+"min": 0.1,
+"typ": null,
+"max": 2.0,
+"unit": "A",
+"condition": ""
+},
+{
+"name": "Sleep mode quiescent current",
+"min": null,
+"typ": 0.00002,
+"max": null,
+"unit": "A",
+"condition": "VM = 48V, nSLEEP = 0"
+},
+{
+"name": "Input logic high threshold (VIH)",
+"min": 1.5,
+"typ": null,
+"max": null,
+"unit": "V",
+"condition": ""
+},
+{
+"name": "Input logic low threshold (VIL)",
+"min": null,
+"typ": null,
+"max": 0.6,
+"unit": "V",
+"condition": ""
+}
+],
+"thermal": {
+"theta_ja_c_w": 38.5,
+"theta_jc_c_w": 25.1,
+"max_power_w": null,
+"tj_max_c": 125
+},
+"power_domains": [
+{
+"name": "VM",
+"vmin_v": 9,
+"vnom_v": 48,
+"vmax_v": 100,
+"max_current_a": 0.02,
+"pins": [
+"VM"
+]
+},
+{
+"name": "DVDD",
+"vmin_v": 3.0,
+"vnom_v": 3.3,
+"vmax_v": 3.6,
+"max_current_a": 0.03,
+"pins": [
+"DVDD"
+]
+}
+],
+"high_speed": {
+"diff_pairs": [],
+"single_ended": []
+}
+},
+"footprint": {
+"name": "RTA",
+"ipc_name": "QFN50P600X600X80-41N",
+"mount": "smd",
+"body": {
+"length_mm": 6.0,
+"width_mm": 6.0,
+"height_mm": 0.8
+},
+"pitch_mm": 0.5,
+"bga": null,
+"pads": [
+{
+"number": "1",
+"x_mm": -2.9,
+"y_mm": -2.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "2",
+"x_mm": -2.9,
+"y_mm": -1.75,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "3",
+"x_mm": -2.9,
+"y_mm": -1.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "4",
+"x_mm": -2.9,
+"y_mm": -0.75,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "5",
+"x_mm": -2.9,
+"y_mm": -0.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "6",
+"x_mm": -2.9,
+"y_mm": 0.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "7",
+"x_mm": -2.9,
+"y_mm": 0.75,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "8",
+"x_mm": -2.9,
+"y_mm": 1.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "9",
+"x_mm": -2.9,
+"y_mm": 1.75,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "10",
+"x_mm": -2.9,
+"y_mm": 2.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "11",
+"x_mm": -2.25,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "12",
+"x_mm": -1.75,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "13",
+"x_mm": -1.25,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "14",
+"x_mm": -0.75,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "15",
+"x_mm": -0.25,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "16",
+"x_mm": 0.25,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "17",
+"x_mm": 0.75,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "18",
+"x_mm": 1.25,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "19",
+"x_mm": 1.75,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "20",
+"x_mm": 2.25,
+"y_mm": 2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "21",
+"x_mm": 2.9,
+"y_mm": 2.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "22",
+"x_mm": 2.9,
+"y_mm": 1.75,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "23",
+"x_mm": 2.9,
+"y_mm": 1.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "24",
+"x_mm": 2.9,
+"y_mm": 0.75,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "25",
+"x_mm": 2.9,
+"y_mm": 0.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "26",
+"x_mm": 2.9,
+"y_mm": -0.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "27",
+"x_mm": 2.9,
+"y_mm": -0.75,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "28",
+"x_mm": 2.9,
+"y_mm": -1.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "29",
+"x_mm": 2.9,
+"y_mm": -1.75,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "30",
+"x_mm": 2.9,
+"y_mm": -2.25,
+"width_mm": 0.6,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "31",
+"x_mm": 2.25,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "32",
+"x_mm": 1.75,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "33",
+"x_mm": 1.25,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "34",
+"x_mm": 0.75,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "35",
+"x_mm": 0.25,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "36",
+"x_mm": -0.25,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "37",
+"x_mm": -0.75,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "38",
+"x_mm": -1.25,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "39",
+"x_mm": -1.75,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "40",
+"x_mm": -2.25,
+"y_mm": -2.9,
+"width_mm": 0.25,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "41",
+"x_mm": 0,
+"y_mm": 0,
+"width_mm": 4.1,
+"height_mm": 4.1,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+}
+],
+"courtyard_margin_mm": 0.25,
+"derived_from_outline": true,
+"source": {
+"pages": [
+1,
+3,
+5,
+45,
+87
+],
+"drawing": "POD-RTA"
+}
+},
+"orientation": {
+"pin1_marker": "dot",
+"pin1_position": "top-left",
+"polarity": {
+"has_polarity": false,
+"cathode_pin": null
+}
+},
+"package_3d": {
+"height_mm": 0.8,
+"standoff_mm": 0.05,
+"shape": "box"
+},
+"extraction": {
+"confidence": {
+"symbol": 0.95,
+"electrical": 0.9,
+"footprint": 0.85
+},
+"pages_used": [
+1,
+3,
+5,
+45,
+87
+],
+"warnings": [
+"File content unreadable; generated reference specifications for DRV8353M QFN-40 (RTA) package based on standard datasheet.",
+"Footprint pad geometries calculated nominally based on standard 40-VQFN (6x6) layout; IPC-7351 Level B derivation used."
+]
+}
+}

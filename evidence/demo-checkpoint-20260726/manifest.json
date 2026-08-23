@@ -1,0 +1,78 @@
+{
+  "artifacts": [
+    {
+      "bytes": 21594,
+      "path": "evidence/component-cad-fidelity-20260726/inventory-v2.json",
+      "sha256": "780d91d9c7d70e062a4414446ede91ee0410f30def433a357fd31b4a32a12b32"
+    },
+    {
+      "bytes": 4873,
+      "path": "evidence/component-cad-fidelity-20260726/review-v2.json",
+      "sha256": "b7e3633ca7daa861aa7f94e6fdbbfe7fb0ee2f0fdf347dd726176e8d0bb15ab7"
+    },
+    {
+      "bytes": 1405,
+      "path": "evidence/mi300x-kv-20260726/qualification.json",
+      "sha256": "74ed54a8019ba6cf0f5f82a128146f2cc583f24b0ffa20549a37e629dab9f890"
+    },
+    {
+      "bytes": 108853,
+      "path": "evidence/yc-demo-ui-20260726-v5/pcb-3d.png",
+      "sha256": "b87f3aad57490935d4e39046f4f0e438d36b01bd094d31da1aa6c99f167cc4a2"
+    },
+    {
+      "bytes": 114987,
+      "path": "evidence/yc-demo-ui-20260726-v5/pcb.png",
+      "sha256": "5e3fb67058a96600fc95f0e9e2fa35e6d3c74e295706f613d4087aafb7aaeb8b"
+    },
+    {
+      "bytes": 84242,
+      "path": "evidence/yc-demo-ui-20260726-v5/schematic-control-io.png",
+      "sha256": "9d84c3f22e31493e9f1a95bd16f0f07d49aa8639e47d17fa9b9ba6fdbc0ad46f"
+    },
+    {
+      "bytes": 100653,
+      "path": "evidence/yc-demo-ui-20260726-v5/schematic-human-interface.png",
+      "sha256": "26472a600588e6696353105f44d17011d4b7bc15fef1dc30f0c6b5a4f836af3b"
+    },
+    {
+      "bytes": 103951,
+      "path": "evidence/yc-demo-ui-20260726-v5/schematic-passives.png",
+      "sha256": "f8a14525fe369cd36cc975092b0736870ed6f52fbb16e1f2de8064250610f488"
+    },
+    {
+      "bytes": 96031,
+      "path": "evidence/yc-demo-ui-20260726-v5/schematic-power.png",
+      "sha256": "01d52c176a4edb79a62a4aeeecffd63734ec65e40bfa436b658cec593b753adf"
+    },
+    {
+      "bytes": 75566,
+      "path": "evidence/yc-demo-ui-20260726-v5/schematic.png",
+      "sha256": "19ceebeacf7e7dc95cf870870488104a7894cbcb1ae17d5fb7b7e9b6c49a6945"
+    },
+    {
+      "bytes": 24838,
+      "path": "evidence/yc-demo-ui-20260726-v5/verification.png",
+      "sha256": "b91166529ebf15cfccef162086d259b08ba80ea777899fba508566abe5149bd8"
+    }
+  ],
+  "checkpoint_sha256": "482b6ec4c6aac6581bc84135ef70585a52940fa2db21a8b41b9b5e68038f4811",
+  "checks": {
+    "ai_gateway_cache_isolation": "passed",
+    "car_body_workflow_contract": "passed",
+    "component_cad_step_roundtrip": "passed",
+    "interaction_structure": "passed",
+    "kv_cache_qualification": "passed",
+    "mesh_surface_fit_contract": "passed",
+    "pcb_3d_navigation": "passed",
+    "ui_contract": "passed"
+  },
+  "limitations": [
+    "Cherry switch, ESP32 module, USB connector, and JST connector CAD are envelope-only pending supplier STEP evidence.",
+    "No editable Porsche CAD baseline exists; the GLB remains reference evidence only.",
+    "PCB 3D colors are a viewer palette; AP242 presentation styles are not yet imported.",
+    "Porsche candidate is release-ineligible because silhouette fidelity gates failed."
+  ],
+  "publication_authorized": false,
+  "schema": "design-studio.demo-evidence-checkpoint/1"
+}

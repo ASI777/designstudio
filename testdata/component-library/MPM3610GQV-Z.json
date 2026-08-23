@@ -1,0 +1,635 @@
+{
+"schema": "design-studio.component/2",
+"component": {
+"manufacturer": "Monolithic Power Systems",
+"mpn": "MPM3610GQV",
+"description": "21V Input, 1.2A Module Synchronous Step-Down Converter with Integrated Inductor",
+"category": "module",
+"datasheet": {
+"title": "MPM3610 – SYNCHRONOUS STEP-DOWN MODULE WITH INTEGRATED INDUCTOR",
+"revision": "1.01",
+"date": "2015-01-07",
+"url": ""
+},
+"distributors": []
+},
+"symbol": {
+"ref_des_prefix": "U",
+"pins": [
+{
+"number": "1",
+"name": "FB",
+"electrical_type": "input",
+"description": "Feedback input from external resistor divider",
+"alternate_functions": []
+},
+{
+"number": "2",
+"name": "VCC",
+"electrical_type": "power_out",
+"description": "Internal 4.9V LDO Output",
+"alternate_functions": []
+},
+{
+"number": "3",
+"name": "AGND",
+"electrical_type": "power_in",
+"description": "Analog Ground",
+"alternate_functions": []
+},
+{
+"number": "4",
+"name": "SW",
+"electrical_type": "output",
+"description": "Switch Output",
+"alternate_functions": []
+},
+{
+"number": "5",
+"name": "SW",
+"electrical_type": "output",
+"description": "Switch Output",
+"alternate_functions": []
+},
+{
+"number": "6",
+"name": "SW",
+"electrical_type": "output",
+"description": "Switch Output",
+"alternate_functions": []
+},
+{
+"number": "7",
+"name": "OUT",
+"electrical_type": "power_out",
+"description": "Power Output",
+"alternate_functions": []
+},
+{
+"number": "8",
+"name": "OUT",
+"electrical_type": "power_out",
+"description": "Power Output",
+"alternate_functions": []
+},
+{
+"number": "9",
+"name": "OUT",
+"electrical_type": "power_out",
+"description": "Power Output",
+"alternate_functions": []
+},
+{
+"number": "10",
+"name": "NC",
+"electrical_type": "nc",
+"description": "No Connection",
+"alternate_functions": []
+},
+{
+"number": "11",
+"name": "BST",
+"electrical_type": "passive",
+"description": "Bootstrap. Integrated internally, leave floating or no external connection needed.",
+"alternate_functions": []
+},
+{
+"number": "12",
+"name": "PGND",
+"electrical_type": "power_in",
+"description": "Power Ground",
+"alternate_functions": []
+},
+{
+"number": "13",
+"name": "PGND",
+"electrical_type": "power_in",
+"description": "Power Ground",
+"alternate_functions": []
+},
+{
+"number": "14",
+"name": "PGND",
+"electrical_type": "power_in",
+"description": "Power Ground",
+"alternate_functions": []
+},
+{
+"number": "15",
+"name": "NC",
+"electrical_type": "nc",
+"description": "No Connection",
+"alternate_functions": []
+},
+{
+"number": "16",
+"name": "IN",
+"electrical_type": "power_in",
+"description": "Supply Voltage",
+"alternate_functions": []
+},
+{
+"number": "17",
+"name": "EN",
+"electrical_type": "input",
+"description": "Enable",
+"alternate_functions": []
+},
+{
+"number": "18",
+"name": "AAM",
+"electrical_type": "input",
+"description": "Advanced Asynchronous Modulation control",
+"alternate_functions": []
+},
+{
+"number": "19",
+"name": "NC",
+"electrical_type": "nc",
+"description": "No Connection",
+"alternate_functions": []
+},
+{
+"number": "20",
+"name": "NC",
+"electrical_type": "nc",
+"description": "No Connection",
+"alternate_functions": []
+}
+]
+},
+"electrical": {
+"supply": {
+"vmin_v": 4.5,
+"vmax_v": 21,
+"typ_v": 12,
+"max_current_a": 1.2
+},
+"absolute_max": [
+{
+"parameter": "VIN",
+"value": 28,
+"unit": "V"
+},
+{
+"parameter": "VSW",
+"value": 28,
+"unit": "V"
+},
+{
+"parameter": "VBST",
+"value": 34,
+"unit": "V"
+},
+{
+"parameter": "All Other Pins",
+"value": 6,
+"unit": "V"
+},
+{
+"parameter": "Continuous Power Dissipation",
+"value": 2.7,
+"unit": "W"
+},
+{
+"parameter": "Junction Temperature",
+"value": 150,
+"unit": "°C"
+},
+{
+"parameter": "Storage Temperature",
+"value": 150,
+"unit": "°C"
+}
+],
+"operating_conditions": [
+{
+"parameter": "Supply Voltage VIN",
+"min": 4.5,
+"typ": null,
+"max": 21,
+"unit": "V"
+},
+{
+"parameter": "Output Voltage VOUT",
+"min": 0.8,
+"typ": null,
+"max": 5.5,
+"unit": "V"
+},
+{
+"parameter": "Operating Junction Temp (TJ)",
+"min": -40,
+"typ": null,
+"max": 125,
+"unit": "°C"
+}
+],
+"required_externals": [
+{
+"purpose": "Input decoupling capacitor",
+"value": "10uF",
+"constraints": "Ceramic with X5R or X7R dielectrics recommended, low ESR, place very close to IN and PGND.",
+"connect_between": [
+"IN",
+"PGND"
+],
+"mandatory": true
+},
+{
+"purpose": "Output capacitor",
+"value": "22uF",
+"constraints": "Ceramic, tantalum, or low ESR electrolytic. See datasheet Table 1 for exact count based on VOUT.",
+"connect_between": [
+"OUT",
+"PGND"
+],
+"mandatory": true
+},
+{
+"purpose": "Feedback upper resistor",
+"value": "100k",
+"constraints": "See Table 1 for exact value based on target VOUT.",
+"connect_between": [
+"OUT",
+"FB"
+],
+"mandatory": true
+},
+{
+"purpose": "Feedback lower resistor",
+"value": "19.1k",
+"constraints": "See Table 1 for exact value based on target VOUT.",
+"connect_between": [
+"FB",
+"AGND"
+],
+"mandatory": true
+}
+],
+"application_circuits": [
+{
+"mode": "Advanced Asynchronous Modulation (AAM) Mode",
+"summary": "Light-load power save mode enabled by connecting a programming resistor to ground.",
+"connections": [
+{
+"from_pin": "18",
+"to": "GND"
+}
+]
+},
+{
+"mode": "Continuous Conduction Mode (CCM)",
+"summary": "Forced PWM mode achieved by floating the AAM pin or pulling it above 2.5V.",
+"connections": []
+}
+],
+"parameters": [
+{
+"name": "Supply Current (Shutdown)",
+"min": null,
+"typ": null,
+"max": 1,
+"unit": "uA",
+"condition": "VEN = 0V"
+},
+{
+"name": "Supply Current (Quiescent)",
+"min": null,
+"typ": 0.7,
+"max": null,
+"unit": "mA",
+"condition": "VFB = 1V, VAAM = 5V"
+},
+{
+"name": "Oscillator Frequency",
+"min": 1500,
+"typ": 2000,
+"max": 2500,
+"unit": "kHz",
+"condition": "VFB = 0.75V, TJ = -40°C to +125°C"
+},
+{
+"name": "Feedback Voltage",
+"min": 782,
+"typ": 798,
+"max": 814,
+"unit": "mV",
+"condition": "TJ = -40°C to +125°C"
+},
+{
+"name": "Current Limit",
+"min": 2.4,
+"typ": 3.0,
+"max": null,
+"unit": "A",
+"condition": "Under 40% Duty Cycle"
+},
+{
+"name": "EN Rising Threshold",
+"min": 1.15,
+"typ": 1.4,
+"max": 1.65,
+"unit": "V",
+"condition": ""
+},
+{
+"name": "EN Falling Threshold",
+"min": 1.05,
+"typ": 1.25,
+"max": 1.45,
+"unit": "V",
+"condition": ""
+}
+],
+"thermal": {
+"theta_ja_c_w": 46,
+"theta_jc_c_w": 10,
+"max_power_w": 2.7,
+"tj_max_c": 150
+},
+"power_domains": [
+{
+"name": "IN",
+"vmin_v": 4.5,
+"vnom_v": 12,
+"vmax_v": 21,
+"max_current_a": 1.2,
+"pins": [
+"16"
+]
+},
+{
+"name": "VCC",
+"vmin_v": 4.9,
+"vnom_v": 4.9,
+"vmax_v": 4.9,
+"max_current_a": null,
+"pins": [
+"2"
+]
+}
+],
+"high_speed": {
+"diff_pairs": [],
+"single_ended": []
+}
+},
+"footprint": {
+"name": "QFN-20 3x5mm",
+"ipc_name": "QFN-20",
+"mount": "smd",
+"body": {
+"length_mm": 5.0,
+"width_mm": 3.0,
+"height_mm": 1.6
+},
+"pitch_mm": 0.45,
+"bga": null,
+"pads": [
+{
+"number": "1",
+"x_mm": -1.1,
+"y_mm": -1.55,
+"width_mm": 0.8,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "2",
+"x_mm": -1.1,
+"y_mm": -0.97,
+"width_mm": 0.8,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "3",
+"x_mm": -1.1,
+"y_mm": -0.4,
+"width_mm": 0.8,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "4",
+"x_mm": -0.875,
+"y_mm": 0.75,
+"width_mm": 1.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "5",
+"x_mm": -0.875,
+"y_mm": 1.45,
+"width_mm": 1.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "6",
+"x_mm": -0.875,
+"y_mm": 2.15,
+"width_mm": 1.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "9",
+"x_mm": 0.875,
+"y_mm": 0.75,
+"width_mm": 1.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "8",
+"x_mm": 0.875,
+"y_mm": 1.45,
+"width_mm": 1.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "7",
+"x_mm": 0.875,
+"y_mm": 2.15,
+"width_mm": 1.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "10",
+"x_mm": 1.1,
+"y_mm": -0.4,
+"width_mm": 0.8,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "11",
+"x_mm": 1.1,
+"y_mm": -0.97,
+"width_mm": 0.8,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "12",
+"x_mm": 1.1,
+"y_mm": -1.55,
+"width_mm": 0.8,
+"height_mm": 0.25,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "13",
+"x_mm": 1.125,
+"y_mm": -2.45,
+"width_mm": 0.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "14",
+"x_mm": 0.675,
+"y_mm": -2.45,
+"width_mm": 0.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "15",
+"x_mm": 0.225,
+"y_mm": -2.45,
+"width_mm": 0.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "16",
+"x_mm": -0.225,
+"y_mm": -2.45,
+"width_mm": 0.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "17",
+"x_mm": -0.675,
+"y_mm": -2.45,
+"width_mm": 0.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "18",
+"x_mm": -1.125,
+"y_mm": -2.45,
+"width_mm": 0.25,
+"height_mm": 0.7,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "19",
+"x_mm": -0.125,
+"y_mm": -0.4,
+"width_mm": 0.15,
+"height_mm": 0.5,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "20",
+"x_mm": 0.125,
+"y_mm": -0.4,
+"width_mm": 0.15,
+"height_mm": 0.5,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+}
+],
+"courtyard_margin_mm": 0.3,
+"derived_from_outline": false,
+"source": {
+"pages": [
+23
+],
+"drawing": "RECOMMENDED LAND PATTERN"
+}
+},
+"orientation": {
+"pin1_marker": "dot",
+"pin1_position": "top-left",
+"polarity": {
+"has_polarity": false,
+"cathode_pin": null
+}
+},
+"package_3d": {
+"height_mm": 1.6,
+"standoff_mm": 0.025,
+"shape": "box"
+},
+"extraction": {
+"confidence": {
+"symbol": 1.0,
+"electrical": 0.95,
+"footprint": 0.85
+},
+"pages_used": [
+1,
+2,
+3,
+4,
+11,
+13,
+17,
+23
+],
+"warnings": [
+"Large internal thermal pads for SW (4,5,6) and OUT (7,8,9) have been sliced horizontally into three pieces each to strictly adhere to the non-overlapping pad rule while maintaining full designated copper area.",
+"Center NC pads (19, 20) dimensions and X-locations were estimated contextually due to ambiguity in land pattern drawing labels.",
+"BST pin (11) is integrated internally per the block diagram; datasheet asserts no external connection is needed."
+]
+}
+}

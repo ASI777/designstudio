@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/robot-harness-definition-v2.schema.json",
+  "title": "DesignStudio robot electrical harness definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "topology", "segments", "joint_branches", "end_of_chain_voltage_drop_v",
+    "end_of_chain_voltage_drop_percent", "maximum_allowed_voltage_drop_percent",
+    "external_wiring_visible_in_normal_operation", "selected_cable_part_number",
+    "motion_qualification_status", "motion_contract", "verification"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.robot-harness-definition/2"},
+    "topology": {"type": "string", "minLength": 1},
+    "segments": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/segment"}
+    },
+    "joint_branches": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/branch"}
+    },
+    "end_of_chain_voltage_drop_v": {"$ref": "#/$defs/nonnegative"},
+    "end_of_chain_voltage_drop_percent": {"$ref": "#/$defs/nonnegative"},
+    "maximum_allowed_voltage_drop_percent": {"$ref": "#/$defs/positive"},
+    "external_wiring_visible_in_normal_operation": {"const": false},
+    "selected_cable_part_number": {"type": "null"},
+    "motion_qualification_status": {"const": "incomplete"},
+    "motion_contract": {"const": "electrical/harness-motion-contract.json"},
+    "verification": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "nonnegative": {"type": "number", "minimum": 0},
+    "positive": {"type": "number", "exclusiveMinimum": 0},
+    "segment": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "segment_id", "from", "to", "route", "electrical_length_mm",
+        "electrical_service_length_allowance_mm", "carried_peak_current_a", "conductor",
+        "conductor_resistance_ohm_per_m", "ampacity_a", "ampacity_margin",
+        "segment_voltage_drop_v", "screening_dynamic_bend_radius_mm",
+        "screening_bend_radius_basis", "motion_route_status", "signals"
+      ],
+      "properties": {
+        "segment_id": {"type": "string", "pattern": "^H[1-7]$"},
+        "from": {"type": "string", "minLength": 1},
+        "to": {"type": "string", "pattern": "^J[1-7]$"},
+        "route": {"const": "structural_core_centerline_electrical_length_model"},
+        "electrical_length_mm": {"$ref": "#/$defs/positive"},
+        "electrical_service_length_allowance_mm": {"$ref": "#/$defs/positive"},
+        "carried_peak_current_a": {"$ref": "#/$defs/nonnegative"},
+        "conductor": {"type": "string", "minLength": 1},
+        "conductor_resistance_ohm_per_m": {"$ref": "#/$defs/positive"},
+        "ampacity_a": {"$ref": "#/$defs/positive"},
+        "ampacity_margin": {"$ref": "#/$defs/positive"},
+        "segment_voltage_drop_v": {"$ref": "#/$defs/nonnegative"},
+        "screening_dynamic_bend_radius_mm": {"$ref": "#/$defs/positive"},
+        "screening_bend_radius_basis": {
+          "const": "provisional_8x_worst_case_bundle_diameter_not_supplier_rating"
+        },
+        "motion_route_status": {"const": "incomplete_straight_centerline_envelope_only"},
+        "signals": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "branch": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "joint_id", "peak_current_a", "conductor_resistance_ohm_per_m",
+        "ampacity_a", "connector_location", "connector_retention"
+      ],
+      "properties": {
+        "joint_id": {"type": "string", "pattern": "^J[1-7]$"},
+        "peak_current_a": {"$ref": "#/$defs/nonnegative"},
+        "conductor_resistance_ohm_per_m": {"$ref": "#/$defs/positive"},
+        "ampacity_a": {"$ref": "#/$defs/positive"},
+        "connector_location": {"type": "string", "minLength": 1},
+        "connector_retention": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

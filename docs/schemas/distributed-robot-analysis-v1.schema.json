@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:distributed-robot-analysis:1",
+  "title": "Hierarchical distributed robot electrical analysis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "status", "evidence_language", "axis_reports", "coordinator_report", "categories", "system_report", "release_blockers", "report_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.distributed-robot-analysis/1"},
+    "status": {"$ref": "#/$defs/status"},
+    "evidence_language": {"type": "object", "required": ["calculated", "simulated", "assumption", "missing_evidence", "physical_measurement"]},
+    "axis_reports": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/report"}},
+    "coordinator_report": {"$ref": "#/$defs/report"},
+    "categories": {"type": "object", "additionalProperties": {"type": "object", "required": ["status", "findings"]}},
+    "system_report": {"type": "object", "required": ["input_digest", "axis_output_digests", "coordinator_output_digest", "status", "output_digest"]},
+    "release_blockers": {"type": "array", "items": {"type": "string"}},
+    "report_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "status": {"enum": ["pass", "fail", "incomplete", "not_applicable"]},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "report": {
+      "type": "object",
+      "required": ["input_digest", "output_digest", "status", "checks"],
+      "properties": {
+        "input_digest": {"$ref": "#/$defs/digest"},
+        "output_digest": {"$ref": "#/$defs/digest"},
+        "status": {"$ref": "#/$defs/status"},
+        "checks": {"type": "array", "items": {"type": "object"}}
+      }
+    }
+  }
+}

@@ -1,0 +1,1463 @@
+{
+    "categories": {
+        "connectivity": {
+            "findings": [
+                {
+                    "code": "NET_ISLAND",
+                    "message": "GND has 82 disconnected copper islands",
+                    "metrics": {
+                        "islands": 82,
+                        "net_id": 0,
+                        "terminals": 85
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "ROW0 has 5 disconnected copper islands",
+                    "metrics": {
+                        "islands": 5,
+                        "net_id": 10,
+                        "terminals": 5
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_1_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 11,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "COL0 has 7 disconnected copper islands",
+                    "metrics": {
+                        "islands": 7,
+                        "net_id": 12,
+                        "terminals": 7
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_DATA has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 13,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_1 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 14,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_2_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 15,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "COL1 has 6 disconnected copper islands",
+                    "metrics": {
+                        "islands": 6,
+                        "net_id": 16,
+                        "terminals": 6
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_2 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 17,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_3_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 18,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "COL2 has 6 disconnected copper islands",
+                    "metrics": {
+                        "islands": 6,
+                        "net_id": 19,
+                        "terminals": 6
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_3 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 20,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_4_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 21,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "COL3 has 6 disconnected copper islands",
+                    "metrics": {
+                        "islands": 6,
+                        "net_id": 22,
+                        "terminals": 6
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_4 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 23,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "ROW1 has 5 disconnected copper islands",
+                    "metrics": {
+                        "islands": 5,
+                        "net_id": 24,
+                        "terminals": 5
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_5_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 25,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_5 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 26,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_6_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 27,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_6 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 28,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_7_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 29,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_7 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 30,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_8_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 31,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_8 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 32,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "ROW2 has 5 disconnected copper islands",
+                    "metrics": {
+                        "islands": 5,
+                        "net_id": 33,
+                        "terminals": 5
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_9_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 34,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_9 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 35,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_10_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 36,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_10 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 37,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_11_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 38,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_11 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 39,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_12_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 40,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CHAIN_12 has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 41,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "ROW3 has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 42,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "KEY_13_RAW has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 43,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "ENC_A has 4 disconnected copper islands",
+                    "metrics": {
+                        "islands": 4,
+                        "net_id": 45,
+                        "terminals": 4
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "ENC_B has 4 disconnected copper islands",
+                    "metrics": {
+                        "islands": 4,
+                        "net_id": 46,
+                        "terminals": 4
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "ENC_SW has 4 disconnected copper islands",
+                    "metrics": {
+                        "islands": 4,
+                        "net_id": 47,
+                        "terminals": 4
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "JOY_X has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 48,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "JOY_Y has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 49,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "FSR_SENSE has 4 disconnected copper islands",
+                    "metrics": {
+                        "islands": 4,
+                        "net_id": 50,
+                        "terminals": 4
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "RESET_N has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 51,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_DATA_MCU has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 52,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_ENABLE has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 53,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "BOOT_N has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 54,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "TS has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 57,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "ILIM has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 58,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "ISET has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 59,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "L2 has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 60,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "L1 has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 61,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_CT has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 62,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_FB has 3 disconnected copper islands",
+                    "metrics": {
+                        "islands": 3,
+                        "net_id": 63,
+                        "terminals": 3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "LED_DATA_PRE has 2 disconnected copper islands",
+                    "metrics": {
+                        "islands": 2,
+                        "net_id": 64,
+                        "terminals": 2
+                    },
+                    "severity": "error"
+                }
+            ],
+            "metrics": {
+                "checked_nets": 64,
+                "disconnected_nets": 53
+            },
+            "required": true,
+            "status": "fail"
+        },
+        "drc": {
+            "findings": [
+                {
+                    "code": "TRACE_CLEARANCE",
+                    "message": "trace to trace gap 0.000 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 1,
+                        "x_mm": 104.25,
+                        "y_mm": 105.625
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "TRACE_CLEARANCE",
+                    "message": "trace to trace gap 0.117 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 1,
+                        "x_mm": 104.25,
+                        "y_mm": 105.625
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "TRACE_CLEARANCE",
+                    "message": "trace to trace gap 0.083 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 1,
+                        "x_mm": 103.5,
+                        "y_mm": 106.375
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "C2 to C3 courtyard/body gap 0.000 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 83.45,
+                        "y_mm": 98.4
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "C4 to C31 courtyard/body gap 0.000 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 102.45,
+                        "y_mm": 97.4
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "C15 to C16 courtyard/body gap 0.000 mm < required 0.200 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 115.45,
+                        "y_mm": 108.4
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 117.5,
+                        "y_mm": 47.875
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 37.2,
+                        "y_mm": 64
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 37.2,
+                        "y_mm": 83.2
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 96,
+                        "y_mm": 81.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 123.8,
+                        "y_mm": 58.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 124,
+                        "y_mm": 100
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 124,
+                        "y_mm": 110
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 79.8,
+                        "y_mm": 67
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 79.8,
+                        "y_mm": 86.2
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 78,
+                        "y_mm": 92.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 78.8,
+                        "y_mm": 92.8
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "RIGHT_ANGLE_BEND",
+                    "message": "Routed copper has a 90-degree bend; use two 45-degree segments",
+                    "metrics": {
+                        "rule_code": 25,
+                        "x_mm": 109,
+                        "y_mm": 92.2
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net GND: 82 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 17,
+                        "y_mm": 44.8
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net ROW0: 5 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 14.19,
+                        "y_mm": 47.54
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_1_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 20.54,
+                        "y_mm": 50.08
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net COL0: 7 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 28.225,
+                        "y_mm": 42.4
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_DATA: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 17,
+                        "y_mm": 45.6
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_1: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 18.3,
+                        "y_mm": 45.6
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_2_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 39.59,
+                        "y_mm": 50.08
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net COL1: 6 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 47.274999,
+                        "y_mm": 42.4
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_2: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 37.35,
+                        "y_mm": 45.6
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_3_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 58.64,
+                        "y_mm": 50.08
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net COL2: 6 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 66.325,
+                        "y_mm": 42.4
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_3: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 56.4,
+                        "y_mm": 45.6
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_4_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 77.69,
+                        "y_mm": 50.08
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net COL3: 6 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 85.375,
+                        "y_mm": 42.4
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_4: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 75.45,
+                        "y_mm": 45.6
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net ROW1: 5 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 14.19,
+                        "y_mm": 66.59
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_5_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 20.54,
+                        "y_mm": 69.13
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_5: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 18.3,
+                        "y_mm": 64.65
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_6_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 39.59,
+                        "y_mm": 69.13
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_6: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 37.35,
+                        "y_mm": 64.65
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_7_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 58.64,
+                        "y_mm": 69.13
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_7: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 56.4,
+                        "y_mm": 64.65
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_8_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 77.69,
+                        "y_mm": 69.13
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_8: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 75.45,
+                        "y_mm": 64.65
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net ROW2: 5 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 14.19,
+                        "y_mm": 85.64
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_9_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 20.54,
+                        "y_mm": 88.18
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_9: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 18.3,
+                        "y_mm": 83.7
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_10_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 39.59,
+                        "y_mm": 88.18
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_10: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 37.35,
+                        "y_mm": 83.7
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_11_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 58.64,
+                        "y_mm": 88.18
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_11: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 56.4,
+                        "y_mm": 83.7
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_12_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 77.69,
+                        "y_mm": 88.18
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CHAIN_12: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 75.45,
+                        "y_mm": 83.7
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net ROW3: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 92.19,
+                        "y_mm": 85.64
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net KEY_13_RAW: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 98.54,
+                        "y_mm": 88.18
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net ENC_A: 4 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 13,
+                        "y_mm": 18
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net ENC_B: 4 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 23,
+                        "y_mm": 18
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net ENC_SW: 4 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 15.5,
+                        "y_mm": 11
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net JOY_X: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 58,
+                        "y_mm": 18
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net JOY_Y: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 48,
+                        "y_mm": 28
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net FSR_SENSE: 4 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 118.65,
+                        "y_mm": 74.5
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net RESET_N: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 121.8,
+                        "y_mm": 17.95
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_DATA_MCU: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 121.8,
+                        "y_mm": 31.45
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_ENABLE: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 103.7,
+                        "y_mm": 22.45
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net BOOT_N: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 103.7,
+                        "y_mm": 16.45
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net TS: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 79.9,
+                        "y_mm": 94.63
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net ILIM: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 83.5,
+                        "y_mm": 94.63
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net ISET: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 81.13,
+                        "y_mm": 95.5
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net L2: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 99.125,
+                        "y_mm": 105.3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net L1: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 99.125,
+                        "y_mm": 104.3
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_CT: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 122.05,
+                        "y_mm": 105.45
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_FB: 3 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 114.15,
+                        "y_mm": 106.65
+                    },
+                    "severity": "error"
+                },
+                {
+                    "code": "NET_ISLAND",
+                    "message": "Net LED_DATA_PRE: 2 unconnected islands",
+                    "metrics": {
+                        "rule_code": 12,
+                        "x_mm": 111.1,
+                        "y_mm": 94.45
+                    },
+                    "severity": "error"
+                }
+            ],
+            "metrics": {
+                "engine": "designcore-native",
+                "errors": 56,
+                "warnings": 15
+            },
+            "required": true,
+            "status": "fail"
+        },
+        "mechanical": {
+            "findings": [
+            ],
+            "metrics": {
+                "components_missing_envelope": 0,
+                "enclosure_evidence_required": false,
+                "enclosure_evidence_valid": false,
+                "mechanical_drc_failures": 0
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "power_integrity": {
+            "findings": [
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "GND limiting branch capacity 0.604 A vs allocated 0.350 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 0.6044325489591941,
+                        "limiting_branch_required_current_a": 0.35,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.7269501398834117,
+                        "net_id": 0,
+                        "required_current_a": 2,
+                        "trace_count": 339
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+3V3 limiting branch capacity 1.447 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.4468880626650513,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.4468880626650513,
+                        "net_id": 1,
+                        "required_current_a": 1,
+                        "trace_count": 102
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VBAT limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 2,
+                        "required_current_a": 1.5,
+                        "trace_count": 18
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VSYS limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 3,
+                        "required_current_a": 1.5,
+                        "trace_count": 57
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+5V_LED_RAW limiting branch capacity 1.651 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.6513583887418626,
+                        "net_id": 4,
+                        "required_current_a": 1,
+                        "trace_count": 31
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+5V_LED limiting branch capacity 1.447 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.4468880626650513,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.4468880626650513,
+                        "net_id": 5,
+                        "required_current_a": 1,
+                        "trace_count": 235
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VBUS limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 6,
+                        "required_current_a": 1.5,
+                        "trace_count": 64
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "LED_BOOST_SW limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 7,
+                        "required_current_a": 1.5,
+                        "trace_count": 2
+                    },
+                    "severity": "info"
+                }
+            ],
+            "metrics": {
+                "failed_power_nets": 0,
+                "specified_power_nets": 8,
+                "temperature_rise_c": 10
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "signal_integrity": {
+            "findings": [
+                {
+                    "code": "SINGLE_ENDED_IMPEDANCE",
+                    "message": "USB_90R predicted 45.10 ohm vs target 45.00 ohm (0.2% error)",
+                    "metrics": {
+                        "class_id": 1,
+                        "method": "closed-form-microstrip-screening",
+                        "predicted_ohm": 45.10107656177557,
+                        "target_ohm": 45,
+                        "tolerance_pct": 10
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DIFFERENTIAL_IMPEDANCE",
+                    "message": "USB_90R predicted 89.27 ohm vs target 90.00 ohm (0.8% error)",
+                    "metrics": {
+                        "class_id": 1,
+                        "method": "closed-form-microstrip-screening",
+                        "predicted_ohm": 89.27154394609208,
+                        "target_ohm": 90,
+                        "tolerance_pct": 10
+                    },
+                    "severity": "info"
+                }
+            ],
+            "metrics": {
+                "failed_targets": 0,
+                "method": "actual-route-screening-plus-closed-form-impedance",
+                "target_classes": 1
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "thermal": {
+            "findings": [
+            ],
+            "metrics": {
+                "missing_constraints": 0,
+                "powered_components": 4,
+                "spacing_failures": 0
+            },
+            "required": true,
+            "status": "pass"
+        }
+    },
+    "constraint_profile": {
+        "assembler": "unassigned",
+        "fabricator": "unassigned",
+        "id": "agent-controller-4layer-v1",
+        "ipc_performance_class": 2,
+        "producibility_level": "B",
+        "source": "project:agent-workflow-controller",
+        "source_revision": "1.0.0"
+    },
+    "generated_utc": "2026-07-19T08:49:00.419Z",
+    "overall_status": "fail",
+    "project": {
+        "document_id": "project:agent-workflow-controller-v1",
+        "file_sha256": "821a45210f20da259867f88c0704007833b879d4b866593910aaf6992deac2bd",
+        "revision": 1
+    },
+    "schema": "design-studio.verification/1"
+}

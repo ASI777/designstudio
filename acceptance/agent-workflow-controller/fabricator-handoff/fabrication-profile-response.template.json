@@ -1,0 +1,150 @@
+{
+  "DO_NOT_APPLY": "Remove this field only after every REQUIRED_* value is replaced from a controlled manufacturer document.",
+  "schema": "design-studio.fabrication-profile/1",
+  "id": "REQUIRED_PROFILE_ID",
+  "fabricator": "REQUIRED_LEGAL_OR_TRADING_NAME",
+  "assembler": "REQUIRED_LEGAL_OR_TRADING_NAME",
+  "source": {
+    "document_path": "REQUIRED_LOCAL_CONTROLLED_DOCUMENT_PATH",
+    "document_sha256": "REQUIRED_64_CHARACTER_LOWERCASE_SHA256",
+    "uri": "REQUIRED_SOURCE_URI",
+    "revision": "REQUIRED_DOCUMENT_REVISION",
+    "retrieved_utc": "REQUIRED_ISO_8601_TIMESTAMP"
+  },
+  "approval": {
+    "status": "approved",
+    "reviewer": "REQUIRED_NAMED_REVIEWER",
+    "approved_utc": "REQUIRED_ISO_8601_TIMESTAMP"
+  },
+  "pcb_rules": {
+    "schema_version": 1,
+    "id": "REQUIRED_RULESET_ID",
+    "name": "REQUIRED_RULESET_NAME",
+    "ipc_performance_class": 2,
+    "producibility_level": "B",
+    "source": "REQUIRED_FABRICATOR_SOURCE_ID",
+    "source_revision": "REQUIRED_SOURCE_REVISION",
+    "fabricator": "REQUIRED_SAME_FABRICATOR_NAME",
+    "assembler": "REQUIRED_SAME_ASSEMBLER_NAME",
+    "limits_mm": {
+      "default_clearance": "REQUIRED_NUMBER_MM",
+      "min_trace_width": "REQUIRED_NUMBER_MM",
+      "min_mechanical_drill": "REQUIRED_NUMBER_MM",
+      "min_annular_ring": "REQUIRED_NUMBER_MM",
+      "min_drill_to_drill": "REQUIRED_NUMBER_MM",
+      "min_microvia_drill": "REQUIRED_NUMBER_MM",
+      "min_microvia_wall": "REQUIRED_NUMBER_MM",
+      "min_copper_to_edge": "REQUIRED_NUMBER_MM",
+      "min_copper_to_hole": "REQUIRED_NUMBER_MM",
+      "min_courtyard_clearance": "REQUIRED_NUMBER_MM",
+      "min_mask_sliver": "REQUIRED_NUMBER_MM",
+      "min_silk_width": "REQUIRED_NUMBER_MM"
+    },
+    "checks": {
+      "connectivity": true,
+      "skew": true,
+      "release_requires_native_drc": true
+    },
+    "severity": {
+      "MIN_WIDTH": "error",
+      "TRACE_CLEARANCE": "error",
+      "PAD_TRACE_CLEARANCE": "error",
+      "NET_ISLAND": "error",
+      "RIGHT_ANGLE_BEND": "warning"
+    }
+  },
+  "stackup": {
+    "finished_thickness_mm": "REQUIRED_NUMBER_MM",
+    "thickness_tolerance_mm": "REQUIRED_NUMBER_MM",
+    "surface_finish": "REQUIRED_FINISH",
+    "solder_mask_color": "REQUIRED_MASK",
+    "silkscreen_color": "REQUIRED_LEGEND",
+    "layers": [
+      {
+        "order": 0,
+        "name": "F.Cu",
+        "kind": "copper",
+        "material": "copper",
+        "thickness_mm": "REQUIRED_NUMBER_MM",
+        "copper_weight_oz": "REQUIRED_NUMBER_OZ"
+      },
+      {
+        "order": 1,
+        "name": "prepreg-1",
+        "kind": "dielectric",
+        "material": "REQUIRED_MATERIAL",
+        "thickness_mm": "REQUIRED_NUMBER_MM",
+        "dielectric_er": "REQUIRED_NUMBER",
+        "loss_tangent": "REQUIRED_NUMBER"
+      },
+      {
+        "order": 2,
+        "name": "In1.GND",
+        "kind": "copper",
+        "material": "copper",
+        "thickness_mm": "REQUIRED_NUMBER_MM",
+        "copper_weight_oz": "REQUIRED_NUMBER_OZ"
+      },
+      {
+        "order": 3,
+        "name": "core",
+        "kind": "dielectric",
+        "material": "REQUIRED_MATERIAL",
+        "thickness_mm": "REQUIRED_NUMBER_MM",
+        "dielectric_er": "REQUIRED_NUMBER",
+        "loss_tangent": "REQUIRED_NUMBER"
+      },
+      {
+        "order": 4,
+        "name": "In2.Power",
+        "kind": "copper",
+        "material": "copper",
+        "thickness_mm": "REQUIRED_NUMBER_MM",
+        "copper_weight_oz": "REQUIRED_NUMBER_OZ"
+      },
+      {
+        "order": 5,
+        "name": "prepreg-2",
+        "kind": "dielectric",
+        "material": "REQUIRED_MATERIAL",
+        "thickness_mm": "REQUIRED_NUMBER_MM",
+        "dielectric_er": "REQUIRED_NUMBER",
+        "loss_tangent": "REQUIRED_NUMBER"
+      },
+      {
+        "order": 6,
+        "name": "B.Cu",
+        "kind": "copper",
+        "material": "copper",
+        "thickness_mm": "REQUIRED_NUMBER_MM",
+        "copper_weight_oz": "REQUIRED_NUMBER_OZ"
+      }
+    ]
+  },
+  "impedance": {
+    "coupon_required": "REQUIRED_BOOLEAN",
+    "targets": [
+      {
+        "net_class": "USB_90R",
+        "kind": "differential",
+        "target_ohm": 90,
+        "tolerance_pct": "REQUIRED_NUMBER",
+        "layer": "F.Cu"
+      }
+    ]
+  },
+  "outputs": {
+    "gerber_format": "Gerber X2",
+    "coordinate_precision": "REQUIRED_5_OR_6",
+    "origin": "absolute",
+    "separate_pth_npth": true,
+    "solder_mask_expansion_mm": "REQUIRED_NUMBER_MM",
+    "paste_reduction_mm": "REQUIRED_NUMBER_MM",
+    "silkscreen": "REQUIRED_NONE_OR_PROJECT_PRIMITIVES",
+    "pick_place": {
+      "include_through_hole": "REQUIRED_BOOLEAN",
+      "bottom_rotation": "REQUIRED_VIEWED_FROM_TOP_OR_VIEWED_FROM_BOTTOM",
+      "rotation_corrections_deg": {}
+    }
+  }
+}

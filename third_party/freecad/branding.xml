@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Branding version="1.0">
+  <Application>DesignStudio</Application>
+  <WindowTitle>DesignStudio</WindowTitle>
+  <WindowIcon>share/icons/hicolor/scalable/apps/designstudio.svg</WindowIcon>
+  <SplashScreen>share/icons/hicolor/scalable/apps/designstudio.svg</SplashScreen>
+  <AboutImage>share/icons/hicolor/scalable/apps/designstudio.svg</AboutImage>
+  <!-- Keep FreeCAD's internal ExeName: its Python bootstrap module is keyed to
+       that value. The installed launcher and visible application remain
+       DesignStudio without breaking the embedded interpreter. -->
+  <ExeVendor>DesignStudio</ExeVendor>
+  <MaintainerUrl>https://design-studio.local</MaintainerUrl>
+  <DesktopFileName>designstudio</DesktopFileName>
+  <StartWorkbench>DesignStudioWorkbench</StartWorkbench>
+  <AppDataSkipVendor>true</AppDataSkipVendor>
+</Branding>

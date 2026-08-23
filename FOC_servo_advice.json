@@ -1,0 +1,171 @@
+{
+  "schema": "design-studio.advice/1",
+  "summary": "The board is at the very beginning relative to the goal of a single-axis FOC servo drive with EtherCAT. Only U1 (MPFS025TC-FCSG325 PolarFire SoC) is placed; there are zero nets, all 325 pins are unconnected, the only net class is Default, and both inner plane layers in the 8-layer stack have no plane_net assigned. None of the mandatory subsystems exist yet: power tree, decoupling, DDR memory, boot/config flash, reference clock, the motor power stage (gate driver + MOSFETs + current sense), encoder interface, programming header, or the EtherCAT PHYs. A true power budget cannot be computed because U1.electrical.power_domains is null (the PPAT carries pin function but not per-rail current), so regulator sizing below is provisional and must be confirmed against the PolarFire SoC Datasheet DC characteristics and the SoC Power Estimator. Recommended next step: bring up the FPGA-SoC core (power, decap, DDR, boot, clock, JTAG, planes) first, then add the motor-drive stage, then the EtherCAT port.",
+  "actions": [
+    {
+      "op": "reference",
+      "mpn": null,
+      "manufacturer": null,
+      "for_ref": null,
+      "net": "GND",
+      "value": "assign GND to stackup layer 1 and a power plane to layer 6; both plane_net are currently null",
+      "reason": "Routing, return paths and decoupling all need solid reference planes. With unassigned planes the SI/PI engines and DRC cannot evaluate the board. At 0.5 mm BGA pitch + DDR4 the 8-layer count is workable but tight; re-evaluate to 10 if DDR escape + reference integrity fails.",
+      "connections": [],
+      "priority": 1
+    },
+    {
+      "op": "add",
+      "mpn": "MPM3833C",
+      "manufacturer": "Monolithic Power Systems",
+      "for_ref": null,
+      "net": "VDD_CORE",
+      "value": "1.0V (or 1.05V perf) core buck, size to measured core current",
+      "reason": "U1 core supply (VDD, ~14 balls) has no source. Highest-current rail; provisional until power_domains/DC characteristics give the real load.",
+      "connections": [{ "pin": "VOUT", "to_net": "VDD_CORE" }],
+      "priority": 1
+    },
+    {
+      "op": "add",
+      "mpn": "MPM3610",
+      "manufacturer": "Monolithic Power Systems",
+      "for_ref": null,
+      "net": "V1P8",
+      "value": "1.8V and 2.5V rails (one per rail) for VDD18 / VDD25 / VDDAUX / bank VDDIx",
+      "reason": "VDD18, VDD25, VDDAUXx and per-bank VDDIx supplies are all unsourced. Per PPAT note, every used bank's VDDI/VDDAUX must be powered even if I/O is unused.",
+      "connections": [{ "pin": "VOUT", "to_net": "V1P8" }],
+      "priority": 1
+    },
+    {
+      "op": "add",
+      "mpn": "TPS7A2018",
+      "manufacturer": "Texas Instruments",
+      "for_ref": null,
+      "net": "VDDA_1V0",
+      "value": "low-noise LDO from VDD_CORE + ferrite for VDDA / VDD_XCVR_CLK",
+      "reason": "VDDA and the transceiver/clock analog rails need a quiet supply for PLL/SerDes jitter; a filtered LDO off the core rail is standard practice.",
+      "connections": [{ "pin": "OUT", "to_net": "VDDA_1V0" }],
+      "priority": 2
+    },
+    {
+      "op": "add",
+      "mpn": "GRM155R71C104KA88",
+      "manufacturer": "Murata",
+      "for_ref": null,
+      "net": null,
+      "value": "100nF 0402 X7R, one per power ball cluster (~40-60 pcs) + 4.7/10uF bulk per rail",
+      "reason": "U1.electrical.required_externals and BGA practice: every VDD/VDDA/VDDI ball group needs local decoupling. None present. Binding requirement before power-up.",
+      "connections": [],
+      "priority": 1
+    },
+    {
+      "op": "add",
+      "mpn": "MT40A256M16GE-083E",
+      "manufacturer": "Micron",
+      "for_ref": null,
+      "net": "MSS_DDR4",
+      "value": "DDR4 x16, 4Gb (size per Linux needs)",
+      "reason": "MSS_DDR interface (53 balls) is present and a Linux-class FOC controller needs external DRAM; none placed. Requires a length-matched, 80-90 ohm-class net class.",
+      "connections": [],
+      "priority": 1
+    },
+    {
+      "op": "add",
+      "mpn": "MT25QL128ABA1ESE",
+      "manufacturer": "Micron",
+      "for_ref": null,
+      "net": "SPI_BOOT",
+      "value": "128Mb QSPI NOR for SoC boot/config",
+      "reason": "PolarFire SoC boots from external SPI/QSPI flash; no boot device present. Connects to the dedicated SPI (SCK/SS/SDI/SDO) pins.",
+      "connections": [
+        { "pin": "C", "to_net": "BOOT_SCK" },
+        { "pin": "S", "to_net": "BOOT_SS" }
+      ],
+      "priority": 1
+    },
+    {
+      "op": "add",
+      "mpn": "SiT9120AI",
+      "manufacturer": "SiTime",
+      "for_ref": null,
+      "net": "MSS_REFCLK",
+      "value": "low-jitter reference oscillator (freq per MSS/XCVR plan)",
+      "reason": "MSS_REFCLK and XCVR REFCLK diff pairs exist in the high_speed list but have no source. SerDes/Ethernet need a clean reference clock.",
+      "connections": [],
+      "priority": 2
+    },
+    {
+      "op": "add",
+      "mpn": "DRV8353RS",
+      "manufacturer": "Texas Instruments",
+      "for_ref": null,
+      "net": "GATE_DRIVE",
+      "value": "3-phase smart gate driver with 3 integrated current-sense amplifiers",
+      "reason": "Core of the FOC stage and entirely missing. Takes 6 PWM/INHx-INLx from FPGA fabric, drives the 6 MOSFETs, and provides the 3 phase-current sense channels FOC needs. Integrated CSAs save parts and improve match.",
+      "connections": [
+        { "pin": "INHA", "to_net": "PWM_AH" },
+        { "pin": "INLA", "to_net": "PWM_AL" }
+      ],
+      "priority": 2
+    },
+    {
+      "op": "add",
+      "mpn": "BSC0902NSI",
+      "manufacturer": "Infineon",
+      "for_ref": null,
+      "net": "PHASE",
+      "value": "6x power MOSFET (3 half-bridges); reselect Vds/Rds(on) for the actual DC-bus voltage and phase current",
+      "reason": "Three-phase inverter bridge for the motor; none present. Example OptiMOS part — final choice depends on bus voltage/current, which set the whole power stage.",
+      "connections": [],
+      "priority": 2
+    },
+    {
+      "op": "add",
+      "mpn": "AM26LV32E",
+      "manufacturer": "Texas Instruments",
+      "for_ref": null,
+      "net": "ENCODER",
+      "value": "quad RS-422 differential line receiver",
+      "reason": "Position feedback (quadrature / BiSS / EnDat) needs differential receivers into the FPGA fabric; encoder interface is missing. Choose per encoder protocol.",
+      "connections": [],
+      "priority": 3
+    },
+    {
+      "op": "add",
+      "mpn": "DP83822IF",
+      "manufacturer": "Texas Instruments",
+      "for_ref": null,
+      "net": "ETH_PHY",
+      "value": "2x 10/100 Ethernet PHY (MII) + magnetics + dual RJ45 for EtherCAT IN/OUT",
+      "reason": "Stretch-goal EtherCAT: needs two PHYs feeding an EtherCAT Slave Controller implemented in fabric. Note ESC IP licensing (Beckhoff/Microchip) is a separate requirement.",
+      "connections": [],
+      "priority": 4
+    },
+    {
+      "op": "add",
+      "mpn": "FTSH-105-01-L-DV-K",
+      "manufacturer": "Samtec",
+      "for_ref": null,
+      "net": "JTAG",
+      "value": "10-pin JTAG/programming header",
+      "reason": "TMS/TCK/TDI/TDO/TRSTB are unconnected; a programming/debug header is required to load the device.",
+      "connections": [
+        { "pin": "TMS", "to_net": "JTAG_TMS" },
+        { "pin": "TCK", "to_net": "JTAG_TCK" }
+      ],
+      "priority": 3
+    }
+  ],
+  "risks": [
+    "Power budget is unverifiable: U1.electrical.power_domains is null. Pull the PolarFire SoC Datasheet DC characteristics and run the SoC Power Estimator before finalizing regulators; size MPM3833C/MPM3610 to real currents.",
+    "Power-up sequencing: PolarFire SoC has rail sequencing requirements (see Power-Up and Resets User Guide). A simple independent-regulator scheme may need enable sequencing or a sequencer/PMIC.",
+    "HDI/manufacturability: 0.5 mm BGA needs via-in-pad/microvias; with DDR4 + reference planes the 8-layer stack may need to grow to 10. Confirm with your fab's HDI rules.",
+    "Plane nets unassigned — assign GND/power planes before any routing or SI/PI analysis.",
+    "Motor power stage is high-voltage/high-current: partition power ground from logic ground (single-point tie), respect creepage/clearance, plan gate-loop and shunt-sense layout, and add DC-bus bulk capacitance and a TVS/clamp.",
+    "FOC timing: ADC current sampling must be synchronized to PWM; plan the sense path and trigger in fabric.",
+    "EtherCAT requires licensed ESC IP and careful PHY/MII timing; treat as a separate milestone after core bring-up."
+  ],
+  "next_datasheets_needed": [
+    "MPM3833C", "MPM3610", "TPS7A2018", "MT40A256M16GE-083E", "MT25QL128ABA1ESE",
+    "SiT9120AI", "DRV8353RS", "BSC0902NSI", "AM26LV32E", "DP83822IF"
+  ]
+}

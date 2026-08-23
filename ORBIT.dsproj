@@ -1,0 +1,2017 @@
+{
+  "version": 2,
+  "board_width_mm": 24.0,
+  "board_height_mm": 8.0,
+  "grid_mm": 1.27,
+  "copper_layers": 6,
+  "dielectric_er": 4.4,
+  "dielectric_h_mm": 0.1,
+  "loss_tangent": 0.02,
+  "copper_t_mm": 0.035,
+  "nets": null,
+  "net_table": [
+    {
+      "id": 0,
+      "name": "GND",
+      "class": 0
+    },
+    {
+      "id": 1,
+      "name": "+3V0",
+      "class": 0
+    },
+    {
+      "id": 2,
+      "name": "VBAT",
+      "class": 0
+    },
+    {
+      "id": 3,
+      "name": "VLED",
+      "class": 0
+    },
+    {
+      "id": 4,
+      "name": "SDA",
+      "class": 0
+    },
+    {
+      "id": 5,
+      "name": "SCL",
+      "class": 0
+    },
+    {
+      "id": 6,
+      "name": "SDA_T",
+      "class": 0
+    },
+    {
+      "id": 7,
+      "name": "SCL_T",
+      "class": 0
+    },
+    {
+      "id": 8,
+      "name": "SCK",
+      "class": 0
+    },
+    {
+      "id": 9,
+      "name": "MOSI",
+      "class": 0
+    },
+    {
+      "id": 10,
+      "name": "MISO",
+      "class": 0
+    },
+    {
+      "id": 11,
+      "name": "CSB",
+      "class": 0
+    },
+    {
+      "id": 12,
+      "name": "RF",
+      "class": 0
+    },
+    {
+      "id": 13,
+      "name": "RFMATCH",
+      "class": 0
+    },
+    {
+      "id": 14,
+      "name": "RESET",
+      "class": 0
+    },
+    {
+      "id": 15,
+      "name": "PPG_INT",
+      "class": 0
+    },
+    {
+      "id": 16,
+      "name": "ACC_INT1",
+      "class": 0
+    },
+    {
+      "id": 17,
+      "name": "PD",
+      "class": 0
+    },
+    {
+      "id": 18,
+      "name": "COIL1",
+      "class": 0
+    },
+    {
+      "id": 19,
+      "name": "COIL2",
+      "class": 0
+    },
+    {
+      "id": 20,
+      "name": "RECT",
+      "class": 0
+    },
+    {
+      "id": 21,
+      "name": "SW",
+      "class": 0
+    },
+    {
+      "id": 22,
+      "name": "FB",
+      "class": 0
+    },
+    {
+      "id": 23,
+      "name": "XC1",
+      "class": 0
+    },
+    {
+      "id": 24,
+      "name": "XC2",
+      "class": 0
+    },
+    {
+      "id": 25,
+      "name": "XL1",
+      "class": 0
+    },
+    {
+      "id": 26,
+      "name": "XL2",
+      "class": 0
+    },
+    {
+      "id": 27,
+      "name": "DCC",
+      "class": 0
+    },
+    {
+      "id": 28,
+      "name": "DEC4",
+      "class": 0
+    },
+    {
+      "id": 29,
+      "name": "ISET",
+      "class": 0
+    },
+    {
+      "id": 30,
+      "name": "COMM",
+      "class": 0
+    },
+    {
+      "id": 31,
+      "name": "TS",
+      "class": 0
+    },
+    {
+      "id": 32,
+      "name": "LED_DRV",
+      "class": 0
+    }
+  ],
+  "net_classes": [
+    {
+      "id": 0,
+      "name": "Default",
+      "clearance_mm": 0.1,
+      "trace_width_mm": 0.15,
+      "via_diameter_mm": 0.3,
+      "via_drill_mm": 0.15,
+      "z0_ohm": 0,
+      "zdiff_ohm": 0
+    }
+  ],
+  "footprints": [
+    {
+      "ref": "U1",
+      "lib": "nRF52832-QFAA",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.9,
+      "body_w_mm": 16.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "VDD",
+          "x_mm": -8.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "VSS",
+          "x_mm": -7.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "DEC4",
+          "x_mm": -6.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 28,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "DCC",
+          "x_mm": -5.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 27,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "XC1",
+          "x_mm": -4.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 23,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "XC2",
+          "x_mm": -3.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 24,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "XL1",
+          "x_mm": -2.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 25,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "XL2",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 26,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "ANT",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 12,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "SDA",
+          "x_mm": 1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 4,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "SCL",
+          "x_mm": 2.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 5,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "SCK",
+          "x_mm": 3.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 8,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "MOSI",
+          "x_mm": 4.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 9,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "MISO",
+          "x_mm": 5.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 10,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "CSB",
+          "x_mm": 6.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 11,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "RESET",
+          "x_mm": 7.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 14,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "U2",
+      "lib": "MAX86141",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.6,
+      "body_w_mm": 11.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "VDD_A",
+          "x_mm": -5.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "VDD_D",
+          "x_mm": -4.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "VLED",
+          "x_mm": -3.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 3,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "GND",
+          "x_mm": -2.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "SCLK",
+          "x_mm": -1.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 8,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "MOSI",
+          "x_mm": -0.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 9,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "MISO",
+          "x_mm": 0.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 10,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "CSB",
+          "x_mm": 1.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 11,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "INT",
+          "x_mm": 2.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 15,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "LED1",
+          "x_mm": 3.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 32,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "PD",
+          "x_mm": 4.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 17,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "U3",
+      "lib": "LIS2DW12",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.7,
+      "body_w_mm": 5.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "VDD",
+          "x_mm": -2.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "GND",
+          "x_mm": -1.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "SDA",
+          "x_mm": -0.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 4,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "SCL",
+          "x_mm": 0.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 5,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "INT1",
+          "x_mm": 1.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 16,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "U4",
+      "lib": "TMP117",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.6,
+      "body_w_mm": 4.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "V+",
+          "x_mm": -2.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "GND",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "SDA",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 6,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "SCL",
+          "x_mm": 1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 7,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "U5",
+      "lib": "BQ51050B",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.7,
+      "body_w_mm": 8.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "AC1",
+          "x_mm": -4.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 18,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "AC2",
+          "x_mm": -3.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 19,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "RECT",
+          "x_mm": -2.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 20,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "OUT",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 2,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "ISET",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 29,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "COMM",
+          "x_mm": 1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 30,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "TS",
+          "x_mm": 2.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 31,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "GND",
+          "x_mm": 3.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "U6",
+      "lib": "TPS62840",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 5.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "VIN",
+          "x_mm": -2.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 2,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "SW",
+          "x_mm": -1.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 21,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "FB",
+          "x_mm": -0.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 22,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "EN",
+          "x_mm": 0.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 2,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "GND",
+          "x_mm": 1.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "DS1",
+      "lib": "LED-G/R/IR",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "A",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 3,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "K",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 32,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "PD1",
+      "lib": "VEMD8080",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "A",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 17,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "K",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "AE1",
+      "lib": "2450AT18",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "RF",
+          "x_mm": -0.5,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 13,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "L1",
+      "lib": "RxCoil-18mm",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.6,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 18,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 19,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "BT1",
+      "lib": "LiPo-22mAh",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 1.1,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "+",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 2,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "-",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C1",
+      "lib": "C-100n",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C2",
+      "lib": "C-100n",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C3",
+      "lib": "C-100n",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C4",
+      "lib": "C-100n",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C5",
+      "lib": "C-1u-DEC4",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 28,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Y1",
+      "lib": "XTAL-32MHz",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.6,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 23,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 24,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "CL1",
+      "lib": "C-12p",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 23,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "CL2",
+      "lib": "C-12p",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 24,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Y2",
+      "lib": "XTAL-32.768k",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.6,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 25,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 26,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "L4",
+      "lib": "L-10u-DCDC",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.8,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 27,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "L2",
+      "lib": "L-2u2",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.8,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 21,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Cin",
+      "lib": "C-10u",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 2,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Cout",
+      "lib": "C-10u",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "R1",
+      "lib": "R-fbtop",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 22,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "R2",
+      "lib": "R-fbbot",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 22,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "L3",
+      "lib": "L-RFmatch",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 12,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 13,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Cm1",
+      "lib": "C-RF1",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 12,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Cm2",
+      "lib": "C-RF2",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 13,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "R3",
+      "lib": "R-10k-reset",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 14,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Rp1",
+      "lib": "R-4k7",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 4,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Rp2",
+      "lib": "R-4k7",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 5,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C10",
+      "lib": "C-1u-VANA",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C11",
+      "lib": "C-100n-VDIG",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C12",
+      "lib": "C-10u-VLED",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 3,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C13",
+      "lib": "C-100n",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "C14",
+      "lib": "C-100n",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 1,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Riset",
+      "lib": "R-ISET",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 29,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Crect",
+      "lib": "C-10u-RECT",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.5,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 20,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Ccomm",
+      "lib": "C-COMM",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 30,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "Rts",
+      "lib": "R-TS",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 31,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 0,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "R20",
+      "lib": "R-0R",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 4,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 6,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    },
+    {
+      "ref": "R21",
+      "lib": "R-0R",
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.4,
+      "body_w_mm": 2.0,
+      "body_h_mm": 2.0,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -1.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 5,
+          "th": false,
+          "shape": "rect"
+        },
+        {
+          "name": "2",
+          "x_mm": 0.0,
+          "y_mm": 0.0,
+          "w_mm": 0.5,
+          "h_mm": 0.3,
+          "net": 7,
+          "th": false,
+          "shape": "rect"
+        }
+      ],
+      "regions": []
+    }
+  ],
+  "traces": [],
+  "vias": []
+}

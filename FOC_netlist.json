@@ -1,0 +1,701 @@
+{
+  "schema": "design-studio.netlist/0 (prototype)",
+  "from_advice": "FOC_servo_advice.json",
+  "nets": {
+    "BOOT_SCK": [
+      {
+        "ref": "U7",
+        "pin": "C"
+      }
+    ],
+    "BOOT_SS": [
+      {
+        "ref": "U7",
+        "pin": "S"
+      }
+    ],
+    "GND": [
+      {
+        "ref": "U1",
+        "pin": "A1"
+      },
+      {
+        "ref": "U1",
+        "pin": "A6"
+      },
+      {
+        "ref": "U1",
+        "pin": "D4"
+      },
+      {
+        "ref": "U1",
+        "pin": "D7"
+      },
+      {
+        "ref": "U1",
+        "pin": "D9"
+      },
+      {
+        "ref": "U1",
+        "pin": "F1"
+      },
+      {
+        "ref": "U1",
+        "pin": "H7"
+      },
+      {
+        "ref": "U1",
+        "pin": "J4"
+      },
+      {
+        "ref": "U1",
+        "pin": "J9"
+      },
+      {
+        "ref": "U1",
+        "pin": "L1"
+      },
+      {
+        "ref": "U1",
+        "pin": "L9"
+      },
+      {
+        "ref": "U1",
+        "pin": "N4"
+      },
+      {
+        "ref": "U1",
+        "pin": "N9"
+      },
+      {
+        "ref": "U1",
+        "pin": "R8"
+      },
+      {
+        "ref": "U1",
+        "pin": "T1"
+      },
+      {
+        "ref": "U1",
+        "pin": "V4"
+      },
+      {
+        "ref": "U1",
+        "pin": "V9"
+      },
+      {
+        "ref": "U1",
+        "pin": "A16"
+      },
+      {
+        "ref": "U1",
+        "pin": "A21"
+      },
+      {
+        "ref": "U1",
+        "pin": "AA1"
+      },
+      {
+        "ref": "U1",
+        "pin": "AA6"
+      },
+      {
+        "ref": "U1",
+        "pin": "D14"
+      },
+      {
+        "ref": "U1",
+        "pin": "G14"
+      },
+      {
+        "ref": "U1",
+        "pin": "G21"
+      },
+      {
+        "ref": "U1",
+        "pin": "H17"
+      },
+      {
+        "ref": "U1",
+        "pin": "J11"
+      },
+      {
+        "ref": "U1",
+        "pin": "J13"
+      },
+      {
+        "ref": "U1",
+        "pin": "J15"
+      },
+      {
+        "ref": "U1",
+        "pin": "J21"
+      },
+      {
+        "ref": "U1",
+        "pin": "K10"
+      },
+      {
+        "ref": "U1",
+        "pin": "K12"
+      },
+      {
+        "ref": "U1",
+        "pin": "K18"
+      },
+      {
+        "ref": "U1",
+        "pin": "L11"
+      },
+      {
+        "ref": "U1",
+        "pin": "L13"
+      },
+      {
+        "ref": "U1",
+        "pin": "L15"
+      },
+      {
+        "ref": "U1",
+        "pin": "L21"
+      },
+      {
+        "ref": "U1",
+        "pin": "M10"
+      },
+      {
+        "ref": "U1",
+        "pin": "M12"
+      },
+      {
+        "ref": "U1",
+        "pin": "M18"
+      },
+      {
+        "ref": "U1",
+        "pin": "N11"
+      },
+      {
+        "ref": "U1",
+        "pin": "N13"
+      },
+      {
+        "ref": "U1",
+        "pin": "N15"
+      },
+      {
+        "ref": "U1",
+        "pin": "N21"
+      },
+      {
+        "ref": "U1",
+        "pin": "P17"
+      },
+      {
+        "ref": "U1",
+        "pin": "P18"
+      },
+      {
+        "ref": "U1",
+        "pin": "R20"
+      },
+      {
+        "ref": "U1",
+        "pin": "R21"
+      },
+      {
+        "ref": "U1",
+        "pin": "V14"
+      },
+      {
+        "ref": "U1",
+        "pin": "AA11"
+      },
+      {
+        "ref": "U1",
+        "pin": "AA16"
+      },
+      {
+        "ref": "U1",
+        "pin": "AA21"
+      }
+    ],
+    "JTAG_TCK": [
+      {
+        "ref": "U13",
+        "pin": "TCK"
+      }
+    ],
+    "JTAG_TMS": [
+      {
+        "ref": "U13",
+        "pin": "TMS"
+      }
+    ],
+    "PWM_AH": [
+      {
+        "ref": "U9",
+        "pin": "INHA"
+      }
+    ],
+    "PWM_AL": [
+      {
+        "ref": "U9",
+        "pin": "INLA"
+      }
+    ],
+    "V1P8": [
+      {
+        "ref": "U3",
+        "pin": "VOUT"
+      }
+    ],
+    "VDD": [
+      {
+        "ref": "U1",
+        "pin": "K9"
+      },
+      {
+        "ref": "U1",
+        "pin": "M9"
+      },
+      {
+        "ref": "U1",
+        "pin": "J10"
+      },
+      {
+        "ref": "U1",
+        "pin": "J12"
+      },
+      {
+        "ref": "U1",
+        "pin": "K11"
+      },
+      {
+        "ref": "U1",
+        "pin": "K13"
+      },
+      {
+        "ref": "U1",
+        "pin": "K15"
+      },
+      {
+        "ref": "U1",
+        "pin": "L10"
+      },
+      {
+        "ref": "U1",
+        "pin": "L12"
+      },
+      {
+        "ref": "U1",
+        "pin": "M11"
+      },
+      {
+        "ref": "U1",
+        "pin": "M13"
+      },
+      {
+        "ref": "U1",
+        "pin": "M15"
+      },
+      {
+        "ref": "U1",
+        "pin": "N10"
+      },
+      {
+        "ref": "U1",
+        "pin": "N12"
+      }
+    ],
+    "VDD18": [
+      {
+        "ref": "U1",
+        "pin": "P7"
+      },
+      {
+        "ref": "U1",
+        "pin": "P15"
+      },
+      {
+        "ref": "U1",
+        "pin": "R10"
+      },
+      {
+        "ref": "U1",
+        "pin": "R12"
+      }
+    ],
+    "VDD25": [
+      {
+        "ref": "U1",
+        "pin": "G7"
+      },
+      {
+        "ref": "U1",
+        "pin": "R7"
+      },
+      {
+        "ref": "U1",
+        "pin": "H15"
+      },
+      {
+        "ref": "U1",
+        "pin": "R15"
+      }
+    ],
+    "VDDA": [
+      {
+        "ref": "U1",
+        "pin": "J20"
+      },
+      {
+        "ref": "U1",
+        "pin": "L18"
+      },
+      {
+        "ref": "U1",
+        "pin": "L20"
+      },
+      {
+        "ref": "U1",
+        "pin": "N20"
+      }
+    ],
+    "VDDA25": [
+      {
+        "ref": "U1",
+        "pin": "L17"
+      },
+      {
+        "ref": "U1",
+        "pin": "L19"
+      }
+    ],
+    "VDDAUX1": [
+      {
+        "ref": "U1",
+        "pin": "F17"
+      },
+      {
+        "ref": "U1",
+        "pin": "G11"
+      },
+      {
+        "ref": "U1",
+        "pin": "G13"
+      }
+    ],
+    "VDDAUX2": [
+      {
+        "ref": "U1",
+        "pin": "F5"
+      },
+      {
+        "ref": "U1",
+        "pin": "G4"
+      }
+    ],
+    "VDDAUX4": [
+      {
+        "ref": "U1",
+        "pin": "J5"
+      },
+      {
+        "ref": "U1",
+        "pin": "J7"
+      }
+    ],
+    "VDDA_1V0": [
+      {
+        "ref": "U4",
+        "pin": "OUT"
+      }
+    ],
+    "VDDI0": [
+      {
+        "ref": "U1",
+        "pin": "U16"
+      },
+      {
+        "ref": "U1",
+        "pin": "V20"
+      },
+      {
+        "ref": "U1",
+        "pin": "Y13"
+      },
+      {
+        "ref": "U1",
+        "pin": "Y18"
+      }
+    ],
+    "VDDI1": [
+      {
+        "ref": "U1",
+        "pin": "B8"
+      },
+      {
+        "ref": "U1",
+        "pin": "A11"
+      },
+      {
+        "ref": "U1",
+        "pin": "B13"
+      },
+      {
+        "ref": "U1",
+        "pin": "B18"
+      },
+      {
+        "ref": "U1",
+        "pin": "D10"
+      },
+      {
+        "ref": "U1",
+        "pin": "D20"
+      },
+      {
+        "ref": "U1",
+        "pin": "E16"
+      },
+      {
+        "ref": "U1",
+        "pin": "G15"
+      }
+    ],
+    "VDDI2": [
+      {
+        "ref": "U1",
+        "pin": "B3"
+      },
+      {
+        "ref": "U1",
+        "pin": "D2"
+      },
+      {
+        "ref": "U1",
+        "pin": "H5"
+      }
+    ],
+    "VDDI3": [
+      {
+        "ref": "U1",
+        "pin": "E7"
+      },
+      {
+        "ref": "U1",
+        "pin": "G8"
+      }
+    ],
+    "VDDI4": [
+      {
+        "ref": "U1",
+        "pin": "J2"
+      },
+      {
+        "ref": "U1",
+        "pin": "L4"
+      }
+    ],
+    "VDDI5": [
+      {
+        "ref": "U1",
+        "pin": "M7"
+      },
+      {
+        "ref": "U1",
+        "pin": "N2"
+      }
+    ],
+    "VDDI6": [
+      {
+        "ref": "U1",
+        "pin": "R5"
+      },
+      {
+        "ref": "U1",
+        "pin": "V2"
+      },
+      {
+        "ref": "U1",
+        "pin": "V6"
+      },
+      {
+        "ref": "U1",
+        "pin": "Y1"
+      },
+      {
+        "ref": "U1",
+        "pin": "Y4"
+      },
+      {
+        "ref": "U1",
+        "pin": "Y8"
+      },
+      {
+        "ref": "U1",
+        "pin": "U11"
+      }
+    ],
+    "VDD_CORE": [
+      {
+        "ref": "U2",
+        "pin": "VOUT"
+      }
+    ],
+    "VDD_XCVR_CLK": [
+      {
+        "ref": "U1",
+        "pin": "K17"
+      },
+      {
+        "ref": "U1",
+        "pin": "M17"
+      }
+    ]
+  },
+  "net_classes": [
+    {
+      "name": "MSS_REFCLK_IN_P/MSS_REFCLK_IN_N",
+      "impedance_ohm": 100,
+      "differential": true,
+      "max_skew_mm": null
+    },
+    {
+      "name": "XCVR_0B_REFCLK_P/XCVR_0B_REFCLK_N",
+      "impedance_ohm": 100,
+      "differential": true,
+      "max_skew_mm": null
+    },
+    {
+      "name": "XCVR_0_RX2_P/XCVR_0_RX2_N",
+      "impedance_ohm": 85,
+      "differential": true,
+      "max_skew_mm": null
+    },
+    {
+      "name": "XCVR_0_TX2_P/XCVR_0_TX2_N",
+      "impedance_ohm": 85,
+      "differential": true,
+      "max_skew_mm": null
+    },
+    {
+      "name": "XCVR_0A_REFCLK_P/XCVR_0A_REFCLK_N",
+      "impedance_ohm": 100,
+      "differential": true,
+      "max_skew_mm": null
+    },
+    {
+      "name": "XCVR_0_RX0_P/XCVR_0_RX0_N",
+      "impedance_ohm": 85,
+      "differential": true,
+      "max_skew_mm": null
+    },
+    {
+      "name": "XCVR_0_TX0_P/XCVR_0_TX0_N",
+      "impedance_ohm": 85,
+      "differential": true,
+      "max_skew_mm": null
+    }
+  ],
+  "components_to_add": [
+    {
+      "ref": "U2",
+      "op": "add",
+      "mpn": "MPM3833C",
+      "manufacturer": "Monolithic Power Systems",
+      "reason": "U1 core supply (VDD, ~14 balls) has no source. Highest-current rail; provisional until power_domains/DC characteristics give the real load.",
+      "priority": 1
+    },
+    {
+      "ref": "U3",
+      "op": "add",
+      "mpn": "MPM3610",
+      "manufacturer": "Monolithic Power Systems",
+      "reason": "VDD18, VDD25, VDDAUXx and per-bank VDDIx supplies are all unsourced. Per PPAT note, every used bank's VDDI/VDDAUX must be powered even if I/O is unused.",
+      "priority": 1
+    },
+    {
+      "ref": "U4",
+      "op": "add",
+      "mpn": "TPS7A2018",
+      "manufacturer": "Texas Instruments",
+      "reason": "VDDA and the transceiver/clock analog rails need a quiet supply for PLL/SerDes jitter; a filtered LDO off the core rail is standard practice.",
+      "priority": 2
+    },
+    {
+      "ref": "U5",
+      "op": "add",
+      "mpn": "GRM155R71C104KA88",
+      "manufacturer": "Murata",
+      "reason": "U1.electrical.required_externals and BGA practice: every VDD/VDDA/VDDI ball group needs local decoupling. None present. Binding requirement before power-up.",
+      "priority": 1
+    },
+    {
+      "ref": "U6",
+      "op": "add",
+      "mpn": "MT40A256M16GE-083E",
+      "manufacturer": "Micron",
+      "reason": "MSS_DDR interface (53 balls) is present and a Linux-class FOC controller needs external DRAM; none placed. Requires a length-matched, 80-90 ohm-class net class.",
+      "priority": 1
+    },
+    {
+      "ref": "U7",
+      "op": "add",
+      "mpn": "MT25QL128ABA1ESE",
+      "manufacturer": "Micron",
+      "reason": "PolarFire SoC boots from external SPI/QSPI flash; no boot device present. Connects to the dedicated SPI (SCK/SS/SDI/SDO) pins.",
+      "priority": 1
+    },
+    {
+      "ref": "U8",
+      "op": "add",
+      "mpn": "SiT9120AI",
+      "manufacturer": "SiTime",
+      "reason": "MSS_REFCLK and XCVR REFCLK diff pairs exist in the high_speed list but have no source. SerDes/Ethernet need a clean reference clock.",
+      "priority": 2
+    },
+    {
+      "ref": "U9",
+      "op": "add",
+      "mpn": "DRV8353RS",
+      "manufacturer": "Texas Instruments",
+      "reason": "Core of the FOC stage and entirely missing. Takes 6 PWM/INHx-INLx from FPGA fabric, drives the 6 MOSFETs, and provides the 3 phase-current sense channels FOC needs. Integrated CSAs save parts and improve match.",
+      "priority": 2
+    },
+    {
+      "ref": "U10",
+      "op": "add",
+      "mpn": "BSC0902NSI",
+      "manufacturer": "Infineon",
+      "reason": "Three-phase inverter bridge for the motor; none present. Example OptiMOS part \u2014 final choice depends on bus voltage/current, which set the whole power stage.",
+      "priority": 2
+    },
+    {
+      "ref": "U11",
+      "op": "add",
+      "mpn": "AM26LV32E",
+      "manufacturer": "Texas Instruments",
+      "reason": "Position feedback (quadrature / BiSS / EnDat) needs differential receivers into the FPGA fabric; encoder interface is missing. Choose per encoder protocol.",
+      "priority": 3
+    },
+    {
+      "ref": "U12",
+      "op": "add",
+      "mpn": "DP83822IF",
+      "manufacturer": "Texas Instruments",
+      "reason": "Stretch-goal EtherCAT: needs two PHYs feeding an EtherCAT Slave Controller implemented in fabric. Note ESC IP licensing (Beckhoff/Microchip) is a separate requirement.",
+      "priority": 4
+    },
+    {
+      "ref": "U13",
+      "op": "add",
+      "mpn": "FTSH-105-01-L-DV-K",
+      "manufacturer": "Samtec",
+      "reason": "TMS/TCK/TDI/TDO/TRSTB are unconnected; a programming/debug header is required to load the device.",
+      "priority": 3
+    }
+  ],
+  "notes": []
+}

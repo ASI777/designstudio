@@ -1,0 +1,86 @@
+{
+  "schema": "design-studio.manufacturing-release-status/1",
+  "status": "blocked-pending-contracted-profile",
+  "engineering_acceptance": "pass",
+  "project": {
+    "path": "agent-workflow-controller.dsproj",
+    "sha256": "0cbd3244611fa64fb3ec828f12398a82ce21781b56aaad1fd0b2e588c26da7c8"
+  },
+  "verification": {
+    "path": "verification-report.json",
+    "sha256": "50c21820112c5e5926038645b9f7891916c9184e7f66967d45c85c728b6b39af",
+    "status": "pass",
+    "drc_errors": 0,
+    "drc_warnings": 0,
+    "erc_errors": 0
+  },
+  "board_step": {
+    "path": "agent-workflow-controller-board.step",
+    "sha256": "eb582e2cdf854f39a4ac4b44f8bd575a9337a35a6c704d49249dedddf21fab39",
+    "schema": "AP242",
+    "solids": 451,
+    "components": 106,
+    "holes": 306,
+    "status": "engineering-preview"
+  },
+  "preview_cam": {
+    "path": "agent-workflow-controller-fab",
+    "status": "preview-only",
+    "must_not_be_sent_to_a_fabricator": true
+  },
+  "production_export_attempt": {
+    "status": "blocked-as-designed",
+    "unprofiled_project_reason": "fabrication profile is missing: schema, id, fabricator, assembler, source, approval, impedance, outputs",
+    "guarded_template_reason": "manufacturer stackup/DFM source document is missing",
+    "exporter_exit_code": 2,
+    "production_directory_created": false
+  },
+  "fabricator_handoff": {
+    "status": "ready-for-controlled-response",
+    "directory": "../fabricator-handoff",
+    "request": {
+      "path": "../fabricator-handoff/TWORKS_PROFILE_REQUEST.md",
+      "sha256": "031270a09a8dc21342f3d95cad436fb469f1d5f0d181da1bff647561551b6b74"
+    },
+    "response_template": {
+      "path": "../fabricator-handoff/fabrication-profile-response.template.json",
+      "sha256": "e57e2d18ef9cdd090e3931f48e24f4ef8ceabc7086b3cb6d27b9f8c4f150a19f",
+      "placeholder_count": 62,
+      "validation": "rejected-as-designed",
+      "validator_exit_code": 2,
+      "production_project_created": false
+    },
+    "instructions": {
+      "path": "../fabricator-handoff/README.md",
+      "sha256": "5f3a17f1c28265ac4f18bcdd82e2035e9e4450497659c4aab2e35ac89bbde5e7"
+    }
+  },
+  "candidate_facility_research": {
+    "name": "T-Works Foundation, Hyderabad",
+    "official_uri": "https://tworks.telangana.gov.in/pcb-lab",
+    "retrieved_utc": "2026-07-19T00:00:00Z",
+    "published_capability": "multilayer PCB prototyping, Bungard CCD ATC drilling and RLM-419P probe testing; proto-services page states up to 12 layers",
+    "profile_sufficiency": "insufficient",
+    "missing_controlled_data": [
+      "four-layer material stackup and tolerances",
+      "trace, space, drill, annular-ring and edge limits",
+      "surface finish, solder mask and legend requirements",
+      "controlled-impedance process and tolerance",
+      "CAM and placement conventions",
+      "named assembly provider and approval"
+    ]
+  },
+  "required_next_input": [
+    "controlled response to ../fabricator-handoff/TWORKS_PROFILE_REQUEST.md",
+    "contracted fabricator and assembler names",
+    "controlled four-layer stackup and DFM source document with SHA-256",
+    "approved fabrication-profile/1 record containing PCB rules, stackup, impedance and output conventions"
+  ],
+  "external_preproduction_gates": [
+    "measured battery runtime",
+    "RF and regulatory certification",
+    "protected-cell qualification",
+    "battery transport approval",
+    "physical prototype validation"
+  ]
+}

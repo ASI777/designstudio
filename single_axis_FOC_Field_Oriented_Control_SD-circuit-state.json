@@ -1,0 +1,3468 @@
+{
+  "schema": "design-studio.circuit-state/1",
+  "generated_utc": "2026-06-15 12:28:48Z",
+  "design_goal": "I want design single-axis FOC (Field-Oriented Control) servo drive \u2014 ideally with an EtherCAT port as a stretch goal",
+  "board": {
+    "width_mm": 100,
+    "height_mm": 80,
+    "copper_layers": 8,
+    "dielectric_er": 4.4,
+    "dielectric_h_mm": 0.2,
+    "loss_tangent": 0.02,
+    "copper_t_mm": 0.035,
+    "stackup": [
+      {
+        "index": 0,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 1,
+        "role": "plane",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 2,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 3,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 4,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 5,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 6,
+        "role": "plane",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      },
+      {
+        "index": 7,
+        "role": "signal",
+        "copper_t_mm": 0.035,
+        "diel_h_mm": 0.2,
+        "er": 4.4,
+        "df": 0.02,
+        "material": "",
+        "plane_net": null
+      }
+    ]
+  },
+  "net_classes": [
+    {
+      "name": "Default",
+      "clearance_mm": 0.2,
+      "trace_width_mm": 0.25,
+      "via_dia_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "max_skew_mm": 0,
+      "microvia": false
+    }
+  ],
+  "components": [
+    {
+      "ref": "U1",
+      "footprint": "FCSG325-11x11-P0.5",
+      "manufacturer": "Microchip (Microsemi)",
+      "mpn": "MPFS025TC-FCSG325",
+      "function": "",
+      "interfaces": [
+        "MSS DDR4/DDR3/LPDDR4/LPDDR3",
+        "MSS SGMII",
+        "PCIe/XCVR",
+        "GPIO",
+        "HSIO",
+        "MSSIO",
+        "JTAG",
+        "SPI"
+      ],
+      "x_mm": 49.53,
+      "y_mm": 35.56,
+      "rot_deg": 0,
+      "side": "top",
+      "height_mm": 1.05,
+      "pins": [
+        {
+          "pin": "A1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "A2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A5",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "A6",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "A7",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "A8",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "A9",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "A10",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A11",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "A12",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A13",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A14",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A15",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A16",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "A17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A19",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "A21",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "B1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B3",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "B4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B6",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B7",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "B8",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "B9",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "B10",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B11",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B12",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "B14",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B15",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B16",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B18",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "B19",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "B21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C6",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C11",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C16",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "C21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D2",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "D4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "D5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D6",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D7",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "D8",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "D9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "D10",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "D11",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D12",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D13",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D14",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "D15",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D16",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "D20",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "D21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E6",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E7",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "E8",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "E9",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "E10",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E11",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E12",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E13",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E14",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E15",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E16",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "E17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "E21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "F1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "F2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "F3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "F4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "F5",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "F17",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "F18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "F19",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "F20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "F21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "G1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "G2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "G4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "G5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "G7",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "G8",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "G9",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "G10",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "G11",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "G12",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "G13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "G14",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "G15",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "G17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "G18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "G20",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "G21",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "H1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "H2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "H4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "H5",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "H7",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "H15",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "H17",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "H18",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "H20",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "H21",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "J1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "J2",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J5",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J7",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J10",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J11",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J12",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J15",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J17",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "J18",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "J20",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "J21",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "K2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "K4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "K5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "K7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "K9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K10",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K11",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K12",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K15",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K17",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K18",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "K20",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "K21",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "L1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "L3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "L4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "L7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "L9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L10",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L11",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L12",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L15",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L17",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L18",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L19",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L20",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "L21",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "M2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "M4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "M5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "M7",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M10",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M11",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M12",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M15",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M17",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M18",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "M20",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "M21",
+          "net": null,
+          "electrical_type": "output"
+        },
+        {
+          "pin": "N1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "N2",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "N7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "N9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N10",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N11",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N12",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N15",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N17",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "N18",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "N20",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "N21",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "P1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "P2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "P4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "P5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "P7",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "P15",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "P17",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "P18",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "P20",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "P21",
+          "net": null,
+          "electrical_type": "input"
+        },
+        {
+          "pin": "R1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "R2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "R4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "R5",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "R7",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "R8",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "R9",
+          "net": null,
+          "electrical_type": "passive"
+        },
+        {
+          "pin": "R10",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "R11",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "R12",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "R13",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "R14",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "R15",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "R17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "R18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "R20",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "R21",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "T1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "T2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "T3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "T4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "T5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "T17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "T18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "T19",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "T20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "T21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U6",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U8",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U9",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U10",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U11",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "U12",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U13",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U14",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U15",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U16",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "U17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "U21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V2",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "V4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "V5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V6",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "V7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V8",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V9",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "V10",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V11",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V12",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V13",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V14",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "V15",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V16",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "V20",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "V21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "W1",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "W2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "W6",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "W11",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "W16",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "W20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "W21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "Y2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y4",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "Y5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y6",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y8",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "Y9",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y10",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y11",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y12",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y13",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "Y14",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y15",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y16",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y18",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "Y19",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "Y21",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA1",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "AA2",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA3",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA4",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA5",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA6",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "AA7",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA8",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA9",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA10",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA11",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "AA12",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA13",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA14",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA15",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA16",
+          "net": null,
+          "electrical_type": "power_in"
+        },
+        {
+          "pin": "AA17",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA18",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA19",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA20",
+          "net": null,
+          "electrical_type": "bidirectional"
+        },
+        {
+          "pin": "AA21",
+          "net": null,
+          "electrical_type": "power_in"
+        }
+      ],
+      "electrical": {
+        "required_externals": [
+          {
+            "purpose": "Unused GPIO/HSIO tie-off",
+            "value": "10k to VSS (gang allowed)",
+            "constraints": "per PPAT notes"
+          },
+          {
+            "purpose": "Unused XCVR_RX tie-off",
+            "value": "100k to VSS",
+            "constraints": "per PPAT notes; ~10uA each"
+          }
+        ],
+        "high_speed": {
+          "diff_pairs": [
+            {
+              "positive": "MSS_REFCLK_IN_P",
+              "negative": "MSS_REFCLK_IN_N",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0B_REFCLK_P",
+              "negative": "XCVR_0B_REFCLK_N",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0_RX2_P",
+              "negative": "XCVR_0_RX2_N",
+              "impedance_ohm": 85,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0_TX2_P",
+              "negative": "XCVR_0_TX2_N",
+              "impedance_ohm": 85,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0A_REFCLK_P",
+              "negative": "XCVR_0A_REFCLK_N",
+              "impedance_ohm": 100,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0_RX0_P",
+              "negative": "XCVR_0_RX0_N",
+              "impedance_ohm": 85,
+              "max_skew_mm": null
+            },
+            {
+              "positive": "XCVR_0_TX0_P",
+              "negative": "XCVR_0_TX0_N",
+              "impedance_ohm": 85,
+              "max_skew_mm": null
+            }
+          ],
+          "single_ended": []
+        },
+        "parameters": null,
+        "thermal": null,
+        "power_domains": null
+      }
+    }
+  ],
+  "nets": [],
+  "unconnected_pins": [
+    {
+      "ref": "U1",
+      "pin": "A1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "A2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A5",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U1",
+      "pin": "A6",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "A7",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U1",
+      "pin": "A8",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "A9",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "A10",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A11",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "A12",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A13",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A14",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A15",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A16",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "A17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A19",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "A21",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "B1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B3",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "B4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B6",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B7",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "B8",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "B9",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "B10",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B11",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B12",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "B14",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B15",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B16",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B18",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "B19",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "B21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "C1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "C2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "C6",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "C11",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "C16",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "C20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "C21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D2",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "D4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "D5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D6",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D7",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "D8",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "D9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "D10",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "D11",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D12",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D13",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D14",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "D15",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D16",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "D20",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "D21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E6",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E7",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "E8",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "E9",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "E10",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E11",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E12",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E13",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E14",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E15",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E16",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "E17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "E21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "F1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "F2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "F3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "F4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "F5",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "F17",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "F18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "F19",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "F20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "F21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "G1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "G2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "G4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "G5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "G7",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "G8",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "G9",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "G10",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "G11",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "G12",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "G13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "G14",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "G15",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "G17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "G18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "G20",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "G21",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "H1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "H2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "H4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "H5",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "H7",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "H15",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "H17",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "H18",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "H20",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U1",
+      "pin": "H21",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U1",
+      "pin": "J1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "J2",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J5",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J7",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J10",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J11",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J12",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J15",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J17",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "J18",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "J20",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "J21",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "K1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "K2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "K4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "K5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "K7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "K9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "K10",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "K11",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "K12",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "K13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "K15",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "K17",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "K18",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "K20",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "K21",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "L1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "L3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "L4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "L7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "L9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L10",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L11",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L12",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L15",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L17",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L18",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L19",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L20",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "L21",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "M2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "M4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "M5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "M7",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M10",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M11",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M12",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M15",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M17",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M18",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "M20",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U1",
+      "pin": "M21",
+      "electrical_type": "output"
+    },
+    {
+      "ref": "U1",
+      "pin": "N1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "N2",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "N4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "N5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "N7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "N9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "N10",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "N11",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "N12",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "N13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "N15",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "N17",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "N18",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "N20",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "N21",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "P1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "P2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "P4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "P5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "P7",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "P15",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "P17",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "P18",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "P20",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "P21",
+      "electrical_type": "input"
+    },
+    {
+      "ref": "U1",
+      "pin": "R1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "R2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "R4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "R5",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "R7",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "R8",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "R9",
+      "electrical_type": "passive"
+    },
+    {
+      "ref": "U1",
+      "pin": "R10",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "R11",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "R12",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "R13",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "R14",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "R15",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "R17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "R18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "R20",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "R21",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "T1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "T2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "T3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "T4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "T5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "T17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "T18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "T19",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "T20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "T21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U6",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U8",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U9",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U10",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U11",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "U12",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U13",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U14",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U15",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U16",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "U17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "U21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V2",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "V4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "V5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V6",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "V7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V8",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V9",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "V10",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V11",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V12",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V13",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V14",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "V15",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V16",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "V20",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "V21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "W1",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "W2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "W6",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "W11",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "W16",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "W20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "W21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y4",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y6",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y8",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y9",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y10",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y11",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y12",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y13",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y14",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y15",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y16",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y18",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y19",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "Y21",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA1",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA2",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA3",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA4",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA5",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA6",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA7",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA8",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA9",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA10",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA11",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA12",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA13",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA14",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA15",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA16",
+      "electrical_type": "power_in"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA17",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA18",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA19",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA20",
+      "electrical_type": "bidirectional"
+    },
+    {
+      "ref": "U1",
+      "pin": "AA21",
+      "electrical_type": "power_in"
+    }
+  ],
+  "drc": {
+    "violations": 0,
+    "by_rule": {},
+    "top_messages": []
+  },
+  "erc": [],
+  "physics": [
+    {
+      "class": "Default",
+      "z0_ohm_at_width": 61.5,
+      "ipc2221_current_a_dt10": 0.88
+    }
+  ],
+  "signal_integrity": [],
+  "power_integrity": [],
+  "ddr_lanes": [],
+  "assistant_instructions": "You are an electronics design advisor. Study this circuit state against the design_goal. Check (1) component/netlist completeness: power budgets (every power_in pin needs a source able to supply it), required external components from each part\u0027s electrical.required_externals, interface completeness, unconnected_pins; and (2) signal/power integrity sign-off when present: signal_integrity (eye height/width, mask_pass, has_via_stub \u2014 a closed eye or failed mask needs a fix: back-drill a via stub (backdrill) when has_via_stub, else add equalisation (set_eq)), power_integrity (worst_z_mohm vs target_mohm, resonances, decap_ranking, placement_hint \u2014 a rail over target needs decaps added/moved; a negative decap_ranking entry is a decap making an anti-resonance worse), ddr_lanes (worst_setup_ps/worst_hold_ps \u2014 a negative margin fails, see worst_bit \u2014 a negative hold margin wants length_tune, a negative setup margin wants set_eq), and the board.stackup (reference planes, layer count \u2014 if board.copper_layers is too few for the parts, recommend set_layers with the count). Respond with ONLY a JSON object: {\u0022schema\u0022:\u0022design-studio.advice/1\u0022,\u0022summary\u0022:\u0022...\u0022,\u0022actions\u0022:[{\u0022op\u0022:\u0022add|remove|replace|backdrill|move_decap|add_decap|set_eq|stackup|length_tune|reference|set_layers\u0022,\u0022mpn\u0022:\u0022...\u0022,\u0022manufacturer\u0022:\u0022...\u0022,\u0022for_ref\u0022:\u0022\u003Cexisting ref\u003E\u0022,\u0022net\u0022:\u0022\u003Cnet for SI/PI ops\u003E\u0022,\u0022reason\u0022:\u0022...\u0022,\u0022connections\u0022:[{\u0022pin\u0022:\u0022...\u0022,\u0022to_net\u0022:\u0022...\u0022}]}],\u0022risks\u0022:[\u0022...\u0022]} . For every \u0060add\u0060, also attach (or offer to generate) a design-studio.component/2 JSON extracted from that part\u0027s datasheet so it can be imported directly.",
+  "context_note": null
+}

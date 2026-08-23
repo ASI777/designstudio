@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/product-intent-v1.schema.json",
+  "title": "DesignStudio approved desktop AI control-console product intent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "product_id", "application_family", "name", "source_product", "requirements", "budget_units"],
+  "properties": {
+    "schema": {"const": "design-studio.product-intent/1"},
+    "product_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$", "maxLength": 96},
+    "application_family": {"const": "desktop_ai_control_console"},
+    "name": {"type": "string", "minLength": 1, "maxLength": 200},
+    "source_product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product", "source_root", "project_path", "project_digest", "acceptance_report_path", "acceptance_report_digest"],
+      "properties": {
+        "product": {"const": "acceptance/agent-workflow-controller"},
+        "source_root": {"type": "string", "pattern": "^/", "minLength": 2},
+        "project_path": {"const": "acceptance/agent-workflow-controller/checkpoints/pre-v72-authoritative/agent-workflow-controller.dsproj"},
+        "project_digest": {"$ref": "#/$defs/digest"},
+        "acceptance_report_path": {"const": "acceptance/agent-workflow-controller/checkpoints/pre-v72-authoritative/acceptance-report.json"},
+        "acceptance_report_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["usb_c_connector_mpn", "ble_mcu_module_mpn", "host_transport", "wireless_transport", "local_backend", "gpu_allowed", "architecture_approval_required"],
+      "properties": {
+        "usb_c_connector_mpn": {"const": "USB4085-GF-A"},
+        "ble_mcu_module_mpn": {"const": "ESP32-S3-WROOM-1-N8R8"},
+        "host_transport": {"const": "usb_c_usb_2"},
+        "wireless_transport": {"const": "ble_5"},
+        "local_backend": {"const": true},
+        "gpu_allowed": {"const": false},
+        "architecture_approval_required": {"const": true}
+      }
+    },
+    "budget_units": {"type": "integer", "minimum": 1, "maximum": 1000000}
+  },
+  "$defs": {"digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

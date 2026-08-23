@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:support-result:1",
+  "title": "Non-authoritative cavity and rib candidate graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "document", "input_sha256", "generator", "status", "cavities",
+    "ribs", "findings", "required_host_checks", "result_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.support-result/1"},
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_id", "revision", "sha256"],
+      "properties": {
+        "document_id": {"type": "string", "minLength": 1},
+        "revision": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "input_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "generator": {
+      "type": "object",
+      "required": ["name", "version", "seed", "authoritative_geometry"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "integer", "minimum": 1},
+        "seed": {"type": "integer", "minimum": 0},
+        "authoritative_geometry": {"const": false}
+      }
+    },
+    "status": {"enum": ["pass", "fail"]},
+    "cavities": {"type": "array", "maxItems": 16384, "items": {"type": "object"}},
+    "ribs": {"type": "array", "maxItems": 16384, "items": {"type": "object"}},
+    "findings": {"type": "array", "maxItems": 16384, "items": {"type": "object"}},
+    "required_host_checks": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "component_count": 5,
+  "findings": [],
+  "input_set_sha256": "08bfdaf75f0a4d658941dc3aae34b0481cf9afc6b909e10203db86345c06dfcf",
+  "pcb_source_sha256": "50c21820112c5e5926038645b9f7891916c9184e7f66967d45c85c728b6b39af",
+  "porsche_mask_count": 6,
+  "schema": "multi-gpu-campaign-input-validation/1",
+  "status": "pass",
+  "structural_case_count": 2,
+  "thermal_power_count": 4
+}

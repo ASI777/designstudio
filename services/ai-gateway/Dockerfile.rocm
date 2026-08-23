@@ -1,0 +1,14 @@
+# The gateway is deliberately GPU-free. vLLM and the numeric support optimizer
+# run as separate ROCm services on the same MI300X host.
+FROM python:3.12-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app.py proposal.py cad_assist_proposal.py shape_backend.py support_jobs.py token_accounting.py \
+     reference_form_jobs.py ./
+
+ENV DS_AI_MOCK=0
+EXPOSE 8000
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]

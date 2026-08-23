@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:design-studio:schema:mechanical-component-requirements:1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "requirements_id", "product_id", "source_digest", "requirements", "analysis_summary", "created_utc", "requirements_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.mechanical-component-requirements/1"}, "requirements_id": {"$ref": "#/$defs/id"}, "product_id": {"$ref": "#/$defs/id"}, "source_digest": {"$ref": "#/$defs/digest"},
+    "requirements": {"type": "array", "items": {"$ref": "#/$defs/requirement"}}, "analysis_summary": {"type": "object", "additionalProperties": {"enum": ["pass", "fail", "incomplete", "not_applicable"]}},
+    "created_utc": {"type": "string", "format": "date-time"}, "requirements_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"}, "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "requirement": {"type": "object", "additionalProperties": false, "required": ["requirement_id", "kind", "strategy", "inputs", "screening", "evidence_status", "selection_status", "interfaces"], "properties": {
+      "requirement_id": {"$ref": "#/$defs/id"}, "kind": {"enum": ["fastener", "insert", "carrier", "bracket", "bearing", "bushing", "shaft", "gear", "spring", "hinge", "latch", "motor", "actuator", "encoder", "heatsink", "thermal_pad", "fan", "duct", "gasket", "seal", "cable_gland", "strain_relief", "harness", "flex", "interaction_mechanism"]},
+      "strategy": {"enum": ["catalog", "custom_cad", "catalog_plus_custom_interface"]}, "inputs": {"type": "object"}, "screening": {"type": "object"},
+      "evidence_status": {"enum": ["verified", "incomplete", "missing"]}, "selection_status": {"enum": ["proposed", "approved", "blocked"]}, "interfaces": {"type": "array", "items": {"$ref": "#/$defs/id"}}
+    }}
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "urn:design-studio:schema:component-decision:1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "decision_id", "candidate_set_id", "candidate_set_digest", "selected_candidate_id", "selected_mpn", "approval", "created_utc", "decision_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.component-decision/1"}, "decision_id": {"$ref": "#/$defs/id"},
+    "candidate_set_id": {"$ref": "#/$defs/id"}, "candidate_set_digest": {"$ref": "#/$defs/digest"},
+    "selected_candidate_id": {"$ref": "#/$defs/id"}, "selected_mpn": {"type": "string", "minLength": 1},
+    "approval": {"type": "object", "additionalProperties": false, "required": ["approved_by", "approved_utc", "rationale", "waivers"], "properties": {"approved_by": {"type": "string", "minLength": 1}, "approved_utc": {"type": "string", "format": "date-time"}, "rationale": {"type": "string", "minLength": 1}, "waivers": {"type": "array", "items": {"type": "string"}}}},
+    "created_utc": {"type": "string", "format": "date-time"}, "decision_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {"id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"}, "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

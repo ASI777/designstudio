@@ -1,0 +1,889 @@
+{
+  "components": [
+    {
+      "binding": {
+        "digest": "df98c6b1f4f37f7cff6dc22426a941256dacd2c340a0040263828ca1503d4b7a",
+        "path": "acceptance/agent-workflow-controller/generated/components/ESP32-S3-WROOM-1-N8R8/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/ESP32-S3-WROOM-1-N8R8/component.json",
+        "sha256": "7932dcf0864de3759657c52cf14de51bb4461592c593ac425b1e963f7f9491df"
+      },
+      "datasheet": {
+        "bytes": 1280501,
+        "reference_path": "reference-only/controller-datasheets/esp32-s3-wroom-1.pdf",
+        "sha256": "27d71971da07c280c6068d08c74720d1a25b8f20cf8494dc1765bdd28d40d435",
+        "url": "https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
+      },
+      "key": "esp32",
+      "manufacturer": "Espressif Systems",
+      "mpn": "ESP32-S3-WROOM-1-N8R8",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/ESP32-S3-WROOM-1-N8R8/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "b043f9ddf25a4430aa81bd88c83ca0335ba571c54cd7955a1ad56b891e849aff"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/ESP32-S3-WROOM-1-N8R8/ESP32-S3-WROOM-1-N8R8.kicad_mod",
+        "sha256": "8af24f5a11093911f4b4d46cd2775858a04963ba27521d2b98b56e88942fb3a6"
+      }
+    },
+    {
+      "binding": {
+        "digest": "ff3c935075da34c3c8fe1a417ac2951adc77dd4208993956f916cc51a3d821b8",
+        "path": "acceptance/agent-workflow-controller/generated/components/MX2A-H1NB/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/MX2A-H1NB/component.json",
+        "sha256": "455cf83c2cd34e8d66ed51ea9d2360990a5216640f6c4a6f1c1ca79bd194b735"
+      },
+      "datasheet": {
+        "bytes": 2080923,
+        "reference_path": "reference-only/controller-datasheets/cherry-mx2a-black.pdf",
+        "sha256": "f633a4ee023386bb177c4d54274eab2d2a5870dccd2e1e760e24213884067aa2",
+        "url": "https://pim.cherry-world.net/datasheet/23002?locale=en_US"
+      },
+      "key": "mx",
+      "manufacturer": "CHERRY",
+      "mpn": "MX2A-H1NB",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/MX2A-H1NB/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "385976f63e0d2f6114459f4d7165aa6bf48e28baa4995044ebb120adfb36d227"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/MX2A-H1NB/MX2A-H1NB.kicad_mod",
+        "sha256": "35fbf722ca58a4a3d3bfa7a6efa989705e65de0e56bcc463856ae8c08c931121"
+      }
+    },
+    {
+      "binding": {
+        "digest": "04d3e53a781bc75c0d7d98ea6ec053d9ba3d6c4f0bea864409fd04aa59ded271",
+        "path": "acceptance/agent-workflow-controller/generated/components/PEC12R-4220F-S0024/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/PEC12R-4220F-S0024/component.json",
+        "sha256": "f1b3e6183a1df17a77383f586de47e3c81019ddadf185b227465ea3de8d6986e"
+      },
+      "datasheet": {
+        "bytes": 435012,
+        "reference_path": "reference-only/controller-datasheets/pec12r.pdf",
+        "sha256": "35f2905a6f60544b7d1bb02a62523abf6ac0116fee620806508304d484427b1f",
+        "url": "https://www.bourns.com/docs/product-datasheets/pec12r.pdf"
+      },
+      "key": "encoder",
+      "manufacturer": "Bourns",
+      "mpn": "PEC12R-4220F-S0024",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/PEC12R-4220F-S0024/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "1dd22ae8aad1f62b2414192946bd5d8139a828ee3d27b5c0e0eccdd1c826e5e1"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/PEC12R-4220F-S0024/PEC12R-4220F-S0024.kicad_mod",
+        "sha256": "1a54fe012636db1ebd62226ed9ec35fe8a43d6f71d84abb1aa50d824ba070611"
+      }
+    },
+    {
+      "binding": {
+        "digest": "5ac2e2c9d5056781306f93c4caa6f0a7b4a1e42919f05216e98f225554b8f6bf",
+        "path": "acceptance/agent-workflow-controller/generated/components/34-00015/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/34-00015/component.json",
+        "sha256": "c7f1459f351965a9eb07f0894305d591e1a7da79e9c7edcbb57daf8003d914b8"
+      },
+      "datasheet": {
+        "bytes": 1492362,
+        "reference_path": "reference-only/controller-datasheets/fsr-400-series.pdf",
+        "sha256": "149c7d9d1bcae0e28a215fc4d0097fefffb037402b98d6727ee1b0d761c0cccb",
+        "url": "https://www.interlinkelectronics.com/downloads/datasheets/fsr-400-series-datasheet.pdf"
+      },
+      "key": "fsr",
+      "manufacturer": "Interlink Electronics",
+      "mpn": "34-00015",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/34-00015/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "92f90ffdfa8d333ca4ca9d05874e0ef379de86c1871d75db8f5e083d740ea640"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/34-00015/34-00015.kicad_mod",
+        "sha256": "4c41f0826166caedad6749837899f7c744698295048f5dfdf1e2cad0aae7abbc"
+      }
+    },
+    {
+      "binding": {
+        "digest": "3cfed274b3bcaf65a096dbc795112743e3cd70d967cbe7cb6c19f8cafcec7f17",
+        "path": "acceptance/agent-workflow-controller/generated/components/2765/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/2765/component.json",
+        "sha256": "d23cf396d2e244422fe41c1daac7d135b57b6a8b263a3283a12c0cd63d2f284d"
+      },
+      "datasheet": {
+        "bytes": 25356,
+        "reference_path": "reference-only/controller-datasheets/adafruit-2765-diagram.jpg",
+        "sha256": "f96d5b812a246d74088c75bdf6c4ae01ffd5b9fc925db50c00768fefc8244ec7",
+        "url": "https://www.adafruit.com/product/2765"
+      },
+      "key": "joystick",
+      "manufacturer": "Adafruit",
+      "mpn": "2765",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/2765/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "2a7652bb7a2ad7412d650b0147d3d002df62235baf87bc71ab3a61fbc076a589"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/2765/2765.kicad_mod",
+        "sha256": "83842cf9338004551e3efdff62ce68a93de88f04e032f24d2d50d8e04a0b7385"
+      }
+    },
+    {
+      "binding": {
+        "digest": "048e36fd2c258caee037b24712f33fedf8123a940552b38bc4234f47d2f3c119",
+        "path": "acceptance/agent-workflow-controller/generated/components/USB4085-GF-A/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/USB4085-GF-A/component.json",
+        "sha256": "bb63c6c46f4fcdd31e2cba801db041abcb30f7df6d749874884a8f249d52fa91"
+      },
+      "datasheet": {
+        "bytes": 159657,
+        "reference_path": "reference-only/controller-datasheets/gct-usb4085-drawing.pdf",
+        "sha256": "1f4f79d22728c13a5d0dbe9a2a957df51429ab8d1c122e7e9f3f98773d27ec01",
+        "url": "https://gct.co/Files/Drawings/USB4085.pdf"
+      },
+      "key": "usb",
+      "manufacturer": "GCT",
+      "mpn": "USB4085-GF-A",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/USB4085-GF-A/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "7d95fbea12447fb3ffb062e788a5b9681f1179f0859d3da1a8e5f16e2f03c133"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/USB4085-GF-A/USB4085-GF-A.kicad_mod",
+        "sha256": "75607bb64db6fe778583b87800711339548417b10b036796212166417b33b509"
+      }
+    },
+    {
+      "binding": {
+        "digest": "974142ac371db55c11d9db17b41a2c901f78953dc2a72ea92e5cd2f89fb22c32",
+        "path": "acceptance/agent-workflow-controller/generated/components/TPD4E02B04DQAR/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPD4E02B04DQAR/component.json",
+        "sha256": "8ed82c86ab39755d13b972d9b4ad631ba846d870147ac5570e0960711f0fb6cd"
+      },
+      "datasheet": {
+        "bytes": 2981970,
+        "reference_path": "reference-only/controller-datasheets/tpd4e02b04.pdf",
+        "sha256": "73d849fe5d7c9a57bebdb08f4a70f09f818edb5f14b9f56241bf87aea6b56ef0",
+        "url": "https://www.ti.com/lit/ds/symlink/tpd4e02b04.pdf"
+      },
+      "key": "esd",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPD4E02B04DQAR",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPD4E02B04DQAR/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "f2f2748184a2c50a13047714ceb34a3e0b855e401aa8870a6aceef11b4dd1be7"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPD4E02B04DQAR/TPD4E02B04DQAR.kicad_mod",
+        "sha256": "047102bafb11663e646a4cb3de0232da05066f342c11fb04275382b53c798257"
+      }
+    },
+    {
+      "binding": {
+        "digest": "ea247f92710566cdb5c5d3dcc4708c8be527f054af436d3b0b03c9b343dfe017",
+        "path": "acceptance/agent-workflow-controller/generated/components/BQ24074RGTR/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/BQ24074RGTR/component.json",
+        "sha256": "efc77e350d2595c63c1a5b0bb589f910e9c317cd0b02aaf927cd863659ffe53f"
+      },
+      "datasheet": {
+        "bytes": 3730524,
+        "reference_path": "reference-only/controller-datasheets/bq24074.pdf",
+        "sha256": "19bd875e3fada54e74efaca074335c13eb87d0537f895c3234bf77387cbf1dd8",
+        "url": "https://www.ti.com/lit/ds/symlink/bq24074.pdf"
+      },
+      "key": "charger",
+      "manufacturer": "Texas Instruments",
+      "mpn": "BQ24074RGTR",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/BQ24074RGTR/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "081926b5c7e66abffe73dfad7bd6ad9a2b48d21ea35ded01fc329e24a5aa983a"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/BQ24074RGTR/BQ24074RGTR.kicad_mod",
+        "sha256": "19a8e06a9ce6cc12d2577e77b41632d41d98721c036e6159431d5a7a89ffb102"
+      }
+    },
+    {
+      "binding": {
+        "digest": "e5bb5b31a71351f737f0efa58df4fb29193791bab286177d276ae330d5cbdac6",
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS63031DSKR/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS63031DSKR/component.json",
+        "sha256": "3582d5367f30b6e14f61488dfe084773f6540652883001861b16bc69317febd6"
+      },
+      "datasheet": {
+        "bytes": 2101883,
+        "reference_path": "reference-only/controller-datasheets/tps63030.pdf",
+        "sha256": "f2d001bb75341eeb2abb00747336426f4e43b6561941167963b849293f0b1cba",
+        "url": "https://www.ti.com/lit/ds/symlink/tps63030.pdf"
+      },
+      "key": "buck",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS63031DSKR",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS63031DSKR/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "0c55e378666522ffcb34193cfeab7af1b79a58a620da9166576d1fda2a2a8eb4"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS63031DSKR/TPS63031DSKR.kicad_mod",
+        "sha256": "e61bd3467c9ae9fc19c16dab2ea3794427a8585ed29d897890ec416550e7100d"
+      }
+    },
+    {
+      "binding": {
+        "digest": "da6cebb3c619688ce64620de084a16fb3b1c403ec104a68b1f998aa8a013ba59",
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS22918DBVR/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS22918DBVR/component.json",
+        "sha256": "9ed4fdfa545b15071664a0ad5222d5a57b8c7eb2f40d7ba7c7af6373e02e50af"
+      },
+      "datasheet": {
+        "bytes": 1072929,
+        "reference_path": "reference-only/controller-datasheets/tps22918.pdf",
+        "sha256": "164df9362b7726e4bf5b8efd2dcafc6611704cc9554426baf1fe4b622c98e2da",
+        "url": "https://www.ti.com/lit/ds/symlink/tps22918.pdf"
+      },
+      "key": "load",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS22918DBVR",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS22918DBVR/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "de20a8ba8fc5f8f4683cdcc57a637d000b125f7acb112c605ae5f27546b41931"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS22918DBVR/TPS22918DBVR.kicad_mod",
+        "sha256": "92ae4085427d0b6f58e6a1435ab628d40abb2b12a645f651d96a8e9caae1d11a"
+      }
+    },
+    {
+      "binding": {
+        "digest": "c7d13190bf10689c133ee95e036d52190c5647a4b9a272803f6389dbb01bec9f",
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS61023DRLR/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS61023DRLR/component.json",
+        "sha256": "41cf6e14a9b14b525d1bf0c83cb82c073c86a144758ee168275b86176457e6d7"
+      },
+      "datasheet": {
+        "bytes": 2392725,
+        "reference_path": "reference-only/controller-datasheets/tps61023.pdf",
+        "sha256": "3fb6b836fb72f8e6daed65d400f761ce93a8516e9d05cccb1613f25bdd11aab5",
+        "url": "https://www.ti.com/lit/ds/symlink/tps61023.pdf"
+      },
+      "key": "led_boost",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS61023DRLR",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS61023DRLR/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "31f6ce36635260c8502979767d358c544314344ebe599d51896fd730e94c07f2"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/TPS61023DRLR/TPS61023DRLR.kicad_mod",
+        "sha256": "1fe5ec07b8ff50256bafea071592ca0c0b145328949b44d4008805e5a445c8c2"
+      }
+    },
+    {
+      "binding": {
+        "digest": "98f36252f88989e82cd8e6208f1ccee2fdd9ad1511388d72096ecb79e2ebe271",
+        "path": "acceptance/agent-workflow-controller/generated/components/SN74AHCT1G125DBVR/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/SN74AHCT1G125DBVR/component.json",
+        "sha256": "ef0d357bd2d20ce8cfc6369cf774654f4c70b8941db814d5159ad519aedc821f"
+      },
+      "datasheet": {
+        "bytes": 1253690,
+        "reference_path": "reference-only/controller-datasheets/sn74ahct1g125.pdf",
+        "sha256": "dbaf49b3af33690fc7f7356afe387e7815a56b8bb73fe1e88bf794f4fb8e0d2f",
+        "url": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf"
+      },
+      "key": "led_buffer",
+      "manufacturer": "Texas Instruments",
+      "mpn": "SN74AHCT1G125DBVR",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/SN74AHCT1G125DBVR/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "8f2f8b4f977c50e3ce561eb9fd57c2e96d56e743c0b108fdc8071a5e64fdbbac"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/SN74AHCT1G125DBVR/SN74AHCT1G125DBVR.kicad_mod",
+        "sha256": "738f705a4cee0cc23db20cc8f24d1a2bac82c9c137170f1397228a1eccf34620"
+      }
+    },
+    {
+      "binding": {
+        "digest": "1bd2d3beebabb02e180cd3661efc7bbef982bd9b2c2c8415782c910de9826db2",
+        "path": "acceptance/agent-workflow-controller/generated/components/1N4148W-7-F/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/1N4148W-7-F/component.json",
+        "sha256": "922d128ee3a9d6e7347eb9008c9999655bf38cd54b84ba016485b2d7042406ce"
+      },
+      "datasheet": {
+        "bytes": 319838,
+        "reference_path": "reference-only/controller-datasheets/1n4148w.pdf",
+        "sha256": "39c16a6888bdab22418e93e17182174aad763a66957a4632e70c944194e3fc08",
+        "url": "https://www.diodes.com/datasheet/download/1N4148W.pdf"
+      },
+      "key": "diode",
+      "manufacturer": "Diodes Incorporated",
+      "mpn": "1N4148W-7-F",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/1N4148W-7-F/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "f7f3f095ccf8fdab08e76d6500e3f1f0ebe42664b3127b0860199cac05e8a6aa"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/1N4148W-7-F/1N4148W-7-F.kicad_mod",
+        "sha256": "7bce1fc7a922fd8db073f6521d3b16e4cc21a2bab1fd0dd19d0d29f53bae4fd7"
+      }
+    },
+    {
+      "binding": {
+        "digest": "5c2ba1b47f57677f5978f69c7ae02445f0abd20a22d85733ce726d356b698cb1",
+        "path": "acceptance/agent-workflow-controller/generated/components/IN-PI20TBT5R5G5B/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/IN-PI20TBT5R5G5B/component.json",
+        "sha256": "c27cc0beb0b960e098d05eebeccf7b888e516adc3ddf6582efddf81705d55441"
+      },
+      "datasheet": {
+        "bytes": 847995,
+        "reference_path": "reference-only/controller-datasheets/inolux-in-pi20.pdf",
+        "sha256": "d330b89276717098178ec2269318f5f19c1644286d6294c1d81d4ff37d65c9d6",
+        "url": "https://www.inolux-corp.com/datasheet/SMDLED/Addressable%20LED/IN-PI20TBT5R5G5B_v1.0.pdf"
+      },
+      "key": "led",
+      "manufacturer": "Inolux",
+      "mpn": "IN-PI20TBT5R5G5B",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/IN-PI20TBT5R5G5B/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "1f6a77eb5314a22da0dcca35b8d3d8502be52722dc39c8bb30258b73188d99ec"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/IN-PI20TBT5R5G5B/IN-PI20TBT5R5G5B.kicad_mod",
+        "sha256": "0b679c9a26598c5d190f80f5cbb64720b721b421b5519d73aafff0ea75bdb59d"
+      }
+    },
+    {
+      "binding": {
+        "digest": "fb20a29560d30c9f3384fbd944651800c9fa3e1e46be5f5b45d3b3ec26f4f7a4",
+        "path": "acceptance/agent-workflow-controller/generated/components/B2B-PH-SM4-TB_LF_SN/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/B2B-PH-SM4-TB_LF_SN/component.json",
+        "sha256": "9f9c2970bb70ce020ae491db5401ac69c4e4a68f44e77016bc96c3504b96710a"
+      },
+      "datasheet": {
+        "bytes": 103369,
+        "reference_path": "reference-only/controller-datasheets/jst-ph.pdf",
+        "sha256": "447624f4f2f7d37c58c1eaa7ee314ad757fe7aff48f6186491ef6f69fbc00b96",
+        "url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+      },
+      "key": "battery",
+      "manufacturer": "JST",
+      "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/B2B-PH-SM4-TB_LF_SN/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "177ed9ea67e5ad82c5a07d2606c94943e63efc851de14137755ed934b02e6658"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/B2B-PH-SM4-TB_LF_SN/B2B-PH-SM4-TB_LF_SN.kicad_mod",
+        "sha256": "628fd5f7dd4905a63df18aefc1fe0a7a70f4a1f6278c0bec25904f8d034359a4"
+      }
+    },
+    {
+      "binding": {
+        "digest": "a01327ad8b3d197e9419f63b400e81806cc5bfbccce0bb92896f158e03554e48",
+        "path": "acceptance/agent-workflow-controller/generated/components/B3B-PH-SM4-TB_LF_SN/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/B3B-PH-SM4-TB_LF_SN/component.json",
+        "sha256": "74459bc07a456a9c30dd570fd118e799a2b0cc137e1c92db890d6a3c30461803"
+      },
+      "datasheet": {
+        "bytes": 103369,
+        "reference_path": "reference-only/controller-datasheets/jst-ph.pdf",
+        "sha256": "447624f4f2f7d37c58c1eaa7ee314ad757fe7aff48f6186491ef6f69fbc00b96",
+        "url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+      },
+      "key": "battery_ntc",
+      "manufacturer": "JST",
+      "mpn": "B3B-PH-SM4-TB(LF)(SN)",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/B3B-PH-SM4-TB_LF_SN/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "e41844c3c6f6865259fa862eb4231cd886d4d482649fedc80921b78cca389c64"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/B3B-PH-SM4-TB_LF_SN/B3B-PH-SM4-TB_LF_SN.kicad_mod",
+        "sha256": "2713ab035aca9a163c86e5996bcf9d9979296103d986bcc76d2627ab458390de"
+      }
+    },
+    {
+      "binding": {
+        "digest": "4eaad4ac97b0811ffd4eb5618437ddd4f7e72b23cdb5f065f5f10ee072d39c8a",
+        "path": "acceptance/agent-workflow-controller/generated/components/B2B-PH-SM4-TB_LF_SN/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/B2B-PH-SM4-TB_LF_SN/component.json",
+        "sha256": "9f9c2970bb70ce020ae491db5401ac69c4e4a68f44e77016bc96c3504b96710a"
+      },
+      "datasheet": {
+        "bytes": 103369,
+        "reference_path": "reference-only/controller-datasheets/jst-ph.pdf",
+        "sha256": "447624f4f2f7d37c58c1eaa7ee314ad757fe7aff48f6186491ef6f69fbc00b96",
+        "url": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+      },
+      "key": "fsr_conn",
+      "manufacturer": "JST",
+      "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/B2B-PH-SM4-TB_LF_SN/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "177ed9ea67e5ad82c5a07d2606c94943e63efc851de14137755ed934b02e6658"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/B2B-PH-SM4-TB_LF_SN/B2B-PH-SM4-TB_LF_SN.kicad_mod",
+        "sha256": "628fd5f7dd4905a63df18aefc1fe0a7a70f4a1f6278c0bec25904f8d034359a4"
+      }
+    },
+    {
+      "binding": {
+        "digest": "7a372289512b2d39612f024b0d831ed77cf5d975b995b4c878d147ecbe598dc6",
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-0710KL/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-0710KL/component.json",
+        "sha256": "4318684503d2ea021e9e082a0c0b14afcf36d9a176462df454cf7d5afeb8c58c"
+      },
+      "datasheet": {
+        "bytes": 542969,
+        "reference_path": "testdata/datasheets/source/PYU-RC_GROUP_51_ROHS_L.pdf",
+        "sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+        "url": "https://www.yageo.com/en/Product/Index/rchip/thick_film_general_purpose"
+      },
+      "key": "resistor",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-0710KL",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-0710KL/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-0710KL/RC0603FR-0710KL.kicad_mod",
+        "sha256": "d1da197b721699c4b4d8149999a2760c6ca16f3b61019e76a9701e1145b10906"
+      }
+    },
+    {
+      "binding": {
+        "digest": "7fe4fd0e4db7c15356f62d73903e6b66495877751000e6e7a69984490e4d834a",
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM32ER61E226ME15L/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM32ER61E226ME15L/component.json",
+        "sha256": "f429a8762fcd2c1a1e61ef775b7d1963d9170b29681eab2a44185e406465bdaa"
+      },
+      "datasheet": {
+        "bytes": 1920403,
+        "reference_path": "testdata/datasheets/source/GRM32ER61E226ME15-01A.pdf",
+        "sha256": "83e3a643b7e4e67474dfca168e5cd91126c27f6df0ed902913beb81c9b858fb5",
+        "url": "https://www.murata.com/en-us/products/productdetail?partno=GRM32ER61E226ME15L"
+      },
+      "key": "capacitor",
+      "manufacturer": "Murata",
+      "mpn": "GRM32ER61E226ME15L",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM32ER61E226ME15L/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "3a6c1d623d523e26a5718c9614a10e0e3290fd266ce7d3b6e6729e7dfcf6d45e"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM32ER61E226ME15L/GRM32ER61E226ME15L.kicad_mod",
+        "sha256": "9353d472fa00a61e0c7094e82db31563c28a8597f306df8828544365cef786d6"
+      }
+    },
+    {
+      "binding": {
+        "digest": "ec3843f5245b008101f86825984b482d3f52fe8a79d81418cf68c55efc838362",
+        "path": "acceptance/agent-workflow-controller/generated/components/XFL4020-152MEC/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/XFL4020-152MEC/component.json",
+        "sha256": "98984183fa5cb57f8393894a13550d6146ca2897ccce18d26a2ed75f811b408e"
+      },
+      "datasheet": {
+        "bytes": 2101883,
+        "reference_path": "reference-only/controller-datasheets/tps63030.pdf",
+        "sha256": "f2d001bb75341eeb2abb00747336426f4e43b6561941167963b849293f0b1cba",
+        "url": "https://www.coilcraft.com/en-us/products/power/shielded-inductors/xfl/xfl4020/"
+      },
+      "key": "inductor",
+      "manufacturer": "Coilcraft",
+      "mpn": "XFL4020-152MEC",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/XFL4020-152MEC/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "a92e47ef9aebbc42954158ed6cd14d4f5f785a6f598c13672ace851966e9cf7f"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/XFL4020-152MEC/XFL4020-152MEC.kicad_mod",
+        "sha256": "58682073a30355a810f44e029724ced968558cdd94f71d78932c7042090fb849"
+      }
+    },
+    {
+      "binding": {
+        "digest": "2cc018cd08a800197a543d324277782e3092e026df5ae276945b769a42e159f6",
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-075K1L/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-075K1L/component.json",
+        "sha256": "a35139ee8fa22168e083e5a7685662decc08ea9aee4e1940da9ff9bdba94402c"
+      },
+      "datasheet": {
+        "bytes": 542969,
+        "reference_path": "testdata/datasheets/source/PYU-RC_GROUP_51_ROHS_L.pdf",
+        "sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+        "url": "https://www.yageo.com/en/Product/Index/rchip/thick_film_general_purpose"
+      },
+      "key": "res_5k1",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-075K1L",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-075K1L/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-075K1L/RC0603FR-075K1L.kicad_mod",
+        "sha256": "ce385a24e053a69cc2715560bb024070703f13781ca3efdbe9f99243220418a0"
+      }
+    },
+    {
+      "binding": {
+        "digest": "10686cacee08fd02f01a4f5ff21fcb1e5e3c16c0b19cbfcd8f402043f1b1fe2a",
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-071K1L/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-071K1L/component.json",
+        "sha256": "aff9263a8a88f16fc980d1dd9e4266fdc4217898fbc790beabe93961d02fc1ef"
+      },
+      "datasheet": {
+        "bytes": 542969,
+        "reference_path": "testdata/datasheets/source/PYU-RC_GROUP_51_ROHS_L.pdf",
+        "sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+        "url": "https://www.yageo.com/en/Product/Index/rchip/thick_film_general_purpose"
+      },
+      "key": "res_1k1",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-071K1L",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-071K1L/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-071K1L/RC0603FR-071K1L.kicad_mod",
+        "sha256": "7e38c5b31b8eb635377208cf127a48d12a7962d0ff731bee3aab3e6dd211cde5"
+      }
+    },
+    {
+      "binding": {
+        "digest": "751d0aac5fe17c3f3a885de6513216558d70a4394e0c12633b7e946d15bd0a48",
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07590RL/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07590RL/component.json",
+        "sha256": "cf1ef0503dabc28da2513574b4075b53c4a345b1390880d7b21cbcff406bfd05"
+      },
+      "datasheet": {
+        "bytes": 542969,
+        "reference_path": "testdata/datasheets/source/PYU-RC_GROUP_51_ROHS_L.pdf",
+        "sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+        "url": "https://www.yageo.com/en/Product/Index/rchip/thick_film_general_purpose"
+      },
+      "key": "res_590",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-07590RL",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07590RL/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07590RL/RC0603FR-07590RL.kicad_mod",
+        "sha256": "aff82d376a1e9474cbe277f285ab57cc6957fb591aa80e573af29a104772a0e2"
+      }
+    },
+    {
+      "binding": {
+        "digest": "37c9b280490114cc2f79031b963dff8f3901dd732d2f744c181e1e468fcb10a7",
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07500RL/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07500RL/component.json",
+        "sha256": "cd39de96347bd55f7316adc880fe9fac82954c2a33c1dbf4500209cc91f63025"
+      },
+      "datasheet": {
+        "bytes": 542969,
+        "reference_path": "testdata/datasheets/source/PYU-RC_GROUP_51_ROHS_L.pdf",
+        "sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+        "url": "https://www.yageo.com/en/Product/Index/rchip/thick_film_general_purpose"
+      },
+      "key": "res_500",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-07500RL",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07500RL/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07500RL/RC0603FR-07500RL.kicad_mod",
+        "sha256": "f21fc2ba49430cecb97dbd0a9098c7acd47cd92bf2d3c387215dfcd75bd2ed04"
+      }
+    },
+    {
+      "binding": {
+        "digest": "b841687db13d86c3a0a6ba1cdf7db42cd4e2313f5d3dfaa581dde88de009659d",
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07100KL/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07100KL/component.json",
+        "sha256": "9e9992ba8616d80103c3b5482811c351c80d0f374675c554bcee938e873331e8"
+      },
+      "datasheet": {
+        "bytes": 542969,
+        "reference_path": "testdata/datasheets/source/PYU-RC_GROUP_51_ROHS_L.pdf",
+        "sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+        "url": "https://www.yageo.com/en/Product/Index/rchip/thick_film_general_purpose"
+      },
+      "key": "res_100k",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-07100KL",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07100KL/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07100KL/RC0603FR-07100KL.kicad_mod",
+        "sha256": "fc13f92135989c16a704186dd17d1e741d41f9cdc0b83006621ebed8401aed94"
+      }
+    },
+    {
+      "binding": {
+        "digest": "e1af4dc2f6cbc284918dae0960a9beb4195e576879e4b0fb1e993a64d985a09a",
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07732KL/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07732KL/component.json",
+        "sha256": "25748125719379049b2852c8db105a8444e9a3b9efb3677e4395430f7ca8a263"
+      },
+      "datasheet": {
+        "bytes": 542969,
+        "reference_path": "testdata/datasheets/source/PYU-RC_GROUP_51_ROHS_L.pdf",
+        "sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+        "url": "https://www.yageo.com/en/Product/Index/rchip/thick_film_general_purpose"
+      },
+      "key": "res_732k",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-07732KL",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07732KL/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/RC0603FR-07732KL/RC0603FR-07732KL.kicad_mod",
+        "sha256": "21d9a715dc1cba0f8db562db4691f9fd4f44e348a790b4fe537f2aed1dbfb806"
+      }
+    },
+    {
+      "binding": {
+        "digest": "828238771c5a83a6ab72b8946e47d97197289d4df655b23d3688b00132cf4f76",
+        "path": "acceptance/agent-workflow-controller/generated/components/XFL4020-102MEC/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/XFL4020-102MEC/component.json",
+        "sha256": "11de7ce77fac20d02a9e4c8a41d0fff66db07ee56b9349f4155ddb8b9e07fedb"
+      },
+      "datasheet": {
+        "bytes": 232753,
+        "reference_path": "reference-only/controller-datasheets/xfl4020.pdf",
+        "sha256": "6dca915ac1daa47210f7708a7540221ffef4f34a88a8621c94bd50cdf48647e6",
+        "url": "https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf"
+      },
+      "key": "boost_inductor",
+      "manufacturer": "Coilcraft",
+      "mpn": "XFL4020-102MEC",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/XFL4020-102MEC/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "a92e47ef9aebbc42954158ed6cd14d4f5f785a6f598c13672ace851966e9cf7f"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/XFL4020-102MEC/XFL4020-102MEC.kicad_mod",
+        "sha256": "9e566ecf5533ab2a470897cadca0ab7ca2e33a9cc80a5f6c7058f0bb679b9bc0"
+      }
+    },
+    {
+      "binding": {
+        "digest": "da385b0aef14d0122c3dd671ef0124656cfa5e8cae34e9dce7d7b444b5407e59",
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM21BR61A106KE19L/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM21BR61A106KE19L/component.json",
+        "sha256": "2b2c6c7678e591d6e48139732e92a527f7211f980d6d0ac2be4e8e6d1d35134e"
+      },
+      "datasheet": {
+        "bytes": 106484,
+        "reference_path": "reference-only/controller-datasheets/grm21br61a106ke19.pdf",
+        "sha256": "4c00165d1c800a0c06e8baedb44094f8fda772343009ca65512cf2d7aeac5ab4",
+        "url": "https://www.murata.com/en-us/products/productdetail?partno=GRM21BR61A106KE19L"
+      },
+      "key": "cap_10u",
+      "manufacturer": "Murata",
+      "mpn": "GRM21BR61A106KE19L",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM21BR61A106KE19L/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "2d386486ebc4316733450247605a7b75e99743418756111176b0fbfb22b1cb96"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM21BR61A106KE19L/GRM21BR61A106KE19L.kicad_mod",
+        "sha256": "b7d789e9bfebbb07f447f479e2d91b04f63c67d309720474e8861f51d0c26b80"
+      }
+    },
+    {
+      "binding": {
+        "digest": "3dec1b246c78e6fe9cbf5803e8ccf22b44b9e36116fae2d522e994981d226393",
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM188R71H104KA93D/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM188R71H104KA93D/component.json",
+        "sha256": "ec7347e707a9a7e6e90ad2606b3e4e483a9d4da813825cc61168ba212ebd3676"
+      },
+      "datasheet": {
+        "bytes": 3269424,
+        "reference_path": "reference-only/controller-datasheets/grm188r71h104ka93.pdf",
+        "sha256": "14fafc39fe117667a3de799959de4d506b12afa801c8df504c9dd835e57d5642",
+        "url": "https://www.murata.com/en-us/products/productdetail?partno=GRM188R71H104KA93D"
+      },
+      "key": "cap_100n",
+      "manufacturer": "Murata",
+      "mpn": "GRM188R71H104KA93D",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM188R71H104KA93D/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "0e4e49b10906069c02d842a1dfde543f98c4f8a540311381dbf6734274d8c5e7"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM188R71H104KA93D/GRM188R71H104KA93D.kicad_mod",
+        "sha256": "6b1a71bd5b9120e598c9a5655082ca2d1d1380c4da1220d8e1c36bb92c91a4dc"
+      }
+    },
+    {
+      "binding": {
+        "digest": "337b14325c6bf78c348f8d4b9442dc328baa195281b06903208485f9049e8977",
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM1885C1H102JA01D/binding.json"
+      },
+      "component": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM1885C1H102JA01D/component.json",
+        "sha256": "b08575e56363efa904d28eea252cf8fd669b43e80edf1427490f3b015e2845c0"
+      },
+      "datasheet": {
+        "bytes": 520248,
+        "reference_path": "reference-only/controller-datasheets/grm1885c1h102ja01.pdf",
+        "sha256": "1541e9e4425bdc593058cf7a64238ab73e8c2553c5d6c9b5afc4aae491d0c2f1",
+        "url": "https://www.murata.com/en-us/products/productdetail?partno=GRM1885C1H102JA01D"
+      },
+      "key": "cap_1n",
+      "manufacturer": "Murata",
+      "mpn": "GRM1885C1H102JA01D",
+      "step": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM1885C1H102JA01D/package.step",
+        "roundtrip_valid": true,
+        "schema": "AP242",
+        "sha256": "0e4e49b10906069c02d842a1dfde543f98c4f8a540311381dbf6734274d8c5e7"
+      },
+      "symbol_and_footprint": {
+        "path": "acceptance/agent-workflow-controller/generated/components/GRM1885C1H102JA01D/GRM1885C1H102JA01D.kicad_mod",
+        "sha256": "1542b34533cdf3c6b635f0516fddc290db8a45b5d215ee742546d1e06d34411a"
+      }
+    }
+  ],
+  "generated_utc": "2026-07-16T00:00:00Z",
+  "generator": "tools/build_agent_workflow_controller.py",
+  "project": {
+    "v2_path": "acceptance/agent-workflow-controller/generated/agent-workflow-controller.dsproj",
+    "v2_sha256": "5858b39152e48a32549477648111e5b85343ff355d4d99dd85caa56a07eaa82e",
+    "v3_path": "acceptance/agent-workflow-controller/generated/agent-workflow-controller-v3.dsproj",
+    "v3_sha256": "ea8b5a53e95d6906e9e27f119a28e4fb6ba75f2b74ec723b76da18e21d417ee7"
+  },
+  "release_gate": {
+    "asset_bindings": "pass",
+    "battery_transport": "pre-production-required",
+    "physical_runtime": "measurement-required",
+    "rf_certification": "pre-production-required"
+  },
+  "schema": "design-studio.agent-controller-evidence/1"
+}

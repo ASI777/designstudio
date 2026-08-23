@@ -1,0 +1,633 @@
+{
+  "component_count": 29,
+  "components": [
+    {
+      "assumption_count": 0,
+      "board_occurrences": 13,
+      "cad_program_sha256": "d24bcad7debc568cc10bb8a296efa6550d5df41d4923229de22681c8bc9d1abb",
+      "category": "switching_diode",
+      "datasheet_sha256": "39c16a6888bdab22418e93e17182174aad763a66957a4632e70c944194e3fc08",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Diodes Incorporated",
+      "mpn": "1N4148W-7-F",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45726,
+      "step_sha256": "f7f3f095ccf8fdab08e76d6500e3f1f0ebe42664b3127b0860199cac05e8a6aa",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "8d5ddf711b61029e50cb40dd3a7c3738a8dd1e64f9151954c2f6335ce1837395",
+      "category": "joystick",
+      "datasheet_sha256": "f96d5b812a246d74088c75bdf6c4ae01ffd5b9fc925db50c00768fefc8244ec7",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Adafruit",
+      "mpn": "2765",
+      "primitive_count": 8,
+      "primitive_roles": {
+        "actuator": 1,
+        "body": 1,
+        "terminal": 6
+      },
+      "primitive_shapes": {
+        "box": 1,
+        "cylinder": 7
+      },
+      "step_bytes": 52293,
+      "step_sha256": "2a7652bb7a2ad7412d650b0147d3d002df62235baf87bc71ab3a61fbc076a589",
+      "visually_distinct": true
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 0,
+      "cad_program_sha256": "a593839dbf80d31a822a904e33d62afc5808a4de8f9928b375c64c9e6abd7fc3",
+      "category": "force_sensor",
+      "datasheet_sha256": "149c7d9d1bcae0e28a215fc4d0097fefffb037402b98d6727ee1b0d761c0cccb",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Interlink Electronics",
+      "mpn": "34-00015",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 1,
+        "cylinder": 2
+      },
+      "step_bytes": 26118,
+      "step_sha256": "92f90ffdfa8d333ca4ca9d05874e0ef379de86c1871d75db8f5e083d740ea640",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "053e5937f44ef6fb697074cb1cfde20da481b2e6e8eb2c0aa9de8503c90b4f82",
+      "category": "sensor_connector",
+      "datasheet_sha256": "447624f4f2f7d37c58c1eaa7ee314ad757fe7aff48f6186491ef6f69fbc00b96",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "JST",
+      "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45685,
+      "step_sha256": "177ed9ea67e5ad82c5a07d2606c94943e63efc851de14137755ed934b02e6658",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "045e31ab9199a859e6240eaf7a57a845b25cc06f36763a5ce05b8a5ddbb8ba06",
+      "category": "battery_connector",
+      "datasheet_sha256": "447624f4f2f7d37c58c1eaa7ee314ad757fe7aff48f6186491ef6f69fbc00b96",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "JST",
+      "mpn": "B3B-PH-SM4-TB(LF)(SN)",
+      "primitive_count": 4,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 3
+      },
+      "primitive_shapes": {
+        "box": 4
+      },
+      "step_bytes": 61474,
+      "step_sha256": "e41844c3c6f6865259fa862eb4231cd886d4d482649fedc80921b78cca389c64",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "eb2170e1b1c6e3f7b1f8f1ab7d116a55f02fe97e99c0cc8b19f98228b5fa29e8",
+      "category": "battery_charger",
+      "datasheet_sha256": "19bd875e3fada54e74efaca074335c13eb87d0537f895c3234bf77387cbf1dd8",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Texas Instruments",
+      "mpn": "BQ24074RGTR",
+      "primitive_count": 18,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 17
+      },
+      "primitive_shapes": {
+        "box": 18
+      },
+      "step_bytes": 284236,
+      "step_sha256": "081926b5c7e66abffe73dfad7bd6ad9a2b48d21ea35ded01fc329e24a5aa983a",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "ca588c49cb80470beb7d55a3ab62e018895c6f4df105d380309b15a1cb14913d",
+      "category": "mcu_module",
+      "datasheet_sha256": "27d71971da07c280c6068d08c74720d1a25b8f20cf8494dc1765bdd28d40d435",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Espressif Systems",
+      "mpn": "ESP32-S3-WROOM-1-N8R8",
+      "primitive_count": 42,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 41
+      },
+      "primitive_shapes": {
+        "box": 42
+      },
+      "step_bytes": 672307,
+      "step_sha256": "b043f9ddf25a4430aa81bd88c83ca0335ba571c54cd7955a1ad56b891e849aff",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "15c1cfe91635249b4fd0066ab77dc91fb012d766101a73ca903fc0be2eb4ec14",
+      "category": "capacitor",
+      "datasheet_sha256": "1541e9e4425bdc593058cf7a64238ab73e8c2553c5d6c9b5afc4aae491d0c2f1",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Murata",
+      "mpn": "GRM1885C1H102JA01D",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45739,
+      "step_sha256": "0e4e49b10906069c02d842a1dfde543f98c4f8a540311381dbf6734274d8c5e7",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 27,
+      "cad_program_sha256": "54775bacbd1a221dd60ec13796d8bb691726ab9dc78792248e2577edd2b9fba6",
+      "category": "capacitor",
+      "datasheet_sha256": "14fafc39fe117667a3de799959de4d506b12afa801c8df504c9dd835e57d5642",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Murata",
+      "mpn": "GRM188R71H104KA93D",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45739,
+      "step_sha256": "0e4e49b10906069c02d842a1dfde543f98c4f8a540311381dbf6734274d8c5e7",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 2,
+      "cad_program_sha256": "9b7827f5e9571bae6b7a9d8c74e6d78dc07a2c562a2a4e1656f7ed96d8c99fc7",
+      "category": "capacitor",
+      "datasheet_sha256": "4c00165d1c800a0c06e8baedb44094f8fda772343009ca65512cf2d7aeac5ab4",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Murata",
+      "mpn": "GRM21BR61A106KE19L",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45710,
+      "step_sha256": "2d386486ebc4316733450247605a7b75e99743418756111176b0fbfb22b1cb96",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 7,
+      "cad_program_sha256": "814c4bf3836ac7af1003434363a8b9b3ea92b8ab830f35436280c8d7621721c9",
+      "category": "capacitor",
+      "datasheet_sha256": "83e3a643b7e4e67474dfca168e5cd91126c27f6df0ed902913beb81c9b858fb5",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Murata",
+      "mpn": "GRM32ER61E226ME15L",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45713,
+      "step_sha256": "3a6c1d623d523e26a5718c9614a10e0e3290fd266ce7d3b6e6729e7dfcf6d45e",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 13,
+      "cad_program_sha256": "20c87e304fb015ef162ab5af5117d690cf6b0902b2a98b41dbaa3fc2a5c65b00",
+      "category": "addressable_rgb",
+      "datasheet_sha256": "d330b89276717098178ec2269318f5f19c1644286d6294c1d81d4ff37d65c9d6",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Inolux",
+      "mpn": "IN-PI20TBT5R5G5B",
+      "primitive_count": 5,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 4
+      },
+      "primitive_shapes": {
+        "box": 5
+      },
+      "step_bytes": 77400,
+      "step_sha256": "1f6a77eb5314a22da0dcca35b8d3d8502be52722dc39c8bb30258b73188d99ec",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 13,
+      "cad_program_sha256": "946c6cd2189ddd6ca5be9bee6d73952e0f4a0e8c37d49fa8f4882402be07182b",
+      "category": "keyswitch",
+      "datasheet_sha256": "f633a4ee023386bb177c4d54274eab2d2a5870dccd2e1e760e24213884067aa2",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "CHERRY",
+      "mpn": "MX2A-H1NB",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 1,
+        "cylinder": 2
+      },
+      "step_bytes": 25970,
+      "step_sha256": "385976f63e0d2f6114459f4d7165aa6bf48e28baa4995044ebb120adfb36d227",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "f6feae1fdb0aa381b3357c3f9efdf7ce914d250e84e4c42b4f9f281155e71aa2",
+      "category": "encoder",
+      "datasheet_sha256": "35f2905a6f60544b7d1bb02a62523abf6ac0116fee620806508304d484427b1f",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Bourns",
+      "mpn": "PEC12R-4220F-S0024",
+      "primitive_count": 7,
+      "primitive_roles": {
+        "actuator": 1,
+        "body": 1,
+        "terminal": 5
+      },
+      "primitive_shapes": {
+        "box": 1,
+        "cylinder": 6
+      },
+      "step_bytes": 46857,
+      "step_sha256": "1dd22ae8aad1f62b2414192946bd5d8139a828ee3d27b5c0e0eccdd1c826e5e1",
+      "visually_distinct": true
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "602e3051fde0445ad653306c1a1ab8ccd5fa50d1b84dec740d798fa4a36b6fcd",
+      "category": "resistor",
+      "datasheet_sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-07100KL",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45752,
+      "step_sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 10,
+      "cad_program_sha256": "242b05d69015b757371c506e52c61c163ea8196efd4c4db002d3c9e6e7e13cc0",
+      "category": "resistor",
+      "datasheet_sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-0710KL",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45752,
+      "step_sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "900fbf3ebf5edab26bca39c288bacd8817bc5a3e7e6a9455c7966f900718827e",
+      "category": "resistor",
+      "datasheet_sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-071K1L",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45752,
+      "step_sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "24d931121df71052bd42f0ec9bd06b8a9ea2a0a8801b9f62d98f05b4d4bdbb54",
+      "category": "resistor",
+      "datasheet_sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-07500RL",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45752,
+      "step_sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "8b58ff7bc894b058946ff41acd4a295abc04e631215cbd057482bd4045293680",
+      "category": "resistor",
+      "datasheet_sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-07590RL",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45752,
+      "step_sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 2,
+      "cad_program_sha256": "3b8a0222b9e939f6bc7f8ce5cd20cc5f6772cc31733daaeccb94684674460200",
+      "category": "resistor",
+      "datasheet_sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-075K1L",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45752,
+      "step_sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "84e11717e6f3284dee9209503efef61d6367df6ee691b92429fd9db4ed313648",
+      "category": "resistor",
+      "datasheet_sha256": "7b6f0ae72708ca4b38126f84b5407a3e970a94cb60bc1a0afdaeb25a23d839bb",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Yageo",
+      "mpn": "RC0603FR-07732KL",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45752,
+      "step_sha256": "1edfc82c98ed7c2a8fed5ca2ab379e88e080114634a4103f230d5bd2a005abac",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "f168df35d56708b24d54d4bf69c817087da2cd3e457fd7b3052eb10ccdfd34ca",
+      "category": "logic_buffer",
+      "datasheet_sha256": "dbaf49b3af33690fc7f7356afe387e7815a56b8bb73fe1e88bf794f4fb8e0d2f",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Texas Instruments",
+      "mpn": "SN74AHCT1G125DBVR",
+      "primitive_count": 6,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 5
+      },
+      "primitive_shapes": {
+        "box": 6
+      },
+      "step_bytes": 93101,
+      "step_sha256": "8f2f8b4f977c50e3ce561eb9fd57c2e96d56e743c0b108fdc8071a5e64fdbbac",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "29c81c70ca52c6deeaf3c2f9fbeb4f5bb40966acd6c51c6772308e47cff37eb8",
+      "category": "esd_array",
+      "datasheet_sha256": "73d849fe5d7c9a57bebdb08f4a70f09f818edb5f14b9f56241bf87aea6b56ef0",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPD4E02B04DQAR",
+      "primitive_count": 11,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 10
+      },
+      "primitive_shapes": {
+        "box": 11
+      },
+      "step_bytes": 173346,
+      "step_sha256": "f2f2748184a2c50a13047714ceb34a3e0b855e401aa8870a6aceef11b4dd1be7",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "e3cca8f52073ede77b2805a21960916a2e278139ed01f75623f2117c2fb6dbec",
+      "category": "load_switch",
+      "datasheet_sha256": "164df9362b7726e4bf5b8efd2dcafc6611704cc9554426baf1fe4b622c98e2da",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS22918DBVR",
+      "primitive_count": 7,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 6
+      },
+      "primitive_shapes": {
+        "box": 7
+      },
+      "step_bytes": 109093,
+      "step_sha256": "de20a8ba8fc5f8f4683cdcc57a637d000b125f7acb112c605ae5f27546b41931",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "fc565e028e5f3987c638801ca62eafb3fc02ebc52c5e1e0c40b818767be09b4b",
+      "category": "boost_converter",
+      "datasheet_sha256": "3fb6b836fb72f8e6daed65d400f761ce93a8516e9d05cccb1613f25bdd11aab5",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS61023DRLR",
+      "primitive_count": 7,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 6
+      },
+      "primitive_shapes": {
+        "box": 7
+      },
+      "step_bytes": 108885,
+      "step_sha256": "31f6ce36635260c8502979767d358c544314344ebe599d51896fd730e94c07f2",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "1058f7f71a6ef2cb9ab6a0389da82d03ba44e8a91242b56690d8a4f2e1496e6c",
+      "category": "buck_boost",
+      "datasheet_sha256": "f2d001bb75341eeb2abb00747336426f4e43b6561941167963b849293f0b1cba",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Texas Instruments",
+      "mpn": "TPS63031DSKR",
+      "primitive_count": 12,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 11
+      },
+      "primitive_shapes": {
+        "box": 12
+      },
+      "step_bytes": 188085,
+      "step_sha256": "0c55e378666522ffcb34193cfeab7af1b79a58a620da9166576d1fda2a2a8eb4",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "030bf8757ebf226eb3ee6a8bf316ab2491bc5dca35d3a8b4563ad39b150beb58",
+      "category": "connector",
+      "datasheet_sha256": "1f4f79d22728c13a5d0dbe9a2a957df51429ab8d1c122e7e9f3f98773d27ec01",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "GCT",
+      "mpn": "USB4085-GF-A",
+      "primitive_count": 17,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 16
+      },
+      "primitive_shapes": {
+        "box": 1,
+        "cylinder": 16
+      },
+      "step_bytes": 101982,
+      "step_sha256": "7d95fbea12447fb3ffb062e788a5b9681f1179f0859d3da1a8e5f16e2f03c133",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "c065e3c4025ade584cbd1473067f33c49839ef89d3737748ded4f2757913c0bd",
+      "category": "inductor",
+      "datasheet_sha256": "6dca915ac1daa47210f7708a7540221ffef4f34a88a8621c94bd50cdf48647e6",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Coilcraft",
+      "mpn": "XFL4020-102MEC",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45627,
+      "step_sha256": "a92e47ef9aebbc42954158ed6cd14d4f5f785a6f598c13672ace851966e9cf7f",
+      "visually_distinct": false
+    },
+    {
+      "assumption_count": 0,
+      "board_occurrences": 1,
+      "cad_program_sha256": "b53d15d309536051e58a7aeae349665906bcbff85a1b66f8d0970c56fe6c0864",
+      "category": "inductor",
+      "datasheet_sha256": "f2d001bb75341eeb2abb00747336426f4e43b6561941167963b849293f0b1cba",
+      "fidelity": "mechanical_dimensions_verified",
+      "manufacturer": "Coilcraft",
+      "mpn": "XFL4020-152MEC",
+      "primitive_count": 3,
+      "primitive_roles": {
+        "body": 1,
+        "terminal": 2
+      },
+      "primitive_shapes": {
+        "box": 3
+      },
+      "step_bytes": 45627,
+      "step_sha256": "a92e47ef9aebbc42954158ed6cd14d4f5f785a6f598c13672ace851966e9cf7f",
+      "visually_distinct": false
+    }
+  ],
+  "inventory_sha256": "beb557403a5cefe4a2e2723959b1fca7e8aa9a0b013402304dfc9b09de34666e",
+  "project_sha256": "6b6c6bf6c39d8f7cdaf14194ce16fb85eb3d43234f9b0fbc8f89c18068ae6354",
+  "review_constraints": {
+    "allowed_fidelity": [
+      "supplier_step_verified",
+      "mechanical_dimensions_verified",
+      "envelope_only"
+    ],
+    "llm_geometry_authority": false,
+    "maximum_hero_components": 5
+  },
+  "schema": "design-studio.component-cad-fidelity-inventory/1"
+}

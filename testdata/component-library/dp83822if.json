@@ -1,0 +1,751 @@
+{
+  "schema": "design-studio.component/2",
+  "component": {
+    "manufacturer": "Texas Instruments",
+    "mpn": "DP83822IF",
+    "description": "Robust, Low Power 10/100 Mbps Ethernet Physical Layer Transceiver",
+    "category": "other",
+    "datasheet": {
+      "title": "DP83822 Robust, Low Power 10/100 Mbps Ethernet Physical Layer Transceiver",
+      "revision": "SNLS505G",
+      "date": "AUGUST 2023"
+    }
+  },
+  "symbol": {
+    "ref_des_prefix": "U",
+    "pins": [
+      {
+        "number": "1",
+        "name": "RX_D3/GPIO3",
+        "electrical_type": "bidirectional",
+        "description": "Receive Data / GPIO",
+        "alternate_functions": [
+          "GPIO3"
+        ]
+      },
+      {
+        "number": "2",
+        "name": "TX_CLK",
+        "electrical_type": "bidirectional",
+        "description": "MII Transmit Clock / RGMII Transmit Clock"
+      },
+      {
+        "number": "3",
+        "name": "TX_EN/TX_CTRL",
+        "electrical_type": "input",
+        "description": "Transmit Enable / RGMII Transmit Control"
+      },
+      {
+        "number": "4",
+        "name": "TX_D0",
+        "electrical_type": "input",
+        "description": "Transmit Data bit 0"
+      },
+      {
+        "number": "5",
+        "name": "TX_D1",
+        "electrical_type": "input",
+        "description": "Transmit Data bit 1"
+      },
+      {
+        "number": "6",
+        "name": "TX_D2",
+        "electrical_type": "input",
+        "description": "Transmit Data bit 2"
+      },
+      {
+        "number": "7",
+        "name": "TX_D3",
+        "electrical_type": "input",
+        "description": "Transmit Data bit 3"
+      },
+      {
+        "number": "8",
+        "name": "INT/PWDN_N",
+        "electrical_type": "bidirectional",
+        "description": "Interrupt / Power Down"
+      },
+      {
+        "number": "9",
+        "name": "RD_M",
+        "electrical_type": "input",
+        "description": "Differential Receive Input Negative"
+      },
+      {
+        "number": "10",
+        "name": "RD_P",
+        "electrical_type": "input",
+        "description": "Differential Receive Input Positive"
+      },
+      {
+        "number": "11",
+        "name": "TD_M",
+        "electrical_type": "output",
+        "description": "Differential Transmit Output Negative"
+      },
+      {
+        "number": "12",
+        "name": "TD_P",
+        "electrical_type": "output",
+        "description": "Differential Transmit Output Positive"
+      },
+      {
+        "number": "13",
+        "name": "NC",
+        "electrical_type": "nc",
+        "description": "Leave Floating"
+      },
+      {
+        "number": "14",
+        "name": "AVD",
+        "electrical_type": "power_in",
+        "description": "Analog Supply: 3.3 V or 1.8 V"
+      },
+      {
+        "number": "15",
+        "name": "NC",
+        "electrical_type": "nc",
+        "description": "Leave Floating"
+      },
+      {
+        "number": "16",
+        "name": "RBIAS",
+        "electrical_type": "passive",
+        "description": "Bias Resistor Connection"
+      },
+      {
+        "number": "17",
+        "name": "LED_0",
+        "electrical_type": "output",
+        "description": "LINK Indication LED"
+      },
+      {
+        "number": "18",
+        "name": "RESET_N",
+        "electrical_type": "input",
+        "description": "Active low reset input"
+      },
+      {
+        "number": "19",
+        "name": "MDIO",
+        "electrical_type": "bidirectional",
+        "description": "Management Data I/O"
+      },
+      {
+        "number": "20",
+        "name": "MDC",
+        "electrical_type": "input",
+        "description": "Management Data Clock"
+      },
+      {
+        "number": "21",
+        "name": "VDDIO",
+        "electrical_type": "power_in",
+        "description": "I/O Supply: 3.3 V, 2.5 V, or 1.8 V"
+      },
+      {
+        "number": "22",
+        "name": "XO",
+        "electrical_type": "output",
+        "description": "Crystal Output"
+      },
+      {
+        "number": "23",
+        "name": "XI",
+        "electrical_type": "input",
+        "description": "Crystal / Oscillator Input"
+      },
+      {
+        "number": "24",
+        "name": "LED_1/GPIO1",
+        "electrical_type": "bidirectional",
+        "description": "SPEED Indication LED / GPIO",
+        "alternate_functions": [
+          "GPIO1",
+          "Signal Detect"
+        ]
+      },
+      {
+        "number": "25",
+        "name": "RX_CLK",
+        "electrical_type": "output",
+        "description": "MII Receive Clock / RGMII Receive Clock"
+      },
+      {
+        "number": "26",
+        "name": "RX_DV/RX_CTRL",
+        "electrical_type": "output",
+        "description": "Receive Data Valid / RGMII Receive Control"
+      },
+      {
+        "number": "27",
+        "name": "CRS/CRS_DV",
+        "electrical_type": "output",
+        "description": "Carrier Sense / Receive Data Valid"
+      },
+      {
+        "number": "28",
+        "name": "RX_ER",
+        "electrical_type": "output",
+        "description": "Receive Error"
+      },
+      {
+        "number": "29",
+        "name": "COL/GPIO2",
+        "electrical_type": "bidirectional",
+        "description": "Collision Detect / GPIO",
+        "alternate_functions": [
+          "GPIO2"
+        ]
+      },
+      {
+        "number": "30",
+        "name": "RX_D0",
+        "electrical_type": "output",
+        "description": "Receive Data bit 0"
+      },
+      {
+        "number": "31",
+        "name": "RX_D1",
+        "electrical_type": "output",
+        "description": "Receive Data bit 1"
+      },
+      {
+        "number": "32",
+        "name": "RX_D2",
+        "electrical_type": "output",
+        "description": "Receive Data bit 2"
+      },
+      {
+        "number": "EP",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground Pad"
+      }
+    ]
+  },
+  "electrical": {
+    "supply": {
+      "vmin_v": 1.71,
+      "vmax_v": 3.45
+    },
+    "absolute_max": [
+      {
+        "parameter": "AVD",
+        "value": 3.8,
+        "unit": "V"
+      },
+      {
+        "parameter": "VDDIO",
+        "value": 3.8,
+        "unit": "V"
+      },
+      {
+        "parameter": "Input voltage TD-, TD+, RD-, RD+",
+        "value": 6,
+        "unit": "V"
+      },
+      {
+        "parameter": "DC output voltage All pins",
+        "value": 3.8,
+        "unit": "V"
+      },
+      {
+        "parameter": "Operating junction temperature",
+        "value": 135,
+        "unit": "°C"
+      },
+      {
+        "parameter": "Storage temperature",
+        "value": 150,
+        "unit": "°C"
+      }
+    ],
+    "operating_conditions": [
+      {
+        "parameter": "VDDIO (1.8-V Option)",
+        "min": 1.71,
+        "typ": 1.8,
+        "max": 1.89,
+        "unit": "V"
+      },
+      {
+        "parameter": "VDDIO (2.5-V Option)",
+        "min": 2.375,
+        "typ": 2.5,
+        "max": 2.625,
+        "unit": "V"
+      },
+      {
+        "parameter": "VDDIO (3.3-V Option)",
+        "min": 3.15,
+        "typ": 3.3,
+        "max": 3.45,
+        "unit": "V"
+      },
+      {
+        "parameter": "AVD (3.3-V Option)",
+        "min": 3.15,
+        "typ": 3.3,
+        "max": 3.45,
+        "unit": "V"
+      },
+      {
+        "parameter": "AVD (1.8-V Option)",
+        "min": 1.71,
+        "typ": 1.8,
+        "max": 1.89,
+        "unit": "V"
+      },
+      {
+        "parameter": "Ambient Temperature DP83822IF",
+        "min": -40,
+        "max": 85,
+        "unit": "°C"
+      }
+    ],
+    "required_externals": [
+      {
+        "purpose": "Bias Resistor Connection",
+        "value": "4.87kOhm",
+        "constraints": "4.87-kOhm +/- 1%",
+        "connect_between": [
+          "RBIAS",
+          "GND"
+        ],
+        "mandatory": true
+      },
+      {
+        "purpose": "Management Data I/O Pullup",
+        "value": "2.2kOhm",
+        "constraints": "pullup resistor",
+        "connect_between": [
+          "MDIO",
+          "VDDIO"
+        ],
+        "mandatory": true
+      }
+    ],
+    "parameters": [
+      {
+        "name": "VIH (3.3-V VDDIO)",
+        "min": 2.0,
+        "unit": "V"
+      },
+      {
+        "name": "VIL (3.3-V VDDIO)",
+        "max": 0.8,
+        "unit": "V"
+      },
+      {
+        "name": "VOH (3.3-V VDDIO, IOH=-4mA)",
+        "min": 2.4,
+        "unit": "V"
+      },
+      {
+        "name": "VOL (3.3-V VDDIO, IOL=4mA)",
+        "max": 0.4,
+        "unit": "V"
+      },
+      {
+        "name": "VIH (1.8-V VDDIO)",
+        "min": 1.3,
+        "unit": "V"
+      },
+      {
+        "name": "VIL (1.8-V VDDIO)",
+        "max": 0.5,
+        "unit": "V"
+      },
+      {
+        "name": "VOH (1.8-V VDDIO, IOH=-2mA)",
+        "unit": "V",
+        "condition": "min VDDIO-0.4"
+      },
+      {
+        "name": "VOL (1.8-V VDDIO, IOL=2mA)",
+        "max": 0.4,
+        "unit": "V"
+      },
+      {
+        "name": "XO and XI capacitance",
+        "typ": 0.8,
+        "unit": "pF"
+      },
+      {
+        "name": "Input capacitance",
+        "typ": 5.0,
+        "unit": "pF"
+      },
+      {
+        "name": "Output capacitance",
+        "typ": 5.0,
+        "unit": "pF"
+      }
+    ],
+    "thermal": {
+      "theta_ja_c_w": 41.0,
+      "theta_jc_c_w": 35.5,
+      "tj_max_c": 135
+    },
+    "high_speed": {
+      "diff_pairs": [
+        {
+          "positive": "TD_P",
+          "negative": "TD_M"
+        },
+        {
+          "positive": "RD_P",
+          "negative": "RD_M"
+        }
+      ]
+    }
+  },
+  "footprint": {
+    "name": "RHB0032B",
+    "mount": "smd",
+    "body": {
+      "length_mm": 5.0,
+      "width_mm": 5.0,
+      "height_mm": 1.0
+    },
+    "pitch_mm": 0.5,
+    "pads": [
+      {
+        "number": "1",
+        "x_mm": -2.4,
+        "y_mm": -1.75,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "2",
+        "x_mm": -2.4,
+        "y_mm": -1.25,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "3",
+        "x_mm": -2.4,
+        "y_mm": -0.75,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "4",
+        "x_mm": -2.4,
+        "y_mm": -0.25,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "5",
+        "x_mm": -2.4,
+        "y_mm": 0.25,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "6",
+        "x_mm": -2.4,
+        "y_mm": 0.75,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "7",
+        "x_mm": -2.4,
+        "y_mm": 1.25,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "8",
+        "x_mm": -2.4,
+        "y_mm": 1.75,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "9",
+        "x_mm": -1.75,
+        "y_mm": 2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "10",
+        "x_mm": -1.25,
+        "y_mm": 2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "11",
+        "x_mm": -0.75,
+        "y_mm": 2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "12",
+        "x_mm": -0.25,
+        "y_mm": 2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "13",
+        "x_mm": 0.25,
+        "y_mm": 2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "14",
+        "x_mm": 0.75,
+        "y_mm": 2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "15",
+        "x_mm": 1.25,
+        "y_mm": 2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "16",
+        "x_mm": 1.75,
+        "y_mm": 2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "17",
+        "x_mm": 2.4,
+        "y_mm": 1.75,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "18",
+        "x_mm": 2.4,
+        "y_mm": 1.25,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "19",
+        "x_mm": 2.4,
+        "y_mm": 0.75,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "20",
+        "x_mm": 2.4,
+        "y_mm": 0.25,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "21",
+        "x_mm": 2.4,
+        "y_mm": -0.25,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "22",
+        "x_mm": 2.4,
+        "y_mm": -0.75,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "23",
+        "x_mm": 2.4,
+        "y_mm": -1.25,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "24",
+        "x_mm": 2.4,
+        "y_mm": -1.75,
+        "width_mm": 0.6,
+        "height_mm": 0.25,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "25",
+        "x_mm": 1.75,
+        "y_mm": -2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "26",
+        "x_mm": 1.25,
+        "y_mm": -2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "27",
+        "x_mm": 0.75,
+        "y_mm": -2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "28",
+        "x_mm": 0.25,
+        "y_mm": -2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "29",
+        "x_mm": -0.25,
+        "y_mm": -2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "30",
+        "x_mm": -0.75,
+        "y_mm": -2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "31",
+        "x_mm": -1.25,
+        "y_mm": -2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "32",
+        "x_mm": -1.75,
+        "y_mm": -2.4,
+        "width_mm": 0.25,
+        "height_mm": 0.6,
+        "shape": "rect",
+        "mechanical": false
+      },
+      {
+        "number": "EP",
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "width_mm": 2.9,
+        "height_mm": 2.9,
+        "shape": "rect",
+        "mechanical": false
+      }
+    ],
+    "derived_from_outline": false,
+    "source": {
+      "pages": [
+        121,
+        122
+      ],
+      "drawing": "RHB0032B"
+    }
+  },
+  "orientation": {
+    "pin1_marker": "dot",
+    "pin1_position": "top-left",
+    "polarity": {
+      "has_polarity": false
+    }
+  },
+  "package_3d": {
+    "height_mm": 1.0,
+    "standoff_mm": 0.0,
+    "shape": "box"
+  },
+  "extraction": {
+    "confidence": {
+      "symbol": 1.0,
+      "electrical": 0.9,
+      "footprint": 1.0
+    },
+    "pages_used": [
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      121,
+      122
+    ],
+    "warnings": []
+  }
+}

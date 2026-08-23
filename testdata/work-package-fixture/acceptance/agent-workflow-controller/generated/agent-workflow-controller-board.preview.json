@@ -1,0 +1,18 @@
+{
+  "assumed_finished_thickness_mm": 1.6,
+  "kernel_report": {
+    "components": 106,
+    "external_components_excluded": [],
+    "holes": 306,
+    "ok": true,
+    "solids": 451,
+    "step_schema": "AP242"
+  },
+  "project": "acceptance/agent-workflow-controller/generated/agent-workflow-controller.dsproj",
+  "project_sha256": "0cbd3244611fa64fb3ec828f12398a82ce21781b56aaad1fd0b2e588c26da7c8",
+  "release_status": "engineering_preview_only",
+  "schema": "design-studio.board-step-preview/1",
+  "step": "acceptance/agent-workflow-controller/generated/agent-workflow-controller-board.step",
+  "step_sha256": "eb582e2cdf854f39a4ac4b44f8bd575a9337a35a6c704d49249dedddf21fab39",
+  "warning": "Not manufacturing output; regenerate with an approved fabrication profile."
+}

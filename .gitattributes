@@ -1,0 +1,24 @@
+* text=auto
+
+*.sh text eol=lf
+*.py text eol=lf
+*.cpp text eol=lf
+*.h text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+
+# CAD, media, and document fixtures are intentionally not line-diffed.
+*.FCStd binary
+*.fcstd binary
+*.step -diff
+*.stp -diff
+*.stl binary
+*.glb binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.zip binary

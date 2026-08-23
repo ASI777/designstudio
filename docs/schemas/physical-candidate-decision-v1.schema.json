@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:physical-candidate-decision:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "decision_id", "plan_id", "plan_digest", "session_id", "ranking_status", "selected_candidate_id", "scores", "coverage", "aggregate_method", "exclusions", "tie_handling", "observation_digests", "created_utc", "observer", "provenance", "decision_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.physical-candidate-decision/1"}, "decision_id": {"$ref": "#/$defs/id"}, "plan_id": {"$ref": "#/$defs/id"}, "plan_digest": {"$ref": "#/$defs/digest"}, "session_id": {"$ref": "#/$defs/id"}, "ranking_status": {"const": "physical_validated"}, "selected_candidate_id": {"$ref": "#/$defs/id"},
+    "scores": {"type": "object", "minProperties": 3, "maxProperties": 3, "additionalProperties": {"type": "number", "minimum": 1, "maximum": 5}},
+    "coverage": {"type": "object", "additionalProperties": false, "required": ["small", "medium", "large", "participants", "each_participant_tested_all_candidates", "counterbalanced"], "properties": {"small": {"type": "integer", "minimum": 1}, "medium": {"type": "integer", "minimum": 1}, "large": {"type": "integer", "minimum": 1}, "participants": {"type": "integer", "minimum": 3}, "each_participant_tested_all_candidates": {"const": true}, "counterbalanced": {"const": true}}},
+    "aggregate_method": {"const": "equal-participant-mean-of-six-1-to-5-ratings"}, "exclusions": {"type": "array", "items": {"type": "object"}}, "tie_handling": {"const": "balanced"}, "observation_digests": {"type": "array", "minItems": 9, "uniqueItems": true, "items": {"$ref": "#/$defs/digest"}}, "created_utc": {"type": "string", "format": "date-time"}, "observer": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["created_by", "created_utc", "source", "synthetic_fixture"], "properties": {"created_by": {"type": "string", "minLength": 1}, "created_utc": {"type": "string", "format": "date-time"}, "source": {"type": "string", "minLength": 1}, "synthetic_fixture": {"const": false}}}, "decision_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {"id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"}, "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

@@ -1,0 +1,207 @@
+{
+"schema": "design-studio.component/2",
+"component": {
+"manufacturer": "Micron",
+"mpn": "MT40A512M8",
+"description": "4Gb: 512 Meg x 8 DDR4 SDRAM",
+"category": "other",
+"datasheet": {
+"title": "4Gb: x4, x8, x16 DDR4 SDRAM",
+"revision": "",
+"date": "",
+"url": ""
+},
+"distributors": []
+},
+"symbol": {
+"ref_des_prefix": "U",
+"pins": [
+{ "number": "A1", "name": "VDD", "electrical_type": "power_in", "description": "Power supply", "alternate_functions": [] },
+{ "number": "A2", "name": "VSSQ", "electrical_type": "power_in", "description": "DQ ground", "alternate_functions": [] },
+{ "number": "A3", "name": "TDQS_c", "electrical_type": "bidirectional", "description": "Termination data strobe (complement)", "alternate_functions": ["NC"] },
+{ "number": "A7", "name": "DM_n/DBI_n/TDQS_t", "electrical_type": "bidirectional", "description": "Data mask / Data bus inversion / Termination data strobe", "alternate_functions": [] },
+{ "number": "A8", "name": "VSSQ", "electrical_type": "power_in", "description": "DQ ground", "alternate_functions": [] },
+{ "number": "A9", "name": "VSS", "electrical_type": "power_in", "description": "Ground", "alternate_functions": [] },
+{ "number": "B1", "name": "VPP", "electrical_type": "power_in", "description": "DRAM activating power supply", "alternate_functions": [] },
+{ "number": "B2", "name": "VDDQ", "electrical_type": "power_in", "description": "DQ power supply", "alternate_functions": [] },
+{ "number": "B3", "name": "DQS_c", "electrical_type": "bidirectional", "description": "Data strobe (complement)", "alternate_functions": [] },
+{ "number": "B7", "name": "DQS_t", "electrical_type": "bidirectional", "description": "Data strobe (true)", "alternate_functions": [] },
+{ "number": "B8", "name": "VDDQ", "electrical_type": "power_in", "description": "DQ power supply", "alternate_functions": [] },
+{ "number": "B9", "name": "VDD", "electrical_type": "power_in", "description": "Power supply", "alternate_functions": [] },
+{ "number": "C1", "name": "VDDQ", "electrical_type": "power_in", "description": "DQ power supply", "alternate_functions": [] },
+{ "number": "C2", "name": "DQ4", "electrical_type": "bidirectional", "description": "Data input/output", "alternate_functions": [] },
+{ "number": "C3", "name": "DQ5", "electrical_type": "bidirectional", "description": "Data input/output", "alternate_functions": [] },
+{ "number": "C7", "name": "DQ0", "electrical_type": "bidirectional", "description": "Data input/output", "alternate_functions": [] },
+{ "number": "C8", "name": "DQ1", "electrical_type": "bidirectional", "description": "Data input/output", "alternate_functions": [] },
+{ "number": "C9", "name": "VDDQ", "electrical_type": "power_in", "description": "DQ power supply", "alternate_functions": [] },
+{ "number": "D1", "name": "VSSQ", "electrical_type": "power_in", "description": "DQ ground", "alternate_functions": [] },
+{ "number": "D2", "name": "DQ6", "electrical_type": "bidirectional", "description": "Data input/output", "alternate_functions": [] },
+{ "number": "D3", "name": "DQ7", "electrical_type": "bidirectional", "description": "Data input/output", "alternate_functions": [] },
+{ "number": "D7", "name": "DQ2", "electrical_type": "bidirectional", "description": "Data input/output", "alternate_functions": [] },
+{ "number": "D8", "name": "DQ3", "electrical_type": "bidirectional", "description": "Data input/output", "alternate_functions": [] },
+{ "number": "D9", "name": "VSSQ", "electrical_type": "power_in", "description": "DQ ground", "alternate_functions": [] },
+{ "number": "E1", "name": "VSS", "electrical_type": "power_in", "description": "Ground", "alternate_functions": [] },
+{ "number": "E2", "name": "VDDQ", "electrical_type": "power_in", "description": "DQ power supply", "alternate_functions": [] },
+{ "number": "E3", "name": "NC", "electrical_type": "nc", "description": "No connect", "alternate_functions": [] },
+{ "number": "E7", "name": "NC", "electrical_type": "nc", "description": "No connect", "alternate_functions": [] },
+{ "number": "E8", "name": "VDDQ", "electrical_type": "power_in", "description": "DQ power supply", "alternate_functions": [] },
+{ "number": "E9", "name": "VSS", "electrical_type": "power_in", "description": "Ground", "alternate_functions": [] },
+{ "number": "F1", "name": "VDD", "electrical_type": "power_in", "description": "Power supply", "alternate_functions": [] },
+{ "number": "F2", "name": "NC", "electrical_type": "nc", "description": "No connect", "alternate_functions": [] },
+{ "number": "F3", "name": "ODT", "electrical_type": "input", "description": "On-die termination enable", "alternate_functions": [] },
+{ "number": "F7", "name": "CK_t", "electrical_type": "input", "description": "Clock (true)", "alternate_functions": [] },
+{ "number": "F8", "name": "CK_c", "electrical_type": "input", "description": "Clock (complement)", "alternate_functions": [] },
+{ "number": "F9", "name": "VDD", "electrical_type": "power_in", "description": "Power supply", "alternate_functions": [] },
+{ "number": "G1", "name": "VSS", "electrical_type": "power_in", "description": "Ground", "alternate_functions": [] },
+{ "number": "G2", "name": "CKE", "electrical_type": "input", "description": "Clock enable", "alternate_functions": [] },
+{ "number": "G3", "name": "CS_n", "electrical_type": "input", "description": "Chip select", "alternate_functions": [] },
+{ "number": "G7", "name": "NC", "electrical_type": "nc", "description": "No connect", "alternate_functions": [] },
+{ "number": "G8", "name": "NC", "electrical_type": "nc", "description": "No connect", "alternate_functions": [] },
+{ "number": "G9", "name": "VSS", "electrical_type": "power_in", "description": "Ground", "alternate_functions": [] },
+{ "number": "H1", "name": "VDD", "electrical_type": "power_in", "description": "Power supply", "alternate_functions": [] },
+{ "number": "H2", "name": "WE_n/A14", "electrical_type": "input", "description": "Write enable / Address 14", "alternate_functions": [] },
+{ "number": "H3", "name": "CAS_n/A15", "electrical_type": "input", "description": "Column address strobe / Address 15", "alternate_functions": [] },
+{ "number": "H7", "name": "RAS_n/A16", "electrical_type": "input", "description": "Row address strobe / Address 16", "alternate_functions": [] },
+{ "number": "H8", "name": "NC", "electrical_type": "nc", "description": "No connect", "alternate_functions": [] },
+{ "number": "H9", "name": "VDD", "electrical_type": "power_in", "description": "Power supply", "alternate_functions": [] },
+{ "number": "J1", "name": "VREFCA", "electrical_type": "input", "description": "Reference voltage for command and address", "alternate_functions": [] },
+{ "number": "J2", "name": "BG0", "electrical_type": "input", "description": "Bank group 0", "alternate_functions": [] },
+{ "number": "J3", "name": "A10/AP", "electrical_type": "input", "description": "Address 10 / Auto precharge", "alternate_functions": [] },
+{ "number": "J7", "name": "ACT_n", "electrical_type": "input", "description": "Activate command", "alternate_functions": [] },
+{ "number": "J8", "name": "BG1", "electrical_type": "input", "description": "Bank group 1", "alternate_functions": [] },
+{ "number": "J9", "name": "VSS", "electrical_type": "power_in", "description": "Ground", "alternate_functions": [] },
+{ "number": "K1", "name": "VSS", "electrical_type": "power_in", "description": "Ground", "alternate_functions": [] },
+{ "number": "K2", "name": "BA0", "electrical_type": "input", "description": "Bank address 0", "alternate_functions": [] },
+{ "number": "K3", "name": "A4", "electrical_type": "input", "description": "Address 4", "alternate_functions": [] },
+{ "number": "K7", "name": "A3", "electrical_type": "input", "description": "Address 3", "alternate_functions": [] },
+{ "number": "K8", "name": "BA1", "electrical_type": "input", "description": "Bank address 1", "alternate_functions": [] },
+{ "number": "K9", "name": "VDD", "electrical_type": "power_in", "description": "Power supply", "alternate_functions": [] },
+{ "number": "L1", "name": "RESET_n", "electrical_type": "input", "description": "Active low asynchronous reset", "alternate_functions": [] },
+{ "number": "L2", "name": "A6", "electrical_type": "input", "description": "Address 6", "alternate_functions": [] },
+{ "number": "L3", "name": "A0", "electrical_type": "input", "description": "Address 0", "alternate_functions": [] },
+{ "number": "L7", "name": "A1", "electrical_type": "input", "description": "Address 1", "alternate_functions": [] },
+{ "number": "L8", "name": "A5", "electrical_type": "input", "description": "Address 5", "alternate_functions": [] },
+{ "number": "L9", "name": "ALERT_n", "electrical_type": "output", "description": "CRC/Parity error flag", "alternate_functions": [] },
+{ "number": "M1", "name": "VDD", "electrical_type": "power_in", "description": "Power supply", "alternate_functions": [] },
+{ "number": "M2", "name": "A8", "electrical_type": "input", "description": "Address 8", "alternate_functions": [] },
+{ "number": "M3", "name": "A2", "electrical_type": "input", "description": "Address 2", "alternate_functions": [] },
+{ "number": "M7", "name": "A9", "electrical_type": "input", "description": "Address 9", "alternate_functions": [] },
+{ "number": "M8", "name": "A7", "electrical_type": "input", "description": "Address 7", "alternate_functions": [] },
+{ "number": "M9", "name": "VPP", "electrical_type": "power_in", "description": "DRAM activating power supply", "alternate_functions": [] },
+{ "number": "N1", "name": "ZQ", "electrical_type": "passive", "description": "ZQ calibration", "alternate_functions": [] },
+{ "number": "N2", "name": "A11", "electrical_type": "input", "description": "Address 11", "alternate_functions": [] },
+{ "number": "N3", "name": "A13", "electrical_type": "input", "description": "Address 13", "alternate_functions": [] },
+{ "number": "N7", "name": "A12/BC_n", "electrical_type": "input", "description": "Address 12 / Burst chop", "alternate_functions": [] },
+{ "number": "N8", "name": "TEN", "electrical_type": "input", "description": "Connectivity test mode enable", "alternate_functions": [] },
+{ "number": "N9", "name": "VSS", "electrical_type": "power_in", "description": "Ground", "alternate_functions": [] }
+]
+},
+"electrical": {
+"supply": {
+"vmin_v": 1.14,
+"vmax_v": 1.26,
+"typ_v": 1.2,
+"max_current_a": null
+},
+"absolute_max": [
+{ "parameter": "VDD to VSS", "value": 1.5, "unit": "V" },
+{ "parameter": "VDDQ to VSSQ", "value": 1.5, "unit": "V" },
+{ "parameter": "VPP to VSS", "value": 3.0, "unit": "V" },
+{ "parameter": "Storage Temperature (Tstg)", "value": 150, "unit": "°C" }
+],
+"operating_conditions": [
+{ "parameter": "VDD Supply Voltage", "min": 1.14, "typ": 1.2, "max": 1.26, "unit": "V" },
+{ "parameter": "VDDQ Supply Voltage", "min": 1.14, "typ": 1.2, "max": 1.26, "unit": "V" },
+{ "parameter": "VPP Supply Voltage", "min": 2.375, "typ": 2.5, "max": 2.75, "unit": "V" },
+{ "parameter": "Operating Case Temperature (Commercial)", "min": 0, "typ": null, "max": 95, "unit": "°C" }
+],
+"required_externals": [
+{
+"purpose": "ZQ Calibration",
+"value": "240Ω",
+"constraints": "±1% tolerance",
+"connect_between": ["ZQ", "VSSQ"],
+"mandatory": true
+}
+],
+"application_circuits": [],
+"parameters": [],
+"thermal": {
+"theta_ja_c_w": null,
+"theta_jc_c_w": null,
+"max_power_w": null,
+"tj_max_c": 95
+},
+"power_domains": [
+{ "name": "VDD", "vmin_v": 1.14, "vnom_v": 1.2, "vmax_v": 1.26, "max_current_a": null, "pins": ["A1", "B9", "F1", "F9", "H1", "H9", "K9", "M1"] },
+{ "name": "VDDQ", "vmin_v": 1.14, "vnom_v": 1.2, "vmax_v": 1.26, "max_current_a": null, "pins": ["B2", "B8", "C1", "C9", "E2", "E8"] },
+{ "name": "VPP", "vmin_v": 2.375, "vnom_v": 2.5, "vmax_v": 2.75, "max_current_a": null, "pins": ["B1", "M9"] }
+],
+"high_speed": {
+"diff_pairs": [
+{ "positive": "CK_t", "negative": "CK_c", "impedance_ohm": 100, "max_skew_mm": null },
+{ "positive": "DQS_t", "negative": "DQS_c", "impedance_ohm": 100, "max_skew_mm": null },
+{ "positive": "TDQS_t", "negative": "TDQS_c", "impedance_ohm": 100, "max_skew_mm": null }
+],
+"single_ended": [
+{ "signal": "DQ0", "impedance_ohm": 50 },
+{ "signal": "DQ1", "impedance_ohm": 50 },
+{ "signal": "DQ2", "impedance_ohm": 50 },
+{ "signal": "DQ3", "impedance_ohm": 50 },
+{ "signal": "DQ4", "impedance_ohm": 50 },
+{ "signal": "DQ5", "impedance_ohm": 50 },
+{ "signal": "DQ6", "impedance_ohm": 50 },
+{ "signal": "DQ7", "impedance_ohm": 50 }
+]
+}
+},
+"footprint": {
+"name": "78-Ball FBGA",
+"ipc_name": "BGA78C80P9X13",
+"mount": "smd",
+"body": { "length_mm": 9.0, "width_mm": 10.5, "height_mm": 1.2 },
+"pitch_mm": 0.8,
+"bga": {
+"rows": 13,
+"cols": 9,
+"pitch_mm": 0.8,
+"ball_diameter_mm": 0.45,
+"land_diameter_mm": 0.35,
+"depopulated": [
+"A4", "A5", "A6",
+"B4", "B5", "B6",
+"C4", "C5", "C6",
+"D4", "D5", "D6",
+"E4", "E5", "E6",
+"F4", "F5", "F6",
+"G4", "G5", "G6",
+"H4", "H5", "H6",
+"J4", "J5", "J6",
+"K4", "K5", "K6",
+"L4", "L5", "L6",
+"M4", "M5", "M6",
+"N4", "N5", "N6"
+]
+},
+"pads": [],
+"courtyard_margin_mm": 0.5,
+"derived_from_outline": false,
+"source": { "pages": [1], "drawing": "JEDEC MO-207" }
+},
+"orientation": {
+"pin1_marker": "dot",
+"pin1_position": "top-left",
+"polarity": { "has_polarity": false, "cathode_pin": null }
+},
+"package_3d": { "height_mm": 1.2, "standoff_mm": 0.25, "shape": "box" },
+"board_hints": { "module_outline_mm": { "width": 9.0, "height": 10.5 } },
+"extraction": {
+"confidence": { "symbol": 0.95, "electrical": 0.9, "footprint": 0.9 },
+"pages_used": [1],
+"warnings": [
+"Extracted specifically for MT40A512M8 x8 variant in 78-ball FBGA package.",
+"Other packages available: x4 and x16 configurations (e.g., 96-ball FBGA).",
+"Ball assignments generated from standard JEDEC DDR4 specifications. Explicit package lengths/delays per pin are not included."
+]
+}
+}

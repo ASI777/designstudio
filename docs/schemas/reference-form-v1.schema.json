@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:reference-form:1",
+  "title": "Revision-bound reference form",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "reference_form_id", "revision", "document", "assets", "views",
+    "target_bounds_mm", "known_dimensions_mm", "curves", "motifs",
+    "engineering_controls", "seams", "candidate_selection", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.reference-form/1"},
+    "reference_form_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "revision": {"type": "integer", "minimum": 1},
+    "document": {"$ref": "#/$defs/document"},
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4096,
+      "items": {"$ref": "#/$defs/asset"}
+    },
+    "views": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 24,
+      "items": {"$ref": "#/$defs/view"}
+    },
+    "target_bounds_mm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "z", "scale_source"],
+      "properties": {
+        "x": {"type": "number", "exclusiveMinimum": 0, "maximum": 10000},
+        "y": {"type": "number", "exclusiveMinimum": 0, "maximum": 10000},
+        "z": {"type": "number", "exclusiveMinimum": 0, "maximum": 10000},
+        "scale_source": {
+          "enum": ["user_measurement", "engineering_requirement", "mixed_confirmed"]
+        }
+      }
+    },
+    "known_dimensions_mm": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["dimension_id", "axis", "value_mm", "source"],
+        "properties": {
+          "dimension_id": {"type": "string", "minLength": 1, "maxLength": 200},
+          "axis": {"enum": ["x", "y", "z", "feature"]},
+          "value_mm": {"type": "number", "exclusiveMinimum": 0, "maximum": 10000},
+          "source": {"enum": ["user_measurement", "engineering_requirement"]}
+        }
+      }
+    },
+    "curves": {
+      "type": "array",
+      "maxItems": 16384,
+      "items": {"$ref": "#/$defs/curve"}
+    },
+    "motifs": {
+      "type": "array",
+      "maxItems": 4096,
+      "items": {"$ref": "#/$defs/motif"}
+    },
+    "engineering_controls": {"$ref": "#/$defs/engineeringControls"},
+    "seams": {
+      "type": "array",
+      "maxItems": 4096,
+      "items": {"$ref": "#/$defs/seam"}
+    },
+    "candidate_selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_candidate_sha256", "accepted"],
+      "properties": {
+        "selected_candidate_sha256": {
+          "type": ["string", "null"],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "accepted": {"type": "boolean"},
+        "accepted_utc": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "license_status", "user_intent_text"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1, "maxLength": 4096},
+        "license_status": {
+          "enum": ["unknown", "review_required", "approved_for_project"]
+        },
+        "user_intent_text": {"type": "string", "maxLength": 16000},
+        "depth_guidance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["model", "uncertain", "used_as_geometry"],
+          "properties": {
+            "model": {"const": "Depth Anything V2 Small"},
+            "uncertain": {"const": true},
+            "used_as_geometry": {"const": false}
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024,
+      "pattern": "^(?!/)(?![A-Za-z]:[\\\\/])(?!.*(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)).+$"
+    },
+    "point3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "number", "minimum": -1000000, "maximum": 1000000}
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_id", "revision", "sha256"],
+      "properties": {
+        "document_id": {"type": "string", "minLength": 1, "maxLength": 200},
+        "revision": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["asset_id", "path", "sha256", "media_type", "bytes"],
+      "properties": {
+        "asset_id": {"type": "string", "minLength": 1, "maxLength": 200},
+        "path": {"$ref": "#/$defs/relativePath"},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "media_type": {
+          "enum": [
+            "image/png", "image/jpeg", "image/webp", "image/svg+xml",
+            "application/octet-stream", "model/gltf-binary", "model/stl"
+          ]
+        },
+        "bytes": {"type": "integer", "minimum": 1, "maximum": 536870912}
+      }
+    },
+    "view": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["view_id", "viewpoint", "image_asset_id", "approved", "projection"],
+      "properties": {
+        "view_id": {"type": "string", "minLength": 1, "maxLength": 200},
+        "viewpoint": {"enum": ["front", "rear", "left", "right", "top", "bottom"]},
+        "image_asset_id": {"type": "string", "minLength": 1},
+        "mask_asset_id": {"type": ["string", "null"]},
+        "silhouette_asset_id": {"type": ["string", "null"]},
+        "approved": {"type": "boolean"},
+        "projection": {"enum": ["orthographic", "perspective", "unknown"]},
+        "camera": {
+          "type": ["object", "null"],
+          "description": "User-reviewed calibration; omitted when unknown."
+        }
+      }
+    },
+    "curve": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["curve_id", "view_id", "label", "points", "approved"],
+      "properties": {
+        "curve_id": {"type": "string", "minLength": 1},
+        "view_id": {"type": "string", "minLength": 1},
+        "label": {
+          "enum": [
+            "preserve curve", "hard edge", "soft transition", "opening",
+            "motif", "candidate seam", "ignore", "silhouette", "section"
+          ]
+        },
+        "points": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 65536,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 3,
+            "items": {"type": "number"}
+          }
+        },
+        "approved": {"type": "boolean"}
+      }
+    },
+    "motif": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "motif_id", "source_curve_ids", "form", "application", "intensity",
+        "scale", "orientation_deg", "symmetric", "blend_falloff_mm", "approved"
+      ],
+      "properties": {
+        "motif_id": {"type": "string", "minLength": 1},
+        "source_curve_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "form": {"enum": ["roofline", "fender", "intake", "spoiler", "window edge", "custom"]},
+        "application": {
+          "enum": ["blended surface curve", "raised feature", "debossed feature", "separate insert", "opening", "seam"]
+        },
+        "intensity": {"type": "number", "minimum": 0, "maximum": 1},
+        "scale": {"type": "number", "exclusiveMinimum": 0, "maximum": 100},
+        "orientation_deg": {"type": "number", "minimum": -360, "maximum": 360},
+        "symmetric": {"type": "boolean"},
+        "blend_falloff_mm": {"type": "number", "minimum": 0, "maximum": 1000},
+        "approved": {"type": "boolean"}
+      }
+    },
+    "engineeringControls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "section_curves", "symmetry_planes", "keep_points", "avoid_points",
+        "protected_volumes", "functional_regions", "connector_access",
+        "function_over_style"
+      ],
+      "properties": {
+        "section_curves": {"type": "array", "items": {"type": "string"}},
+        "symmetry_planes": {"type": "array", "items": {"enum": ["xy", "xz", "yz"]}},
+        "keep_points": {"type": "array", "items": {"$ref": "#/$defs/point3"}},
+        "avoid_points": {"type": "array", "items": {"$ref": "#/$defs/point3"}},
+        "protected_volumes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["volume_id", "kind", "min_mm", "max_mm", "clearance_mm", "locked"],
+            "properties": {
+              "volume_id": {"type": "string", "minLength": 1},
+              "kind": {"enum": ["voxel keep-out", "keyboard plane", "key-travel envelope", "pcb", "battery", "antenna", "component", "hand-rest"]},
+              "min_mm": {"$ref": "#/$defs/point3"},
+              "max_mm": {"$ref": "#/$defs/point3"},
+              "clearance_mm": {"type": "number", "minimum": 0, "maximum": 1000},
+              "locked": {"type": "boolean"}
+            }
+          }
+        },
+        "functional_regions": {"type": "array", "items": {"type": "object"}},
+        "connector_access": {"type": "array", "items": {"type": "object"}},
+        "function_over_style": {"const": true}
+      }
+    },
+    "seam": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["seam_id", "curve_id", "source", "approved"],
+      "properties": {
+        "seam_id": {"type": "string", "minLength": 1},
+        "curve_id": {"type": "string", "minLength": 1},
+        "source": {"enum": ["user", "ai_suggestion"]},
+        "approved": {"type": "boolean"}
+      }
+    }
+  }
+}

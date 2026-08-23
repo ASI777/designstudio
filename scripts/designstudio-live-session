@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+install_root="${DESIGNSTUDIO_INSTALL_ROOT:-/tmp/designstudio-freecad}"
+log_root="${DESIGNSTUDIO_LOG_ROOT:-$HOME/DesignStudio/logs}"
+mkdir -p "$log_root"
+stamp="$(date +%Y%m%d-%H%M%S)"
+log_file="$log_root/live-agent-$stamp.log"
+
+echo "DesignStudio live agent session"
+echo "Log: $log_file"
+echo "A fresh Codex app-server thread starts when you send the first chat message."
+echo "Keep this terminal open while recording; errors and stage transitions appear here."
+echo
+
+export QT_LOGGING_RULES="qt.qpa.services=false"
+export DESIGNSTUDIO_LIVE_LOG="$log_file"
+set +e
+"$install_root/bin/DesignStudio" 2>&1 | tee "$log_file"
+status="${PIPESTATUS[0]}"
+set -e
+echo
+echo "DesignStudio exited with status $status"
+echo "Session log retained at $log_file"
+exit "$status"

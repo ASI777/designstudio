@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:interactive-component:1",
+  "title": "DesignStudio human-interactive component",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "component_id",
+    "name",
+    "asset",
+    "frames",
+    "interaction",
+    "mounting",
+    "evidence"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.interactive-component/1"},
+    "component_id": {"$ref": "#/$defs/stable_id"},
+    "name": {"type": "string", "minLength": 1, "maxLength": 200},
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uri", "format", "sha256", "units", "bounds_mm"],
+      "properties": {
+        "uri": {"type": "string", "minLength": 1},
+        "format": {"enum": ["step", "stp"]},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "units": {"const": "mm"},
+        "bounds_mm": {"$ref": "#/$defs/bounds3"}
+      }
+    },
+    "frames": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["interaction", "mounting", "electrical"],
+      "properties": {
+        "interaction": {"$ref": "#/$defs/frame"},
+        "mounting": {"$ref": "#/$defs/frame"},
+        "electrical": {"$ref": "#/$defs/frame"}
+      }
+    },
+    "interaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "degrees_of_freedom",
+        "travel",
+        "load",
+        "swept_bounds_mm",
+        "human_clearance_bounds_mm"
+      ],
+      "properties": {
+        "kind": {
+          "enum": ["press", "rotate", "tilt", "slide", "pressure", "insert", "service"]
+        },
+        "degrees_of_freedom": {"type": "integer", "minimum": 0, "maximum": 6},
+        "travel": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["linear_mm", "angular_deg", "overtravel_mm"],
+          "properties": {
+            "linear_mm": {"type": "number", "minimum": 0},
+            "angular_deg": {"type": "number", "minimum": 0, "maximum": 3600},
+            "overtravel_mm": {"type": "number", "minimum": 0}
+          }
+        },
+        "load": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["force_n", "torque_nmm", "direction_local"],
+          "properties": {
+            "force_n": {"type": "number", "minimum": 0},
+            "torque_nmm": {"type": "number", "minimum": 0},
+            "direction_local": {"$ref": "#/$defs/unit_vector"}
+          }
+        },
+        "swept_bounds_mm": {"$ref": "#/$defs/bounds3"},
+        "human_clearance_bounds_mm": {"$ref": "#/$defs/bounds3"}
+      }
+    },
+    "mounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strategy", "mount_points_mm", "reaction_force_limit_n", "service_direction_local"],
+      "properties": {
+        "strategy": {
+          "enum": ["pcb", "panel", "bosses", "rails", "carrier", "bracket", "compliant_pad"]
+        },
+        "mount_points_mm": {
+          "type": "array",
+          "maxItems": 64,
+          "items": {"$ref": "#/$defs/point3"}
+        },
+        "reaction_force_limit_n": {"type": "number", "exclusiveMinimum": 0},
+        "service_direction_local": {"$ref": "#/$defs/unit_vector"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "source_sha256"],
+      "properties": {
+        "status": {"enum": ["datasheet_bound", "user_confirmed", "preview_only"]},
+        "source_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "$defs": {
+    "stable_id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "point3": {
+      "type": "array",
+      "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}],
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "unit_vector": {
+      "allOf": [
+        {"$ref": "#/$defs/point3"},
+        {"description": "Validator must additionally require finite, normalized coordinates."}
+      ]
+    },
+    "quaternion": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "number"},
+        {"type": "number"},
+        {"type": "number"},
+        {"type": "number"}
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin_mm", "rotation_xyzw"],
+      "properties": {
+        "origin_mm": {"$ref": "#/$defs/point3"},
+        "rotation_xyzw": {"$ref": "#/$defs/quaternion"}
+      }
+    },
+    "bounds3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max"],
+      "properties": {
+        "min": {"$ref": "#/$defs/point3"},
+        "max": {"$ref": "#/$defs/point3"}
+      }
+    }
+  }
+}

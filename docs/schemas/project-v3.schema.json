@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio/schemas/project-v3.schema.json",
+  "title": "Design Studio mechatronic project (format design-studio.project/3)",
+  "description": "One document spanning mechanical solids and the electronic board, with cross-domain constraints and a design-rationale trail that records bidirectional design<->engineering co-evolution (a design intent records the mechanical AND electronic changes it drove, and engineering constraints can drive design changes the other way).",
+  "type": "object",
+  "required": ["format", "units"],
+  "additionalProperties": false,
+  "properties": {
+    "format": { "const": "design-studio.project/3" },
+    "units": { "const": "nm", "description": "mechanical + electronic share int64 nanometre coordinates" },
+    "materials": {
+      "type": "array",
+      "description": "ONE library, multi-domain properties (mechanical + thermal + electronic).",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "mech": {
+            "type": "object",
+            "properties": {
+              "E_GPa": { "type": "number" },
+              "nu": { "type": "number" },
+              "yield_MPa": { "type": "number" },
+              "density_kg_m3": { "type": "number" },
+              "fatigue": { "type": "object" }
+            }
+          },
+          "thermal": {
+            "type": "object",
+            "properties": {
+              "k_W_mK": { "type": "number" },
+              "cte_ppm_K": { "type": "number" },
+              "cp_J_kgK": { "type": "number" }
+            }
+          },
+          "electronic": {
+            "type": "object",
+            "description": "for substrate/laminate materials shared with the board",
+            "properties": {
+              "er": { "type": "number" },
+              "tan_delta": { "type": "number" },
+              "sigma_S_m": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "parts": {
+      "type": "array",
+      "description": "mechanical solids; geometry referenced out-of-line (B-rep file).",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind"],
+        "properties": {
+          "id": { "type": "string" },
+          "kind": { "enum": ["brep", "primitive", "import"] },
+          "shape": { "type": "string", "description": "relative path to the .brep/.step shape" },
+          "material": { "type": "string", "description": "materials[].id" },
+          "xform": {
+            "type": "array",
+            "description": "4x4 row-major transform (16 floats), nm translation",
+            "items": { "type": "number" },
+            "minItems": 16, "maxItems": 16
+          }
+        }
+      }
+    },
+    "board": {
+      "description": "the electronic board, unchanged design-studio.project/2 object (referenced or embedded).",
+      "type": "object"
+    },
+    "assembly": {
+      "type": "object",
+      "properties": {
+        "tree": { "type": "array", "description": "nested assembly nodes referencing parts[].id / sub-assemblies" },
+        "joints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["kind", "a", "b"],
+            "properties": {
+              "kind": { "enum": ["fixed", "revolute", "prismatic", "cylindrical", "spherical", "planar", "gear", "cam"] },
+              "a": { "type": "string", "description": "parts[].id" },
+              "b": { "type": "string", "description": "parts[].id" },
+              "axis": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+              "limits": { "type": "array", "items": { "type": "number" } }
+            }
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "description": "CROSS-DOMAIN constraints: this is where design and engineering meet. A 'fit' couples a mechanical mate to an electrical connector's pin map; 'thermal'/'emi' couple board power to enclosure geometry. Editing one side is expected to drive the other (co-evolution).",
+      "items": {
+        "type": "object",
+        "required": ["kind"],
+        "properties": {
+          "kind": { "enum": ["mate", "fit", "keepout", "thermal", "emi", "alignment"] },
+          "domains": {
+            "type": "array",
+            "items": { "enum": ["mechanical", "electronic"] },
+            "description": "the domains this constraint couples (>=1; cross-domain when 2)."
+          },
+          "refs": { "type": "array", "items": { "type": "string" }, "description": "parts[].id / board net or pad ids" },
+          "params": { "type": "object" }
+        }
+      }
+    },
+    "tolerances": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "rationale": {
+      "type": "array",
+      "description": "the design-rationale trail (Lawson/Cross co-evolution). Each entry records an intent, the alternatives weighed, the gate that approved it, the source (human or a specific AI model), AND the changes it drove in BOTH domains — capturing bidirectional design<->engineering influence and serving as the AI audit log + the seed for an auto-drafted design narrative.",
+      "items": {
+        "type": "object",
+        "required": ["ts", "intent"],
+        "properties": {
+          "ts": { "type": "string", "format": "date-time" },
+          "intent": { "type": "string" },
+          "alternatives": { "type": "array", "items": { "type": "string" } },
+          "gate": { "enum": ["drc", "fea", "manual", "none"] },
+          "source": { "type": "string", "description": "'human' or 'ai:<model>@<rev>'" },
+          "drove": {
+            "type": "object",
+            "description": "the changes this intent propagated, per domain (bidirectional).",
+            "properties": {
+              "mechanical": { "type": "array", "items": { "type": "string" } },
+              "electronic": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "driven_by": {
+            "type": "string",
+            "description": "if this change was forced by an engineering constraint feeding back into design, name it (the reverse direction)."
+          }
+        }
+      }
+    }
+  }
+}

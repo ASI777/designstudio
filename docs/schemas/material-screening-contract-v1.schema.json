@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/material-screening-contract-v1.schema.json",
+  "title": "DesignStudio material screening contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product_id", "requirements_sha256", "materials",
+    "all_source_documents_digest_pinned", "qualification_status",
+    "qualification_reason", "required_next_evidence"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.material-screening-contract/1"},
+    "product_id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+    "requirements_sha256": {"$ref": "#/$defs/sha256"},
+    "materials": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/material"}
+    },
+    "all_source_documents_digest_pinned": {"type": "boolean"},
+    "qualification_status": {"const": "incomplete"},
+    "qualification_reason": {"type": "string", "minLength": 1},
+    "required_next_evidence": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "tolerance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minus", "plus"],
+      "properties": {
+        "minus": {"type": "number", "minimum": 0},
+        "plus": {"type": "number", "minimum": 0}
+      }
+    },
+    "quantity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["value", "unit", "tolerance", "criticality"],
+      "properties": {
+        "value": {"type": "number"},
+        "unit": {"enum": ["kg_per_m3", "GPa", "MPa", "1"]},
+        "tolerance": {"$ref": "#/$defs/tolerance"},
+        "criticality": {"enum": ["functional", "safety"]}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "source_id", "publisher", "title", "url", "revision", "locator",
+        "document_sha256", "digest_status", "property_coverage"
+      ],
+      "properties": {
+        "source_id": {"type": "string", "minLength": 1},
+        "publisher": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "url": {"type": "string", "pattern": "^https://"},
+        "revision": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1},
+        "document_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+        "digest_status": {"type": "string", "minLength": 1},
+        "property_coverage": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {
+            "enum": [
+              "density", "elastic_modulus", "poisson_ratio",
+              "minimum_yield_strength", "minimum_ultimate_strength"
+            ]
+          }
+        }
+      }
+    },
+    "qualification": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "status", "supplier_certificate_required", "required_product_form_match",
+        "prohibited_uses"
+      ],
+      "properties": {
+        "status": {"const": "screening_only_not_a_certified_design_allowable"},
+        "supplier_certificate_required": {"const": true},
+        "required_product_form_match": {"const": true},
+        "prohibited_uses": {
+          "type": "array", "minItems": 4, "uniqueItems": true,
+          "items": {
+            "enum": [
+              "production_acceptance", "fatigue_life", "fracture_mechanics",
+              "nonlinear_plasticity"
+            ]
+          }
+        }
+      }
+    },
+    "material": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "material_id", "temper", "product_form", "screening_properties",
+        "sources", "qualification"
+      ],
+      "properties": {
+        "material_id": {"enum": ["Al_6061_T6", "Al_7075_T6"]},
+        "temper": {"type": "string", "minLength": 1},
+        "product_form": {"type": "string", "minLength": 1},
+        "screening_properties": {
+          "type": "object", "additionalProperties": false,
+          "required": [
+            "density", "elastic_modulus", "poisson_ratio",
+            "minimum_yield_strength", "minimum_ultimate_strength"
+          ],
+          "properties": {
+            "density": {"$ref": "#/$defs/quantity"},
+            "elastic_modulus": {"$ref": "#/$defs/quantity"},
+            "poisson_ratio": {"$ref": "#/$defs/quantity"},
+            "minimum_yield_strength": {"$ref": "#/$defs/quantity"},
+            "minimum_ultimate_strength": {"$ref": "#/$defs/quantity"}
+          }
+        },
+        "sources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/source"}},
+        "qualification": {"$ref": "#/$defs/qualification"}
+      }
+    }
+  }
+}

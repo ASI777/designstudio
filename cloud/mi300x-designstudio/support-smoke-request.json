@@ -1,0 +1,72 @@
+{
+  "spec": {
+    "schema": "design-studio.support-generation/1",
+    "document": {
+      "document_id": "agent-keyboard-enclosure",
+      "revision": 7,
+      "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    },
+    "placements": [
+      {
+        "schema": "design-studio.component-placement/1",
+        "placement_id": "12345678-1234-4234-8234-123456789abc",
+        "component_id": "component.encoder",
+        "component_sha256": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+        "document": {
+          "document_id": "agent-keyboard-enclosure",
+          "revision": 7,
+          "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+        },
+        "transform": {
+          "translation_mm": [30.0, 25.0, 12.0],
+          "rotation_xyzw": [0.0, 0.0, 0.0, 1.0]
+        },
+        "coordinate_system": "enclosure_local",
+        "snap": {
+          "grid": true,
+          "surface": true,
+          "axis": true,
+          "symmetry": false,
+          "clearance": true
+        },
+        "locks": {
+          "position": true,
+          "orientation": true,
+          "surface_anchor": false
+        },
+        "clearance_mm": 1.0
+      }
+    ],
+    "design_volume_mm": {
+      "min": [0.0, 0.0, 0.0],
+      "max": [120.0, 70.0, 25.0]
+    },
+    "anchors": [
+      {
+        "id": "encoder-mount",
+        "position_mm": [30.0, 25.0, 8.0],
+        "kind": "mount"
+      }
+    ],
+    "forbidden_bounds_mm": [
+      {
+        "min": [60.0, 30.0, 5.0],
+        "max": [80.0, 50.0, 18.0]
+      }
+    ],
+    "load_cases": [
+      {
+        "anchor_id": "encoder-mount",
+        "force_n": [0.0, 0.0, -12.0]
+      }
+    ],
+    "manufacturing": {
+      "process": "injection_molding",
+      "minimum_wall_mm": 1.5,
+      "minimum_rib_mm": 1.0,
+      "clearance_mm": 0.5
+    },
+    "seed": 19
+  },
+  "idempotency_key": "mi300x-live-smoke-v1"
+}

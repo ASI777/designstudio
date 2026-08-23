@@ -1,0 +1,53 @@
+{
+  "schema": "multi-gpu-campaign.physics-inputs/1",
+  "coordinate_system": "enclosure_local_mm",
+  "geometry": {
+    "request": "cloud/mi300x-designstudio/rib-pocket-experiment-request-v2.json",
+    "locked_placements_must_remain_unchanged": true,
+    "exact_brep_collision_gate": true
+  },
+  "material": {
+    "name": "PC-ABS preliminary screening",
+    "youngs_modulus_mpa": 2200.0,
+    "poissons_ratio": 0.37,
+    "density_kg_m3": 1150.0,
+    "yield_strength_mpa": 42.0,
+    "thermal_conductivity_w_mk": 0.2,
+    "specific_heat_j_kgk": 1300.0,
+    "authority": "project_assumption_review_required"
+  },
+  "structural_cases": [
+    {
+      "id": "connector-insertion",
+      "load_n": [80.0, 0.0, 0.0],
+      "application_anchor": "connector-load",
+      "constraints": ["pcb-mount-ne", "pcb-mount-nw", "pcb-mount-se", "pcb-mount-sw"]
+    },
+    {
+      "id": "display-press",
+      "load_n": [0.0, 0.0, -25.0],
+      "application_anchor": "display-load",
+      "constraints": ["pcb-mount-ne", "pcb-mount-nw", "pcb-mount-se", "pcb-mount-sw"]
+    }
+  ],
+  "thermal": {
+    "ambient_c": 25.0,
+    "external_convection_w_m2k": 8.0,
+    "internal_convection_w_m2k": 3.0,
+    "interface_conductance_w_m2k": 500.0,
+    "component_powers_w": {
+      "compute-module": 4.5,
+      "power-module": 2.0,
+      "display-module": 1.5,
+      "controller-main-pcb": 1.0
+    }
+  },
+  "acceptance": {
+    "successive_mesh_displacement_change_maximum": 0.05,
+    "successive_mesh_strain_energy_change_maximum": 0.05,
+    "successive_mesh_max_temperature_change_maximum": 0.05,
+    "successive_mesh_thermal_resistance_change_maximum": 0.05,
+    "report_von_mises_percentile": 95,
+    "report_modes": 6
+  }
+}

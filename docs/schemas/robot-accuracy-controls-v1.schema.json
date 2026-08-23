@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/robot-accuracy-controls-v1.schema.json",
+  "title": "DesignStudio robot repeatability and controls contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product_id", "requirements_sha256", "repeatability_definition",
+    "allocation_method", "target_tool_repeatability_mm",
+    "joint_sensing_and_transmission_tool_rms_budget_mm", "other_tool_rms_budgets_mm",
+    "reconstituted_tool_rms_budget_mm", "joints", "repeatability_allocation_result",
+    "controls", "joint_net_contract_status", "required_evidence"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.robot-accuracy-controls/1"},
+    "product_id": {"type": "string", "minLength": 1},
+    "requirements_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "repeatability_definition": {"const": "tool_repeatability_not_absolute_accuracy"},
+    "allocation_method": {"const": "root_sum_square_small_angle_worst_reach"},
+    "target_tool_repeatability_mm": {"type": "number", "exclusiveMinimum": 0},
+    "joint_sensing_and_transmission_tool_rms_budget_mm": {"type": "number", "exclusiveMinimum": 0},
+    "other_tool_rms_budgets_mm": {
+      "type": "object", "additionalProperties": false,
+      "required": ["structural_hysteresis", "thermal_drift", "calibration_residual"],
+      "properties": {
+        "structural_hysteresis": {"type": "number", "exclusiveMinimum": 0},
+        "thermal_drift": {"type": "number", "exclusiveMinimum": 0},
+        "calibration_residual": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "reconstituted_tool_rms_budget_mm": {"type": "number", "exclusiveMinimum": 0},
+    "joints": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/joint"}
+    },
+    "repeatability_allocation_result": {"const": "pass_budget_allocated_evidence_incomplete"},
+    "controls": {"$ref": "#/$defs/controls"},
+    "joint_net_contract_status": {"type": "string", "minLength": 1},
+    "required_evidence": {"$ref": "#/$defs/stringArray"}
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "joint": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "joint_id", "worst_reach_lever_arm_m", "maximum_total_joint_rms_angle_rad",
+        "maximum_total_joint_rms_angle_deg", "maximum_total_joint_rms_angle_arcsec",
+        "subsystem_rms_angle_allocations_arcsec", "exact_encoder_binding",
+        "exact_reducer_binding", "bearing_stiffness_and_clearance_bound",
+        "servo_tracking_measurement_bound", "verification_status"
+      ],
+      "properties": {
+        "joint_id": {"type": "string", "pattern": "^J[1-7]$"},
+        "worst_reach_lever_arm_m": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_total_joint_rms_angle_rad": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_total_joint_rms_angle_deg": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_total_joint_rms_angle_arcsec": {"type": "number", "exclusiveMinimum": 0},
+        "subsystem_rms_angle_allocations_arcsec": {
+          "type": "object", "additionalProperties": false,
+          "required": [
+            "encoder", "reducer_lost_motion", "bearing_and_joint_deflection",
+            "servo_tracking_and_quantization"
+          ],
+          "properties": {
+            "encoder": {"type": "number", "exclusiveMinimum": 0},
+            "reducer_lost_motion": {"type": "number", "exclusiveMinimum": 0},
+            "bearing_and_joint_deflection": {"type": "number", "exclusiveMinimum": 0},
+            "servo_tracking_and_quantization": {"type": "number", "exclusiveMinimum": 0}
+          }
+        },
+        "exact_encoder_binding": {"type": "null"},
+        "exact_reducer_binding": {"type": "null"},
+        "bearing_stiffness_and_clearance_bound": {"const": false},
+        "servo_tracking_measurement_bound": {"const": false},
+        "verification_status": {"const": "incomplete_component_and_test_evidence_missing"}
+      }
+    },
+    "controls": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "maximum_joint_position_bandwidth_hz", "screened_minimum_structural_mode_hz",
+        "structural_mode_separation_ratio", "minimum_required_structural_mode_separation_ratio",
+        "mode_separation_result", "pwm_control_frequency_hz", "pwm_period_s",
+        "maximum_command_to_pwm_latency_s", "maximum_latency_in_pwm_periods",
+        "measured_command_to_pwm_latency_s", "plant_model_status", "stability_result"
+      ],
+      "properties": {
+        "maximum_joint_position_bandwidth_hz": {"type": "number", "exclusiveMinimum": 0},
+        "screened_minimum_structural_mode_hz": {"type": "number", "exclusiveMinimum": 0},
+        "structural_mode_separation_ratio": {"type": "number", "exclusiveMinimum": 0},
+        "minimum_required_structural_mode_separation_ratio": {"type": "number", "minimum": 1},
+        "mode_separation_result": {"const": "pass_screening_only"},
+        "pwm_control_frequency_hz": {"type": "number", "exclusiveMinimum": 0},
+        "pwm_period_s": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_command_to_pwm_latency_s": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_latency_in_pwm_periods": {"type": "number", "exclusiveMinimum": 0},
+        "measured_command_to_pwm_latency_s": {"type": "null"},
+        "plant_model_status": {"const": "incomplete_motor_reducer_friction_backlash_and_delay_missing"},
+        "stability_result": {"const": "incomplete_frequency_response_and_robustness_analysis_missing"}
+      }
+    }
+  }
+}

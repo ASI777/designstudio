@@ -1,0 +1,411 @@
+{
+  "spec": {
+    "schema": "design-studio.support-generation/1",
+    "document": {
+      "document_id": "amd-credit-rib-pocket-experiment",
+      "revision": 2,
+      "sha256": "edac5214886bcbb235cc131a2b2ba3fd0e3977b823a6e9320596324cc8ae62bc"
+    },
+    "placements": [
+      {
+        "schema": "design-studio.component-placement/1",
+        "placement_id": "placement-main-pcb",
+        "component_id": "controller-main-pcb",
+        "component_sha256": "e3811caca27bd1748322ca7379d18a62b86f9f7c2ba6377bb1cb46419e70ef66",
+        "document": {
+          "document_id": "amd-credit-rib-pocket-experiment",
+          "revision": 2,
+          "sha256": "edac5214886bcbb235cc131a2b2ba3fd0e3977b823a6e9320596324cc8ae62bc"
+        },
+        "transform": {
+          "translation_mm": [
+            80.0,
+            55.0,
+            8.0
+          ],
+          "rotation_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "coordinate_system": "enclosure_local",
+        "snap": {
+          "grid": true,
+          "surface": true,
+          "axis": true,
+          "symmetry": false,
+          "clearance": true
+        },
+        "locks": {
+          "position": true,
+          "orientation": true,
+          "surface_anchor": false
+        },
+        "clearance_mm": 1.0
+      },
+      {
+        "schema": "design-studio.component-placement/1",
+        "placement_id": "placement-compute-module",
+        "component_id": "compute-module",
+        "component_sha256": "bfe321cb2e2233c68ec8d12861b1dd793b07190cfc902653f984601ea45a2173",
+        "document": {
+          "document_id": "amd-credit-rib-pocket-experiment",
+          "revision": 2,
+          "sha256": "edac5214886bcbb235cc131a2b2ba3fd0e3977b823a6e9320596324cc8ae62bc"
+        },
+        "transform": {
+          "translation_mm": [
+            55.0,
+            55.0,
+            12.0
+          ],
+          "rotation_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "coordinate_system": "enclosure_local",
+        "snap": {
+          "grid": true,
+          "surface": true,
+          "axis": true,
+          "symmetry": false,
+          "clearance": true
+        },
+        "locks": {
+          "position": true,
+          "orientation": true,
+          "surface_anchor": false
+        },
+        "clearance_mm": 1.0
+      },
+      {
+        "schema": "design-studio.component-placement/1",
+        "placement_id": "placement-power-module",
+        "component_id": "power-module",
+        "component_sha256": "038cb6c1a2ab949444d7bffb127e7c9a6668c3546a1603147e3da17635dbb787",
+        "document": {
+          "document_id": "amd-credit-rib-pocket-experiment",
+          "revision": 2,
+          "sha256": "edac5214886bcbb235cc131a2b2ba3fd0e3977b823a6e9320596324cc8ae62bc"
+        },
+        "transform": {
+          "translation_mm": [
+            110.0,
+            55.0,
+            12.0
+          ],
+          "rotation_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "coordinate_system": "enclosure_local",
+        "snap": {
+          "grid": true,
+          "surface": true,
+          "axis": true,
+          "symmetry": false,
+          "clearance": true
+        },
+        "locks": {
+          "position": true,
+          "orientation": true,
+          "surface_anchor": false
+        },
+        "clearance_mm": 1.0
+      },
+      {
+        "schema": "design-studio.component-placement/1",
+        "placement_id": "placement-display-module",
+        "component_id": "display-module",
+        "component_sha256": "160f5c874c92d5d9bee16373b4d85556f8c122562b45fc8b66e2d6a25ce9a3eb",
+        "document": {
+          "document_id": "amd-credit-rib-pocket-experiment",
+          "revision": 2,
+          "sha256": "edac5214886bcbb235cc131a2b2ba3fd0e3977b823a6e9320596324cc8ae62bc"
+        },
+        "transform": {
+          "translation_mm": [
+            80.0,
+            85.0,
+            28.0
+          ],
+          "rotation_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "coordinate_system": "surface_local",
+        "snap": {
+          "grid": true,
+          "surface": true,
+          "axis": true,
+          "symmetry": true,
+          "clearance": true
+        },
+        "locks": {
+          "position": true,
+          "orientation": true,
+          "surface_anchor": true
+        },
+        "clearance_mm": 1.0
+      },
+      {
+        "schema": "design-studio.component-placement/1",
+        "placement_id": "placement-side-connector",
+        "component_id": "side-connector",
+        "component_sha256": "04640056b57711c6810dc23a83b93cb28448e975a9c3fb54ea066cdd23eb79aa",
+        "document": {
+          "document_id": "amd-credit-rib-pocket-experiment",
+          "revision": 2,
+          "sha256": "edac5214886bcbb235cc131a2b2ba3fd0e3977b823a6e9320596324cc8ae62bc"
+        },
+        "transform": {
+          "translation_mm": [
+            152.0,
+            55.0,
+            16.0
+          ],
+          "rotation_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "coordinate_system": "surface_local",
+        "snap": {
+          "grid": true,
+          "surface": true,
+          "axis": true,
+          "symmetry": false,
+          "clearance": true
+        },
+        "locks": {
+          "position": true,
+          "orientation": true,
+          "surface_anchor": true
+        },
+        "clearance_mm": 1.0
+      }
+    ],
+    "design_volume_mm": {
+      "min": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max": [
+        160.0,
+        110.0,
+        35.0
+      ]
+    },
+    "anchors": [
+      {
+        "id": "compute-support",
+        "position_mm": [
+          55.0,
+          55.0,
+          6.5
+        ],
+        "kind": "mount"
+      },
+      {
+        "id": "connector-load",
+        "position_mm": [
+          142.0,
+          55.0,
+          16.0
+        ],
+        "kind": "connector"
+      },
+      {
+        "id": "display-load",
+        "position_mm": [
+          80.0,
+          86.0,
+          21.5
+        ],
+        "kind": "load"
+      },
+      {
+        "id": "pcb-mount-ne",
+        "position_mm": [
+          142.0,
+          22.0,
+          6.0
+        ],
+        "kind": "pcb"
+      },
+      {
+        "id": "pcb-mount-nw",
+        "position_mm": [
+          18.0,
+          22.0,
+          6.0
+        ],
+        "kind": "pcb"
+      },
+      {
+        "id": "pcb-mount-se",
+        "position_mm": [
+          142.0,
+          88.0,
+          6.0
+        ],
+        "kind": "pcb"
+      },
+      {
+        "id": "pcb-mount-sw",
+        "position_mm": [
+          18.0,
+          88.0,
+          6.0
+        ],
+        "kind": "pcb"
+      },
+      {
+        "id": "power-support",
+        "position_mm": [
+          110.0,
+          55.0,
+          6.5
+        ],
+        "kind": "mount"
+      }
+    ],
+    "forbidden_bounds_mm": [
+      {
+        "min": [
+          42.0,
+          42.0,
+          9.0
+        ],
+        "max": [
+          68.0,
+          68.0,
+          22.0
+        ]
+      },
+      {
+        "min": [
+          97.0,
+          40.0,
+          9.0
+        ],
+        "max": [
+          123.0,
+          70.0,
+          24.0
+        ]
+      },
+      {
+        "min": [
+          55.0,
+          75.0,
+          24.0
+        ],
+        "max": [
+          105.0,
+          98.0,
+          32.0
+        ]
+      },
+      {
+        "min": [
+          145.0,
+          45.0,
+          10.0
+        ],
+        "max": [
+          158.0,
+          65.0,
+          24.0
+        ]
+      }
+    ],
+    "load_cases": [
+      {
+        "anchor_id": "compute-support",
+        "force_n": [
+          0.0,
+          0.0,
+          -8.0
+        ]
+      },
+      {
+        "anchor_id": "connector-load",
+        "force_n": [
+          -20.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "anchor_id": "display-load",
+        "force_n": [
+          0.0,
+          0.0,
+          -18.0
+        ]
+      },
+      {
+        "anchor_id": "pcb-mount-ne",
+        "force_n": [
+          0.0,
+          0.0,
+          -5.0
+        ]
+      },
+      {
+        "anchor_id": "pcb-mount-nw",
+        "force_n": [
+          0.0,
+          0.0,
+          -5.0
+        ]
+      },
+      {
+        "anchor_id": "pcb-mount-se",
+        "force_n": [
+          0.0,
+          0.0,
+          -5.0
+        ]
+      },
+      {
+        "anchor_id": "pcb-mount-sw",
+        "force_n": [
+          0.0,
+          0.0,
+          -5.0
+        ]
+      },
+      {
+        "anchor_id": "power-support",
+        "force_n": [
+          0.0,
+          0.0,
+          -10.0
+        ]
+      }
+    ],
+    "manufacturing": {
+      "process": "injection_molding",
+      "minimum_wall_mm": 1.8,
+      "minimum_rib_mm": 1.2,
+      "clearance_mm": 1.0
+    },
+    "seed": 20260726
+  }
+}

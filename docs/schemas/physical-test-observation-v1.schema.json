@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:physical-test-observation:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "observation_id", "plan_id", "plan_digest", "session_id", "candidate_id", "candidate_semantic_id", "candidate_fcstd_digest", "candidate_brep_digest", "buck_step_digest", "buck_stl_digest", "participant", "test_order", "ratings", "tested_at", "observer", "provenance", "observation_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.physical-test-observation/1"},
+    "observation_id": {"$ref": "#/$defs/id"}, "plan_id": {"$ref": "#/$defs/id"}, "plan_digest": {"$ref": "#/$defs/digest"}, "session_id": {"$ref": "#/$defs/id"}, "candidate_id": {"$ref": "#/$defs/id"}, "candidate_semantic_id": {"$ref": "#/$defs/id"}, "candidate_fcstd_digest": {"$ref": "#/$defs/digest"}, "candidate_brep_digest": {"$ref": "#/$defs/digest"}, "buck_step_digest": {"$ref": "#/$defs/digest"}, "buck_stl_digest": {"$ref": "#/$defs/digest"},
+    "participant": {"type": "object", "additionalProperties": false, "required": ["anonymous_id", "adult_confirmed", "hand_size_group", "hand_length_mm", "hand_breadth_mm"], "properties": {"anonymous_id": {"$ref": "#/$defs/id"}, "adult_confirmed": {"const": true}, "hand_size_group": {"enum": ["small", "medium", "large"]}, "hand_length_mm": {"type": "number", "exclusiveMinimum": 0}, "hand_breadth_mm": {"type": "number", "exclusiveMinimum": 0}}},
+    "test_order": {"type": "integer", "minimum": 1, "maximum": 3},
+    "ratings": {"type": "object", "additionalProperties": false, "required": ["comfort", "finger_reach", "pressure_points", "wrist_angle", "slip_resistance", "preference"], "properties": {"comfort": {"$ref": "#/$defs/rating"}, "finger_reach": {"$ref": "#/$defs/rating"}, "pressure_points": {"$ref": "#/$defs/rating"}, "wrist_angle": {"$ref": "#/$defs/rating"}, "slip_resistance": {"$ref": "#/$defs/rating"}, "preference": {"$ref": "#/$defs/rating"}}},
+    "tested_at": {"type": "string", "format": "date-time"}, "observer": {"type": "string", "minLength": 1}, "provenance": {"$ref": "#/$defs/provenance"}, "observation_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {"id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"}, "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "rating": {"type": "integer", "minimum": 1, "maximum": 5}, "provenance": {"type": "object", "additionalProperties": false, "required": ["entered_by", "entered_utc", "source", "synthetic_fixture"], "properties": {"entered_by": {"type": "string", "minLength": 1}, "entered_utc": {"type": "string", "format": "date-time"}, "source": {"type": "string", "minLength": 1}, "synthetic_fixture": {"type": "boolean"}}}}
+}

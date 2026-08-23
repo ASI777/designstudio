@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:product-graph:1",
+  "title": "DesignStudio semantic product graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "product_id", "revision", "nodes", "edges", "slots", "variants"],
+  "properties": {
+    "schema": {"const": "design-studio.product-graph/1"},
+    "product_id": {"$ref": "#/$defs/uuid"},
+    "revision": {"type": "integer", "minimum": 1},
+    "system_architecture_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "graph_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "assembly_path", "domain", "authority", "source_ref"],
+        "properties": {
+          "id": {"$ref": "#/$defs/uuid"},
+          "name": {"type": "string", "minLength": 1},
+          "assembly_path": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$"},
+          "domain": {"enum": ["mechanical", "electrical", "electronic", "firmware", "manufacturing", "product"]},
+          "authority": {"enum": ["freecad", "electronics", "product_graph", "contract"]},
+          "source_ref": {"type": "string", "minLength": 1},
+          "requirements": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to", "kind"],
+        "properties": {
+          "from": {"$ref": "#/$defs/uuid"},
+          "to": {"$ref": "#/$defs/uuid"},
+          "kind": {"enum": ["contains", "depends_on", "implements", "constrains", "connects"]}
+        }
+      }
+    },
+    "slots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "node_id", "assembly_path", "allowed_change_class", "protected_properties", "customizable_properties", "required_evidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^slot\\.[A-Za-z0-9_.-]+$"},
+          "name": {"type": "string", "minLength": 1},
+          "node_id": {"$ref": "#/$defs/uuid"},
+          "assembly_path": {"type": "string", "minLength": 1},
+          "allowed_change_class": {"enum": ["C0", "C1", "C2", "C3", "C4", "C5"]},
+          "protected_properties": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "customizable_properties": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "required_evidence": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "slot_id", "name", "change_class", "parameters", "failed_gates", "incomplete_gates"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+$"},
+          "slot_id": {"type": "string", "pattern": "^slot\\.[A-Za-z0-9_.-]+$"},
+          "name": {"type": "string", "minLength": 1},
+          "change_class": {"enum": ["C0", "C1", "C2", "C3", "C4", "C5"]},
+          "parameters": {"type": "object"},
+          "failed_gates": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "incomplete_gates": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+        }
+      }
+    }
+  },
+  "$defs": {"uuid": {"type": "string", "format": "uuid"}}
+}

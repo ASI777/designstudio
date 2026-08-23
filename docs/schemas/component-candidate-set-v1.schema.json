@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:component-candidate-set:1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "candidate_set_id", "plan_id", "plan_digest", "requirement_id", "candidates", "ranking_policy", "created_utc", "candidate_set_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.component-candidate-set/1"},
+    "candidate_set_id": {"$ref": "#/$defs/id"}, "plan_id": {"$ref": "#/$defs/id"},
+    "plan_digest": {"$ref": "#/$defs/digest"}, "requirement_id": {"$ref": "#/$defs/id"},
+    "ranking_policy": {"const": "reliability_first_verified_metrics_only"},
+    "created_utc": {"type": "string", "format": "date-time"}, "candidate_set_digest": {"$ref": "#/$defs/digest"},
+    "candidates": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/candidate"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "gate": {"type": "object", "additionalProperties": false, "required": ["status", "reason"], "properties": {"status": {"enum": ["pass", "fail", "incomplete", "not_applicable"]}, "reason": {"type": "string"}, "evidence_digest": {"$ref": "#/$defs/digest"}}},
+    "metric": {"type": "object", "additionalProperties": false, "required": ["status", "weight", "value"], "properties": {"status": {"enum": ["pass", "incomplete", "not_applicable"]}, "weight": {"type": "number", "minimum": 0}, "value": {"type": ["number", "null"]}, "source": {"type": "string"}}},
+    "candidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "mpn", "manufacturer", "status", "hard_gates", "metrics", "score", "rank", "datasheet", "assets", "offers"],
+      "properties": {
+        "candidate_id": {"$ref": "#/$defs/id"}, "mpn": {"type": "string", "minLength": 1}, "manufacturer": {"type": "string"},
+        "status": {"enum": ["valid", "rejected", "incomplete"]}, "hard_gates": {"type": "object", "additionalProperties": {"$ref": "#/$defs/gate"}},
+        "metrics": {"type": "object", "additionalProperties": {"$ref": "#/$defs/metric"}},
+        "score": {"type": ["number", "null"]}, "rank": {"type": ["integer", "null"], "minimum": 1},
+        "datasheet": {"type": "object", "additionalProperties": true}, "assets": {"type": "object", "additionalProperties": true},
+        "offers": {"type": "array", "items": {"type": "object"}}
+      }
+    }
+  }
+}

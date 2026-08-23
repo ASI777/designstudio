@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:mechanical-collision:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "generated_utc", "status", "project", "contract_digest", "components_checked", "fixed_items_checked", "collisions", "incomplete_checks", "method", "report_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.mechanical-collision/1"},
+    "generated_utc": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["pass", "fail", "incomplete"]},
+    "project": {
+      "type": "object",
+      "required": ["document_id", "revision", "file_sha256"],
+      "properties": {
+        "document_id": {"type": "string"},
+        "revision": {"type": "integer", "minimum": 0},
+        "file_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "contract_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "components_checked": {"type": "integer", "minimum": 0},
+    "fixed_items_checked": {"type": "integer", "minimum": 0},
+    "collisions": {"type": "array", "items": {"type": "object"}},
+    "incomplete_checks": {"type": "array", "items": {"type": "object"}},
+    "method": {"const": "FreeCAD Part.Shape.common solid intersection"},
+    "report_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

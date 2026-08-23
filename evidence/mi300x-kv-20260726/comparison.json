@@ -1,0 +1,108 @@
+{
+  "acceptance": {
+    "deterministic_output_gate": "not_measured",
+    "minimum_p95_ttft_improvement_percent": 30.0,
+    "oom_gate_passed": true,
+    "overall_status": "incomplete",
+    "rolling_gpu_utilization_gate": "not_measured",
+    "target_context_tokens": 16384,
+    "ttft_gate_passed": false
+  },
+  "comparisons": [
+    {
+      "apc_off_p95_ttft_ms": 2830.2969417000872,
+      "apc_off_sha256": "523340871c672779408a8917fa7a7b16a277f67a92f28db53376bfa166d3bf94",
+      "apc_on_p95_ttft_ms": 2575.632071850166,
+      "apc_on_sha256": "b56ae90513f9f0d089f15b77225442110568aa618c7db35a625da26427b2476d",
+      "concurrency": 1,
+      "context_tokens_requested": 4096,
+      "p95_ttft_improvement_percent": 8.997814543690616,
+      "ttft_gate_passed": false
+    },
+    {
+      "apc_off_p95_ttft_ms": 979.8028449497906,
+      "apc_off_sha256": "2c1e9a99a962d980ee05f8211b27ad9e06c7db4dfb618490454c9bbb45f68662",
+      "apc_on_p95_ttft_ms": 552.239642099812,
+      "apc_on_sha256": "0551c4c0dc9d6f62825b4000ef6f850bada8deb57f5c4b6880b0313ab6cb441a",
+      "concurrency": 4,
+      "context_tokens_requested": 4096,
+      "p95_ttft_improvement_percent": 43.637677217796686,
+      "ttft_gate_passed": true
+    },
+    {
+      "apc_off_p95_ttft_ms": 1016.0477780496876,
+      "apc_off_sha256": "5aa3b9f390d274626ea7d22b089f48418f7cbc4cf7d0d968a0ca3d3da453ff60",
+      "apc_on_p95_ttft_ms": 307.76210780009023,
+      "apc_on_sha256": "575010b87391b26e878b6d483fc23cc8e31f204d2427a404f196f0f4b7b862d6",
+      "concurrency": 8,
+      "context_tokens_requested": 4096,
+      "p95_ttft_improvement_percent": 69.70987836902293,
+      "ttft_gate_passed": true
+    },
+    {
+      "apc_off_p95_ttft_ms": 679.2892048995782,
+      "apc_off_sha256": "db09121178de28486fb61e6095efcbfc5bb654fb90a808386b9b4e9913fdb00c",
+      "apc_on_p95_ttft_ms": 503.05248775034636,
+      "apc_on_sha256": "1a4c22d2d26e0bdc8950ce82240390352a5551e6902d2b707a0986826d75dfe8",
+      "concurrency": 1,
+      "context_tokens_requested": 16384,
+      "p95_ttft_improvement_percent": 25.94428350665245,
+      "ttft_gate_passed": false
+    },
+    {
+      "apc_off_p95_ttft_ms": 3845.600944749412,
+      "apc_off_sha256": "30f353df9a73e8af1ebc686810d0be634fc0e9cbe0f67f9434695cdef76d21dc",
+      "apc_on_p95_ttft_ms": 370.41526085008627,
+      "apc_on_sha256": "4168534c7f353c6efeeb36939f886227f8a11e63c754f9c033338c5984f559e7",
+      "concurrency": 4,
+      "context_tokens_requested": 16384,
+      "p95_ttft_improvement_percent": 90.36781854976834,
+      "ttft_gate_passed": true
+    },
+    {
+      "apc_off_p95_ttft_ms": 9415.053953649658,
+      "apc_off_sha256": "5f3f0608133a2bc43cd9d89c8581c951fece6aa8e8d686e619f9aad5b00fcb67",
+      "apc_on_p95_ttft_ms": 707.291739999846,
+      "apc_on_sha256": "48bda773f782106ab4421c12c992aaed4cdbbf688325e81bb6c4fcad9ee2600b",
+      "concurrency": 8,
+      "context_tokens_requested": 16384,
+      "p95_ttft_improvement_percent": 92.48765069768218,
+      "ttft_gate_passed": true
+    },
+    {
+      "apc_off_p95_ttft_ms": 6707.532755150078,
+      "apc_off_sha256": "c3921f53f6975ed5ad028aca810943ad3775c3a380d8ed64ae7da79e9c322e3f",
+      "apc_on_p95_ttft_ms": 4706.38744779994,
+      "apc_on_sha256": "7fb070875dcd4183223b1ca6b62c4d1d24c1f0e3e93eb6ff6fc94f2f18dc48b0",
+      "concurrency": 1,
+      "context_tokens_requested": 65536,
+      "p95_ttft_improvement_percent": 29.834297951264542,
+      "ttft_gate_passed": false
+    },
+    {
+      "apc_off_p95_ttft_ms": 41123.80346679946,
+      "apc_off_sha256": "ec79be7406ca27e53431375e0d12a8355342fb707e136e13208853afc6558bee",
+      "apc_on_p95_ttft_ms": 1343.9947075500186,
+      "apc_on_sha256": "2d2e17ada141951f4cdebfcb327b91d9b3a8886bcc4b6127e4d7726ed69abbf3",
+      "concurrency": 4,
+      "context_tokens_requested": 65536,
+      "p95_ttft_improvement_percent": 96.73183267536267,
+      "ttft_gate_passed": true
+    },
+    {
+      "apc_off_p95_ttft_ms": 76140.43256499968,
+      "apc_off_sha256": "aaf88c3561d6b3e6ee573b5e16f00fa222832226adb8a1579515da294996527d",
+      "apc_on_p95_ttft_ms": 2823.1315552494834,
+      "apc_on_sha256": "b0dee0e6a01459a404e019e4f837ca216b2ae45e0912eb92e01ce501d547af97",
+      "concurrency": 8,
+      "context_tokens_requested": 65536,
+      "p95_ttft_improvement_percent": 96.29220446989262,
+      "ttft_gate_passed": true
+    }
+  ],
+  "created_at": "2026-07-26T05:04:27.992875+00:00",
+  "image_digest": "sha256:3813e31cc3ab56f71ba83a72da77a84f3c75030e54c9c316951a99317b818ce4",
+  "model": "Qwen/Qwen3.5-35B-A3B",
+  "model_revision": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+  "schema": "design-studio.kv-benchmark-comparison/1"
+}

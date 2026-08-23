@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>DesignStudio</AssemblyName>
+    <RootNamespace>DesignStudio</RootNamespace>
+
+    <!-- Single-file exe packaging -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishReadyToRun>true</PublishReadyToRun>
+
+    <!-- App metadata (shows in Properties → Details on Windows) -->
+    <Version>1.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+    <ProductName>DesignStudio</ProductName>
+    <Company>Design Studio</Company>
+    <Description>PCB Schematic and Layout Designer</Description>
+    <Copyright>2025 Design Studio</Copyright>
+
+    <!-- Icon — place DesignStudio.ico next to the .csproj -->
+    <ApplicationIcon Condition="Exists('DesignStudio.ico')">DesignStudio.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Polygon boolean engine for plane shapes (pure managed, cross-platform) -->
+    <PackageReference Include="Clipper2" Version="1.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Native core engine: build core/ with CMake first; the DLL is bundled into the exe -->
+    <None Include="..\..\core\build\Release\designcore.dll" Condition="Exists('..\..\core\build\Release\designcore.dll')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>designcore.dll</Link>
+    </None>
+  </ItemGroup>
+
+</Project>

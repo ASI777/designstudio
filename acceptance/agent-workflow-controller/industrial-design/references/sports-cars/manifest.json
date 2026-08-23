@@ -1,0 +1,70 @@
+{
+  "schema": "design-studio.inspiration-reference-set/1",
+  "id": "agent-controller-sports-car-inspiration-v1",
+  "purpose": "analysis-only visual inspiration; never a geometry source",
+  "retrieved_utc": "2026-07-23T00:00:00Z",
+  "references": [
+    {
+      "file": "porsche-911t-front.jpg",
+      "title": "Porsche 911 T Front",
+      "author": "Robotriot",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Porsche_911_T_Front.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Porsche_911_T_Front.jpg",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "width_px": 4272,
+      "height_px": 2848,
+      "sha256": "87ca09e32e1a98590415bfb1c63d046270e0cfe68c82a85e235da69b6a14afc9",
+      "rights_status": "licensed-reference",
+      "distribution": "retain attribution and apply the selected license terms"
+    },
+    {
+      "file": "mclaren-artura-rear.jpg",
+      "title": "The rearview of McLaren Artura",
+      "author": "Tokumeigakarinoaoshima",
+      "source_page": "https://commons.wikimedia.org/wiki/File:The_rearview_of_McLaren_Artura.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/5/59/The_rearview_of_McLaren_Artura.jpg",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "width_px": 2560,
+      "height_px": 1920,
+      "sha256": "181a4943b7f951da38197504973f04a2d5baa9af1b6b8418081faacb48289da2",
+      "rights_status": "licensed-reference",
+      "distribution": "retain attribution and apply the selected license terms"
+    },
+    {
+      "file": "lotus-emira-rear.jpg",
+      "title": "Lotus Emira rear",
+      "author": "TTTNIS",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Lotus_Emira_rear.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Lotus_Emira_rear.jpg",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "width_px": 4050,
+      "height_px": 1698,
+      "sha256": "a669eab1b3c48b87bcffc5034e91e9c4db9fd9df9282c90b0eaa5b8f58fefd11",
+      "rights_status": "public-domain-dedication",
+      "distribution": "CC0; attribution retained as provenance"
+    },
+    {
+      "file": "alpine-a110-interior.jpg",
+      "title": "Alpine A110 interior",
+      "author": "Falcon Photography from France",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Alpine_A110_interior.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Alpine_A110_interior.jpg",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "width_px": 4898,
+      "height_px": 3265,
+      "sha256": "e586d7a1c82253f343c10543a220d524481fe6f21cf264468a71bbc4aeb9ee78",
+      "rights_status": "licensed-reference",
+      "distribution": "retain attribution and apply the selected license terms"
+    }
+  ],
+  "originality_constraints": [
+    "Do not copy vehicle silhouettes or recognizable surface geometry",
+    "Do not reproduce logos, badges, lamps, grilles, vents, or upholstery patterns",
+    "Use only abstract proportion, layering, material, hierarchy, and surface-language attributes",
+    "Require a distinct controller silhouette and control treatment before publication"
+  ]
+}

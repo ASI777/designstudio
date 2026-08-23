@@ -1,0 +1,224 @@
+{
+    "categories": {
+        "connectivity": {
+            "findings": [
+            ],
+            "metrics": {
+                "checked_nets": 59,
+                "disconnected_nets": 0
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "drc": {
+            "findings": [
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "SW12 to R4 courtyard/body gap 0.000 mm < required 0.000 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 67.1,
+                        "y_mm": 75.05
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "J1 to U2 courtyard/body gap 0.000 mm < required 0.000 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 69.025,
+                        "y_mm": 116.335
+                    },
+                    "severity": "warning"
+                },
+                {
+                    "code": "COURTYARD_OVERLAP",
+                    "message": "C2 to C3 courtyard/body gap 0.000 mm < required 0.000 mm",
+                    "metrics": {
+                        "rule_code": 17,
+                        "x_mm": 85.45,
+                        "y_mm": 97.4
+                    },
+                    "severity": "warning"
+                }
+            ],
+            "metrics": {
+                "engine": "designcore-native",
+                "errors": 0,
+                "warnings": 3
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "mechanical": {
+            "findings": [
+            ],
+            "metrics": {
+                "components_missing_envelope": 0,
+                "enclosure_evidence_required": false,
+                "enclosure_evidence_valid": false,
+                "mechanical_drc_failures": 0
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "power_integrity": {
+            "findings": [
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "GND limiting branch capacity 0.604 A vs allocated 0.350 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 0.6044325489591941,
+                        "limiting_branch_required_current_a": 0.35,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.7269501398834117,
+                        "net_id": 0,
+                        "required_current_a": 2,
+                        "trace_count": 232
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+3V3 limiting branch capacity 1.447 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.4468880626650513,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.4468880626650513,
+                        "net_id": 1,
+                        "required_current_a": 1,
+                        "trace_count": 90
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VBAT limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 2,
+                        "required_current_a": 1.5,
+                        "trace_count": 16
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VSYS limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 3,
+                        "required_current_a": 1.5,
+                        "trace_count": 30
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+5V_LED limiting branch capacity 1.447 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.4468880626650513,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.4468880626650513,
+                        "net_id": 4,
+                        "required_current_a": 1,
+                        "trace_count": 101
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VBUS limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 5,
+                        "required_current_a": 1.5,
+                        "trace_count": 20
+                    },
+                    "severity": "info"
+                }
+            ],
+            "metrics": {
+                "failed_power_nets": 0,
+                "specified_power_nets": 6,
+                "temperature_rise_c": 10
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "signal_integrity": {
+            "findings": [
+                {
+                    "code": "SINGLE_ENDED_IMPEDANCE",
+                    "message": "USB_90R predicted 45.10 ohm vs target 45.00 ohm (0.2% error)",
+                    "metrics": {
+                        "class_id": 1,
+                        "method": "closed-form-microstrip-screening",
+                        "predicted_ohm": 45.10107656177557,
+                        "target_ohm": 45,
+                        "tolerance_pct": 10
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DIFFERENTIAL_IMPEDANCE",
+                    "message": "USB_90R predicted 89.27 ohm vs target 90.00 ohm (0.8% error)",
+                    "metrics": {
+                        "class_id": 1,
+                        "method": "closed-form-microstrip-screening",
+                        "predicted_ohm": 89.27154394609208,
+                        "target_ohm": 90,
+                        "tolerance_pct": 10
+                    },
+                    "severity": "info"
+                }
+            ],
+            "metrics": {
+                "failed_targets": 0,
+                "target_classes": 1
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "thermal": {
+            "findings": [
+            ],
+            "metrics": {
+                "missing_constraints": 0,
+                "powered_components": 4,
+                "spacing_failures": 0
+            },
+            "required": true,
+            "status": "pass"
+        }
+    },
+    "constraint_profile": {
+        "assembler": "unassigned",
+        "fabricator": "unassigned",
+        "id": "agent-controller-4layer-v1",
+        "ipc_performance_class": 2,
+        "producibility_level": "B",
+        "source": "project:agent-workflow-controller",
+        "source_revision": "1.0.0"
+    },
+    "generated_utc": "2026-07-16T14:49:55.989Z",
+    "overall_status": "pass",
+    "project": {
+        "document_id": "project:agent-workflow-controller-v1",
+        "file_sha256": "36c410f0bada251bbe3f74a4643d7c35be82f7dacdd1983f3e655b56b366b1f0",
+        "revision": 1
+    },
+    "schema": "design-studio.verification/1"
+}

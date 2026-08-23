@@ -1,0 +1,475 @@
+{
+  "schema": "design-studio.component/2",
+  "component": {
+    "manufacturer": "",
+    "mpn": "USBC-24P-RA",
+    "category": "USB Type-C Receptacle",
+    "description": "USB-C 24-pin right-angle SMT, recommended PCB layout"
+  },
+  "symbol": {
+    "ref_des_prefix": "J",
+    "pins": [
+      {
+        "number": "A1",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A2",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A3",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A4",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A5",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A6",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A7",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A8",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A9",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A10",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A11",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "A12",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B1",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B2",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B3",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B4",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B5",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B6",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B7",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B8",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B9",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B10",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B11",
+        "name": "",
+        "electrical_type": "passive"
+      },
+      {
+        "number": "B12",
+        "name": "",
+        "electrical_type": "passive"
+      }
+    ]
+  },
+  "footprint": {
+    "name": "USBC-24P-RA-SMT",
+    "mount": "smd",
+    "pitch_mm": 0.5,
+    "body": {
+      "length_mm": 8.64,
+      "width_mm": 6.2,
+      "height_mm": 0
+    },
+    "pads": [
+      {
+        "number": "A1",
+        "x_mm": -2.75,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B12",
+        "x_mm": -2.75,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A2",
+        "x_mm": -2.25,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B11",
+        "x_mm": -2.25,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A3",
+        "x_mm": -1.75,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B10",
+        "x_mm": -1.75,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A4",
+        "x_mm": -1.25,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B9",
+        "x_mm": -1.25,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A5",
+        "x_mm": -0.75,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B8",
+        "x_mm": -0.75,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A6",
+        "x_mm": -0.25,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B7",
+        "x_mm": -0.25,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A7",
+        "x_mm": 0.25,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B6",
+        "x_mm": 0.25,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A8",
+        "x_mm": 0.75,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B5",
+        "x_mm": 0.75,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A9",
+        "x_mm": 1.25,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B4",
+        "x_mm": 1.25,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A10",
+        "x_mm": 1.75,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B3",
+        "x_mm": 1.75,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A11",
+        "x_mm": 2.25,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B2",
+        "x_mm": 2.25,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "A12",
+        "x_mm": 2.75,
+        "y_mm": 0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "B1",
+        "x_mm": 2.75,
+        "y_mm": -0.55,
+        "width_mm": 0.3,
+        "height_mm": 0.85,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": false
+      },
+      {
+        "number": "MH1a",
+        "x_mm": -3.45,
+        "y_mm": 0.1,
+        "width_mm": 0.45,
+        "height_mm": 1.1,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": true
+      },
+      {
+        "number": "MH1b",
+        "x_mm": -3.1,
+        "y_mm": -0.3,
+        "width_mm": 0.8,
+        "height_mm": 0.45,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": true
+      },
+      {
+        "number": "MH2a",
+        "x_mm": 3.45,
+        "y_mm": 0.1,
+        "width_mm": 0.45,
+        "height_mm": 1.1,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": true
+      },
+      {
+        "number": "MH2b",
+        "x_mm": 3.1,
+        "y_mm": -0.3,
+        "width_mm": 0.8,
+        "height_mm": 0.45,
+        "shape": "rect",
+        "drill_mm": 0.0,
+        "mechanical": true
+      },
+      {
+        "number": "MH3",
+        "x_mm": -3.4,
+        "y_mm": -2.0,
+        "width_mm": 0.6,
+        "height_mm": 1.9,
+        "shape": "oval",
+        "drill_mm": 0.0,
+        "mechanical": true
+      },
+      {
+        "number": "MH4",
+        "x_mm": 3.4,
+        "y_mm": -2.0,
+        "width_mm": 0.6,
+        "height_mm": 1.9,
+        "shape": "oval",
+        "drill_mm": 0.0,
+        "mechanical": true
+      },
+      {
+        "number": "H1",
+        "x_mm": -2.3,
+        "y_mm": 0.0,
+        "width_mm": 0.55,
+        "height_mm": 0.55,
+        "shape": "circle",
+        "drill_mm": 0.55,
+        "mechanical": true
+      },
+      {
+        "number": "H2",
+        "x_mm": 2.3,
+        "y_mm": 0.0,
+        "width_mm": 0.55,
+        "height_mm": 0.55,
+        "shape": "circle",
+        "drill_mm": 0.55,
+        "mechanical": true
+      }
+    ]
+  },
+  "orientation": {
+    "pin1_marker": "none",
+    "pin1_position": ""
+  },
+  "extraction": {
+    "warnings": [
+      "coords from recommended-layout drawing; VERIFY ROWCC/STAGX/mount sizes"
+    ]
+  }
+}

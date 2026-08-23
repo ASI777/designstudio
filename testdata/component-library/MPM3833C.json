@@ -1,0 +1,558 @@
+{
+"schema": "design-studio.component/2",
+"component": {
+"manufacturer": "Monolithic Power Systems",
+"mpn": "MPM3833C",
+"description": "2.75-6V, 3A, Ultra-Small and Ultra-Low Noise Power Module",
+"category": "module",
+"datasheet": {
+"title": "MPM3833C 6V, 3A, ULTRA-SMALL STEP-DOWN MODULE",
+"revision": "1.0",
+"date": "2018-12-03",
+"url": ""
+},
+"distributors": []
+},
+"symbol": {
+"ref_des_prefix": "U",
+"pins": [
+{
+"number": "1",
+"name": "AGND",
+"electrical_type": "power_in",
+"description": "Analog ground for the internal control circuit.",
+"alternate_functions": []
+},
+{
+"number": "2",
+"name": "FB",
+"electrical_type": "input",
+"description": "Feedback. External resistor divider from the output to GND tapped to FB sets the output voltage.",
+"alternate_functions": []
+},
+{
+"number": "3",
+"name": "OUT_S",
+"electrical_type": "input",
+"description": "Output voltage sense.",
+"alternate_functions": []
+},
+{
+"number": "4",
+"name": "EN",
+"electrical_type": "input",
+"description": "On/off control.",
+"alternate_functions": []
+},
+{
+"number": "5",
+"name": "SW",
+"electrical_type": "output",
+"description": "Switch output.",
+"alternate_functions": []
+},
+{
+"number": "6",
+"name": "SW",
+"electrical_type": "output",
+"description": "Switch output.",
+"alternate_functions": []
+},
+{
+"number": "7",
+"name": "SW",
+"electrical_type": "output",
+"description": "Switch output.",
+"alternate_functions": []
+},
+{
+"number": "8",
+"name": "OUT",
+"electrical_type": "power_out",
+"description": "Power output.",
+"alternate_functions": []
+},
+{
+"number": "9",
+"name": "OUT",
+"electrical_type": "power_out",
+"description": "Power output.",
+"alternate_functions": []
+},
+{
+"number": "10",
+"name": "OUT",
+"electrical_type": "power_out",
+"description": "Power output.",
+"alternate_functions": []
+},
+{
+"number": "11",
+"name": "NC",
+"electrical_type": "nc",
+"description": "No connection. Float or connect NC to GND.",
+"alternate_functions": []
+},
+{
+"number": "12",
+"name": "PG",
+"electrical_type": "output",
+"description": "Power good indicator. Open drain with internal pull-up.",
+"alternate_functions": []
+},
+{
+"number": "13",
+"name": "IN",
+"electrical_type": "power_in",
+"description": "Supply voltage to internal control circuitry.",
+"alternate_functions": []
+},
+{
+"number": "14",
+"name": "IN",
+"electrical_type": "power_in",
+"description": "Supply voltage to internal control circuitry.",
+"alternate_functions": []
+},
+{
+"number": "15",
+"name": "SW",
+"electrical_type": "output",
+"description": "Switch output.",
+"alternate_functions": []
+},
+{
+"number": "16",
+"name": "PGND",
+"electrical_type": "power_in",
+"description": "Power ground.",
+"alternate_functions": []
+}
+]
+},
+"electrical": {
+"supply": {
+"vmin_v": 2.75,
+"vmax_v": 6.0,
+"typ_v": 3.6,
+"max_current_a": 3.0
+},
+"absolute_max": [
+{
+"parameter": "VIN, EN, PG, FB, OUT, OUT_S",
+"value": 6.5,
+"unit": "V"
+},
+{
+"parameter": "VSW (Switch voltage)",
+"value": 6.5,
+"unit": "V"
+},
+{
+"parameter": "Junction temperature",
+"value": 150,
+"unit": "°C"
+},
+{
+"parameter": "Storage temperature",
+"value": 150,
+"unit": "°C"
+},
+{
+"parameter": "Continuous power dissipation (TA=25°C)",
+"value": 3.0,
+"unit": "W"
+}
+],
+"operating_conditions": [
+{
+"parameter": "Supply voltage (VIN)",
+"min": 2.75,
+"typ": null,
+"max": 6.0,
+"unit": "V"
+},
+{
+"parameter": "Output voltage range",
+"min": 0.6,
+"typ": null,
+"max": 6.0,
+"unit": "V"
+},
+{
+"parameter": "Operating junction temperature (TJ)",
+"min": -40,
+"typ": null,
+"max": 150,
+"unit": "°C"
+}
+],
+"required_externals": [
+{
+"purpose": "Input capacitor",
+"value": "22uF",
+"constraints": "Ceramic capacitors with X5R or X7R dielectrics are highly recommended because of their low ESR. Place as close to the IC pins as possible.",
+"connect_between": [
+"IN",
+"PGND"
+],
+"mandatory": true
+},
+{
+"purpose": "Output capacitor",
+"value": "22uF",
+"constraints": "Low ESR ceramic capacitors can be used to keep the output ripple low. In higher output voltage conditions, a 47uF capacitor may be required.",
+"connect_between": [
+"OUT",
+"PGND"
+],
+"mandatory": true
+},
+{
+"purpose": "Feedback upper resistor (R1)",
+"value": "200k",
+"constraints": "Required to set VOUT. 200kΩ recommended for typical voltages.",
+"connect_between": [
+"OUT_S",
+"FB"
+],
+"mandatory": true
+},
+{
+"purpose": "Feedback lower resistor (R2)",
+"value": "200k",
+"constraints": "Value depends on VOUT. e.g., 200kΩ for 1.2V.",
+"connect_between": [
+"FB",
+"AGND"
+],
+"mandatory": true
+}
+],
+"application_circuits": [
+{
+"mode": "Typical Step-Down Converter",
+"summary": "Standard step-down configuration with integrated inductor, setting VOUT via R1 and R2.",
+"connections": [
+{
+"from_pin": "13",
+"to": "VIN"
+},
+{
+"from_pin": "14",
+"to": "VIN"
+},
+{
+"from_pin": "8",
+"to": "VOUT"
+},
+{
+"from_pin": "9",
+"to": "VOUT"
+},
+{
+"from_pin": "10",
+"to": "VOUT"
+},
+{
+"from_pin": "3",
+"to": "VOUT"
+}
+]
+}
+],
+"parameters": [
+{
+"name": "Feedback voltage",
+"min": 591,
+"typ": 600,
+"max": 609,
+"unit": "mV",
+"condition": "2.75V <= VIN <= 6V"
+},
+{
+"name": "P-FET peak current limit",
+"min": 3.6,
+"typ": null,
+"max": 6.0,
+"unit": "A",
+"condition": ""
+},
+{
+"name": "Switching frequency",
+"min": null,
+"typ": 1150,
+"max": null,
+"unit": "kHz",
+"condition": "VOUT = 1.2V, ILOAD = 1A"
+},
+{
+"name": "Under-voltage lockout threshold rising",
+"min": 2.3,
+"typ": 2.5,
+"max": 2.75,
+"unit": "V",
+"condition": ""
+},
+{
+"name": "Supply current (shutdown)",
+"min": null,
+"typ": 0,
+"max": 1,
+"unit": "uA",
+"condition": "VEN = 0V, TJ = 25°C"
+},
+{
+"name": "Supply current (quiescent)",
+"min": null,
+"typ": 500,
+"max": null,
+"unit": "uA",
+"condition": "VEN = 2V, VFB = 0.63V, VIN = 3.6V"
+}
+],
+"thermal": {
+"theta_ja_c_w": 42,
+"theta_jc_c_w": 13,
+"max_power_w": 3.0,
+"tj_max_c": 150
+},
+"power_domains": [
+{
+"name": "VIN",
+"vmin_v": 2.75,
+"vnom_v": 3.6,
+"vmax_v": 6.0,
+"max_current_a": 3.0,
+"pins": [
+"13",
+"14"
+]
+}
+],
+"high_speed": {
+"diff_pairs": [],
+"single_ended": []
+}
+},
+"footprint": {
+"name": "QFN-18",
+"ipc_name": "QFN50P250X350X160-18N",
+"mount": "smd",
+"body": {
+"length_mm": 2.5,
+"width_mm": 3.5,
+"height_mm": 1.6
+},
+"pitch_mm": 0.45,
+"pads": [
+{
+"number": "1",
+"x_mm": -1.038,
+"y_mm": -1.45,
+"width_mm": 0.825,
+"height_mm": 0.2,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "2",
+"x_mm": -1.038,
+"y_mm": -1.0,
+"width_mm": 0.825,
+"height_mm": 0.2,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "3",
+"x_mm": -1.038,
+"y_mm": -0.55,
+"width_mm": 0.825,
+"height_mm": 0.2,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "4",
+"x_mm": -1.038,
+"y_mm": -0.1,
+"width_mm": 0.825,
+"height_mm": 0.2,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "5",
+"x_mm": -1.038,
+"y_mm": 0.45,
+"width_mm": 0.825,
+"height_mm": 0.4,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "6",
+"x_mm": -1.038,
+"y_mm": 1.05,
+"width_mm": 0.825,
+"height_mm": 0.4,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "7",
+"x_mm": -1.038,
+"y_mm": 1.55,
+"width_mm": 0.825,
+"height_mm": 0.4,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "8",
+"x_mm": 1.038,
+"y_mm": 1.55,
+"width_mm": 0.825,
+"height_mm": 0.4,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "9",
+"x_mm": 1.038,
+"y_mm": 1.05,
+"width_mm": 0.825,
+"height_mm": 0.4,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "10",
+"x_mm": 1.038,
+"y_mm": 0.45,
+"width_mm": 0.825,
+"height_mm": 0.4,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "11",
+"x_mm": 1.038,
+"y_mm": -0.1,
+"width_mm": 0.825,
+"height_mm": 0.2,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "12",
+"x_mm": 1.038,
+"y_mm": -0.55,
+"width_mm": 0.825,
+"height_mm": 0.2,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "13",
+"x_mm": 1.038,
+"y_mm": -1.0,
+"width_mm": 0.825,
+"height_mm": 0.2,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "14",
+"x_mm": 1.038,
+"y_mm": -1.45,
+"width_mm": 0.825,
+"height_mm": 0.2,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "15",
+"x_mm": 0.4,
+"y_mm": -1.5,
+"width_mm": 0.3,
+"height_mm": 1.1,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "16",
+"x_mm": -0.4,
+"y_mm": -1.5,
+"width_mm": 0.3,
+"height_mm": 1.1,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+}
+],
+"courtyard_margin_mm": 0.3,
+"derived_from_outline": false,
+"source": {
+"pages": [
+18
+],
+"drawing": "RECOMMENDED LAND PATTERN"
+}
+},
+"orientation": {
+"pin1_marker": "dot",
+"pin1_position": "top-left",
+"polarity": {
+"has_polarity": false,
+"cathode_pin": null
+}
+},
+"package_3d": {
+"height_mm": 1.6,
+"standoff_mm": 0.025,
+"shape": "box"
+},
+"board_hints": {
+"module_outline_mm": {
+"width": 2.5,
+"height": 3.5
+}
+},
+"extraction": {
+"confidence": {
+"symbol": 1.0,
+"electrical": 0.95,
+"footprint": 0.85
+},
+"pages_used": [
+1,
+2,
+3,
+4,
+15,
+17,
+18
+],
+"warnings": [
+"Pins 17 and 18 are designated as 'DNC' (Do Not Connect) and fall within a recommended Keep-Out Zone; no PCB pads have been emitted for these per the manufacturer's layout guidelines.",
+"The large unified pads for SW (Pins 5-7) and OUT (Pins 8-10) have been horizontally partitioned into 3 distinct adjoining non-overlapping pads each to strictly maintain a 1:1 symbol pin to footprint pad pairing while accurately reproducing the Recommended Land Pattern copper span."
+]
+}
+}

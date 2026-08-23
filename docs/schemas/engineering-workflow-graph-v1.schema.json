@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/engineering-workflow-graph-v1.schema.json",
+  "title": "Stateful engineering workflow graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "workflow_id", "state", "nodes", "edges", "controls", "reference_influence"],
+  "properties": {
+    "schema": {"const": "design-studio.engineering-workflow-graph/1"},
+    "workflow_id": {"type": "string", "minLength": 1},
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity_fields", "evidence_fields", "engineering_fields", "accounting_fields"],
+      "properties": {
+        "identity_fields": {"$ref": "#/$defs/stringArray"},
+        "evidence_fields": {"$ref": "#/$defs/stringArray"},
+        "engineering_fields": {"$ref": "#/$defs/stringArray"},
+        "accounting_fields": {"$ref": "#/$defs/stringArray"}
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "owner", "writes"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "owner": {"type": "string", "minLength": 1},
+          "writes": {"$ref": "#/$defs/stringArray"},
+          "parallel_domains": {"$ref": "#/$defs/stringArray"}
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to", "when"],
+        "properties": {
+          "from": {"type": "string", "minLength": 1},
+          "to": {"type": "string", "minLength": 1},
+          "when": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ai_may", "ai_may_not", "publication_preconditions", "repair_scope", "inference_budget_policy"],
+      "properties": {
+        "ai_may": {"$ref": "#/$defs/stringArray"},
+        "ai_may_not": {"$ref": "#/$defs/stringArray"},
+        "publication_preconditions": {"$ref": "#/$defs/stringArray"},
+        "repair_scope": {"type": "string", "minLength": 1},
+        "inference_budget_policy": {"const": "observe_only_no_hard_cap"}
+      }
+    },
+    "reference_influence": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  }
+}

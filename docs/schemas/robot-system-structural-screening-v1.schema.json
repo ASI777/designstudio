@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/robot-system-structural-screening-v1.schema.json",
+  "title": "DesignStudio whole-robot structural screening",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "product_id", "requirements_sha256", "configuration", "load_case",
+    "method", "link_sections", "static_tool_deflection", "directional_tool_compliance",
+    "frequency_screen", "estimated_structural_tube_masses_kg", "screening_result",
+    "qualification_status", "excluded_physics"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.robot-system-structural-screening/1"},
+    "product_id": {"type": "string", "minLength": 1},
+    "requirements_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "configuration": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "joint_origins_mm", "tool_point_mm", "fixed_boundary"],
+      "properties": {
+        "name": {"const": "requirements_neutral_pose"},
+        "joint_origins_mm": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {"$ref": "#/$defs/vector3"}
+        },
+        "tool_point_mm": {"$ref": "#/$defs/vector3"},
+        "fixed_boundary": {"const": "all_six_rigid_body_dofs_at_base_origin"}
+      }
+    },
+    "load_case": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "name", "gravity_m_per_s2", "payload_and_end_effector_mass_kg",
+        "segment_assembly_masses_kg", "uncertainty_factors",
+        "combined_uncertainty_factor", "tool_force_n"
+      ],
+      "properties": {
+        "name": {"const": "factored_gravity_payload_and_distributed_assembly_mass"},
+        "gravity_m_per_s2": {"$ref": "#/$defs/positive"},
+        "payload_and_end_effector_mass_kg": {"$ref": "#/$defs/positive"},
+        "segment_assembly_masses_kg": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {"$ref": "#/$defs/positive"}
+        },
+        "uncertainty_factors": {
+          "type": "object", "additionalProperties": false,
+          "required": [
+            "load_uncertainty_factor", "material_variability_factor",
+            "manufacturing_variability_factor", "model_uncertainty_factor",
+            "consequence_factor"
+          ],
+          "properties": {
+            "load_uncertainty_factor": {"type": "number", "minimum": 1},
+            "material_variability_factor": {"type": "number", "minimum": 1},
+            "manufacturing_variability_factor": {"type": "number", "minimum": 1},
+            "model_uncertainty_factor": {"type": "number", "minimum": 1},
+            "consequence_factor": {"type": "number", "minimum": 1}
+          }
+        },
+        "combined_uncertainty_factor": {"type": "number", "minimum": 1},
+        "tool_force_n": {"$ref": "#/$defs/vector3"}
+      }
+    },
+    "method": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "static", "integrated_terms", "quadrature", "distributed_mass", "modal_screen",
+        "modal_screen_is_eigenanalysis", "target_repeatability_used_as_static_limit"
+      ],
+      "properties": {
+        "static": {"const": "castigliano_unit_load_on_serial_tapered_annular_beams"},
+        "integrated_terms": {
+          "const": ["axial", "biaxial_bending", "torsion"]
+        },
+        "quadrature": {"const": "eight_point_gauss_legendre_per_profile_segment"},
+        "distributed_mass": {"const": "uniform_mass_per_link_integrated_as_downstream_gravity"},
+        "modal_screen": {"const": "directional_equivalent_stiffness_with_full_moving_mass"},
+        "modal_screen_is_eigenanalysis": {"const": false},
+        "target_repeatability_used_as_static_limit": {"const": false}
+      }
+    },
+    "link_sections": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/linkSection"}
+    },
+    "static_tool_deflection": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "components_mm", "magnitude_mm", "maximum_allowed_mm", "margin", "result",
+        "per_link_component_contributions_mm"
+      ],
+      "properties": {
+        "components_mm": {"$ref": "#/$defs/xyzMap"},
+        "magnitude_mm": {"$ref": "#/$defs/nonnegative"},
+        "maximum_allowed_mm": {"$ref": "#/$defs/positive"},
+        "margin": {"$ref": "#/$defs/positive"},
+        "result": {"enum": ["pass", "fail"]},
+        "per_link_component_contributions_mm": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["joint_id", "x", "y", "z"],
+            "properties": {
+              "joint_id": {"type": "string", "pattern": "^J[1-7]$"},
+              "x": {"type": "number"}, "y": {"type": "number"}, "z": {"type": "number"}
+            }
+          }
+        }
+      }
+    },
+    "directional_tool_compliance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": {"$ref": "#/$defs/directionalCompliance"},
+        "y": {"$ref": "#/$defs/directionalCompliance"},
+        "z": {"$ref": "#/$defs/directionalCompliance"}
+      }
+    },
+    "frequency_screen": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "directional_estimates_hz", "minimum_estimate_hz", "minimum_required_hz",
+        "margin", "result", "full_moving_mass_kg"
+      ],
+      "properties": {
+        "directional_estimates_hz": {"$ref": "#/$defs/positiveXyzMap"},
+        "minimum_estimate_hz": {"$ref": "#/$defs/positive"},
+        "minimum_required_hz": {"$ref": "#/$defs/positive"},
+        "margin": {"$ref": "#/$defs/positive"},
+        "result": {"enum": ["pass", "fail"]},
+        "full_moving_mass_kg": {"$ref": "#/$defs/positive"}
+      }
+    },
+    "estimated_structural_tube_masses_kg": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/positive"}
+    },
+    "screening_result": {"enum": ["pass", "fail"]},
+    "qualification_status": {"const": "screening_only"},
+    "excluded_physics": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "positive": {"type": "number", "exclusiveMinimum": 0},
+    "nonnegative": {"type": "number", "minimum": 0},
+    "vector3": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "number"}
+    },
+    "xyzMap": {
+      "type": "object", "additionalProperties": false,
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": {"type": "number"}, "y": {"type": "number"}, "z": {"type": "number"}
+      }
+    },
+    "positiveXyzMap": {
+      "type": "object", "additionalProperties": false,
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": {"$ref": "#/$defs/positive"},
+        "y": {"$ref": "#/$defs/positive"},
+        "z": {"$ref": "#/$defs/positive"}
+      }
+    },
+    "directionalCompliance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["compliance_mm_per_n", "stiffness_n_per_mm"],
+      "properties": {
+        "compliance_mm_per_n": {"$ref": "#/$defs/positive"},
+        "stiffness_n_per_mm": {"$ref": "#/$defs/positive"}
+      }
+    },
+    "linkSection": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "joint_id", "material_id", "profile_kind", "length_mm", "profile_stations_mm",
+        "worst_profile_stations_mm", "cosmetic_outer_radii_mm",
+        "structural_outer_radii_mm", "structural_inner_radii_mm",
+        "worst_outer_radii_mm", "worst_inner_radii_mm", "cosmetic_outer_radius_start_mm",
+        "cosmetic_outer_radius_end_mm", "structural_outer_radius_start_mm",
+        "structural_outer_radius_end_mm", "structural_inner_radius_start_mm",
+        "structural_inner_radius_end_mm", "selected_nominal_wall_mm",
+        "minimum_realized_wall_mm", "worst_outer_radius_start_mm",
+        "worst_outer_radius_end_mm", "worst_inner_radius_start_mm",
+        "worst_inner_radius_end_mm", "worst_harness_channel_radius_mm",
+        "minimum_generated_structural_diameter_mm",
+        "required_minimum_structural_diameter_mm", "wall_check", "channel_check",
+        "diameter_check"
+      ],
+      "properties": {
+        "joint_id": {"type": "string", "pattern": "^J[1-7]$"},
+        "material_id": {"enum": ["Al_6061_T6", "Al_7075_T6"]},
+        "profile_kind": {
+          "enum": ["necked_tapered_body_with_two_transitions", "compact_endpoint_taper"]
+        },
+        "length_mm": {"$ref": "#/$defs/positive"},
+        "profile_stations_mm": {"$ref": "#/$defs/profileArray"},
+        "worst_profile_stations_mm": {"$ref": "#/$defs/profileArray"},
+        "cosmetic_outer_radii_mm": {"$ref": "#/$defs/positiveProfileArray"},
+        "structural_outer_radii_mm": {"$ref": "#/$defs/positiveProfileArray"},
+        "structural_inner_radii_mm": {"$ref": "#/$defs/positiveProfileArray"},
+        "worst_outer_radii_mm": {"$ref": "#/$defs/positiveProfileArray"},
+        "worst_inner_radii_mm": {"$ref": "#/$defs/positiveProfileArray"},
+        "cosmetic_outer_radius_start_mm": {"$ref": "#/$defs/positive"},
+        "cosmetic_outer_radius_end_mm": {"$ref": "#/$defs/positive"},
+        "structural_outer_radius_start_mm": {"$ref": "#/$defs/positive"},
+        "structural_outer_radius_end_mm": {"$ref": "#/$defs/positive"},
+        "structural_inner_radius_start_mm": {"$ref": "#/$defs/positive"},
+        "structural_inner_radius_end_mm": {"$ref": "#/$defs/positive"},
+        "selected_nominal_wall_mm": {"$ref": "#/$defs/positive"},
+        "minimum_realized_wall_mm": {"$ref": "#/$defs/positive"},
+        "worst_outer_radius_start_mm": {"$ref": "#/$defs/positive"},
+        "worst_outer_radius_end_mm": {"$ref": "#/$defs/positive"},
+        "worst_inner_radius_start_mm": {"$ref": "#/$defs/positive"},
+        "worst_inner_radius_end_mm": {"$ref": "#/$defs/positive"},
+        "worst_harness_channel_radius_mm": {"$ref": "#/$defs/positive"},
+        "minimum_generated_structural_diameter_mm": {"$ref": "#/$defs/positive"},
+        "required_minimum_structural_diameter_mm": {"$ref": "#/$defs/positive"},
+        "wall_check": {"const": "pass"},
+        "channel_check": {"const": "pass"},
+        "diameter_check": {"const": "pass"}
+      }
+    },
+    "profileArray": {
+      "type": "array", "minItems": 2, "maxItems": 4,
+      "items": {"type": "number", "minimum": 0}
+    },
+    "positiveProfileArray": {
+      "type": "array", "minItems": 2, "maxItems": 4,
+      "items": {"$ref": "#/$defs/positive"}
+    }
+  }
+}

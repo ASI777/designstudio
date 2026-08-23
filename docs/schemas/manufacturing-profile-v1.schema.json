@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:manufacturing-profile:1",
+  "title": "DesignStudio process and material profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "profile_id", "process", "material", "wall", "rib", "draft", "fillet", "clearance", "boss", "provenance"],
+  "properties": {
+    "schema": {"const": "design-studio.manufacturing-profile/1"},
+    "profile_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "process": {"enum": ["injection_molding", "fdm", "sls", "cnc"]},
+    "material": {"type": "string", "minLength": 1},
+    "wall": {"$ref": "#/$defs/wall"},
+    "rib": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minimum_mm", "maximum_mm", "ratio_to_wall", "height_to_thickness"],
+      "properties": {
+        "minimum_mm": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_mm": {"type": "number", "exclusiveMinimum": 0},
+        "ratio_to_wall": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+        "height_to_thickness": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "draft": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minimum_deg", "preferred_deg"],
+      "properties": {
+        "minimum_deg": {"type": "number", "minimum": 0},
+        "preferred_deg": {"type": "number", "minimum": 0, "maximum": 45}
+      }
+    },
+    "fillet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minimum_radius_mm", "preferred_radius_mm"],
+      "properties": {
+        "minimum_radius_mm": {"type": "number", "exclusiveMinimum": 0},
+        "preferred_radius_mm": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "clearance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["component_mm", "assembly_mm", "tool_access_mm"],
+      "properties": {
+        "component_mm": {"type": "number", "minimum": 0},
+        "assembly_mm": {"type": "number", "minimum": 0},
+        "tool_access_mm": {"type": "number", "minimum": 0}
+      }
+    },
+    "boss": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minimum_wall_mm", "screw_diameter_mm", "diameter_ratio", "height_ratio"],
+      "properties": {
+        "minimum_wall_mm": {"type": "number", "exclusiveMinimum": 0},
+        "screw_diameter_mm": {"type": "number", "exclusiveMinimum": 0},
+        "diameter_ratio": {"type": "number", "exclusiveMinimum": 1},
+        "height_ratio": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source"],
+      "properties": {"source": {"type": "string", "minLength": 1}, "revision": {"type": "string"}}
+    }
+  },
+  "$defs": {
+    "wall": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minimum_mm", "nominal_mm", "maximum_mm"],
+      "properties": {
+        "minimum_mm": {"type": "number", "exclusiveMinimum": 0},
+        "nominal_mm": {"type": "number", "exclusiveMinimum": 0},
+        "maximum_mm": {"type": "number", "exclusiveMinimum": 0}
+      }
+    }
+  }
+}

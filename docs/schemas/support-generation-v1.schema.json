@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:support-generation:1",
+  "title": "DesignStudio revision-bound cavity and support generation job",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "document",
+    "placements",
+    "design_volume_mm",
+    "anchors",
+    "forbidden_bounds_mm",
+    "load_cases",
+    "manufacturing",
+    "seed"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.support-generation/1"},
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_id", "revision", "sha256"],
+      "properties": {
+        "document_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "revision": {"type": "integer", "minimum": 0},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "placements": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4096,
+      "items": {
+        "oneOf": [
+          {"$ref": "component-placement-v1.schema.json"},
+          {"$ref": "component-placement-v2.schema.json"}
+        ]
+      }
+    },
+    "design_volume_mm": {"$ref": "#/$defs/bounds3"},
+    "anchors": {
+      "type": "array",
+      "maxItems": 16384,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "position_mm", "kind"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1, "maxLength": 128},
+          "position_mm": {"$ref": "#/$defs/point3"},
+          "kind": {"enum": ["mount", "load", "shell", "connector", "pcb"]}
+        }
+      }
+    },
+    "forbidden_bounds_mm": {
+      "type": "array",
+      "maxItems": 16384,
+      "items": {"$ref": "#/$defs/bounds3"}
+    },
+    "load_cases": {
+      "type": "array",
+      "maxItems": 4096,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["anchor_id", "force_n"],
+        "properties": {
+          "anchor_id": {"type": "string", "minLength": 1, "maxLength": 128},
+          "force_n": {"$ref": "#/$defs/point3"}
+        }
+      }
+    },
+    "manufacturing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["process", "minimum_wall_mm", "minimum_rib_mm", "clearance_mm"],
+      "properties": {
+        "process": {"enum": ["fdm", "sls", "cnc", "injection_molding"]},
+        "minimum_wall_mm": {"type": "number", "exclusiveMinimum": 0},
+        "minimum_rib_mm": {"type": "number", "exclusiveMinimum": 0},
+        "clearance_mm": {"type": "number", "minimum": 0}
+      }
+    },
+    "seed": {"type": "integer", "minimum": 0, "maximum": 2147483647}
+  },
+  "$defs": {
+    "point3": {
+      "type": "array",
+      "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}],
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "bounds3": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max"],
+      "properties": {
+        "min": {"$ref": "#/$defs/point3"},
+        "max": {"$ref": "#/$defs/point3"}
+      }
+    }
+  }
+}

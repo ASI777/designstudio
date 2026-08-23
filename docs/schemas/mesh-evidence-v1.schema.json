@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:mesh-evidence:1",
+  "title": "DesignStudio GLB mesh evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "version", "created_at", "producer", "source", "geometry", "enclosure_intent", "structural_intent", "markers"],
+  "properties": {
+    "schema": {"const": "urn:design-studio:schema:mesh-evidence:1"},
+    "version": {"const": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"const": "DesignStudio"},
+        "version": {"type": "string", "minLength": 1, "maxLength": 64}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha256", "original_name", "byte_size", "media_type", "linear_units"],
+      "properties": {
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "original_name": {"type": "string", "minLength": 1, "maxLength": 255, "pattern": "^[^/\\\\]+$"},
+        "byte_size": {"type": "integer", "minimum": 1, "maximum": 268435456},
+        "media_type": {"const": "model/gltf-binary"},
+        "linear_units": {"const": "m"}
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coordinate_system", "concept_scale_factor", "scale_status", "source_bounds_mm", "scaled_bounds_mm", "vertex_count", "triangle_count"],
+      "properties": {
+        "coordinate_system": {"const": "gltf-right-handed-y-up"},
+        "concept_scale_factor": {"type": "number", "exclusiveMinimum": 0, "maximum": 1000000},
+        "scale_status": {"enum": ["source_default", "user_confirmed"]},
+        "source_bounds_mm": {"$ref": "#/$defs/bounds"},
+        "scaled_bounds_mm": {"$ref": "#/$defs/bounds"},
+        "vertex_count": {"type": "integer", "minimum": 3, "maximum": 5000000},
+        "triangle_count": {"type": "integer", "minimum": 1, "maximum": 5000000}
+      }
+    },
+    "enclosure_intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "manufacturing_process", "nominal_wall_thickness_mm", "requires_engineering_review"],
+      "properties": {
+        "status": {"const": "concept"},
+        "manufacturing_process": {"enum": ["unspecified", "cnc_aluminum", "sheet_metal", "die_cast", "metal_additive"]},
+        "nominal_wall_thickness_mm": {"type": "number", "minimum": 0.1, "maximum": 50},
+        "requires_engineering_review": {"const": true}
+      }
+    },
+    "structural_intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reinforcement_strategy", "target_safety_factor", "boundary_condition_status", "required_validation"],
+      "properties": {
+        "reinforcement_strategy": {"enum": ["derive_from_load_cases", "ribs_and_gussets", "internal_frame", "local_doublers"]},
+        "target_safety_factor": {"type": "number", "minimum": 1, "maximum": 10},
+        "boundary_condition_status": {"enum": ["unconfirmed", "partial", "complete_for_review"]},
+        "required_validation": {
+          "type": "array",
+          "prefixItems": [{"const": "load_case_review"}, {"const": "fea"}, {"const": "manufacturing_review"}],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "markers": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": {"$ref": "#/$defs/marker"}
+    }
+  },
+  "$defs": {
+    "vector3": {
+      "type": "array",
+      "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "unitVector3": {
+      "oneOf": [
+        {"const": [1, 0, 0]}, {"const": [-1, 0, 0]},
+        {"const": [0, 1, 0]}, {"const": [0, -1, 0]},
+        {"const": [0, 0, 1]}, {"const": [0, 0, -1]}
+      ]
+    },
+    "bounds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max"],
+      "properties": {
+        "min": {"$ref": "#/$defs/vector3"},
+        "max": {"$ref": "#/$defs/vector3"}
+      }
+    },
+    "load": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["force_n", "direction_unit"],
+      "properties": {
+        "force_n": {"type": "number", "minimum": 0, "maximum": 10000000},
+        "direction_unit": {"$ref": "#/$defs/unitVector3"}
+      }
+    },
+    "marker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "role", "vertex_index", "position_mm", "projection"],
+      "properties": {
+        "id": {"type": "string", "format": "uuid"},
+        "role": {"enum": ["datum", "load_point", "fixed_support", "split_line", "preserve_surface", "opening", "pcb_mount", "connector_support"]},
+        "vertex_index": {"type": "integer", "minimum": 0, "maximum": 4999999},
+        "position_mm": {"$ref": "#/$defs/vector3"},
+        "projection": {"enum": ["front", "right", "top", "isometric"]},
+        "load": {"$ref": "#/$defs/load"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"role": {"const": "load_point"}}, "required": ["role"]},
+          "then": {"required": ["load"]},
+          "else": {"not": {"required": ["load"]}}
+        }
+      ]
+    }
+  }
+}

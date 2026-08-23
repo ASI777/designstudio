@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:visual-evidence:2",
+  "title": "DesignStudio visual evidence graph v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "evidence_id", "revision", "reference_image_set", "authority", "measurement_status", "nodes", "cross_view_links", "explicit_unknowns", "provenance"],
+  "properties": {
+    "schema": {"const": "design-studio.visual-evidence/2"},
+    "evidence_id": {"$ref": "#/$defs/id"}, "revision": {"type": "integer", "minimum": 1},
+    "reference_image_set": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/digest"}}},
+    "authority": {"const": "visual-interpretation-only"}, "measurement_status": {"const": "uncalibrated"},
+    "nodes": {"type": "array", "maxItems": 4096, "items": {"$ref": "#/$defs/node"}},
+    "cross_view_links": {"type": "array", "maxItems": 4096, "items": {"$ref": "#/$defs/link"}},
+    "explicit_unknowns": {"type": "array", "minItems": 1, "maxItems": 512, "items": {"$ref": "#/$defs/unknown"}},
+    "provenance": {"$ref": "#/$defs/provenance"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "bbox": {"type": "object", "additionalProperties": false, "required": ["x", "y", "width", "height", "coordinate_space"], "properties": {"x": {"type": "number", "minimum": 0}, "y": {"type": "number", "minimum": 0}, "width": {"type": "number", "exclusiveMinimum": 0}, "height": {"type": "number", "exclusiveMinimum": 0}, "coordinate_space": {"enum": ["normalized-0-1", "source-pixels", "crop-pixels"]}}},
+    "source": {"type": "object", "additionalProperties": false, "required": ["asset_id", "crop_sha256", "bbox"], "properties": {"asset_id": {"$ref": "#/$defs/id"}, "crop_sha256": {"$ref": "#/$defs/digest"}, "bbox": {"$ref": "#/$defs/bbox"}}},
+    "node": {
+      "type": "object", "additionalProperties": false,
+      "required": ["node_id", "kind", "label", "sources", "confidence", "status", "attributes"],
+      "properties": {
+        "node_id": {"$ref": "#/$defs/id"},
+        "kind": {"enum": ["silhouette", "seam", "opening", "lens_interface", "control_interface", "display_interface", "texture_region", "material_appearance", "occlusion", "view", "other"]},
+        "label": {"type": "string", "minLength": 1}, "sources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/source"}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}, "status": {"enum": ["observed", "provisional", "ambiguous", "rejected"]},
+        "attributes": {"type": "object", "additionalProperties": false, "properties": {
+          "note": {"type": "string"},
+          "direction": {"type": "string"},
+          "appearance": {"type": "string"},
+          "interface_role": {"type": "string"}
+        }}
+      }
+    },
+    "link": {"type": "object", "additionalProperties": false, "required": ["link_id", "from_node", "to_node", "relation", "confidence", "status"], "properties": {"link_id": {"$ref": "#/$defs/id"}, "from_node": {"$ref": "#/$defs/id"}, "to_node": {"$ref": "#/$defs/id"}, "relation": {"enum": ["same_feature", "same_view_family", "occludes", "adjacent", "contains", "possible_match"]}, "confidence": {"type": "number", "minimum": 0, "maximum": 1}, "status": {"enum": ["supported", "ambiguous", "rejected"]}}},
+    "unknown": {"type": "object", "additionalProperties": false, "required": ["unknown_id", "question", "blocks", "reason"], "properties": {"unknown_id": {"$ref": "#/$defs/id"}, "question": {"type": "string", "minLength": 1}, "blocks": {"type": "array", "minItems": 1, "items": {"enum": ["dimensions", "hidden_geometry", "materials", "mechanism", "manufacturing", "release"]}}, "reason": {"type": "string", "minLength": 1}}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["created_at_utc", "created_by", "model", "prompt_version", "review_status"], "properties": {"created_at_utc": {"type": "string", "minLength": 1}, "created_by": {"type": "string", "minLength": 1}, "model": {"type": "string", "minLength": 1}, "prompt_version": {"type": "string", "minLength": 1}, "review_status": {"enum": ["unreviewed", "human-reviewed", "rejected"]}}}
+  }
+}

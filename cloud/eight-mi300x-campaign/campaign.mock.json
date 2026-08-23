@@ -1,0 +1,379 @@
+{
+  "campaign_id": "porsche-controller-pcb-components-8x-mi300x",
+  "jobs": [
+    {
+      "authority_status": "visualization_only",
+      "command": [
+        "{python}",
+        "cloud/eight-mi300x-campaign/mock_job.py",
+        "--kind",
+        "car",
+        "--seed",
+        "200",
+        "--output",
+        "{output_dir}/result.json"
+      ],
+      "compatible_gpus": [
+        0
+      ],
+      "container_revision": "mock/no-container",
+      "expert_role": "porsche_omni_candidate",
+      "id": "porsche-seed-200",
+      "inputs": [
+        {
+          "path": "references/porsche-911-turbo-s/reference-audit.json",
+          "sha256": "d23bf56d2d46b2b898a648ed198ed22a378ffcb26faef3f22484cec8286dd7e6"
+        }
+      ],
+      "long_job": false,
+      "max_attempts": 1,
+      "model_revision": "mock/local-deterministic-v1",
+      "outputs": [
+        "result.json"
+      ],
+      "preferred_gpu": 0,
+      "seed": 200,
+      "solver_versions": {},
+      "timeout_seconds": 30
+    },
+    {
+      "authority_status": "visualization_only",
+      "command": [
+        "{python}",
+        "cloud/eight-mi300x-campaign/mock_job.py",
+        "--kind",
+        "car",
+        "--seed",
+        "201",
+        "--output",
+        "{output_dir}/result.json"
+      ],
+      "compatible_gpus": [
+        1
+      ],
+      "container_revision": "mock/no-container",
+      "expert_role": "porsche_omni_candidate",
+      "id": "porsche-seed-201",
+      "inputs": [
+        {
+          "path": "references/porsche-911-turbo-s/reference-audit.json",
+          "sha256": "d23bf56d2d46b2b898a648ed198ed22a378ffcb26faef3f22484cec8286dd7e6"
+        }
+      ],
+      "long_job": false,
+      "max_attempts": 1,
+      "model_revision": "mock/local-deterministic-v1",
+      "outputs": [
+        "result.json"
+      ],
+      "preferred_gpu": 1,
+      "seed": 201,
+      "solver_versions": {},
+      "timeout_seconds": 30
+    },
+    {
+      "authority_status": "visualization_only",
+      "command": [
+        "{python}",
+        "cloud/eight-mi300x-campaign/mock_job.py",
+        "--kind",
+        "car",
+        "--seed",
+        "202",
+        "--output",
+        "{output_dir}/result.json"
+      ],
+      "compatible_gpus": [
+        2
+      ],
+      "container_revision": "mock/no-container",
+      "expert_role": "porsche_omni_candidate",
+      "id": "porsche-seed-202",
+      "inputs": [
+        {
+          "path": "references/porsche-911-turbo-s/reference-audit.json",
+          "sha256": "d23bf56d2d46b2b898a648ed198ed22a378ffcb26faef3f22484cec8286dd7e6"
+        }
+      ],
+      "long_job": false,
+      "max_attempts": 1,
+      "model_revision": "mock/local-deterministic-v1",
+      "outputs": [
+        "result.json"
+      ],
+      "preferred_gpu": 2,
+      "seed": 202,
+      "solver_versions": {},
+      "timeout_seconds": 30
+    },
+    {
+      "authority_status": "visualization_only",
+      "command": [
+        "{python}",
+        "cloud/eight-mi300x-campaign/mock_job.py",
+        "--kind",
+        "car",
+        "--seed",
+        "203",
+        "--output",
+        "{output_dir}/result.json"
+      ],
+      "compatible_gpus": [
+        3
+      ],
+      "container_revision": "mock/no-container",
+      "expert_role": "porsche_omni_candidate",
+      "id": "porsche-seed-203",
+      "inputs": [
+        {
+          "path": "references/porsche-911-turbo-s/reference-audit.json",
+          "sha256": "d23bf56d2d46b2b898a648ed198ed22a378ffcb26faef3f22484cec8286dd7e6"
+        }
+      ],
+      "long_job": false,
+      "max_attempts": 1,
+      "model_revision": "mock/local-deterministic-v1",
+      "outputs": [
+        "result.json"
+      ],
+      "preferred_gpu": 3,
+      "seed": 203,
+      "solver_versions": {},
+      "timeout_seconds": 30
+    },
+    {
+      "authority_status": "visualization_only",
+      "command": [
+        "{python}",
+        "cloud/eight-mi300x-campaign/mock_job.py",
+        "--kind",
+        "components",
+        "--seed",
+        "400",
+        "--output",
+        "{output_dir}/result.json"
+      ],
+      "compatible_gpus": [
+        4
+      ],
+      "container_revision": "mock/no-container",
+      "expert_role": "component_visualization",
+      "id": "hero-components",
+      "inputs": [
+        {
+          "path": "acceptance/agent-workflow-controller/generated/step-models.csv",
+          "sha256": "3aac06f34909a57bab8a8cfec7c2ba9f097f91f4c404fefd49dcaf8edb1a01b8"
+        },
+        {
+          "path": "cloud/eight-mi300x-campaign/component-bindings.json",
+          "sha256": "06b32264d687bd42ebd80531df4078d9be38b084da976541ce9b12ef17598b7a"
+        }
+      ],
+      "long_job": false,
+      "max_attempts": 1,
+      "model_revision": "mock/local-deterministic-v1",
+      "outputs": [
+        "result.json"
+      ],
+      "preferred_gpu": 4,
+      "seed": 400,
+      "solver_versions": {},
+      "timeout_seconds": 30
+    },
+    {
+      "authority_status": "deterministic_mock_evidence",
+      "command": [
+        "{python}",
+        "cloud/eight-mi300x-campaign/mock_job.py",
+        "--kind",
+        "surface_fit",
+        "--seed",
+        "500",
+        "--output",
+        "{output_dir}/result.json"
+      ],
+      "compatible_gpus": [
+        5
+      ],
+      "container_revision": "mock/no-container",
+      "expert_role": "curvature_bspline_fit",
+      "id": "surface-fit",
+      "inputs": [
+        {
+          "path": "references/porsche-911-turbo-s/reference-audit.json",
+          "sha256": "d23bf56d2d46b2b898a648ed198ed22a378ffcb26faef3f22484cec8286dd7e6"
+        },
+        {
+          "path": "references/porsche-911-turbo-s/generation/approved-six-view-visual-hull.glb",
+          "sha256": "498242dafaebc0b4391cc3dd21620475601a505e244e6d2414cf2ee71579d7c8"
+        }
+      ],
+      "long_job": false,
+      "max_attempts": 1,
+      "model_revision": "mock/local-deterministic-v1",
+      "outputs": [
+        "result.json"
+      ],
+      "preferred_gpu": 5,
+      "seed": 500,
+      "solver_versions": {},
+      "timeout_seconds": 30
+    },
+    {
+      "authority_status": "deterministic_mock_evidence",
+      "command": [
+        "{python}",
+        "cloud/eight-mi300x-campaign/mock_job.py",
+        "--kind",
+        "physics",
+        "--seed",
+        "600",
+        "--output",
+        "{output_dir}/result.json"
+      ],
+      "compatible_gpus": [
+        6
+      ],
+      "container_revision": "mock/no-container",
+      "expert_role": "topology_structural_thermal",
+      "id": "enclosure-physics",
+      "inputs": [
+        {
+          "path": "cloud/mi300x-designstudio/rib-pocket-experiment-request-v2.json",
+          "sha256": "9a016a72e9ba0152f59f44d3bee912d3af4762f98a3ba5b9f26c101cdf8e843c"
+        },
+        {
+          "path": "cloud/eight-mi300x-campaign/physics-inputs.json",
+          "sha256": "ea0b63bc1667af8a38152a3cae33b2cf72e0a6cd04b4dd91c4c15cb5f5d35849"
+        }
+      ],
+      "long_job": false,
+      "max_attempts": 1,
+      "model_revision": "mock/local-deterministic-v1",
+      "outputs": [
+        "result.json"
+      ],
+      "preferred_gpu": 6,
+      "seed": 600,
+      "solver_versions": {},
+      "timeout_seconds": 30
+    },
+    {
+      "authority_status": "proposal_only",
+      "command": [
+        "{python}",
+        "cloud/eight-mi300x-campaign/mock_job.py",
+        "--kind",
+        "router",
+        "--seed",
+        "700",
+        "--output",
+        "{output_dir}/result.json"
+      ],
+      "compatible_gpus": [
+        7
+      ],
+      "container_revision": "mock/no-container",
+      "expert_role": "expert_router",
+      "id": "qwen-expert-router",
+      "inputs": [
+        {
+          "path": "acceptance/agent-workflow-controller/generated/verification-report.json",
+          "sha256": "50c21820112c5e5926038645b9f7891916c9184e7f66967d45c85c728b6b39af"
+        }
+      ],
+      "long_job": false,
+      "max_attempts": 1,
+      "model_revision": "mock/local-deterministic-v1",
+      "outputs": [
+        "result.json"
+      ],
+      "preferred_gpu": 7,
+      "seed": 700,
+      "solver_versions": {},
+      "timeout_seconds": 30
+    },
+    {
+      "authority_status": "deterministic_mock_evidence",
+      "command": [
+        "{python}",
+        "cloud/eight-mi300x-campaign/mock_job.py",
+        "--kind",
+        "pcb",
+        "--seed",
+        "701",
+        "--output",
+        "{output_dir}/result.json"
+      ],
+      "compatible_gpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "container_revision": "mock/no-container",
+      "expert_role": "pcb_drc_si_pdn_thermal",
+      "id": "cpu-pcb-verifier",
+      "inputs": [
+        {
+          "path": "acceptance/agent-workflow-controller/generated/verification-report.json",
+          "sha256": "50c21820112c5e5926038645b9f7891916c9184e7f66967d45c85c728b6b39af"
+        }
+      ],
+      "long_job": false,
+      "max_attempts": 1,
+      "model_revision": "mock/local-deterministic-v1",
+      "outputs": [
+        "result.json"
+      ],
+      "preferred_gpu": 7,
+      "seed": 701,
+      "solver_versions": {},
+      "timeout_seconds": 30
+    }
+  ],
+  "lanes": [
+    {
+      "gpu": 0,
+      "rocr_visible_devices": "0"
+    },
+    {
+      "gpu": 1,
+      "rocr_visible_devices": "1"
+    },
+    {
+      "gpu": 2,
+      "rocr_visible_devices": "2"
+    },
+    {
+      "gpu": 3,
+      "rocr_visible_devices": "3"
+    },
+    {
+      "gpu": 4,
+      "rocr_visible_devices": "4"
+    },
+    {
+      "gpu": 5,
+      "rocr_visible_devices": "5"
+    },
+    {
+      "gpu": 6,
+      "rocr_visible_devices": "6"
+    },
+    {
+      "gpu": 7,
+      "rocr_visible_devices": "7"
+    }
+  ],
+  "policy": {
+    "destroy_deadline_seconds": 18000,
+    "maximum_runtime_seconds": 17400,
+    "no_start_after_seconds": 14400
+  },
+  "schema": "multi-gpu-campaign/1"
+}

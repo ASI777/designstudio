@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:authoritative-drawing-package:1",
+  "title": "DesignStudio authoritative B-Rep engineering drawing package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "package_id", "revision", "document", "source", "views", "sections", "annotations", "output", "provenance"],
+  "properties": {
+    "schema": {"const": "design-studio.authoritative-drawing-package/1"},
+    "package_id": {"$ref": "#/$defs/id"},
+    "revision": {"type": "integer", "minimum": 1},
+    "document": {"$ref": "#/$defs/document"},
+    "source": {"$ref": "#/$defs/source"},
+    "views": {
+      "type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true,
+      "items": {"enum": ["front", "rear", "left", "right", "top", "bottom"]}
+    },
+    "sections": {"type": "array", "maxItems": 32, "items": {"$ref": "#/$defs/section"}},
+    "annotations": {"$ref": "#/$defs/annotations"},
+    "output": {"$ref": "#/$defs/output"},
+    "provenance": {"$ref": "#/$defs/provenance"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "point3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "minimum": -1000000, "maximum": 1000000}},
+    "document": {
+      "type": "object", "additionalProperties": false,
+      "required": ["document_id", "path", "file_sha256"],
+      "properties": {
+        "document_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1, "maxLength": 2048},
+        "file_sha256": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["semantic_id", "object_name", "shape_sha256", "role", "source_of_truth"],
+      "properties": {
+        "semantic_id": {"$ref": "#/$defs/id"},
+        "object_name": {"type": "string", "minLength": 1},
+        "shape_sha256": {"$ref": "#/$defs/digest"},
+        "role": {"enum": ["enclosure", "mechanical", "local_redesign_preview", "assembly", "other"]},
+        "source_of_truth": {"const": "freecad_brep"}
+      }
+    },
+    "section": {
+      "type": "object", "additionalProperties": false,
+      "required": ["section_id", "plane_origin_mm", "plane_normal", "label"],
+      "properties": {
+        "section_id": {"$ref": "#/$defs/id"},
+        "plane_origin_mm": {"$ref": "#/$defs/point3"},
+        "plane_normal": {"$ref": "#/$defs/point3"},
+        "label": {"type": "string", "minLength": 1, "maxLength": 160}
+      }
+    },
+    "annotations": {
+      "type": "object", "additionalProperties": false,
+      "required": ["selected_faces", "selected_edges", "datums", "dimensions", "tolerances", "gdt", "continuity"],
+      "properties": {
+        "selected_faces": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^Face[1-9][0-9]*$"}},
+        "selected_edges": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^Edge[1-9][0-9]*$"}},
+        "datums": {"type": "array", "items": {"$ref": "#/$defs/datum"}},
+        "dimensions": {"type": "array", "items": {"$ref": "#/$defs/dimension"}},
+        "tolerances": {"type": "array", "items": {"$ref": "#/$defs/tolerance"}},
+        "gdt": {"type": "array", "items": {"$ref": "#/$defs/gdt"}},
+        "continuity": {"type": "array", "items": {"$ref": "#/$defs/continuity"}}
+      }
+    },
+    "datum": {
+      "type": "object", "additionalProperties": false,
+      "required": ["datum_id", "point_mm", "label"],
+      "properties": {"datum_id": {"$ref": "#/$defs/id"}, "point_mm": {"$ref": "#/$defs/point3"}, "label": {"type": "string", "minLength": 1, "maxLength": 16}}
+    },
+    "dimension": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension_id", "kind", "value_mm", "label"],
+      "properties": {"dimension_id": {"$ref": "#/$defs/id"}, "kind": {"enum": ["overall", "local", "radius", "diameter", "angle"]}, "value_mm": {"type": "number", "minimum": 0}, "label": {"type": "string", "minLength": 1, "maxLength": 128}}
+    },
+    "tolerance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tolerance_id", "nominal_mm", "plus_mm", "minus_mm"],
+      "properties": {"tolerance_id": {"$ref": "#/$defs/id"}, "nominal_mm": {"type": "number"}, "plus_mm": {"type": "number", "minimum": 0}, "minus_mm": {"type": "number", "minimum": 0}}
+    },
+    "gdt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["frame_id", "symbol", "tolerance_mm", "datum_refs"],
+      "properties": {"frame_id": {"$ref": "#/$defs/id"}, "symbol": {"enum": ["flatness", "parallelism", "perpendicularity", "position", "profile"]}, "tolerance_mm": {"type": "number", "minimum": 0}, "datum_refs": {"type": "array", "items": {"$ref": "#/$defs/id"}}}
+    },
+    "continuity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["continuity_id", "boundary_id", "required", "max_normal_angle_deg"],
+      "properties": {"continuity_id": {"$ref": "#/$defs/id"}, "boundary_id": {"type": "string", "minLength": 1}, "required": {"enum": ["G0", "G1", "G2"]}, "max_normal_angle_deg": {"type": "number", "minimum": 0, "maximum": 180}}
+    },
+    "output": {
+      "type": "object", "additionalProperties": false,
+      "required": ["directory", "formats", "sheet_capacity", "additional_sheets_policy"],
+      "properties": {
+        "directory": {"type": "string", "minLength": 1, "maxLength": 2048},
+        "formats": {"const": ["svg", "dxf"]},
+        "sheet_capacity": {"type": "integer", "minimum": 1, "maximum": 10000},
+        "additional_sheets_policy": {"const": "deterministic_complexity_split"}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["created_by", "created_utc", "geometry_authority", "raster_geometry_authority"],
+      "properties": {"created_by": {"type": "string", "minLength": 1}, "created_utc": {"type": "string", "format": "date-time"}, "geometry_authority": {"const": "freecad_brep"}, "raster_geometry_authority": {"const": false}}
+    }
+  }
+}

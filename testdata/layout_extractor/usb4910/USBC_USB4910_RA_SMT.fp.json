@@ -1,0 +1,242 @@
+{
+  "name": "USBC_USB4910_RA_SMT",
+  "datum": "connector_centre",
+  "units": "mm",
+  "pitch": 0.5,
+  "outline_mm": [
+    8.64,
+    6.2
+  ],
+  "copper_bbox": [
+    -4.82,
+    -3.42,
+    4.82,
+    4.28
+  ],
+  "pads": [
+    {
+      "name": "B1",
+      "x": -2.75,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B2",
+      "x": -2.25,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B3",
+      "x": -1.75,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B4",
+      "x": -1.25,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B5",
+      "x": -0.75,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B6",
+      "x": -0.25,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B7",
+      "x": 0.25,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B8",
+      "x": 0.75,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B9",
+      "x": 1.25,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B10",
+      "x": 1.75,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B11",
+      "x": 2.25,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "B12",
+      "x": 2.75,
+      "y": 2.38,
+      "w": 0.3,
+      "h": 0.85,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A1",
+      "x": -2.75,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A2",
+      "x": -2.25,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A3",
+      "x": -1.75,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A4",
+      "x": -1.25,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A5",
+      "x": -0.75,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A6",
+      "x": -0.25,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A7",
+      "x": 0.25,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A8",
+      "x": 0.75,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A9",
+      "x": 1.25,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A10",
+      "x": 1.75,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A11",
+      "x": 2.25,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "A12",
+      "x": 2.75,
+      "y": 3.73,
+      "w": 0.3,
+      "h": 1.1,
+      "shape": "roundrect"
+    },
+    {
+      "name": "S1",
+      "x": -4.32,
+      "y": 3.1,
+      "w": 1.0,
+      "h": 1.6,
+      "shape": "roundrect"
+    },
+    {
+      "name": "S2",
+      "x": 4.32,
+      "y": 3.1,
+      "w": 1.0,
+      "h": 1.6,
+      "shape": "roundrect"
+    },
+    {
+      "name": "S3",
+      "x": -4.32,
+      "y": -2.27,
+      "w": 1.0,
+      "h": 2.3,
+      "shape": "roundrect"
+    },
+    {
+      "name": "S4",
+      "x": 4.32,
+      "y": -2.27,
+      "w": 1.0,
+      "h": 2.3,
+      "shape": "roundrect"
+    }
+  ]
+}

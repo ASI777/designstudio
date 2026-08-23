@@ -1,0 +1,12 @@
+{
+  "name": "Tencent-Hunyuan/Hunyuan3D-Omni",
+  "repository": "https://github.com/Tencent-Hunyuan/Hunyuan3D-Omni.git",
+  "commit": "4d47c0cc2bd0c4281963a7314ab330a5af36bfa8",
+  "archive": "https://github.com/Tencent-Hunyuan/Hunyuan3D-Omni/archive/4d47c0cc2bd0c4281963a7314ab330a5af36bfa8.tar.gz",
+  "sha256": "1191700188114ac9fd257ed617c3a46bb523adc90a05316c2bbed433063e32d3",
+  "model_revision": "70e803bfb4e127d534049d8ab8c8cb511780d485",
+  "license_file": "License.txt",
+  "notice_file": "Notice.txt",
+  "rocm_base": "rocm/pytorch:rocm6.4.2_ubuntu22.04_py3.10_pytorch_release_2.5.1",
+  "rocm_base_digest": "sha256:37f41a1cd94019688669a1b20d33ea74156e0c129ef6b8270076ef214a6a1a2c"
+}

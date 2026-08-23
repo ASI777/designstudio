@@ -1,0 +1,14 @@
+{
+  "errors": [],
+  "metrics": {
+    "errors": 0,
+    "nets": 65,
+    "no_connects": 29,
+    "pins": 342,
+    "symbols": 106,
+    "warnings": 0
+  },
+  "schema": "design-studio.erc/1",
+  "status": "pass",
+  "warnings": []
+}

@@ -1,0 +1,223 @@
+{
+    "categories": {
+        "connectivity": {
+            "findings": [
+            ],
+            "metrics": {
+                "checked_nets": 64,
+                "disconnected_nets": 0
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "drc": {
+            "findings": [
+            ],
+            "metrics": {
+                "engine": "designcore-native",
+                "errors": 0,
+                "warnings": 0
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "mechanical": {
+            "findings": [
+            ],
+            "metrics": {
+                "components_missing_envelope": 0,
+                "enclosure_evidence_required": false,
+                "enclosure_evidence_valid": false,
+                "mechanical_drc_failures": 0
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "power_integrity": {
+            "findings": [
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "GND limiting branch capacity 0.604 A vs allocated 0.350 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 0.6044325489591941,
+                        "limiting_branch_required_current_a": 0.35,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.7269501398834117,
+                        "net_id": 0,
+                        "required_current_a": 2,
+                        "trace_count": 350
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+3V3 limiting branch capacity 1.447 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.4468880626650513,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.4468880626650513,
+                        "net_id": 1,
+                        "required_current_a": 1,
+                        "trace_count": 97
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VBAT limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 2,
+                        "required_current_a": 1.5,
+                        "trace_count": 17
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VSYS limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 3,
+                        "required_current_a": 1.5,
+                        "trace_count": 58
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+5V_LED_RAW limiting branch capacity 1.651 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.6513583887418626,
+                        "net_id": 4,
+                        "required_current_a": 1,
+                        "trace_count": 29
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "+5V_LED limiting branch capacity 1.447 A vs allocated 1.000 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.4468880626650513,
+                        "limiting_branch_required_current_a": 1,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.4468880626650513,
+                        "net_id": 5,
+                        "required_current_a": 1,
+                        "trace_count": 202
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "VBUS limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 6,
+                        "required_current_a": 1.5,
+                        "trace_count": 64
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DC_CURRENT_CAPACITY",
+                    "message": "LED_BOOST_SW limiting branch capacity 1.651 A vs allocated 1.500 A at 10 C rise",
+                    "metrics": {
+                        "capacity_a": 1.6513583887418626,
+                        "limiting_branch_required_current_a": 1.5,
+                        "method": "IPC-2221-screening",
+                        "minimum_margin_ratio": 1.100905592494575,
+                        "net_id": 7,
+                        "required_current_a": 1.5,
+                        "trace_count": 2
+                    },
+                    "severity": "info"
+                }
+            ],
+            "metrics": {
+                "failed_power_nets": 0,
+                "specified_power_nets": 8,
+                "temperature_rise_c": 10
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "signal_integrity": {
+            "findings": [
+                {
+                    "code": "SINGLE_ENDED_IMPEDANCE",
+                    "message": "USB_90R predicted 45.10 ohm vs target 45.00 ohm (0.2% error)",
+                    "metrics": {
+                        "class_id": 1,
+                        "method": "closed-form-microstrip-screening",
+                        "predicted_ohm": 45.10107656177557,
+                        "target_ohm": 45,
+                        "tolerance_pct": 10
+                    },
+                    "severity": "info"
+                },
+                {
+                    "code": "DIFFERENTIAL_IMPEDANCE",
+                    "message": "USB_90R predicted 89.27 ohm vs target 90.00 ohm (0.8% error)",
+                    "metrics": {
+                        "class_id": 1,
+                        "method": "closed-form-microstrip-screening",
+                        "predicted_ohm": 89.27154394609208,
+                        "target_ohm": 90,
+                        "tolerance_pct": 10
+                    },
+                    "severity": "info"
+                }
+            ],
+            "metrics": {
+                "failed_targets": 0,
+                "method": "actual-route-screening-plus-closed-form-impedance",
+                "target_classes": 1
+            },
+            "required": true,
+            "status": "pass"
+        },
+        "thermal": {
+            "findings": [
+            ],
+            "metrics": {
+                "missing_constraints": 0,
+                "powered_components": 4,
+                "spacing_failures": 0
+            },
+            "required": true,
+            "status": "pass"
+        }
+    },
+    "constraint_profile": {
+        "assembler": "unassigned",
+        "fabricator": "unassigned",
+        "id": "agent-controller-4layer-v1",
+        "ipc_performance_class": 2,
+        "producibility_level": "B",
+        "source": "project:agent-workflow-controller",
+        "source_revision": "1.0.0"
+    },
+    "generated_utc": "2026-07-19T12:10:08.714Z",
+    "overall_status": "pass",
+    "project": {
+        "document_id": "project:agent-workflow-controller-v1",
+        "file_sha256": "0cbd3244611fa64fb3ec828f12398a82ce21781b56aaad1fd0b2e588c26da7c8",
+        "revision": 1
+    },
+    "schema": "design-studio.verification/1"
+}

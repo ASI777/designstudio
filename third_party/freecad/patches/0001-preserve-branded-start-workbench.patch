@@ -1,0 +1,27 @@
+diff --git a/src/Mod/Start/StartMigrator.py b/src/Mod/Start/StartMigrator.py
+index 4cd927d..117ad3a 100644
+--- a/src/Mod/Start/StartMigrator.py
++++ b/src/Mod/Start/StartMigrator.py
+@@ -70,10 +70,20 @@ class StartMigrator2024:
+     # and set the Autoload module to "PartDesignWorkbench"
+     def _update_startup_flags(self):
+-        autoload_module = self.general_prefs.GetString("AutoloadModule", "StartWorkbench")
++        configured_start = FreeCAD.ConfigGet("StartWorkbench")
++        default_autoload = (
++            configured_start
++            if configured_start and configured_start != "PartDesignWorkbench"
++            else "StartWorkbench"
++        )
++        autoload_module = self.general_prefs.GetString("AutoloadModule", default_autoload)
+         if autoload_module == "StartWorkbench":
+-            self.start_prefs.SetBool("ShowOnStartup", True)
+-            self.general_prefs.SetString("AutoloadModule", "PartDesignWorkbench")
++            if configured_start and configured_start != "PartDesignWorkbench":
++                self.start_prefs.SetBool("ShowOnStartup", False)
++                self.general_prefs.SetString("AutoloadModule", configured_start)
++            else:
++                self.start_prefs.SetBool("ShowOnStartup", True)
++                self.general_prefs.SetString("AutoloadModule", "PartDesignWorkbench")
+         else:
+             self.start_prefs.SetBool("ShowOnStartup", False)
+

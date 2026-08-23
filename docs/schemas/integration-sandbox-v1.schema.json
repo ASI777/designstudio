@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:integration-sandbox:1",
+  "title": "Cross-domain integration sandbox",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "integration_id", "baseline_configuration_id", "branch_heads", "status", "checks", "required_approvals", "approvals", "created_by", "created_utc"],
+  "properties": {
+    "schema": {"const": "design-studio.integration-sandbox/1"},
+    "integration_id": {"type": "string", "format": "uuid"},
+    "baseline_configuration_id": {"type": "string", "format": "uuid"},
+    "branch_heads": {"type": "object", "minProperties": 1, "propertyNames": {"format": "uuid"}, "additionalProperties": {"type": "string", "format": "uuid"}},
+    "status": {"enum": ["draft", "blocked", "ready_for_approval", "approved"]},
+    "checks": {"type": "array", "items": {"type": "object"}},
+    "required_approvals": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "approvals": {"type": "object", "additionalProperties": {"type": "object", "required": ["role", "approver", "created_utc"]}},
+    "created_by": {"type": "string", "minLength": 1},
+    "created_utc": {"type": "string", "format": "date-time"}
+  }
+}

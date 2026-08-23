@@ -1,0 +1,50 @@
+{
+  "version": 2,
+  "document_id": "project:verification-pass",
+  "revision": 1,
+  "board_width_mm": 20.0,
+  "board_height_mm": 20.0,
+  "board_outline_pts": [[0,0],[20,0],[20,20],[0,20]],
+  "board_cutouts": [],
+  "grid_mm": 0.5,
+  "copper_layers": 2,
+  "dielectric_er": 4.4,
+  "dielectric_h_mm": 0.2,
+  "loss_tangent": 0.02,
+  "copper_t_mm": 0.035,
+  "verification_requirements": {
+    "require_signal_integrity": true,
+    "require_power_integrity": true,
+    "require_thermal": false,
+    "require_enclosure_evidence": false,
+    "enclosure_evidence_path": "",
+    "enclosure_evidence_sha256": ""
+  },
+  "net_table": [{"id":0,"name":"VCC_SIG","class":1,"required_current_a":0.1,"nominal_voltage_v":3.3}],
+  "net_classes": [{
+    "id":1,"name":"50OHM","clearance_mm":0.2,"trace_width_mm":0.367,
+    "via_diameter_mm":0.6,"via_drill_mm":0.3,"diff_pair_gap_mm":0,
+    "max_skew_mm":0,"microvia":false,"z0_ohm":50,"zdiff_ohm":0,
+    "allowed_layers":[0],"allowed_via_types":["through"],"max_via_count":2,
+    "signal_frequency_hz":100000000,"impedance_tolerance_pct":15
+  }],
+  "rule_areas": [],
+  "class_pair_rules": [],
+  "layer_policies": [{
+    "layer":0,"name":"F.Cu","role":"signal","preferred_direction":"horizontal",
+    "allow_routing":true,"copper_thickness_mm":0.035,"source":"test-stackup","source_revision":"1"
+  }],
+  "copper_zones": [],
+  "footprints": [
+    {"ref":"J1","lib":"TEST","x_mm":5,"y_mm":10,"rot_deg":0,"side":0,"h3d_mm":2,
+     "body_w_mm":2,"body_h_mm":2,"body_cx_mm":0,"body_cy_mm":0,
+     "courtyard_pts":[[-1.2,-1.2],[1.2,-1.2],[1.2,1.2],[-1.2,1.2]],
+     "pads":[{"name":"1","x_mm":0,"y_mm":0,"w_mm":1,"h_mm":1,"net":0,"th":false,"drill_mm":0,"shape":"rect"}],"regions":[]},
+    {"ref":"J2","lib":"TEST","x_mm":15,"y_mm":10,"rot_deg":0,"side":0,"h3d_mm":2,
+     "body_w_mm":2,"body_h_mm":2,"body_cx_mm":0,"body_cy_mm":0,
+     "courtyard_pts":[[-1.2,-1.2],[1.2,-1.2],[1.2,1.2],[-1.2,1.2]],
+     "pads":[{"name":"1","x_mm":0,"y_mm":0,"w_mm":1,"h_mm":1,"net":0,"th":false,"drill_mm":0,"shape":"rect"}],"regions":[]}
+  ],
+  "traces": [{"ax_mm":5,"ay_mm":10,"bx_mm":15,"by_mm":10,"w_mm":0.367,"net":0,"layer":0,"pour":false}],
+  "vias": []
+}

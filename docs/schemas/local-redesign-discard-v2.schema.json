@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:local-redesign-discard:2",
+  "title": "DesignStudio Local Redesign Discard Receipt v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "redesign_id",
+    "preview_sha256",
+    "target_semantic_id",
+    "target_shape_sha256",
+    "removed_preview_objects",
+    "baseline_retained",
+    "discarded_utc",
+    "discard_sha256"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.local-redesign-discard/2"},
+    "redesign_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "preview_sha256": {"$ref": "#/$defs/sha256"},
+    "target_semantic_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "target_shape_sha256": {"$ref": "#/$defs/sha256"},
+    "removed_preview_objects": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 256}
+    },
+    "baseline_retained": {"const": true},
+    "discarded_utc": {"type": "string", "format": "date-time"},
+    "discard_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:local-redesign:2",
+  "title": "DesignStudio topology-aware local surface redesign",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "redesign_id", "revision", "status", "document", "target",
+    "intent", "constraints", "program", "candidate_command_id",
+    "candidate_faces", "provenance"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.local-redesign/2"},
+    "redesign_id": {"$ref": "#/$defs/id"},
+    "revision": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["captured", "program_ready"]},
+    "document": {"$ref": "#/$defs/document"},
+    "target": {"$ref": "#/$defs/target"},
+    "intent": {"type": "string", "minLength": 1, "maxLength": 32000},
+    "constraints": {"$ref": "#/$defs/constraints"},
+    "program": {"type": ["object", "null"]},
+    "candidate_command_id": {"type": ["string", "null"], "$ref": "#/$defs/nullableId"},
+    "candidate_faces": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^Face[1-9][0-9]*$"}
+    },
+    "provenance": {"$ref": "#/$defs/provenance"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "captured"}}},
+      "then": {
+        "properties": {
+          "program": {"type": "null"},
+          "candidate_command_id": {"type": "null"},
+          "candidate_faces": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "program_ready"}}},
+      "then": {
+        "properties": {
+          "program": {"type": "object"},
+          "candidate_command_id": {"$ref": "#/$defs/id"},
+          "candidate_faces": {"minItems": 1}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+    "nullableId": {"anyOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "point3": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "number", "minimum": -1000000, "maximum": 1000000}
+    },
+    "unitVector": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "number", "minimum": -1.000001, "maximum": 1.000001}
+    },
+    "bounds": {
+      "type": "object", "additionalProperties": false,
+      "required": ["min_mm", "max_mm"],
+      "properties": {"min_mm": {"$ref": "#/$defs/point3"}, "max_mm": {"$ref": "#/$defs/point3"}}
+    },
+    "document": {
+      "type": "object", "additionalProperties": false,
+      "required": ["document_id", "path", "file_sha256"],
+      "properties": {
+        "document_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1, "maxLength": 2048},
+        "file_sha256": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "faceSignature": {
+      "type": "object", "additionalProperties": false,
+      "required": ["face", "shape_sha256", "area_mm2", "center_mm"],
+      "properties": {
+        "face": {"type": "string", "pattern": "^Face[1-9][0-9]*$"},
+        "shape_sha256": {"$ref": "#/$defs/digest"},
+        "area_mm2": {"type": "number", "minimum": 0},
+        "center_mm": {"$ref": "#/$defs/point3"}
+      }
+    },
+    "boundaryEdge": {
+      "type": "object", "additionalProperties": false,
+      "required": ["edge", "signature_sha256", "adjacent_faces", "length_mm", "midpoint_mm"],
+      "properties": {
+        "edge": {"type": "string", "pattern": "^Edge[1-9][0-9]*$"},
+        "signature_sha256": {"$ref": "#/$defs/digest"},
+        "adjacent_faces": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^Face[1-9][0-9]*$"}
+        },
+        "length_mm": {"type": "number", "minimum": 0},
+        "midpoint_mm": {"$ref": "#/$defs/point3"}
+      }
+    },
+    "frame": {
+      "type": "object", "additionalProperties": false,
+      "required": ["origin_mm", "x_axis", "y_axis", "z_axis"],
+      "properties": {
+        "origin_mm": {"$ref": "#/$defs/point3"},
+        "x_axis": {"$ref": "#/$defs/unitVector"},
+        "y_axis": {"$ref": "#/$defs/unitVector"},
+        "z_axis": {"$ref": "#/$defs/unitVector"}
+      }
+    },
+    "target": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "semantic_id", "object_name", "target_shape_sha256", "selected_faces",
+        "selected_face_signatures", "boundary_edges", "local_frame"
+      ],
+      "properties": {
+        "semantic_id": {"$ref": "#/$defs/id"},
+        "object_name": {"type": "string", "minLength": 1},
+        "target_shape_sha256": {"$ref": "#/$defs/digest"},
+        "selected_faces": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^Face[1-9][0-9]*$"}
+        },
+        "selected_face_signatures": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"$ref": "#/$defs/faceSignature"}
+        },
+        "boundary_edges": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"$ref": "#/$defs/boundaryEdge"}
+        },
+        "local_frame": {"$ref": "#/$defs/frame"}
+      }
+    },
+    "protectedObject": {
+      "type": "object", "additionalProperties": false,
+      "required": ["semantic_id", "shape_sha256", "clearance_mm"],
+      "properties": {
+        "semantic_id": {"type": "string", "minLength": 1},
+        "shape_sha256": {"$ref": "#/$defs/digest"},
+        "clearance_mm": {"type": "number", "minimum": 0, "maximum": 10000}
+      }
+    },
+    "manufacturing": {
+      "type": "object", "additionalProperties": false,
+      "required": ["process", "minimum_wall_mm", "minimum_blend_radius_mm", "max_overhang_deg"],
+      "properties": {
+        "process": {"enum": ["fdm", "sla", "cnc", "injection_molding", "unknown"]},
+        "minimum_wall_mm": {"type": "number", "exclusiveMinimum": 0, "maximum": 1000},
+        "minimum_blend_radius_mm": {"type": "number", "minimum": 0, "maximum": 1000},
+        "max_overhang_deg": {"type": "number", "minimum": 0, "maximum": 90}
+      }
+    },
+    "constraints": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "permitted_expansion_mm", "boundary_deviation_mm", "g1_normal_angle_deg",
+        "g2_curvature_delta", "continuity_required", "protected_objects",
+        "manufacturing", "unselected_objects_must_remain_unchanged", "baseline_must_be_retained"
+      ],
+      "properties": {
+        "permitted_expansion_mm": {"type": "number", "minimum": 0, "maximum": 10000},
+        "boundary_deviation_mm": {"type": "number", "exclusiveMinimum": 0, "maximum": 100},
+        "g1_normal_angle_deg": {"type": "number", "minimum": 0, "maximum": 180},
+        "g2_curvature_delta": {"type": "number", "minimum": 0, "maximum": 1000000},
+        "continuity_required": {"enum": ["G0", "G1", "G2"]},
+        "protected_objects": {"type": "array", "items": {"$ref": "#/$defs/protectedObject"}},
+        "manufacturing": {"$ref": "#/$defs/manufacturing"},
+        "unselected_objects_must_remain_unchanged": {"const": true},
+        "baseline_must_be_retained": {"const": true}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["created_by", "created_utc", "model_role", "raster_geometry_authority"],
+      "properties": {
+        "created_by": {"type": "string", "minLength": 1},
+        "created_utc": {"type": "string", "format": "date-time"},
+        "model_role": {"enum": ["user", "codex_proposal", "deterministic_host"]},
+        "raster_geometry_authority": {"const": false}
+      }
+    }
+  }
+}

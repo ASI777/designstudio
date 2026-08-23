@@ -1,0 +1,1004 @@
+{
+  "schema": "design-studio.component/2",
+  "component": {
+    "manufacturer": "Realtek Semiconductor Corp.",
+    "mpn": "RTL8153-VC-CG",
+    "description": "Integrated 10/100/1000M Ethernet Controller for USB Applications",
+    "category": "networking",
+    "datasheet": {
+      "title": "RTL8153-VC Datasheet",
+      "revision": "Rev. 1.2",
+      "date": "29 September 2015",
+      "url": "www.realtek.com"
+    },
+    "distributors": []
+  },
+  "symbol": {
+    "ref_des_prefix": "U",
+    "pins": [
+      {
+        "number": "1",
+        "name": "AVDD33",
+        "electrical_type": "power_in",
+        "description": "Analog 3.3V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "2",
+        "name": "MDIP0",
+        "electrical_type": "bidirectional",
+        "description": "MDI mode: first pair in 1000Base-T, BI_DA+",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "3",
+        "name": "MDIN0",
+        "electrical_type": "bidirectional",
+        "description": "MDI mode: first pair in 1000Base-T, BI_DA-",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "4",
+        "name": "AVDD10",
+        "electrical_type": "power_in",
+        "description": "Analog 1.2V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "5",
+        "name": "MDIP1",
+        "electrical_type": "bidirectional",
+        "description": "MDI mode: second pair in 1000Base-T, BI_DB+",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "6",
+        "name": "MDIN1",
+        "electrical_type": "bidirectional",
+        "description": "MDI mode: second pair in 1000Base-T, BI_DB-",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "7",
+        "name": "MDIP2",
+        "electrical_type": "bidirectional",
+        "description": "MDI mode: third pair in 1000Base-T, BI_DC+",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "8",
+        "name": "MDIN2",
+        "electrical_type": "bidirectional",
+        "description": "MDI mode: third pair in 1000Base-T, BI_DC-",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "9",
+        "name": "AVDD10",
+        "electrical_type": "power_in",
+        "description": "Analog 1.2V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "10",
+        "name": "MDIP3",
+        "electrical_type": "bidirectional",
+        "description": "MDI mode: fourth pair in 1000Base-T, BI_DD+",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "11",
+        "name": "MDIN3",
+        "electrical_type": "bidirectional",
+        "description": "MDI mode: fourth pair in 1000Base-T, BI_DD-",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "12",
+        "name": "AVDD33",
+        "electrical_type": "power_in",
+        "description": "Analog 3.3V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "13",
+        "name": "U3VDD10",
+        "electrical_type": "power_in",
+        "description": "USB 3.0 1.2V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "14",
+        "name": "U3SSRXP",
+        "electrical_type": "input",
+        "description": "USB 3.0 Super-Speed Receive Differential Pair",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "15",
+        "name": "U3SSRXN",
+        "electrical_type": "input",
+        "description": "USB 3.0 Super-Speed Receive Differential Pair",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "16",
+        "name": "U3GND",
+        "electrical_type": "power_in",
+        "description": "USB 3.0 Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "17",
+        "name": "U3GND",
+        "electrical_type": "power_in",
+        "description": "USB 3.0 Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "18",
+        "name": "U3SSTXP",
+        "electrical_type": "output",
+        "description": "USB 3.0 Super-Speed Transmit Differential Pair",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "19",
+        "name": "U3SSTXN",
+        "electrical_type": "output",
+        "description": "USB 3.0 Super-Speed Transmit Differential Pair",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "20",
+        "name": "U3VDD10",
+        "electrical_type": "power_in",
+        "description": "USB 3.0 1.2V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "21",
+        "name": "U2GND",
+        "electrical_type": "power_in",
+        "description": "USB 2.0/USB 1.1 Ground",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "22",
+        "name": "U2DM",
+        "electrical_type": "bidirectional",
+        "description": "USB 2.0/USB 1.1 Differential Signal Pair",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "23",
+        "name": "U2DP",
+        "electrical_type": "bidirectional",
+        "description": "USB 2.0/USB 1.1 Differential Signal Pair",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "24",
+        "name": "U2VDD10",
+        "electrical_type": "power_in",
+        "description": "USB 2.0/USB 1.1 1.2V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "25",
+        "name": "AVDD33",
+        "electrical_type": "power_in",
+        "description": "Analog 3.3V Power Supply / LDO 3.3V Output",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "26",
+        "name": "VDD5",
+        "electrical_type": "power_in",
+        "description": "Analog 5.0V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "27",
+        "name": "DVDD10_UPS",
+        "electrical_type": "power_in",
+        "description": "Digital 1.2V Uninterruptible Power Supply / LDO 1.2V Output",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "28",
+        "name": "DVDD33",
+        "electrical_type": "power_in",
+        "description": "Digital 3.3V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "29",
+        "name": "GPIO",
+        "electrical_type": "bidirectional",
+        "description": "General Purpose Input/Output Pin",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "30",
+        "name": "SPICSB/LED0",
+        "electrical_type": "output",
+        "description": "SPI Flash Chip Select / LED0",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "31",
+        "name": "DVDD10",
+        "electrical_type": "power_in",
+        "description": "Digital 1.2V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "32",
+        "name": "SPISCK/EESK/LED1",
+        "electrical_type": "output",
+        "description": "SPI Flash Serial Data Clock / EEPROM Clock / LED1",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "33",
+        "name": "ENSWREG",
+        "electrical_type": "input",
+        "description": "Enable switching regulator",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "34",
+        "name": "VDDREG",
+        "electrical_type": "power_in",
+        "description": "Digital 3.3V Power Supply for Switching/LDO Regulator",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "35",
+        "name": "VDDREG",
+        "electrical_type": "power_in",
+        "description": "Digital 3.3V Power Supply for Switching/LDO Regulator",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "36",
+        "name": "REGOUT",
+        "electrical_type": "output",
+        "description": "Switching Regulator 1.2V Output",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "37",
+        "name": "XTALDET",
+        "electrical_type": "input",
+        "description": "Power-Up Strapping Pin",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "38",
+        "name": "SPISDI/EEDI/SDA",
+        "electrical_type": "bidirectional",
+        "description": "SPI Flash Data In / EEPROM Data In / TWSI Data",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "39",
+        "name": "LANWAKEB",
+        "electrical_type": "output",
+        "description": "Power Management Event Output Pin (Active Low)",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "40",
+        "name": "EECS/SCL",
+        "electrical_type": "output",
+        "description": "EEPROM Chip Select / TWSI Clock",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "41",
+        "name": "SPISDO/EEDO/LED2",
+        "electrical_type": "bidirectional",
+        "description": "SPI Flash Data Out / EEPROM Data Out / LED2",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "42",
+        "name": "DVDD10",
+        "electrical_type": "power_in",
+        "description": "Digital 1.2V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "43",
+        "name": "DVDD33",
+        "electrical_type": "power_in",
+        "description": "Digital 3.3V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "44",
+        "name": "CKXTAL1",
+        "electrical_type": "input",
+        "description": "Input of 25MHz Clock Reference",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "45",
+        "name": "CKXTAL2",
+        "electrical_type": "bidirectional",
+        "description": "Output of 25MHz Clock / Input of 25MHz/48MHz Ext Clock",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "46",
+        "name": "AVDD10",
+        "electrical_type": "power_in",
+        "description": "Analog 1.2V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "47",
+        "name": "RSET",
+        "electrical_type": "input",
+        "description": "Reference (External Resistor Reference)",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "48",
+        "name": "AVDD33",
+        "electrical_type": "power_in",
+        "description": "Analog 3.3V Power Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "49",
+        "name": "GND",
+        "electrical_type": "power_in",
+        "description": "Ground (Exposed Pad)",
+        "alternate_functions": [],
+        "package_length_mm": null
+      }
+    ]
+  },
+  "electrical": {
+    "high_speed": {
+      "diff_pairs": [
+        {
+          "name": "U3SSRX",
+          "p_pin": "14",
+          "n_pin": "15"
+        },
+        {
+          "name": "U3SSTX",
+          "p_pin": "18",
+          "n_pin": "19"
+        },
+        {
+          "name": "U2D",
+          "p_pin": "23",
+          "n_pin": "22"
+        },
+        {
+          "name": "MDI0",
+          "p_pin": "2",
+          "n_pin": "3"
+        },
+        {
+          "name": "MDI1",
+          "p_pin": "5",
+          "n_pin": "6"
+        },
+        {
+          "name": "MDI2",
+          "p_pin": "7",
+          "n_pin": "8"
+        },
+        {
+          "name": "MDI3",
+          "p_pin": "10",
+          "n_pin": "11"
+        }
+      ],
+      "single_ended": []
+    },
+    "power_domains": [
+      {
+        "name": "AVDD33",
+        "vnom_v": 3.3,
+        "vmin_v": 3.135,
+        "vmax_v": 3.465,
+        "max_current_a": null,
+        "pins": [
+          "1",
+          "12",
+          "25",
+          "48"
+        ]
+      },
+      {
+        "name": "DVDD33",
+        "vnom_v": 3.3,
+        "vmin_v": 3.135,
+        "vmax_v": 3.465,
+        "max_current_a": null,
+        "pins": [
+          "28",
+          "43"
+        ]
+      },
+      {
+        "name": "VDDREG",
+        "vnom_v": 3.3,
+        "vmin_v": 3.135,
+        "vmax_v": 3.465,
+        "max_current_a": null,
+        "pins": [
+          "34",
+          "35"
+        ]
+      },
+      {
+        "name": "VDD5",
+        "vnom_v": 5.0,
+        "vmin_v": 4.75,
+        "vmax_v": 5.25,
+        "max_current_a": null,
+        "pins": [
+          "26"
+        ]
+      },
+      {
+        "name": "AVDD10",
+        "vnom_v": 1.2,
+        "vmin_v": 1.14,
+        "vmax_v": 1.26,
+        "max_current_a": null,
+        "pins": [
+          "4",
+          "9",
+          "46"
+        ]
+      },
+      {
+        "name": "DVDD10",
+        "vnom_v": 1.2,
+        "vmin_v": 1.14,
+        "vmax_v": 1.26,
+        "max_current_a": null,
+        "pins": [
+          "31",
+          "42"
+        ]
+      },
+      {
+        "name": "U3VDD10",
+        "vnom_v": 1.2,
+        "vmin_v": 1.14,
+        "vmax_v": 1.26,
+        "max_current_a": null,
+        "pins": [
+          "13",
+          "20"
+        ]
+      },
+      {
+        "name": "U2VDD10",
+        "vnom_v": 1.2,
+        "vmin_v": 1.14,
+        "vmax_v": 1.26,
+        "max_current_a": null,
+        "pins": [
+          "24"
+        ]
+      },
+      {
+        "name": "GND",
+        "vnom_v": 0.0,
+        "vmin_v": 0.0,
+        "vmax_v": 0.0,
+        "max_current_a": null,
+        "pins": [
+          "16",
+          "17",
+          "21",
+          "49"
+        ]
+      }
+    ],
+    "required_externals": []
+  },
+  "footprint": {
+    "name": "QFN-48",
+    "ipc_name": "QFN-48",
+    "mount": "smd",
+    "body": {
+      "length_mm": 6.0,
+      "width_mm": 6.0,
+      "height_mm": 0.85
+    },
+    "pitch_mm": 0.4,
+    "bga": null,
+    "pads": [
+      {
+        "number": "1",
+        "x_mm": -3.0,
+        "y_mm": 2.6,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "2",
+        "x_mm": -3.0,
+        "y_mm": 2.2,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "3",
+        "x_mm": -3.0,
+        "y_mm": 1.7999999999999998,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "4",
+        "x_mm": -3.0,
+        "y_mm": 1.4,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "5",
+        "x_mm": -3.0,
+        "y_mm": 1.0,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "6",
+        "x_mm": -3.0,
+        "y_mm": 0.5999999999999996,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "7",
+        "x_mm": -3.0,
+        "y_mm": 0.19999999999999973,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "8",
+        "x_mm": -3.0,
+        "y_mm": -0.20000000000000018,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "9",
+        "x_mm": -3.0,
+        "y_mm": -0.6000000000000001,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "10",
+        "x_mm": -3.0,
+        "y_mm": -1.0,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "11",
+        "x_mm": -3.0,
+        "y_mm": -1.4000000000000004,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "12",
+        "x_mm": -3.0,
+        "y_mm": -1.8000000000000007,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "13",
+        "x_mm": -2.6,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "14",
+        "x_mm": -2.2,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "15",
+        "x_mm": -1.7999999999999998,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "16",
+        "x_mm": -1.4,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "17",
+        "x_mm": -1.0,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "18",
+        "x_mm": -0.5999999999999996,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "19",
+        "x_mm": -0.19999999999999973,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "20",
+        "x_mm": 0.20000000000000018,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "21",
+        "x_mm": 0.6000000000000001,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "22",
+        "x_mm": 1.0,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "23",
+        "x_mm": 1.4000000000000004,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "24",
+        "x_mm": 1.8000000000000007,
+        "y_mm": -3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "25",
+        "x_mm": 3.0,
+        "y_mm": -2.6,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "26",
+        "x_mm": 3.0,
+        "y_mm": -2.2,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "27",
+        "x_mm": 3.0,
+        "y_mm": -1.7999999999999998,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "28",
+        "x_mm": 3.0,
+        "y_mm": -1.4,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "29",
+        "x_mm": 3.0,
+        "y_mm": -1.0,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "30",
+        "x_mm": 3.0,
+        "y_mm": -0.5999999999999996,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "31",
+        "x_mm": 3.0,
+        "y_mm": -0.19999999999999973,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "32",
+        "x_mm": 3.0,
+        "y_mm": 0.20000000000000018,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "33",
+        "x_mm": 3.0,
+        "y_mm": 0.6000000000000001,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "34",
+        "x_mm": 3.0,
+        "y_mm": 1.0,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "35",
+        "x_mm": 3.0,
+        "y_mm": 1.4000000000000004,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "36",
+        "x_mm": 3.0,
+        "y_mm": 1.8000000000000007,
+        "width_mm": 0.2,
+        "height_mm": 0.4,
+        "shape": "rect"
+      },
+      {
+        "number": "37",
+        "x_mm": -2.6,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "38",
+        "x_mm": -2.2,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "39",
+        "x_mm": -1.7999999999999998,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "40",
+        "x_mm": -1.4,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "41",
+        "x_mm": -1.0,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "42",
+        "x_mm": -0.5999999999999996,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "43",
+        "x_mm": -0.19999999999999973,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "44",
+        "x_mm": 0.20000000000000018,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "45",
+        "x_mm": 0.6000000000000001,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "46",
+        "x_mm": 1.0,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "47",
+        "x_mm": 1.4000000000000004,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "48",
+        "x_mm": 1.8000000000000007,
+        "y_mm": 3.0,
+        "width_mm": 0.4,
+        "height_mm": 0.2,
+        "shape": "rect"
+      },
+      {
+        "number": "49",
+        "x_mm": 0.0,
+        "y_mm": 0.0,
+        "width_mm": 4.1,
+        "height_mm": 4.1,
+        "shape": "rect",
+        "mechanical": false
+      }
+    ],
+    "courtyard_margin_mm": 0.25,
+    "derived_from_outline": false,
+    "source": {
+      "pages": [
+        29
+      ],
+      "drawing": "QFN-48"
+    }
+  },
+  "orientation": {
+    "pin1_marker": "dot",
+    "pin1_position": "top-left",
+    "polarity": {
+      "has_polarity": false,
+      "cathode_pin": null
+    }
+  },
+  "package_3d": {
+    "height_mm": 0.85,
+    "standoff_mm": 0.0,
+    "shape": "box"
+  },
+  "extraction": {
+    "confidence": {
+      "symbol": 1.0,
+      "electrical": 0.9,
+      "footprint": 0.5
+    },
+    "pages_used": [
+      5,
+      6,
+      7,
+      8
+    ],
+    "warnings": [
+      "Footprint dimensions were mocked and need verification from actual datasheet."
+    ]
+  }
+}

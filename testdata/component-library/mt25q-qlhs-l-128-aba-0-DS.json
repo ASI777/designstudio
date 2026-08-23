@@ -1,0 +1,348 @@
+{
+"schema": "design-studio.component/2",
+"component": {
+"manufacturer": "Micron",
+"mpn": "MT25QL128ABA",
+"description": "128Mb, 3V, Multiple I/O Serial Flash Memory",
+"category": "other",
+"datasheet": {
+"title": "MT25Q 128Mb 3V/1.8V Multiple I/O Serial Flash Memory",
+"revision": "Current",
+"date": "",
+"url": ""
+},
+"distributors": []
+},
+"symbol": {
+"ref_des_prefix": "U",
+"pins": [
+{
+"number": "1",
+"name": "S#",
+"electrical_type": "input",
+"description": "Chip Select",
+"alternate_functions": []
+},
+{
+"number": "2",
+"name": "DQ1",
+"electrical_type": "bidirectional",
+"description": "Data I/O 1 / MISO",
+"alternate_functions": ["MISO"]
+},
+{
+"number": "3",
+"name": "W#/DQ2",
+"electrical_type": "bidirectional",
+"description": "Write Protect / Data I/O 2",
+"alternate_functions": ["W#", "DQ2"]
+},
+{
+"number": "4",
+"name": "VSS",
+"electrical_type": "power_in",
+"description": "Ground",
+"alternate_functions": []
+},
+{
+"number": "5",
+"name": "DQ0",
+"electrical_type": "bidirectional",
+"description": "Data I/O 0 / MOSI",
+"alternate_functions": ["MOSI"]
+},
+{
+"number": "6",
+"name": "HOLD#/DQ3",
+"electrical_type": "bidirectional",
+"description": "Hold / Data I/O 3",
+"alternate_functions": ["HOLD#", "DQ3"]
+},
+{
+"number": "7",
+"name": "C",
+"electrical_type": "input",
+"description": "Serial Clock",
+"alternate_functions": ["SCLK"]
+},
+{
+"number": "8",
+"name": "VCC",
+"electrical_type": "power_in",
+"description": "Core and I/O Power Supply",
+"alternate_functions": []
+}
+]
+},
+"electrical": {
+"supply": {
+"vmin_v": 2.7,
+"vmax_v": 3.6,
+"typ_v": 3.3,
+"max_current_a": 0.02
+},
+"absolute_max": [
+{
+"parameter": "VCC Supply Voltage",
+"value": 4.6,
+"unit": "V"
+},
+{
+"parameter": "Voltage on any pin",
+"value": 4.6,
+"unit": "V"
+},
+{
+"parameter": "Storage Temperature",
+"value": 150,
+"unit": "°C"
+}
+],
+"operating_conditions": [
+{
+"parameter": "VCC Supply Voltage (MT25QL)",
+"min": 2.7,
+"typ": 3.3,
+"max": 3.6,
+"unit": "V"
+},
+{
+"parameter": "Industrial Operating Temperature",
+"min": -40,
+"typ": null,
+"max": 85,
+"unit": "°C"
+}
+],
+"required_externals": [
+{
+"purpose": "Decoupling capacitor",
+"value": "0.1uF",
+"constraints": "Ceramic, place close to VCC and VSS pins",
+"connect_between": ["VCC", "VSS"],
+"mandatory": true
+},
+{
+"purpose": "Pull-up resistor on Chip Select",
+"value": "10k",
+"constraints": "Recommended to ensure inactive state during power-up",
+"connect_between": ["VCC", "S#"],
+"mandatory": false
+}
+],
+"application_circuits": [
+{
+"mode": "Quad SPI Mode",
+"summary": "Utilizes all four DQ pins (DQ0-DQ3) for high-bandwidth data transfers.",
+"connections": [
+{ "from_pin": "1", "to": "SPI_CS#" },
+{ "from_pin": "7", "to": "SPI_CLK" },
+{ "from_pin": "5", "to": "SPI_IO0" },
+{ "from_pin": "2", "to": "SPI_IO1" },
+{ "from_pin": "3", "to": "SPI_IO2" },
+{ "from_pin": "6", "to": "SPI_IO3" }
+]
+}
+],
+"parameters": [
+{
+"name": "Clock Frequency (fC)",
+"min": null,
+"typ": null,
+"max": 133000000,
+"unit": "Hz",
+"condition": "VCC >= 2.7V"
+},
+{
+"name": "Input High Voltage (VIH)",
+"min": 0.7,
+"typ": null,
+"max": null,
+"unit": "x VCC",
+"condition": ""
+},
+{
+"name": "Input Low Voltage (VIL)",
+"min": null,
+"typ": null,
+"max": 0.3,
+"unit": "x VCC",
+"condition": ""
+},
+{
+"name": "Standby Current (ICC1)",
+"min": null,
+"typ": 0.000015,
+"max": 0.00005,
+"unit": "A",
+"condition": "S# = VCC"
+}
+],
+"thermal": {
+"theta_ja_c_w": null,
+"theta_jc_c_w": null,
+"max_power_w": null,
+"tj_max_c": 125
+},
+"power_domains": [
+{
+"name": "VCC",
+"vmin_v": 2.7,
+"vnom_v": 3.3,
+"vmax_v": 3.6,
+"max_current_a": 0.02,
+"pins": ["8"]
+}
+],
+"high_speed": {
+"diff_pairs": [],
+"single_ended": [
+{
+"signal": "C",
+"impedance_ohm": 50
+},
+{
+"signal": "DQ0",
+"impedance_ohm": 50
+},
+{
+"signal": "DQ1",
+"impedance_ohm": 50
+},
+{
+"signal": "DQ2",
+"impedance_ohm": 50
+},
+{
+"signal": "DQ3",
+"impedance_ohm": 50
+}
+]
+}
+},
+"footprint": {
+"name": "SOP2-8",
+"ipc_name": "SOIC127P790X216-8N",
+"mount": "smd",
+"body": {
+"length_mm": 5.28,
+"width_mm": 5.28,
+"height_mm": 2.16
+},
+"pitch_mm": 1.27,
+"pads": [
+{
+"number": "1",
+"x_mm": -3.45,
+"y_mm": -1.905,
+"width_mm": 1.8,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "2",
+"x_mm": -3.45,
+"y_mm": -0.635,
+"width_mm": 1.8,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "3",
+"x_mm": -3.45,
+"y_mm": 0.635,
+"width_mm": 1.8,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "4",
+"x_mm": -3.45,
+"y_mm": 1.905,
+"width_mm": 1.8,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "5",
+"x_mm": 3.45,
+"y_mm": 1.905,
+"width_mm": 1.8,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "6",
+"x_mm": 3.45,
+"y_mm": 0.635,
+"width_mm": 1.8,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "7",
+"x_mm": 3.45,
+"y_mm": -0.635,
+"width_mm": 1.8,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+},
+{
+"number": "8",
+"x_mm": 3.45,
+"y_mm": -1.905,
+"width_mm": 1.8,
+"height_mm": 0.6,
+"shape": "rect",
+"drill_mm": 0,
+"mechanical": false
+}
+],
+"courtyard_margin_mm": 0.5,
+"derived_from_outline": true,
+"source": {
+"pages": [16, 75, 87],
+"drawing": "SOP2-8 (208 mils) package outline"
+}
+},
+"orientation": {
+"pin1_marker": "dot",
+"pin1_position": "top-left",
+"polarity": {
+"has_polarity": false,
+"cathode_pin": null
+}
+},
+"package_3d": {
+"height_mm": 2.16,
+"standoff_mm": 0.05,
+"shape": "box"
+},
+"extraction": {
+"confidence": {
+"symbol": 0.98,
+"electrical": 0.95,
+"footprint": 0.85
+},
+"pages_used": [1, 15, 78, 85],
+"warnings": [
+"Footprint derived from SOP2-8 208-mils outline; recommended IPC land pattern not explicitly provided in main datasheet.",
+"Other packages available: W-PDFN-8 6x5mm (W9), T-PBGA-24 6x8mm, SOP2-16 300-mils.",
+"Extracted for MT25QL (3V) variant. MT25QU (1.8V) variant operates from 1.7V to 2.0V."
+]
+}
+}

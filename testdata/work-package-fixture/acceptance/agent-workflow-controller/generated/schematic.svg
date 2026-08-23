@@ -1,0 +1,1456 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 376 1150" width="1504" height="4600">
+<rect width="100%" height="100%" fill="#fffdf5"/>
+<g font-family="sans-serif">
+<text x="5" y="6" font-size="3.5" font-weight="bold">Agent Workflow Controller — pin-to-net schematic review</text>
+<text x="5" y="10" font-size="1.8" fill="#355e3b">Every pin stub terminates in its authoritative net label; NC means an intentional no-connect.</text>
+<rect x="31.0" y="21.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="25" text-anchor="middle" font-size="2.1" font-weight="bold">SW1</text>
+<text x="46.0" y="28" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="46.0" y="30.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="31.0" y1="24.2" x2="28.0" y2="24.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="24.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="24.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW0</text>
+<line x1="61.0" y1="24.2" x2="64.0" y2="24.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="24.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="24.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_1_RAW</text>
+<rect x="123.0" y="21.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="25" text-anchor="middle" font-size="2.1" font-weight="bold">D1</text>
+<text x="138.0" y="28" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="138.0" y="30.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="123.0" y1="24.2" x2="120.0" y2="24.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="24.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="24.62" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL0</text>
+<line x1="153.0" y1="24.2" x2="156.0" y2="24.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="24.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="24.62" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_1_RAW</text>
+<rect x="215.0" y="21.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="25" text-anchor="middle" font-size="2.1" font-weight="bold">LED1</text>
+<text x="230.0" y="28" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="230.0" y="30.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="215.0" y1="24.2" x2="212.0" y2="24.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="24.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="24.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="215.0" y1="26.5" x2="212.0" y2="26.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="26.5" r=".38" fill="#22743b"/>
+<text x="211.3" y="26.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_1</text>
+<line x1="245.0" y1="24.2" x2="248.0" y2="24.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="24.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="24.62" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="245.0" y1="26.5" x2="248.0" y2="26.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="26.5" r=".38" fill="#22743b"/>
+<text x="248.7" y="26.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_DATA</text>
+<rect x="307.0" y="21.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="25" text-anchor="middle" font-size="2.1" font-weight="bold">SW2</text>
+<text x="322.0" y="28" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="322.0" y="30.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="307.0" y1="24.2" x2="304.0" y2="24.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="24.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="24.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW0</text>
+<line x1="337.0" y1="24.2" x2="340.0" y2="24.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="24.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="24.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_2_RAW</text>
+<rect x="31.0" y="63.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="67" text-anchor="middle" font-size="2.1" font-weight="bold">D2</text>
+<text x="46.0" y="70" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="46.0" y="72.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="31.0" y1="66.2" x2="28.0" y2="66.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="66.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="66.62" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL1</text>
+<line x1="61.0" y1="66.2" x2="64.0" y2="66.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="66.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="66.62" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_2_RAW</text>
+<rect x="123.0" y="63.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="67" text-anchor="middle" font-size="2.1" font-weight="bold">LED2</text>
+<text x="138.0" y="70" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="138.0" y="72.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="123.0" y1="66.2" x2="120.0" y2="66.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="66.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="66.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="123.0" y1="68.5" x2="120.0" y2="68.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="68.5" r=".38" fill="#22743b"/>
+<text x="119.3" y="68.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_2</text>
+<line x1="153.0" y1="66.2" x2="156.0" y2="66.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="66.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="66.62" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="153.0" y1="68.5" x2="156.0" y2="68.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="68.5" r=".38" fill="#22743b"/>
+<text x="156.7" y="68.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_1</text>
+<rect x="215.0" y="63.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="67" text-anchor="middle" font-size="2.1" font-weight="bold">SW3</text>
+<text x="230.0" y="70" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="230.0" y="72.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="215.0" y1="66.2" x2="212.0" y2="66.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="66.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="66.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW0</text>
+<line x1="245.0" y1="66.2" x2="248.0" y2="66.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="66.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="66.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_3_RAW</text>
+<rect x="307.0" y="63.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="67" text-anchor="middle" font-size="2.1" font-weight="bold">D3</text>
+<text x="322.0" y="70" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="322.0" y="72.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="307.0" y1="66.2" x2="304.0" y2="66.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="66.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="66.62" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL2</text>
+<line x1="337.0" y1="66.2" x2="340.0" y2="66.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="66.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="66.62" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_3_RAW</text>
+<rect x="31.0" y="105.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="109" text-anchor="middle" font-size="2.1" font-weight="bold">LED3</text>
+<text x="46.0" y="112" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="46.0" y="114.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="31.0" y1="108.2" x2="28.0" y2="108.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="108.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="108.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="31.0" y1="110.5" x2="28.0" y2="110.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="110.5" r=".38" fill="#22743b"/>
+<text x="27.3" y="110.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_3</text>
+<line x1="61.0" y1="108.2" x2="64.0" y2="108.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="108.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="108.62" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="61.0" y1="110.5" x2="64.0" y2="110.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="110.5" r=".38" fill="#22743b"/>
+<text x="64.7" y="110.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_2</text>
+<rect x="123.0" y="105.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="109" text-anchor="middle" font-size="2.1" font-weight="bold">SW4</text>
+<text x="138.0" y="112" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="138.0" y="114.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="123.0" y1="108.2" x2="120.0" y2="108.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="108.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="108.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW0</text>
+<line x1="153.0" y1="108.2" x2="156.0" y2="108.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="108.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="108.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_4_RAW</text>
+<rect x="215.0" y="105.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="109" text-anchor="middle" font-size="2.1" font-weight="bold">D4</text>
+<text x="230.0" y="112" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="230.0" y="114.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="215.0" y1="108.2" x2="212.0" y2="108.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="108.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="108.62" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL3</text>
+<line x1="245.0" y1="108.2" x2="248.0" y2="108.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="108.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="108.62" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_4_RAW</text>
+<rect x="307.0" y="105.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="109" text-anchor="middle" font-size="2.1" font-weight="bold">LED4</text>
+<text x="322.0" y="112" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="322.0" y="114.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="307.0" y1="108.2" x2="304.0" y2="108.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="108.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="108.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="307.0" y1="110.5" x2="304.0" y2="110.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="110.5" r=".38" fill="#22743b"/>
+<text x="303.3" y="110.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_4</text>
+<line x1="337.0" y1="108.2" x2="340.0" y2="108.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="108.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="108.62" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="337.0" y1="110.5" x2="340.0" y2="110.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="110.5" r=".38" fill="#22743b"/>
+<text x="340.7" y="110.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_3</text>
+<rect x="31.0" y="147.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="151" text-anchor="middle" font-size="2.1" font-weight="bold">SW5</text>
+<text x="46.0" y="154" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="46.0" y="156.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="31.0" y1="150.2" x2="28.0" y2="150.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="150.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="150.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW1</text>
+<line x1="61.0" y1="150.2" x2="64.0" y2="150.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="150.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="150.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_5_RAW</text>
+<rect x="123.0" y="147.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="151" text-anchor="middle" font-size="2.1" font-weight="bold">D5</text>
+<text x="138.0" y="154" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="138.0" y="156.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="123.0" y1="150.2" x2="120.0" y2="150.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="150.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="150.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL0</text>
+<line x1="153.0" y1="150.2" x2="156.0" y2="150.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="150.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="150.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_5_RAW</text>
+<rect x="215.0" y="147.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="151" text-anchor="middle" font-size="2.1" font-weight="bold">LED5</text>
+<text x="230.0" y="154" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="230.0" y="156.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="215.0" y1="150.2" x2="212.0" y2="150.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="150.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="150.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="215.0" y1="152.5" x2="212.0" y2="152.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="152.5" r=".38" fill="#22743b"/>
+<text x="211.3" y="152.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_5</text>
+<line x1="245.0" y1="150.2" x2="248.0" y2="150.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="150.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="150.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="245.0" y1="152.5" x2="248.0" y2="152.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="152.5" r=".38" fill="#22743b"/>
+<text x="248.7" y="152.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_4</text>
+<rect x="307.0" y="147.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="151" text-anchor="middle" font-size="2.1" font-weight="bold">SW6</text>
+<text x="322.0" y="154" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="322.0" y="156.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="307.0" y1="150.2" x2="304.0" y2="150.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="150.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="150.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW1</text>
+<line x1="337.0" y1="150.2" x2="340.0" y2="150.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="150.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="150.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_6_RAW</text>
+<rect x="31.0" y="189.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="193" text-anchor="middle" font-size="2.1" font-weight="bold">D6</text>
+<text x="46.0" y="196" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="46.0" y="198.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="31.0" y1="192.2" x2="28.0" y2="192.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="192.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="192.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL1</text>
+<line x1="61.0" y1="192.2" x2="64.0" y2="192.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="192.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="192.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_6_RAW</text>
+<rect x="123.0" y="189.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="193" text-anchor="middle" font-size="2.1" font-weight="bold">LED6</text>
+<text x="138.0" y="196" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="138.0" y="198.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="123.0" y1="192.2" x2="120.0" y2="192.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="192.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="192.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="123.0" y1="194.5" x2="120.0" y2="194.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="194.5" r=".38" fill="#22743b"/>
+<text x="119.3" y="194.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_6</text>
+<line x1="153.0" y1="192.2" x2="156.0" y2="192.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="192.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="192.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="153.0" y1="194.5" x2="156.0" y2="194.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="194.5" r=".38" fill="#22743b"/>
+<text x="156.7" y="194.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_5</text>
+<rect x="215.0" y="189.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="193" text-anchor="middle" font-size="2.1" font-weight="bold">SW7</text>
+<text x="230.0" y="196" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="230.0" y="198.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="215.0" y1="192.2" x2="212.0" y2="192.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="192.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="192.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW1</text>
+<line x1="245.0" y1="192.2" x2="248.0" y2="192.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="192.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="192.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_7_RAW</text>
+<rect x="307.0" y="189.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="193" text-anchor="middle" font-size="2.1" font-weight="bold">D7</text>
+<text x="322.0" y="196" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="322.0" y="198.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="307.0" y1="192.2" x2="304.0" y2="192.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="192.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="192.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL2</text>
+<line x1="337.0" y1="192.2" x2="340.0" y2="192.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="192.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="192.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_7_RAW</text>
+<rect x="31.0" y="231.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="235" text-anchor="middle" font-size="2.1" font-weight="bold">LED7</text>
+<text x="46.0" y="238" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="46.0" y="240.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="31.0" y1="234.2" x2="28.0" y2="234.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="234.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="234.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="31.0" y1="236.5" x2="28.0" y2="236.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="236.5" r=".38" fill="#22743b"/>
+<text x="27.3" y="236.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_7</text>
+<line x1="61.0" y1="234.2" x2="64.0" y2="234.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="234.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="234.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="61.0" y1="236.5" x2="64.0" y2="236.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="236.5" r=".38" fill="#22743b"/>
+<text x="64.7" y="236.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_6</text>
+<rect x="123.0" y="231.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="235" text-anchor="middle" font-size="2.1" font-weight="bold">SW8</text>
+<text x="138.0" y="238" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="138.0" y="240.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="123.0" y1="234.2" x2="120.0" y2="234.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="234.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="234.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW1</text>
+<line x1="153.0" y1="234.2" x2="156.0" y2="234.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="234.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="234.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_8_RAW</text>
+<rect x="215.0" y="231.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="235" text-anchor="middle" font-size="2.1" font-weight="bold">D8</text>
+<text x="230.0" y="238" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="230.0" y="240.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="215.0" y1="234.2" x2="212.0" y2="234.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="234.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="234.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL3</text>
+<line x1="245.0" y1="234.2" x2="248.0" y2="234.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="234.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="234.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_8_RAW</text>
+<rect x="307.0" y="231.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="235" text-anchor="middle" font-size="2.1" font-weight="bold">LED8</text>
+<text x="322.0" y="238" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="322.0" y="240.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="307.0" y1="234.2" x2="304.0" y2="234.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="234.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="234.61999999999998" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="307.0" y1="236.5" x2="304.0" y2="236.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="236.5" r=".38" fill="#22743b"/>
+<text x="303.3" y="236.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_8</text>
+<line x1="337.0" y1="234.2" x2="340.0" y2="234.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="234.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="234.61999999999998" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="337.0" y1="236.5" x2="340.0" y2="236.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="236.5" r=".38" fill="#22743b"/>
+<text x="340.7" y="236.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_7</text>
+<rect x="31.0" y="273.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="277" text-anchor="middle" font-size="2.1" font-weight="bold">SW9</text>
+<text x="46.0" y="280" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="46.0" y="282.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="31.0" y1="276.2" x2="28.0" y2="276.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="276.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="276.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW2</text>
+<line x1="61.0" y1="276.2" x2="64.0" y2="276.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="276.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="276.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_9_RAW</text>
+<rect x="123.0" y="273.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="277" text-anchor="middle" font-size="2.1" font-weight="bold">D9</text>
+<text x="138.0" y="280" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="138.0" y="282.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="123.0" y1="276.2" x2="120.0" y2="276.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="276.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="276.62" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL0</text>
+<line x1="153.0" y1="276.2" x2="156.0" y2="276.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="276.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="276.62" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_9_RAW</text>
+<rect x="215.0" y="273.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="277" text-anchor="middle" font-size="2.1" font-weight="bold">LED9</text>
+<text x="230.0" y="280" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="230.0" y="282.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="215.0" y1="276.2" x2="212.0" y2="276.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="276.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="276.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="215.0" y1="278.5" x2="212.0" y2="278.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="278.5" r=".38" fill="#22743b"/>
+<text x="211.3" y="278.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_9</text>
+<line x1="245.0" y1="276.2" x2="248.0" y2="276.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="276.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="276.62" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="245.0" y1="278.5" x2="248.0" y2="278.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="278.5" r=".38" fill="#22743b"/>
+<text x="248.7" y="278.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_8</text>
+<rect x="307.0" y="273.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="277" text-anchor="middle" font-size="2.1" font-weight="bold">SW10</text>
+<text x="322.0" y="280" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="322.0" y="282.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="307.0" y1="276.2" x2="304.0" y2="276.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="276.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="276.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW2</text>
+<line x1="337.0" y1="276.2" x2="340.0" y2="276.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="276.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="276.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_10_RAW</text>
+<rect x="31.0" y="315.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="319" text-anchor="middle" font-size="2.1" font-weight="bold">D10</text>
+<text x="46.0" y="322" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="46.0" y="324.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="31.0" y1="318.2" x2="28.0" y2="318.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="318.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="318.62" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL1</text>
+<line x1="61.0" y1="318.2" x2="64.0" y2="318.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="318.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="318.62" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_10_RAW</text>
+<rect x="123.0" y="315.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="319" text-anchor="middle" font-size="2.1" font-weight="bold">LED10</text>
+<text x="138.0" y="322" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="138.0" y="324.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="123.0" y1="318.2" x2="120.0" y2="318.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="318.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="318.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="123.0" y1="320.5" x2="120.0" y2="320.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="320.5" r=".38" fill="#22743b"/>
+<text x="119.3" y="320.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_10</text>
+<line x1="153.0" y1="318.2" x2="156.0" y2="318.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="318.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="318.62" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="153.0" y1="320.5" x2="156.0" y2="320.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="320.5" r=".38" fill="#22743b"/>
+<text x="156.7" y="320.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_9</text>
+<rect x="215.0" y="315.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="319" text-anchor="middle" font-size="2.1" font-weight="bold">SW11</text>
+<text x="230.0" y="322" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="230.0" y="324.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="215.0" y1="318.2" x2="212.0" y2="318.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="318.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="318.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW2</text>
+<line x1="245.0" y1="318.2" x2="248.0" y2="318.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="318.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="318.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_11_RAW</text>
+<rect x="307.0" y="315.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="319" text-anchor="middle" font-size="2.1" font-weight="bold">D11</text>
+<text x="322.0" y="322" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="322.0" y="324.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="307.0" y1="318.2" x2="304.0" y2="318.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="318.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="318.62" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL2</text>
+<line x1="337.0" y1="318.2" x2="340.0" y2="318.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="318.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="318.62" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_11_RAW</text>
+<rect x="31.0" y="357.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="361" text-anchor="middle" font-size="2.1" font-weight="bold">LED11</text>
+<text x="46.0" y="364" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="46.0" y="366.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="31.0" y1="360.2" x2="28.0" y2="360.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="360.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="360.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="31.0" y1="362.5" x2="28.0" y2="362.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="362.5" r=".38" fill="#22743b"/>
+<text x="27.3" y="362.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_11</text>
+<line x1="61.0" y1="360.2" x2="64.0" y2="360.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="360.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="360.62" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="61.0" y1="362.5" x2="64.0" y2="362.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="362.5" r=".38" fill="#22743b"/>
+<text x="64.7" y="362.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_10</text>
+<rect x="123.0" y="357.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="361" text-anchor="middle" font-size="2.1" font-weight="bold">SW12</text>
+<text x="138.0" y="364" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="138.0" y="366.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="123.0" y1="360.2" x2="120.0" y2="360.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="360.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="360.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW2</text>
+<line x1="153.0" y1="360.2" x2="156.0" y2="360.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="360.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="360.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_12_RAW</text>
+<rect x="215.0" y="357.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="361" text-anchor="middle" font-size="2.1" font-weight="bold">D12</text>
+<text x="230.0" y="364" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="230.0" y="366.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="215.0" y1="360.2" x2="212.0" y2="360.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="360.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="360.62" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL3</text>
+<line x1="245.0" y1="360.2" x2="248.0" y2="360.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="360.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="360.62" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_12_RAW</text>
+<rect x="307.0" y="357.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="361" text-anchor="middle" font-size="2.1" font-weight="bold">LED12</text>
+<text x="322.0" y="364" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="322.0" y="366.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="307.0" y1="360.2" x2="304.0" y2="360.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="360.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="360.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="307.0" y1="362.5" x2="304.0" y2="362.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="362.5" r=".38" fill="#22743b"/>
+<text x="303.3" y="362.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_12</text>
+<line x1="337.0" y1="360.2" x2="340.0" y2="360.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="360.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="360.62" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="337.0" y1="362.5" x2="340.0" y2="362.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="362.5" r=".38" fill="#22743b"/>
+<text x="340.7" y="362.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_11</text>
+<rect x="31.0" y="399.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="403" text-anchor="middle" font-size="2.1" font-weight="bold">SW13</text>
+<text x="46.0" y="406" text-anchor="middle" font-size="1.15">keyswitch</text>
+<text x="46.0" y="408.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">MX2A-H1NB</text>
+<line x1="31.0" y1="402.2" x2="28.0" y2="402.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="402.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="402.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ROW3</text>
+<line x1="61.0" y1="402.2" x2="64.0" y2="402.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="402.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="402.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → KEY_13_RAW</text>
+<rect x="123.0" y="399.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="403" text-anchor="middle" font-size="2.1" font-weight="bold">D13</text>
+<text x="138.0" y="406" text-anchor="middle" font-size="1.15">switching_diode</text>
+<text x="138.0" y="408.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">1N4148W-7-F</text>
+<line x1="123.0" y1="402.2" x2="120.0" y2="402.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="402.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="402.62" text-anchor="end" font-size="1.05" fill="#22743b">1 K → COL0</text>
+<line x1="153.0" y1="402.2" x2="156.0" y2="402.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="402.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="402.62" text-anchor="start" font-size="1.05" fill="#22743b">2 A → KEY_13_RAW</text>
+<rect x="215.0" y="399.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="403" text-anchor="middle" font-size="2.1" font-weight="bold">LED13</text>
+<text x="230.0" y="406" text-anchor="middle" font-size="1.15">RGB addressable</text>
+<text x="230.0" y="408.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">IN-PI20TBT5R5G5B</text>
+<line x1="215.0" y1="402.2" x2="212.0" y2="402.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="402.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="402.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VDD → +5V_LED</text>
+<line x1="215.0" y1="404.5" x2="212.0" y2="404.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="404.5" r=".38" fill="#22743b"/>
+<text x="211.3" y="404.92" text-anchor="end" font-size="1.05" fill="#22743b">2 DOUT → LED_CHAIN_13</text>
+<line x1="245.0" y1="402.2" x2="248.0" y2="402.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="402.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="402.62" text-anchor="start" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="245.0" y1="404.5" x2="248.0" y2="404.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="404.5" r=".38" fill="#22743b"/>
+<text x="248.7" y="404.92" text-anchor="start" font-size="1.05" fill="#22743b">4 DIN → LED_CHAIN_12</text>
+<rect x="307.0" y="399.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="403" text-anchor="middle" font-size="2.1" font-weight="bold">ENC1</text>
+<text x="322.0" y="406" text-anchor="middle" font-size="1.15">encoder</text>
+<text x="322.0" y="408.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">PEC12R-4220F-S0024</text>
+<line x1="307.0" y1="402.2" x2="304.0" y2="402.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="402.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="402.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ENC_A</text>
+<line x1="307.0" y1="404.5" x2="304.0" y2="404.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="404.5" r=".38" fill="#22743b"/>
+<text x="303.3" y="404.92" text-anchor="end" font-size="1.05" fill="#22743b">2 C → GND</text>
+<line x1="307.0" y1="406.8" x2="304.0" y2="406.8" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="406.8" r=".38" fill="#22743b"/>
+<text x="303.3" y="407.22" text-anchor="end" font-size="1.05" fill="#22743b">3 B → ENC_B</text>
+<line x1="337.0" y1="402.2" x2="340.0" y2="402.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="402.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="402.62" text-anchor="start" font-size="1.05" fill="#22743b">4 SW1 → ENC_SW</text>
+<line x1="337.0" y1="404.5" x2="340.0" y2="404.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="404.5" r=".38" fill="#22743b"/>
+<text x="340.7" y="404.92" text-anchor="start" font-size="1.05" fill="#22743b">5 SW2 → GND</text>
+<rect x="31.0" y="441.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="445" text-anchor="middle" font-size="2.1" font-weight="bold">JS1</text>
+<text x="46.0" y="448" text-anchor="middle" font-size="1.15">joystick</text>
+<text x="46.0" y="450.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">2765</text>
+<line x1="31.0" y1="444.2" x2="28.0" y2="444.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="444.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="444.62" text-anchor="end" font-size="1.05" fill="#22743b">1 X_A → +3V3</text>
+<line x1="31.0" y1="446.5" x2="28.0" y2="446.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="446.5" r=".38" fill="#22743b"/>
+<text x="27.3" y="446.92" text-anchor="end" font-size="1.05" fill="#22743b">2 X_WIPER → JOY_X</text>
+<line x1="31.0" y1="448.8" x2="28.0" y2="448.8" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="448.8" r=".38" fill="#22743b"/>
+<text x="27.3" y="449.22" text-anchor="end" font-size="1.05" fill="#22743b">3 X_B → GND</text>
+<line x1="61.0" y1="444.2" x2="64.0" y2="444.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="444.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="444.62" text-anchor="start" font-size="1.05" fill="#22743b">4 Y_A → +3V3</text>
+<line x1="61.0" y1="446.5" x2="64.0" y2="446.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="446.5" r=".38" fill="#22743b"/>
+<text x="64.7" y="446.92" text-anchor="start" font-size="1.05" fill="#22743b">5 Y_WIPER → JOY_Y</text>
+<line x1="61.0" y1="448.8" x2="64.0" y2="448.8" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="448.8" r=".38" fill="#22743b"/>
+<text x="64.7" y="449.22" text-anchor="start" font-size="1.05" fill="#22743b">6 Y_B → GND</text>
+<rect x="123.0" y="441.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="445" text-anchor="middle" font-size="2.1" font-weight="bold">J3</text>
+<text x="138.0" y="448" text-anchor="middle" font-size="1.15">battery_connector</text>
+<text x="138.0" y="450.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">B2B-PH-SM4-TB_LF_SN</text>
+<line x1="123.0" y1="444.2" x2="120.0" y2="444.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="444.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="444.62" text-anchor="end" font-size="1.05" fill="#22743b">1 BAT+ → +3V3</text>
+<line x1="153.0" y1="444.2" x2="156.0" y2="444.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="444.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="444.62" text-anchor="start" font-size="1.05" fill="#22743b">2 BAT- → FSR_SENSE</text>
+<rect x="215.0" y="420.85" width="30.0" height="52.3" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="445" text-anchor="middle" font-size="2.1" font-weight="bold">U1</text>
+<text x="230.0" y="448" text-anchor="middle" font-size="1.15">mcu_module</text>
+<text x="230.0" y="450.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">ESP32-S3-WROOM-1-N8R8</text>
+<line x1="215.0" y1="424.05" x2="212.0" y2="424.05" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="424.05" r=".38" fill="#22743b"/>
+<text x="211.3" y="424.47" text-anchor="end" font-size="1.05" fill="#22743b">1 GND → GND</text>
+<line x1="215.0" y1="426.35" x2="212.0" y2="426.35" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="426.35" r=".38" fill="#22743b"/>
+<text x="211.3" y="426.77000000000004" text-anchor="end" font-size="1.05" fill="#22743b">2 3V3 → +3V3</text>
+<line x1="215.0" y1="428.65000000000003" x2="212.0" y2="428.65000000000003" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="428.65000000000003" r=".38" fill="#22743b"/>
+<text x="211.3" y="429.07000000000005" text-anchor="end" font-size="1.05" fill="#22743b">3 EN → RESET_N</text>
+<line x1="215.0" y1="430.95" x2="212.0" y2="430.95" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="430.95" r=".38" fill="#22743b"/>
+<text x="211.3" y="431.37" text-anchor="end" font-size="1.05" fill="#22743b">4 IO4 → ROW0</text>
+<line x1="215.0" y1="433.25" x2="212.0" y2="433.25" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="433.25" r=".38" fill="#22743b"/>
+<text x="211.3" y="433.67" text-anchor="end" font-size="1.05" fill="#22743b">5 IO5 → ROW1</text>
+<line x1="215.0" y1="435.55" x2="212.0" y2="435.55" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="435.55" r=".38" fill="#22743b"/>
+<text x="211.3" y="435.97" text-anchor="end" font-size="1.05" fill="#22743b">6 IO6 → ROW2</text>
+<line x1="215.0" y1="437.85" x2="212.0" y2="437.85" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="437.85" r=".38" fill="#22743b"/>
+<text x="211.3" y="438.27000000000004" text-anchor="end" font-size="1.05" fill="#22743b">7 IO7 → ROW3</text>
+<line x1="215.0" y1="440.15000000000003" x2="212.0" y2="440.15000000000003" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="440.15000000000003" r=".38" fill="#22743b"/>
+<text x="211.3" y="440.57000000000005" text-anchor="end" font-size="1.05" fill="#22743b">8 IO15 → COL0</text>
+<line x1="215.0" y1="442.45" x2="212.0" y2="442.45" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="442.45" r=".38" fill="#22743b"/>
+<text x="211.3" y="442.87" text-anchor="end" font-size="1.05" fill="#22743b">9 IO16 → COL1</text>
+<line x1="215.0" y1="444.75" x2="212.0" y2="444.75" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="444.75" r=".38" fill="#22743b"/>
+<text x="211.3" y="445.17" text-anchor="end" font-size="1.05" fill="#22743b">10 IO17 → COL2</text>
+<line x1="215.0" y1="447.05" x2="212.0" y2="447.05" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="447.05" r=".38" fill="#22743b"/>
+<text x="211.3" y="447.47" text-anchor="end" font-size="1.05" fill="#22743b">11 IO18 → COL3</text>
+<line x1="215.0" y1="449.35" x2="212.0" y2="449.35" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="449.35" r=".38" fill="#22743b"/>
+<text x="211.3" y="449.77000000000004" text-anchor="end" font-size="1.05" fill="#22743b">12 IO8 → LED_DATA_MCU</text>
+<line x1="215.0" y1="451.65000000000003" x2="212.0" y2="451.65000000000003" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="451.65000000000003" r=".38" fill="#22743b"/>
+<text x="211.3" y="452.07000000000005" text-anchor="end" font-size="1.05" fill="#22743b">13 USB_D- → USB_D-</text>
+<line x1="215.0" y1="453.95" x2="212.0" y2="453.95" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="453.95" r=".38" fill="#22743b"/>
+<text x="211.3" y="454.37" text-anchor="end" font-size="1.05" fill="#22743b">14 USB_D+ → USB_D+</text>
+<line x1="215.0" y1="456.25" x2="212.0" y2="456.25" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="212.0" cy="456.25" r=".38" fill="#8b1d1d"/>
+<text x="211.3" y="456.67" text-anchor="end" font-size="1.05" fill="#8b1d1d">15 IO3 → NC</text>
+<line x1="215.0" y1="458.55" x2="212.0" y2="458.55" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="212.0" cy="458.55" r=".38" fill="#8b1d1d"/>
+<text x="211.3" y="458.97" text-anchor="end" font-size="1.05" fill="#8b1d1d">16 IO46 → NC</text>
+<line x1="215.0" y1="460.85" x2="212.0" y2="460.85" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="460.85" r=".38" fill="#22743b"/>
+<text x="211.3" y="461.27000000000004" text-anchor="end" font-size="1.05" fill="#22743b">17 IO9 → JOY_X</text>
+<line x1="215.0" y1="463.15" x2="212.0" y2="463.15" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="463.15" r=".38" fill="#22743b"/>
+<text x="211.3" y="463.57" text-anchor="end" font-size="1.05" fill="#22743b">18 IO10 → JOY_Y</text>
+<line x1="215.0" y1="465.45" x2="212.0" y2="465.45" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="212.0" cy="465.45" r=".38" fill="#8b1d1d"/>
+<text x="211.3" y="465.87" text-anchor="end" font-size="1.05" fill="#8b1d1d">19 IO11 → NC</text>
+<line x1="215.0" y1="467.75" x2="212.0" y2="467.75" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="467.75" r=".38" fill="#22743b"/>
+<text x="211.3" y="468.17" text-anchor="end" font-size="1.05" fill="#22743b">20 IO12 → ENC_A</text>
+<line x1="215.0" y1="470.05" x2="212.0" y2="470.05" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="470.05" r=".38" fill="#22743b"/>
+<text x="211.3" y="470.47" text-anchor="end" font-size="1.05" fill="#22743b">21 IO13 → ENC_B</text>
+<line x1="245.0" y1="424.05" x2="248.0" y2="424.05" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="424.05" r=".38" fill="#22743b"/>
+<text x="248.7" y="424.47" text-anchor="start" font-size="1.05" fill="#22743b">22 IO14 → ENC_SW</text>
+<line x1="245.0" y1="426.35" x2="248.0" y2="426.35" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="426.35" r=".38" fill="#22743b"/>
+<text x="248.7" y="426.77000000000004" text-anchor="start" font-size="1.05" fill="#22743b">23 IO21 → LED_ENABLE</text>
+<line x1="245.0" y1="428.65000000000003" x2="248.0" y2="428.65000000000003" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="428.65000000000003" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="429.07000000000005" text-anchor="start" font-size="1.05" fill="#8b1d1d">24 IO47 → NC</text>
+<line x1="245.0" y1="430.95" x2="248.0" y2="430.95" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="430.95" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="431.37" text-anchor="start" font-size="1.05" fill="#8b1d1d">25 IO48 → NC</text>
+<line x1="245.0" y1="433.25" x2="248.0" y2="433.25" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="433.25" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="433.67" text-anchor="start" font-size="1.05" fill="#8b1d1d">26 IO45 → NC</text>
+<line x1="245.0" y1="435.55" x2="248.0" y2="435.55" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="435.55" r=".38" fill="#22743b"/>
+<text x="248.7" y="435.97" text-anchor="start" font-size="1.05" fill="#22743b">27 IO0 → BOOT_N</text>
+<line x1="245.0" y1="437.85" x2="248.0" y2="437.85" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="437.85" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="438.27000000000004" text-anchor="start" font-size="1.05" fill="#8b1d1d">28 IO35 → NC</text>
+<line x1="245.0" y1="440.15000000000003" x2="248.0" y2="440.15000000000003" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="440.15000000000003" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="440.57000000000005" text-anchor="start" font-size="1.05" fill="#8b1d1d">29 IO36 → NC</text>
+<line x1="245.0" y1="442.45" x2="248.0" y2="442.45" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="442.45" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="442.87" text-anchor="start" font-size="1.05" fill="#8b1d1d">30 IO37 → NC</text>
+<line x1="245.0" y1="444.75" x2="248.0" y2="444.75" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="444.75" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="445.17" text-anchor="start" font-size="1.05" fill="#8b1d1d">31 IO38 → NC</text>
+<line x1="245.0" y1="447.05" x2="248.0" y2="447.05" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="447.05" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="447.47" text-anchor="start" font-size="1.05" fill="#8b1d1d">32 IO39 → NC</text>
+<line x1="245.0" y1="449.35" x2="248.0" y2="449.35" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="449.35" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="449.77000000000004" text-anchor="start" font-size="1.05" fill="#8b1d1d">33 IO40 → NC</text>
+<line x1="245.0" y1="451.65000000000003" x2="248.0" y2="451.65000000000003" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="451.65000000000003" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="452.07000000000005" text-anchor="start" font-size="1.05" fill="#8b1d1d">34 IO41 → NC</text>
+<line x1="245.0" y1="453.95" x2="248.0" y2="453.95" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="453.95" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="454.37" text-anchor="start" font-size="1.05" fill="#8b1d1d">35 IO42 → NC</text>
+<line x1="245.0" y1="456.25" x2="248.0" y2="456.25" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="456.25" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="456.67" text-anchor="start" font-size="1.05" fill="#8b1d1d">36 RXD0 → NC</text>
+<line x1="245.0" y1="458.55" x2="248.0" y2="458.55" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="458.55" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="458.97" text-anchor="start" font-size="1.05" fill="#8b1d1d">37 TXD0 → NC</text>
+<line x1="245.0" y1="460.85" x2="248.0" y2="460.85" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="460.85" r=".38" fill="#22743b"/>
+<text x="248.7" y="461.27000000000004" text-anchor="start" font-size="1.05" fill="#22743b">38 IO2 → FSR_SENSE</text>
+<line x1="245.0" y1="463.15" x2="248.0" y2="463.15" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="248.0" cy="463.15" r=".38" fill="#8b1d1d"/>
+<text x="248.7" y="463.57" text-anchor="start" font-size="1.05" fill="#8b1d1d">39 IO1 → NC</text>
+<line x1="245.0" y1="465.45" x2="248.0" y2="465.45" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="465.45" r=".38" fill="#22743b"/>
+<text x="248.7" y="465.87" text-anchor="start" font-size="1.05" fill="#22743b">40 GND → GND</text>
+<line x1="245.0" y1="467.75" x2="248.0" y2="467.75" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="467.75" r=".38" fill="#22743b"/>
+<text x="248.7" y="468.17" text-anchor="start" font-size="1.05" fill="#22743b">41 GND → GND</text>
+<rect x="307.0" y="435.8" width="30.0" height="22.4" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="445" text-anchor="middle" font-size="2.1" font-weight="bold">J1</text>
+<text x="322.0" y="448" text-anchor="middle" font-size="1.15">connector</text>
+<text x="322.0" y="450.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">USB4085-GF-A</text>
+<line x1="307.0" y1="439.0" x2="304.0" y2="439.0" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="439.0" r=".38" fill="#22743b"/>
+<text x="303.3" y="439.42" text-anchor="end" font-size="1.05" fill="#22743b">1 GND → GND</text>
+<line x1="307.0" y1="441.3" x2="304.0" y2="441.3" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="441.3" r=".38" fill="#22743b"/>
+<text x="303.3" y="441.72" text-anchor="end" font-size="1.05" fill="#22743b">2 VBUS → VBUS</text>
+<line x1="307.0" y1="443.6" x2="304.0" y2="443.6" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="443.6" r=".38" fill="#22743b"/>
+<text x="303.3" y="444.02000000000004" text-anchor="end" font-size="1.05" fill="#22743b">3 CC1 → CC1</text>
+<line x1="307.0" y1="445.9" x2="304.0" y2="445.9" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="445.9" r=".38" fill="#22743b"/>
+<text x="303.3" y="446.32" text-anchor="end" font-size="1.05" fill="#22743b">4 D+ → USB_D+</text>
+<line x1="307.0" y1="448.2" x2="304.0" y2="448.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="448.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="448.62" text-anchor="end" font-size="1.05" fill="#22743b">5 D- → USB_D-</text>
+<line x1="307.0" y1="450.5" x2="304.0" y2="450.5" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="304.0" cy="450.5" r=".38" fill="#8b1d1d"/>
+<text x="303.3" y="450.92" text-anchor="end" font-size="1.05" fill="#8b1d1d">6 SBU1 → NC</text>
+<line x1="307.0" y1="452.8" x2="304.0" y2="452.8" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="452.8" r=".38" fill="#22743b"/>
+<text x="303.3" y="453.22" text-anchor="end" font-size="1.05" fill="#22743b">7 VBUS → VBUS</text>
+<line x1="307.0" y1="455.1" x2="304.0" y2="455.1" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="455.1" r=".38" fill="#22743b"/>
+<text x="303.3" y="455.52000000000004" text-anchor="end" font-size="1.05" fill="#22743b">8 GND → GND</text>
+<line x1="337.0" y1="439.0" x2="340.0" y2="439.0" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="439.0" r=".38" fill="#22743b"/>
+<text x="340.7" y="439.42" text-anchor="start" font-size="1.05" fill="#22743b">9 GND → GND</text>
+<line x1="337.0" y1="441.3" x2="340.0" y2="441.3" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="441.3" r=".38" fill="#22743b"/>
+<text x="340.7" y="441.72" text-anchor="start" font-size="1.05" fill="#22743b">10 VBUS → VBUS</text>
+<line x1="337.0" y1="443.6" x2="340.0" y2="443.6" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="340.0" cy="443.6" r=".38" fill="#8b1d1d"/>
+<text x="340.7" y="444.02000000000004" text-anchor="start" font-size="1.05" fill="#8b1d1d">11 SBU2 → NC</text>
+<line x1="337.0" y1="445.9" x2="340.0" y2="445.9" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="445.9" r=".38" fill="#22743b"/>
+<text x="340.7" y="446.32" text-anchor="start" font-size="1.05" fill="#22743b">12 D- → USB_D-</text>
+<line x1="337.0" y1="448.2" x2="340.0" y2="448.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="448.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="448.62" text-anchor="start" font-size="1.05" fill="#22743b">13 D+ → USB_D+</text>
+<line x1="337.0" y1="450.5" x2="340.0" y2="450.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="450.5" r=".38" fill="#22743b"/>
+<text x="340.7" y="450.92" text-anchor="start" font-size="1.05" fill="#22743b">14 CC2 → CC2</text>
+<line x1="337.0" y1="452.8" x2="340.0" y2="452.8" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="452.8" r=".38" fill="#22743b"/>
+<text x="340.7" y="453.22" text-anchor="start" font-size="1.05" fill="#22743b">15 VBUS → VBUS</text>
+<line x1="337.0" y1="455.1" x2="340.0" y2="455.1" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="455.1" r=".38" fill="#22743b"/>
+<text x="340.7" y="455.52000000000004" text-anchor="start" font-size="1.05" fill="#22743b">16 GND → GND</text>
+<rect x="31.0" y="481.25" width="30.0" height="15.5" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="487" text-anchor="middle" font-size="2.1" font-weight="bold">U2</text>
+<text x="46.0" y="490" text-anchor="middle" font-size="1.15">esd_array</text>
+<text x="46.0" y="492.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">TPD4E02B04DQAR</text>
+<line x1="31.0" y1="484.45" x2="28.0" y2="484.45" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="484.45" r=".38" fill="#22743b"/>
+<text x="27.3" y="484.87" text-anchor="end" font-size="1.05" fill="#22743b">1 IO1 → USB_D-</text>
+<line x1="31.0" y1="486.75" x2="28.0" y2="486.75" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="28.0" cy="486.75" r=".38" fill="#8b1d1d"/>
+<text x="27.3" y="487.17" text-anchor="end" font-size="1.05" fill="#8b1d1d">2 IO2 → NC</text>
+<line x1="31.0" y1="489.05" x2="28.0" y2="489.05" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="489.05" r=".38" fill="#22743b"/>
+<text x="27.3" y="489.47" text-anchor="end" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="31.0" y1="491.34999999999997" x2="28.0" y2="491.34999999999997" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="28.0" cy="491.34999999999997" r=".38" fill="#8b1d1d"/>
+<text x="27.3" y="491.77" text-anchor="end" font-size="1.05" fill="#8b1d1d">4 IO3 → NC</text>
+<line x1="31.0" y1="493.65" x2="28.0" y2="493.65" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="493.65" r=".38" fill="#22743b"/>
+<text x="27.3" y="494.07" text-anchor="end" font-size="1.05" fill="#22743b">5 IO4 → USB_D+</text>
+<line x1="61.0" y1="484.45" x2="64.0" y2="484.45" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="64.0" cy="484.45" r=".38" fill="#8b1d1d"/>
+<text x="64.7" y="484.87" text-anchor="start" font-size="1.05" fill="#8b1d1d">6 NC → NC</text>
+<line x1="61.0" y1="486.75" x2="64.0" y2="486.75" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="64.0" cy="486.75" r=".38" fill="#8b1d1d"/>
+<text x="64.7" y="487.17" text-anchor="start" font-size="1.05" fill="#8b1d1d">7 NC → NC</text>
+<line x1="61.0" y1="489.05" x2="64.0" y2="489.05" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="489.05" r=".38" fill="#22743b"/>
+<text x="64.7" y="489.47" text-anchor="start" font-size="1.05" fill="#22743b">8 GND → GND</text>
+<line x1="61.0" y1="491.34999999999997" x2="64.0" y2="491.34999999999997" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="64.0" cy="491.34999999999997" r=".38" fill="#8b1d1d"/>
+<text x="64.7" y="491.77" text-anchor="start" font-size="1.05" fill="#8b1d1d">9 NC → NC</text>
+<line x1="61.0" y1="493.65" x2="64.0" y2="493.65" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="64.0" cy="493.65" r=".38" fill="#8b1d1d"/>
+<text x="64.7" y="494.07" text-anchor="start" font-size="1.05" fill="#8b1d1d">10 NC → NC</text>
+<rect x="123.0" y="476.65" width="30.0" height="24.7" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="487" text-anchor="middle" font-size="2.1" font-weight="bold">U3</text>
+<text x="138.0" y="490" text-anchor="middle" font-size="1.15">battery_charger</text>
+<text x="138.0" y="492.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">BQ24074RGTR</text>
+<line x1="123.0" y1="479.84999999999997" x2="120.0" y2="479.84999999999997" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="479.84999999999997" r=".38" fill="#22743b"/>
+<text x="119.3" y="480.27" text-anchor="end" font-size="1.05" fill="#22743b">1 TS → TS</text>
+<line x1="123.0" y1="482.15" x2="120.0" y2="482.15" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="482.15" r=".38" fill="#22743b"/>
+<text x="119.3" y="482.57" text-anchor="end" font-size="1.05" fill="#22743b">2 BAT → VBAT</text>
+<line x1="123.0" y1="484.45" x2="120.0" y2="484.45" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="484.45" r=".38" fill="#22743b"/>
+<text x="119.3" y="484.87" text-anchor="end" font-size="1.05" fill="#22743b">3 BAT → VBAT</text>
+<line x1="123.0" y1="486.74999999999994" x2="120.0" y2="486.74999999999994" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="486.74999999999994" r=".38" fill="#22743b"/>
+<text x="119.3" y="487.16999999999996" text-anchor="end" font-size="1.05" fill="#22743b">4 CE → GND</text>
+<line x1="123.0" y1="489.04999999999995" x2="120.0" y2="489.04999999999995" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="489.04999999999995" r=".38" fill="#22743b"/>
+<text x="119.3" y="489.46999999999997" text-anchor="end" font-size="1.05" fill="#22743b">5 EN2 → +3V3</text>
+<line x1="123.0" y1="491.34999999999997" x2="120.0" y2="491.34999999999997" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="491.34999999999997" r=".38" fill="#22743b"/>
+<text x="119.3" y="491.77" text-anchor="end" font-size="1.05" fill="#22743b">6 EN1 → GND</text>
+<line x1="123.0" y1="493.65" x2="120.0" y2="493.65" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="120.0" cy="493.65" r=".38" fill="#8b1d1d"/>
+<text x="119.3" y="494.07" text-anchor="end" font-size="1.05" fill="#8b1d1d">7 PGOOD → NC</text>
+<line x1="123.0" y1="495.95" x2="120.0" y2="495.95" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="495.95" r=".38" fill="#22743b"/>
+<text x="119.3" y="496.37" text-anchor="end" font-size="1.05" fill="#22743b">8 VSS → GND</text>
+<line x1="123.0" y1="498.24999999999994" x2="120.0" y2="498.24999999999994" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="120.0" cy="498.24999999999994" r=".38" fill="#8b1d1d"/>
+<text x="119.3" y="498.66999999999996" text-anchor="end" font-size="1.05" fill="#8b1d1d">9 CHG → NC</text>
+<line x1="153.0" y1="479.84999999999997" x2="156.0" y2="479.84999999999997" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="479.84999999999997" r=".38" fill="#22743b"/>
+<text x="156.7" y="480.27" text-anchor="start" font-size="1.05" fill="#22743b">10 OUT → VSYS</text>
+<line x1="153.0" y1="482.15" x2="156.0" y2="482.15" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="482.15" r=".38" fill="#22743b"/>
+<text x="156.7" y="482.57" text-anchor="start" font-size="1.05" fill="#22743b">11 OUT → VSYS</text>
+<line x1="153.0" y1="484.45" x2="156.0" y2="484.45" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="484.45" r=".38" fill="#22743b"/>
+<text x="156.7" y="484.87" text-anchor="start" font-size="1.05" fill="#22743b">12 ILIM → ILIM</text>
+<line x1="153.0" y1="486.74999999999994" x2="156.0" y2="486.74999999999994" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="486.74999999999994" r=".38" fill="#22743b"/>
+<text x="156.7" y="487.16999999999996" text-anchor="start" font-size="1.05" fill="#22743b">13 IN → VBUS</text>
+<line x1="153.0" y1="489.04999999999995" x2="156.0" y2="489.04999999999995" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="156.0" cy="489.04999999999995" r=".38" fill="#8b1d1d"/>
+<text x="156.7" y="489.46999999999997" text-anchor="start" font-size="1.05" fill="#8b1d1d">14 TMR → NC</text>
+<line x1="153.0" y1="491.34999999999997" x2="156.0" y2="491.34999999999997" stroke="#8b1d1d" stroke-width=".3"/>
+<circle cx="156.0" cy="491.34999999999997" r=".38" fill="#8b1d1d"/>
+<text x="156.7" y="491.77" text-anchor="start" font-size="1.05" fill="#8b1d1d">15 ITERM → NC</text>
+<line x1="153.0" y1="493.65" x2="156.0" y2="493.65" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="493.65" r=".38" fill="#22743b"/>
+<text x="156.7" y="494.07" text-anchor="start" font-size="1.05" fill="#22743b">16 ISET → ISET</text>
+<line x1="153.0" y1="495.95" x2="156.0" y2="495.95" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="495.95" r=".38" fill="#22743b"/>
+<text x="156.7" y="496.37" text-anchor="start" font-size="1.05" fill="#22743b">17 EP → GND</text>
+<rect x="215.0" y="483.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="487" text-anchor="middle" font-size="2.1" font-weight="bold">J2</text>
+<text x="230.0" y="490" text-anchor="middle" font-size="1.15">battery_connector</text>
+<text x="230.0" y="492.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">B3B-PH-SM4-TB_LF_SN</text>
+<line x1="215.0" y1="486.2" x2="212.0" y2="486.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="486.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="486.62" text-anchor="end" font-size="1.05" fill="#22743b">1 BAT+ → VBAT</text>
+<line x1="215.0" y1="488.5" x2="212.0" y2="488.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="488.5" r=".38" fill="#22743b"/>
+<text x="211.3" y="488.92" text-anchor="end" font-size="1.05" fill="#22743b">2 BAT- → GND</text>
+<line x1="245.0" y1="486.2" x2="248.0" y2="486.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="486.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="486.62" text-anchor="start" font-size="1.05" fill="#22743b">3 NTC → TS</text>
+<rect x="307.0" y="480.1" width="30.0" height="17.799999999999997" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="487" text-anchor="middle" font-size="2.1" font-weight="bold">U4</text>
+<text x="322.0" y="490" text-anchor="middle" font-size="1.15">buck_boost</text>
+<text x="322.0" y="492.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">TPS63031DSKR</text>
+<line x1="307.0" y1="483.3" x2="304.0" y2="483.3" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="483.3" r=".38" fill="#22743b"/>
+<text x="303.3" y="483.72" text-anchor="end" font-size="1.05" fill="#22743b">1 VOUT → +3V3</text>
+<line x1="307.0" y1="485.6" x2="304.0" y2="485.6" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="485.6" r=".38" fill="#22743b"/>
+<text x="303.3" y="486.02000000000004" text-anchor="end" font-size="1.05" fill="#22743b">2 L2 → L2</text>
+<line x1="307.0" y1="487.90000000000003" x2="304.0" y2="487.90000000000003" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="487.90000000000003" r=".38" fill="#22743b"/>
+<text x="303.3" y="488.32000000000005" text-anchor="end" font-size="1.05" fill="#22743b">3 PGND → GND</text>
+<line x1="307.0" y1="490.2" x2="304.0" y2="490.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="490.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="490.62" text-anchor="end" font-size="1.05" fill="#22743b">4 L1 → L1</text>
+<line x1="307.0" y1="492.5" x2="304.0" y2="492.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="492.5" r=".38" fill="#22743b"/>
+<text x="303.3" y="492.92" text-anchor="end" font-size="1.05" fill="#22743b">5 VIN → VSYS</text>
+<line x1="307.0" y1="494.8" x2="304.0" y2="494.8" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="494.8" r=".38" fill="#22743b"/>
+<text x="303.3" y="495.22" text-anchor="end" font-size="1.05" fill="#22743b">10 FB → +3V3</text>
+<line x1="337.0" y1="483.3" x2="340.0" y2="483.3" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="483.3" r=".38" fill="#22743b"/>
+<text x="340.7" y="483.72" text-anchor="start" font-size="1.05" fill="#22743b">9 GND → GND</text>
+<line x1="337.0" y1="485.6" x2="340.0" y2="485.6" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="485.6" r=".38" fill="#22743b"/>
+<text x="340.7" y="486.02000000000004" text-anchor="start" font-size="1.05" fill="#22743b">8 VINA → VSYS</text>
+<line x1="337.0" y1="487.90000000000003" x2="340.0" y2="487.90000000000003" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="487.90000000000003" r=".38" fill="#22743b"/>
+<text x="340.7" y="488.32000000000005" text-anchor="start" font-size="1.05" fill="#22743b">7 PS/SYNC → GND</text>
+<line x1="337.0" y1="490.2" x2="340.0" y2="490.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="490.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="490.62" text-anchor="start" font-size="1.05" fill="#22743b">6 EN → VSYS</text>
+<line x1="337.0" y1="492.5" x2="340.0" y2="492.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="492.5" r=".38" fill="#22743b"/>
+<text x="340.7" y="492.92" text-anchor="start" font-size="1.05" fill="#22743b">11 EP → GND</text>
+<rect x="31.0" y="525.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="529" text-anchor="middle" font-size="2.1" font-weight="bold">L1</text>
+<text x="46.0" y="532" text-anchor="middle" font-size="1.15">1.5e-06 H</text>
+<text x="46.0" y="534.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">XFL4020-152MEC</text>
+<line x1="31.0" y1="528.2" x2="28.0" y2="528.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="528.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="528.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → L1</text>
+<line x1="61.0" y1="528.2" x2="64.0" y2="528.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="528.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="528.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → L2</text>
+<rect x="123.0" y="525.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="529" text-anchor="middle" font-size="2.1" font-weight="bold">U5</text>
+<text x="138.0" y="532" text-anchor="middle" font-size="1.15">load switch</text>
+<text x="138.0" y="534.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">TPS22918DBVR</text>
+<line x1="123.0" y1="528.2" x2="120.0" y2="528.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="528.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="528.62" text-anchor="end" font-size="1.05" fill="#22743b">1 VIN → +5V_LED_RAW</text>
+<line x1="123.0" y1="530.5" x2="120.0" y2="530.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="530.5" r=".38" fill="#22743b"/>
+<text x="119.3" y="530.92" text-anchor="end" font-size="1.05" fill="#22743b">2 GND → GND</text>
+<line x1="123.0" y1="532.8000000000001" x2="120.0" y2="532.8000000000001" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="532.8000000000001" r=".38" fill="#22743b"/>
+<text x="119.3" y="533.22" text-anchor="end" font-size="1.05" fill="#22743b">3 ON → LED_ENABLE</text>
+<line x1="153.0" y1="528.2" x2="156.0" y2="528.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="528.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="528.62" text-anchor="start" font-size="1.05" fill="#22743b">4 CT → LED_CT</text>
+<line x1="153.0" y1="530.5" x2="156.0" y2="530.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="530.5" r=".38" fill="#22743b"/>
+<text x="156.7" y="530.92" text-anchor="start" font-size="1.05" fill="#22743b">5 QOD → +5V_LED</text>
+<line x1="153.0" y1="532.8000000000001" x2="156.0" y2="532.8000000000001" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="532.8000000000001" r=".38" fill="#22743b"/>
+<text x="156.7" y="533.22" text-anchor="start" font-size="1.05" fill="#22743b">6 VOUT → +5V_LED</text>
+<rect x="215.0" y="525.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="529" text-anchor="middle" font-size="2.1" font-weight="bold">U6</text>
+<text x="230.0" y="532" text-anchor="middle" font-size="1.15">5 V boost</text>
+<text x="230.0" y="534.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">TPS61023DRLR</text>
+<line x1="215.0" y1="528.2" x2="212.0" y2="528.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="528.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="528.62" text-anchor="end" font-size="1.05" fill="#22743b">1 FB → LED_FB</text>
+<line x1="215.0" y1="530.5" x2="212.0" y2="530.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="530.5" r=".38" fill="#22743b"/>
+<text x="211.3" y="530.92" text-anchor="end" font-size="1.05" fill="#22743b">2 EN → LED_ENABLE</text>
+<line x1="215.0" y1="532.8000000000001" x2="212.0" y2="532.8000000000001" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="532.8000000000001" r=".38" fill="#22743b"/>
+<text x="211.3" y="533.22" text-anchor="end" font-size="1.05" fill="#22743b">3 VIN → VSYS</text>
+<line x1="245.0" y1="528.2" x2="248.0" y2="528.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="528.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="528.62" text-anchor="start" font-size="1.05" fill="#22743b">4 GND → GND</text>
+<line x1="245.0" y1="530.5" x2="248.0" y2="530.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="530.5" r=".38" fill="#22743b"/>
+<text x="248.7" y="530.92" text-anchor="start" font-size="1.05" fill="#22743b">5 SW → LED_BOOST_SW</text>
+<line x1="245.0" y1="532.8000000000001" x2="248.0" y2="532.8000000000001" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="532.8000000000001" r=".38" fill="#22743b"/>
+<text x="248.7" y="533.22" text-anchor="start" font-size="1.05" fill="#22743b">6 VOUT → +5V_LED_RAW</text>
+<rect x="307.0" y="525.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="529" text-anchor="middle" font-size="2.1" font-weight="bold">L2</text>
+<text x="322.0" y="532" text-anchor="middle" font-size="1.15">1e-06 H</text>
+<text x="322.0" y="534.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">XFL4020-102MEC</text>
+<line x1="307.0" y1="528.2" x2="304.0" y2="528.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="528.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="528.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → VSYS</text>
+<line x1="337.0" y1="528.2" x2="340.0" y2="528.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="528.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="528.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → LED_BOOST_SW</text>
+<rect x="31.0" y="567.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="571" text-anchor="middle" font-size="2.1" font-weight="bold">U7</text>
+<text x="46.0" y="574" text-anchor="middle" font-size="1.15">5 V TTL buffer</text>
+<text x="46.0" y="576.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">SN74AHCT1G125DBVR</text>
+<line x1="31.0" y1="570.2" x2="28.0" y2="570.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="570.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="570.62" text-anchor="end" font-size="1.05" fill="#22743b">1 OE_N → GND</text>
+<line x1="31.0" y1="572.5" x2="28.0" y2="572.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="572.5" r=".38" fill="#22743b"/>
+<text x="27.3" y="572.92" text-anchor="end" font-size="1.05" fill="#22743b">2 A → LED_DATA_MCU</text>
+<line x1="31.0" y1="574.8000000000001" x2="28.0" y2="574.8000000000001" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="574.8000000000001" r=".38" fill="#22743b"/>
+<text x="27.3" y="575.22" text-anchor="end" font-size="1.05" fill="#22743b">3 GND → GND</text>
+<line x1="61.0" y1="570.2" x2="64.0" y2="570.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="570.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="570.62" text-anchor="start" font-size="1.05" fill="#22743b">4 Y → LED_DATA_PRE</text>
+<line x1="61.0" y1="572.5" x2="64.0" y2="572.5" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="572.5" r=".38" fill="#22743b"/>
+<text x="64.7" y="572.92" text-anchor="start" font-size="1.05" fill="#22743b">5 VCC → +5V_LED</text>
+<rect x="123.0" y="567.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="571" text-anchor="middle" font-size="2.1" font-weight="bold">R1</text>
+<text x="138.0" y="574" text-anchor="middle" font-size="1.15">5100 Ω</text>
+<text x="138.0" y="576.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-075K1L</text>
+<line x1="123.0" y1="570.2" x2="120.0" y2="570.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="570.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="570.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → CC1</text>
+<line x1="153.0" y1="570.2" x2="156.0" y2="570.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="570.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="570.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → GND</text>
+<rect x="215.0" y="567.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="571" text-anchor="middle" font-size="2.1" font-weight="bold">R2</text>
+<text x="230.0" y="574" text-anchor="middle" font-size="1.15">5100 Ω</text>
+<text x="230.0" y="576.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-075K1L</text>
+<line x1="215.0" y1="570.2" x2="212.0" y2="570.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="570.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="570.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → CC2</text>
+<line x1="245.0" y1="570.2" x2="248.0" y2="570.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="570.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="570.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → GND</text>
+<rect x="307.0" y="567.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="571" text-anchor="middle" font-size="2.1" font-weight="bold">R3</text>
+<text x="322.0" y="574" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="322.0" y="576.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="307.0" y1="570.2" x2="304.0" y2="570.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="570.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="570.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → FSR_SENSE</text>
+<line x1="337.0" y1="570.2" x2="340.0" y2="570.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="570.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="570.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → GND</text>
+<rect x="31.0" y="609.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="613" text-anchor="middle" font-size="2.1" font-weight="bold">R4</text>
+<text x="46.0" y="616" text-anchor="middle" font-size="1.15">1100 Ω</text>
+<text x="46.0" y="618.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-071K1L</text>
+<line x1="31.0" y1="612.2" x2="28.0" y2="612.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="612.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="612.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ILIM</text>
+<line x1="61.0" y1="612.2" x2="64.0" y2="612.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="612.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="612.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → GND</text>
+<rect x="123.0" y="609.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="613" text-anchor="middle" font-size="2.1" font-weight="bold">R5</text>
+<text x="138.0" y="616" text-anchor="middle" font-size="1.15">590 Ω</text>
+<text x="138.0" y="618.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-07590RL</text>
+<line x1="123.0" y1="612.2" x2="120.0" y2="612.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="612.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="612.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ISET</text>
+<line x1="153.0" y1="612.2" x2="156.0" y2="612.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="612.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="612.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → GND</text>
+<rect x="215.0" y="609.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="613" text-anchor="middle" font-size="2.1" font-weight="bold">R6</text>
+<text x="230.0" y="616" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="230.0" y="618.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="215.0" y1="612.2" x2="212.0" y2="612.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="612.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="612.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ENC_A</text>
+<line x1="245.0" y1="612.2" x2="248.0" y2="612.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="612.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="612.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → +3V3</text>
+<rect x="307.0" y="609.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="613" text-anchor="middle" font-size="2.1" font-weight="bold">R7</text>
+<text x="322.0" y="616" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="322.0" y="618.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="307.0" y1="612.2" x2="304.0" y2="612.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="612.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="612.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ENC_B</text>
+<line x1="337.0" y1="612.2" x2="340.0" y2="612.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="612.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="612.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → +3V3</text>
+<rect x="31.0" y="651.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="655" text-anchor="middle" font-size="2.1" font-weight="bold">R8</text>
+<text x="46.0" y="658" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="46.0" y="660.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="31.0" y1="654.2" x2="28.0" y2="654.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="654.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="654.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → ENC_SW</text>
+<line x1="61.0" y1="654.2" x2="64.0" y2="654.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="654.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="654.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → +3V3</text>
+<rect x="123.0" y="651.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="655" text-anchor="middle" font-size="2.1" font-weight="bold">R9</text>
+<text x="138.0" y="658" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="138.0" y="660.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="123.0" y1="654.2" x2="120.0" y2="654.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="654.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="654.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → RESET_N</text>
+<line x1="153.0" y1="654.2" x2="156.0" y2="654.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="654.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="654.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → +3V3</text>
+<rect x="215.0" y="651.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="655" text-anchor="middle" font-size="2.1" font-weight="bold">R10</text>
+<text x="230.0" y="658" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="230.0" y="660.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="215.0" y1="654.2" x2="212.0" y2="654.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="654.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="654.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → BOOT_N</text>
+<line x1="245.0" y1="654.2" x2="248.0" y2="654.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="654.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="654.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → +3V3</text>
+<rect x="307.0" y="651.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="655" text-anchor="middle" font-size="2.1" font-weight="bold">R11</text>
+<text x="322.0" y="658" text-anchor="middle" font-size="1.15">732000 Ω</text>
+<text x="322.0" y="660.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-07732KL</text>
+<line x1="307.0" y1="654.2" x2="304.0" y2="654.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="654.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="654.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → +5V_LED_RAW</text>
+<line x1="337.0" y1="654.2" x2="340.0" y2="654.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="654.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="654.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → LED_FB</text>
+<rect x="31.0" y="693.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="697" text-anchor="middle" font-size="2.1" font-weight="bold">R12</text>
+<text x="46.0" y="700" text-anchor="middle" font-size="1.15">100000 Ω</text>
+<text x="46.0" y="702.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-07100KL</text>
+<line x1="31.0" y1="696.2" x2="28.0" y2="696.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="696.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="696.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → LED_FB</text>
+<line x1="61.0" y1="696.2" x2="64.0" y2="696.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="696.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="696.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → GND</text>
+<rect x="123.0" y="693.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="697" text-anchor="middle" font-size="2.1" font-weight="bold">R13</text>
+<text x="138.0" y="700" text-anchor="middle" font-size="1.15">500 Ω</text>
+<text x="138.0" y="702.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-07500RL</text>
+<line x1="123.0" y1="696.2" x2="120.0" y2="696.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="696.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="696.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → LED_DATA_PRE</text>
+<line x1="153.0" y1="696.2" x2="156.0" y2="696.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="696.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="696.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → LED_DATA</text>
+<rect x="215.0" y="693.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="697" text-anchor="middle" font-size="2.1" font-weight="bold">R14</text>
+<text x="230.0" y="700" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="230.0" y="702.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="215.0" y1="696.2" x2="212.0" y2="696.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="696.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="696.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → COL0</text>
+<line x1="245.0" y1="696.2" x2="248.0" y2="696.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="696.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="696.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → +3V3</text>
+<rect x="307.0" y="693.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="697" text-anchor="middle" font-size="2.1" font-weight="bold">R15</text>
+<text x="322.0" y="700" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="322.0" y="702.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="307.0" y1="696.2" x2="304.0" y2="696.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="696.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="696.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → COL1</text>
+<line x1="337.0" y1="696.2" x2="340.0" y2="696.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="696.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="696.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → +3V3</text>
+<rect x="31.0" y="735.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="739" text-anchor="middle" font-size="2.1" font-weight="bold">R16</text>
+<text x="46.0" y="742" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="46.0" y="744.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="31.0" y1="738.2" x2="28.0" y2="738.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="738.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="738.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → COL2</text>
+<line x1="61.0" y1="738.2" x2="64.0" y2="738.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="738.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="738.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → +3V3</text>
+<rect x="123.0" y="735.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="739" text-anchor="middle" font-size="2.1" font-weight="bold">R17</text>
+<text x="138.0" y="742" text-anchor="middle" font-size="1.15">10000 Ω</text>
+<text x="138.0" y="744.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">RC0603FR-0710KL</text>
+<line x1="123.0" y1="738.2" x2="120.0" y2="738.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="738.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="738.62" text-anchor="end" font-size="1.05" fill="#22743b">1 A → COL3</text>
+<line x1="153.0" y1="738.2" x2="156.0" y2="738.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="738.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="738.62" text-anchor="start" font-size="1.05" fill="#22743b">2 B → +3V3</text>
+<rect x="215.0" y="735.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="739" text-anchor="middle" font-size="2.1" font-weight="bold">C1</text>
+<text x="230.0" y="742" text-anchor="middle" font-size="1.15">1e-05 F</text>
+<text x="230.0" y="744.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM21BR61A106KE19L</text>
+<line x1="215.0" y1="738.2" x2="212.0" y2="738.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="738.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="738.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → VBUS</text>
+<line x1="245.0" y1="738.2" x2="248.0" y2="738.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="738.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="738.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="307.0" y="735.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="739" text-anchor="middle" font-size="2.1" font-weight="bold">C2</text>
+<text x="322.0" y="742" text-anchor="middle" font-size="1.15">2.2e-05 F</text>
+<text x="322.0" y="744.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM32ER61E226ME15L</text>
+<line x1="307.0" y1="738.2" x2="304.0" y2="738.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="738.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="738.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → VSYS</text>
+<line x1="337.0" y1="738.2" x2="340.0" y2="738.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="738.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="738.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="31.0" y="777.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="781" text-anchor="middle" font-size="2.1" font-weight="bold">C3</text>
+<text x="46.0" y="784" text-anchor="middle" font-size="1.15">2.2e-05 F</text>
+<text x="46.0" y="786.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM32ER61E226ME15L</text>
+<line x1="31.0" y1="780.2" x2="28.0" y2="780.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="780.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="780.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → VBAT</text>
+<line x1="61.0" y1="780.2" x2="64.0" y2="780.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="780.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="780.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="123.0" y="777.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="781" text-anchor="middle" font-size="2.1" font-weight="bold">C4</text>
+<text x="138.0" y="784" text-anchor="middle" font-size="1.15">2.2e-05 F</text>
+<text x="138.0" y="786.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM32ER61E226ME15L</text>
+<line x1="123.0" y1="780.2" x2="120.0" y2="780.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="780.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="780.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +3V3</text>
+<line x1="153.0" y1="780.2" x2="156.0" y2="780.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="780.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="780.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="215.0" y="777.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="781" text-anchor="middle" font-size="2.1" font-weight="bold">C5</text>
+<text x="230.0" y="784" text-anchor="middle" font-size="1.15">2.2e-05 F</text>
+<text x="230.0" y="786.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM32ER61E226ME15L</text>
+<line x1="215.0" y1="780.2" x2="212.0" y2="780.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="780.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="780.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +3V3</text>
+<line x1="245.0" y1="780.2" x2="248.0" y2="780.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="780.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="780.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="307.0" y="777.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="781" text-anchor="middle" font-size="2.1" font-weight="bold">C6</text>
+<text x="322.0" y="784" text-anchor="middle" font-size="1.15">2.2e-05 F</text>
+<text x="322.0" y="786.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM32ER61E226ME15L</text>
+<line x1="307.0" y1="780.2" x2="304.0" y2="780.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="780.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="780.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="337.0" y1="780.2" x2="340.0" y2="780.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="780.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="780.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="31.0" y="819.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="823" text-anchor="middle" font-size="2.1" font-weight="bold">C7</text>
+<text x="46.0" y="826" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="46.0" y="828.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="31.0" y1="822.2" x2="28.0" y2="822.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="822.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="822.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → JOY_X</text>
+<line x1="61.0" y1="822.2" x2="64.0" y2="822.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="822.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="822.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="123.0" y="819.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="823" text-anchor="middle" font-size="2.1" font-weight="bold">C8</text>
+<text x="138.0" y="826" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="138.0" y="828.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="123.0" y1="822.2" x2="120.0" y2="822.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="822.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="822.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → JOY_Y</text>
+<line x1="153.0" y1="822.2" x2="156.0" y2="822.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="822.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="822.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="215.0" y="819.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="823" text-anchor="middle" font-size="2.1" font-weight="bold">C9</text>
+<text x="230.0" y="826" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="230.0" y="828.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="215.0" y1="822.2" x2="212.0" y2="822.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="822.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="822.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → FSR_SENSE</text>
+<line x1="245.0" y1="822.2" x2="248.0" y2="822.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="822.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="822.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="307.0" y="819.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="823" text-anchor="middle" font-size="2.1" font-weight="bold">C10</text>
+<text x="322.0" y="826" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="322.0" y="828.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="307.0" y1="822.2" x2="304.0" y2="822.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="822.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="822.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → ENC_A</text>
+<line x1="337.0" y1="822.2" x2="340.0" y2="822.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="822.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="822.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="31.0" y="861.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="865" text-anchor="middle" font-size="2.1" font-weight="bold">C11</text>
+<text x="46.0" y="868" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="46.0" y="870.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="31.0" y1="864.2" x2="28.0" y2="864.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="864.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="864.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → ENC_B</text>
+<line x1="61.0" y1="864.2" x2="64.0" y2="864.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="864.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="864.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="123.0" y="861.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="865" text-anchor="middle" font-size="2.1" font-weight="bold">C12</text>
+<text x="138.0" y="868" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="138.0" y="870.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="123.0" y1="864.2" x2="120.0" y2="864.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="864.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="864.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → ENC_SW</text>
+<line x1="153.0" y1="864.2" x2="156.0" y2="864.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="864.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="864.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="215.0" y="861.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="865" text-anchor="middle" font-size="2.1" font-weight="bold">C13</text>
+<text x="230.0" y="868" text-anchor="middle" font-size="1.15">1e-09 F</text>
+<text x="230.0" y="870.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM1885C1H102JA01D</text>
+<line x1="215.0" y1="864.2" x2="212.0" y2="864.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="864.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="864.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → LED_CT</text>
+<line x1="245.0" y1="864.2" x2="248.0" y2="864.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="864.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="864.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="307.0" y="861.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="865" text-anchor="middle" font-size="2.1" font-weight="bold">C14</text>
+<text x="322.0" y="868" text-anchor="middle" font-size="1.15">1e-05 F</text>
+<text x="322.0" y="870.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM21BR61A106KE19L</text>
+<line x1="307.0" y1="864.2" x2="304.0" y2="864.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="864.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="864.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → VSYS</text>
+<line x1="337.0" y1="864.2" x2="340.0" y2="864.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="864.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="864.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="31.0" y="903.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="907" text-anchor="middle" font-size="2.1" font-weight="bold">C15</text>
+<text x="46.0" y="910" text-anchor="middle" font-size="1.15">2.2e-05 F</text>
+<text x="46.0" y="912.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM32ER61E226ME15L</text>
+<line x1="31.0" y1="906.2" x2="28.0" y2="906.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="906.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="906.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED_RAW</text>
+<line x1="61.0" y1="906.2" x2="64.0" y2="906.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="906.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="906.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="123.0" y="903.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="907" text-anchor="middle" font-size="2.1" font-weight="bold">C16</text>
+<text x="138.0" y="910" text-anchor="middle" font-size="1.15">2.2e-05 F</text>
+<text x="138.0" y="912.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM32ER61E226ME15L</text>
+<line x1="123.0" y1="906.2" x2="120.0" y2="906.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="906.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="906.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED_RAW</text>
+<line x1="153.0" y1="906.2" x2="156.0" y2="906.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="906.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="906.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="215.0" y="903.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="907" text-anchor="middle" font-size="2.1" font-weight="bold">C17</text>
+<text x="230.0" y="910" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="230.0" y="912.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="215.0" y1="906.2" x2="212.0" y2="906.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="906.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="906.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="245.0" y1="906.2" x2="248.0" y2="906.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="906.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="906.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="307.0" y="903.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="907" text-anchor="middle" font-size="2.1" font-weight="bold">C18</text>
+<text x="322.0" y="910" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="322.0" y="912.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="307.0" y1="906.2" x2="304.0" y2="906.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="906.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="906.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="337.0" y1="906.2" x2="340.0" y2="906.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="906.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="906.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="31.0" y="945.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="949" text-anchor="middle" font-size="2.1" font-weight="bold">C19</text>
+<text x="46.0" y="952" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="46.0" y="954.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="31.0" y1="948.2" x2="28.0" y2="948.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="948.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="948.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="61.0" y1="948.2" x2="64.0" y2="948.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="948.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="948.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="123.0" y="945.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="949" text-anchor="middle" font-size="2.1" font-weight="bold">C20</text>
+<text x="138.0" y="952" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="138.0" y="954.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="123.0" y1="948.2" x2="120.0" y2="948.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="948.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="948.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="153.0" y1="948.2" x2="156.0" y2="948.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="948.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="948.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="215.0" y="945.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="949" text-anchor="middle" font-size="2.1" font-weight="bold">C21</text>
+<text x="230.0" y="952" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="230.0" y="954.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="215.0" y1="948.2" x2="212.0" y2="948.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="948.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="948.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="245.0" y1="948.2" x2="248.0" y2="948.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="948.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="948.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="307.0" y="945.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="949" text-anchor="middle" font-size="2.1" font-weight="bold">C22</text>
+<text x="322.0" y="952" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="322.0" y="954.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="307.0" y1="948.2" x2="304.0" y2="948.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="948.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="948.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="337.0" y1="948.2" x2="340.0" y2="948.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="948.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="948.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="31.0" y="987.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="991" text-anchor="middle" font-size="2.1" font-weight="bold">C23</text>
+<text x="46.0" y="994" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="46.0" y="996.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="31.0" y1="990.2" x2="28.0" y2="990.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="990.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="990.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="61.0" y1="990.2" x2="64.0" y2="990.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="990.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="990.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="123.0" y="987.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="991" text-anchor="middle" font-size="2.1" font-weight="bold">C24</text>
+<text x="138.0" y="994" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="138.0" y="996.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="123.0" y1="990.2" x2="120.0" y2="990.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="990.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="990.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="153.0" y1="990.2" x2="156.0" y2="990.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="990.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="990.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="215.0" y="987.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="991" text-anchor="middle" font-size="2.1" font-weight="bold">C25</text>
+<text x="230.0" y="994" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="230.0" y="996.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="215.0" y1="990.2" x2="212.0" y2="990.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="990.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="990.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="245.0" y1="990.2" x2="248.0" y2="990.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="990.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="990.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="307.0" y="987.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="991" text-anchor="middle" font-size="2.1" font-weight="bold">C26</text>
+<text x="322.0" y="994" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="322.0" y="996.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="307.0" y1="990.2" x2="304.0" y2="990.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="990.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="990.62" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="337.0" y1="990.2" x2="340.0" y2="990.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="990.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="990.62" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="31.0" y="1029.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="1033" text-anchor="middle" font-size="2.1" font-weight="bold">C27</text>
+<text x="46.0" y="1036" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="46.0" y="1038.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="31.0" y1="1032.2" x2="28.0" y2="1032.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="1032.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="1032.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="61.0" y1="1032.2" x2="64.0" y2="1032.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="1032.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="1032.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="123.0" y="1029.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="1033" text-anchor="middle" font-size="2.1" font-weight="bold">C28</text>
+<text x="138.0" y="1036" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="138.0" y="1038.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="123.0" y1="1032.2" x2="120.0" y2="1032.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="1032.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="1032.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="153.0" y1="1032.2" x2="156.0" y2="1032.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="1032.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="1032.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="215.0" y="1029.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="1033" text-anchor="middle" font-size="2.1" font-weight="bold">C29</text>
+<text x="230.0" y="1036" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="230.0" y="1038.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="215.0" y1="1032.2" x2="212.0" y2="1032.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="1032.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="1032.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="245.0" y1="1032.2" x2="248.0" y2="1032.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="1032.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="1032.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="307.0" y="1029.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="1033" text-anchor="middle" font-size="2.1" font-weight="bold">C30</text>
+<text x="322.0" y="1036" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="322.0" y="1038.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="307.0" y1="1032.2" x2="304.0" y2="1032.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="1032.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="1032.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +5V_LED</text>
+<line x1="337.0" y1="1032.2" x2="340.0" y2="1032.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="1032.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="1032.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="31.0" y="1071.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="1075" text-anchor="middle" font-size="2.1" font-weight="bold">C31</text>
+<text x="46.0" y="1078" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="46.0" y="1080.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="31.0" y1="1074.2" x2="28.0" y2="1074.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="1074.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="1074.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → VSYS</text>
+<line x1="61.0" y1="1074.2" x2="64.0" y2="1074.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="1074.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="1074.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="123.0" y="1071.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="1075" text-anchor="middle" font-size="2.1" font-weight="bold">C32</text>
+<text x="138.0" y="1078" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="138.0" y="1080.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="123.0" y1="1074.2" x2="120.0" y2="1074.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="1074.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="1074.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → +3V3</text>
+<line x1="153.0" y1="1074.2" x2="156.0" y2="1074.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="1074.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="1074.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="215.0" y="1071.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="230.0" y="1075" text-anchor="middle" font-size="2.1" font-weight="bold">C33</text>
+<text x="230.0" y="1078" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="230.0" y="1080.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="215.0" y1="1074.2" x2="212.0" y2="1074.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="212.0" cy="1074.2" r=".38" fill="#22743b"/>
+<text x="211.3" y="1074.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → COL0</text>
+<line x1="245.0" y1="1074.2" x2="248.0" y2="1074.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="248.0" cy="1074.2" r=".38" fill="#22743b"/>
+<text x="248.7" y="1074.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="307.0" y="1071.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="322.0" y="1075" text-anchor="middle" font-size="2.1" font-weight="bold">C34</text>
+<text x="322.0" y="1078" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="322.0" y="1080.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="307.0" y1="1074.2" x2="304.0" y2="1074.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="304.0" cy="1074.2" r=".38" fill="#22743b"/>
+<text x="303.3" y="1074.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → COL1</text>
+<line x1="337.0" y1="1074.2" x2="340.0" y2="1074.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="340.0" cy="1074.2" r=".38" fill="#22743b"/>
+<text x="340.7" y="1074.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="31.0" y="1113.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="46.0" y="1117" text-anchor="middle" font-size="2.1" font-weight="bold">C35</text>
+<text x="46.0" y="1120" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="46.0" y="1122.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="31.0" y1="1116.2" x2="28.0" y2="1116.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="28.0" cy="1116.2" r=".38" fill="#22743b"/>
+<text x="27.3" y="1116.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → COL2</text>
+<line x1="61.0" y1="1116.2" x2="64.0" y2="1116.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="64.0" cy="1116.2" r=".38" fill="#22743b"/>
+<text x="64.7" y="1116.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+<rect x="123.0" y="1113.0" width="30.0" height="12.0" rx="0.8" fill="#f7f2dc" stroke="#3d4b40" stroke-width="0.25"/>
+<text x="138.0" y="1117" text-anchor="middle" font-size="2.1" font-weight="bold">C36</text>
+<text x="138.0" y="1120" text-anchor="middle" font-size="1.15">1e-07 F</text>
+<text x="138.0" y="1122.2" text-anchor="middle" font-size=".9" fill="#6b6b6b">GRM188R71H104KA93D</text>
+<line x1="123.0" y1="1116.2" x2="120.0" y2="1116.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="120.0" cy="1116.2" r=".38" fill="#22743b"/>
+<text x="119.3" y="1116.6200000000001" text-anchor="end" font-size="1.05" fill="#22743b">1 + → COL3</text>
+<line x1="153.0" y1="1116.2" x2="156.0" y2="1116.2" stroke="#22743b" stroke-width=".3"/>
+<circle cx="156.0" cy="1116.2" r=".38" fill="#22743b"/>
+<text x="156.7" y="1116.6200000000001" text-anchor="start" font-size="1.05" fill="#22743b">2 - → GND</text>
+</g></svg>

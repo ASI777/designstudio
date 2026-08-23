@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:semantic-assembly:2",
+  "title": "DesignStudio semantic AP242 assembly v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "source_format", "source_step_sha256", "tessellation_sha256", "identity_available", "legacy_flattened", "components"],
+  "properties": {
+    "schema": {"const": "design-studio.semantic-assembly/2"},
+    "source_format": {"const": "AP242"},
+    "source_step_sha256": {"$ref": "#/$defs/digest"},
+    "tessellation_sha256": {"$ref": "#/$defs/digest"},
+    "identity_available": {"const": true},
+    "legacy_flattened": {"const": false},
+    "components": {"type": "array", "minItems": 1, "maxItems": 100000, "items": {"$ref": "#/$defs/component"}}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "id": {"type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_.-]{0,127}$"},
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_id", "parent_id", "name", "reference_designator", "material", "color_rgba", "placement", "triangle_start", "triangle_count", "face_ids"],
+      "properties": {
+        "semantic_id": {"$ref": "#/$defs/id"},
+        "parent_id": {"$ref": "#/$defs/id"},
+        "name": {"type": "string", "minLength": 1},
+        "reference_designator": {"type": "string"},
+        "material": {"type": "string", "minLength": 1},
+        "color_rgba": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number", "minimum": 0, "maximum": 1}},
+        "placement": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "number"}},
+        "triangle_start": {"type": "integer", "minimum": 0},
+        "triangle_count": {"type": "integer", "minimum": 1},
+        "face_ids": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

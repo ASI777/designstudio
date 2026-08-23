@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DesignStudio Mechanical Viewer</title>
+  </head>
+  <body>
+    <main class="viewer-shell">
+      <header class="toolbar">
+        <strong>Mechanical review</strong>
+        <label>View
+          <select id="view-mode">
+            <option value="manufacturing_internals">Manufacturing internals</option>
+            <option value="product">Product</option>
+            <option value="clearance">Clearance</option>
+            <option value="exploded">Exploded</option>
+            <option value="presentation">Presentation</option>
+          </select>
+        </label>
+        <label>Explode
+          <input id="explode" type="range" min="0" max="1" step="0.01" value="0" />
+        </label>
+        <span id="status" role="status">Waiting for an approved GLB</span>
+      </header>
+      <canvas id="mechanical-canvas" aria-label="3D mechanical model"></canvas>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+

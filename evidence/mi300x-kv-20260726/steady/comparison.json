@@ -1,0 +1,48 @@
+{
+  "acceptance": {
+    "deterministic_output_gate": "not_measured",
+    "minimum_p95_ttft_improvement_percent": 30.0,
+    "oom_gate_passed": true,
+    "overall_status": "incomplete",
+    "rolling_gpu_utilization_gate": "not_measured",
+    "target_context_tokens": 16384,
+    "ttft_gate_passed": true
+  },
+  "comparisons": [
+    {
+      "apc_off_p95_ttft_ms": 672.2509521997381,
+      "apc_off_sha256": "78ece1d8c15d1d4010f77d67025619a636e231d2cc85d1f699b403c80cadd229",
+      "apc_on_p95_ttft_ms": 111.73302984998372,
+      "apc_on_sha256": "9e86e0abe5ade833d3dbec690dd7b45b11d9c040e3cf0b7ea32fbefa70f1a4f7",
+      "concurrency": 1,
+      "context_tokens_requested": 16384,
+      "p95_ttft_improvement_percent": 83.37926789328135,
+      "ttft_gate_passed": true
+    },
+    {
+      "apc_off_p95_ttft_ms": 3717.985956199799,
+      "apc_off_sha256": "964a21586202f9e43e2f7cd193dcb3297a475e1934e17589c99083208b75dd69",
+      "apc_on_p95_ttft_ms": 375.6962844495319,
+      "apc_on_sha256": "9a9b89b23d60308f996916a8e14db4903550b5e68ae32fed4a3f21e073fe38e8",
+      "concurrency": 4,
+      "context_tokens_requested": 16384,
+      "p95_ttft_improvement_percent": 89.89516666078168,
+      "ttft_gate_passed": true
+    },
+    {
+      "apc_off_p95_ttft_ms": 10425.96252275066,
+      "apc_off_sha256": "8fd0b3ac2db14d1e68f4b10e163e46ee71efa434369006be4f42b4ce0c87791e",
+      "apc_on_p95_ttft_ms": 585.9610036004142,
+      "apc_on_sha256": "d24eea021f788ff830d473f60bcdd520669bc139ad19d71f928d3b1bdac41d0c",
+      "concurrency": 8,
+      "context_tokens_requested": 16384,
+      "p95_ttft_improvement_percent": 94.37978985324588,
+      "ttft_gate_passed": true
+    }
+  ],
+  "created_at": "2026-07-26T05:11:55.738015+00:00",
+  "image_digest": "sha256:3813e31cc3ab56f71ba83a72da77a84f3c75030e54c9c316951a99317b818ce4",
+  "model": "Qwen/Qwen3.5-35B-A3B",
+  "model_revision": "59d61f3ce65a6d9863b86d2e96597125219dc754",
+  "schema": "design-studio.kv-benchmark-comparison/1"
+}

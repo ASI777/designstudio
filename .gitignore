@@ -1,0 +1,91 @@
+# ── local configuration and secrets ─────────────────────────────────────────
+# Runtime credentials belong in ~/.config/designstudio/env, never a checkout.
+.env
+.env.*
+!.env.example
+
+# ── build outputs ────────────────────────────────────────────────────────────
+# The supported build writes to $DS_WORK_ROOT (outside the checkout). These
+# patterns are defense in depth for unsupported/manual invocations.
+build/
+build_*/
+/build-agent/
+/build-agent-make/
+dist/
+dist_*/
+output/
+out/
+**/build/
+**/build_*/
+**/out/
+**/output/
+**/bin/
+**/obj/
+**/target/
+CMakeCache.txt
+CMakeFiles/
+CTestTestfile.cmake
+cmake_install.cmake
+compile_commands.json
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+
+# ── third-party build trees (vendored, regenerated) ──────────────────────────
+tools/opencv5_build/
+tools/**/build/
+
+# ── autosaves / backups / scratch ────────────────────────────────────────────
+*.autosave
+*.bak
+*.pre-regen.bak
+*.orig-backup/
+scratch/
+*.log
+
+# ── python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ── editor / OS ──────────────────────────────────────────────────────────────
+*.user
+.vs/
+.vscode/
+.codex/
+publish/
+.DS_Store
+
+# ── runtime data ─────────────────────────────────────────────────────────────
+# Datasets and generated artifacts are external by policy. These entries only
+# prevent accidental additions if an old tool is invoked from the checkout.
+/datasets/
+/datasheets/
+/artifacts/
+/generated/
+**/generated/
+/var/
+/reference-only/
+/references/*
+!/references/*.reference.json
+/campaign-artifacts/
+/robot-electronics-output/
+**/batch_out/
+**/component_image_dataset/
+**/synthetic_corpus/
+**/training_corpus/
+
+# Immutable replay fixtures may preserve production-shaped paths under
+# testdata; they are source inputs, not generated checkout state.
+!/testdata/work-package-fixture/**/generated/
+!/testdata/work-package-fixture/**/generated/**
+
+# ── sensitive or ad-hoc root captures ──────────────────────────────────────
+# digikeycred.png exposed a client secret and must never enter a repository.
+/digikeycred.png
+/Screenshot From *.png

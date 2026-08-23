@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:pcb-topology-study:1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "study_id", "product_id", "source_digest", "ranking_status", "candidates", "approval_required", "created_utc", "study_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.pcb-topology-study/1"},
+    "study_id": {"$ref": "#/$defs/id"},
+    "product_id": {"$ref": "#/$defs/id"},
+    "source_digest": {"$ref": "#/$defs/digest"},
+    "ranking_status": {"const": "provisional"},
+    "approval_required": {"const": true},
+    "created_utc": {"type": "string", "format": "date-time"},
+    "study_digest": {"$ref": "#/$defs/digest"},
+    "candidates": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/candidate"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "metric": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "weight", "value", "unit"],
+      "properties": {
+        "status": {"enum": ["pass", "fail", "incomplete", "not_applicable"]},
+        "weight": {"type": "number", "minimum": 0}, "value": {"type": ["number", "null"]},
+        "unit": {"type": "string"}, "method": {"type": "string"}
+      }
+    },
+    "island": {
+      "type": "object", "additionalProperties": false,
+      "required": ["island_id", "kind", "component_ids"],
+      "properties": {
+        "island_id": {"$ref": "#/$defs/id"}, "kind": {"enum": ["rigid", "flex"]},
+        "component_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+      }
+    },
+    "interconnect": {
+      "type": "object", "additionalProperties": false,
+      "required": ["interconnect_id", "kind", "net_id", "island_ids", "endpoint_component_ids", "evidence_status", "connector_pin_map", "estimated_length_mm", "minimum_bend_radius_mm", "estimated_voltage_drop_v", "evidence_digest"],
+      "properties": {
+        "interconnect_id": {"$ref": "#/$defs/id"}, "kind": {"enum": ["flex", "harness"]},
+        "net_id": {"type": "string", "minLength": 1},
+        "island_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "endpoint_component_ids": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/id"}},
+        "evidence_status": {"enum": ["verified", "incomplete", "rejected"]},
+        "connector_pin_map": {"type": "array", "items": {"type": "object"}},
+        "estimated_length_mm": {"type": ["number", "null"], "minimum": 0},
+        "minimum_bend_radius_mm": {"type": ["number", "null"], "minimum": 0},
+        "estimated_voltage_drop_v": {"type": ["number", "null"], "minimum": 0},
+        "maximum_length_mm": {"type": ["number", "null"], "minimum": 0},
+        "evidence_digest": {"anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]}
+      }
+    },
+    "candidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "topology", "status", "islands", "interconnects", "metrics", "hard_failures", "incomplete_analyses", "score", "rank", "rationale"],
+      "properties": {
+        "candidate_id": {"$ref": "#/$defs/id"}, "topology": {"enum": ["single_rigid", "rigid_flex", "multi_rigid_harness"]},
+        "status": {"enum": ["valid", "rejected", "incomplete"]},
+        "islands": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/island"}},
+        "interconnects": {"type": "array", "items": {"$ref": "#/$defs/interconnect"}},
+        "metrics": {"type": "object", "additionalProperties": {"$ref": "#/$defs/metric"}},
+        "hard_failures": {"type": "array", "items": {"type": "string"}},
+        "incomplete_analyses": {"type": "array", "items": {"type": "string"}},
+        "score": {"type": ["number", "null"]}, "rank": {"type": ["integer", "null"], "minimum": 1},
+        "rationale": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

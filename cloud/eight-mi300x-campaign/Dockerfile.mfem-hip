@@ -1,0 +1,22 @@
+FROM rocm/pytorch:rocm6.4.2_ubuntu22.04_py3.10_pytorch_release_2.5.1@sha256:37f41a1cd94019688669a1b20d33ea74156e0c129ef6b8270076ef214a6a1a2c
+
+ARG MFEM_COMMIT=d9d6526cc1749980a2ba1da16e2c1ca1e07d82ec
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      ca-certificates cmake g++ git make \
+ && rm -rf /var/lib/apt/lists/*
+RUN git clone https://github.com/mfem/mfem.git /opt/mfem \
+ && git -C /opt/mfem checkout --detach "${MFEM_COMMIT}" \
+ && test "$(git -C /opt/mfem rev-parse HEAD)" = "${MFEM_COMMIT}"
+RUN cmake -S /opt/mfem -B /opt/mfem/build \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_CXX_COMPILER=/opt/rocm/bin/hipcc \
+      -DMFEM_USE_HIP=YES \
+      -DCMAKE_HIP_ARCHITECTURES=gfx942 \
+      -DMFEM_ENABLE_EXAMPLES=YES \
+ && cmake --build /opt/mfem/build --parallel \
+ && cmake --build /opt/mfem/build --target check
+
+ENV MFEM_DIR=/opt/mfem
+WORKDIR /work
+ENTRYPOINT ["/bin/bash", "-lc"]

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:mechanical-contract:1",
+  "title": "FreeCAD-owned DesignStudio mechanical contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "contract_id", "revision", "status", "units", "source", "frame_to_world", "board", "fixed_items", "connector_locations", "contract_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.mechanical-contract/1"},
+    "contract_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "revision": {"type": "integer", "minimum": 1},
+    "status": {"const": "locked"},
+    "units": {"const": "mm"},
+    "source": {"type": "object"},
+    "frame_to_world": {"type": "object"},
+    "design_volume_mm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max"],
+      "properties": {
+        "min": {
+          "type": "array",
+          "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "max": {
+          "type": "array",
+          "prefixItems": [{"type": "number"}, {"type": "number"}, {"type": "number"}],
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "board": {
+      "type": "object",
+      "required": ["outline_pts", "cutouts", "thickness_mm", "z_range_mm", "mounting_holes", "height_zones", "cooling_zones", "service_clearances"],
+      "properties": {
+        "outline_pts": {"$ref": "#/$defs/polygon"},
+        "cutouts": {"type": "array", "items": {"$ref": "#/$defs/polygon"}},
+        "thickness_mm": {"type": "number", "exclusiveMinimum": 0},
+        "z_range_mm": {"$ref": "#/$defs/range"},
+        "mounting_holes": {"type": "array", "items": {"type": "object"}},
+        "height_zones": {"type": "array", "items": {"type": "object"}},
+        "cooling_zones": {"type": "array", "items": {"type": "object"}},
+        "service_clearances": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "fixed_items": {"type": "array", "items": {"type": "object"}},
+    "connector_locations": {"type": "array", "items": {"type": "object"}},
+    "contract_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "$defs": {
+    "point2": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "items": false, "minItems": 2, "maxItems": 2},
+    "polygon": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/point2"}},
+    "range": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "items": false, "minItems": 2, "maxItems": 2}
+  }
+}

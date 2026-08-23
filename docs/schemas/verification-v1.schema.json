@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:verification:1",
+  "title": "DesignStudio unified verification report",
+  "type": "object",
+  "required": ["schema", "generated_utc", "project", "constraint_profile", "overall_status", "categories"],
+  "properties": {
+    "schema": {"const": "design-studio.verification/1"},
+    "generated_utc": {"type": "string", "format": "date-time"},
+    "project": {"type": "object", "required": ["document_id", "revision", "file_sha256"]},
+    "constraint_profile": {"type": "object", "required": ["id", "source", "source_revision", "ipc_performance_class", "producibility_level"]},
+    "overall_status": {"enum": ["pass", "fail", "incomplete"]},
+    "categories": {
+      "type": "object",
+      "required": ["drc", "connectivity", "signal_integrity", "power_integrity", "thermal", "mechanical"],
+      "additionalProperties": {"$ref": "#/$defs/category"}
+    }
+  },
+  "$defs": {
+    "category": {
+      "type": "object",
+      "required": ["status", "required", "findings", "metrics"],
+      "properties": {
+        "status": {"enum": ["pass", "fail", "incomplete", "not_applicable"]},
+        "required": {"type": "boolean"},
+        "findings": {"type": "array", "items": {"type": "object", "required": ["code", "severity", "message", "metrics"]}},
+        "metrics": {"type": "object"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

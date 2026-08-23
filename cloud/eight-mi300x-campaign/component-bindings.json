@@ -1,0 +1,39 @@
+{
+  "schema": "multi-gpu-campaign.component-bindings/1",
+  "policy": {
+    "generated_mesh_authority": "visualization_only",
+    "cad_authority": "supplier_or_deterministic_ap242_only"
+  },
+  "components": [
+    {
+      "role": "switch",
+      "manufacturer": "CHERRY",
+      "mpn": "MX2A-H1NB",
+      "step_sha256": "385976f63e0d2f6114459f4d7165aa6bf48e28baa4995044ebb120adfb36d227"
+    },
+    {
+      "role": "usb_c",
+      "manufacturer": "GCT",
+      "mpn": "USB4085-GF-A",
+      "step_sha256": "7d95fbea12447fb3ffb062e788a5b9681f1179f0859d3da1a8e5f16e2f03c133"
+    },
+    {
+      "role": "jst_2pin",
+      "manufacturer": "JST",
+      "mpn": "B2B-PH-SM4-TB(LF)(SN)",
+      "step_sha256": "177ed9ea67e5ad82c5a07d2606c94943e63efc851de14137755ed934b02e6658"
+    },
+    {
+      "role": "compute_module",
+      "manufacturer": "Espressif Systems",
+      "mpn": "ESP32-S3-WROOM-1-N8R8",
+      "step_sha256": "b043f9ddf25a4430aa81bd88c83ca0335ba571c54cd7955a1ad56b891e849aff"
+    },
+    {
+      "role": "joystick",
+      "manufacturer": "Adafruit",
+      "mpn": "2765",
+      "step_sha256": "2a7652bb7a2ad7412d650b0147d3d002df62235baf87bc71ab3a61fbc076a589"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:mechanical-validation:1",
+  "title": "DesignStudio mechanical validation receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "status", "release_ready", "findings", "result_sha256"],
+  "properties": {
+    "schema": {"const": "design-studio.mechanical-validation/1"},
+    "status": {"enum": ["pass", "fail", "incomplete"]},
+    "release_ready": {"type": "boolean"},
+    "findings": {"type": "array", "items": {"type": "object"}},
+    "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "cavity_count": 4,
+  "elapsed_seconds": [
+    3.991631,
+    2.754943
+  ],
+  "generator": {
+    "authoritative_geometry": false,
+    "device": "AMD Instinct MI300X VF",
+    "name": "designstudio-rocm-support",
+    "rocm": "6.4.43484-123eb5128",
+    "seed": 20260726,
+    "version": 1
+  },
+  "image_digest": "5fb23d5aab3f60c30a25296740c2e48418ed12204ee02212b632d5287753c112",
+  "iteration": "zero-length-rib-fix",
+  "request_sha256": "2da1ce618abb6feba7d874189e0fa5897b6d701ca23c1eea8426d68040dc4b73",
+  "result_sha256": "6742df40921857fb9b79af0fe0ada47cbb9754cca18577473e1a53846e0882ec",
+  "rib_count": 13,
+  "runs_equal": true,
+  "schema": "design-studio.mi300x-rib-pocket-evidence/1"
+}

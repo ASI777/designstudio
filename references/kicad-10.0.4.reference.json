@@ -1,0 +1,63 @@
+{
+  "schema": "design-studio.reference/1",
+  "product": "KiCad",
+  "version": "10.0.4",
+  "tag": "10.0.4",
+  "commit": "f7414d419cae5df2d00e7eaacb16fc0e803799bc",
+  "retrieved_at": "2026-07-16",
+  "reference_only_path": "reference-only/kicad-10.0.4",
+  "artifacts": {
+    "linux_appimage_tar": {
+      "url": "https://downloads.kicad.org/kicad/linux/explore/stable/download/kicad-10.0.4-x86_64.AppImage.tar",
+      "path": "artifacts/kicad-10.0.4-x86_64.AppImage.tar",
+      "sha256": "4b1da0156cb1d180ba4a672e9a9981672390545c3b3b4575382b1662e959b220",
+      "installed_path": "appimage/kicad-10.0.4-x86_64.AppImage",
+      "installed_sha256": "5bdf5f5c3263fccc8aea72b3d534894770cf9a4b6f6560b73b4da874a9bd1a6a",
+      "appimage_runtime": "0.5.6"
+    },
+    "source_archive": {
+      "url": "https://gitlab.com/kicad/code/kicad/-/archive/10.0.4/kicad-10.0.4.tar.gz",
+      "path": "artifacts/kicad-source-10.0.4.tar.gz",
+      "sha256": "1218f8f9e10afba45d131198e1d7a9ac33075947a64f80190f2ffa7b0c83aeaa"
+    }
+  },
+  "upstream": {
+    "release": "https://www.kicad.org/blog/2026/06/KiCad-10.0.4-Release/",
+    "source_tag": "https://gitlab.com/kicad/code/kicad/-/tags/10.0.4",
+    "license": "https://gitlab.com/kicad/code/kicad/-/blob/10.0.4/LICENSE.README",
+    "license_summary": "Predominantly GPL-3.0-or-later; individual bundled dependencies and assets retain their own licenses."
+  },
+  "policy": {
+    "distributed": false,
+    "build_dependency": false,
+    "product_name": "DesignStudio",
+    "implementation_method": "Independent implementation from documented behavior and differential tests; no formal legal clean-room claim."
+  },
+  "observations": [
+    {
+      "subsystem": "transactional-interactive-routing",
+      "reference_files": [
+        "pcbnew/router/pns_router.h",
+        "pcbnew/router/pns_shove.h",
+        "qa/tests/pcbnew/test_pns_basics.cpp",
+        "qa/data/pcbnew/pns_regressions/tests.lst"
+      ],
+      "observable_contract": [
+        "cursor updates expose a legal-or-rejected preview",
+        "cancel restores the exact pre-session board",
+        "shoved items spring back when the cursor no longer requires displacement",
+        "blocked moves have explicit failure state"
+      ],
+      "designstudio_implementation": [
+        "core/include/designcore/interactive_router.h",
+        "core/src/interactive_router.cpp"
+      ],
+      "differential_tests": [
+        "testInteractiveRouteCommitCancelAndSpringback",
+        "testInteractiveRouteRollbackAndRecursiveShove",
+        "testInteractiveRouteCapiCompatibility"
+      ],
+      "notes": "Only public lifecycle/state surfaces and named regression cases were used to define the behavioral contract; no upstream implementation text, identifiers, or resources were copied."
+    }
+  ]
+}

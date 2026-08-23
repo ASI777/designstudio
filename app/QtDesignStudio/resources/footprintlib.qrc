@@ -1,0 +1,16 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/fp">
+    <file>icons/tool-select.svg</file>
+    <file>icons/tool-node.svg</file>
+    <file>icons/tool-pad.svg</file>
+    <file>icons/tool-rect.svg</file>
+    <file>icons/tool-ellipse.svg</file>
+    <file>icons/tool-polygon.svg</file>
+    <file>icons/tool-line.svg</file>
+    <file>icons/tool-pen.svg</file>
+    <file>icons/tool-text.svg</file>
+    <file>icons/tool-measure.svg</file>
+    <file>icons/tool-fit.svg</file>
+    <file>inkscape.gpl</file>
+</qresource>
+</RCC>

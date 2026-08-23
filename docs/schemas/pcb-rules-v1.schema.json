@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:pcb-rules:1",
+  "title": "DesignStudio PCB manufacturing and verification profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "id", "name", "ipc_performance_class",
+    "producibility_level", "source", "source_revision", "limits_mm",
+    "checks", "severity"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"},
+    "name": {"type": "string", "minLength": 1},
+    "ipc_performance_class": {"enum": [1, 2, 3]},
+    "producibility_level": {"enum": ["A", "B", "C"]},
+    "source": {"type": "string", "minLength": 1},
+    "source_revision": {"type": "string", "minLength": 1},
+    "fabricator": {"type": "string"},
+    "assembler": {"type": "string"},
+    "limits_mm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_clearance", "min_trace_width", "min_mechanical_drill",
+        "min_annular_ring", "min_drill_to_drill", "min_microvia_drill",
+        "min_microvia_wall", "min_copper_to_edge", "min_copper_to_hole",
+        "min_courtyard_clearance", "min_mask_sliver", "min_silk_width"
+      ],
+      "properties": {
+        "default_clearance": {"type": "number", "exclusiveMinimum": 0},
+        "min_trace_width": {"type": "number", "exclusiveMinimum": 0},
+        "min_mechanical_drill": {"type": "number", "exclusiveMinimum": 0},
+        "min_annular_ring": {"type": "number", "exclusiveMinimum": 0},
+        "min_drill_to_drill": {"type": "number", "exclusiveMinimum": 0},
+        "min_microvia_drill": {"type": "number", "exclusiveMinimum": 0},
+        "min_microvia_wall": {"type": "number", "exclusiveMinimum": 0},
+        "min_copper_to_edge": {"type": "number", "exclusiveMinimum": 0},
+        "min_copper_to_hole": {"type": "number", "exclusiveMinimum": 0},
+        "min_courtyard_clearance": {"type": "number", "exclusiveMinimum": 0},
+        "min_mask_sliver": {"type": "number", "exclusiveMinimum": 0},
+        "min_silk_width": {"type": "number", "exclusiveMinimum": 0}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["connectivity", "skew", "release_requires_native_drc"],
+      "properties": {
+        "connectivity": {"type": "boolean"},
+        "skew": {"type": "boolean"},
+        "release_requires_native_drc": {"type": "boolean"}
+      }
+    },
+    "severity": {
+      "type": "object",
+      "additionalProperties": {"enum": ["error", "warning", "info", "disabled"]}
+    }
+  }
+}

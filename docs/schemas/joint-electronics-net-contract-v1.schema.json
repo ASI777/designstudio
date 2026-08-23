@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/joint-electronics-net-contract-v1.schema.json",
+  "title": "Datasheet-traceable joint electronics net contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "status", "scope", "operating_bus_v", "transient_ceiling_v",
+    "exact_components", "engineering_value_components", "required_interfaces",
+    "pin_mux_receipts", "unresolved_exact_bindings", "readiness"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.joint-electronics-net-contract/1"},
+    "product_id": {"type": "string", "minLength": 1},
+    "revision": {"type": "integer", "minimum": 1},
+    "status": {"const": "electrically_structured_candidate_incomplete_exact_binding"},
+    "scope": {"type": "string", "minLength": 1},
+    "operating_bus_v": {"type": "number", "exclusiveMinimum": 0},
+    "transient_ceiling_v": {"type": "number", "exclusiveMinimum": 0},
+    "exact_components": {
+      "type": "array",
+      "minItems": 14,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ref", "role", "mpn", "pin_evidence", "pins"],
+        "properties": {
+          "ref": {"type": "string", "minLength": 1},
+          "role": {"type": "string", "minLength": 1},
+          "mpn": {"type": "string", "minLength": 1},
+          "pin_evidence": {"type": "object", "minProperties": 3},
+          "pins": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["number", "name", "disposition"],
+              "properties": {
+                "number": {"type": "integer", "minimum": 1},
+                "name": {"type": "string", "minLength": 1},
+                "disposition": {"enum": ["connected", "no_connect"]},
+                "net": {"type": "string", "minLength": 1}
+              },
+              "allOf": [
+                {
+                  "if": {"properties": {"disposition": {"const": "connected"}}, "required": ["disposition"]},
+                  "then": {"required": ["net"]},
+                  "else": {"not": {"required": ["net"]}}
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "engineering_value_components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ref", "function", "value", "binding_status", "pins"],
+        "properties": {
+          "ref": {"type": "string", "minLength": 1},
+          "function": {"type": "string", "minLength": 1},
+          "value": {"type": "string", "minLength": 1},
+          "binding_status": {"const": "engineering_value_candidate_exact_mpn_pending"},
+          "pins": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["number", "net"],
+              "properties": {
+                "number": {"type": "integer", "minimum": 1},
+                "net": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        }
+      }
+    },
+    "required_interfaces": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/stringArray"},
+      "minProperties": 4
+    },
+    "pin_mux_receipts": {
+      "type": "array",
+      "minItems": 14,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["function", "mcu_pin", "port", "net"],
+        "properties": {
+          "function": {"type": "string", "minLength": 1},
+          "mcu_pin": {"type": "integer", "minimum": 1},
+          "port": {"type": "string", "minLength": 1},
+          "net": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "unresolved_exact_bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "finding_id", "function", "severity", "owner_domains", "known_inputs",
+          "missing_inputs", "blocked_outputs", "closure_evidence", "reason"
+        ],
+        "properties": {
+          "finding_id": {"type": "string", "pattern": "^ELEC-[A-Z]+-[0-9]{3}$"},
+          "function": {"type": "string", "minLength": 1},
+          "severity": {
+            "enum": [
+              "safety_blocking", "functional_blocking", "verification_blocking",
+              "fabrication_blocking"
+            ]
+          },
+          "owner_domains": {"$ref": "#/$defs/nonEmptyStringArray"},
+          "known_inputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+          "missing_inputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+          "blocked_outputs": {"$ref": "#/$defs/nonEmptyStringArray"},
+          "closure_evidence": {"$ref": "#/$defs/nonEmptyStringArray"},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exact_active_component_pin_disposition", "three_phase_power_topology",
+        "dual_can_fd_logic_topology", "fabrication_data",
+        "functional_safety_qualification", "hardware_test_evidence"
+      ],
+      "properties": {
+        "exact_active_component_pin_disposition": {"const": "pass"},
+        "three_phase_power_topology": {"const": "pass"},
+        "dual_can_fd_logic_topology": {"const": "pass"},
+        "fabrication_data": {"const": "incomplete"},
+        "functional_safety_qualification": {"const": "incomplete"},
+        "hardware_test_evidence": {"const": "incomplete"}
+      }
+    }
+  },
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "nonEmptyStringArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  }
+}

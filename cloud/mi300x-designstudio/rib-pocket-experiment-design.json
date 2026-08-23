@@ -1,0 +1,55 @@
+{
+  "schema": "design-studio.rib-pocket-experiment-design/1",
+  "document_id": "amd-credit-rib-pocket-experiment",
+  "revision": 1,
+  "design_volume_mm": {
+    "min": [0.0, 0.0, 0.0],
+    "max": [160.0, 110.0, 35.0]
+  },
+  "hardware": [
+    {
+      "id": "controller-main-pcb",
+      "position_mm": [80.0, 55.0, 8.0],
+      "role": "primary PCB datum"
+    },
+    {
+      "id": "compute-module",
+      "position_mm": [55.0, 55.0, 12.0],
+      "protected_bounds_mm": {
+        "min": [42.0, 42.0, 9.0],
+        "max": [68.0, 68.0, 22.0]
+      }
+    },
+    {
+      "id": "power-module",
+      "position_mm": [110.0, 55.0, 12.0],
+      "protected_bounds_mm": {
+        "min": [97.0, 40.0, 9.0],
+        "max": [123.0, 70.0, 24.0]
+      }
+    },
+    {
+      "id": "display-module",
+      "position_mm": [80.0, 85.0, 28.0],
+      "protected_bounds_mm": {
+        "min": [55.0, 75.0, 24.0],
+        "max": [105.0, 98.0, 32.0]
+      }
+    },
+    {
+      "id": "side-connector",
+      "position_mm": [152.0, 55.0, 16.0],
+      "protected_bounds_mm": {
+        "min": [145.0, 45.0, 10.0],
+        "max": [158.0, 65.0, 24.0]
+      }
+    }
+  ],
+  "manufacturing_intent": {
+    "process": "injection_molding",
+    "minimum_wall_mm": 1.8,
+    "minimum_rib_mm": 1.2,
+    "clearance_mm": 1.0
+  },
+  "authority": "experiment-only; exact FreeCAD host checks required"
+}

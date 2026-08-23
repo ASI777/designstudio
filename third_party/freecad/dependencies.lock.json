@@ -1,0 +1,19 @@
+{
+  "platform": "Ubuntu 26.10 amd64",
+  "compiler": "GCC 15.2.0",
+  "cmake": "4.2.3",
+  "qt": "6.10.2",
+  "python": "3.14.4",
+  "opencascade": "7.9.2",
+  "coin3d": "4.0.6",
+  "pivy": "0.6.10",
+  "pyside": "6.10.2",
+  "shiboken": "6.10.2",
+  "boost": "1.90.0",
+  "vtk": "9.5.2",
+  "med": "4.1.0",
+  "eigen": "3.4.0",
+  "yaml_cpp": "0.8.0",
+  "swig": "4.4.0",
+  "fmt": "11.1.4"
+}

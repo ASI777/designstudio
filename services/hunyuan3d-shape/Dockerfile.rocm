@@ -1,0 +1,46 @@
+# Shape-only Hunyuan3D-2.1 image for one AMD Instinct MI300X.
+# PyTorch/ROCm versions match Tencent's tested PyTorch 2.5.1 API closely.
+FROM rocm/pytorch:rocm6.4.2_ubuntu22.04_py3.10_pytorch_release_2.5.1@sha256:37f41a1cd94019688669a1b20d33ea74156e0c129ef6b8270076ef214a6a1a2c
+
+ARG HUNYUAN3D_COMMIT=82920d643c0dc2f7bfd7255f45f62d386edfe60c
+ARG HUNYUAN3D_SHA256=c26df8019841e8715095e680ba72907a515c101a95ad0d4c6ba0553e8b5732b6
+ENV DEBIAN_FRONTEND=noninteractive \
+    HUNYUAN3D_ROOT=/opt/Hunyuan3D-2.1 \
+    PYTHONPATH=/opt/design-studio:/opt/Hunyuan3D-2.1/hy3dshape \
+    DS_3D_MODEL=tencent/Hunyuan3D-2.1 \
+    DS_3D_MODEL_REVISION=0b94677654c57bb9a6b6845cd7b704ccf551d327 \
+    DS_3D_CODE_REVISION=82920d643c0dc2f7bfd7255f45f62d386edfe60c \
+    HIP_VISIBLE_DEVICES=0 \
+    CUDA_VISIBLE_DEVICES=0 \
+    PYTORCH_HIP_ALLOC_CONF=expandable_segments:True \
+    DS_BUILD_OPS=0
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        curl libgl1 libglib2.0-0 libgomp1 ninja-build \
+    && rm -rf /var/lib/apt/lists/* \
+    && curl --fail --location --retry 3 \
+      "https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1/archive/${HUNYUAN3D_COMMIT}.tar.gz" \
+      --output /tmp/hunyuan3d-2.1.tar.gz \
+    && echo "${HUNYUAN3D_SHA256}  /tmp/hunyuan3d-2.1.tar.gz" \
+      | sha256sum --check --strict \
+    && mkdir -p "${HUNYUAN3D_ROOT}" \
+    && tar -xzf /tmp/hunyuan3d-2.1.tar.gz --strip-components=1 \
+      -C "${HUNYUAN3D_ROOT}" \
+    && rm /tmp/hunyuan3d-2.1.tar.gz
+
+WORKDIR /opt/design-studio
+COPY services/hunyuan3d-shape/requirements.lock.txt ./requirements.lock.txt
+RUN pip install --no-cache-dir -r requirements.lock.txt
+COPY services/hunyuan3d-shape/cad_data.py \
+     services/hunyuan3d-shape/lora_checkpoint.py \
+     services/hunyuan3d-shape/prepare_training.py \
+     services/hunyuan3d-shape/go_no_go.py \
+     services/hunyuan3d-shape/precompute_latents.py \
+     services/hunyuan3d-shape/train_mi300x.sh ./
+COPY services/ai-gateway/app.py services/ai-gateway/proposal.py \
+     services/ai-gateway/cad_assist_proposal.py \
+     services/ai-gateway/shape_backend.py services/ai-gateway/support_jobs.py \
+     services/ai-gateway/reference_form_jobs.py ./gateway/
+
+EXPOSE 8000
+CMD ["uvicorn", "app:app", "--app-dir", "/opt/design-studio/gateway", "--host", "0.0.0.0", "--port", "8000"]

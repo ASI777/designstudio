@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:fabrication-profile:1",
+  "title": "DesignStudio contracted PCB fabrication profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "id", "fabricator", "assembler", "source", "approval",
+    "pcb_rules", "stackup", "impedance", "outputs"
+  ],
+  "properties": {
+    "schema": {"const": "design-studio.fabrication-profile/1"},
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"},
+    "fabricator": {"type": "string", "minLength": 1},
+    "assembler": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_path", "document_sha256", "uri", "revision", "retrieved_utc"],
+      "properties": {
+        "document_path": {"type": "string", "minLength": 1},
+        "document_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "uri": {"type": "string", "minLength": 1},
+        "revision": {"type": "string", "minLength": 1},
+        "retrieved_utc": {"type": "string", "format": "date-time"}
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reviewer", "approved_utc"],
+      "properties": {
+        "status": {"const": "approved"},
+        "reviewer": {"type": "string", "minLength": 1},
+        "approved_utc": {"type": "string", "format": "date-time"}
+      }
+    },
+    "pcb_rules": {"$ref": "pcb-rules-v1.schema.json"},
+    "stackup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finished_thickness_mm", "thickness_tolerance_mm", "surface_finish",
+        "solder_mask_color", "silkscreen_color", "layers"
+      ],
+      "properties": {
+        "finished_thickness_mm": {"type": "number", "exclusiveMinimum": 0},
+        "thickness_tolerance_mm": {"type": "number", "exclusiveMinimum": 0},
+        "surface_finish": {"type": "string", "minLength": 1},
+        "solder_mask_color": {"type": "string", "minLength": 1},
+        "silkscreen_color": {"type": "string", "minLength": 1},
+        "layers": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["order", "name", "kind", "material", "thickness_mm"],
+            "properties": {
+              "order": {"type": "integer", "minimum": 0},
+              "name": {"type": "string", "minLength": 1},
+              "kind": {"enum": ["copper", "dielectric"]},
+              "material": {"type": "string", "minLength": 1},
+              "thickness_mm": {"type": "number", "exclusiveMinimum": 0},
+              "copper_weight_oz": {"type": "number", "exclusiveMinimum": 0},
+              "dielectric_er": {"type": "number", "exclusiveMinimum": 1},
+              "loss_tangent": {"type": "number", "minimum": 0}
+            }
+          }
+        }
+      }
+    },
+    "impedance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coupon_required", "targets"],
+      "properties": {
+        "coupon_required": {"type": "boolean"},
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["net_class", "kind", "target_ohm", "tolerance_pct", "layer"],
+            "properties": {
+              "net_class": {"type": "string", "minLength": 1},
+              "kind": {"enum": ["single-ended", "differential"]},
+              "target_ohm": {"type": "number", "exclusiveMinimum": 0},
+              "tolerance_pct": {"type": "number", "exclusiveMinimum": 0},
+              "layer": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gerber_format", "coordinate_precision", "origin", "separate_pth_npth",
+        "solder_mask_expansion_mm", "paste_reduction_mm", "silkscreen",
+        "pick_place"
+      ],
+      "properties": {
+        "gerber_format": {"const": "Gerber X2"},
+        "coordinate_precision": {"enum": [5, 6]},
+        "origin": {"const": "absolute"},
+        "separate_pth_npth": {"const": true},
+        "solder_mask_expansion_mm": {"type": "number", "minimum": 0},
+        "paste_reduction_mm": {"type": "number", "minimum": 0},
+        "silkscreen": {"enum": ["none", "project-primitives"]},
+        "pick_place": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["include_through_hole", "bottom_rotation", "rotation_corrections_deg"],
+          "properties": {
+            "include_through_hole": {"type": "boolean"},
+            "bottom_rotation": {"enum": ["viewed-from-top", "viewed-from-bottom"]},
+            "rotation_corrections_deg": {
+              "type": "object",
+              "additionalProperties": {"type": "number"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

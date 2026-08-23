@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:authoritative-dimension-set:1",
+  "title": "DesignStudio authoritative engineering dimension set",
+  "description": "Dimensions eligible for deterministic asset generation. Raster and AI estimates are intentionally absent from the source vocabulary.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "set_id", "units_policy", "quantities"],
+  "properties": {
+    "schema": {"const": "design-studio.authoritative-dimension-set/1"},
+    "set_id": {"$ref": "#/$defs/id"},
+    "units_policy": {"const": "explicit_no_implicit_conversion"},
+    "quantities": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4096,
+      "items": {"$ref": "#/$defs/quantity"}
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "tolerance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minus", "plus"],
+      "properties": {
+        "minus": {"type": "number", "minimum": 0},
+        "plus": {"type": "number", "minimum": 0}
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["instrument_id", "certificate_sha256", "valid_at_measurement"],
+      "properties": {
+        "instrument_id": {"type": "string", "minLength": 1},
+        "certificate_sha256": {"$ref": "#/$defs/digest"},
+        "valid_at_measurement": {"const": true}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "reference", "revision", "sha256"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "engineering_requirement",
+            "verified_drawing",
+            "manufacturer_datasheet",
+            "calibrated_measurement",
+            "standard_constraint",
+            "derived_calculation"
+          ]
+        },
+        "reference": {"type": "string", "minLength": 1},
+        "revision": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "calibration": {"$ref": "#/$defs/calibration"},
+        "input_quantity_ids": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"$ref": "#/$defs/id"}
+        },
+        "method": {"type": "string", "minLength": 1}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"kind": {"const": "calibrated_measurement"}}},
+          "then": {"required": ["calibration"]}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "derived_calculation"}}},
+          "then": {"required": ["input_quantity_ids", "method"]}
+        }
+      ]
+    },
+    "quantity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "value", "unit", "tolerance", "criticality", "source"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "value": {"type": "number"},
+        "unit": {
+          "enum": ["1", "mm", "m", "deg", "rad", "kg", "g", "N", "Nm", "Nmm", "Pa", "MPa", "GPa", "A", "V", "W", "Wh", "ohm", "Hz", "rpm", "s", "degC", "W_per_mK", "kg_per_m3", "rad_per_s", "rad_per_s2", "Nm_per_A", "ohm_per_m", "m_per_s", "m_per_s2", "W_per_m2K", "J_per_kgK", "degC_per_W"]
+        },
+        "tolerance": {"$ref": "#/$defs/tolerance"},
+        "criticality": {"enum": ["interface", "safety", "functional", "manufacturing", "cosmetic"]},
+        "source": {"$ref": "#/$defs/source"}
+      }
+    }
+  }
+}

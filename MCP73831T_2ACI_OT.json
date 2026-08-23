@@ -1,0 +1,186 @@
+{
+  "schema": "design-studio.component/2",
+  "component": {
+    "manufacturer": "Microchip Technology",
+    "mpn": "MCP73831T-2ACI/OT",
+    "description": "Miniature Single-Cell, Fully Integrated Li-Ion, Li-Polymer Charge Management Controller",
+    "category": "power_management",
+    "datasheet": {
+      "title": "MCP73831/2 Datasheet",
+      "revision": "DS20001984H",
+      "date": "2020",
+      "url": ""
+    },
+    "distributors": []
+  },
+  "symbol": {
+    "ref_des_prefix": "U",
+    "pins": [
+      {
+        "number": "1",
+        "name": "STAT",
+        "electrical_type": "output",
+        "description": "Charge Status Output (Tri-State)",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "2",
+        "name": "VSS",
+        "electrical_type": "power_in",
+        "description": "Battery Management 0V Reference",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "3",
+        "name": "VBAT",
+        "electrical_type": "power_out",
+        "description": "Battery Charge Control Output",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "4",
+        "name": "VDD",
+        "electrical_type": "power_in",
+        "description": "Battery Management Input Supply",
+        "alternate_functions": [],
+        "package_length_mm": null
+      },
+      {
+        "number": "5",
+        "name": "PROG",
+        "electrical_type": "passive",
+        "description": "Current Regulation Set and Charge Control Enable",
+        "alternate_functions": [],
+        "package_length_mm": null
+      }
+    ]
+  },
+  "electrical": {
+    "high_speed": {
+      "diff_pairs": [],
+      "single_ended": []
+    },
+    "power_domains": [
+      {
+        "name": "VDD",
+        "vnom_v": 5.0,
+        "vmin_v": 3.75,
+        "vmax_v": 6.0,
+        "max_current_a": 0.5,
+        "pins": ["4"]
+      },
+      {
+        "name": "VSS",
+        "vnom_v": 0.0,
+        "vmin_v": 0.0,
+        "vmax_v": 0.0,
+        "max_current_a": null,
+        "pins": ["2"]
+      }
+    ],
+    "required_externals": [
+      {
+        "purpose": "Charge current programming",
+        "value": "Resistor (2k to 67k) to VSS",
+        "constraints": "Sets fast charge current from 500mA down to 15mA"
+      },
+      {
+        "purpose": "Input decoupling",
+        "value": "4.7uF Ceramic",
+        "constraints": "Required for stability"
+      },
+      {
+        "purpose": "Output decoupling",
+        "value": "4.7uF Ceramic",
+        "constraints": "Required for stability"
+      }
+    ]
+  },
+  "footprint": {
+    "name": "SOT-23-5",
+    "ipc_name": "SOT23-5",
+    "mount": "smd",
+    "body": {
+      "length_mm": 2.9,
+      "width_mm": 1.6,
+      "height_mm": 1.45
+    },
+    "pitch_mm": 0.95,
+    "bga": null,
+    "pads": [
+      {
+        "number": "1",
+        "x_mm": -0.95,
+        "y_mm": -1.4,
+        "width_mm": 0.6,
+        "length_mm": 1.2,
+        "shape": "rect"
+      },
+      {
+        "number": "2",
+        "x_mm": 0.0,
+        "y_mm": -1.4,
+        "width_mm": 0.6,
+        "length_mm": 1.2,
+        "shape": "rect"
+      },
+      {
+        "number": "3",
+        "x_mm": 0.95,
+        "y_mm": -1.4,
+        "width_mm": 0.6,
+        "length_mm": 1.2,
+        "shape": "rect"
+      },
+      {
+        "number": "4",
+        "x_mm": 0.95,
+        "y_mm": 1.4,
+        "width_mm": 0.6,
+        "length_mm": 1.2,
+        "shape": "rect"
+      },
+      {
+        "number": "5",
+        "x_mm": -0.95,
+        "y_mm": 1.4,
+        "width_mm": 0.6,
+        "length_mm": 1.2,
+        "shape": "rect"
+      }
+    ],
+    "courtyard_margin_mm": 0.25,
+    "derived_from_outline": false,
+    "source": {
+      "pages": [1],
+      "drawing": "SOT-23-5 package"
+    }
+  },
+  "orientation": {
+    "pin1_marker": "dot",
+    "pin1_position": "bottom-left",
+    "polarity": {
+      "has_polarity": false,
+      "cathode_pin": null
+    }
+  },
+  "package_3d": {
+    "height_mm": 1.45,
+    "standoff_mm": 0.0,
+    "shape": "box"
+  },
+  "extraction": {
+    "confidence": {
+      "symbol": 1.0,
+      "electrical": 1.0,
+      "footprint": 0.8
+    },
+    "pages_used": [1, 2, 3],
+    "warnings": [
+      "Footprint dimensions for SOT-23-5 are approximate and should be verified with the official Microchip packaging specification."
+    ]
+  }
+}

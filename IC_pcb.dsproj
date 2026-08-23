@@ -1,0 +1,269 @@
+{
+  "version": 2,
+  "board_width_mm": 100,
+  "board_height_mm": 80,
+  "grid_mm": 1.27,
+  "copper_layers": 2,
+  "dielectric_er": 4.4,
+  "dielectric_h_mm": 0.2,
+  "loss_tangent": 0.02,
+  "copper_t_mm": 0.035,
+  "nets": null,
+  "net_table": [],
+  "net_classes": [
+    {
+      "id": 0,
+      "name": "Default",
+      "clearance_mm": 0.2,
+      "trace_width_mm": 0.25,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.3,
+      "diff_pair_gap_mm": 0,
+      "max_skew_mm": 0,
+      "microvia": false,
+      "z0_ohm": 0,
+      "zdiff_ohm": 0
+    }
+  ],
+  "footprints": [
+    {
+      "ref": "U1",
+      "lib": "SLG46620V_STQFN-20",
+      "x_mm": 39.37,
+      "y_mm": 27.94,
+      "rot_deg": 0,
+      "side": 0,
+      "h3d_mm": 0.55,
+      "pads": [
+        {
+          "name": "1",
+          "x_mm": -0.95,
+          "y_mm": -1.2,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "2",
+          "x_mm": -0.95,
+          "y_mm": -0.8,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "3",
+          "x_mm": -0.95,
+          "y_mm": -0.4,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "4",
+          "x_mm": -0.95,
+          "y_mm": 0,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "5",
+          "x_mm": -0.95,
+          "y_mm": 0.4,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "6",
+          "x_mm": -0.95,
+          "y_mm": 0.8,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "7",
+          "x_mm": -0.95,
+          "y_mm": 1.2,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "8",
+          "x_mm": -0.4,
+          "y_mm": 1.45,
+          "w_mm": 0.25,
+          "h_mm": 0.6,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "9",
+          "x_mm": 0,
+          "y_mm": 1.45,
+          "w_mm": 0.25,
+          "h_mm": 0.6,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "10",
+          "x_mm": 0.4,
+          "y_mm": 1.45,
+          "w_mm": 0.25,
+          "h_mm": 0.6,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "11",
+          "x_mm": 0.95,
+          "y_mm": 1.2,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "12",
+          "x_mm": 0.95,
+          "y_mm": 0.8,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "13",
+          "x_mm": 0.95,
+          "y_mm": 0.4,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "14",
+          "x_mm": 0.95,
+          "y_mm": 0,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "15",
+          "x_mm": 0.95,
+          "y_mm": -0.4,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "16",
+          "x_mm": 0.95,
+          "y_mm": -0.8,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "17",
+          "x_mm": 0.95,
+          "y_mm": -1.2,
+          "w_mm": 0.6,
+          "h_mm": 0.25,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "18",
+          "x_mm": 0.4,
+          "y_mm": -1.45,
+          "w_mm": 0.25,
+          "h_mm": 0.6,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "19",
+          "x_mm": 0,
+          "y_mm": -1.45,
+          "w_mm": 0.25,
+          "h_mm": 0.6,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        },
+        {
+          "name": "20",
+          "x_mm": -0.4,
+          "y_mm": -1.45,
+          "w_mm": 0.25,
+          "h_mm": 0.6,
+          "net": -1,
+          "th": false,
+          "drill_mm": 0,
+          "pkg_delay_mm": 0
+        }
+      ]
+    }
+  ],
+  "traces": [],
+  "vias": [],
+  "stackup": null,
+  "match_groups": null,
+  "planes": null,
+  "class_pair_rules": null,
+  "net_rules": null,
+  "channel_blocks": null
+}

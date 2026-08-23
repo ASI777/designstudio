@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:design-studio:schema:component-selection-plan:1",
+  "title": "DesignStudio component selection plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "plan_id", "product_id", "target_quantity", "market", "ranking_policy", "requirements", "created_utc", "plan_digest"],
+  "properties": {
+    "schema": {"const": "design-studio.component-selection-plan/1"},
+    "plan_id": {"$ref": "#/$defs/id"},
+    "product_id": {"$ref": "#/$defs/id"},
+    "target_quantity": {"type": "integer", "minimum": 1},
+    "market": {"type": "string", "minLength": 2, "maxLength": 32},
+    "ranking_policy": {"const": "reliability_first_verified_metrics_only"},
+    "requirements": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/requirement"}},
+    "created_utc": {"type": "string", "format": "date-time"},
+    "plan_digest": {"$ref": "#/$defs/digest"}
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9._:-]{0,127}$"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "finite": {"type": "number", "minimum": -1000000000, "maximum": 1000000000},
+    "requirement": {
+      "type": "object", "additionalProperties": false,
+      "required": ["requirement_id", "role", "quantity", "critical", "hard_constraints", "preferences"],
+      "properties": {
+        "requirement_id": {"$ref": "#/$defs/id"}, "role": {"type": "string", "minLength": 1},
+        "quantity": {"type": "integer", "minimum": 1}, "critical": {"type": "boolean"},
+        "hard_constraints": {"type": "object", "additionalProperties": true},
+        "preferences": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0}},
+        "maximum_bounds_mm": {"type": "array", "prefixItems": [{"$ref": "#/$defs/finite"}, {"$ref": "#/$defs/finite"}, {"$ref": "#/$defs/finite"}], "minItems": 3, "maxItems": 3},
+        "allowed_packages": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      }
+    }
+  }
+}

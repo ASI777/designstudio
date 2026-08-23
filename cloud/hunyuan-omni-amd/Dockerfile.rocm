@@ -1,0 +1,38 @@
+FROM rocm/pytorch:rocm6.4.2_ubuntu22.04_py3.10_pytorch_release_2.5.1@sha256:37f41a1cd94019688669a1b20d33ea74156e0c129ef6b8270076ef214a6a1a2c
+
+ARG HUNYUAN_OMNI_COMMIT=4d47c0cc2bd0c4281963a7314ab330a5af36bfa8
+ARG HUNYUAN_OMNI_SHA256=1191700188114ac9fd257ed617c3a46bb523adc90a05316c2bbed433063e32d3
+ENV HIP_VISIBLE_DEVICES=0 \
+    CUDA_VISIBLE_DEVICES=0 \
+    PYTORCH_HIP_ALLOC_CONF=expandable_segments:True \
+    PYTHONPATH=/opt/Hunyuan3D-Omni \
+    DS_OMNI_MODEL_REVISION=70e803bfb4e127d534049d8ab8c8cb511780d485 \
+    DS_HUNYUAN_MOCK=0 \
+    DS_HUNYUAN_STORE=/var/lib/designstudio/jobs
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends curl libgl1 libglib2.0-0 \
+ && rm -rf /var/lib/apt/lists/* \
+ && curl --fail --location --retry 3 \
+      "https://github.com/Tencent-Hunyuan/Hunyuan3D-Omni/archive/${HUNYUAN_OMNI_COMMIT}.tar.gz" \
+      --output /tmp/hunyuan3d-omni.tar.gz \
+ && echo "${HUNYUAN_OMNI_SHA256}  /tmp/hunyuan3d-omni.tar.gz" | sha256sum --check --strict \
+ && mkdir -p /opt/Hunyuan3D-Omni \
+ && tar -xzf /tmp/hunyuan3d-omni.tar.gz --strip-components=1 -C /opt/Hunyuan3D-Omni \
+ && rm /tmp/hunyuan3d-omni.tar.gz
+
+WORKDIR /opt/service
+COPY cloud/hunyuan-omni-amd/requirements.lock.txt ./requirements.lock.txt
+RUN pip install --no-cache-dir -r requirements.lock.txt
+COPY cloud/hunyuan-omni-amd/app.py cloud/hunyuan-omni-amd/omni_runner.py \
+     cloud/hunyuan-omni-amd/multiview.py ./
+RUN useradd --system --uid 10001 --create-home designstudio \
+ && mkdir -p /var/lib/designstudio/jobs \
+              /home/designstudio/.cache/huggingface \
+              /home/designstudio/.cache/hy3dgen \
+ && chown -R designstudio:designstudio \
+              /var/lib/designstudio \
+              /home/designstudio/.cache
+USER designstudio
+EXPOSE 8000
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]

@@ -1,0 +1,396 @@
+openapi: 3.1.0
+info:
+  title: Design Studio AI Gateway
+  version: "1.0.0"
+  description: >
+    Inference gateway served on AMD Instinct MI300X (ROCm/HIP) in the AMD cloud.
+    Self-hosts a 70B-class copilot via vLLM-on-ROCm. The desktop app is a thin
+    client and never links ROCm; it calls these endpoints. Every geometry/design
+    mutation comes back as a revision-bound ProposalContract v2. The gateway
+    checks only structure; trusted client state, host revisions, mandatory gate
+    results, and replay protection are required before it can touch the model.
+servers:
+  - url: https://ai-gateway.internal/v1
+    description: AMD-cloud MI300X service (production)
+  - url: http://localhost:8000/v1
+    description: local mock mode (no GPU)
+paths:
+  /health:
+    get:
+      summary: liveness + GPU/model status
+      responses:
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  gpu: { type: string, example: "MI300X" }
+                  rocm: { type: string, example: "7.0" }
+                  models_loaded: { type: array, items: { type: string } }
+                  mock: { type: boolean }
+  /chat:
+    post:
+      summary: copilot chat with tool-use over the design action API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [messages]
+              properties:
+                messages:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      role: { enum: [system, user, assistant, tool] }
+                      content: { type: string }
+                tools: { type: array, items: { type: object } }
+                cache:
+                  type: object
+                  additionalProperties: false
+                  description: >
+                    Optional project/session-isolated vLLM prefix cache. The
+                    client hashes the canonical JSON prefix and the gateway
+                    rejects mismatches. The derived server salt is never
+                    returned.
+                  properties:
+                    mode:
+                      enum: [disabled, project, session]
+                      default: disabled
+                    scope_id:
+                      type: [string, "null"]
+                      minLength: 1
+                      maxLength: 256
+                    prefix_message_count:
+                      type: integer
+                      minimum: 0
+                      maximum: 4096
+                      default: 0
+                    prefix_sha256:
+                      type: [string, "null"]
+                      pattern: "^[0-9a-f]{64}$"
+      responses:
+        "200":
+          description: >
+            Tool-use/message response with non-secret inference_evidence and
+            provider-reported token_usage. Missing usage remains explicitly
+            unavailable and is never estimated from characters.
+        "422": { description: invalid cache scope or prefix digest mismatch }
+        "503": { description: inference unavailable or cache secret missing }
+  /mechanical-analysis:
+    post:
+      summary: submit explicitly approved geometry to an exact analysis worker
+      description: >
+        The gateway validates the approval and geometry digest, dispatches the
+        selected worker, and returns digest-bound evidence. AI output cannot
+        bypass this boundary. An unavailable worker is reported explicitly and
+        never converted into a pass.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [job]
+              properties:
+                job: { $ref: "./mechanical-analysis-job-v1.schema.json" }
+      responses:
+        "200":
+          description: exact result, including fail/incomplete/unavailable status
+          content:
+            application/json:
+              schema: { $ref: "./mechanical-analysis-result-v1.schema.json" }
+        "422": { description: geometry is not explicitly approved or the job is malformed }
+  /mechanical-feedback:
+    post:
+      summary: produce advisory ranking from exact analysis evidence
+      description: >
+        Ranking is not an approval decision. The response always requires the
+        human/host release gate and can request missing exact analyses.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [study]
+              properties:
+                study:
+                  type: object
+                  required: [study_id, candidates]
+                  properties:
+                    study_id: { type: string }
+                    candidates: { type: array, items: { type: object } }
+      responses:
+        "200":
+          description: advisory candidate ranking and follow-up proposals
+          content:
+            application/json:
+              schema: { $ref: "./mechanical-feedback-v1.schema.json" }
+        "422": { description: malformed study }
+  /propose:
+    post:
+      summary: generate an untrusted, typed CAD ProposalContract v2
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [context, kind]
+              properties:
+                kind: { const: geometry }
+                context:
+                  type: object
+                  description: >
+                    Untrusted proposal-generation context. These revisions are
+                    repeated in the proposal but are independently checked
+                    against trusted host state before mutation.
+                  required:
+                    - document_id
+                    - base_revision
+                    - base_sha256
+                    - object_id
+                    - sketch_id
+                    - host_geometry_id
+                    - geometry_index
+                    - host_geometry_revision
+                    - sketch_revision
+                    - target_start_nm
+                    - target_end_nm
+                    - session_id
+                    - session_revision
+                    - source_sha256
+                    - viewbox_id
+                    - element_id
+                    - deviation_id
+                    - target_ids
+      responses:
+        "200":
+          description: >
+            A structurally valid proposal. commit_authorized is always false;
+            only the trusted Design Studio host can authorize it.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [proposal, structurally_valid, commit_authorized, reasons]
+                properties:
+                  proposal: { $ref: "./proposal-v2.schema.json" }
+                  structurally_valid: { const: true }
+                  commit_authorized: { const: false }
+                  reasons:
+                    type: array
+                    items: { type: string }
+  /support-jobs:
+    post:
+      summary: enqueue an idempotent, revision-bound cavity/rib optimization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [spec]
+              properties:
+                spec: { $ref: "./support-generation-v1.schema.json" }
+                idempotency_key:
+                  type: [string, "null"]
+                  minLength: 1
+                  maxLength: 256
+      responses:
+        "202":
+          description: new queued job, or an immediately completed mock job
+        "200":
+          description: existing job returned for the same idempotency key/input
+        "422":
+          description: malformed, stale, or unlocked placement input
+  /reference-form-jobs:
+    post:
+      summary: enqueue four revision-bound reference-form mesh candidates
+      description: >
+        Routes one or more approved reference views to Hunyuan3D-2.1. Once all
+        six cardinal silhouettes are approved, routes the fused visual-hull
+        controls to Hunyuan3D-Omni. Generation is sequential and never grants
+        CAD or candidate-selection authority.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required: [spec, active_revision]
+              properties:
+                spec: { $ref: "./reference-form-v1.schema.json" }
+                active_revision:
+                  type: integer
+                  minimum: 1
+                  description: Trusted host's active reference-form revision.
+                idempotency_key:
+                  type: [string, "null"]
+                  minLength: 1
+                  maxLength: 256
+      responses:
+        "202": { description: new queued or deterministic mock job }
+        "200": { description: idempotent existing job }
+        "422": { description: malformed input, stale revision, unsafe asset path, or pixel-inferred scale }
+  /reference-form-jobs/{job_id}:
+    get:
+      summary: read reference-form generation status
+      parameters:
+        - in: path
+          name: job_id
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        "200": { description: queued, running, completed, failed, or cancelled job }
+        "404": { description: job not found }
+  /reference-form-jobs/{job_id}/result:
+    get:
+      summary: read candidate ranking and digest-addressed artifacts
+      parameters:
+        - in: path
+          name: job_id
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        "200":
+          description: four non-authoritative mesh candidates and orthographic previews
+          content:
+            application/json:
+              schema: { $ref: "./reference-form-result-v1.schema.json" }
+        "409": { description: job is not completed }
+        "404": { description: job not found }
+  /reference-form-jobs/{job_id}/cancel:
+    post:
+      summary: cancel queued or running reference-form generation
+      parameters:
+        - in: path
+          name: job_id
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        "200": { description: terminal or newly cancelled job }
+        "404": { description: job not found }
+  /reference-form-jobs/{job_id}/artifacts/{name}:
+    get:
+      summary: download a digest-verified candidate or orthographic preview
+      parameters:
+        - in: path
+          name: job_id
+          required: true
+          schema: { type: string, format: uuid }
+        - in: path
+          name: name
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: binary asset; verify the result-contract SHA-256 }
+        "404": { description: artifact not found }
+  /support-jobs/{job_id}:
+    get:
+      summary: read support optimization status
+      parameters:
+        - in: path
+          name: job_id
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        "200": { description: support job status }
+        "404": { description: job not found }
+  /support-jobs/{job_id}/result:
+    get:
+      summary: read a completed non-authoritative support graph
+      parameters:
+        - in: path
+          name: job_id
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        "200": { description: neutral cavity/rib graph requiring host checks }
+        "409": { description: job is not complete }
+        "404": { description: job not found }
+  /support-jobs/{job_id}/cancel:
+    post:
+      summary: cancel a queued or running support optimization
+      parameters:
+        - in: path
+          name: job_id
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        "200": { description: terminal or newly cancelled job status }
+        "404": { description: job not found }
+  /surrogate:
+    post:
+      summary: fast ML-surrogate prediction (FEA/EM/thermal) with an error bound
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [model_id, inputs]
+              properties:
+                model_id: { type: string }
+                inputs: { type: object }
+      responses:
+        "200":
+          description: prediction + bound (UI must show the bound + offer exact re-solve)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  outputs: { type: object }
+                  error_bound: { type: number }
+  /generate3d:
+    post:
+      summary: generate a shape mesh and recover its absolute millimetre scale
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [target_dimensions_mm]
+              properties:
+                image_base64:
+                  type: [string, "null"]
+                  description: Base64 conditioning image; required outside mock mode.
+                target_dimensions_mm:
+                  type: array
+                  minItems: 3
+                  maxItems: 3
+                  items: { type: number, exclusiveMinimum: 0 }
+                  description: Final overall X/Y/Z mesh bounds, not body-only dimensions.
+                seed: { type: integer, default: 0 }
+      responses:
+        "200":
+          description: base64 STL (mock) or GLB (production), scaled in millimetres
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [model, mock, format, dimensions_unit, mesh_coordinate_unit, dimensions_mm, mesh_base64]
+                properties:
+                  model: { type: string }
+                  mock: { type: boolean }
+                  format: { enum: [stl, glb] }
+                  dimensions_unit: { const: mm }
+                  mesh_coordinate_unit:
+                    enum: [mm, m]
+                    description: STL mock coordinates are mm; glTF/GLB coordinates are metres.
+                  dimensions_mm:
+                    type: array
+                    items: { type: number }
+                  mesh_base64: { type: string, contentEncoding: base64 }

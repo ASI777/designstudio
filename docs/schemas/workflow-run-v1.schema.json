@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://designstudio.local/schemas/workflow-run-v1.schema.json",
+  "title": "DesignStudio workflow run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "workflow_id", "product_digest", "graph_digest", "status", "approval", "checkpoints", "budget", "created_utc", "updated_utc"],
+  "properties": {
+    "schema": {"const": "design-studio.workflow-run/1"},
+    "workflow_id": {"type": "string", "pattern": "^wfr-[0-9a-f]{16}$"},
+    "product_digest": {"$ref": "#/$defs/digest"},
+    "graph_digest": {"$ref": "#/$defs/digest"},
+    "status": {"enum": ["awaiting_approval", "approved", "running", "cancelled", "succeeded", "budget_exhausted"]},
+    "approval": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "approver", "product_digest", "graph_digest", "approval_digest", "approved_utc"],
+          "properties": {
+            "kind": {"const": "architecture"},
+            "approver": {"type": "string", "minLength": 1, "maxLength": 120},
+            "product_digest": {"$ref": "#/$defs/digest"},
+            "graph_digest": {"$ref": "#/$defs/digest"},
+            "approval_digest": {"$ref": "#/$defs/digest"},
+            "approved_utc": {"type": "string", "format": "date-time"}
+          }
+        }
+      ]
+    },
+    "checkpoints": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "prefixItems": [
+        {"$ref": "#/$defs/component_checkpoint"},
+        {"$ref": "#/$defs/schematic_checkpoint"},
+        {"$ref": "#/$defs/pcb_checkpoint"},
+        {"$ref": "#/$defs/freecad_checkpoint"},
+        {"$ref": "#/$defs/integration_checkpoint"},
+        {"$ref": "#/$defs/verification_checkpoint"}
+      ],
+      "items": false
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allocated_units", "consumed_units", "remaining_units", "rejected_packages"],
+      "properties": {
+        "allocated_units": {"type": "integer", "minimum": 1},
+        "consumed_units": {"type": "integer", "minimum": 0},
+        "remaining_units": {"type": "integer", "minimum": 0},
+        "rejected_packages": {"type": "array", "uniqueItems": true, "items": {"enum": ["component-evidence-cad", "schematic", "pcb", "freecad", "integration", "verification"]}}
+      }
+    },
+    "created_utc": {"type": "string", "format": "date-time"},
+    "updated_utc": {"type": "string", "format": "date-time"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "awaiting_approval"}}},
+      "then": {
+        "properties": {
+          "approval": {"const": null},
+          "checkpoints": {"contains": {"properties": {"status": {"const": "blocked"}, "input_digest": {"const": null}, "output_digest": {"const": null}, "result_ref": {"const": null}, "consumed_units": {"const": 0}}}, "minContains": 6, "maxContains": 6}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"enum": ["approved", "running", "cancelled", "succeeded", "budget_exhausted"]}}},
+      "then": {"properties": {"approval": {"type": "object"}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "succeeded"}}},
+      "then": {
+        "properties": {
+          "checkpoints": {
+            "contains": {
+              "properties": {
+                "status": {"const": "succeeded"},
+                "input_digest": {"$ref": "#/$defs/digest"},
+                "output_digest": {"$ref": "#/$defs/digest"},
+                "result_ref": {"type": "string", "minLength": 1},
+                "consumed_units": {"type": "integer", "minimum": 1}
+              }
+            },
+            "minContains": 6,
+            "maxContains": 6
+          },
+          "budget": {"properties": {"rejected_packages": {"const": []}}}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "checkpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["package_id", "status", "input_digest", "output_digest", "result_ref", "consumed_units"],
+      "properties": {
+        "package_id": {"type": "string"},
+        "status": {"enum": ["blocked", "pending", "running", "succeeded", "cancelled", "rejected_over_budget"]},
+        "input_digest": {"oneOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]},
+        "output_digest": {"oneOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]},
+        "result_ref": {"oneOf": [{"type": "string", "pattern": "^\\.designstudio/workflows/wfr-[0-9a-f]{16}/[a-z0-9-]+/result\\.json$"}, {"type": "null"}]},
+        "consumed_units": {"type": "integer", "minimum": 0}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "succeeded"}}},
+          "then": {"properties": {"input_digest": {"$ref": "#/$defs/digest"}, "output_digest": {"$ref": "#/$defs/digest"}, "result_ref": {"type": "string"}, "consumed_units": {"minimum": 1}}}
+        },
+        {
+          "if": {"properties": {"status": {"enum": ["blocked", "pending", "cancelled"]}}},
+          "then": {"properties": {"output_digest": {"const": null}, "result_ref": {"const": null}, "consumed_units": {"const": 0}}}
+        }
+      ]
+    },
+    "component_checkpoint": {"allOf": [{"$ref": "#/$defs/checkpoint"}, {"properties": {"package_id": {"const": "component-evidence-cad"}}}]},
+    "schematic_checkpoint": {"allOf": [{"$ref": "#/$defs/checkpoint"}, {"properties": {"package_id": {"const": "schematic"}}}]},
+    "pcb_checkpoint": {"allOf": [{"$ref": "#/$defs/checkpoint"}, {"properties": {"package_id": {"const": "pcb"}}}]},
+    "freecad_checkpoint": {"allOf": [{"$ref": "#/$defs/checkpoint"}, {"properties": {"package_id": {"const": "freecad"}}}]},
+    "integration_checkpoint": {"allOf": [{"$ref": "#/$defs/checkpoint"}, {"properties": {"package_id": {"const": "integration"}}}]},
+    "verification_checkpoint": {"allOf": [{"$ref": "#/$defs/checkpoint"}, {"properties": {"package_id": {"const": "verification"}}}]}
+  }
+}
