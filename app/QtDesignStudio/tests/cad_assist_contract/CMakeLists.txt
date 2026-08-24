@@ -61,6 +61,6 @@ set_tests_properties(
 if(DESIGNSTUDIO_DEVELOPER_TOOLS)
     set_tests_properties(qt_cad_assist_app_connection PROPERTIES
         TIMEOUT 30 LABELS "qt;cad-assist;contract;diagnostics"
-        ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+        ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
         PASS_REGULAR_EXPRESSION "CAD_ASSIST_CONNECTED")
 endif()

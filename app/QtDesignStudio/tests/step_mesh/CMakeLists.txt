@@ -80,7 +80,7 @@ add_dependencies(semantic_assembly_runtime_tests semantic_assembly_fixture)
 add_test(NAME qt_semantic_assembly_runtime
     COMMAND semantic_assembly_runtime_tests "${assembly_fixture}")
 set_tests_properties(qt_semantic_assembly_runtime PROPERTIES
-    TIMEOUT 60 ENVIRONMENT "QT_QPA_PLATFORM=offscreen"
+    TIMEOUT 60 ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM}"
     LABELS "qt;pcb;3d;step;ap242;semantic-assembly;cache")
 
 add_executable(mesh_projection_controls_tests
@@ -106,6 +106,6 @@ target_link_libraries(mesh_projection_controls_tests PRIVATE
 add_test(NAME qt_mesh_projection_controls COMMAND mesh_projection_controls_tests)
 set_tests_properties(qt_mesh_projection_controls PROPERTIES
     TIMEOUT 30
-    ENVIRONMENT "QT_QPA_PLATFORM=offscreen"
+    ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM}"
     LABELS "qt;pcb;3d;mouse;camera"
 )

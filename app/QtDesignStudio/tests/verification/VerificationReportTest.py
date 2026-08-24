@@ -8,7 +8,9 @@ import tempfile
 
 binary, fixture = sys.argv[1:3]
 with tempfile.TemporaryDirectory() as directory:
-    env = dict(os.environ, QT_QPA_PLATFORM="offscreen", DS_AI_MOCK="1")
+    env = dict(os.environ)
+    env.setdefault("QT_QPA_PLATFORM", "offscreen")
+    env["DS_AI_MOCK"] = "1"
     def run(project, name):
         output = os.path.join(directory, name + "-verification.json")
         result = subprocess.run([binary, "--smoke-test", "--verification-out", output, project],

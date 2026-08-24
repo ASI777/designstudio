@@ -6,20 +6,6 @@ include(CTest)
 if(BUILD_TESTING)
     find_package(Python3 COMPONENTS Interpreter)
     if(Python3_Interpreter_FOUND)
-        # A developer pyenv may precede the distro interpreter while lacking
-        # the dependencies exercised by the integrated Desktop tests. Prefer
-        # a verified system interpreter when it supplies the declared stack.
-        find_program(DESIGNSTUDIO_SYSTEM_PYTHON NAMES python3 PATHS /usr/bin NO_DEFAULT_PATH)
-        if(DESIGNSTUDIO_SYSTEM_PYTHON)
-            execute_process(
-                COMMAND ${DESIGNSTUDIO_SYSTEM_PYTHON} -c
-                    "import PIL, cryptography, httpx, jsonschema"
-                RESULT_VARIABLE DESIGNSTUDIO_SYSTEM_PYTHON_READY
-                OUTPUT_QUIET ERROR_QUIET)
-            if(DESIGNSTUDIO_SYSTEM_PYTHON_READY EQUAL 0)
-                set(Python3_EXECUTABLE ${DESIGNSTUDIO_SYSTEM_PYTHON})
-            endif()
-        endif()
 add_test(NAME reference_image_set_contract
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_SOURCE_DIR}/tests/test_reference_image_set.py)
 add_test(NAME camera_model_eval_contract
@@ -192,13 +178,8 @@ add_test(NAME native_smoke_harness_contract
         set_tests_properties(mechanical_cad_program_v1 PROPERTIES
             LABELS "mechanical;freecad;cad;compatibility" TIMEOUT 30
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-        find_program(DESIGNSTUDIO_SCHEMA_PYTHON NAMES python3
-            PATHS /usr/bin /usr/local/bin NO_DEFAULT_PATH)
-        if(NOT DESIGNSTUDIO_SCHEMA_PYTHON)
-            set(DESIGNSTUDIO_SCHEMA_PYTHON ${Python3_EXECUTABLE})
-        endif()
         add_test(NAME vector_native_cad_contract
-            COMMAND ${DESIGNSTUDIO_SCHEMA_PYTHON}
+            COMMAND ${Python3_EXECUTABLE}
                 ${CMAKE_SOURCE_DIR}/freecad/DesignStudioWorkbench/tests/test_vector_native_cad.py)
         set_tests_properties(vector_native_cad_contract PROPERTIES
             LABELS "mechanical;freecad;cad;vector-native;schema" TIMEOUT 30
@@ -261,7 +242,7 @@ add_test(NAME native_smoke_harness_contract
             LABELS "mechanical;freecad;manufacturing;rib;occt"
             TIMEOUT 120 WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
         add_test(NAME local_redesign_v2_contract
-            COMMAND ${DESIGNSTUDIO_SCHEMA_PYTHON}
+            COMMAND ${Python3_EXECUTABLE}
                 ${CMAKE_SOURCE_DIR}/freecad/DesignStudioWorkbench/tests/test_local_redesign_v2.py)
         set_tests_properties(local_redesign_v2_contract PROPERTIES
             LABELS "mechanical;freecad;redesign;topology;schema" TIMEOUT 30
@@ -278,7 +259,7 @@ add_test(NAME native_smoke_harness_contract
             LABELS "mechanical;freecad;redesign;topology;occt" TIMEOUT 180
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
         add_test(NAME authoritative_drawings_contract
-            COMMAND ${DESIGNSTUDIO_SCHEMA_PYTHON}
+            COMMAND ${Python3_EXECUTABLE}
                 ${CMAKE_SOURCE_DIR}/freecad/DesignStudioWorkbench/tests/test_authoritative_drawings.py)
         set_tests_properties(authoritative_drawings_contract PROPERTIES
             LABELS "mechanical;freecad;drawings;hlr;schema" TIMEOUT 30
@@ -295,13 +276,13 @@ add_test(NAME native_smoke_harness_contract
             LABELS "mechanical;freecad;drawings;hlr;occt" TIMEOUT 180
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
         add_test(NAME constraint_candidates_contract
-            COMMAND ${DESIGNSTUDIO_SCHEMA_PYTHON}
+            COMMAND ${Python3_EXECUTABLE}
                 ${CMAKE_SOURCE_DIR}/freecad/DesignStudioWorkbench/tests/test_constraint_candidates.py)
         set_tests_properties(constraint_candidates_contract PROPERTIES
             LABELS "mechanical;freecad;physical-design;candidates;schema" TIMEOUT 30
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
         add_test(NAME camera_benchmark_contract
-            COMMAND ${DESIGNSTUDIO_SCHEMA_PYTHON}
+            COMMAND ${Python3_EXECUTABLE}
                 ${CMAKE_SOURCE_DIR}/freecad/DesignStudioWorkbench/tests/test_camera_benchmark.py)
         set_tests_properties(camera_benchmark_contract PROPERTIES
             LABELS "mechanical;freecad;camera;reference;schema" TIMEOUT 30
@@ -318,13 +299,13 @@ add_test(NAME native_smoke_harness_contract
             LABELS "mechanical;freecad;camera;cad-program;occt" TIMEOUT 180
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
         add_test(NAME physical_design_flow_matrix
-            COMMAND ${DESIGNSTUDIO_SCHEMA_PYTHON}
+            COMMAND ${Python3_EXECUTABLE}
                 ${CMAKE_SOURCE_DIR}/freecad/DesignStudioWorkbench/tests/test_physical_design_flow_matrix.py)
         set_tests_properties(physical_design_flow_matrix PROPERTIES
             LABELS "mechanical;freecad;physical-design;release;flow-matrix;schema" TIMEOUT 30
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
         add_test(NAME physical_validation_contract
-            COMMAND ${DESIGNSTUDIO_SCHEMA_PYTHON}
+            COMMAND ${Python3_EXECUTABLE}
                 ${CMAKE_SOURCE_DIR}/freecad/DesignStudioWorkbench/tests/test_physical_validation.py)
         set_tests_properties(physical_validation_contract PROPERTIES
             LABELS "mechanical;freecad;physical-design;physical-validation;schema" TIMEOUT 60
@@ -352,7 +333,7 @@ add_test(NAME native_smoke_harness_contract
             LABELS "mechanical;freecad;physical-design;candidates;occt" TIMEOUT 180
             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
         add_test(NAME semantic_assembly_contract
-            COMMAND ${DESIGNSTUDIO_SCHEMA_PYTHON}
+            COMMAND ${Python3_EXECUTABLE}
                 ${CMAKE_SOURCE_DIR}/freecad/DesignStudioWorkbench/tests/test_semantic_assembly.py)
         set_tests_properties(semantic_assembly_contract PROPERTIES
             LABELS "mechanical;freecad;semantic-assembly;ap242;schema" TIMEOUT 30

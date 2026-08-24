@@ -20,7 +20,7 @@ add_test(NAME qt_enclosure_glb_connection
 set_tests_properties(qt_enclosure_glb_connection PROPERTIES
     TIMEOUT 30
     LABELS "qt;glb;enclosure;smoke"
-    ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+    ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
     PASS_REGULAR_EXPRESSION "ENCLOSURE_GLB_CONNECTED"
 )
 
@@ -32,7 +32,7 @@ add_test(NAME qt_enclosure_evidence_export
 set_tests_properties(qt_enclosure_evidence_export PROPERTIES
     TIMEOUT 30
     LABELS "qt;glb;enclosure;contract"
-    ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+    ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
     PASS_REGULAR_EXPRESSION "MESH_EVIDENCE_EXPORTED"
 )
 

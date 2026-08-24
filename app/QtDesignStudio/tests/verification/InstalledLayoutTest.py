@@ -14,7 +14,9 @@ with tempfile.TemporaryDirectory() as raw:
     installed_app = bindir / "DesignStudio"; installed_core = libdir / "libdesigncore.so"
     shutil.copy2(app, installed_app); shutil.copy2(core, installed_core)
     output = prefix / "verification.json"
-    env = dict(os.environ, QT_QPA_PLATFORM="offscreen", DS_AI_MOCK="1")
+    env = dict(os.environ)
+    env.setdefault("QT_QPA_PLATFORM", "offscreen")
+    env["DS_AI_MOCK"] = "1"
     result = subprocess.run([str(installed_app), "--smoke-test", "--verification-out",
                              str(output), str(fixture)], env=env, text=True,
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=30)

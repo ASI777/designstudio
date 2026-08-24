@@ -19,6 +19,6 @@ add_test(NAME qt_cold_start_workspace_creation
         ${DESIGNSTUDIO_AGENTD_TEST_EXECUTABLE}
         ${CMAKE_SOURCE_DIR}/testdata/work-package-fixture)
 set_tests_properties(qt_cold_start_workspace_creation PROPERTIES
-    ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+    ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
     TIMEOUT 30
     LABELS "qt;freecad;rust;workspace;cold-start;rollback")

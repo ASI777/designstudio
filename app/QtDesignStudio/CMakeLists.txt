@@ -5,6 +5,12 @@ include(GNUInstallDirs)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets OpenGLWidgets Concurrent Network)
 find_package(Qt6 QUIET OPTIONAL_COMPONENTS Svg SvgWidgets)   # icons + vector SVG import when present
 
+# Qt's offscreen plugin cannot provide a QOpenGLWidget context on every
+# supported Qt release. Keep it as the developer default, while allowing CI
+# to exercise the real renderer through xcb on an Xvfb virtual display.
+set(DESIGNSTUDIO_TEST_QPA_PLATFORM "offscreen" CACHE STRING
+    "Qt platform plugin used by DesignStudio GUI tests")
+
 # Trust-boundary reader for CAD-assist evidence.  It intentionally has no
 # ProjectModel dependency: validation produces an immutable session snapshot
 # and cannot mutate a .dsproj document.
@@ -347,29 +353,29 @@ if(BUILD_TESTING)
         CACHE FILEPATH "designstudio-agentd executable used by Qt integration tests")
     add_test(NAME qt_app_smoke COMMAND DesignStudioQt --smoke-test)
     set_tests_properties(qt_app_smoke PROPERTIES
-        ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+        ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
         TIMEOUT 30
         LABELS "qt;smoke"
     )
     add_test(NAME qt_product_ui_contract COMMAND DesignStudioQt --ui-contract-test)
     set_tests_properties(qt_product_ui_contract PROPERTIES
-        ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+        ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
         TIMEOUT 30 LABELS "qt;ui;product;workspace"
         PASS_REGULAR_EXPRESSION "UI_CONTRACT_OK")
     add_test(NAME qt_physical_design_workflow COMMAND DesignStudioQt --physical-design-workflow-test)
     set_tests_properties(qt_physical_design_workflow PROPERTIES
-        ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+        ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
         TIMEOUT 30 LABELS "qt;ui;physical-design;physical-validation"
         PASS_REGULAR_EXPRESSION "PHYSICAL_DESIGN_WORKFLOW_OK")
     add_test(NAME qt_industrial_design_flow COMMAND DesignStudioQt --industrial-design-flow-test)
     set_tests_properties(qt_industrial_design_flow PROPERTIES
-        ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+        ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
         TIMEOUT 30 LABELS "qt;ui;industrial-design;workflow;approval"
         PASS_REGULAR_EXPRESSION "INDUSTRIAL_DESIGN_FLOW_OK")
     add_test(NAME qt_freecad_electronics_smoke
         COMMAND DesignStudioQt --electronics-only --smoke-test)
     set_tests_properties(qt_freecad_electronics_smoke PROPERTIES
-        ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+        ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
         TIMEOUT 30
         LABELS "qt;freecad;electronics;smoke"
         PASS_REGULAR_EXPRESSION "FREECAD_ELECTRONICS_PROFILE"
@@ -420,7 +426,7 @@ if(BUILD_TESTING)
                 --generate-balancing-sphere
                 ${CMAKE_CURRENT_BINARY_DIR}/generated_balancing_sphere)
         set_tests_properties(qt_balancing_sphere_generation PROPERTIES
-            ENVIRONMENT "QT_QPA_PLATFORM=offscreen;DS_AI_MOCK=1"
+            ENVIRONMENT "QT_QPA_PLATFORM=${DESIGNSTUDIO_TEST_QPA_PLATFORM};DS_AI_MOCK=1"
             TIMEOUT 120
             LABELS "qt;occt;step;mechatronics;control;smoke"
             PASS_REGULAR_EXPRESSION "BALANCING_SPHERE_GENERATED"

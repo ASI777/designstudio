@@ -366,6 +366,10 @@ void MeshProjectionView::paintEvent(QPaintEvent* event)
 
 QImage MeshProjectionView::renderSoftwareSnapshot()
 {
+    // The interactive viewport may currently be using the GPU and therefore
+    // have no CPU projection cache. An explicit evidence/export snapshot must
+    // still render the complete current scene deterministically.
+    rebuildScreenPoints(true);
     QImage image(size(), QImage::Format_ARGB32_Premultiplied);
     image.fill(Qt::transparent);
     QPainter painter(&image);
@@ -806,12 +810,12 @@ void MeshProjectionView::fitView()
     emit viewChanged();
 }
 
-void MeshProjectionView::rebuildScreenPoints()
+void MeshProjectionView::rebuildScreenPoints(bool forceSoftware)
 {
     screenPoints_.clear();
     cameraPoints_.clear();
     paintedTriangles_.clear();
-    if (gpuActive()) return;
+    if (!forceSoftware && gpuActive()) return;
     if (!mesh_ || mesh_->verticesMm().isEmpty() || width() <= 0 || height() <= 0) return;
     screenPoints_.reserve(mesh_->verticesMm().size());
     cameraPoints_.reserve(mesh_->verticesMm().size());

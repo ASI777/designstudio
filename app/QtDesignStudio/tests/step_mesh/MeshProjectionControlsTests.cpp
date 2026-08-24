@@ -255,9 +255,8 @@ int main(int argc, char** argv)
                    && QLineF(fittedPan, view.panOffsetPx()).length() < 0.01,
                "standard view did not fit and recenter the model") && ok;
 
-    // QOpenGLWidget is intentionally unavailable with Qt's offscreen plugin.
-    // Exercise the same deterministic complete-scene renderer used for
-    // inspection exports instead of accepting a blank platform framebuffer.
+    // Evidence exports must remain deterministic and complete regardless of
+    // whether the interactive viewport is using OpenGL or its CPU fallback.
     QImage image = view.renderSoftwareSnapshot();
     int colored = 0;
     for (int y = 0; y < image.height(); y += 8)

@@ -112,7 +112,7 @@ private:
     QQuaternion orientationFor(Projection projection) const;
     void zoomAt(const QPointF& cursor, double factor);
     void updateDragCursor();
-    void rebuildScreenPoints();
+    void rebuildScreenPoints(bool forceSoftware = false);
     void rebuildPaintedTriangles();
     void rebuildComponentGroups();
     void applyExplodeOffsets();

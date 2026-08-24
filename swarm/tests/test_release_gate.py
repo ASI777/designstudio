@@ -77,7 +77,9 @@ with tempfile.TemporaryDirectory() as raw:
     project_path = directory / "release.dsproj"
     project_path.write_text(json.dumps(project, separators=(",", ":")))
     verification_path = directory / "verification.json"
-    env = dict(os.environ, QT_QPA_PLATFORM="offscreen", DS_AI_MOCK="1")
+    env = dict(os.environ)
+    env.setdefault("QT_QPA_PLATFORM", "offscreen")
+    env["DS_AI_MOCK"] = "1"
     result = subprocess.run([binary, "--smoke-test", "--verification-out",
                              str(verification_path), str(project_path)], env=env,
                             text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=30)

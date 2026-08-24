@@ -28,6 +28,7 @@ for command_name in cmake "$PYTHON"; do
         exit 2
     fi
 done
+PYTHON_EXECUTABLE="$(command -v "$PYTHON")"
 
 BUILD_DIR="$WORK_REAL/cmake"
 LOCK_FILE="$ROOT/services/ai-gateway/requirements-ci.lock.txt"
@@ -53,7 +54,9 @@ cmake -S "$ROOT" -B "$BUILD_DIR" \
     -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_TESTING=ON \
     -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+    -DPython3_EXECUTABLE="$PYTHON_EXECUTABLE" \
     -DDESIGNCORE_ENABLE_CUDA="${DESIGNCORE_ENABLE_CUDA:-OFF}" \
+    -DDESIGNSTUDIO_TEST_QPA_PLATFORM="${DESIGNSTUDIO_TEST_QPA_PLATFORM:-offscreen}" \
     -DDESIGNSTUDIO_AGENTD_TEST_EXECUTABLE="$AGENTD_BINARY"
 
 echo "[3/5] Build C++ and Qt"

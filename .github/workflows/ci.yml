@@ -100,14 +100,21 @@ jobs:
             build-essential \
             cmake \
             libgl1-mesa-dev \
+            libgl1-mesa-dri \
+            libxcb-cursor0 \
             libqt6opengl6-dev \
             qt6-base-dev \
             qt6-base-dev-tools \
-            qt6-qpa-plugins
+            qt6-qpa-plugins \
+            xauth \
+            xvfb
       - name: Run the clean-checkout baseline gate
         env:
           DS_WORK_ROOT: ${{ runner.temp }}/designstudio-baseline
-        run: ./build-linux.sh
+          DESIGNSTUDIO_TEST_QPA_PLATFORM: xcb
+          LIBGL_ALWAYS_SOFTWARE: "1"
+          QT_QPA_PLATFORM: xcb
+        run: xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" ./build-linux.sh
 
   core-windows:
     name: C++ core portability (Windows, MSVC)
